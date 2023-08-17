@@ -25,7 +25,6 @@ var h = function (e) {
         t.prototype.OnLoadInit = function () {
             if (this.JS_Name = "LaunchScene",
                 this.Log("Onload"),
-                cc.log("Onload"),
                 this.hideBtnService(),
                 app.ComTool().H5Platform() ? this.setOrientationVertical() : this.setOrientationHorizon(),
                 this.RegEvent(i.GameEventDefine.INIT_FORM_TABLE, this.onInitFormTable),
