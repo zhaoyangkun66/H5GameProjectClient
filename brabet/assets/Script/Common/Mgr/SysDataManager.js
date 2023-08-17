@@ -31,7 +31,7 @@ var o = require("../Base/Singleton")
                     var i = o.text;
                     i || (e.Log("tableName:%s not textData", t),
                     i = ""),
-                    e.Log("\u914d\u7f6e\u8868\u8d44\u6e90\u8bfb\u53d6\u6210\u529f:" + t),
+                    e.Log("配置表资源读取成功:" + t),
                     e.OnLoadTableEnd(t, null, i),
                     n(true)
                 }).catch(function(t) {
