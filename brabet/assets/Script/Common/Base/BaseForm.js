@@ -23,8 +23,7 @@ var o, i, a, r = cc._decorator,
         e[e.ZorderLv7 = 7] = "ZorderLv7",
         e[e.ZorderLv8 = 8] = "ZorderLv8",
         e[e.ZorderLv9 = 9] = "ZorderLv9"
-}
-)(o || (o = {})),
+})(o || (o = {})),
     function (e) {
         e[e.None = 0] = "None",
             e[e.FromTop = 1] = "FromTop",
@@ -91,8 +90,7 @@ var f = function (e) {
             } else
                 this._background = new cc.Node("background");
             this.phoneKey && this.RegEvent(_.GameEventDefine.KEYBOARD_EVENTE, this.OnKeyBoardEvent)
-        }
-        ,
+        },
         t.prototype.InitBaseData = function () {
             this.ComTool = app.ComTool(),
                 this.FormManager = app.FormManager(),
@@ -100,27 +98,23 @@ var f = function (e) {
                 this.ButtonRepeatDict = {},
                 this.buttonClose && this.RegBackEvent(this.OnClick_Return),
                 this.router && this.RegRouterEvent()
-        }
-        ,
-        t.prototype.OnLoad = function () { }
-        ,
-        t.prototype.onDestroy = function () { }
-        ,
+        },
+        t.prototype.OnLoad = function () { },
+        t.prototype.onDestroy = function () { },
         t.prototype.update = function (e) {
             try {
                 this.OnUpdate(e)
             } catch (t) {
                 this.FormManager.DingDingMessage("update error:" + this.JS_Name, t.stack)
             }
-        }
-        ,
+        },
         t.prototype.ShowForm = function (e) {
             var t = this;
             e || (e = []);
             var n = this._formInfo.Independent == h.FormType.Independent ? app.Client.GetIndependentLayer() : this._formInfo.Independent == h.FormType.Crossing ? app.Client.GetHomeLayer() : app.Client.GetContentLayer();
             if (n)
                 if (this._showAction || this._showAnimationState)
-                    this.Log("\u754c\u9762\u6b63\u5728\u6253\u5f00\u4e2d...");
+                    this.Log("界面正在打开中...");
                 else {
                     this.node.parent == n ? this._closeAction ? (this.node.stopActionByTag(this.ActionTag),
                         this._background.stopAllActions(),
@@ -129,13 +123,13 @@ var f = function (e) {
                         this.ShowFormAction()) : this._closeAnimationState ? (this._closeAnimationState.stop(),
                             this._closeAnimationState = null,
                             this.ResetNodeInfo(),
-                            this.ShowFormAction()) : this.Log("\u754c\u9762\u5df2\u7ecf\u6253\u5f00,\u65e0\u9700\u91cd\u590d\u6253\u5f00") : (n.addChild(this._background, this.ZorderLv),
+                            this.ShowFormAction()) : this.Log("界面已经打开,无需重复打开") : (n.addChild(this._background, this.ZorderLv),
                                 n.addChild(this.node, this.ZorderLv),
                                 this.node.active = true,
                                 this.ControlManager.UpdateAlignmentEx(this._background),
                                 this.ShowFormAction()),
                         this.EventFunAdapter.RegisterEvent(e),
-                        this.Log("\u6210\u529f\u6253\u5f00\u754c\u9762");
+                        this.Log("成功打开界面");
                     var o = function () {
                         t.scheduleOnce(function () {
                             app.Client.OnEvent(_.GameEventDefine.SET_VISIBLE_BOTTOM, true)
@@ -151,21 +145,19 @@ var f = function (e) {
                         this.ErrLog("error", i),
                             this.FormManager.DingDingMessage("ShowForm error:" + this.JS_Name, i.stack)
                     }
-                }
-            else
+                } else
                 this.ErrLog("ShowForm not find uiLayer")
-        }
-        ,
+        },
         t.prototype.CloseForm = function (e) {
-            var t = app.Client.GetIndependentLayer()
-                , n = app.Client.GetContentLayer()
-                , o = app.Client.GetHomeLayer();
+            var t = app.Client.GetIndependentLayer(),
+                n = app.Client.GetContentLayer(),
+                o = app.Client.GetHomeLayer();
             if (this.node.parent == t || this.node.parent == n || this.node.parent == o) {
                 if (this._showAction && (this.node.stopActionByTag(this.ActionTag),
                     this._showAction = null),
                     this._showAnimationState && (this._showAnimationState.stop(),
                         this._showAnimationState = null),
-                    this.Log("\u6210\u529f\u5173\u95ed\u754c\u9762"),
+                    this.Log("成功关闭界面"),
                     this.node.parent === n && app.Client.OnEvent(_.GameEventDefine.SET_VISIBLE_BOTTOM, false),
                     this.EventFunAdapter.UnRegisterEvent(),
                     "ExitScene" == e)
@@ -174,7 +166,7 @@ var f = function (e) {
                         this._closeAnimationState = null;
                 else {
                     if (this._closeAction || this._closeAnimationState)
-                        return void this.Log("\u6b63\u5728\u5173\u95ed\u754c\u9762,\u65e0\u9700\u91cd\u590d\u5173\u95ed");
+                        return void this.Log("正在关闭界面,无需重复关闭");
                     this.CreateFormAction()
                 }
                 if (this.FormManager.RemoveShowingForm(this._formInfo.FormName),
@@ -194,19 +186,17 @@ var f = function (e) {
                     this.onCloseFormEnd()
                 }
             } else
-                this.Log("\u754c\u9762\u5df2\u7ecf\u5173\u95ed")
-        }
-        ,
+                this.Log("界面已经关闭")
+        },
         t.prototype.onOpenFormEnd = function () {
             this._showAction = null,
                 this._showAnimationState = null
-        }
-        ,
+        },
         t.prototype.onCloseFormEnd = function () {
             this.OnClose(),
                 this._closeAction = null,
                 this._closeAnimationState = null,
-                this.FormManager.IsFormShow(this._formInfo.FormName) ? this.Log("\u5173\u95ed\u754c\u9762\u7684\u65f6\u5019\u53c8\u6253\u5f00\u4e86\u754c\u9762") : (this.ResetNodeInfo(),
+                this.FormManager.IsFormShow(this._formInfo.FormName) ? this.Log("关闭界面的时候又打开了界面") : (this.ResetNodeInfo(),
                     this.node.active = false,
                     this._background.removeFromParent(false),
                     this.node.removeFromParent(false),
@@ -214,8 +204,7 @@ var f = function (e) {
                         this.FormManager.DestroyForm(this._formInfo.FormName),
                         this.ControlManager.ReleaseCache(this._formInfo.FormPath),
                         this.node.destroy()))
-        }
-        ,
+        },
         t.prototype.ShowFormName = function () {
             if (!this.node.getChildByName("LabelFormName")) {
                 var e = new cc.Node("LabelFormName");
@@ -226,13 +215,11 @@ var f = function (e) {
                     t.fontSize = 25,
                     e.color = p.default.Color_Orange
             }
-        }
-        ,
+        },
         t.prototype.IsFormShow = function () {
             var e = cc.find("Canvas/uiLayer");
             return this.node.parent == e
-        }
-        ,
+        },
         t.prototype.GetComponentsInAllChildren = function (e, t, n) {
             undefined === n && (n = []);
             var o = e.getComponent(t);
@@ -242,8 +229,7 @@ var f = function (e) {
                 this.GetComponentsInAllChildren(s, t, n)
             }
             return n
-        }
-        ,
+        },
         t.prototype.ShowFormAction = function () {
             if (!this.GetFormProperty("InitWidget")) {
                 this.ControlManager.UpdateAlignmentEx(this.node);
@@ -264,12 +250,12 @@ var f = function (e) {
                     this.node.stopActionByTag(this.ActionTag),
                     this._showAction = null,
                     this._showAnimationState = null;
-                var n = this.GetFormProperty("InitPosition")
-                    , o = this.GetFormProperty("InitScale")
-                    , a = this.GetFormProperty("InitWidth")
-                    , r = this.GetFormProperty("InitHeight")
-                    , s = null
-                    , c = null;
+                var n = this.GetFormProperty("InitPosition"),
+                    o = this.GetFormProperty("InitScale"),
+                    a = this.GetFormProperty("InitWidth"),
+                    r = this.GetFormProperty("InitHeight"),
+                    s = null,
+                    c = null;
                 if (this.ShowEffectType) {
                     switch (this.ShowEffectType) {
                         case i.FromTop:
@@ -306,15 +292,14 @@ var f = function (e) {
                             this.node.runAction(this._showAction))
                 }
             }
-        }
-        ,
+        },
         t.prototype.CreateFormAction = function () {
             if (this.CloseEffectType != a.None) {
                 this.node.stopActionByTag(this.ActionTag),
                     this._closeAction = null;
-                var e = this.GetFormProperty("InitPosition")
-                    , t = this.GetFormProperty("InitHeight")
-                    , n = this.GetFormProperty("InitScale");
+                var e = this.GetFormProperty("InitPosition"),
+                    t = this.GetFormProperty("InitHeight"),
+                    n = this.GetFormProperty("InitScale");
                 if (!this._closeAction && this.CloseEffectType)
                     switch (this.CloseEffectType) {
                         case a.ToTop:
@@ -341,13 +326,12 @@ var f = function (e) {
                     }
             } else
                 this.ResetNodeInfo()
-        }
-        ,
+        },
         t.prototype.ResetNodeInfo = function () {
-            var e = this.GetFormProperty("InitPosition")
-                , t = this.GetFormProperty("InitScale")
-                , n = this.GetFormProperty("InitWidth")
-                , o = this.GetFormProperty("InitHeight");
+            var e = this.GetFormProperty("InitPosition"),
+                t = this.GetFormProperty("InitScale"),
+                n = this.GetFormProperty("InitWidth"),
+                o = this.GetFormProperty("InitHeight");
             switch (this.ShowEffectType) {
                 case i.None:
                     this.node.setScale(t),
@@ -391,26 +375,21 @@ var f = function (e) {
                 default:
                     this.ErrLog("ShowEffectType:%s error", this.ShowEffectType)
             }
-        }
-        ,
+        },
         t.prototype.GetFormContentSize = function () {
             return this.node.getContentSize()
-        }
-        ,
+        },
         t.prototype.GetFormProperty = function (e) {
             if (this._dataInfo.hasOwnProperty(e))
                 return this._dataInfo[e];
             this.ErrLog("GetFormProperty not find:%s", e)
-        }
-        ,
+        },
         t.prototype.SetFormPosition = function (e) {
             this.node.setPosition(e)
-        }
-        ,
+        },
         t.prototype.SetFormProperty = function (e, t) {
-            this._dataInfo.hasOwnProperty(e) ? this._dataInfo[e] = t : this.ErrLog("\u8bbe\u7f6e\u754c\u9762\u5c5e\u6027\u627e\u4e0d\u5230key not find:%s", e)
-        }
-        ,
+            this._dataInfo.hasOwnProperty(e) ? this._dataInfo[e] = t : this.ErrLog("设置界面属性找不到key not find:%s", e)
+        },
         t.prototype.SetWndFlyTo = function (e, t, n, o, i) {
             undefined === i && (i = 0);
             var a = {
@@ -419,8 +398,7 @@ var f = function (e) {
                 Time: o
             };
             this.WndRunAction(e, "MoveAction", a, i)
-        }
-        ,
+        },
         t.prototype.SetWndOpacity = function (e, t, n, o) {
             undefined === o && (o = 0);
             var i = {
@@ -428,16 +406,14 @@ var f = function (e) {
                 Time: n
             };
             this.WndRunAction(e, "OpacityAction", i, o)
-        }
-        ,
+        },
         t.prototype.SetWndDelay = function (e, t, n) {
             undefined === n && (n = 0);
             var o = {
                 DelayTime: t
             };
             this.WndRunAction(e, "DelayAction", o, n)
-        }
-        ,
+        },
         t.prototype.SetWndRotateTo = function (e, t, n, o) {
             undefined === o && (o = 0);
             var i = {
@@ -445,38 +421,32 @@ var f = function (e) {
                 Time: n
             };
             this.WndRunAction(e, "RotateAction", i, o)
-        }
-        ,
+        },
         t.prototype.StopWndFly = function (e) {
             var t = cc.find(e, this.node);
             t ? t.stopActionByTag(11111) : this.ErrLog("StopWndFly(%s) wndPath not find", e)
-        }
-        ,
+        },
         t.prototype.StopWndOpacity = function (e) {
             var t = cc.find(e, this.node);
             t ? t.stopActionByTag(22222) : this.ErrLog("StopWndFly(%s) wndPath not find", e)
-        }
-        ,
+        },
         t.prototype.StopWndDelay = function (e) {
             var t = cc.find(e, this.node);
             t ? t.stopActionByTag(33333) : this.ErrLog("StopWndDelay(%s) wndPath not find", e)
-        }
-        ,
+        },
         t.prototype.WndRunAction = function (e, t, n) {
             var o = cc.find(e, this.node);
             if (o)
                 if (o.stopActionByTag(11111),
                     "MoveAction" == t) {
-                    var i = n.StartPos
-                        , a = n.EndPos
-                        , r = n.Time;
-                    o.setPosition(i),
-                        (l = cc.sequence(cc.moveTo(r, a), cc.callFunc(this.OnRunActionEnd, this, "FlyWndEnd"))).setTag(11111),
+                    var i = n.StartPos,
+                        a = n.EndPos,
+                        r = n.Time;
+                    o.setPosition(i), (l = cc.sequence(cc.moveTo(r, a), cc.callFunc(this.OnRunActionEnd, this, "FlyWndEnd"))).setTag(11111),
                         o.runAction(l)
                 } else if ("OpacityAction" == t) {
                     var s = n.EndFade;
-                    r = n.Time,
-                        (l = cc.sequence(cc.fadeTo(r, s), cc.callFunc(this.OnRunActionEnd, this, "OpacityWndEnd"))).setTag(11111),
+                    r = n.Time, (l = cc.sequence(cc.fadeTo(r, s), cc.callFunc(this.OnRunActionEnd, this, "OpacityWndEnd"))).setTag(11111),
                         o.runAction(l)
                 } else if ("DelayAction" == t) {
                     var c = n.DelayTime;
@@ -486,31 +456,23 @@ var f = function (e) {
                     if ("RotateAction" != t)
                         return void this.ErrLog("WndRunAction(%s) error", t);
                     var l, p = n.Rotation;
-                    r = n.Time,
-                        (l = cc.sequence(cc.rotateBy(r, p), cc.callFunc(this.OnRunActionEnd, this, "RotateWndEnd"))).setTag(11111),
+                    r = n.Time, (l = cc.sequence(cc.rotateBy(r, p), cc.callFunc(this.OnRunActionEnd, this, "RotateWndEnd"))).setTag(11111),
                         o.runAction(l)
-                }
-            else
+                } else
                 this.ErrLog("WndRunAction(%s,%s) wndPath not find", e, t)
-        }
-        ,
+        },
         t.prototype.OnRunActionEnd = function (e, t) {
             "FlyWndEnd" == t ? this.FlyWnd_FlyEnd(e.name, e) : "OpacityWndEnd" == t ? this.OpacityWnd_End(e.name, e) : "DelayEnd" == t ? this.FlyWnd_DelayEnd(e.name, e) : "RotateWndEnd" == t ? this.RotateWnd_End(e.name, e) : this.ErrLog("OnRunActionEnd useData:%s error", t)
-        }
-        ,
-        t.prototype.FlyWnd_FlyEnd = function () { }
-        ,
-        t.prototype.OpacityWnd_End = function () { }
-        ,
-        t.prototype.FlyWnd_DelayEnd = function () { }
-        ,
-        t.prototype.RotateWnd_End = function () { }
-        ,
+        },
+        t.prototype.FlyWnd_FlyEnd = function () { },
+        t.prototype.OpacityWnd_End = function () { },
+        t.prototype.FlyWnd_DelayEnd = function () { },
+        t.prototype.RotateWnd_End = function () { },
         t.prototype.GetWndEffectPos = function (e, t, n) {
             t || (t = d.default.EffectPosType_5);
-            var o = e.getContentSize()
-                , i = 0
-                , a = 0;
+            var o = e.getContentSize(),
+                i = 0,
+                a = 0;
             switch (t) {
                 case d.default.EffectPosType_1:
                     i = -o.width / 2,
@@ -549,40 +511,33 @@ var f = function (e) {
                         a = o.height / 2;
                     break;
                 case d.default.EffectPosType_10:
-                    var r = o.width / 2
-                        , s = o.height / 2;
+                    var r = o.width / 2,
+                        s = o.height / 2;
                     i = this.ComTool.RandInt(-r, r),
                         a = this.ComTool.RandInt(-s, s)
             }
             return 2 == n.length && (i += n[0],
                 a += n[1]),
                 cc.v2(i, a)
-        }
-        ,
+        },
         t.prototype.RegEvent = function (e, t) {
             this.EventFunAdapter.RegEvent(e, t)
-        }
-        ,
+        },
         t.prototype.RegSystemEvent = function (e, t) {
             this.EventFunAdapter.RegSystemEvent(e, t)
-        }
-        ,
+        },
         t.prototype.RegBackEvent = function (e) {
             this.EventFunAdapter.RegBackEvent(e)
-        }
-        ,
+        },
         t.prototype.RegRouterEvent = function () {
             this.EventFunAdapter.RegRouterEvent()
-        }
-        ,
+        },
         t.prototype.RegHttpEvent = function (e, t) {
             this.EventFunAdapter.RegHttpEvent(e, t)
-        }
-        ,
+        },
         t.prototype.RegRoomEvent = function (e, t) {
             this.EventFunAdapter.RegRoomEvent(e, t)
-        }
-        ,
+        },
         t.prototype.SimulateOnClick = function (e) {
             var t = cc.find(e, this.node);
             if (t)
@@ -593,8 +548,7 @@ var f = function (e) {
                     this.ErrLog("SimulateOnClick(%s) not find cc.Button", e);
             else
                 this.ErrLog("SimulateOnClick not find (%s)", e)
-        }
-        ,
+        },
         t.prototype.OnClick_Close = function (e) {
             try {
                 if (this._closeAction || this._closeAnimationState)
@@ -604,14 +558,13 @@ var f = function (e) {
             } catch (t) {
                 this.ErrLog("OnClick_Close:%s", t.stack)
             }
-        }
-        ,
+        },
         t.prototype.OnClick_BtnWnd = function (e, t) {
             try {
                 if (this._closeAction || this._closeAnimationState)
                     return void this.ErrLog("OnClick_BtnWnd doing closeAction");
-                var n = e.currentTarget
-                    , o = n.name;
+                var n = e.currentTarget,
+                    o = n.name;
                 n.getComponent("ButtonSound") || app.ComUtil().playBtnClick();
                 var i = n.getComponent("DependentClickEvent");
                 if (i && i.IsOutGamePop())
@@ -626,35 +579,32 @@ var f = function (e) {
                 this.ErrLog("OnClick_BtnWnd:%s", r.stack),
                     this.FormManager.DingDingMessage("OnClick_BtnWnd:" + this.JS_Name + "," + r.message, r.stack)
             }
-        }
-        ,
+        },
         t.prototype.SetButtonRepeat = function (e, t) {
             undefined === t && (t = 1e3);
             var n = this.GetWndNode(e);
             if (n) {
-                var o = n.name
-                    , i = t;
+                var o = n.name,
+                    i = t;
                 this.ButtonRepeatDict[o] = {
                     LastTime: 0,
                     RepeatTime: i
                 }
             } else
                 this.ErrLog("SetButtonRepeat is not find wndPath", e)
-        }
-        ,
+        },
         t.prototype.OnClick_Toggle = function (e, t) {
             try {
                 if (this._closeAction || this._closeAnimationState)
                     return void this.ErrLog("OnClick_Toggle doing closeAction");
-                var n = e.node
-                    , o = n.name;
+                var n = e.node,
+                    o = n.name;
                 n.getComponent("ButtonSound") || app.ComUtil().playBtnClick(),
                     this.OnClick(o, n, t)
             } catch (i) {
                 this.ErrLog("OnClick_Toggle:%s", i.stack)
             }
-        }
-        ,
+        },
         t.prototype.OnClick_Form = function (e) {
             try {
                 if (this._closeAction || this._closeAnimationState)
@@ -663,96 +613,83 @@ var f = function (e) {
             } catch (t) {
                 this.ErrLog("OnClick_Form:%s", t.stack)
             }
-        }
-        ,
+        },
         t.prototype.OnClick_Return = function () {
             this.CloseForm()
-        }
-        ,
+        },
         t.prototype.WaitForConfirm = function (e, t, n, o, i, a) {
             n || (n = h.ConfirmType.Confirm),
                 app.ConfirmManager().ShowConfirm(n, e, t, o || this.OnConFirm, i || this.OnCancel, a || this)
-        }
-        ,
+        },
         t.prototype.OnConFirm = function (e, t) {
-            this.ErrLog("\u6ca1\u6709\u5b9e\u73b0 OnConFirm(%s,%s,%s)", e, t)
-        }
-        ,
+            this.ErrLog("没有实现 OnConFirm(%s,%s,%s)", e, t)
+        },
         t.prototype.OnCancel = function (e, t) {
-            this.WarnLog("\u6ca1\u6709\u5b9e\u73b0 OnCancel(%s,%s,%s)", e, t)
-        }
-        ,
-        t.prototype.OnCreateInit = function () { }
-        ,
+            this.WarnLog("没有实现 OnCancel(%s,%s,%s)", e, t)
+        },
+        t.prototype.OnCreateInit = function () { },
         t.prototype.OnShow = function () {
             for (var e = [], t = 0; t < arguments.length; t++)
                 e[t] = arguments[t]
-        }
-        ,
+        },
         t.prototype.OnClose = function () {
             for (var e = [], t = 0; t < arguments.length; t++)
                 e[t] = arguments[t]
-        }
-        ,
-        t.prototype.OnUpdate = function () { }
-        ,
-        t.prototype.OnReload = function () { }
-        ,
-        t.prototype.OnClick = function () { }
-        ,
-        t.prototype.OnClickForm = function () { }
-        ,
+        },
+        t.prototype.OnUpdate = function () { },
+        t.prototype.OnReload = function () { },
+        t.prototype.OnClick = function () { },
+        t.prototype.OnClickForm = function () { },
         t.prototype.OnKeyBoardEvent = function () {
             for (var e = [], t = 0; t < arguments.length; t++)
                 e[t] = arguments[t]
-        }
-        ,
+        },
         __decorate([c({
-            tooltip: "\u663e\u793a\u754c\u9762\u52a8\u753b",
+            tooltip: "显示界面动画",
             type: cc.Enum(i)
         })], t.prototype, "ShowEffectType", undefined),
         __decorate([c({
-            tooltip: "\u5173\u95ed\u754c\u9762\u52a8\u753b",
+            tooltip: "关闭界面动画",
             type: cc.Enum(a)
         })], t.prototype, "CloseEffectType", undefined),
         __decorate([c({
-            tooltip: "\u754c\u9762\u5c42\u7ea7//\u7f6e\u5e95\u754c\u9762\u5c42(UIFightTower)\nZorderLv0 = 0,\n//\u804a\u5929\u5c42(UIChat)\nZorderLv1 = 1,\n//\u73a9\u5bb6\u5934\u50cf\u5c42(UIPlayer)\nZorderLv2 = 2,\n//\u901a\u7528\u80cc\u666f\u5c42(UIResource)\nZorderLv3 = 3,\n//\u5e03\u9635\u5c42\nZorderLv4 = 4,\n//\u4e3b\u573a\u666f\u5de5\u5177\u5c42(UIMenu)\nZorderLv5 = 5,\n//\u6b63\u5e38\u754c\u9762\u5c42(\u591a\u6570\u754c\u9762)\nZorderLv6 = 6,\n//\u7f6e\u9876\u5c42(3\u7ea7\u754c\u9762\u4f7f\u7528\u5230,UICardPackFragSale)\nZorderLv7 = 7,\n//\u6a21\u6001\u5c42,\u6d88\u606f\u63d0\u793a\u5c42(UIMessage)\nZorderLv8 = 8,\n//debugTool\u754c\u9762\nZorderLv9 = 9,",
+            tooltip: "界面层级//置底界面层(UIFightTower)\nZorderLv0 = 0,\n//聊天层(UIChat)\nZorderLv1 = 1,\n//玩家头像层(UIPlayer)\nZorderLv2 = 2,\n//通用背景层(UIResource)\nZorderLv3 = 3,\n//布阵层\nZorderLv4 = 4,\n//主场景工具层(UIMenu)\nZorderLv5 = 5,\n//正常界面层(多数界面)\nZorderLv6 = 6,\n//置顶层(3级界面使用到,UICardPackFragSale)\nZorderLv7 = 7,\n//模态层,消息提示层(UIMessage)\nZorderLv8 = 8,\n//debugTool界面\nZorderLv9 = 9,",
             type: cc.Enum(o)
         })], t.prototype, "ZorderLv", undefined),
         __decorate([c({
             type: cc.Prefab,
-            tooltip: "\u754c\u9762\u80cc\u666f"
+            tooltip: "界面背景"
         })], t.prototype, "background", undefined),
         __decorate([c({
-            tooltip: "\u70b9\u51fb\u80cc\u666f\u5173\u95ed\u754c\u9762",
+            tooltip: "点击背景关闭界面",
             visible: function () {
                 return null != this.background
             }
         })], t.prototype, "closeForm", undefined),
         __decorate([c({
-            tooltip: "\u6a21\u62df\u70b9\u51fb\u6309\u94ae\u5173\u95ed\u754c\u9762(window:esc,android:\u8fd4\u56de\u952e)"
+            tooltip: "模拟点击按钮关闭界面(window:esc,android:返回键)"
         })], t.prototype, "buttonClose", undefined),
         __decorate([c({
-            tooltip: "\u662f\u5426\u652f\u6301\u8def\u7531"
+            tooltip: "是否支持路由"
         })], t.prototype, "router", undefined),
         __decorate([c({
-            tooltip: "\u624b\u673a\u7aef\u81ea\u5b9a\u4e49\u952e\u76d8\u4e8b\u4ef6\u76d1\u542c"
+            tooltip: "手机端自定义键盘事件监听"
         })], t.prototype, "phoneKey", undefined),
         __decorate([c({
-            tooltip: "\u754c\u9762\u5f00\u542f\u663e\u793a\u52a8\u4f5c\u65f6\u95f4(\u79d2)"
+            tooltip: "界面开启显示动作时间(秒)"
         })], t.prototype, "ShowFormActionSec", undefined),
         __decorate([c({
-            tooltip: "\u754c\u9762\u5173\u95ed\u663e\u793a\u52a8\u4f5c\u65f6\u95f4(\u79d2)"
+            tooltip: "界面关闭显示动作时间(秒)"
         })], t.prototype, "CloseFormActionSec", undefined),
         __decorate([c({
-            tooltip: "\u8bf7\u6dfb\u52a0\u6253\u5f00\u52a8\u753b",
+            tooltip: "请添加打开动画",
             type: cc.AnimationClip,
             visible: function () {
                 return this.ShowEffectType == i.None
             }
         })], t.prototype, "OpenClip", undefined),
         __decorate([c({
-            tooltip: "\u8bf7\u6dfb\u52a0\u5173\u95ed\u52a8\u753b",
+            tooltip: "请添加关闭动画",
             type: cc.AnimationClip,
             visible: function () {
                 return this.CloseEffectType == a.None
