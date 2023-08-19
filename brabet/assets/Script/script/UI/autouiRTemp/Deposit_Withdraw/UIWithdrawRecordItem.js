@@ -2,9 +2,9 @@ let n ={}
 Object.defineProperty(n, "__esModule", {
     value: true
 });
-var o = require("../../../Common/Base/UIBaseComponent")
-  , i = require("../../../Common/Define/UINameDefine")
-  , a = require("../autoui/Deposit_Withdraw/auto_UIWithdrawRecordItem")
+var o = require("../../../../Common/Base/UIBaseComponent")
+  , i = require("../../../../Common/Define/UINameDefine")
+  , a = require("../../autoui/Deposit_Withdraw/auto_UIWithdrawRecordItem")
   , r = cc._decorator
   , s = r.ccclass
   , c = r.menu
