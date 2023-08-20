@@ -51,7 +51,7 @@ var o = require("../../../Common/Base/BaseForm")
             t.prototype.OnShow = function () {
                 for (var e = [], t = 0; t < arguments.length; t++)
                     e[t] = arguments[t];
-                this.nodeList && (this.nodeList.active = !!app.GameConfigManager().GetGameConfig().ranking_show_status),
+                this.nodeList && (this.nodeList.active = app.GameConfigManager().GetGameConfig().ranking_show_status),
                     this.renderLobbyRootNode(),
                     app.RedDotManager().updateSingleData({
                         type: a.RedDotStr.clean_bet
