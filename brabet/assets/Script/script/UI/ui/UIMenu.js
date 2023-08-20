@@ -103,9 +103,15 @@ var o, i = require("../../../Common/Base/BaseForm"),
                                         void (app.FormManager().IsFormShow(s.UINameDefine.UIHall) || app.GameManager().enterSceneByRoomMode(c.RoomMode.HALL));
                                 if ("btn_game" != e)
                                     if ("withdraw" != e && "quanmindai" != e)
-                                        "BettingBonus" != e ? "btn_RechargeTime" != e ? "btn_Discount" != e ? "btn_support" != e ? "btn_download" != e ? "btn_all" != e ? "btn_task" != e || app.FormManager().ShowForm(s.UINameDefine.UITaskBonus) : app.FormManager().ShowForm(s.UINameDefine.UIAllActivity) : this.node_downApp.active = !this.node_downApp.active : app.FormManager().ShowForm(s.UINameDefine.UIActivity, r.ActivityType.agency_promotion) : app.FormManager().ShowForm(s.UINameDefine.UIDiscount) : app.FormManager().ShowForm(s.UINameDefine.UIRechargeTime) : app.FormManager().IsFormShow(s.UINameDefine.UIBetBonus) || app.FormManager().ShowForm(s.UINameDefine.UIBetBonus, {
-                                            InType: r.IntypeType.Main
-                                        });
+                                        "BettingBonus" != e ? "btn_RechargeTime" != e ? "btn_Discount" != e ? "btn_support" != e ? "btn_download" != e ? "btn_all" != e ? "btn_task" != e || app.FormManager().ShowForm(s.UINameDefine.UITaskBonus)
+                                            : app.FormManager().ShowForm(s.UINameDefine.UIAllActivity)
+                                            : this.node_downApp.active = !this.node_downApp.active
+                                            : app.FormManager().ShowForm(s.UINameDefine.UIActivity, r.ActivityType.agency_promotion)
+                                            : app.FormManager().ShowForm(s.UINameDefine.UIDiscount)
+                                            : app.FormManager().ShowForm(s.UINameDefine.UIRechargeTime)
+                                            : app.FormManager().IsFormShow(s.UINameDefine.UIBetBonus) || app.FormManager().ShowForm(s.UINameDefine.UIBetBonus, {
+                                                InType: r.IntypeType.Main
+                                            });
                                     else {
                                         if (app.UserManager().GetIsOfficialPopup())
                                             return;
