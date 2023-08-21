@@ -1,0 +1,5 @@
+场景类型	名称	横竖屏(1:横屏,2:竖屏)	背景音乐	背景图	场景默认开启界面
+Scene	Name	SceneDir	BackGroundSound	BackGround	DefaultForm
+Login	登录场景	1		none	["UILogin","UILoginSign"]
+Hall	主场景	1		none	["UIHallTop","UIMenu","UIHall"]
+Fight	打牌场景	1		none	["UIHallTop","UIMenu"]

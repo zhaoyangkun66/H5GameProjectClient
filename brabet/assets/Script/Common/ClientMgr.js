@@ -24,6 +24,7 @@ function(e) {
         cc.game.setFrameRate(60),
         this.schedule(this.OnTimer.bind(this), .1),
         this.InitManager()
+        this.InitDebug(true)
     }
     ,
     t.prototype.InitManager = function() {
