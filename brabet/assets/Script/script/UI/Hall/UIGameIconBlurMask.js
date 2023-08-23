@@ -16,19 +16,19 @@ var o = cc._decorator
     }
     return __extends(t, e),
     t.prototype.onLoad = function() {
-        this.material.setProperty("bightness", this.bightness),
-        this.material.setProperty("blurAmount", this.blurAmount),
-        this.spriteFrame = new cc.SpriteFrame,
-        this.sprite = this.node.addComponent(cc.Sprite),
-        this.sprite.spriteFrame = this.spriteFrame,
-        this.sprite.type = cc.Sprite.Type.SIMPLE,
-        this.sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM,
-        this.sprite.trim = true,
-        this.sprite.setMaterial(0, this.material)
+        // this.material.setProperty("bightness", this.bightness),
+        // this.material.setProperty("blurAmount", this.blurAmount),
+        // this.spriteFrame = new cc.SpriteFrame,
+        // this.sprite = this.node.addComponent(cc.Sprite),
+        // this.sprite.spriteFrame = this.spriteFrame,
+        // this.sprite.type = cc.Sprite.Type.SIMPLE,
+        // this.sprite.sizeMode = cc.Sprite.SizeMode.CUSTOM,
+        // this.sprite.trim = true,
+        // this.sprite.setMaterial(0, this.material)
     }
     ,
     t.prototype.SetTexture = function(e) {
-        this.spriteFrame.setTexture(e)
+        //this.spriteFrame.setTexture(e)
     }
     ,
     __decorate([a({
