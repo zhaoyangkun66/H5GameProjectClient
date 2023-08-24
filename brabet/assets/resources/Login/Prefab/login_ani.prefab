@@ -13,14 +13,18 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "rootNode",
+    "_name": "login_ani",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
     "_active": true,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 2
+      }
+    ],
     "_prefab": {
-      "__id__": 2
+      "__id__": 3
     },
     "_opacity": 255,
     "_color": {
@@ -67,6 +71,25 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_defaultClip": {
+      "__uuid__": "1c221e56-7749-4c7e-8b23-6a1e5b1acb83"
+    },
+    "_clips": [
+      {
+        "__uuid__": "1c221e56-7749-4c7e-8b23-6a1e5b1acb83"
+      }
+    ],
+    "playOnLoad": false,
     "_id": ""
   },
   {

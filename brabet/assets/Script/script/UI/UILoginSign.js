@@ -25,7 +25,6 @@ var p = cc._decorator
                 t.mailNode = null,
                 t.phoneNode = null,
                 t.toggleContainer = null,
-                t.freeNode = null,
                 t.lbl_bottom = null,
                 t.login_ani = null,
                 t.InterfaceType = 0,
@@ -82,8 +81,7 @@ var p = cc._decorator
             }
             ,
             t.prototype.OnShow = function (e) {
-                undefined === e && (e = 1),
-                    this.freeNode.active = app.GameConfigManager().IsExperienceServerShow;
+                undefined === e && (e = 1);
                 var t = app.LoginManager().getUserLoginCode();
                 this.myCode = t,
                     t && this.onLoginCode(),
@@ -284,7 +282,6 @@ var p = cc._decorator
             __decorate([h(cc.Node)], t.prototype, "mailNode", undefined),
             __decorate([h(cc.Node)], t.prototype, "phoneNode", undefined),
             __decorate([h(cc.Node)], t.prototype, "toggleContainer", undefined),
-            __decorate([h(cc.Node)], t.prototype, "freeNode", undefined),
             __decorate([h(cc.Label)], t.prototype, "lbl_bottom", undefined),
             __decorate([h(cc.Prefab)], t.prototype, "login_ani", undefined),
             __decorate([d], t)
