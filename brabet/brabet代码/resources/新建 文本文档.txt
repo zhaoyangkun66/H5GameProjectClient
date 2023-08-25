@@ -1,0 +1,41 @@
+python png.py
+pip install pillow
+python json2.py
+
+import json
+
+with open('0967b326a.1f618.json','r',encoding='utf8')as fp:
+    json_data = json.load(fp)
+    
+print('这是文件中的json数据：',json_data)
+print('这是读取到文件数据的数据类型：', type(json_data))
+
+import json
+
+with open('data.json','r',encoding='utf8')as fp:
+    data = json.load(fp)
+# json_str = '{"name": "Alice", "age": 30, "friends": [{"name": "Bob", "age": 25}, {"name": "Charlie", "age": 28}]}'
+# data = json.loads(json_str)
+# json_data = json.load(fp)
+def print_nested_json(data):
+    for key, value in data.items():
+        if isinstance(value, dict):
+            print(key)
+            print_nested_json(value)
+        elif isinstance(value, list):
+            print(key)
+            for item in value:
+                if isinstance(item, dict):
+                    print_nested_json(item)
+        else:
+            print(key, value)
+
+print_nested_json(data)
+# name Alice
+# age 30
+# friends
+# name Bob
+# age 25
+# name Charlie
+# age 28
+        if key[5] >= 7:  # 判断条件
