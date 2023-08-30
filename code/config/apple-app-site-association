@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "C333LSBZ98.com.jiejiebuyuh5.jj",
+                "paths": [ "/sdksample/*" ]
+            }
+        ]
+    }
+}

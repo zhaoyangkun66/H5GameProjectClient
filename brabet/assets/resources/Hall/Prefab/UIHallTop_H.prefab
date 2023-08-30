@@ -5354,10 +5354,12 @@
     },
     "_enabled": true,
     "alignMode": 1,
-    "_target": null,
+    "_target": {
+      "__id__": 1
+    },
     "_alignFlags": 32,
     "_left": 0,
-    "_right": -538.6890000000001,
+    "_right": 128.31099999999992,
     "_top": 0,
     "_bottom": 0,
     "_verticalCenter": 0,

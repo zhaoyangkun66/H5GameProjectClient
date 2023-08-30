@@ -1,7 +1,7 @@
 require("../Script/script/i18n_script/LanguageData").default.inst.loadConfig().then(function () {
 
 }).catch(function (t) {
-    return e.ErrLog("loadConfig err", t)
+    return console.log("loadConfig err", t)
 });
 
 cc.Class({
