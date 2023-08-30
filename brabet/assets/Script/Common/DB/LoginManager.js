@@ -91,7 +91,7 @@ var h = function (e) {
             var e = {};
             this.AddLoginParam(e),
                // app.HttpServerManager().SendHttpPack(r.HttpAPI.VISITOR_LOGIN, e)
-               app.Client.OnEvent(r.HttpAPI.VISITOR_LOGIN, {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTM5OTkwNDMsImRhdGEiOnsidXNlcmlkIjoxNTg3NDA1Mjh9fQ.qWi1vAzqXIG_KYHvfdDMf2EXDLKBeBCFcAYGc6OHEKk",
+               app.Client.OnEvent(r.HttpAPI.VISITOR_LOGIN, {"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMDEyMywidXNlcm5hbWUiOiJ0ZXN0IiwiZXhwIjoxNjkzODE0MTI1LCJpc3MiOiJnYW1lIn0.beReCzQYtPZrBBb1S3RFmMusqtwzgNDtbHC2lWpweR4",
                "uid": 158740528,
                "headimg": 3,
                "sex": 1,
