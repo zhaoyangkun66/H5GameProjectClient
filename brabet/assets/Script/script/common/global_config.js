@@ -3,6 +3,11 @@ var n = {
     hosts: ["api.brabet.com"],
     scheme: "https"
 };
+// n = {
+//     hosts: ["127.0.0.1:8080"],
+//     scheme: "https"
+// };
+
 n.webapi_url = n.scheme + "://" + n.hosts[0],
 n.mainVer = 1,
 n.subVer = 1,
