@@ -1,6 +1,6 @@
 
 var n = {
-    hosts: ["api.brabet.com"],
+    hosts: ["api.bbh5sdffi01.com"],
     scheme: "https"
 };
 if (isgoServer) {

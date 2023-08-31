@@ -15,12 +15,12 @@ cc.Class({
     onLoad: function () {
         this.label.string = this.text;
         let xmlHttp = cc.loader.getXMLHttpRequest();
-        xmlHttp.open("POST", 'https://127.0.0.1:8080/account/getUserInfo', true);
+        xmlHttp.open("POST", 'http://127.0.0.1:8080/account/getUserInfo', true);
        // xmlHttp.open("POST", 'https://api.brabet.com/config/getLangList', true);
        // xmlHttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
         xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
       //  xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');
-       // xmlHttp.setRequestHeader('Origin', '123');
+        xmlHttp.setRequestHeader('Origin', '123');
       //  xmlHttp.setRequestHeader("Access-Control-Allow-Origin", "*"); 
 
         xmlHttp.onreadystatechange = function () {
@@ -31,20 +31,7 @@ cc.Class({
         xmlHttp.timeout = 5000;// 5 seconds for timeout
         //xmlHttp.send('language=en-us');
         xmlHttp.send('token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMDEyMywidXNlcm5hbWUiOiJ0ZXN0IiwiZXhwIjoxNjkzODE0MTI1LCJpc3MiOiJnYW1lIn0.beReCzQYtPZrBBb1S3RFmMusqtwzgNDtbHC2lWpweR4&mainVer=1&subVer=1&pkgName=h5_client&nativeVer=0&deviceid=PC_fff15830-6c0b-461b-a416-95e64b7b3236&agentid=1&Type=101&source=10&os=Windows&ioswebclip=0&isShell=0&language=pt-pt');
-        token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEwMDEyMywidXNlcm5hbWUiOiJ0ZXN0IiwiZXhwIjoxNjkzODE0MTI1LCJpc3MiOiJnYW1lIn0.beReCzQYtPZrBBb1S3RFmMusqtwzgNDtbHC2lWpweR4
-mainVer:1
-subVer:1
-pkgName:1
-nativeVer:1
-deviceid:1
-pixelid:1
-Type:1
-source:1
-os:1
-ioswebclip:1
-isShell:1
-language:1
-StartLogin
+   
     },
 
     // called every frame
@@ -55,7 +42,4 @@ StartLogin
 
 
 
-        app.Client.OnEvent(i.GameEventDefine.FACEBOOK_LOGIN_SUCCESS, {
-            nickname: n,
-            third_token: t.id
-        })
+  

@@ -195,7 +195,6 @@ var o, i = require("../../../Common/Base/BaseForm"),
                 ,
                 t.prototype.VisibleNode = function () {
                     var e = app.UserManager().GetUserInfoConfig.show_arr;
-                    this.GetWndNode("left/bg/view/content/top_activity/btn_task").active = 1 == e[r.VisibleBtnTag.TaskBtn],
                         this.GetWndNode("left/bg/view/content/top_activity/quanmindai").active = 1 == e[r.VisibleBtnTag.Btn_NewMoney],
                         this.GetWndNode("left/bg/view/content/top_activity/btn_vip").active = 1 == e[r.VisibleBtnTag.Btn_VIP]
                 }

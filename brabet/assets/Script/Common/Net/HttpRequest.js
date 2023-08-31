@@ -54,14 +54,7 @@ var o = function(e) {
             var o = e[n];
             "[object Object]" === toString.call(o) || "[object Array]" === toString.call(o) ? t.push(n + "=" + JSON.stringify(o)) : t.push(n + "=" + o)
         }
-        if (false) {
-            let rrr= t.join(",")
-            return t.join(",")
-        }
-        else
-        {
-            return t.join("&")
-        }
+        return t.join("&")
     }
     ,
     t

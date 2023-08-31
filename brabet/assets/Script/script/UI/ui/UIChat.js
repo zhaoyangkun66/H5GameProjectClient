@@ -20,8 +20,8 @@ function(e) {
             e[t] = arguments[t];
         app.Client.OnEvent(i.GameEventDefine.HallWidgetVariety),
         app.Client.OnEvent(i.GameEventDefine.SELECT_TOPTOOGLE, a.Hall_SelectTopToggle.Email),
-        this.openEmail(),
-        cc.find("right/connect/toggleContainer/toggle1", this.node).getComponent(cc.Toggle).check()
+        this.openEmail()
+       // cc.find("right/connect/toggleContainer/toggle1", this.node).getComponent(cc.Toggle).check()
     }
     ,
     t.prototype.OnClose = function() {
@@ -33,13 +33,13 @@ function(e) {
     }
     ,
     t.prototype.openNotice = function() {
-        cc.find("right/connect/scrollview_notice", this.node).active = true,
-        cc.find("right/connect/scrollview_mail", this.node).active = false,
-        cc.find("right/mail_btn", this.node).active = false
+        //cc.find("right/connect/scrollview_notice", this.node).active = true,
+       // cc.find("right/connect/scrollview_mail", this.node).active = false,
+       // cc.find("right/mail_btn", this.node).active = false
     }
     ,
     t.prototype.openEmail = function() {
-        cc.find("right/connect/scrollview_notice", this.node).active = false,
+       // cc.find("right/connect/scrollview_notice", this.node).active = false,
         cc.find("right/connect/scrollview_mail", this.node).active = true,
         cc.find("right/mail_btn", this.node).active = true
     }
