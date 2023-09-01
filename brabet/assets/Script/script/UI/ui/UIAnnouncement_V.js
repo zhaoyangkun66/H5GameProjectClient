@@ -14,21 +14,21 @@ function(e) {
     }
     return __extends(t, e),
     t.prototype.OnCreateInit = function() {
-        this.JS_Name = "UIAnnouncement_V",
-        this.RegEvent(i.GameEventDefine.GET_NOTICES, this.OnNotices),
-        this.PageParent = this.GetWndNode("layer/con"),
-        this.PageItem = this.GetWndNode("layer/node_copy"),
-        this.webWnd = this.GetWndNode("layer/node_copy/web"),
-        this.imageWnd = this.GetWndNode("layer/node_copy/node_img"),
-        this.lbl_title = this.GetWndNode("layer/title/title").getComponent(cc.Label),
-        this.PageParent.on("page-turning", this.onShowPageViewIndex, this),
-        this.PageView = this.PageParent.getComponent(cc.PageView)
+        this.JS_Name = "UIAnnouncement_V";
+        // this.RegEvent(i.GameEventDefine.GET_NOTICES, this.OnNotices),
+        // this.PageParent = this.GetWndNode("layer/con"),
+        // this.PageItem = this.GetWndNode("layer/node_copy"),
+        // this.webWnd = this.GetWndNode("layer/node_copy/web"),
+        // this.imageWnd = this.GetWndNode("layer/node_copy/node_img"),
+        // this.lbl_title = this.GetWndNode("layer/title/title").getComponent(cc.Label),
+        // this.PageParent.on("page-turning", this.onShowPageViewIndex, this),
+        // this.PageView = this.PageParent.getComponent(cc.PageView)
     }
     ,
     t.prototype.OnShow = function() {
         for (var e = [], t = 0; t < arguments.length; t++)
             e[t] = arguments[t];
-        app.HNoticeManager().RequestGetNoticeData()
+        //app.HNoticeManager().RequestGetNoticeData()
     }
     ,
     t.prototype.OnNotices = function() {

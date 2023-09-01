@@ -66,7 +66,7 @@ def traverse2(data):
 
 
 if __name__ == '__main__':
-    img_pathName = "1a044696d"
+    img_pathName = "129ee9263"
     img_path = img_pathName+".png"
 
     with open('0bb8da815.json','r',encoding='utf8')as fp:
