@@ -20,7 +20,7 @@ var o = function(e) {
           , l = false
           , p = setTimeout(function() {
             d()
-        }, 8e3)
+        }, 8e4)
           , d = function() {
             l || (l = true,
             clearTimeout(p),
