@@ -286,8 +286,8 @@ function(e) {
         e.children[0].active = n == u.GOT,
         n == u.REACH && (e.children[0].active = true);
         var o = app.GameConfigManager().GetCurrency;
-        e.children[3].getComponent(cc.Label).string = o + t.gold,
-        e.children[4].children[1].getComponent(cc.Label).string = this.invCount + "/" + t.count
+        e.children[3].getComponent(cc.Label).string = o + t.gold
+        //e.children[4].children[1].getComponent(cc.Label).string = this.invCount + "/" + t.count
     }
     ,
     t.prototype.initShareBtnList = function() {
