@@ -160,7 +160,8 @@ var l = function (e) {
         t.prototype.SetUserInfo = function (e) {
             this.UserInfo = e
             if (isgoServer) {
-                this.UserInfo.user_config = require("Http_login").user_config
+                let user_config = require("Http_login").user_config
+                this.UserInfo.user_config.show_arr = require("Http_login").user_config.show_arr 
             }
             this.UserInfo.gold = e.gold || 0,
                 this.UserInfo.user_config.is_open_debug && app.Client.InitDebug(true),

@@ -69093,5 +69093,5 @@ module.exports = {
     },
     "other_game_factory": [],
     "experience_list": [],
-    "data_version": 1693491894
+    "data_version": 123
 }

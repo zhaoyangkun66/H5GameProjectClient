@@ -240,10 +240,18 @@ var o = require("../Define/HttpServerDefine")
                 if (e) {
                     if (isgoServer) {
                         let xxx = require("Http_gameList")
+                        for (const key2 in e["game_type"]) {
+                            if (!e["game_type"][key2].child_list) {
+                                e["game_type"][key2].child_list = []
+                            }
+                            if (!e["game_type"][key2].game_list) {
+                                e["game_type"][key2].game_list = []
+                            }
+                        }
                         for (const key in xxx) {
-                           // if (!e[key]) {
+                            if (!e[key]) {
                                 e[key] = xxx[key]
-                          //  }
+                            }
                         }
                     }
                     if (t.dataVersion == e.data_version) {

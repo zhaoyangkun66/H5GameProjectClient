@@ -473,5 +473,3 @@ new (function (t) {
     module.exports = n
 //console.error(n)
 
-let ccc = require("Http_gameList")
-ccc = ccc
