@@ -16,7 +16,6 @@ cc.Class({
 
     },
 
-    // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
         
@@ -26,5 +25,5 @@ cc.Class({
 
     },
 
-    // update (dt) {},
+
 });

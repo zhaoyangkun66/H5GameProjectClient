@@ -121,8 +121,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
         }
         var r = cc.find("view/content/node_ratio", this.node);
         this.UserWallerData.withdraw_tips ? (r.getChildByName("label_radio").getComponent(cc.Label).string = this.UserWallerData.withdraw_tips,
-        r.active = true) : r.active = false,
-        this.node.getComponent(l.default).OnUpdateShowType()
+        r.active = true) : r.active = false//,this.node.getComponent(l.default).OnUpdateShowType()
     }
     ,
     t.prototype.AmountSliderEvents = function(e) {
