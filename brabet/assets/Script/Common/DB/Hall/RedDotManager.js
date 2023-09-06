@@ -74,6 +74,13 @@ var o = require("../../Define/ShareDefine")
             }
             ,
             t.prototype.onRechargeInfo = function (e) {
+                if (isgoServer) {
+                    if (e.rechargeinfo) {
+                        for (const key in e.rechargeinfo) {
+                            e[e.rechargeinfo[key].name] = e.rechargeinfo[key];   
+                        }
+                    }
+                }
                 this.RechargeInfoDataResult = e,
                     this.RechargeInfoDataResult.activity_config.sort(function (e, t) {
                         return t.sort - e.sort

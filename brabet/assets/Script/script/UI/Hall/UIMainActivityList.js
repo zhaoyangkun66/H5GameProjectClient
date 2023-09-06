@@ -53,7 +53,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     var r = o[i]
                         , l = r.id
                         , p = "" + l;
-                    if (isgoServer || t.InArray(l)) {
+                    if (t.InArray(l)) {
                         var d = a.moreItem
                             , h = [];
                         l == c.ActivityType.recharge_send_gold ? h.push(c.RedDotEnum.recharge_send_activity) : l == c.ActivityType.week_month_card ? h.push(c.RedDotEnum.week_month_card) : l == c.ActivityType.welcome_bonus && h.push(c.RedDotEnum.free_lose),

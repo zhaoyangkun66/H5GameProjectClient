@@ -38,10 +38,12 @@ var o = function (e) {
                             return void s.ErrLog("httpRequest time out:%s", r);
                         clearTimeout(p)
                         if (isgoServer == true) {
-                            c.status = 200
+                            i && i(e, t, c.responseText, o)
                         }
-                        200 == c.status ? i && i(e, t, c.responseText, o) : (s.ErrLog("url:%s onreadystatechange(%s, %s, %s)", r, c.readyState, c.status, c.statusText, o),
-                            d())
+                        else {
+                            200 == c.status ? i && i(e, t, c.responseText, o) : (s.ErrLog("url:%s onreadystatechange(%s, %s, %s)", r, c.readyState, c.status, c.statusText, o),
+                                d())
+                        }
                     }
                 }
                 ,

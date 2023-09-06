@@ -144,6 +144,9 @@ var o = function () {
         e.GET_WordCup_AwardResult = "/activity.world_cup/getAwardResult",
         e
 }();
+if (isgoServer) {
+    o.GAME_UP = "/other_game/gameup"
+}
 n.HttpAPI = o,
     function (e) {
         e[e.Pay_Type_USDT = 1] = "Pay_Type_USDT",

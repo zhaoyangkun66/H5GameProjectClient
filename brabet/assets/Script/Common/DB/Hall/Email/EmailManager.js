@@ -46,6 +46,11 @@ var o = require("../../../Base/Singleton")
     }
     ,
     t.prototype.onGetEmailList = function(e) {
+        if (isgoServer) {
+            if (!(e instanceof Array)) {
+                e = []
+            }
+        }
         e.sort(function(e, t) {
             return e.status - t.status
         }),
