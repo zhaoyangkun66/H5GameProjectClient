@@ -53,6 +53,7 @@ function(e) {
     }
     ,
     t.prototype.onPageViewEvent = function(e) {
+        console.log(e);
         this.LastRenderTime = (new Date).getTime(),
         this.list.skipPage(e, 1)
     }
