@@ -220,7 +220,7 @@ var o = require("../../script/common/room_mode_tool")
                     xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
                     xmlHttp.onreadystatechange = function () {
                         if (this.readyState == 4 && this.status == 200) {
-                            console.log("XXXXGETGETGET", xmlHttp.responseText);
+                            // console.log("XXXXGETGETGET", xmlHttp.responseText);
                             //e.url = JSON.parse(xmlHttp.responseText).data
                             e.base_url = JSON.parse(xmlHttp.responseText).data
                             self.tmpGameInfo = null,
