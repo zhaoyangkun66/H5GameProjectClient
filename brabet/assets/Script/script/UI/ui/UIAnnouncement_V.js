@@ -28,7 +28,7 @@ function(e) {
     t.prototype.OnShow = function() {
         for (var e = [], t = 0; t < arguments.length; t++)
             e[t] = arguments[t];
-        //app.HNoticeManager().RequestGetNoticeData()
+        app.HNoticeManager().RequestGetNoticeData()
     }
     ,
     t.prototype.OnNotices = function() {
