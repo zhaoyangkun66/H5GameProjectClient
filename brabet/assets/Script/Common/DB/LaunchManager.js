@@ -60,8 +60,8 @@ var o = require("../Base/Singleton")
             ,
             t.prototype.OnGameConfig = function (e, t) {
                 if (isgoServer) {
-                    e.gs_host = "gss.brabet.com"
-                    e.gs_sport = "28966"
+                   // e.gs_host = "gss.brabet.com"
+                   // e.gs_sport = "28966"
                 }
 
                 if (!e)
