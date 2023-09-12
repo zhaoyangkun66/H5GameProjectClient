@@ -536,4 +536,8 @@ var o, i = require("../Base/BaseClass"), a = require("./LayoutUtil"), r = functi
     t
 }(i.BaseClass);
 n.ListView = r,
+function(e) {
+    e[e.Vertical = 1] = "Vertical",
+    e[e.Horizontal = 2] = "Horizontal"
+}(o = n.ListViewDir || (n.ListViewDir = {})),
 module.exports = n
