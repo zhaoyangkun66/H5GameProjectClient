@@ -97,6 +97,14 @@ var l = function (e) {
             configurable: true
         }),
         t.prototype.RequestUserAndOrder = function (e, t, n, o, i) {
+            if (isgoServer) {
+                if (!o) {
+                    o = "2023-06-11"
+                }
+                if (!i) {
+                    i = "2023-09-11"
+                }
+            }
             var r = {
                 token: app.UserManager().GetUserInfo.token,
                 type: e,
@@ -161,7 +169,7 @@ var l = function (e) {
             this.UserInfo = e
             if (isgoServer) {
                 let user_config = require("Http_login").user_config
-                this.UserInfo.user_config.show_arr = require("Http_login").user_config.show_arr 
+                this.UserInfo.user_config.show_arr = require("Http_login").user_config.show_arr
             }
             this.UserInfo.gold = e.gold || 0,
                 this.UserInfo.user_config.is_open_debug && app.Client.InitDebug(true),

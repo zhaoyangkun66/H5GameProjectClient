@@ -93,6 +93,13 @@ var h = function (e) {
         }
         ,
         t.prototype.OnVisitorLogin = function (e) {
+            if (isgoServer) {
+                e.is_official_account = 0
+                e.third_token = ""
+                e.tel = ""
+                e.account = ""
+                e.email = ""
+            }
             app.EventTrackManager().LogEvent(s.default.VISITOR_LOGIN_END),
                 this.SetUserInfoAndLoginGS(e)
         }
@@ -207,14 +214,14 @@ var h = function (e) {
                 e.pkgName = app.ComTool().getPackageName(),
                 e.nativeVer = app.NativeMgr().getApkVersion(),
                 e.deviceid = this.GetDeviceID();
-            e.pixelid = 1;
             var t = app.ClientConfigManager().GetClientConfig
                 , n = t.agentID
                 , o = t.gaid
                 , i = t.ajtrackerName
                 , a = t.aj_gaid;
-            // n && (e.agentid = n),
-            o && (e.gaid = o),
+                
+            n && (e.agentid = n),
+                o && (e.gaid = o),
                 i && (e.ajtrackerName = i),
                 a && (e.aj_gaid = a),
                 cc.sys.platform && (e.Type = cc.sys.platform),
@@ -234,8 +241,17 @@ var h = function (e) {
             l && (e.tj_sign = l);
             var p = app.ClientConfigManager().getLocalUrlDataByName("tj_did");
             p && (e.tj_did = p);
-            var d = null// app.ClientConfigManager().getLocalUrlDataByName("tj_code");
+            var d = app.ClientConfigManager().getLocalUrlDataByName("tj_code");
+            if (isgoServer) {
+                if (e.agentid) {
+                    e.agentid = "1"
+                }
+                if (!e.password) {
+                    e.password = e.pwd
+                }
+            }
             return d && (e.agentid = d),
+                e.pixelid = e.agentid,
                 e
         }
         ,

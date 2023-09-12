@@ -90,7 +90,7 @@ var o = require("../Base/Singleton")
             }
             ,
             t.prototype.NoticeShowIcon = function () {
-                this.FirstLogin && 0 == this.LoadCount //&& this.LoadSunCount >= this.LoadMaxCount
+                this.FirstLogin && 0 == this.LoadCount && this.LoadSunCount >= this.LoadMaxCount
                     && (this.FirstLogin = false,
                         this.Log("placeholder==========showIcon"),
                         app.Client.OnEvent(i.GameEventDefine.SHOW_ICON))

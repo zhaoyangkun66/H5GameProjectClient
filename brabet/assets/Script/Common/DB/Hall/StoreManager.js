@@ -41,12 +41,33 @@ var l = function (e) {
         ,
         t.prototype.onGoodsList = function (e) {
             if (isgoServer) {
-                let xxx = require("Http_goodsList")
-                for (const key in xxx) {
-                    if (!e[key]) {
-                        e[key] = xxx[key]
+
+                for (const key in e) {
+                    for (const key2 in e[key].channel_list) {
+                        e[key].channel_list[key2].sale = {}
+                        e[key].channel_list[key2].cur_time = Date.now() / 1e3
+                        if (!e[key].channel_list[key2].goods) {
+                            e[key].channel_list[key2].goods = [
+                                "20",
+                                "50",
+                                "100",
+                                "300",
+                                "500",
+                                "1000",
+                                "5000",
+                                "10000",
+                                "20000"
+                            ]
+                        }
                     }
                 }
+
+                // let xxx = require("Http_goodsList")
+                // for (const key in xxx) {
+                //     if (!e[key]) {
+                //         e[key] = xxx[key]
+                //     }
+                // }
             }
             var t = this;
             this.GoodsList = e,

@@ -4,7 +4,6 @@ require("../Script/script/i18n_script/LanguageData").default.inst.loadConfig().t
     return console.log("loadConfig err", t)
 });
 
-let ccc = require("Http_gameList")
 
 
 
