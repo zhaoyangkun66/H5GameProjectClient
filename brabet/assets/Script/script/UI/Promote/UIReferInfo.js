@@ -101,10 +101,10 @@ var o = require("../../../Common/Base/UIBaseComponent")
             }
             ,
             t.prototype.getTime = function (e) {
-                if (0 == e)
-                    return this.lbl_StartTime.getComponent(cc.Label).string = this.InitDateStr,
-                        this.lbl_EndTime.getComponent(cc.Label).string = this.InitDateStr,
-                        null;
+                // if (0 == e)
+                //     return this.lbl_StartTime.getComponent(cc.Label).string = this.InitDateStr,
+                //         this.lbl_EndTime.getComponent(cc.Label).string = this.InitDateStr,
+                //         null;
                 var t = new Date
                     , n = t.getDay() ? t.getDay() : 7
                     , o = this.getDays(t.getFullYear(), t.getMonth() - 1)
@@ -112,7 +112,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     , a = [0, 0, n, n + 7, o + i]
                     , r = new Date(t.getTime() - 864e5 * a[e]).format("yyyy-MM-dd")
                     , s = t.format("yyyy-MM-dd");
-                return 2 == e ? r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd") : 3 == e ? (r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd"),
+                return 0 == e ? r = this.InitDateStr : 2 == e ? r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd") : 3 == e ? (r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd"),
                     s = new Date(t.getTime() - 864e5 * n).format("yyyy-MM-dd")) : 4 == e && (r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd"),
                         s = new Date(t.getTime() - 864e5 * i).format("yyyy-MM-dd")),
                     this.lbl_StartTime.getComponent(cc.Label).string = r,

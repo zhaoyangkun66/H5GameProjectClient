@@ -26,9 +26,9 @@ var o = require("../Base/Singleton")
             }
             ,
             t.prototype.RequestAJGetWithdrawgold = function () {
-                app.HttpServerManager().SendHttpPack(i.HttpAPI.GET_WITHDRAWGOLD, {
-                    token: app.UserManager().GetUserInfo.token
-                }, false)
+                // app.HttpServerManager().SendHttpPack(i.HttpAPI.GET_WITHDRAWGOLD, {
+                //     token: app.UserManager().GetUserInfo.token
+                // }, false)
             }
             ,
             t.prototype.RequestAJNotice = function () {

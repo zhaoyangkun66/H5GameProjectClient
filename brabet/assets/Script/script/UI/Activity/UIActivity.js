@@ -59,7 +59,7 @@ var o = require("../../../Common/Base/BaseForm")
             if (this.type == a.ActivityType.agency_promotion && (e.button_name = e.btn_txt),
             e.button_name) {
                 var o = cc.instantiate(this.btn_node);
-                cc.find("Background/Label", o).getComponent(cc.Label).string = e.button_name,
+                cc.find("Label", o).getComponent(cc.Label).string = e.button_name,
                 o.active = true,
                 o.parent = this.content
             }

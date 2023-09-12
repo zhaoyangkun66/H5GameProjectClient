@@ -98,11 +98,12 @@ var l = function (e) {
         }),
         t.prototype.RequestUserAndOrder = function (e, t, n, o, i) {
             if (isgoServer) {
+                var time1 = new Date()
                 if (!o) {
-                    o = "2023-06-11"
+                    o = new Date(time1.getTime() - 864e5*10).format("yyyy-MM-dd")
                 }
                 if (!i) {
-                    i = "2023-09-11"
+                    i = time1.format("yyyy-MM-dd");
                 }
             }
             var r = {
