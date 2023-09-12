@@ -509,7 +509,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 88.08,
+      "width": 78.3,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -563,7 +563,7 @@
     "_dstBlendFactor": 771,
     "_string": "Label",
     "_N$string": "Label",
-    "_fontSize": 36,
+    "_fontSize": 32,
     "_lineHeight": 36,
     "_enableWrapText": true,
     "_N$file": null,
