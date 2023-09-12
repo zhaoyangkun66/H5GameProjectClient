@@ -56,7 +56,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 1580
+      "height": 1600
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6240,11 +6240,11 @@
     "node": {
       "__id__": 1
     },
-    "_enabled": false,
+    "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 1580
+      "height": 1600
     },
     "_resize": 1,
     "_N$layoutType": 2,
@@ -6257,7 +6257,7 @@
     "_N$paddingLeft": 0,
     "_N$paddingRight": 0,
     "_N$paddingTop": 0,
-    "_N$paddingBottom": 0,
+    "_N$paddingBottom": 20,
     "_N$spacingX": 0,
     "_N$spacingY": 20,
     "_N$verticalDirection": 1,
