@@ -252,7 +252,7 @@ var o = require("../Define/HttpServerDefine")
                             e["other_game"] = []
                         }
                         for (const key in xxx) {
-                            if (!e[key]) {
+                            if (e[key] == undefined || e[key] == null) {
                                 e[key] = xxx[key]
                             }
                         }

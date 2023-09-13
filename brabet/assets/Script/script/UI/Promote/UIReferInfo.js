@@ -37,7 +37,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
             t.prototype.OnEnable = function () {
                 this.CalendarView.active = false,
                     this.toggle_All.check(),
-                    app.PromoteMainManager().ReqAgentReport(),
+                   // app.PromoteMainManager().ReqAgentReport(),
+                    app.PromoteMainManager().ReqAgentReport(this.getTime(Number(0)))
                     this.TotalCommission.string = "",
                     this.NumberofTeammembers.string = "",
                     this.NumberofDIRECTmembers.string = "",

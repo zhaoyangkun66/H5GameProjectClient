@@ -1712,7 +1712,7 @@
         "__id__": 45
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 173
@@ -6078,9 +6078,11 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 44
+    },
     "component": "",
-    "_componentId": "3b83aVzS+1Ce7Y6zXiViO0g",
+    "_componentId": "e5336bs2qZBYa5ImR1IZTSK",
     "handler": "OnClick_BtnWnd",
     "customEventData": ""
   },
@@ -6566,7 +6568,7 @@
         "__id__": 177
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 180
@@ -6880,7 +6882,7 @@
         "__id__": 185
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 413

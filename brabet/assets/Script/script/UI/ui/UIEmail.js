@@ -105,6 +105,9 @@ var o = require("../../../Common/Define/GameEventDefine")
                         id: t.id
                     };
                     app.EmailManager().RequstGetEmailRecive(n)
+
+                    //
+                    // this.emailRecived()
                 }
             }
             ,
@@ -136,6 +139,7 @@ var o = require("../../../Common/Define/GameEventDefine")
                         type: r.RedDotStr.mail,
                         bShow: false
                     }),
+                    (isgoServer == true) && (cc.find("email_item/bg/chip/receive", e).getComponent(cc.Button).interactable = false),
                     cc.find("email_item/bg/title/gold", e).active = false,
                     this.GetWndNode("email_item/bg/title/node_RedDot", e).active = false)
             }
@@ -168,46 +172,46 @@ var o = require("../../../Common/Define/GameEventDefine")
                         if (s > 0) {
                             var c = s / 86400 >> 0;
                             c < 1 && (c = 1),
-                            a.string = app.i18n.t("UI_Email_ExpiresDay").replace("{S1}", "" + c)
+                                a.string = app.i18n.t("UI_Email_ExpiresDay").replace("{S1}", "" + c)
                         }
                     }
                     this.GetWndNode("email_item/bg/title/node_RedDot", i).active = 0 == o.status || 1 == o.status,
-                    o.gold > 0 && 2 != o.status && (cc.find("email_item/bg/title/gold/bg/lbl", i).getComponent(cc.Label).string = "" + o.gold,
-                    cc.find("email_item/bg/title/gold", i).active = true),
-                    0 == o.status ? (cc.find("email_item/bg/title/icon_open", i).active = false,
-                    cc.find("email_item/bg/title/icon_off", i).active = true) : (cc.find("email_item/bg/title/icon_open", i).active = true,
-                    cc.find("email_item/bg/title/icon_off", i).active = false),
-                    cc.find("email_item/bg/below/show/Background/label", i).getComponent(cc.Label).string = app.i18n.t("UI.Settings_1_Help_9");
+                        o.gold > 0 && 2 != o.status && (cc.find("email_item/bg/title/gold/bg/lbl", i).getComponent(cc.Label).string = "" + o.gold,
+                            cc.find("email_item/bg/title/gold", i).active = true),
+                        0 == o.status ? (cc.find("email_item/bg/title/icon_open", i).active = false,
+                            cc.find("email_item/bg/title/icon_off", i).active = true) : (cc.find("email_item/bg/title/icon_open", i).active = true,
+                                cc.find("email_item/bg/title/icon_off", i).active = false),
+                        cc.find("email_item/bg/below/show/Background/label", i).getComponent(cc.Label).string = app.i18n.t("UI.Settings_1_Help_9");
                     var l = new cc.Component.EventHandler;
                     l.target = this.node,
-                    l.component = "UIEmail",
-                    l.handler = "emailLabelBtnItemCallBack",
-                    l.customEventData = JSON.stringify(o);
+                        l.component = "UIEmail",
+                        l.handler = "emailLabelBtnItemCallBack",
+                        l.customEventData = JSON.stringify(o);
                     var p = cc.find("email_item/bg/btn_label", i);
                     p.getComponent(cc.Button).clickEvents = [],
-                    p.active = false,
-                    o.in_url && p.getComponent(cc.Button).clickEvents.push(l),
-                    o.out_url && (p.getComponent(cc.Label).string = o.out_url,
-                    p.getComponent(cc.Button).clickEvents.push(l)),
-                    o.url_text && (p.getComponent(cc.Label).string = o.url_text),
-                    cc.find("email_item/bg/chip", i).active = false;
+                        p.active = false,
+                        o.in_url && p.getComponent(cc.Button).clickEvents.push(l),
+                        o.out_url && (p.getComponent(cc.Label).string = o.out_url,
+                            p.getComponent(cc.Button).clickEvents.push(l)),
+                        o.url_text && (p.getComponent(cc.Label).string = o.url_text),
+                        cc.find("email_item/bg/chip", i).active = false;
                     var d = new cc.Component.EventHandler;
                     d.target = this.node,
-                    d.component = "UIEmail",
-                    d.handler = "emailItemCallBack",
-                    d.customEventData = JSON.stringify(o),
-                    cc.find("email_item/bg", i).getComponent(cc.Button).clickEvents = [],
-                    cc.find("email_item/bg", i).getComponent(cc.Button).clickEvents.push(d);
+                        d.component = "UIEmail",
+                        d.handler = "emailItemCallBack",
+                        d.customEventData = JSON.stringify(o),
+                        cc.find("email_item/bg", i).getComponent(cc.Button).clickEvents = [],
+                        cc.find("email_item/bg", i).getComponent(cc.Button).clickEvents.push(d);
                     var h = new cc.Component.EventHandler;
                     h.target = this.node,
-                    h.component = "UIEmail",
-                    h.handler = "reqGetEmailAward",
-                    h.customEventData = JSON.stringify(o),
-                    cc.find("email_item/bg/chip/receive", i).getComponent(cc.Button).clickEvents = [],
-                    cc.find("email_item/bg/chip/receive", i).getComponent(cc.Button).clickEvents.push(h),
-                    i.data = o,
-                    i.active = true,
-                    t.addChild(i),
+                        h.component = "UIEmail",
+                        h.handler = "reqGetEmailAward",
+                        h.customEventData = JSON.stringify(o),
+                        cc.find("email_item/bg/chip/receive", i).getComponent(cc.Button).clickEvents = [],
+                        cc.find("email_item/bg/chip/receive", i).getComponent(cc.Button).clickEvents.push(h),
+                        i.data = o,
+                        i.active = true,
+                        t.addChild(i),
                         this.EmalListNode[o.id] = i
                 }
             }

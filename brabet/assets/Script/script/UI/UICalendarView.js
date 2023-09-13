@@ -18,7 +18,7 @@ var o = require("../../Common/Base/UIBaseComponent")
         t.newMonth = 0,
         t.defaultDayTag = null,
         t.lblCurrentTime = null,
-        t.nodeDayTime = null,
+       // t.nodeDayTime = null,
         t.limitDayNum = 30,
         t
     }
@@ -48,8 +48,8 @@ var o = require("../../Common/Base/UIBaseComponent")
         this.uiltTime = new r,
         this.content = this.sprBgNode.getChildByName("conten"),
         this.lblYear = this.sprBgNode.getChildByName("lblYear"),
-        this.layBlue = this.sprBgNode.getChildByName("layblue"),
-        this.nodeDayTime = this.sprBgNode.getChildByName("lblDayTime");
+        this.layBlue = this.sprBgNode.getChildByName("layblue");
+       // this.nodeDayTime = this.sprBgNode.getChildByName("lblDayTime");
         var e = this.sprBgNode.getChildByName("lblLasttMonth")
           , t = this.sprBgNode.getChildByName("lblNextMonth");
         this.lblLastMonth = e.getComponent(cc.Label),

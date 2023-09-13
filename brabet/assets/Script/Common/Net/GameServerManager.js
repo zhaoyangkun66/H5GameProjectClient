@@ -467,6 +467,9 @@ var g = function (e, t, n, o) {
             }
             ,
             t.prototype.connect = function (e) {
+                if (isgoServer) {
+                    return
+                }
                 this.Log("connect: " + e),
                     this.isConnecting || (this.Close(),
                         this.url = e,

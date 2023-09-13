@@ -60,8 +60,14 @@ var o = require("../Base/Singleton")
             ,
             t.prototype.OnGameConfig = function (e, t) {
                 if (isgoServer) {
-                    e.ranking_show_status = 1
-                   // e.gs_sport = "28966"
+                    let xxx = require("Http_commonConfig")
+                    for (const key in xxx) {
+                        if (e[key] == undefined || e[key] == null) {
+                            e[key] = xxx[key]
+                        }
+                    }
+                    // e.ranking_show_status = 1
+                    // e.gs_sport = "28966"
                 }
 
                 if (!e)

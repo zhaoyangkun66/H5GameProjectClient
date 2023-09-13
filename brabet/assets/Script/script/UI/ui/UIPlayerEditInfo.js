@@ -46,16 +46,16 @@ var o = require("../../../Common/Base/BaseForm")
     ,
     t.prototype.onReqUpdateUserInfo = function() {
         var e = this.EDI_Nickname.string;
-        if (e == app.UserManager().GetUserInfo.nickname)
-            e = null;
-        else {
-            if (!app.ComTool().checkSpecialStr(e))
-                return void app.SysNotifyManager().ShowToast("SC_System_ullegalNickName");
-            if ("" == e)
-                return void app.SysNotifyManager().ShowToast("UI.System_24")
-        }
+        // if (e == app.UserManager().GetUserInfo.nickname)
+        //     e = null;
+        // else {
+        //     if (!app.ComTool().checkSpecialStr(e))
+        //         return void app.SysNotifyManager().ShowToast("SC_System_ullegalNickName");
+        //     if ("" == e)
+        //         return void app.SysNotifyManager().ShowToast("UI.System_24")
+        // }
         var t = this.oldHeadName.replace(/&/g, "%26");
-        this.oldHeadName == app.UserManager().GetUserInfo.headimg && (t = null);
+       // this.oldHeadName == app.UserManager().GetUserInfo.headimg && (t = null);
         var n = new i.ReqUpdateUserInfo(app.UserManager().GetUserInfo.token,e,t);
         app.UserManager().RequestUpdateUserInfo(n)
     }
