@@ -54,7 +54,7 @@ function(e) {
         var e = app.GameConfigManager().GetGameConfig().game_type
           , t = this.toggleGroup.children
           , n = e.length + c.default.Start_Index > 5;
-        this.typeNode.getComponent(o.default).enabled = !!n,
+       // this.typeNode.getComponent(o.default).enabled = !!n,
         this.toggleGroup.getComponent(cc.Layout).resizeMode = n ? cc.Layout.ResizeMode.CONTAINER : cc.Layout.ResizeMode.CHILDREN,
         n ? t.forEach(function(e) {
             e.width = 116
