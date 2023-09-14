@@ -37,9 +37,9 @@ var o = require("../../../Common/Base/UIBaseComponent")
             t.prototype.OnEnable = function () {
                 this.CalendarView.active = false,
                     this.toggle_All.check(),
-                   // app.PromoteMainManager().ReqAgentReport(),
+                    // app.PromoteMainManager().ReqAgentReport(),
                     app.PromoteMainManager().ReqAgentReport(this.getTime(Number(0)))
-                    this.TotalCommission.string = "",
+                this.TotalCommission.string = "",
                     this.NumberofTeammembers.string = "",
                     this.NumberofDIRECTmembers.string = "",
                     this.CommissionWithdrawal.string = "",
@@ -110,10 +110,10 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     , n = t.getDay() ? t.getDay() : 7
                     , o = this.getDays(t.getFullYear(), t.getMonth() - 1)
                     , i = t.getDate()
-                    , a = [0, 0, n, n + 7, o + i]
+                    , a = [1000, 0, n, n + 7, o + i]
                     , r = new Date(t.getTime() - 864e5 * a[e]).format("yyyy-MM-dd")
                     , s = t.format("yyyy-MM-dd");
-                return 0 == e ? r = this.InitDateStr : 2 == e ? r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd") : 3 == e ? (r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd"),
+                return 0 == e ? r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd") : 2 == e ? r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd") : 3 == e ? (r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd"),
                     s = new Date(t.getTime() - 864e5 * n).format("yyyy-MM-dd")) : 4 == e && (r = new Date(t.getTime() - 864e5 * (a[e] - 1)).format("yyyy-MM-dd"),
                         s = new Date(t.getTime() - 864e5 * i).format("yyyy-MM-dd")),
                     this.lbl_StartTime.getComponent(cc.Label).string = r,

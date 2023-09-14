@@ -85,11 +85,11 @@ var o = require("../../../Common/Base/UIBaseComponent")
         for (n = 0; n < e.length; n++) {
             var o = e[n]
               , i = t.children[n] ? t.children[n] : cc.instantiate(t.children[0]);
-            i && (i.children[1].getChildByName("lab_name").getComponent(cc.Label).string = "" + o.id,
-            i.children[2].getChildByName("lab_times").getComponent(cc.Label).string = "" + o.create_time,
-            i.children[3].getChildByName("lab_lev").getComponent(cc.Label).string = "" + o.level,
-            i.children[4].getChildByName("lab_wager").getComponent(cc.Label).string = "" + o.total_cash,
-            i.children[5].getChildByName("lab_Dun").getComponent(cc.Label).string = "" + o.team_num,
+            i && (i.getChildByName("lab_name").getComponent(cc.Label).string = "" + o.id,
+            i.getChildByName("lab_times").getComponent(cc.Label).string = "" + o.create_time,
+            i.getChildByName("lab_lev").getComponent(cc.Label).string = "" + o.level,
+            i.getChildByName("lab_wager").getComponent(cc.Label).string = "" + o.total_cash,
+            i.getChildByName("lab_Dun").getComponent(cc.Label).string = "" + o.team_num,
             i.active = true,
             t.children[n] || t.addChild(i))
         }

@@ -167,11 +167,12 @@ var o = require("../../Common/Base/BaseForm")
     }
     ,
     t.prototype.EndEnterCode = function() {
-        this.StEnterCodeFontSize(9)
+        this.StEnterCodeFontSize(37.84)
     }
     ,
     t.prototype.StEnterCodeFontSize = function(e) {
-        app.ComTool().H5Platform() || (this.GetWndComponent("layer/UIPhone/text_otp/editbox_enter_otp/PLACEHOLDER_LABEL", cc.Label).fontSize = e,
+       // app.ComTool().H5Platform() || 
+        (this.GetWndComponent("layer/UIPhone/text_otp/editbox_enter_otp/PLACEHOLDER_LABEL", cc.Label).fontSize = e,
         this.GetWndComponent("layer/UIPhone/text_otp/editbox_enter_otp/TEXT_LABEL", cc.Label).fontSize = e)
     }
     ,

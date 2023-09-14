@@ -263,7 +263,7 @@ var p = cc._decorator
             }
             ,
             t.prototype.EndEnterCode = function () {
-                this.StEnterCodeFontSize(10)
+                this.StEnterCodeFontSize(37.84)
             }
             ,
             t.prototype.StEnterCodeFontSize = function (e) {

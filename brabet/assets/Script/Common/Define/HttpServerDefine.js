@@ -146,6 +146,7 @@ var o = function () {
 }();
 if (isgoServer) {
     o.GAME_UP = "/other_game/gameup"
+    o.GET_OPEN_REDBAG = "/activitie/openRed"
 }
 n.HttpAPI = o,
     function (e) {

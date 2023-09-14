@@ -62,11 +62,13 @@ var l = function (e) {
                     }
                 }
 
-                // let xxx = require("Http_goodsList")
+               // let xxx = require("Http_goodsList")
+               // e.push(xxx[0])
                 // for (const key in xxx) {
-                //     if (!e[key]) {
-                //         e[key] = xxx[key]
-                //     }
+                //     e.push(e[0])
+                //     // if (!e[key]) {
+                //     //     e[key] = xxx[key]
+                //     // }
                 // }
             }
             var t = this;
