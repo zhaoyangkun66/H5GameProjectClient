@@ -17,15 +17,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
         var t = null !== e && e.apply(this, arguments) || this;
         return t.gold = 0,
         t.gold_ali = 0,
-        t.lableGold = null,
-        t.availabilityGold = null,
         t.AmountNumberLabel = null,
-        t.WithdrawVia = null,
-        t.MyAccount = null,
-        t.BindBankBtnString = null,
-        t.SliderNode = null,
         t.rateLabelNode = null,
-        t.retepercentNode = null,
         t.isAgentTx = false,
         t
     }
@@ -121,7 +114,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
         }
         var r = cc.find("view/content/node_ratio", this.node);
         this.UserWallerData.withdraw_tips ? (r.getChildByName("label_radio").getComponent(cc.Label).string = this.UserWallerData.withdraw_tips,
-        r.active = true) : r.active = false//,this.node.getComponent(l.default).OnUpdateShowType()
+        r.active = true) : r.active = false,this.node.getComponent(l.default).OnUpdateShowType()
     }
     ,
     t.prototype.AmountSliderEvents = function(e) {
@@ -257,15 +250,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
         }
     }
     ,
-    __decorate([h(cc.Node)], t.prototype, "lableGold", undefined),
-    __decorate([h(cc.Node)], t.prototype, "availabilityGold", undefined),
     __decorate([h(cc.Node)], t.prototype, "AmountNumberLabel", undefined),
-    __decorate([h(cc.Node)], t.prototype, "WithdrawVia", undefined),
-    __decorate([h(cc.Node)], t.prototype, "MyAccount", undefined),
-    __decorate([h(cc.Node)], t.prototype, "BindBankBtnString", undefined),
-    __decorate([h(cc.Node)], t.prototype, "SliderNode", undefined),
     __decorate([h(cc.Label)], t.prototype, "rateLabelNode", undefined),
-    __decorate([h(cc.Label)], t.prototype, "retepercentNode", undefined),
     __decorate([d], t)
 }(o.default);
 n.default = u,

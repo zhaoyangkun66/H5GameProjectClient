@@ -19,8 +19,8 @@ var c = function(e) {
     return __extends(t, e),
     t.prototype.OnCreateInit = function() {
         this.JS_Name = "UIUniversalList",
-        this.cloneItem = cc.find("bg/con/scrollview/view/li", this.node),
-        this.parentNode = cc.find("bg/con/scrollview/view/content", this.node)
+        this.cloneItem = cc.find("bg/scrollview/view/li", this.node),
+        this.parentNode = cc.find("bg/scrollview/view/content", this.node)
     }
     ,
     t.prototype.OnShow = function() {
@@ -37,14 +37,14 @@ var c = function(e) {
             for (var e = 0; e < this.ShowData.data.length; e++) {
                 var t = this.ShowData.data[e]
                   , n = cc.instantiate(this.cloneItem);
-                cc.find("Number/label", n).getComponent(cc.Label).string = "" + t.name,
-                cc.find("bg_table/label", n).getComponent(cc.Label).string = "" + t.num,
+                cc.find("Number", n).getComponent(cc.Label).string = "" + t.name,
+                cc.find("bg_table", n).getComponent(cc.Label).string = "" + t.num,
                 n.active = true,
                 this.parentNode.addChild(n)
             }
-            cc.find("bg/top/title_code_bili", this.node).getComponent(cc.Label).string = app.i18n.t(this.ShowData.TitleList[0]),
-            cc.find("bg/con/title/bg_table/label", this.node).getComponent(cc.Label).string = app.i18n.t(this.ShowData.TitleList[1]),
-            cc.find("bg/con/title/bg_table2/label", this.node).getComponent(cc.Label).string = app.i18n.t(this.ShowData.TitleList[2])
+            cc.find("bg/title_code_bili", this.node).getComponent(cc.Label).string = app.i18n.t(this.ShowData.TitleList[0]),
+            cc.find("bg/title/bg_table", this.node).getComponent(cc.Label).string = app.i18n.t(this.ShowData.TitleList[1]),
+            cc.find("bg/title/bg_table2", this.node).getComponent(cc.Label).string = app.i18n.t(this.ShowData.TitleList[2])
         }
     }
     ,

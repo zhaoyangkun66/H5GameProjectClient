@@ -103,9 +103,9 @@ var o = require("../../../Common/Base/UIBaseComponent")
         this.li_Encrypted_Node.active = false) : (cc.find("/view/content/layout_con", this.node).active = false,
         this.li_Encrypted_Node.active = true),
         this.Email.getComponent(cc.EditBox).maxLength = 100,
-        this.ClosePixTypeList(),
-        this.setBindBankUserData(),
-        this.setBindBankEditBoxList()
+        this.ClosePixTypeList()
+       // this.setBindBankUserData()
+      //  this.setBindBankEditBoxList()
     }
     ,
     t.prototype.OnClick = function(e, t, n) {
@@ -168,12 +168,12 @@ var o = require("../../../Common/Base/UIBaseComponent")
             this.ZipCode_Node.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
             e.account_digit && "" !== e.account_digit && (this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).string = e.account_digit,
             this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
-            cc.find("toggleContainer/toggle1", this.Account_Type).getComponent(cc.Toggle).check(),
-            e.account_type && "" !== e.account_type && (1 == Number(e.account_type) ? (this.SendAccountType = 1,
-            cc.find("toggleContainer/toggle1", this.Account_Type).getComponent(cc.Toggle).check(),
-            cc.find("toggleContainer/toggle2", this.Account_Type).getComponent(cc.Toggle).isChecked = false) : (this.SendAccountType = 2,
-            cc.find("toggleContainer/toggle2", this.Account_Type).getComponent(cc.Toggle).check(),
-            cc.find("toggleContainer/toggle1", this.Account_Type).getComponent(cc.Toggle).isChecked = false)),
+            // cc.find("toggleContainer/toggle1", this.Account_Type).getComponent(cc.Toggle).check(),
+            // e.account_type && "" !== e.account_type && (1 == Number(e.account_type) ? (this.SendAccountType = 1,
+            // cc.find("toggleContainer/toggle1", this.Account_Type).getComponent(cc.Toggle).check(),
+            // cc.find("toggleContainer/toggle2", this.Account_Type).getComponent(cc.Toggle).isChecked = false) : (this.SendAccountType = 2,
+            // cc.find("toggleContainer/toggle2", this.Account_Type).getComponent(cc.Toggle).check(),
+            // cc.find("toggleContainer/toggle1", this.Account_Type).getComponent(cc.Toggle).isChecked = false)),
             e.bank_name && "" !== e.bank_name ? (this.SelectBankCodeData = {
                 bank_code: e.bank_code,
                 bank_name: e.bank_name
