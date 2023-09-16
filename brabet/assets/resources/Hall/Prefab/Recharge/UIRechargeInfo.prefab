@@ -3877,10 +3877,12 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 1
+    },
     "component": "",
-    "_componentId": "a8654YyurNAmqfrTo7tJT/O",
-    "handler": "ChangedText",
+    "_componentId": "b8790erSmtIPZFSg4JtvXgD",
+    "handler": "TaxChangeTextStr",
     "customEventData": ""
   },
   {
@@ -3890,7 +3892,7 @@
     },
     "component": "",
     "_componentId": "b8790erSmtIPZFSg4JtvXgD",
-    "handler": "TaxChangeTextStr",
+    "handler": "TaxEndTextStr",
     "customEventData": ""
   },
   {
