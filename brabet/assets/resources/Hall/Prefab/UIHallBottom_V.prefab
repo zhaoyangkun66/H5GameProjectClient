@@ -65,7 +65,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 515.6
+      "height": 521.9
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1968,7 +1968,7 @@
       "__id__": 1
     },
     "component": "",
-    "_componentId": "cc.Widget",
+    "_componentId": "73dd1fH61hDP4x6Q387GZl9",
     "handler": "OnClick_BtnWnd",
     "customEventData": ""
   },
@@ -3535,7 +3535,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 117.8
+      "height": 124.1
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3813,7 +3813,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 680,
-      "height": 37.8
+      "height": 44.1
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3825,7 +3825,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -98.9,
+        -102.05,
         0,
         0,
         0,
@@ -3906,7 +3906,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 117.8
+      "height": 124.1
     },
     "_resize": 1,
     "_N$layoutType": 2,
@@ -4030,7 +4030,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 515.6
+      "height": 521.9
     },
     "_resize": 1,
     "_N$layoutType": 2,

@@ -11,10 +11,10 @@ var o = require("../../../../Common/Base/AutoBaseComponent")
     return __extends(t, e),
     t.prototype.onLoad = function() {
         this.item = this.node,
-        this.lb_id = this.GetWndComponent("id/lb_id", cc.Label),
-        this.lb_amount = this.GetWndComponent("amount/lb_amount", cc.Label),
-        this.lb_times = this.GetWndComponent("times/lb_times", cc.Label),
-        this.lb_staus = this.GetWndComponent("staus/lb_staus", cc.Label),
+        this.lb_id = this.GetWndComponent("lb_id", cc.Label),
+        this.lb_amount = this.GetWndComponent("lb_amount", cc.Label),
+        this.lb_times = this.GetWndComponent("lb_times", cc.Label),
+        this.lb_staus = this.GetWndComponent("lb_staus", cc.Label),
         this.btn_details = this.GetWndNode("btn_details"),
         this.lb_details = this.GetWndComponent("btn_details/lb_details", cc.Label)
     }

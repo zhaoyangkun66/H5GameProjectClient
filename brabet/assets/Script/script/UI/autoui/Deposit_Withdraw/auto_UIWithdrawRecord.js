@@ -11,12 +11,12 @@ var o = require("../../../../Common/Base/AutoBaseComponent")
     return __extends(t, e),
     t.prototype.onLoad = function() {
         this.UIWithdrawRecord = this.node,
-        this.btn_setting = this.GetWndNode("general/head/btn_setting"),
-        this.lb_id = this.GetWndComponent("general/title/id/lb_id", cc.Label),
-        this.lb_amount = this.GetWndComponent("general/title/amount/lb_amount", cc.Label),
-        this.lb_times = this.GetWndComponent("general/title/times/lb_times", cc.Label),
-        this.lb_staus = this.GetWndComponent("general/title/staus/lb_staus", cc.Label),
-        this.lb_details = this.GetWndComponent("general/title/details/lb_details", cc.Label)
+        this.btn_setting = this.GetWndNode("general/btn_setting"),
+        this.lb_id = this.GetWndComponent("general/title/lb_id", cc.Label),
+        this.lb_amount = this.GetWndComponent("general/title/lb_amount", cc.Label),
+        this.lb_times = this.GetWndComponent("general/title/lb_times", cc.Label),
+        this.lb_staus = this.GetWndComponent("general/title/lb_staus", cc.Label),
+        this.lb_details = this.GetWndComponent("general/title/lb_details", cc.Label)
     }
     ,
     t.prototype.AutoBindEvent = function(e) {

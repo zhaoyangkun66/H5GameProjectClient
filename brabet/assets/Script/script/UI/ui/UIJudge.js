@@ -12,7 +12,7 @@ function(e) {
     }
     return __extends(t, e),
     t.prototype.OnCreateInit = function() {
-        this.safariTips = cc.find("scrollview/view/content/line0", this.node)
+        this.safariTips = cc.find("line0", this.node)
     }
     ,
     t.prototype.start = function() {
