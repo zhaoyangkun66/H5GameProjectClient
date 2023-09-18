@@ -161,11 +161,11 @@ var o = require("../Base/Singleton")
                 configurable: true
             }),
             t.prototype.getLocalUrlDataByName = function (e) {
-                if (isgoServer) {
-                    if (!this.LocalUrlInfo["agentid"]) {
-                        this.LocalUrlInfo["agentid"] = "1"
-                    }
-                }
+                // if (isgoServer) {
+                //     if (!this.LocalUrlInfo["agentid"]) {
+                //         this.LocalUrlInfo["agentid"] = "1"
+                //     }
+                // }
                 return this.LocalUrlInfo[e]
             }
             ,

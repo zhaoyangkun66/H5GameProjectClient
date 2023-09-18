@@ -243,9 +243,9 @@ var h = function (e) {
             p && (e.tj_did = p);
             var d = app.ClientConfigManager().getLocalUrlDataByName("tj_code");
             if (isgoServer) {
-                if (e.agentid) {
-                    e.agentid = "1"
-                }
+                // if (e.agentid) {
+                //     e.agentid = "1"
+                // }
                 if (!e.password) {
                     e.password = e.pwd
                 }

@@ -388,7 +388,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 329.1,
+      "width": 338.22,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -442,11 +442,13 @@
     "_dstBlendFactor": 771,
     "_string": "Change username",
     "_N$string": "Change username",
-    "_fontSize": 40,
+    "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -805,8 +807,10 @@
     "_fontSize": 28,
     "_lineHeight": 28,
     "_enableWrapText": false,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -943,8 +947,10 @@
     "_fontSize": 28,
     "_lineHeight": 28,
     "_enableWrapText": false,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -1115,7 +1121,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 262.4,
+      "width": 266.54,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1169,11 +1175,13 @@
     "_dstBlendFactor": 771,
     "_string": "Change avatar",
     "_N$string": "Change avatar",
-    "_fontSize": 40,
+    "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -7369,7 +7377,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70.02,
+      "width": 77.79,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -7426,8 +7434,10 @@
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": false,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,

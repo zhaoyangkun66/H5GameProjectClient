@@ -749,7 +749,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 132.6,
+      "width": 136.89,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -806,8 +806,10 @@
     "_fontSize": 45,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -932,7 +934,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 132.6,
+      "width": 136.89,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -989,8 +991,10 @@
     "_fontSize": 45,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -1570,7 +1574,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 206.78,
+      "width": 222.75,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -1627,8 +1631,10 @@
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -1803,7 +1809,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 301.53,
+      "width": 357.87,
       "height": 44.1
     },
     "_anchorPoint": {
@@ -1860,8 +1866,10 @@
     "_fontSize": 35,
     "_lineHeight": 35,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -2039,11 +2047,13 @@
     "_dstBlendFactor": 771,
     "_string": "Please open your payment app and scan the QR code below to pay.",
     "_N$string": "Please open your payment app and scan the QR code below to pay.",
-    "_fontSize": 30,
+    "_fontSize": 26,
     "_lineHeight": 35,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -2236,11 +2246,13 @@
     "_dstBlendFactor": 771,
     "_string": "Paste the Pix code into your preferred banking app or digtal wallet and cofirm the payment.",
     "_N$string": "Paste the Pix code into your preferred banking app or digtal wallet and cofirm the payment.",
-    "_fontSize": 30,
+    "_fontSize": 26,
     "_lineHeight": 35,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,

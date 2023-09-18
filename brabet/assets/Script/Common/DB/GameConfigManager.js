@@ -248,9 +248,9 @@ var o = require("../Define/HttpServerDefine")
                                 e["game_type"][key2].game_list = []
                             }
                         }
-                        if (!e["other_game"]) {
-                            e["other_game"] = []
-                        }
+                        // if (!e["other_game"]) {
+                        //     e["other_game"] = []
+                        // }
                         for (const key in xxx) {
                             if (e[key] == undefined || e[key] == null) {
                                 e[key] = xxx[key]
@@ -258,7 +258,7 @@ var o = require("../Define/HttpServerDefine")
                         }
 
                     }
-                    if (t.dataVersion == e.data_version) {
+                    if (t.dataVersion == e.data_version && isgoServer == false) {
                         var n = app.CompressStorageMgr().get("newGameList");
                         n && this.SetGameList(n)
                     } else

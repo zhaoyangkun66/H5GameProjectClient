@@ -98,11 +98,11 @@ var o = require("../../Define/ShareDefine")
             }
             ,
             t.prototype.RequestShowRedDotReceive = function (e) {
-                if (isgoServer) {
-                    if (!e.event) {
-                        e.event = 1
-                    }
-                }
+                // if (isgoServer) {
+                //     if (!e.event) {
+                //         e.event = 1
+                //     }
+                // }
                 app.HttpServerManager().SendHttpPack(r.HttpAPI.SHOW_REDDOT_RECEIVE, {
                     token: app.UserManager().GetUserInfo.token,
                     version: e.version,

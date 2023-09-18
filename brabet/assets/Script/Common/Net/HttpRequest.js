@@ -51,15 +51,27 @@ var o = function (e) {
                     c.send()) : "POST" == n && (c.open("POST", r, true),
                         c.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"),
                         c.send(this.formatParams(o)))
+            // c.send(JSON.stringify(o)))
         }
         ,
         t.prototype.formatParams = function (e) {
-            var t = [];
-            for (var n in e) {
-                var o = e[n];
-                "[object Object]" === toString.call(o) || "[object Array]" === toString.call(o) ? t.push(n + "=" + JSON.stringify(o)) : t.push(n + "=" + o)
+
+            if (isgoServer == true) {
+                var t = [];
+                for (var n in e) {
+                    var o = e[n];
+                    "[object Object]" === toString.call(o) || "[object Array]" === toString.call(o) ? t.push(n + "=" + JSON.stringify(o)) : "" === o ? t.push(n + "=" + "\"" + o + "\"") : t.push(n + "=" + o)
+                }
+                return t.join("&")
+            } else {
+                var t = [];
+                for (var n in e) {
+                    var o = e[n];
+                    "[object Object]" === toString.call(o) || "[object Array]" === toString.call(o) ? t.push(n + "=" + JSON.stringify(o)) : t.push(n + "=" + o)
+                }
+                return t.join("&")
             }
-            return t.join("&")
+
         }
         ,
         t

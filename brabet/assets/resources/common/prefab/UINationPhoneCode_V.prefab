@@ -507,7 +507,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 75.01,
+      "width": 78.34,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -561,11 +561,13 @@
     "_dstBlendFactor": 771,
     "_string": "Brazil",
     "_N$string": "Brazil",
-    "_fontSize": 30,
+    "_fontSize": 28,
     "_lineHeight": 30,
     "_enableWrapText": false,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
@@ -615,7 +617,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 50.89,
+      "width": 51.75,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -672,8 +674,10 @@
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": false,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_styleFlags": 0,
