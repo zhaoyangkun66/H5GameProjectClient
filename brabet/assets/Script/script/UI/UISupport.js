@@ -26,11 +26,9 @@ var l = cc._decorator
     function t() {
         var t = null !== e && e.apply(this, arguments) || this;
         return t.supportItem = null,
-        t.robotItem = null,
         t.supportNode = null,
         t.robotMenuItem = null,
         t.robotMenuNode = null,
-        t.titItem = null,
         t.titNode = null,
         t.n_page = 1,
         t.n_IsReadySendMatchPage = true,
@@ -443,11 +441,9 @@ var l = cc._decorator
     }
     ,
     __decorate([d(cc.Node)], t.prototype, "supportItem", undefined),
-    __decorate([d(cc.Node)], t.prototype, "robotItem", undefined),
     __decorate([d(cc.Node)], t.prototype, "supportNode", undefined),
     __decorate([d(cc.Node)], t.prototype, "robotMenuItem", undefined),
     __decorate([d(cc.Node)], t.prototype, "robotMenuNode", undefined),
-    __decorate([d(cc.Node)], t.prototype, "titItem", undefined),
     __decorate([d(cc.Node)], t.prototype, "titNode", undefined),
     __decorate([p], t)
 }(a.default);
