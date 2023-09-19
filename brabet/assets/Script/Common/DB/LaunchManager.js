@@ -60,6 +60,7 @@ var o = require("../Base/Singleton")
             ,
             t.prototype.OnGameConfig = function (e, t) {
                 if (isgoServer) {
+                    e.game_partners = null
                     let xxx = require("Http_commonConfig")
                     for (const key in xxx) {
                         if (e[key] == undefined || e[key] == null) {

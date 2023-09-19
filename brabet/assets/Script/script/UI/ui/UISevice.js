@@ -28,8 +28,8 @@ function(e) {
     ,
     t.prototype.OnClick = function(e) {
         if ("UISevice" == e) {
-            var t = app.SupportManager().SelToServiceTypeName();
-            app.FormManager().ShowForm(t)
+            //var t = app.SupportManager().SelToServiceTypeName();
+           // app.FormManager().ShowForm(t)
         }
     }
     ,

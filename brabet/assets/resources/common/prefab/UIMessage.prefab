@@ -27,14 +27,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 33
+        "__id__": 34
       },
       {
-        "__id__": 34
+        "__id__": 35
       }
     ],
     "_prefab": {
-      "__id__": 35
+      "__id__": 36
     },
     "_opacity": 255,
     "_color": {
@@ -309,14 +309,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 30
+        "__id__": 31
       },
       {
-        "__id__": 31
+        "__id__": 32
       }
     ],
     "_prefab": {
-      "__id__": 32
+      "__id__": 33
     },
     "_opacity": 255,
     "_color": {
@@ -493,11 +493,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 28
+        "__id__": 29
       }
     ],
     "_prefab": {
-      "__id__": 29
+      "__id__": 30
     },
     "_opacity": 255,
     "_color": {
@@ -879,14 +879,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 24
+        "__id__": 25
       },
       {
-        "__id__": 26
+        "__id__": 27
       }
     ],
     "_prefab": {
-      "__id__": 27
+      "__id__": 28
     },
     "_opacity": 255,
     "_color": {
@@ -947,10 +947,13 @@
     "_components": [
       {
         "__id__": 22
+      },
+      {
+        "__id__": 23
       }
     ],
     "_prefab": {
-      "__id__": 23
+      "__id__": 24
     },
     "_opacity": 255,
     "_color": {
@@ -962,7 +965,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 68.98,
+      "width": 40,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -1014,8 +1017,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Cancel",
-    "_N$string": "Cancel",
+    "_string": "取消",
+    "_N$string": "取消",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": false,
@@ -1032,6 +1035,17 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 1,
+    "_id": ""
+  },
+  {
+    "__type__": "ccb6b5ZEz9CVrJsJ0GBQvrT",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 21
+    },
+    "_enabled": true,
+    "_dataID": "Bao_Dian_Cancelar",
     "_id": ""
   },
   {
@@ -1059,7 +1073,7 @@
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 25
+        "__id__": 26
       }
     ],
     "_N$interactable": true,
@@ -1357,7 +1371,7 @@
       "__id__": 14
     },
     "BtnCancel": {
-      "__id__": 24
+      "__id__": 25
     },
     "BtnSure": {
       "__id__": 17

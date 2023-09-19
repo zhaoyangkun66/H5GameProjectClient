@@ -826,8 +826,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "VIP BONUS",
-    "_N$string": "VIP BONUS",
+    "_string": "貴賓獎金",
+    "_N$string": "貴賓獎金",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1158,8 +1158,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "REFER\nEARN",
-    "_N$string": "REFER\nEARN",
+    "_string": "推薦\n賺取",
+    "_N$string": "推薦\n賺取",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1439,7 +1439,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 220,
-      "height": 90.39999999999999
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1490,8 +1490,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Betting Bonus",
-    "_N$string": "Betting Bonus",
+    "_string": "投注紅利",
+    "_N$string": "投注紅利",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1899,19 +1899,19 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 213.77,
+      "width": 144,
       "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 0,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -20.689,
+        -128,
         0,
         0,
         0,
@@ -1951,8 +1951,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Promotions",
-    "_N$string": "Promotions",
+    "_string": "促銷活動",
+    "_N$string": "促銷活動",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -3308,19 +3308,19 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 269.14,
+      "width": 216,
       "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
+      "x": 0,
       "y": 0.5
     },
     "_trs": {
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        0,
+        -128,
         0,
         0,
         0,
@@ -3360,8 +3360,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "All promotions",
-    "_N$string": "All promotions",
+    "_string": "所有促銷活動",
+    "_N$string": "所有促銷活動",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,

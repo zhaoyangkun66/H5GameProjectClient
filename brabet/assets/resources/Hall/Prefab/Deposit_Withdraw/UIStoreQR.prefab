@@ -27,20 +27,20 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 64
-      },
-      {
-        "__id__": 65
-      },
-      {
         "__id__": 66
       },
       {
         "__id__": 67
+      },
+      {
+        "__id__": 68
+      },
+      {
+        "__id__": 69
       }
     ],
     "_prefab": {
-      "__id__": 68
+      "__id__": 70
     },
     "_opacity": 255,
     "_color": {
@@ -214,26 +214,26 @@
         "__id__": 38
       },
       {
-        "__id__": 46
+        "__id__": 47
       },
       {
-        "__id__": 49
+        "__id__": 51
       },
       {
-        "__id__": 57
+        "__id__": 59
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 61
+        "__id__": 63
       },
       {
-        "__id__": 62
+        "__id__": 64
       }
     ],
     "_prefab": {
-      "__id__": 63
+      "__id__": 65
     },
     "_opacity": 255,
     "_color": {
@@ -1491,14 +1491,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 42
+        "__id__": 43
       },
       {
-        "__id__": 44
+        "__id__": 45
       }
     ],
     "_prefab": {
-      "__id__": 45
+      "__id__": 46
     },
     "_opacity": 255,
     "_color": {
@@ -1559,10 +1559,13 @@
     "_components": [
       {
         "__id__": 40
+      },
+      {
+        "__id__": 41
       }
     ],
     "_prefab": {
-      "__id__": 41
+      "__id__": 42
     },
     "_opacity": 255,
     "_color": {
@@ -1574,7 +1577,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 222.75,
+      "width": 186.99,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -1626,8 +1629,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Copy PIX Code",
-    "_N$string": "Copy PIX Code",
+    "_string": "複製 PIX 代碼",
+    "_N$string": "複製 PIX 代碼",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -1644,6 +1647,17 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "ccb6b5ZEz9CVrJsJ0GBQvrT",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 39
+    },
+    "_enabled": true,
+    "_dataID": "UI.Service_0_main_2",
     "_id": ""
   },
   {
@@ -1671,7 +1685,7 @@
     "zoomScale": 1.2,
     "clickEvents": [
       {
-        "__id__": 43
+        "__id__": 44
       }
     ],
     "_N$interactable": true,
@@ -1793,11 +1807,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 47
+        "__id__": 48
+      },
+      {
+        "__id__": 49
       }
     ],
     "_prefab": {
-      "__id__": 48
+      "__id__": 50
     },
     "_opacity": 255,
     "_color": {
@@ -1809,7 +1826,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 357.87,
+      "width": 140,
       "height": 44.1
     },
     "_anchorPoint": {
@@ -1851,7 +1868,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 46
+      "__id__": 47
     },
     "_enabled": true,
     "_materials": [
@@ -1861,8 +1878,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Deposit information",
-    "_N$string": "Deposit information",
+    "_string": "存款信息",
+    "_N$string": "存款信息",
     "_fontSize": 35,
     "_lineHeight": 35,
     "_enableWrapText": true,
@@ -1879,6 +1896,17 @@
     "_N$fontFamily": "Arial",
     "_N$overflow": 0,
     "_N$cacheMode": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "ccb6b5ZEz9CVrJsJ0GBQvrT",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 47
+    },
+    "_enabled": true,
+    "_dataID": "UI_Deposit information",
     "_id": ""
   },
   {
@@ -1901,20 +1929,20 @@
     },
     "_children": [
       {
-        "__id__": 50
+        "__id__": 52
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 54
+        "__id__": 56
       },
       {
-        "__id__": 55
+        "__id__": 57
       }
     ],
     "_prefab": {
-      "__id__": 56
+      "__id__": 58
     },
     "_opacity": 255,
     "_color": {
@@ -1968,20 +1996,20 @@
     "_name": "New Label",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 49
+      "__id__": 51
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 51
+        "__id__": 53
       },
       {
-        "__id__": 52
+        "__id__": 54
       }
     ],
     "_prefab": {
-      "__id__": 53
+      "__id__": 55
     },
     "_opacity": 255,
     "_color": {
@@ -2035,7 +2063,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 50
+      "__id__": 52
     },
     "_enabled": true,
     "_materials": [
@@ -2045,8 +2073,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Please open your payment app and scan the QR code below to pay.",
-    "_N$string": "Please open your payment app and scan the QR code below to pay.",
+    "_string": "請打開您的支付應用程序並掃描下方二維碼進行支付。",
+    "_N$string": "請打開您的支付應用程序並掃描下方二維碼進行支付。",
     "_fontSize": 26,
     "_lineHeight": 35,
     "_enableWrapText": true,
@@ -2070,7 +2098,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 50
+      "__id__": 52
     },
     "_enabled": true,
     "_dataID": "UI_Please_open",
@@ -2092,7 +2120,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 49
+      "__id__": 51
     },
     "_enabled": true,
     "_materials": [
@@ -2124,7 +2152,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 49
+      "__id__": 51
     },
     "_enabled": true,
     "_layoutSize": {
@@ -2173,14 +2201,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 58
+        "__id__": 60
       },
       {
-        "__id__": 59
+        "__id__": 61
       }
     ],
     "_prefab": {
-      "__id__": 60
+      "__id__": 62
     },
     "_opacity": 255,
     "_color": {
@@ -2234,7 +2262,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 57
+      "__id__": 59
     },
     "_enabled": true,
     "_materials": [
@@ -2244,8 +2272,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Paste the Pix code into your preferred banking app or digtal wallet and cofirm the payment.",
-    "_N$string": "Paste the Pix code into your preferred banking app or digtal wallet and cofirm the payment.",
+    "_string": "將 Pix 代碼粘貼到您首選的銀行應用程序或數字錢包中並確認付款。",
+    "_N$string": "將 Pix 代碼粘貼到您首選的銀行應用程序或數字錢包中並確認付款。",
     "_fontSize": 26,
     "_lineHeight": 35,
     "_enableWrapText": true,
@@ -2269,7 +2297,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 57
+      "__id__": 59
     },
     "_enabled": true,
     "_dataID": "UI_Paste_the_Pix",
