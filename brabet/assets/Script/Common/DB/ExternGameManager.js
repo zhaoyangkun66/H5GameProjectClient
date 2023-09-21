@@ -225,12 +225,23 @@ var o = require("../../script/common/room_mode_tool")
                     let xmlHttp = cc.loader.getXMLHttpRequest();
                     xmlHttp.open("GET", e.url, true);
                     xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+
+                    // let l = false
+                    // let time1 = setTimeout(function () {
+                    //     d()
+                    // }, 8e3)
+                    // let d = function () {
+                    //     l || (l = true,
+                    //         clearTimeout(time1),
+                    //         xmlHttp.abort(),
+                    //         app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.ReceiveNet))
+                    // };
                     xmlHttp.onreadystatechange = function () {
+                        app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.ReceiveNet)
                         if (this.readyState == 4 && this.status == 200) {
                             // console.log("XXXXGETGETGET", xmlHttp.responseText);
                             //e.url = JSON.parse(xmlHttp.responseText).data
                             let responseData = JSON.parse(xmlHttp.responseText)
-                            app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.ReceiveNet)
                             if (responseData.resultCode == 0) {
                                 e.base_url = responseData.data
                                 self.tmpGameInfo = null,
@@ -244,6 +255,9 @@ var o = require("../../script/common/room_mode_tool")
                             }
 
                         }
+                    }
+                    xmlHttp.ontimeout = function () {
+                        app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.ReceiveNet)
                     }
                     xmlHttp.timeout = 5000;// 5 seconds for timeout
                     xmlHttp.send();
