@@ -11057,7 +11057,7 @@
         "__id__": 331
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 369
@@ -11220,7 +11220,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 31.5
+      "height": 56.49999999999999
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -11271,8 +11271,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "交易編號",
-    "_N$string": "交易編號",
+    "_string": "Transaction ID",
+    "_N$string": "Transaction ID",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -11395,8 +11395,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "日期",
-    "_N$string": "日期",
+    "_string": "Date",
+    "_N$string": "Date",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -11468,7 +11468,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 31.5
+      "height": 56.49999999999999
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -11519,8 +11519,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "存款金額",
-    "_N$string": "存款金額",
+    "_string": "Deposit Amount",
+    "_N$string": "Deposit Amount",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -11643,8 +11643,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "獎金",
-    "_N$string": "獎金",
+    "_string": "Bonus",
+    "_N$string": "Bonus",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -11767,8 +11767,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "狀態",
-    "_N$string": "狀態",
+    "_string": "Status",
+    "_N$string": "Status",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -13413,7 +13413,7 @@
         "__id__": 401
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 443
@@ -13445,7 +13445,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -953.3999999999999,
+        -1068.3999999999999,
         0,
         0,
         0,
@@ -13714,7 +13714,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -121.669,
+        -93,
         0,
         0,
         0,
@@ -13838,7 +13838,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -28.469,
+        27,
         0,
         0,
         0,
@@ -13962,7 +13962,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        85.126,
+        157,
         0,
         0,
         0,
@@ -14086,7 +14086,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        194.26,
+        288,
         0,
         0,
         0,
@@ -14176,7 +14176,7 @@
       "__id__": 372
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 394
@@ -14920,7 +14920,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -121.669,
+        -93.969,
         0,
         0,
         0,
@@ -15103,7 +15103,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -28.469,
+        32.824,
         0,
         0,
         0,
@@ -15286,7 +15286,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        85.126,
+        165.182,
         0,
         0,
         0,
@@ -15469,7 +15469,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        194.26,
+        297.05,
         0,
         0,
         0,
@@ -15625,7 +15625,7 @@
         "__id__": 433
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 437

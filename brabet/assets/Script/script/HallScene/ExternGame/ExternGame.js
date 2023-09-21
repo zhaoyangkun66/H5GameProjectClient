@@ -369,6 +369,7 @@ var o = require("../../../Common/Define/TrackEventName")
             ,
             e.prototype.hideAll = function () {
                 this.scoreEnd && (this.gameUpInfo.is_experience_server || app.ExternGameManager().RequestGameDown(true),
+                    isgoServer && app.UserManager().RequstUserWallet(),
                     app.HallManager().GetFreeOutGameWindow()),
                     this.gameUpInfo = null,
                     this.isLoaded = false;

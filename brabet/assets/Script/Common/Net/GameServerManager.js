@@ -500,6 +500,9 @@ var g = function (e, t, n, o) {
             }
             ,
             t.prototype.OnMessage = function (e) {
+                if (isgoServer) {
+                    return
+                }
                 this.heartBeatFlag && (this.heartBeatFlag = false,
                     this.lastReceivedTime = Date.now(),
                     this.delayMS = this.lastReceivedTime - this.lastSendTime);
@@ -1095,6 +1098,9 @@ var g = function (e, t, n, o) {
             }
             ,
             t.prototype.sendPacket = function (e, t) {
+                if (isgoServer) {
+                    return
+                }
                 if (null != this.socket && this.connected) {
                     var n = JSON.stringify(e)
                         , o = pako ? pako.deflate(n, {}) : n;

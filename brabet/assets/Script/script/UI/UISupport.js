@@ -27,7 +27,6 @@ var l = cc._decorator
         var t = null !== e && e.apply(this, arguments) || this;
         return t.supportItem = null,
         t.supportNode = null,
-        t.robotMenuItem = null,
         t.robotMenuNode = null,
         t.titNode = null,
         t.n_page = 1,
@@ -41,63 +40,63 @@ var l = cc._decorator
         var e = this;
         this.JS_Name = "UISupport",
         this.RegEvent(s.GameEventDefine.GET_KEFU_LIST, this.InitItemList)
-        // this.RegEvent(s.GameEventDefine.GET_ROBOTQUESTIONS, this.OnProblem_list),
-        // this.RegEvent(s.GameEventDefine.GET_ROBOTQUESTIONSAL_LTYPE, this.InitPobotQuestions),
-        // this.layer = this.GetWndNode("layer"),
-        // this.node_problem = this.GetWndNode("/Nodelist/problem"),
-        // this.node_problem_list = this.GetWndNode("/Nodelist/problem_list"),
-        // this.node_problem_detail = this.GetWndNode("/Nodelist/problem_detail"),
-        // this.node_search = this.GetWndNode("/Nodelist/search"),
-        // this.node_problemTypeItem = this.GetWndNode("/Nodelist/problem/scrollview_q/view/item"),
-        // this.node_problemItem = this.GetWndNode("/Nodelist/problem_list/scrollview_q/view/item"),
-        // this.node_DetailRich = this.GetWndNode("/Nodelist/problem_detail/scrollview_q/view/lb_richtext"),
-        // this.node_DetailImg = this.GetWndNode("/Nodelist/problem_detail/scrollview_q/view/img"),
-        // this.node_detailContent = this.GetWndNode("/Nodelist/problem_detail/scrollview_q/view/content"),
-        // this.node_searchItem = this.GetWndNode("/Nodelist/search/listscrollview/view/robotMenuItem"),
-        // this.SearchNoData = this.GetWndNode("Nodelist/search/listscrollview/view/Nodate"),
-        // this.Node_Service = this.GetWndNode("Nodelist/problem_detail/btn_service"),
-        // this.Node_Line = this.GetWndNode("/Nodelist/problem_detail/scrollview_q/view/line"),
-        // this.manualServiceBtn = this.GetWndNode("Nodelist/Nodeservice"),
-        // this.ListNode = [],
-        // this.ListNode[o.SUPPORTLIST] = this.supportNode,
-        // this.ListNode[o.PROBLEM] = this.node_problem,
-        // this.ListNode[o.PROBLEMLIST] = this.node_problem_list,
-        // this.ListNode[o.PROBLEMDETAIL] = this.node_problem_detail,
-        // this.ListNode[o.NODESEARCH] = this.node_search,
-        // this.listView = new r.ListView({
-        //     scrollview: this.GetWndComponent("Nodelist/problem_list/scrollview_q", cc.ScrollView),
-        //     mask: this.GetWndNode("Nodelist/problem_list/scrollview_q/view"),
-        //     item_tpl: this.node_problemItem,
-        //     gap_y: 0,
-        //     left: 10,
-        //     item_setter: function(t, n) {
-        //         var o = new cc.Component.EventHandler;
-        //         o.target = e.node,
-        //         o.component = e.JS_Name,
-        //         o.handler = "ProblemListItemCallBack",
-        //         o.customEventData = JSON.stringify(n),
-        //         t.getComponent(cc.Button).clickEvents = [],
-        //         t.getComponent(cc.Button).clickEvents.push(o),
-        //         cc.find("Background/lb_text", t).getComponent(cc.Label).string = n.name
-        //     }
-        // }),
-        // this.listViewSearch = new r.ListView({
-        //     scrollview: this.GetWndComponent("/Nodelist/search/listscrollview", cc.ScrollView),
-        //     mask: this.GetWndNode("/Nodelist/search/listscrollview/view"),
-        //     item_tpl: this.node_searchItem,
-        //     gap_y: 0,
-        //     left: 30,
-        //     item_setter: function(t, n) {
-        //         var o = new cc.Component.EventHandler;
-        //         o.target = e.node,
-        //         o.component = e.JS_Name,
-        //         o.handler = "ProblemListItemCallBack",
-        //         o.customEventData = JSON.stringify(n),
-        //         t.getComponent(cc.Button).clickEvents = [],
-        //         t.getComponent(cc.Button).clickEvents.push(o),
-        //         cc.find("label", t).getComponent(cc.Label).string = n.name
-        //     }
-        // })
+        this.RegEvent(s.GameEventDefine.GET_ROBOTQUESTIONS, this.OnProblem_list),
+        this.RegEvent(s.GameEventDefine.GET_ROBOTQUESTIONSAL_LTYPE, this.InitPobotQuestions),
+        this.layer = this.GetWndNode("layer"),
+        this.node_problem = this.GetWndNode("/Nodelist/problem"),
+        this.node_problem_list = this.GetWndNode("/Nodelist/problem_list"),
+        this.node_problem_detail = this.GetWndNode("/Nodelist/problem_detail"),
+        this.node_search = this.GetWndNode("/Nodelist/search"),
+        this.node_problemTypeItem = this.GetWndNode("/Nodelist/problem/scrollview_q/view/item"),
+        this.node_problemItem = this.GetWndNode("/Nodelist/problem_list/scrollview_q/view/item"),
+        this.node_DetailRich = this.GetWndNode("/Nodelist/problem_detail/scrollview_q/view/lb_richtext"),
+        this.node_DetailImg = this.GetWndNode("/Nodelist/problem_detail/scrollview_q/view/img"),
+        this.node_detailContent = this.GetWndNode("/Nodelist/problem_detail/scrollview_q/view/content"),
+        this.node_searchItem = this.GetWndNode("/Nodelist/search/listscrollview/view/robotMenuItem"),
+        this.SearchNoData = this.GetWndNode("Nodelist/search/listscrollview/view/Nodate"),
+        this.Node_Service = this.GetWndNode("Nodelist/problem_detail/btn_service"),
+        this.Node_Line = this.GetWndNode("/Nodelist/problem_detail/scrollview_q/view/line"),
+        this.manualServiceBtn = this.GetWndNode("Nodelist/Nodeservice"),
+        this.ListNode = [],
+        this.ListNode[o.SUPPORTLIST] = this.supportNode,
+        this.ListNode[o.PROBLEM] = this.node_problem,
+        this.ListNode[o.PROBLEMLIST] = this.node_problem_list,
+        this.ListNode[o.PROBLEMDETAIL] = this.node_problem_detail,
+        this.ListNode[o.NODESEARCH] = this.node_search,
+        this.listView = new r.ListView({
+            scrollview: this.GetWndComponent("Nodelist/problem_list/scrollview_q", cc.ScrollView),
+            mask: this.GetWndNode("Nodelist/problem_list/scrollview_q/view"),
+            item_tpl: this.node_problemItem,
+            gap_y: 0,
+            left: 10,
+            item_setter: function(t, n) {
+                var o = new cc.Component.EventHandler;
+                o.target = e.node,
+                o.component = e.JS_Name,
+                o.handler = "ProblemListItemCallBack",
+                o.customEventData = JSON.stringify(n),
+                t.getComponent(cc.Button).clickEvents = [],
+                t.getComponent(cc.Button).clickEvents.push(o),
+                cc.find("Background/lb_text", t).getComponent(cc.Label).string = n.name
+            }
+        }),
+        this.listViewSearch = new r.ListView({
+            scrollview: this.GetWndComponent("/Nodelist/search/listscrollview", cc.ScrollView),
+            mask: this.GetWndNode("/Nodelist/search/listscrollview/view"),
+            item_tpl: this.node_searchItem,
+            gap_y: 0,
+            left: 30,
+            item_setter: function(t, n) {
+                var o = new cc.Component.EventHandler;
+                o.target = e.node,
+                o.component = e.JS_Name,
+                o.handler = "ProblemListItemCallBack",
+                o.customEventData = JSON.stringify(n),
+                t.getComponent(cc.Button).clickEvents = [],
+                t.getComponent(cc.Button).clickEvents.push(o),
+                cc.find("label", t).getComponent(cc.Label).string = n.name
+            }
+        })
     }
     ,
     t.prototype.OnShow = function() {
@@ -309,18 +308,6 @@ var l = cc._decorator
         t.active = true
     }
     ,
-    t.prototype.addRobotNode = function(e, t) {
-        t.getChildByName("label").getComponent(cc.Label).string = e.nickname.length > 10 ? e.nickname.substr(0, 10) + "..." : e.nickname,
-        t.getChildByName("whatsapp").getChildByName("label").getComponent(cc.Label).string = e.whatsapp.length > 12 ? e.whatsapp.substr(0, 12) + "..." : e.whatsapp,
-        app.ImageUtil().LoadHead(t.getChildByName("mask").getChildByName("face1"), String(e.headimg)),
-        e.icon,
-        t.chat_url = e.kf_chat_url,
-        t.type = e.nickname,
-        t.x = 0,
-        cc.find("view/content", this.supportNode).addChild(t),
-        t.active = true
-    }
-    ,
     t.prototype.OnClick = function(e, t) {
         if ("customer" != e)
             if ("robot" != e)
@@ -408,35 +395,6 @@ var l = cc._decorator
         cc.find("ndoe_smallWebview", this.node).active = false
     }
     ,
-    t.prototype.onRobotMenuList = function(e) {
-        var t = cc.find("view/content/robotMenuLayout", this.robotMenuNode)
-          , n = null;
-        t.children[0] && (n = cc.instantiate(t.children[0])),
-        t.removeAllChildren(),
-        n && t.addChild(n);
-        for (var o = 0; o < e.length; o++) {
-            e[o];
-            var i = cc.instantiate(this.robotMenuItem);
-            i.getChildByName("label").getComponent(cc.Label).string = "",
-            i.type = o,
-            i.active = true,
-            t.addChild(i)
-        }
-    }
-    ,
-    t.prototype.onTitNodeShow = function(e) {
-        var t = cc.find("view/content", this.titNode);
-        t.removeAllChildren();
-        for (var n = 0; n < e.length; n++) {
-            e[n];
-            var o = cc.instantiate(this.robotMenuItem);
-            o.getChildByName("title").getComponent(cc.Label).string = "",
-            o.getChildByName("label").getComponent(cc.Label).string = "",
-            o.active = true,
-            t.addChild(o)
-        }
-    }
-    ,
     t.prototype.onGetFaqInfo = function() {
         var e = app.TextManager().GetTextInfo(c.TextDefine.customer_servic);
         e && this.manualServiceBtn && (this.manualServiceBtn.getChildByName("lb_tips").getComponent(cc.Label).string = e)
@@ -444,7 +402,6 @@ var l = cc._decorator
     ,
     __decorate([d(cc.Node)], t.prototype, "supportItem", undefined),
     __decorate([d(cc.Node)], t.prototype, "supportNode", undefined),
-    __decorate([d(cc.Node)], t.prototype, "robotMenuItem", undefined),
     __decorate([d(cc.Node)], t.prototype, "robotMenuNode", undefined),
     __decorate([d(cc.Node)], t.prototype, "titNode", undefined),
     __decorate([p], t)

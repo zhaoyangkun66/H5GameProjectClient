@@ -3,6 +3,7 @@ Object.defineProperty(n, "__esModule", {
     value: true
 }),
     n.ExternGameManager = undefined;
+let EventWaitType = require("../Define/EventWaitType")
 var o = require("../../script/common/room_mode_tool")
     , i = require("../Base/Singleton")
     , a = require("../Define/HttpServerDefine")
@@ -165,13 +166,19 @@ var o = require("../../script/common/room_mode_tool")
                     app.UserManager().getIsOfficialAccount() && !this.timer) {
                     e && app.Client.OnEvent(s.GameEventDefine.SHOW_GAME_DOWN);
                     var n = function () {
-                        // var e = app.UserManager().GetUserInfo.token;
-                        // app.HttpServerManager().SendHttpPack(a.HttpAPI.GAME_DOWN, {
-                        //     token: e
-                        // }, false)
+                        // if (!isgoServer) {
+                        var e = app.UserManager().GetUserInfo.token;
+                        app.HttpServerManager().SendHttpPack(a.HttpAPI.GAME_DOWN, {
+                            token: e
+                        }, false)
+                        // }
+
                     };
                     n();
                     var o = 0;
+                    // if (isgoServer) {
+                    //     o = 3
+                    // }
                     this.timer = window.setInterval(function () {
                         o++,
                             n(),
@@ -222,16 +229,25 @@ var o = require("../../script/common/room_mode_tool")
                         if (this.readyState == 4 && this.status == 200) {
                             // console.log("XXXXGETGETGET", xmlHttp.responseText);
                             //e.url = JSON.parse(xmlHttp.responseText).data
-                            e.base_url = JSON.parse(xmlHttp.responseText).data
-                            self.tmpGameInfo = null,
-                                e.base_url ? (self.gid = e.gid,
-                                    self.ClearTimer(),
-                                    app.ComTool().CheckPlatform() || 0 !== t.direction || p.default.setOrientation(cc.find("Canvas").getComponent(cc.Canvas), "H"),
-                                    self.WebExternGame.init(e)) : self.ErrLog("Invalid base_url")
+                            let responseData = JSON.parse(xmlHttp.responseText)
+                            app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.ReceiveNet)
+                            if (responseData.resultCode == 0) {
+                                e.base_url = responseData.data
+                                self.tmpGameInfo = null,
+                                    e.base_url ? (self.gid = e.gid,
+                                        self.ClearTimer(),
+                                        app.ComTool().CheckPlatform() || 0 !== t.direction || p.default.setOrientation(cc.find("Canvas").getComponent(cc.Canvas), "H"),
+                                        self.WebExternGame.init(e)) : self.ErrLog("Invalid base_url")
+                            }
+                            else {
+                                app.SysNotifyManager().ShowToast(responseData.data)
+                            }
+
                         }
                     }
                     xmlHttp.timeout = 5000;// 5 seconds for timeout
                     xmlHttp.send();
+                    app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.OpenNet)
                 }
                 else {
                     this.tmpGameInfo = null,
