@@ -28,6 +28,7 @@ function(e) {
     ,
     t.prototype.OnClick = function(e) {
         if ("UISevice" == e) {
+            cc.sys.openURL("http://192.168.1.100:280/client/kefu/")
             //var t = app.SupportManager().SelToServiceTypeName();
            // app.FormManager().ShowForm(t)
         }

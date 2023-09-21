@@ -115,9 +115,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 187,
-      "g": 187,
-      "b": 187,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -296,9 +296,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 187,
-      "g": 187,
-      "b": 187,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -477,9 +477,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 187,
-      "g": 187,
-      "b": 187,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -658,9 +658,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 187,
-      "g": 187,
-      "b": 187,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -913,14 +913,14 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 187,
-      "g": 187,
-      "b": 187,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 48,
+      "width": 77.2,
       "height": 35.28
     },
     "_anchorPoint": {
@@ -972,9 +972,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "詳情",
-    "_N$string": "詳情",
-    "_fontSize": 24,
+    "_string": "Details",
+    "_N$string": "Details",
+    "_fontSize": 22,
     "_lineHeight": 28,
     "_enableWrapText": true,
     "_N$file": {
@@ -1151,7 +1151,9 @@
     "_N$hoverSprite": null,
     "hoverSprite": null,
     "_N$disabledSprite": null,
-    "_N$target": null,
+    "_N$target": {
+      "__id__": 19
+    },
     "_id": ""
   },
   {

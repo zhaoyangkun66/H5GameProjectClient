@@ -165,10 +165,10 @@ var o = require("../../script/common/room_mode_tool")
                     app.UserManager().getIsOfficialAccount() && !this.timer) {
                     e && app.Client.OnEvent(s.GameEventDefine.SHOW_GAME_DOWN);
                     var n = function () {
-                        var e = app.UserManager().GetUserInfo.token;
-                        app.HttpServerManager().SendHttpPack(a.HttpAPI.GAME_DOWN, {
-                            token: e
-                        }, false)
+                        // var e = app.UserManager().GetUserInfo.token;
+                        // app.HttpServerManager().SendHttpPack(a.HttpAPI.GAME_DOWN, {
+                        //     token: e
+                        // }, false)
                     };
                     n();
                     var o = 0;

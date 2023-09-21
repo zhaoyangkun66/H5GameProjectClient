@@ -219,8 +219,9 @@ var h = function (e) {
                 , o = t.gaid
                 , i = t.ajtrackerName
                 , a = t.aj_gaid;
-                
-            n && (e.agentid = n),
+
+            // n && 
+            (e.agentid = n),
                 o && (e.gaid = o),
                 i && (e.ajtrackerName = i),
                 a && (e.aj_gaid = a),
@@ -243,9 +244,9 @@ var h = function (e) {
             p && (e.tj_did = p);
             var d = app.ClientConfigManager().getLocalUrlDataByName("tj_code");
             if (isgoServer) {
-                // if (e.agentid) {
-                //     e.agentid = "1"
-                // }
+                if (e.agentid=="") {
+                    e.agentid = "0"
+                }
                 if (!e.password) {
                     e.password = e.pwd
                 }

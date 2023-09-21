@@ -57,12 +57,25 @@ var o = function (e) {
         t.prototype.formatParams = function (e) {
 
             if (isgoServer == true) {
+                // var t = [];
+                // for (var n in e) {
+                //     var o = e[n];
+                //     "[object Object]" === toString.call(o) || "[object Array]" === toString.call(o) ? t.push(n + "=" + JSON.stringify(o)) : t.push(n + "=" + o)
+                // }
+                // return t.join("&")
                 var t = [];
                 for (var n in e) {
                     var o = e[n];
                     "[object Object]" === toString.call(o) || "[object Array]" === toString.call(o) ? t.push(n + "=" + JSON.stringify(o)) : "" === o ? t.push(n + "=" + "\"" + o + "\"") : t.push(n + "=" + o)
                 }
                 return t.join("&")
+
+                // var t = [];
+                // for (var n in e) {
+                //     var o = e[n];
+                //     "[object Object]" === toString.call(o) || "[object Array]" === toString.call(o) ? t.push(n + "=" + JSON.stringify(o)) : "[object String]" === toString.call(o) ? t.push(n + "=" + "\"" + o + "\"") : t.push(n + "=" + o)
+                // }
+                // return t.join("&")
             } else {
                 var t = [];
                 for (var n in e) {

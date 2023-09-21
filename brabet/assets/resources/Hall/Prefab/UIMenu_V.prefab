@@ -339,7 +339,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 460,
-      "height": 835
+      "height": 700
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -413,7 +413,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 420,
-      "height": 395
+      "height": 260
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -425,7 +425,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -217.5,
+        -150,
         0,
         0,
         0,
@@ -499,7 +499,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        135,
+        67.5,
         0,
         0,
         0,
@@ -826,8 +826,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "貴賓獎金",
-    "_N$string": "貴賓獎金",
+    "_string": "VIP BONUS",
+    "_N$string": "VIP BONUS",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1052,7 +1052,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        0,
+        -67.5,
         0,
         0,
         0,
@@ -1158,8 +1158,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "推薦\n賺取",
-    "_N$string": "推薦\n賺取",
+    "_string": "REFER\nEARN",
+    "_N$string": "REFER\nEARN",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1349,7 +1349,7 @@
         "__id__": 32
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 36
@@ -1439,7 +1439,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 220,
-      "height": 50.4
+      "height": 90.39999999999999
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1490,8 +1490,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "投注紅利",
-    "_N$string": "投注紅利",
+    "_string": "Betting Bonus",
+    "_N$string": "Betting Bonus",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1680,7 +1680,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 420,
-      "height": 395
+      "height": 260
     },
     "_resize": 1,
     "_N$layoutType": 2,
@@ -1768,7 +1768,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -435,
+        -300,
         0,
         0,
         0,
@@ -1899,7 +1899,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 144,
+      "width": 213.77,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1951,8 +1951,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "促銷活動",
-    "_N$string": "促銷活動",
+    "_string": "Promotions",
+    "_N$string": "Promotions",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -3308,7 +3308,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 216,
+      "width": 269.14,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -3360,8 +3360,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "所有促銷活動",
-    "_N$string": "所有促銷活動",
+    "_string": "All promotions",
+    "_N$string": "All promotions",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -5686,7 +5686,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -775,
+        -640,
         0,
         0,
         0,
@@ -9308,7 +9308,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 460,
-      "height": 835
+      "height": 700
     },
     "_resize": 1,
     "_N$layoutType": 2,

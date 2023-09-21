@@ -62,7 +62,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 1085
+      "height": 1370.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -16790,7 +16790,7 @@
         "__id__": 663
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 977
@@ -17902,7 +17902,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 48,
+      "width": 83.02,
       "height": 30.24
     },
     "_anchorPoint": {
@@ -17954,8 +17954,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "搜索",
-    "_N$string": "搜索",
+    "_string": "Search",
+    "_N$string": "Search",
     "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,
@@ -18417,7 +18417,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 44,
+      "width": 28.38,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -18469,8 +18469,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "所有",
-    "_N$string": "所有",
+    "_string": "All",
+    "_N$string": "All",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -19013,7 +19013,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 44,
+      "width": 65.91,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -19065,8 +19065,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "今天",
-    "_N$string": "今天",
+    "_string": "Today",
+    "_N$string": "Today",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -19609,7 +19609,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 66,
+      "width": 110.9,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -19661,8 +19661,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "本星期",
-    "_N$string": "本星期",
+    "_string": "This week",
+    "_N$string": "This week",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -20205,7 +20205,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 44,
+      "width": 112.2,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -20257,8 +20257,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "上週",
-    "_N$string": "上週",
+    "_string": "Last week",
+    "_N$string": "Last week",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -20801,7 +20801,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 66,
+      "width": 127.27,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -20853,8 +20853,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "這個月",
-    "_N$string": "這個月",
+    "_string": "This month",
+    "_N$string": "This month",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -20996,7 +20996,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 66,
+      "width": 127.27,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -21048,8 +21048,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "這個月",
-    "_N$string": "這個月",
+    "_string": "This month",
+    "_N$string": "This month",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -21451,7 +21451,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 72,
+      "width": 213.96,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -21503,8 +21503,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "總佣金",
-    "_N$string": "總佣金",
+    "_string": "Total commission",
+    "_N$string": "Total commission",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -21700,7 +21700,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "NumberofTeammembers",
+    "_name": "Subordinate",
     "_objFlags": 0,
     "_parent": {
       "__id__": 447
@@ -21799,7 +21799,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 144,
+      "width": 238.34,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -21851,8 +21851,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "團隊成員數量",
-    "_N$string": "團隊成員數量",
+    "_string": "New top-up players",
+    "_N$string": "New top-up players",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -21879,7 +21879,7 @@
       "__id__": 584
     },
     "_enabled": true,
-    "_dataID": "UI.PromotionNumBerofTeam",
+    "_dataID": "UI.MakeMoney_0_main_19",
     "_id": ""
   },
   {
@@ -22043,12 +22043,12 @@
     "asset": {
       "__uuid__": "96083d03-c332-4a3f-9386-d03e2d19e8ee"
     },
-    "fileId": "21FqET0ydGr611ZpboOxkV",
+    "fileId": "a4+z3TmolATbVjmFWBMmc9",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "NumberofDIRECTmembers",
+    "_name": "NumberofTeammembers",
     "_objFlags": 0,
     "_parent": {
       "__id__": 447
@@ -22147,7 +22147,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 144,
+      "width": 330.22,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -22199,8 +22199,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "直接成員數量",
-    "_N$string": "直接成員數量",
+    "_string": "Number of Team members",
+    "_N$string": "Number of Team members",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -22227,7 +22227,7 @@
       "__id__": 594
     },
     "_enabled": true,
-    "_dataID": "UI.MakeMoney_1_Sharetoearn_4",
+    "_dataID": "UI.PromotionNumBerofTeam",
     "_id": ""
   },
   {
@@ -22391,12 +22391,12 @@
     "asset": {
       "__uuid__": "96083d03-c332-4a3f-9386-d03e2d19e8ee"
     },
-    "fileId": "aeQpl6qrdKxK+mayZ0GJcF",
+    "fileId": "21FqET0ydGr611ZpboOxkV",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "CommissionWithdrawal",
+    "_name": "NumberofDIRECTmembers",
     "_objFlags": 0,
     "_parent": {
       "__id__": 447
@@ -22495,7 +22495,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 96,
+      "width": 334.51,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -22547,8 +22547,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "佣金提款",
-    "_N$string": "佣金提款",
+    "_string": "Number of direct members",
+    "_N$string": "Number of direct members",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -22575,7 +22575,7 @@
       "__id__": 604
     },
     "_enabled": true,
-    "_dataID": "UI.PromotionNumCWithdrawal",
+    "_dataID": "UI.MakeMoney_1_Sharetoearn_4",
     "_id": ""
   },
   {
@@ -22739,12 +22739,12 @@
     "asset": {
       "__uuid__": "96083d03-c332-4a3f-9386-d03e2d19e8ee"
     },
-    "fileId": "1cpnOeMNRIwKUZrKmMJZ3H",
+    "fileId": "aeQpl6qrdKxK+mayZ0GJcF",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "CommissionTransfer",
+    "_name": "CommissionWithdrawal",
     "_objFlags": 0,
     "_parent": {
       "__id__": 447
@@ -22843,7 +22843,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 96,
+      "width": 299.38,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -22895,8 +22895,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "佣金轉移",
-    "_N$string": "佣金轉移",
+    "_string": "Commission Withdrawal",
+    "_N$string": "Commission Withdrawal",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -22923,7 +22923,7 @@
       "__id__": 614
     },
     "_enabled": true,
-    "_dataID": "UI.PromotionCommissionTransfer",
+    "_dataID": "UI.PromotionNumCWithdrawal",
     "_id": ""
   },
   {
@@ -23087,12 +23087,12 @@
     "asset": {
       "__uuid__": "96083d03-c332-4a3f-9386-d03e2d19e8ee"
     },
-    "fileId": "a8KLzj/bRFLZhkKPaReplu",
+    "fileId": "1cpnOeMNRIwKUZrKmMJZ3H",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "BettingCommission",
+    "_name": "CommissionTransfer",
     "_objFlags": 0,
     "_parent": {
       "__id__": 447
@@ -23191,7 +23191,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 96,
+      "width": 256.32,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -23243,8 +23243,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "投注佣金",
-    "_N$string": "投注佣金",
+    "_string": "Commission Transfer",
+    "_N$string": "Commission Transfer",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -23271,7 +23271,7 @@
       "__id__": 624
     },
     "_enabled": true,
-    "_dataID": "UI.PromotionBettingCommission",
+    "_dataID": "UI.PromotionCommissionTransfer",
     "_id": ""
   },
   {
@@ -23435,12 +23435,12 @@
     "asset": {
       "__uuid__": "96083d03-c332-4a3f-9386-d03e2d19e8ee"
     },
-    "fileId": "dbXTNDaLdF3Z15xGDFROzi",
+    "fileId": "a8KLzj/bRFLZhkKPaReplu",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "InvitationConquest",
+    "_name": "BettingCommission",
     "_objFlags": 0,
     "_parent": {
       "__id__": 447
@@ -23539,7 +23539,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 96,
+      "width": 250.3,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -23591,8 +23591,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "邀請寶箱",
-    "_N$string": "邀請寶箱",
+    "_string": "Betting Commission",
+    "_N$string": "Betting Commission",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -23619,7 +23619,7 @@
       "__id__": 634
     },
     "_enabled": true,
-    "_dataID": "UI.PromotionInvitationConquest",
+    "_dataID": "UI.PromotionBettingCommission",
     "_id": ""
   },
   {
@@ -23783,12 +23783,12 @@
     "asset": {
       "__uuid__": "96083d03-c332-4a3f-9386-d03e2d19e8ee"
     },
-    "fileId": "ce5j77jH9H9rbUYOAuxhzj",
+    "fileId": "dbXTNDaLdF3Z15xGDFROzi",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "InvitationBonus",
+    "_name": "InvitationConquest",
     "_objFlags": 0,
     "_parent": {
       "__id__": 447
@@ -23887,7 +23887,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 96,
+      "width": 240.29,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -23939,8 +23939,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "邀請獎金",
-    "_N$string": "邀請獎金",
+    "_string": "Invitation Conquest",
+    "_N$string": "Invitation Conquest",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -23967,7 +23967,7 @@
       "__id__": 644
     },
     "_enabled": true,
-    "_dataID": "UI_Share_InvitesBonus",
+    "_dataID": "UI.PromotionInvitationConquest",
     "_id": ""
   },
   {
@@ -24131,12 +24131,12 @@
     "asset": {
       "__uuid__": "96083d03-c332-4a3f-9386-d03e2d19e8ee"
     },
-    "fileId": "30/2zDTWNDCYnzkUx3hprT",
+    "fileId": "ce5j77jH9H9rbUYOAuxhzj",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "Subordinate",
+    "_name": "InvitationBonus",
     "_objFlags": 0,
     "_parent": {
       "__id__": 447
@@ -24235,7 +24235,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 144,
+      "width": 198.84,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -24287,8 +24287,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "下级首冲人数",
-    "_N$string": "下级首冲人数",
+    "_string": "Invitation bonus",
+    "_N$string": "Invitation bonus",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -24315,7 +24315,7 @@
       "__id__": 654
     },
     "_enabled": true,
-    "_dataID": "UI.MakeMoney_0_main_19",
+    "_dataID": "UI_Share_InvitesBonus",
     "_id": ""
   },
   {
@@ -24479,7 +24479,7 @@
     "asset": {
       "__uuid__": "96083d03-c332-4a3f-9386-d03e2d19e8ee"
     },
-    "fileId": "a4+z3TmolATbVjmFWBMmc9",
+    "fileId": "30/2zDTWNDCYnzkUx3hprT",
     "sync": false
   },
   {
@@ -36402,28 +36402,28 @@
       "__id__": 579
     },
     "NumberofTeammembers": {
-      "__id__": 589
-    },
-    "NumberofDIRECTmembers": {
       "__id__": 599
     },
-    "CommissionWithdrawal": {
+    "NumberofDIRECTmembers": {
       "__id__": 609
     },
-    "CommissionTransfer": {
+    "CommissionWithdrawal": {
       "__id__": 619
     },
-    "BettingCommission": {
+    "CommissionTransfer": {
       "__id__": 629
     },
-    "InvitationConquest": {
+    "BettingCommission": {
       "__id__": 639
     },
-    "InvitationBonus": {
+    "InvitationConquest": {
       "__id__": 649
     },
-    "Subordinate": {
+    "InvitationBonus": {
       "__id__": 659
+    },
+    "Subordinate": {
+      "__id__": 589
     },
     "lbl_StartTime": {
       "__id__": 456
@@ -36477,7 +36477,7 @@
         "__id__": 1087
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 1108
@@ -45433,7 +45433,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 1085
+      "height": 1370.28
     },
     "_resize": 1,
     "_N$layoutType": 2,

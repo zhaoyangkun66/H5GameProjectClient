@@ -169,8 +169,9 @@ var l = function (e) {
         t.prototype.SetUserInfo = function (e) {
             this.UserInfo = e
             if (isgoServer) {
-                let user_config = require("Http_login").user_config
-                this.UserInfo.user_config.show_arr = require("Http_login").user_config.show_arr
+                if (!this.UserInfo.user_config.show_arr) {
+                    this.UserInfo.user_config.show_arr = require("Http_login").user_config.show_arr
+                }
             }
            // this.UserInfo.account=''
             this.UserInfo.gold = e.gold || 0,

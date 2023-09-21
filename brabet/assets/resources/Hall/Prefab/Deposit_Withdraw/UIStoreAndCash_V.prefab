@@ -677,7 +677,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 110.57,
+      "width": 200.65,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -729,8 +729,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Deposit",
-    "_N$string": "Deposit",
+    "_string": "UI_Top_Wallet",
+    "_N$string": "UI_Top_Wallet",
     "_fontSize": 28,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -872,7 +872,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 110.57,
+      "width": 200.65,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -924,8 +924,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Deposit",
-    "_N$string": "Deposit",
+    "_string": "UI_Top_Wallet",
+    "_N$string": "UI_Top_Wallet",
     "_fontSize": 28,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -1238,7 +1238,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 294.81,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -1290,8 +1290,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "提現",
-    "_N$string": "提現",
+    "_string": "UI.cashout_0_main_1",
+    "_N$string": "UI.cashout_0_main_1",
     "_fontSize": 28,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -6809,7 +6809,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 72,
+      "width": 379.04,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6861,8 +6861,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "提現",
-    "_N$string": "提現",
+    "_string": "UI.cashout_0_main_1",
+    "_N$string": "UI.cashout_0_main_1",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -7491,7 +7491,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 72,
+      "width": 258.38,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -7543,8 +7543,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "可提款",
-    "_N$string": "可提款",
+    "_string": "UI.cashout_0_main_3",
+    "_N$string": "UI.cashout_0_main_3",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -7928,7 +7928,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 144,
+      "width": 306.53,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -7980,8 +7980,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "輸入您的金額",
-    "_N$string": "輸入您的金額",
+    "_string": "UI_CASHOUT_ENTERTOP",
+    "_N$string": "UI_CASHOUT_ENTERTOP",
     "_fontSize": 24,
     "_lineHeight": 36,
     "_enableWrapText": true,
@@ -8502,8 +8502,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "請輸入您的金額",
-    "_N$string": "請輸入您的金額",
+    "_string": "UI_CASHOUT_ENTER_AMOUNT",
+    "_N$string": "UI_CASHOUT_ENTER_AMOUNT",
     "_fontSize": 28,
     "_lineHeight": 35,
     "_enableWrapText": false,
@@ -8876,7 +8876,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
+      "width": 165.06,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -8928,8 +8928,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "提款費：",
-    "_N$string": "提款費：",
+    "_string": "UI_Commossion",
+    "_N$string": "UI_Commossion",
     "_fontSize": 20,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -9009,7 +9009,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        80,
+        165.06,
         0,
         0,
         0,
@@ -11801,7 +11801,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 88,
+      "width": 226.28,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -11848,7 +11848,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": true,
-    "_N$string": "電話號碼",
+    "_N$string": "UI.cashout_1_bank_10",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 22,
     "_N$font": null,
@@ -12287,8 +12287,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "輸入電話號碼",
-    "_N$string": "輸入電話號碼",
+    "_string": "UI.Charge_1_info_5",
+    "_N$string": "UI.Charge_1_info_5",
     "_fontSize": 22,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -14785,8 +14785,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "輸入 CPF",
-    "_N$string": "輸入 CPF",
+    "_string": "UI_Shop_InputTaxId",
+    "_N$string": "UI_Shop_InputTaxId",
     "_fontSize": 22,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -15049,7 +15049,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 178.49,
+      "width": 233.55,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -15096,7 +15096,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": true,
-    "_N$string": "<b><color=#59677C>Chave Pix (CPF)</color><color=#ff0000>*</color></b>",
+    "_N$string": "UI_Cash_StarColor_Pix",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 22,
     "_N$font": null,
@@ -15535,8 +15535,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "輸入Pix (CPF)",
-    "_N$string": "輸入Pix (CPF)",
+    "_string": "UI_Input_Pix",
+    "_N$string": "UI_Input_Pix",
     "_fontSize": 22,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -15799,7 +15799,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 88,
+      "width": 238.85,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -15851,8 +15851,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "電子郵件",
-    "_N$string": "電子郵件",
+    "_string": "UI.cashout_1_bank_12",
+    "_N$string": "UI.cashout_1_bank_12",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -16299,8 +16299,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "輸入電子郵件地址",
-    "_N$string": "輸入電子郵件地址",
+    "_string": "UI.cashout_1_bank_13",
+    "_N$string": "UI.cashout_1_bank_13",
     "_fontSize": 22,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -20283,7 +20283,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 289.69,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -20335,8 +20335,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "記錄",
-    "_N$string": "記錄",
+    "_string": "UI_Withdraw_Recod",
+    "_N$string": "UI_Withdraw_Recod",
     "_fontSize": 28,
     "_lineHeight": 36,
     "_enableWrapText": true,

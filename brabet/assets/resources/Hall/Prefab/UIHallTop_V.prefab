@@ -4664,7 +4664,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 87.25,
+      "width": 278.4,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -4716,8 +4716,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Home",
-    "_N$string": "Home",
+    "_string": "UI_Menu_AllGames",
+    "_N$string": "UI_Menu_AllGames",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -5177,7 +5177,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 75.77,
+      "width": 236.94,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -5229,8 +5229,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Refer",
-    "_N$string": "Refer",
+    "_string": "UI_TopMenuTitle",
+    "_N$string": "UI_TopMenuTitle",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -5742,8 +5742,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Promotion",
-    "_N$string": "Promotion",
+    "_string": "UI_TopCoupon",
+    "_N$string": "UI_TopCoupon",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -6206,7 +6206,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80.72,
+      "width": 181.97,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6258,8 +6258,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Email",
-    "_N$string": "Email",
+    "_string": "UI_EnterMail",
+    "_N$string": "UI_EnterMail",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -6921,7 +6921,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 70.76,
+      "width": 219.74,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6973,8 +6973,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Mine",
-    "_N$string": "Mine",
+    "_string": "UI.TP_0_Main_2",
+    "_N$string": "UI.TP_0_Main_2",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": true,
