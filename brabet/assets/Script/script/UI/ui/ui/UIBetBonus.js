@@ -81,9 +81,9 @@ var o = require("../../../../Common/Base/BaseForm")
     ,
     t.prototype.onVIPLvPercent = function() {
         var e = app.BetBonusManager().GeBetVIPLvPercent()
-          , t = this.GetWndNode("content/top/laylout", this.RatioNode);
+          , t = this.GetWndNode("top/laylout", this.RatioNode);
         t.removeAllChildren();
-        var n = this.GetWndNode("content/top/item", this.RatioNode)
+        var n = this.GetWndNode("top/item", this.RatioNode)
           , o = 0
           , i = true;
         Object.keys(e).forEach(function(a) {
@@ -102,19 +102,19 @@ var o = require("../../../../Common/Base/BaseForm")
             t.addChild(s)
         });
         var a = Number(app.UserManager().GetUserInfo.vip_id - 1);
-        this.GetWndComponent("content/top/title/vip/lbl_vip", cc.Label, this.RatioNode).string = "" + a;
+        this.GetWndComponent("top/title/vip/lbl_vip", cc.Label, this.RatioNode).string = "" + a;
         var r = 0;
         a >= 3 && a < 5 ? r = 1 : a >= 5 && (r = 2),
-        this.GetWndComponent("content/top/title/vip/bg", cc.Sprite, this.RatioNode).spriteFrame = this.vipSprS[r];
+        this.GetWndComponent("top/title/vip/bg", cc.Sprite, this.RatioNode).spriteFrame = this.vipSprS[r];
         var s = o > 2
-          , c = this.GetWndNode("content/top", this.RatioNode);
+          , c = this.GetWndNode("top", this.RatioNode);
         c.getComponent(cc.Layout).enabled = s,
         s ? c.getComponent(cc.Layout).updateLayout() : c.height = 270;
         var l = 0 == app.UserManager().UserInfo.is_keep_level ? app.i18n.t("UI.AccountInfoVipCurrent") + "V0" : app.i18n.t("UI.AccountInfoVipCurrent") + "V" + a
           , p = 0 == app.UserManager().UserInfo.is_keep_level ? app.i18n.t("UI_Next") + "V" + a : app.i18n.t("UI_Next") + "V" + app.UserManager().GetUserInfo.vip_id;
-        this.GetWndComponent("content/top/title/title_current/lb_vx", cc.Label, this.RatioNode).string = l,
-        this.GetWndNode("content/top/title/title_next", this.RatioNode).active = i,
-        this.GetWndComponent("content/top/title/title_next/lb_vx", cc.Label, this.RatioNode).string = p
+        this.GetWndComponent("top/title/title_current/lb_vx", cc.Label, this.RatioNode).string = l,
+        this.GetWndNode("top/title/title_next", this.RatioNode).active = i,
+        this.GetWndComponent("top/title/title_next/lb_vx", cc.Label, this.RatioNode).string = p
     }
     ,
     t.prototype.initGameTypeList = function() {

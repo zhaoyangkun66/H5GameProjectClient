@@ -50,7 +50,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 2233.4
+      "height": 1030
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4104,7 +4104,7 @@
         "__id__": 466
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 780
@@ -28529,7 +28529,7 @@
         "__id__": 784
       }
     ],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 892
@@ -28840,7 +28840,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 136.7,
       "height": 75.6
     },
     "_anchorPoint": {
@@ -28892,8 +28892,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "充值",
-    "_N$string": "充值",
+    "_string": "Recharge",
+    "_N$string": "Recharge",
     "_fontSize": 28,
     "_lineHeight": 60,
     "_enableWrapText": true,
@@ -29766,7 +29766,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 112,
+      "width": 174.94,
       "height": 75.6
     },
     "_anchorPoint": {
@@ -29818,8 +29818,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "投注金額",
-    "_N$string": "投注金額",
+    "_string": "Bet Amount",
+    "_N$string": "Bet Amount",
     "_fontSize": 28,
     "_lineHeight": 60,
     "_enableWrapText": true,
@@ -32643,7 +32643,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 2233.4
+      "height": 1030
     },
     "_resize": 1,
     "_N$layoutType": 2,

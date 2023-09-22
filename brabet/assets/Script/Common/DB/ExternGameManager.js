@@ -237,27 +237,25 @@ var o = require("../../script/common/room_mode_tool")
                     //         app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.ReceiveNet))
                     // };
                     xmlHttp.onreadystatechange = function () {
-                        app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.ReceiveNet)
-                        if (this.readyState == 4 && this.status == 200) {
-                            // console.log("XXXXGETGETGET", xmlHttp.responseText);
-                            //e.url = JSON.parse(xmlHttp.responseText).data
-                            let responseData = JSON.parse(xmlHttp.responseText)
-                            if (responseData.resultCode == 0) {
-                                e.base_url = responseData.data
-                                self.tmpGameInfo = null,
-                                    e.base_url ? (self.gid = e.gid,
-                                        self.ClearTimer(),
-                                        app.ComTool().CheckPlatform() || 0 !== t.direction || p.default.setOrientation(cc.find("Canvas").getComponent(cc.Canvas), "H"),
-                                        self.WebExternGame.init(e)) : self.ErrLog("Invalid base_url")
+                        if (this.readyState == 4) {
+                            app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.ReceiveNet)
+                            if (this.status == 200) {
+                                // console.log("XXXXGETGETGET", xmlHttp.responseText);
+                                //e.url = JSON.parse(xmlHttp.responseText).data
+                                let responseData = JSON.parse(xmlHttp.responseText)
+                                if (responseData.resultCode == 0) {
+                                    e.base_url = responseData.data
+                                    self.tmpGameInfo = null,
+                                        e.base_url ? (self.gid = e.gid,
+                                            self.ClearTimer(),
+                                            app.ComTool().CheckPlatform() || 0 !== t.direction || p.default.setOrientation(cc.find("Canvas").getComponent(cc.Canvas), "H"),
+                                            self.WebExternGame.init(e)) : self.ErrLog("Invalid base_url")
+                                }
+                                else {
+                                    app.SysNotifyManager().ShowToast(responseData.data)
+                                }
                             }
-                            else {
-                                app.SysNotifyManager().ShowToast(responseData.data)
-                            }
-
                         }
-                    }
-                    xmlHttp.ontimeout = function () {
-                        app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.ReceiveNet)
                     }
                     xmlHttp.timeout = 5000;// 5 seconds for timeout
                     xmlHttp.send();
