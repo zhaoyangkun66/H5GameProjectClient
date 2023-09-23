@@ -677,7 +677,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200.65,
+      "width": 110.57,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -729,8 +729,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Top_Wallet",
-    "_N$string": "UI_Top_Wallet",
+    "_string": "Deposit",
+    "_N$string": "Deposit",
     "_fontSize": 28,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -872,7 +872,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 200.65,
+      "width": 110.57,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -924,8 +924,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Top_Wallet",
-    "_N$string": "UI_Top_Wallet",
+    "_string": "Deposit",
+    "_N$string": "Deposit",
     "_fontSize": 28,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -1238,7 +1238,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 294.81,
+      "width": 140.53,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -1290,8 +1290,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.cashout_0_main_1",
-    "_N$string": "UI.cashout_0_main_1",
+    "_string": "Withdraw",
+    "_N$string": "Withdraw",
     "_fontSize": 28,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -2160,8 +2160,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "選擇一個頻道",
-    "_N$string": "選擇一個頻道",
+    "_string": "Select a channel",
+    "_N$string": "Select a channel",
     "_fontSize": 28,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -2413,7 +2413,7 @@
         "__id__": 80
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 83
@@ -2552,7 +2552,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "19bdebe4-8627-4e94-938d-b54adb88f695"
+      "__uuid__": "24d2def8-d7b1-4a49-b72f-a534ee986770"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -2729,7 +2729,7 @@
     "_spriteFrame": {
       "__uuid__": "897948db-13d6-435d-9572-0459f0503bb8"
     },
-    "_type": 0,
+    "_type": 1,
     "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
@@ -2770,7 +2770,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "39a5c2d0-9354-477a-b39c-55629be4ca23"
+      "__uuid__": "0f52593a-4131-45ff-a082-396f669abf3e"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -2800,7 +2800,7 @@
   {
     "__type__": "cc.Node",
     "_name": "mask",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 61
     },
@@ -3098,10 +3098,12 @@
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
       }
     ],
-    "_spriteFrame": null,
-    "_type": 0,
+    "_spriteFrame": {
+      "__uuid__": "0f52593a-4131-45ff-a082-396f669abf3e"
+    },
+    "_type": 2,
     "_segments": 64,
-    "_N$alphaThreshold": 0,
+    "_N$alphaThreshold": 0.1,
     "_N$inverted": false,
     "_id": ""
   },
@@ -3227,36 +3229,6 @@
     "sync": false
   },
   {
-    "__type__": "cc.Sprite",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 61
-    },
-    "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
-      }
-    ],
-    "_srcBlendFactor": 770,
-    "_dstBlendFactor": 771,
-    "_spriteFrame": null,
-    "_type": 0,
-    "_sizeMode": 0,
-    "_fillType": 0,
-    "_fillCenter": {
-      "__type__": "cc.Vec2",
-      "x": 0,
-      "y": 0
-    },
-    "_fillStart": 0,
-    "_fillRange": 0,
-    "_isTrimmedMode": false,
-    "_atlas": null,
-    "_id": ""
-  },
-  {
     "__type__": "cc.Button",
     "_name": "",
     "_objFlags": 0,
@@ -3322,6 +3294,36 @@
     "hoverSprite": null,
     "_N$disabledSprite": null,
     "_N$target": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 61
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
+      }
+    ],
+    "_srcBlendFactor": 770,
+    "_dstBlendFactor": 771,
+    "_spriteFrame": null,
+    "_type": 1,
+    "_sizeMode": 0,
+    "_fillType": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_atlas": null,
     "_id": ""
   },
   {
@@ -3791,8 +3793,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "輸入您的金額",
-    "_N$string": "輸入您的金額",
+    "_string": "Enter your amount",
+    "_N$string": "Enter your amount",
     "_fontSize": 28,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -5810,7 +5812,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 84,
+      "width": 166.07,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -5862,8 +5864,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "有獎金",
-    "_N$string": "有獎金",
+    "_string": "With bonus",
+    "_N$string": "With bonus",
     "_fontSize": 28,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -6016,7 +6018,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 72,
+      "width": 66.74,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6068,8 +6070,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "支付",
-    "_N$string": "支付",
+    "_string": "Pay",
+    "_N$string": "Pay",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -6809,7 +6811,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 379.04,
+      "width": 180.68,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6861,8 +6863,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.cashout_0_main_1",
-    "_N$string": "UI.cashout_0_main_1",
+    "_string": "Withdraw",
+    "_N$string": "Withdraw",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -7491,7 +7493,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 258.38,
+      "width": 172.15,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -7543,8 +7545,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.cashout_0_main_3",
-    "_N$string": "UI.cashout_0_main_3",
+    "_string": "Withdrawable",
+    "_N$string": "Withdrawable",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -7928,7 +7930,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 306.53,
+      "width": 231.24,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -7980,8 +7982,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_CASHOUT_ENTERTOP",
-    "_N$string": "UI_CASHOUT_ENTERTOP",
+    "_string": "Enter your amount",
+    "_N$string": "Enter your amount",
     "_fontSize": 24,
     "_lineHeight": 36,
     "_enableWrapText": true,
@@ -8502,8 +8504,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_CASHOUT_ENTER_AMOUNT",
-    "_N$string": "UI_CASHOUT_ENTER_AMOUNT",
+    "_string": "Please enter your amount",
+    "_N$string": "Please enter your amount",
     "_fontSize": 28,
     "_lineHeight": 35,
     "_enableWrapText": false,
@@ -8876,7 +8878,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 165.06,
+      "width": 164.34,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -8928,8 +8930,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Commossion",
-    "_N$string": "UI_Commossion",
+    "_string": "Withdrawal Fee:",
+    "_N$string": "Withdrawal Fee:",
     "_fontSize": 20,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -9009,7 +9011,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        165.06,
+        164.34,
         0,
         0,
         0,
@@ -11801,7 +11803,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 226.28,
+      "width": 147.97,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -11848,7 +11850,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": true,
-    "_N$string": "UI.cashout_1_bank_10",
+    "_N$string": "Phone Number",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 22,
     "_N$font": null,
@@ -12287,8 +12289,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.Charge_1_info_5",
-    "_N$string": "UI.Charge_1_info_5",
+    "_string": "Input Phone Number",
+    "_N$string": "Input Phone Number",
     "_fontSize": 22,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -14785,8 +14787,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Shop_InputTaxId",
-    "_N$string": "UI_Shop_InputTaxId",
+    "_string": "Input CPF",
+    "_N$string": "Input CPF",
     "_fontSize": 22,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -15049,7 +15051,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 233.55,
+      "width": 178.49,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -15096,7 +15098,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": true,
-    "_N$string": "UI_Cash_StarColor_Pix",
+    "_N$string": "<b><color=#59677C>Chave Pix (CPF)</color><color=#ff0000>*</color></b>",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 22,
     "_N$font": null,
@@ -15535,8 +15537,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Input_Pix",
-    "_N$string": "UI_Input_Pix",
+    "_string": "Input Pix (CPF)",
+    "_N$string": "Input Pix (CPF)",
     "_fontSize": 22,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -15799,7 +15801,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 238.85,
+      "width": 63.43,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -15851,8 +15853,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.cashout_1_bank_12",
-    "_N$string": "UI.cashout_1_bank_12",
+    "_string": "Email",
+    "_N$string": "Email",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -16299,8 +16301,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.cashout_1_bank_13",
-    "_N$string": "UI.cashout_1_bank_13",
+    "_string": "Input Email Address",
+    "_N$string": "Input Email Address",
     "_fontSize": 22,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -20283,7 +20285,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 289.69,
+      "width": 101.28,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -20335,8 +20337,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Withdraw_Recod",
-    "_N$string": "UI_Withdraw_Recod",
+    "_string": "Record",
+    "_N$string": "Record",
     "_fontSize": 28,
     "_lineHeight": 36,
     "_enableWrapText": true,

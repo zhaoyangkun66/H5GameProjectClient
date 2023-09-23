@@ -60,11 +60,12 @@ var l = cc._decorator
             e[t] = arguments[t];
         this.layer.active = false,
         this.initMainData(),
-        this.onChildNodeShow(0),
-        app.SupportManager().RequestRobotQuestionsAllType(1),
+        // this.onChildNodeShow(0),
+       // app.SupportManager().RequestRobotQuestionsAllType(1)
+                app.SupportManager().RequestSupportList();
         this.onGetFaqInfo()
 
-      //  app.SupportManager().RequestSupportList();
+
     }
     ,
     t.prototype.initMainData = function() {
