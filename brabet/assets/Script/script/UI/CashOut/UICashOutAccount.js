@@ -106,7 +106,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 ),
                     this.Email.getComponent(cc.EditBox).maxLength = 100,
                     this.ClosePixTypeList()
-                // this.setBindBankUserData()
+                this.setBindBankUserData()
                 this.setBindBankEditBoxList()
             }
             ,
@@ -133,7 +133,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         // this.BranchBankName.getComponent(cc.EditBox).string = "",
                         this.PhoneNumber.getComponent(cc.EditBox).string = "",
                         this.Email.getComponent(cc.EditBox).string = "",
-                       // this.UpiNode.getComponent(cc.EditBox).string = "",
+                        // this.UpiNode.getComponent(cc.EditBox).string = "",
                         this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).string = "",
                         //  this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).string = "",
                         // this.SelectBankName.getChildByName("editbox_bank_name").getComponent(cc.EditBox).string = "",
@@ -158,8 +158,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         //     this.IfSCCode.getComponent(cc.EditBox).placeholder = ""),
                         // e.branch_bank && "" !== e.branch_bank && (this.BranchBankName.getComponent(cc.EditBox).string = e.branch_bank,
                         //     this.BranchBankName.getComponent(cc.EditBox).placeholder = ""),
-                         e.cardholder_tel && "" !== e.cardholder_tel && (this.PhoneNumber.getComponent(cc.EditBox).string = e.cardholder_tel,
-                             this.PhoneNumber.getComponent(cc.EditBox).placeholder = ""),
+                        e.cardholder_tel && "" !== e.cardholder_tel && (this.PhoneNumber.getComponent(cc.EditBox).string = e.cardholder_tel,
+                            this.PhoneNumber.getComponent(cc.EditBox).placeholder = ""),
                         e.email && "" !== e.email && (this.Email.getComponent(cc.EditBox).string = e.email,
                             this.Email.getComponent(cc.EditBox).placeholder = ""),
                         // e.upi && "" !== e.upi && (this.UpiNode.getComponent(cc.EditBox).string = e.upi,
@@ -341,13 +341,13 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         //this.IFCS_Code_Node.active = 1 == e.ifsc_code,
                         //this.IFCS_Code_Node.zIndex = -1 * Number(t.ifsc_code),
                         this.Phone_Number_Node.active = "1" == e.tel,
-                       // this.Phone_Number_Node.zIndex = -1 * Number(t.tel),
+                        // this.Phone_Number_Node.zIndex = -1 * Number(t.tel),
                         this.Email_Address_Node.active = "1" == e.email,
-                     //   this.Email_Address_Node.zIndex = -1 * Number(t.email),
+                        //   this.Email_Address_Node.zIndex = -1 * Number(t.email),
                         // this.User_Name_Node.active = 1 == e.name,
                         // this.User_Name_Node.zIndex = -1 * Number(t.name),
                         this.Texid_Node.active = "1" == e.taxid,
-                       // this.Texid_Node.zIndex = -1 * Number(t.taxid),
+                        // this.Texid_Node.zIndex = -1 * Number(t.taxid),
                         //   this.lblCpfNode.active = "" != n,
                         //   this.lblCpfNode.getComponent(cc.Label).string = n,
                         // this.Account_Type.active = 1 == e.account_type,
@@ -359,9 +359,9 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         //this.UpiAllNode.active = 1 == e.upi,
                         // this.UpiAllNode.zIndex = -1 * Number(t.upi),
                         this.Pixkey_Node.active = "1" == e.pix_key,
-                       // this.Pixkey_Node.zIndex = -1 * Number(t.pix_key),
+                        // this.Pixkey_Node.zIndex = -1 * Number(t.pix_key),
                         this.PixType_Node.active = "1" == e.pix_type,
-                       // this.PixType_Node.zIndex = -1 * Number(t.pix_type),
+                        // this.PixType_Node.zIndex = -1 * Number(t.pix_type),
                         //  this.BranchBankName_Node.active = 1 == e.branch_bank,
                         // this.BranchBankName_Node.zIndex = -1 * Number(t.branch_bank),
                         //  this.li_Bank_Gcash.active = 1 == e.prepay_type,
@@ -485,9 +485,9 @@ var o = require("../../../Common/Base/UIBaseComponent")
                             repay_card_clabe: ""
                         };
                         //this.SendRFCType > 0 && this.li_rfc.active && (1 == this.SendRFCType ? c.repay_rfc = this.rfcEditbox.string : 2 == this.SendRFCType && (c.repay_curp = this.curpEditbox.string)),
-                           // this.SendCardType > 0 && this.li_card.active && (1 == this.SendCardType ? c.repay_card_debit = this.debitEditbox.string : 2 == this.SendCardType ? c.repay_card_phone = this.phoneEditbox.string : 3 == this.SendCardType && (c.repay_card_clabe = this.clabeEditbox.string)),
-                            this.SelectBankCodeData && (c.bank_code = this.SelectBankCodeData.bank_code,
-                                c.bank_name = this.SelectBankCodeData.bank_name),
+                        // this.SendCardType > 0 && this.li_card.active && (1 == this.SendCardType ? c.repay_card_debit = this.debitEditbox.string : 2 == this.SendCardType ? c.repay_card_phone = this.phoneEditbox.string : 3 == this.SendCardType && (c.repay_card_clabe = this.clabeEditbox.string)),
+                        this.SelectBankCodeData && (c.bank_code = this.SelectBankCodeData.bank_code,
+                            c.bank_name = this.SelectBankCodeData.bank_name),
                             app.CashOutManager().RequstBindBankAccount(c)
                     }
                 } else
