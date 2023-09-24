@@ -859,11 +859,11 @@
       }
     ],
     "_spriteFrame": {
-      "__uuid__": "3ddf03a1-232d-4d0d-8972-c654f59f0f08"
+      "__uuid__": "c964cdf0-da7b-4a2a-8159-b4748c51609f"
     },
     "_type": 2,
     "_segments": 64,
-    "_N$alphaThreshold": 1,
+    "_N$alphaThreshold": 0.5,
     "_N$inverted": false,
     "_id": ""
   },

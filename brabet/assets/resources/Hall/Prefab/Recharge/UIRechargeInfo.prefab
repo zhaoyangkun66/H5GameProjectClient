@@ -2574,9 +2574,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 198,
+      "g": 198,
+      "b": 198,
       "a": 255
     },
     "_contentSize": {
@@ -3188,7 +3188,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "dd50850b-44b8-4fbe-8642-5dff68f69a6b"
+      "__uuid__": "f985eff8-5f02-4c9b-b751-23c4b771e0c6"
     },
     "_type": 1,
     "_sizeMode": 0,

@@ -158,8 +158,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         //     this.IfSCCode.getComponent(cc.EditBox).placeholder = ""),
                         // e.branch_bank && "" !== e.branch_bank && (this.BranchBankName.getComponent(cc.EditBox).string = e.branch_bank,
                         //     this.BranchBankName.getComponent(cc.EditBox).placeholder = ""),
-                        // e.cardholder_tel && "" !== e.cardholder_tel && (this.PhoneNumber.getComponent(cc.EditBox).string = e.cardholder_tel,
-                        //     this.PhoneNumber.getComponent(cc.EditBox).placeholder = ""),
+                         e.cardholder_tel && "" !== e.cardholder_tel && (this.PhoneNumber.getComponent(cc.EditBox).string = e.cardholder_tel,
+                             this.PhoneNumber.getComponent(cc.EditBox).placeholder = ""),
                         e.email && "" !== e.email && (this.Email.getComponent(cc.EditBox).string = e.email,
                             this.Email.getComponent(cc.EditBox).placeholder = ""),
                         // e.upi && "" !== e.upi && (this.UpiNode.getComponent(cc.EditBox).string = e.upi,
@@ -212,6 +212,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     //         this.li_PayMayaPhilippines.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
                     //     e.beneficiary_name && "" !== e.beneficiary_name && (this.li_BeneficiarvName.getChildByName("editbox").getComponent(cc.EditBox).string = e.beneficiary_name,
                     //         this.li_BeneficiarvName.getChildByName("editbox").getComponent(cc.EditBox).placeholder = "");
+                    return
                     var a = this.GetWndNode("node_rfcToggle/node/toggleContainer", this.li_rfc);
                     this.SendRFCType = 0;
                     var r = false;

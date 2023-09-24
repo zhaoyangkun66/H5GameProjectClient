@@ -4453,8 +4453,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "沒有數據",
-    "_N$string": "沒有數據",
+    "_string": "No data",
+    "_N$string": "No data",
     "_fontSize": 23,
     "_lineHeight": 23,
     "_enableWrapText": false,
@@ -4799,7 +4799,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
+      "width": 133.48,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -4851,8 +4851,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "刪除",
-    "_N$string": "刪除",
+    "_string": "Delete",
+    "_N$string": "Delete",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -5003,7 +5003,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "3682127c-e00a-4c18-bc7a-b812a43fe391"
+      "__uuid__": "b1112332-3594-4be8-82db-12e73d31415c"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -5131,7 +5131,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
+      "width": 157.96,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -5183,8 +5183,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "收到",
-    "_N$string": "收到",
+    "_string": "Receive",
+    "_N$string": "Receive",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -5335,7 +5335,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "3682127c-e00a-4c18-bc7a-b812a43fe391"
+      "__uuid__": "f67ab45d-eeb7-4a3f-b33a-d5855a61e968"
     },
     "_type": 1,
     "_sizeMode": 0,
