@@ -189,7 +189,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
+      "width": 329.08,
       "height": 56.7
     },
     "_anchorPoint": {
@@ -241,8 +241,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "沒有",
-    "_N$string": "沒有",
+    "_string": "Account Setting",
+    "_N$string": "Account Setting",
     "_fontSize": 40,
     "_lineHeight": 45,
     "_enableWrapText": false,
@@ -1016,7 +1016,7 @@
       "ctor": "Float64Array",
       "array": [
         -281.151,
-        111.856,
+        107.576,
         0,
         0,
         0,
@@ -1113,7 +1113,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 112,
+      "width": 222.91,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -1165,8 +1165,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "手機號碼",
-    "_N$string": "手機號碼",
+    "_string": "Mobile Number",
+    "_N$string": "Mobile Number",
     "_fontSize": 28,
     "_lineHeight": 32,
     "_enableWrapText": false,
@@ -1607,7 +1607,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 67.17,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1659,8 +1659,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "綁定",
-    "_N$string": "綁定",
+    "_string": "Bind",
+    "_N$string": "Bind",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -1880,7 +1880,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 600,
-      "height": 67.8
+      "height": 97.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1931,8 +1931,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "設置手機號碼以隨時訪問您的帳戶並使用它從任何設備登錄",
-    "_N$string": "設置手機號碼以隨時訪問您的帳戶並使用它從任何設備登錄",
+    "_string": "Set up a mobile number to access your account anytime and use it to log in from any device",
+    "_N$string": "Set up a mobile number to access your account anytime and use it to log in from any device",
     "_fontSize": 25,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -2410,8 +2410,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 31,
-      "height": 45
+      "width": 39,
+      "height": 30
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2423,7 +2423,7 @@
       "ctor": "Float64Array",
       "array": [
         -281.151,
-        111.856,
+        107.576,
         0,
         0,
         0,
@@ -2463,7 +2463,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "9a02ccc8-9db1-45b4-bc21-3540e3b0cb28"
+      "__uuid__": "2083e140-29ca-44a4-915c-29123444e33c"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -2520,7 +2520,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 168,
+      "width": 130.65,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -2572,8 +2572,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "我的電子郵件",
-    "_N$string": "我的電子郵件",
+    "_string": "My Email",
+    "_N$string": "My Email",
     "_fontSize": 28,
     "_lineHeight": 32,
     "_enableWrapText": false,
@@ -3014,7 +3014,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 67.17,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -3066,8 +3066,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "綁定",
-    "_N$string": "綁定",
+    "_string": "Bind",
+    "_N$string": "Bind",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -3338,8 +3338,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "設置電子郵件以隨時訪問您的帳戶並使用它從任何設備登錄",
-    "_N$string": "設置電子郵件以隨時訪問您的帳戶並使用它從任何設備登錄",
+    "_string": "Set up email to access your account anytime and use it to log in from any device",
+    "_N$string": "Set up email to access your account anytime and use it to log in from any device",
     "_fontSize": 25,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -3814,8 +3814,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 31,
-      "height": 45
+      "width": 38,
+      "height": 41
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3827,7 +3827,7 @@
       "ctor": "Float64Array",
       "array": [
         -281.151,
-        111.856,
+        107.576,
         0,
         0,
         0,
@@ -3867,7 +3867,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "9a02ccc8-9db1-45b4-bc21-3540e3b0cb28"
+      "__uuid__": "0fd4047a-70d2-47db-9dec-7ee05492ba81"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -3924,7 +3924,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 112,
+      "width": 172.7,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -3976,8 +3976,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "我的生日",
-    "_N$string": "我的生日",
+    "_string": "My Birthday",
+    "_N$string": "My Birthday",
     "_fontSize": 28,
     "_lineHeight": 32,
     "_enableWrapText": false,
@@ -5380,8 +5380,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 31,
-      "height": 45
+      "width": 32,
+      "height": 42
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -5393,7 +5393,7 @@
       "ctor": "Float64Array",
       "array": [
         -281.151,
-        111.856,
+        107.576,
         0,
         0,
         0,
@@ -5433,7 +5433,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "9a02ccc8-9db1-45b4-bc21-3540e3b0cb28"
+      "__uuid__": "607c9600-dff1-4e2b-ae13-99fd2a50883a"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -5490,7 +5490,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 137.09,
       "height": 40.32
     },
     "_anchorPoint": {
@@ -5542,8 +5542,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "密碼",
-    "_N$string": "密碼",
+    "_string": "Password",
+    "_N$string": "Password",
     "_fontSize": 28,
     "_lineHeight": 32,
     "_enableWrapText": false,
@@ -5984,7 +5984,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 56,
+      "width": 111.58,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6036,8 +6036,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "修改",
-    "_N$string": "修改",
+    "_string": "Change",
+    "_N$string": "Change",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -6257,7 +6257,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 600,
-      "height": 37.8
+      "height": 97.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6308,8 +6308,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "輸入的密碼長度必須為6~16位，數字和字母均可。",
-    "_N$string": "輸入的密碼長度必須為6~16位，數字和字母均可。",
+    "_string": "The length of the entered password must be 6~16 digits,and both numbers and letters are acceptable.",
+    "_N$string": "The length of the entered password must be 6~16 digits,and both numbers and letters are acceptable.",
     "_fontSize": 25,
     "_lineHeight": 30,
     "_enableWrapText": false,

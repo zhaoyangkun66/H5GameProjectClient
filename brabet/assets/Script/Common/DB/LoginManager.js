@@ -87,10 +87,10 @@ var h = function (e) {
         ,
         t.prototype.VisitorLogin = function () {
 
-            if (isgoServer) {
-                app.HallManager().ShowHallForm(p.UINameDefine.UILoginSign, 1);
-                return
-            }
+            // if (isgoServer) {
+            //     app.HallManager().ShowHallForm(p.UINameDefine.UILoginSign, 1);
+            //     return
+            // }
 
             app.EventTrackManager().LogEvent(s.default.VISITOR_LOGIN_BEGIN);
             var e = {};
@@ -99,13 +99,13 @@ var h = function (e) {
         }
         ,
         t.prototype.OnVisitorLogin = function (e) {
-            if (isgoServer) {
-                e.is_official_account = 0
-                e.third_token = ""
-                e.tel = ""
-                e.account = ""
-                e.email = ""
-            }
+            // if (isgoServer) {
+            //     e.is_official_account = 0
+            //     e.third_token = ""
+            //     e.tel = ""
+            //     e.account = ""
+            //     e.email = ""
+            // }
             app.EventTrackManager().LogEvent(s.default.VISITOR_LOGIN_END),
                 this.SetUserInfoAndLoginGS(e)
         }
@@ -287,6 +287,22 @@ var h = function (e) {
         }
         ,
         t.prototype.SetUserInfoAndLoginGS = function (e) {
+            if (isgoServer) {
+                if (!e.user_config.show_arr) {
+                    e.user_config.show_arr = require("Http_login").user_config.show_arr
+                }
+                if (e.is_official_account == 1) {
+                    e.is_official_account = 0
+                    e.third_token = ""
+                    e.tel = ""
+                    e.account = ""
+                    e.email = ""
+                }
+                else {
+                    e.is_official_account = 1
+                }
+            }
+            // this.UserInfo.account=''
             var t = this;
             if (e.code != l.ReqFailCode.IP_DEVICE_LIMIT) {
                 if (e.code == l.ReqFailCode.LOGIN_FAILED_VERIFICATION)

@@ -391,7 +391,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 180,
+      "width": 338.22,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -443,8 +443,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "更改用戶名",
-    "_N$string": "更改用戶名",
+    "_string": "Change username",
+    "_N$string": "Change username",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -959,8 +959,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "16 位英文數字",
-    "_N$string": "16 位英文數字",
+    "_string": "16 English digits",
+    "_N$string": "16 English digits",
     "_fontSize": 16,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -1152,7 +1152,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 144,
+      "width": 266.54,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1204,8 +1204,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "更改頭像",
-    "_N$string": "更改頭像",
+    "_string": "Change avatar",
+    "_N$string": "Change avatar",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -7422,7 +7422,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 60,
+      "width": 77.79,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -7474,8 +7474,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "好的",
-    "_N$string": "好的",
+    "_string": "Okay",
+    "_N$string": "Okay",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -7692,10 +7692,10 @@
     "node": {
       "__id__": 2
     },
-    "_enabled": true,
+    "_enabled": false,
     "alignMode": 1,
     "_target": null,
-    "_alignFlags": 33,
+    "_alignFlags": 0,
     "_left": 0,
     "_right": 45,
     "_top": 166.99999999999997,

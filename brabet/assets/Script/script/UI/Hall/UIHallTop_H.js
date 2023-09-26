@@ -153,10 +153,10 @@ function(e) {
         this.face_bg.active = !app.GameConfigManager().IsExperienceServer,
         this.GetWndNode("vip", this.player_Node).active = !app.GameConfigManager().IsExperienceServer;
         var e = cc.find("gold", this.player_Node);
-        e.getComponent(cc.Button).interactable = !app.GameConfigManager().IsExperienceServer,
-        e.x = app.GameConfigManager().IsExperienceServer ? -e.width / 2 : -605,
-        this.GetWndNode("btn_Wallet", e).active = !app.GameConfigManager().IsExperienceServer,
-        this.GetWndNode("information/layout_right/btn_service", this.node).active = !app.GameConfigManager().IsExperienceServer
+       // e.getComponent(cc.Button).interactable = !app.GameConfigManager().IsExperienceServer,
+       // e.x = app.GameConfigManager().IsExperienceServer ? -e.width / 2 : -605,
+       // this.GetWndNode("btn_Wallet", e).active = !app.GameConfigManager().IsExperienceServer
+        //this.GetWndNode("information/layout_right/btn_service", this.node).active = !app.GameConfigManager().IsExperienceServer
     }
     ,
     t.prototype.LoadHallSuccess = function() {

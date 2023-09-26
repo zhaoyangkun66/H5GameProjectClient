@@ -43,21 +43,21 @@ var o, i = require("../../../Common/Base/BaseForm"),
             return __extends(t, e),
                 t.prototype.OnCreateInit = function () {
                     this.JS_Name = "UIHallBottom",
-                        this.gameNode = app.ComTool().H5Platform() ? this.GetWndNode("game") : this.GetWndNode("layout/game"),
-                        this.gameFastJoinList = app.ComTool().H5Platform() ? this.GetWndNode("game/li") : this.GetWndNode("layout/game/ScrollView/view/li"),
-                        this.gameFastCloneItem = app.ComTool().H5Platform() ? this.GetWndNode("game/btn_JoinGame") : this.GetWndNode("layout/game/ScrollView/view/btn_JoinGame"),
-                        this.BottomTextList = app.ComTool().H5Platform() ? this.GetWndNode("text1/li") : this.GetWndNode("layout/text1/li"),
-                        this.textItem = app.ComTool().H5Platform() ? this.GetWndNode("text1/li/btn_lbl") : this.GetWndNode("layout/text1/li/btn_lbl"),
-                        this.gameIcon = app.ComTool().H5Platform() ? this.GetWndNode("game/btn_gameIcon/icon_jiantou") : null,
-                        this.txtIcon = app.ComTool().H5Platform() ? this.GetWndNode("text1/btn_text/icon_jiantou") : null,
-                        this.textNode = app.ComTool().H5Platform() ? this.GetWndNode("18/text") : this.GetWndNode("layout/18/text"),
-                        this.sprItem = app.ComTool().H5Platform() ? this.GetWndNode("18/sprItem") : this.GetWndNode("layout/18/sprItem"),
-                        this.BottomLabel = app.ComTool().H5Platform() ? this.GetWndComponent("18/label", cc.Label) : this.GetWndComponent("layout/18/label", cc.Label),
-                        this.official = app.ComTool().H5Platform() ? this.GetWndNode("Official") : this.GetWndNode("layout/18/Official"),
-                        this.list_icon = app.ComTool().H5Platform() ? this.GetWndNode("space/list_icon") : this.GetWndNode("layout/18/third/list_icon"),
-                        this.iconItem = app.ComTool().H5Platform() ? this.GetWndNode("space/spr_icon") : this.GetWndNode("layout/18/third/spr_icon"),
-                        this.list_logo = app.ComTool().H5Platform() ? this.GetWndNode("space/list_logo") : this.GetWndNode("layout/18/third/list_logo"),
-                        this.logoItem = app.ComTool().H5Platform() ? this.GetWndNode("space/spr_logo") : this.GetWndNode("layout/18/third/spr_logo"),
+                        this.gameNode = true ? this.GetWndNode("game") : this.GetWndNode("layout/game"),
+                        this.gameFastJoinList = true ? this.GetWndNode("game/li") : this.GetWndNode("layout/game/ScrollView/view/li"),
+                        this.gameFastCloneItem = true ? this.GetWndNode("game/btn_JoinGame") : this.GetWndNode("layout/game/ScrollView/view/btn_JoinGame"),
+                        this.BottomTextList = true ? this.GetWndNode("text1/li") : this.GetWndNode("layout/text1/li"),
+                        this.textItem = true ? this.GetWndNode("text1/li/btn_lbl") : this.GetWndNode("layout/text1/li/btn_lbl"),
+                        this.gameIcon = true ? this.GetWndNode("game/btn_gameIcon/icon_jiantou") : null,
+                        this.txtIcon = true ? this.GetWndNode("text1/btn_text/icon_jiantou") : null,
+                        this.textNode = true ? this.GetWndNode("18/text") : this.GetWndNode("layout/18/text"),
+                        this.sprItem = true ? this.GetWndNode("18/sprItem") : this.GetWndNode("layout/18/sprItem"),
+                        this.BottomLabel = true ? this.GetWndComponent("18/label", cc.Label) : this.GetWndComponent("layout/18/label", cc.Label),
+                        this.official = true ? this.GetWndNode("Official") : this.GetWndNode("layout/18/Official"),
+                        this.list_icon = true ? this.GetWndNode("space/list_icon") : this.GetWndNode("layout/18/third/list_icon"),
+                        this.iconItem = true ? this.GetWndNode("space/spr_icon") : this.GetWndNode("layout/18/third/spr_icon"),
+                        this.list_logo = true ? this.GetWndNode("space/list_logo") : this.GetWndNode("layout/18/third/list_logo"),
+                        this.logoItem = true ? this.GetWndNode("space/spr_logo") : this.GetWndNode("layout/18/third/spr_logo"),
                         this.isGameList = false,
                         this.RegEvent(a.GameEventDefine.GET_FAQ_LIST, this.OnBottomTextList),
                         this.RegEvent(a.GameEventDefine.SEND_END, this.OnFastGameJoinList),
@@ -213,12 +213,12 @@ var o, i = require("../../../Common/Base/BaseForm"),
                 }
                 ,
                 t.prototype.setNodeShow = function () {
-                    if (app.ComTool().H5Platform()) {
-                        var e = !app.GameConfigManager().IsExperienceServer;
-                        this.gameNode.active = e,
-                            this.GetWndNode("text1").active = e,
-                            this.GetWndNode("space").active = e
-                    }
+                    // if (app.ComTool().H5Platform()) {
+                    //     var e = !app.GameConfigManager().IsExperienceServer;
+                    //     this.gameNode.active = e,
+                    //         this.GetWndNode("text1").active = e,
+                    //         this.GetWndNode("space").active = e
+                    // }
                 }
                 ,
                 t.prototype.OnOfficialList = function () {

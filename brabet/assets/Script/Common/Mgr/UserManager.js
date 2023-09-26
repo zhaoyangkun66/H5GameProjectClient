@@ -100,7 +100,7 @@ var l = function (e) {
             if (isgoServer) {
                 var time1 = new Date()
                 if (!o) {
-                    o = new Date(time1.getTime() - 864e5*10).format("yyyy-MM-dd")
+                    o = new Date(time1.getTime() - 864e5 * 10).format("yyyy-MM-dd")
                 }
                 if (!i) {
                     i = time1.format("yyyy-MM-dd");
@@ -168,12 +168,6 @@ var l = function (e) {
         ,
         t.prototype.SetUserInfo = function (e) {
             this.UserInfo = e
-            if (isgoServer) {
-                if (!this.UserInfo.user_config.show_arr) {
-                    this.UserInfo.user_config.show_arr = require("Http_login").user_config.show_arr
-                }
-            }
-           // this.UserInfo.account=''
             this.UserInfo.gold = e.gold || 0,
                 this.UserInfo.user_config.is_open_debug && app.Client.InitDebug(true),
                 0 == e.user_config.game_arr.length && app.SysNotifyManager().ShowToast("Get User Configuration Failed."),
