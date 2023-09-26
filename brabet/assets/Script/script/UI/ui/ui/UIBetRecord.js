@@ -27,38 +27,38 @@ var o = require("../../../../Common/Base/UIBaseComponent")
             ,
             t.prototype.updateInfoNodeData = function () {
                 // if (app.BetBonusManager().GetBetHistoryList.data.length == 0) {
-                app.BetBonusManager().GetBetHistoryList.data = [{
-                    "date": "2023-09-07",
-                    "total": 1,
-                    "sports": 2,
-                    "slot": 3,
-                    "internal": 4,
-                    "video": 5,
-                    "lottery": 6,
-                    "lottery": 7,
-                    "fish": 8
-                }, {
-                    "date": "2023-09-07",
-                    "total": 1,
-                    "sports": 2,
-                    "slot": 3,
-                    "internal": 4,
-                    "video": 5,
-                    "lottery": 6,
-                    "lottery": 7,
-                    "fish": 8
-                }, {
-                    "date": "2023-09-07",
-                    "total": 1,
-                    "sports": 2,
-                    "slot": 3,
-                    "internal": 4,
-                    "video": 5,
-                    "lottery": 6,
-                    "lottery": 7,
-                    "fish": 8
-                }]
-                //  }
+                //     app.BetBonusManager().GetBetHistoryList.data = [{
+                //         "date": "2023-09-07",
+                //         "total": 1,
+                //         "sports": 2,
+                //         "slot": 3,
+                //         "internal": 4,
+                //         "video": 5,
+                //         "lottery": 6,
+                //         "lottery": 7,
+                //         "fish": 8
+                //     }, {
+                //         "date": "2023-09-07",
+                //         "total": 1,
+                //         "sports": 2,
+                //         "slot": 3,
+                //         "internal": 4,
+                //         "video": 5,
+                //         "lottery": 6,
+                //         "lottery": 7,
+                //         "fish": 8
+                //     }, {
+                //         "date": "2023-09-07",
+                //         "total": 1,
+                //         "sports": 2,
+                //         "slot": 3,
+                //         "internal": 4,
+                //         "video": 5,
+                //         "lottery": 6,
+                //         "lottery": 7,
+                //         "fish": 8
+                //     }]
+                // }
 
                 var e = app.BetBonusManager().GetBetHistoryList.data;
                 this.zwNode.active = 0 == e.length,

@@ -1008,7 +1008,7 @@
     "_dstBlendFactor": 771,
     "_string": "",
     "_N$string": "",
-    "_fontSize": 40,
+    "_fontSize": 30,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": {
@@ -1074,7 +1074,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
+      "width": 0,
       "height": 150
     },
     "_anchorPoint": {
@@ -1192,7 +1192,7 @@
     "_dstBlendFactor": 771,
     "_string": "",
     "_N$string": "",
-    "_fontSize": 40,
+    "_fontSize": 30,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": {
@@ -1302,7 +1302,7 @@
     "_dstBlendFactor": 771,
     "_string": "",
     "_N$string": "",
-    "_fontSize": 40,
+    "_fontSize": 30,
     "_lineHeight": 40,
     "_enableWrapText": true,
     "_N$file": {
@@ -1373,11 +1373,11 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 100,
+      "width": 0,
       "height": 150
     },
-    "_resize": 0,
-    "_N$layoutType": 0,
+    "_resize": 1,
+    "_N$layoutType": 1,
     "_N$cellSize": {
       "__type__": "cc.Size",
       "width": 40,
@@ -1514,7 +1514,7 @@
         "__id__": 46
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 49

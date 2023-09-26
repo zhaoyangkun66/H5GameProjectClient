@@ -1,4 +1,4 @@
-cc.sys.platform = cc.sys.MOBILE_BROWSER
+//cc.sys.platform = cc.sys.MOBILE_BROWSER
 //cc.sys.platform = cc.sys.DESKTOP_BROWSER
 
 window.isgoServer = false;

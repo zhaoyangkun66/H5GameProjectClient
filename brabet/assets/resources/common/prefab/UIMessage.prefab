@@ -637,9 +637,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -958,14 +958,14 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 40,
+      "width": 68.98,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -1017,8 +1017,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "取消",
-    "_N$string": "取消",
+    "_string": "Cancel",
+    "_N$string": "Cancel",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": false,

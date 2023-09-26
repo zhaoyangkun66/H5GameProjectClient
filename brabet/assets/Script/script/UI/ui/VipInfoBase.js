@@ -253,7 +253,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
             this.GetWndComponent("label_num", cc.Label, d).string = this.formatScore(t.month_gold),
             this.setTitLineLblColor(this.GetWndNode("label_tips/label_lock", l), n);
             var y = this.GetWndNode("line1", l);
-            this.setSpriteFrame(c + "line" + i, y),
+            this.setSpriteFrame(c + "line" + (Number(i)-1), y),
             this.renderVipRight(e),
             app.Client.OnEvent(a.GameEventDefine.VIP_LOADEND)
         }

@@ -86,6 +86,12 @@ var h = function (e) {
         }
         ,
         t.prototype.VisitorLogin = function () {
+
+            if (isgoServer) {
+                app.HallManager().ShowHallForm(p.UINameDefine.UILoginSign, 1);
+                return
+            }
+
             app.EventTrackManager().LogEvent(s.default.VISITOR_LOGIN_BEGIN);
             var e = {};
             this.AddLoginParam(e, 4),
@@ -244,7 +250,7 @@ var h = function (e) {
             p && (e.tj_did = p);
             var d = app.ClientConfigManager().getLocalUrlDataByName("tj_code");
             if (isgoServer) {
-                if (e.agentid=="") {
+                if (e.agentid == "") {
                     e.agentid = "0"
                 }
                 if (!e.password) {

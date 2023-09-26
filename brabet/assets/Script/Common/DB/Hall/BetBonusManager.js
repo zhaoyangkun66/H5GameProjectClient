@@ -53,7 +53,7 @@ var o = require("../../Base/Singleton")
                     //     }
                     // }
                     // ShiPei(e.list)
-                    
+
                     let ShiPei = function (object) { //把null替换[]
                         for (const key in object) {
                             if (object[key] == null) {
@@ -62,7 +62,7 @@ var o = require("../../Base/Singleton")
                             else if (object[key] instanceof Object) {
                                 for (const key2 in object[key]) {
                                     if (object[key][key2] == null) {
-                                        object[key][key2]= []
+                                        object[key][key2] = []
                                     }
                                 }
                             }
@@ -203,6 +203,286 @@ var o = require("../../Base/Singleton")
             }
             ,
             t.prototype.onPercentList = function (e) {
+                // e={
+                //     "list": {
+                //         "7": [
+                //             {
+                //                 "percent": "0.0000",
+                //                 "name": "vip0"
+                //             },
+                //             {
+                //                 "percent": "0.0005",
+                //                 "name": "vip1"
+                //             },
+                //             {
+                //                 "percent": "0.0010",
+                //                 "name": "vip2"
+                //             },
+                //             {
+                //                 "percent": "0.0015",
+                //                 "name": "vip3"
+                //             },
+                //             {
+                //                 "percent": "0.0020",
+                //                 "name": "VIP4"
+                //             },
+                //             {
+                //                 "percent": "0.0025",
+                //                 "name": "VIP5"
+                //             },
+                //             {
+                //                 "percent": "0.0030",
+                //                 "name": "VIP6"
+                //             },
+                //             {
+                //                 "percent": "0.0035",
+                //                 "name": "VIP7"
+                //             },
+                //             {
+                //                 "percent": "0.0040",
+                //                 "name": "VIP8"
+                //             },
+                //             {
+                //                 "percent": "0.0045",
+                //                 "name": "VIP9"
+                //             },
+                //             {
+                //                 "percent": "0.0050",
+                //                 "name": "VIP10"
+                //             }
+                //         ],
+                //         "3": [
+                //             {
+                //                 "percent": "0.0000",
+                //                 "name": "vip0"
+                //             },
+                //             {
+                //                 "percent": "0.0005",
+                //                 "name": "vip1"
+                //             },
+                //             {
+                //                 "percent": "0.0010",
+                //                 "name": "vip2"
+                //             },
+                //             {
+                //                 "percent": "0.0015",
+                //                 "name": "vip3"
+                //             },
+                //             {
+                //                 "percent": "0.0020",
+                //                 "name": "VIP4"
+                //             },
+                //             {
+                //                 "percent": "0.0025",
+                //                 "name": "VIP5"
+                //             },
+                //             {
+                //                 "percent": "0.0030",
+                //                 "name": "VIP6"
+                //             },
+                //             {
+                //                 "percent": "0.0035",
+                //                 "name": "VIP7"
+                //             },
+                //             {
+                //                 "percent": "0.0040",
+                //                 "name": "VIP8"
+                //             },
+                //             {
+                //                 "percent": "0.0045",
+                //                 "name": "VIP9"
+                //             },
+                //             {
+                //                 "percent": "0.0050",
+                //                 "name": "VIP10"
+                //             }
+                //         ],
+                //         "9": [
+                //             {
+                //                 "percent": "0.0020",
+                //                 "name": "vip0"
+                //             },
+                //             {
+                //                 "percent": "0.0025",
+                //                 "name": "vip1"
+                //             },
+                //             {
+                //                 "percent": "0.0030",
+                //                 "name": "vip2"
+                //             },
+                //             {
+                //                 "percent": "0.0035",
+                //                 "name": "vip3"
+                //             },
+                //             {
+                //                 "percent": "0.0040",
+                //                 "name": "VIP4"
+                //             },
+                //             {
+                //                 "percent": "0.0045",
+                //                 "name": "VIP5"
+                //             },
+                //             {
+                //                 "percent": "0.0050",
+                //                 "name": "VIP6"
+                //             },
+                //             {
+                //                 "percent": "0.0055",
+                //                 "name": "VIP7"
+                //             },
+                //             {
+                //                 "percent": "0.0060",
+                //                 "name": "VIP8"
+                //             },
+                //             {
+                //                 "percent": "0.0080",
+                //                 "name": "VIP9"
+                //             },
+                //             {
+                //                 "percent": "0.0100",
+                //                 "name": "VIP10"
+                //             }
+                //         ],
+                //         "5": [
+                //             {
+                //                 "percent": "0.0000",
+                //                 "name": "vip0"
+                //             },
+                //             {
+                //                 "percent": "0.0005",
+                //                 "name": "vip1"
+                //             },
+                //             {
+                //                 "percent": "0.0010",
+                //                 "name": "vip2"
+                //             },
+                //             {
+                //                 "percent": "0.0015",
+                //                 "name": "vip3"
+                //             },
+                //             {
+                //                 "percent": "0.0020",
+                //                 "name": "VIP4"
+                //             },
+                //             {
+                //                 "percent": "0.0025",
+                //                 "name": "VIP5"
+                //             },
+                //             {
+                //                 "percent": "0.0030",
+                //                 "name": "VIP6"
+                //             },
+                //             {
+                //                 "percent": "0.0035",
+                //                 "name": "VIP7"
+                //             },
+                //             {
+                //                 "percent": "0.0040",
+                //                 "name": "VIP8"
+                //             },
+                //             {
+                //                 "percent": "0.0045",
+                //                 "name": "VIP9"
+                //             },
+                //             {
+                //                 "percent": "0.0050",
+                //                 "name": "VIP10"
+                //             }
+                //         ],
+                //         "4": [
+                //             {
+                //                 "percent": "0.0000",
+                //                 "name": "vip0"
+                //             },
+                //             {
+                //                 "percent": "0.0005",
+                //                 "name": "vip1"
+                //             },
+                //             {
+                //                 "percent": "0.0010",
+                //                 "name": "vip2"
+                //             },
+                //             {
+                //                 "percent": "0.0015",
+                //                 "name": "vip3"
+                //             },
+                //             {
+                //                 "percent": "0.0020",
+                //                 "name": "VIP4"
+                //             },
+                //             {
+                //                 "percent": "0.0025",
+                //                 "name": "VIP5"
+                //             },
+                //             {
+                //                 "percent": "0.0030",
+                //                 "name": "VIP6"
+                //             },
+                //             {
+                //                 "percent": "0.0035",
+                //                 "name": "VIP7"
+                //             },
+                //             {
+                //                 "percent": "0.0040",
+                //                 "name": "VIP8"
+                //             },
+                //             {
+                //                 "percent": "0.0045",
+                //                 "name": "VIP9"
+                //             },
+                //             {
+                //                 "percent": "0.0050",
+                //                 "name": "VIP10"
+                //             }
+                //         ],
+                //         "6": [
+                //             {
+                //                 "percent": "0.0000",
+                //                 "name": "vip0"
+                //             },
+                //             {
+                //                 "percent": "0.0005",
+                //                 "name": "vip1"
+                //             },
+                //             {
+                //                 "percent": "0.0010",
+                //                 "name": "vip2"
+                //             },
+                //             {
+                //                 "percent": "0.0015",
+                //                 "name": "vip3"
+                //             },
+                //             {
+                //                 "percent": "0.0020",
+                //                 "name": "VIP4"
+                //             },
+                //             {
+                //                 "percent": "0.0025",
+                //                 "name": "VIP5"
+                //             },
+                //             {
+                //                 "percent": "0.0030",
+                //                 "name": "VIP6"
+                //             },
+                //             {
+                //                 "percent": "0.0035",
+                //                 "name": "VIP7"
+                //             },
+                //             {
+                //                 "percent": "0.0040",
+                //                 "name": "VIP8"
+                //             },
+                //             {
+                //                 "percent": "0.0045",
+                //                 "name": "VIP9"
+                //             },
+                //             {
+                //                 "percent": "0.0050",
+                //                 "name": "VIP10"
+                //             }
+                //         ]
+                //     }
+                // }
                 this.BetPercentList = e,
                     app.Client.OnEvent(i.GameEventDefine.BetPercentList)
             }
@@ -222,6 +502,37 @@ var o = require("../../Base/Singleton")
             }
             ,
             t.prototype.onCleanBetHistoryList = function (e) {
+                // e= {
+                //     "title": [
+                //         {
+                //             "date": "date"
+                //         },
+                //         {
+                //             "total": "Total Bonus"
+                //         },
+                //         {
+                //             "sports": "Sports Bonus"
+                //         },
+                //         {
+                //             "slot": "Slots Bonus"
+                //         },
+                //         {
+                //             "internal": "In-House Bonus"
+                //         },
+                //         {
+                //             "video": "Live Casino Bonus"
+                //         },
+                //         {
+                //             "lottery": "Lottery Bonus"
+                //         },
+                //         {
+                //             "fish": "Fishing Bonus"
+                //         }
+                //     ],
+                //     "data": []
+                // }
+
+
                 this.betHistoryList = e,
                     this.betHistoryList.title.splice(0, 1),
                     app.Client.OnEvent(i.GameEventDefine.New_CleanBetList)
