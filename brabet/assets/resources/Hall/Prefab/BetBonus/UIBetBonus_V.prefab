@@ -620,7 +620,7 @@
   {
     "__type__": "cc.Node",
     "_name": "checkmark",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 9
     },
@@ -1291,7 +1291,7 @@
   {
     "__type__": "cc.Node",
     "_name": "checkmark",
-    "_objFlags": 512,
+    "_objFlags": 0,
     "_parent": {
       "__id__": 28
     },
@@ -4662,9 +4662,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 187,
+      "g": 187,
+      "b": 187,
       "a": 255
     },
     "_contentSize": {
@@ -9652,7 +9652,7 @@
     "background": null,
     "closeForm": false,
     "buttonClose": false,
-    "router": false,
+    "router": true,
     "phoneKey": false,
     "ShowFormActionSec": 0.2,
     "CloseFormActionSec": 0.2,

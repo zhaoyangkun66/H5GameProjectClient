@@ -193,9 +193,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "_contentSize": {
@@ -386,8 +386,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Clique na barra de ferramentas abaixo",
-    "_N$string": "Clique na barra de ferramentas abaixo",
+    "_string": "Click on the toolbar below",
+    "_N$string": "Click on the toolbar below",
     "_fontSize": 28,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -583,7 +583,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 599.74,
+      "width": 528.14,
       "height": 50
     },
     "_anchorPoint": {
@@ -650,7 +650,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 158.37,
+      "width": 146.33,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -662,7 +662,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -220.685,
+        -190.90499999999997,
         0,
         0,
         0,
@@ -702,8 +702,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "e selecione",
-    "_N$string": "e selecione",
+    "_string": "and select",
+    "_N$string": "and select",
     "_fontSize": 28,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -783,7 +783,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -108.5,
+        -84.73999999999997,
         0,
         0,
         0,
@@ -881,7 +881,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 375.37,
+      "width": 315.81,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -893,7 +893,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        112.185,
+        106.16500000000003,
         0,
         0,
         0,
@@ -933,8 +933,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "\"Adicionar à tela de inicial\"",
-    "_N$string": "\"Adicionar à tela de inicial\"",
+    "_string": "\"Add to Home Screen\"",
+    "_N$string": "\"Add to Home Screen\"",
     "_fontSize": 28,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -985,7 +985,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 599.74,
+      "width": 528.14,
       "height": 50
     },
     "_resize": 1,
@@ -1373,7 +1373,7 @@
     "CloseEffectType": 2,
     "ZorderLv": 7,
     "background": {
-      "__uuid__": "3f4c724d-7508-48db-aad9-2337581c64e4"
+      "__uuid__": "612e5f26-b463-4ed6-a90b-2ca2f5eb94a2"
     },
     "closeForm": true,
     "buttonClose": false,

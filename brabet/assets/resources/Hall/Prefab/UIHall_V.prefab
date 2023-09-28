@@ -9702,7 +9702,7 @@
         1,
         1,
         1,
-        1
+        0
       ]
     },
     "_eulerAngles": {
@@ -15104,7 +15104,7 @@
     "background": null,
     "closeForm": false,
     "buttonClose": false,
-    "router": false,
+    "router": true,
     "phoneKey": false,
     "ShowFormActionSec": 0.2,
     "CloseFormActionSec": 0.2,

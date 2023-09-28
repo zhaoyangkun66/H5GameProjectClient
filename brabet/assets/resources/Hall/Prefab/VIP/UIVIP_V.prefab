@@ -2254,7 +2254,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
-      "height": 15
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2318,7 +2318,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 0,
-      "height": 15
+      "height": 18
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2329,7 +2329,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -150,
+        -148,
         0,
         0,
         0,
@@ -2370,7 +2370,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "67e68bc9-dad5-4ad9-a2d8-7e03d458e32f"
+      "__uuid__": "bfe52c0a-480b-495e-bdaf-e9fd4239f27d"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -2413,7 +2413,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "88e79fd5-96b4-4a77-a1f4-312467171014"
+      "__uuid__": "95c8282f-8b14-4b49-a746-83a70efca5d6"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -2437,7 +2437,7 @@
       "__id__": 57
     },
     "_enabled": true,
-    "_N$totalLength": 300,
+    "_N$totalLength": 296,
     "_N$barSprite": {
       "__id__": 59
     },
@@ -2846,7 +2846,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 500,
-      "height": 15
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2910,7 +2910,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 0,
-      "height": 15
+      "height": 18
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -2921,7 +2921,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -250,
+        -248,
         0,
         0,
         0,
@@ -2962,7 +2962,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "67e68bc9-dad5-4ad9-a2d8-7e03d458e32f"
+      "__uuid__": "bfe52c0a-480b-495e-bdaf-e9fd4239f27d"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -3225,7 +3225,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "88e79fd5-96b4-4a77-a1f4-312467171014"
+      "__uuid__": "95c8282f-8b14-4b49-a746-83a70efca5d6"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -3249,7 +3249,7 @@
       "__id__": 74
     },
     "_enabled": true,
-    "_N$totalLength": 500,
+    "_N$totalLength": 496,
     "_N$barSprite": {
       "__id__": 76
     },
@@ -3945,7 +3945,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 500,
-      "height": 15
+      "height": 20
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4008,8 +4008,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 250,
-      "height": 15
+      "width": 0,
+      "height": 10
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4020,7 +4020,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -250,
+        -248,
         0,
         0,
         0,
@@ -4061,7 +4061,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "67e68bc9-dad5-4ad9-a2d8-7e03d458e32f"
+      "__uuid__": "bfe52c0a-480b-495e-bdaf-e9fd4239f27d"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -4324,7 +4324,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "88e79fd5-96b4-4a77-a1f4-312467171014"
+      "__uuid__": "95c8282f-8b14-4b49-a746-83a70efca5d6"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -4348,12 +4348,12 @@
       "__id__": 104
     },
     "_enabled": true,
-    "_N$totalLength": 500,
+    "_N$totalLength": 496,
     "_N$barSprite": {
       "__id__": 106
     },
     "_N$mode": 0,
-    "_N$progress": 0.5,
+    "_N$progress": 0,
     "_N$reverse": false,
     "_id": ""
   },
@@ -12095,7 +12095,7 @@
     "background": null,
     "closeForm": false,
     "buttonClose": false,
-    "router": false,
+    "router": true,
     "phoneKey": false,
     "ShowFormActionSec": 0.2,
     "CloseFormActionSec": 0.2,

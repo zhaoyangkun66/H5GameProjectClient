@@ -7829,7 +7829,9 @@
     "ShowEffectType": 0,
     "CloseEffectType": 0,
     "ZorderLv": 6,
-    "background": null,
+    "background": {
+      "__uuid__": "9a77383c-77ce-4fa3-9f24-8aad88c62f70"
+    },
     "closeForm": false,
     "buttonClose": false,
     "router": false,

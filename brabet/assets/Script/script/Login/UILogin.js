@@ -95,7 +95,7 @@ var o = require("../../Common/Base/UIBaseComponent")
         app.EventTrackManager().LogEvent(c.default.CLICK_BTN_LOGIN);
         var t = this.phone_account.node.parent.active ? this.phone_account.string : this.mail_account.string
           , n = this.password.string
-          , o = 1;
+          , o = 3;
         if (t || !this.phone_account.node.parent.active)
             if (n) {
                 if (!this.phone_account.node.parent.active) {

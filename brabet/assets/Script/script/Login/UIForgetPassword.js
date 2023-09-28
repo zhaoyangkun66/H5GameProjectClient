@@ -117,7 +117,7 @@ var o = require("../../Common/Base/BaseForm")
                     pwd: o,
                     type: 1,
                     code: n,
-                    login_type: 1
+                    login_type: 3
                 };
                 app.LoginManager().RequestResetPassword(i)
             } else {

@@ -28,12 +28,27 @@ var o = require("../../Common/Base/UIBaseComponent")
     t.prototype.start = function() {}
     ,
     t.prototype.onShow_RedDot_Receive = function(e) {
+        // if (e) {
+        //     for (var t = 0; t < this.RedDotIDArr.length; t++) {
+        //         var n = this.RedDotIDArr[t]
+        //           , o = e[a.RedDotEnum[n]];
+        //         if (o && o.is_show)
+        //             return void (this.SprRedNode.active = !!o.is_show)
+        //     }
+        //     this.SprRedNode.active = false
+        // }
         if (e) {
             for (var t = 0; t < this.RedDotIDArr.length; t++) {
                 var n = this.RedDotIDArr[t]
                   , o = e[a.RedDotEnum[n]];
-                if (o && o.is_show)
-                    return void (this.SprRedNode.active = !!o.is_show)
+                if (o && o.is_show) {
+                    if (this.SprRedNode.active = o.is_show,
+                    o.value && n === a.RedDotEnum.mail) {
+                        var i = this.GetWndComponent("label_num", cc.Label, this.SprRedNode);
+                        i && (i.string = o.value >= 99 ? "99+" : o.value)
+                    }
+                    return
+                }
             }
             this.SprRedNode.active = false
         }

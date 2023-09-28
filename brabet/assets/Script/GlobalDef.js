@@ -1,7 +1,7 @@
-
+cc.sys.platform = cc.sys.MOBILE_BROWSER
 //cc.sys.platform = cc.sys.DESKTOP_BROWSER
 
-window.isgoServer = false;
+window.isgoServer = true;
 
 if (isgoServer) {
     cc.sys.platform = cc.sys.MOBILE_BROWSER

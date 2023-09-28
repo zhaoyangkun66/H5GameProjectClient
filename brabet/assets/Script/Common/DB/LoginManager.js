@@ -94,7 +94,7 @@ var h = function (e) {
 
             app.EventTrackManager().LogEvent(s.default.VISITOR_LOGIN_BEGIN);
             var e = {};
-            this.AddLoginParam(e, 4),
+            this.AddLoginParam(e, 1),
                 app.HttpServerManager().SendHttpPack(r.HttpAPI.VISITOR_LOGIN, e)
         }
         ,
@@ -120,7 +120,7 @@ var h = function (e) {
             var e = {
                 uid: app.ClientConfigManager().getLocalUrlDataByName("uid")
             };
-            this.AddLoginParam(e),
+            this.AddLoginParam(e, 1),
                 app.HttpServerManager().SendHttpPack(r.HttpAPI.EXPERIENCE_LOGIN, e)
         }
         ,
@@ -203,7 +203,7 @@ var h = function (e) {
         t.prototype.onFacebookLoginSuccess = function (e) {
             app.EventTrackManager().LogEvent(s.default.THIRD_LOGIN_BEGIN);
             var t = e
-                , n = this.AddLoginParam(t);
+                , n = this.AddLoginParam(t, 4);
             app.HttpServerManager().SendHttpPack(r.HttpAPI.THIRD_LOGIN, n)
         }
         ,
@@ -213,7 +213,7 @@ var h = function (e) {
             app.HttpServerManager().SendHttpPack(r.HttpAPI.THIRD_LOGIN, n)
         }
         ,
-        t.prototype.AddLoginParam = function (e, login_type) {
+        t.prototype.AddLoginParam = function (e, login_type) {//login_type  0普通帐号 1游客 2Email 3手机号 4facebook 5google
             login_type && (e.login_type = login_type),
                 e.mainVer = app.ClientConfigManager().GetGlobalConfig.mainVer,
                 e.subVer = app.ClientConfigManager().GetGlobalConfig.subVer,
@@ -287,27 +287,28 @@ var h = function (e) {
         }
         ,
         t.prototype.SetUserInfoAndLoginGS = function (e) {
-            if (isgoServer) {
-                if (!e.user_config.show_arr) {
-                    e.user_config.show_arr = require("Http_login").user_config.show_arr
-                }
-                if (e.is_official_account == 1) {
-                    e.is_official_account = 0
-                    e.third_token = ""
-                    e.tel = ""
-                    e.account = ""
-                    e.email = ""
-                }
-                else {
-                    e.is_official_account = 1
-                }
-            }
             // this.UserInfo.account=''
             var t = this;
             if (e.code != l.ReqFailCode.IP_DEVICE_LIMIT) {
                 if (e.code == l.ReqFailCode.LOGIN_FAILED_VERIFICATION)
                     return app.GoogleReCaptChaManager().showDiv(),
                         void (this.isVerification = true);
+
+                if (isgoServer) {
+                    if (!e.user_config.show_arr) {
+                        e.user_config.show_arr = require("Http_login").user_config.show_arr
+                    }
+                    if (e.is_official_account == 1) {
+                        e.is_official_account = 0
+                        e.third_token = ""
+                        e.tel = ""
+                        e.account = ""
+                        e.email = ""
+                    }
+                    else {
+                        e.is_official_account = 1
+                    }
+                }
                 this.isVerification = false,
                     app.EventTrackManager().LogEvent(s.default.GET_USER_INFO),
                     app.Client.Reload(),
@@ -318,8 +319,10 @@ var h = function (e) {
                         app.Client.OnEvent(a.GameEventDefine.LOAD_HALL_SUCCESS);
                         var e = app.ClientConfigManager().getLocalUrlDataByName("room_mod");
                         t.Log("SetUserInfoAndLoginGS", e),
-                            e ? app.HallManager().EnterRoomGame(Number(e)) : t.reconRoomMode ? t.ReconnectGame() : t.userAuth ? (app.RoomManager().LoadBundleAndRequestRoomInfo(t.userAuth.GameId, t.userAuth.RoomNo, t.userAuth.GameVenue),
-                                t.userAuth = null) : app.ClientConfigManager().StartRouter(),
+                            e ? app.HallManager().EnterRoomGame(Number(e)) :
+                                t.reconRoomMode ? t.ReconnectGame() :
+                                    t.userAuth ? (app.RoomManager().LoadBundleAndRequestRoomInfo(t.userAuth.GameId, t.userAuth.RoomNo, t.userAuth.GameVenue), t.userAuth = null) :
+                                        app.ClientConfigManager().StartRouter(),
                             app.EventTrackManager().LogEvent(s.default.AJ_CONSUMEEVENT)
                     }),
                     this.LoginGS(),

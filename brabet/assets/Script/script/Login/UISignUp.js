@@ -120,7 +120,7 @@ var o = require("../../Common/Define/UINameDefine")
                     , t = this.validateCode.string
                     , n = this.password.string
                     , o = this.codeLabel.string.replace("+", "")
-                    , i = this.phone_account.node.parent.active ? 1 : 2;
+                    , i = this.phone_account.node.parent.active ? 3 : 2;
                 if (app.StringUtil().isLegal(n)) {
                     if (!this.phone_account.node.parent.active) {
                         if (!e)

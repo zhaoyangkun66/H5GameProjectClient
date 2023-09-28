@@ -34,7 +34,7 @@ var o = require("../Base/Singleton")
                         nickname: a,
                         third_token: r,
                         headimg: s,
-                        login_type: 1,
+                        login_type: 5,
                         third_account: c,
                         third_jwt: l
                     }),

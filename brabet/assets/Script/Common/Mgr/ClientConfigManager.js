@@ -108,7 +108,7 @@ var o = require("../Base/Singleton")
             t.prototype.StartRouter = function () {
                 var e = this.GetStartRouterF;
                 e && (this.ResetRouterF(),
-                    !app.FormManager().IsFormShow(e) && app.FormManager().IsSupportVisitor(e) && app.FormManager().ShowForm(e, this.GetStartData));
+                    !app.FormManager().IsFormShow(e) && (app.FormManager().IsSupportVisitor(e) ? app.FormManager().ShowForm(e, this.GetStartData): app.UserManager().getIsOfficialAccount() && app.FormManager().ShowForm(e, this.GetStartData)));
                 var t = this.GetStartRouterG;
                 if (t) {
                     this.ResetRouterG();

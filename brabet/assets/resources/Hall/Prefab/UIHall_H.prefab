@@ -15167,7 +15167,7 @@
     "background": null,
     "closeForm": false,
     "buttonClose": true,
-    "router": false,
+    "router": true,
     "phoneKey": false,
     "ShowFormActionSec": 0.2,
     "CloseFormActionSec": 0.2,
