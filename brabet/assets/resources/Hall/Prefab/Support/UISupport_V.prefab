@@ -451,7 +451,7 @@
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0.5
+      "y": 1
     },
     "_trs": {
       "__type__": "TypedArray",
@@ -1916,7 +1916,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 650,
-      "height": 730.416
+      "height": 146.41600000000005
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1928,7 +1928,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -728.7919999999999,
+        -436.792,
         0,
         0,
         0,
@@ -1996,7 +1996,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 650,
-      "height": 730.416
+      "height": 146.41600000000005
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3579,7 +3579,7 @@
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
-      "y": 0.5
+      "y": 1
     },
     "_trs": {
       "__type__": "TypedArray",
@@ -5883,7 +5883,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 1334
+      "height": 750
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6267,7 +6267,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 1234
+      "height": 650
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -6279,7 +6279,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -717,
+        -425,
         0,
         0,
         0,
@@ -6536,8 +6536,8 @@
     "_enabled": true,
     "alignMode": 1,
     "_target": null,
-    "_alignFlags": 45,
-    "_left": 0,
+    "_alignFlags": 37,
+    "_left": 292,
     "_right": 0,
     "_top": 0,
     "_bottom": 0,
@@ -6549,7 +6549,7 @@
     "_isAbsBottom": true,
     "_isAbsHorizontalCenter": true,
     "_isAbsVerticalCenter": true,
-    "_originalWidth": 0,
+    "_originalWidth": 750,
     "_originalHeight": 0,
     "_id": ""
   },
@@ -6565,9 +6565,9 @@
     "CloseEffectType": 0,
     "ZorderLv": 6,
     "background": {
-      "__uuid__": "9a77383c-77ce-4fa3-9f24-8aad88c62f70"
+      "__uuid__": "612e5f26-b463-4ed6-a90b-2ca2f5eb94a2"
     },
-    "closeForm": false,
+    "closeForm": true,
     "buttonClose": false,
     "router": false,
     "phoneKey": false,

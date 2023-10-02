@@ -1076,7 +1076,9 @@
   },
   {
     "__type__": "cc.ClickEvent",
-    "target": null,
+    "target": {
+      "__id__": 1
+    },
     "component": "",
     "_componentId": "cd2bd3FLCZC+ppypr8zCpmK",
     "handler": "OnClick_BtnWnd",
@@ -1503,7 +1505,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "dd50850b-44b8-4fbe-8642-5dff68f69a6b"
+      "__uuid__": "437c4328-96f4-43d8-a416-c5b8b38d439a"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -2080,7 +2082,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "dd50850b-44b8-4fbe-8642-5dff68f69a6b"
+      "__uuid__": "1b5ea89f-a459-41cd-9665-335beb96a077"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -3022,7 +3024,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "dd50850b-44b8-4fbe-8642-5dff68f69a6b"
+      "__uuid__": "437c4328-96f4-43d8-a416-c5b8b38d439a"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -3964,7 +3966,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "dd50850b-44b8-4fbe-8642-5dff68f69a6b"
+      "__uuid__": "437c4328-96f4-43d8-a416-c5b8b38d439a"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -4312,7 +4314,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "dd50850b-44b8-4fbe-8642-5dff68f69a6b"
+      "__uuid__": "437c4328-96f4-43d8-a416-c5b8b38d439a"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -5073,7 +5075,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "dd50850b-44b8-4fbe-8642-5dff68f69a6b"
+      "__uuid__": "437c4328-96f4-43d8-a416-c5b8b38d439a"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -5943,7 +5945,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "dd50850b-44b8-4fbe-8642-5dff68f69a6b"
+      "__uuid__": "437c4328-96f4-43d8-a416-c5b8b38d439a"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -6233,7 +6235,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "19bdebe4-8627-4e94-938d-b54adb88f695"
+      "__uuid__": "1b5ea89f-a459-41cd-9665-335beb96a077"
     },
     "_type": 1,
     "_sizeMode": 0,
@@ -6472,7 +6474,7 @@
     "_enabled": true,
     "ShowEffectType": 1,
     "CloseEffectType": 1,
-    "ZorderLv": 6,
+    "ZorderLv": 5,
     "background": {
       "__uuid__": "3f4c724d-7508-48db-aad9-2337581c64e4"
     },

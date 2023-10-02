@@ -12,7 +12,7 @@ UIGoldReward	Hall/Prefab/UIGoldReward	0	false	0	1
 UIVIP	Hall/Prefab/VIP/UIVIP_V	0	false	1	1
 UIVIPReduced	Hall/Prefab/VIP/UIVIPReduced	0	false	0	0
 UIBonuses	Hall/Prefab/Bonuses/UIBonuses_V	0	false	1	0
-UISupport	Hall/Prefab/Support/UISupport_V	0	false	0	1
+UISupport	Hall/Prefab/Support/UISupport_H	0	false	0	1
 UIAiSupport	Hall/Prefab/Support/UIAiSupport_V	0	false	0	1
 UIStoreQR	Hall/Prefab/Deposit_Withdraw/UIStoreQR	0	false	0	0
 UIStoreQRUSDT	Hall/Prefab/Deposit_Withdraw/UIStoreQRUSDT	0	false	0	0
