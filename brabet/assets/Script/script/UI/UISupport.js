@@ -62,10 +62,13 @@ var l = cc._decorator
         this.initMainData(),
         // this.onChildNodeShow(0),
        // app.SupportManager().RequestRobotQuestionsAllType(1)
-                app.SupportManager().RequestSupportList();
+        //        app.SupportManager().RequestSupportList();
         this.onGetFaqInfo()
 
-
+        this.ToWechatOrQQClient({
+            chat_url: "http://192.168.1.100:280/client/kefu/",
+            is_small: 1
+        })
     }
     ,
     t.prototype.initMainData = function() {

@@ -76,7 +76,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        562.5,
+        1146.5,
         667,
         0,
         0,
@@ -6190,7 +6190,7 @@
     },
     "component": "",
     "_componentId": "6f9ab4PqK1BA5HI2EEAK30A",
-    "handler": "OnClick_BtnWnd",
+    "handler": "OnClick_Close",
     "customEventData": ""
   },
   {

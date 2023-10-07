@@ -67,7 +67,7 @@ var o = require("../Base/Singleton")
                             e[key] = xxx[key]
                         }
                     }
-                    e.ai_chat_robot_switch = 1
+                    e.ai_chat_robot_switch = 0
                     // e.gs_sport = "28966"
                 }
 

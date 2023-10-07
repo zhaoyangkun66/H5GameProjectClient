@@ -215,6 +215,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
               , d = p.children[0];
             d.getComponent(cc.Sprite).spriteFrame = this.GoldBg[r];
             var h = this.GetWndNode("icon_red", d);
+           // t.grade=0
             h.active = 0 == t.grade;
             var u = this.GetWndNode("btn_grade", d);
             u.active = 0 == t.grade,

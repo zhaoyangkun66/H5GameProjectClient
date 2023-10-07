@@ -72,6 +72,100 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 ,
                 t.prototype.onShareData = function () {
                     var e = app.PromoteMainManager().GetShareData;
+                    // e = {
+                    //     "uid": 10332443,
+                    //     "team_num": 0,
+                    //     "new_num": 0,
+                    //     "direct_num": 0,
+                    //     "parent_uid": 0,
+                    //     "qr_code": "",
+                    //     "link": "http://47.99.125.110:8088/client/web-mobile/?agentid=10332443",
+                    //     "ad": "",
+                    //     "active": 0,
+                    //     "share_reward": 0,
+                    //     "share_count": 100,
+                    //     "share_list": [
+                    //         {
+                    //             "id": 1,
+                    //             "count": 3,
+                    //             "gold": 3,
+                    //             "state": 1
+                    //         },
+                    //         {
+                    //             "id": 2,
+                    //             "count": 10,
+                    //             "gold": 10,
+                    //             "state": 2
+                    //         },
+                    //         {
+                    //             "id": 3,
+                    //             "count": 20,
+                    //             "gold": 15,
+                    //             "state": 0
+                    //         },
+                    //         {
+                    //             "id": 4,
+                    //             "count": 40,
+                    //             "gold": 30,
+                    //             "state": 0
+                    //         },
+                    //         {
+                    //             "id": 5,
+                    //             "count": 60,
+                    //             "gold": 50,
+                    //             "state": 0
+                    //         },
+                    //         {
+                    //             "id": 6,
+                    //             "count": 100,
+                    //             "gold": 100,
+                    //             "state": 0
+                    //         },
+                    //         {
+                    //             "id": 7,
+                    //             "count": 500,
+                    //             "gold": 750,
+                    //             "state": 0
+                    //         },
+                    //         {
+                    //             "id": 8,
+                    //             "count": 1000,
+                    //             "gold": 1200,
+                    //             "state": 0
+                    //         },
+                    //         {
+                    //             "id": 9,
+                    //             "count": 2000,
+                    //             "gold": 2000,
+                    //             "state": 0
+                    //         },
+                    //         {
+                    //             "id": 10,
+                    //             "count": 5000,
+                    //             "gold": 5000,
+                    //             "state": 0
+                    //         },
+                    //         {
+                    //             "id": 11,
+                    //             "count": 10000,
+                    //             "gold": 10000,
+                    //             "state": 0
+                    //         },
+                    //         {
+                    //             "id": 12,
+                    //             "count": 50000,
+                    //             "gold": 100000,
+                    //             "state": 0
+                    //         }
+                    //     ],
+                    //     "game_count": 0,
+                    //     "partner_agent": 0,
+                    //     "agent_cash_desc": "1. Where is my invitation link?<br/>In the main interface of the share, copy your referral link and share, the members registered in this way will become your direct agents, and the lower level members they invite will be regarded as your team members, and so on, they can develop infinitely.<br/><br/><br/>2. Where can I check my commission?<br/>In the main interface of the share, click “<span color: inherit;>Refer” to view the details of commission and receive commission.</span><br/><br/><br/>",
+                    //     "agent_text_amount": 0,
+                    //     "agent_commission": 0,
+                    //     "share_content": "",
+                    //     "agent_withdraw_need_tel": 1
+                    // }
                     if (e) {
                         var t = e;
                         this.setLabelID(t.uid),
@@ -282,10 +376,10 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 t.prototype.renderBox = function (e, t) {
                     var n = t.state;
                     e.boxInfo = t,
-                        e.children[2].active = n == u.NORAML,
-                        e.children[1].active = false,
-                        e.children[0].active = n == u.GOT,
-                        n == u.REACH && (e.children[0].active = true);
+                        e.children[1].active = n != u.GOT,
+                        e.children[2].active = n == u.REACH,
+                        e.children[0].active = n == u.GOT
+                    // n == u.REACH && (e.children[0].active = true);
                     var o = app.GameConfigManager().GetCurrency;
                     e.children[3].getComponent(cc.Label).string = o + t.gold
                     e.children[4].children[1].getComponent(cc.Label).string = this.invCount + "/" + t.count
@@ -356,8 +450,9 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 ,
                 t.prototype.onBtnBoxClick = function (e) {
                     if (!app.UserManager().GetIsOfficialPopup()) {
-                        var t = e.node.boxInfo;
-                        (t.state = u.REACH) && (this.SelAwardNode = e.node,
+                        var t = e.target.boxInfo;
+                        (t.state == u.REACH) && (this.SelAwardNode = e.target,
+                            //  app.Client.OnEvent(i.GameEventDefine.GET_SPREAD_WAY, e),
                             app.PromoteMainManager().RequstShareAward(t.id))
                     }
                 }
