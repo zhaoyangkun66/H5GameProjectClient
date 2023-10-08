@@ -1523,7 +1523,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 42.62,
+      "width": 39.91,
       "height": 39.8
     },
     "_anchorPoint": {
@@ -1577,7 +1577,7 @@
     "_dstBlendFactor": 771,
     "_string": "V0",
     "_N$string": "V0",
-    "_fontSize": 30,
+    "_fontSize": 28,
     "_lineHeight": 30,
     "_enableWrapText": true,
     "_N$file": {
@@ -1605,9 +1605,9 @@
     "_enabled": true,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 0,
+      "r": 159,
+      "g": 50,
+      "b": 15,
       "a": 255
     },
     "_width": 1,

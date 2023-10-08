@@ -89,7 +89,7 @@ fs.readFile("./PolyglotNew.csv", (err, data) => {
     }
     else {
         data=data.toString()
-        data=data.replace(/[\r\n]/g,"")
+        data=data.replace(/[\n\r]/g,"")
         console.log(data);
         fs.writeFile('output.txt', data, function (err) { if (err) throw err; console.log('It\'s saved!'); }); 
     }
