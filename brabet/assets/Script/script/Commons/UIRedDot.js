@@ -44,6 +44,8 @@ var o = require("../../Common/Base/UIBaseComponent")
                     for (var t = 0; t < this.RedDotIDArr.length; t++) {
                         var n = this.RedDotIDArr[t]
                             , o = e[a.RedDotEnum[n]];
+                           // o.value=155
+                           // o.is_show=1
                         if (o && o.is_show) {
                             if (this.SprRedNode.active = o.is_show,
                                 o.value && n === a.RedDotEnum.mail) {
@@ -55,6 +57,7 @@ var o = require("../../Common/Base/UIBaseComponent")
                     }
                     this.SprRedNode.active = false
                 }
+                //this.SprRedNode.active = true
             }
             ,
             __decorate([c({

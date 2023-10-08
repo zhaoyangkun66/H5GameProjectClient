@@ -1178,8 +1178,8 @@
       "__id__": 1
     },
     "_enabled": true,
-    "ShowEffectType": 0,
-    "CloseEffectType": 0,
+    "ShowEffectType": 6,
+    "CloseEffectType": 6,
     "ZorderLv": 6,
     "background": null,
     "closeForm": false,

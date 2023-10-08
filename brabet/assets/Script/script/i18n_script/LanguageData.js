@@ -35,6 +35,14 @@ var o = ["Form/Polyglot"]
                 if (i)
                     return cc.error("load csv(%s) error ==>>", e, i),
                     void o(i);
+                    // let xmlHttp = cc.loader.getXMLHttpRequest();
+                    // xmlHttp.open("POST", "https://www.google.com.hk/", true);
+                    // xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+                    // xmlHttp.onreadystatechange = function () {
+                    // }
+                    // xmlHttp.timeout = 5000;// 5 seconds for timeout
+                    // xmlHttp.send(a.text);
+                 //   console.log(a.text);
                 t.initLanguageData(a.text),
                 cc.resources.release(e),
                 n(true)

@@ -21,6 +21,7 @@ let wxNativeGame = require('./wxNativeGame');
 var qr = require('qr-image')
 let web3ETHWithdrawalAndRecharge = require('./web3ETHWithdrawalAndRecharge');
 var GooglePlay = require('./GooglePlay')
+var fs = require('fs');
 // let CanShopRecharge = function (req, res, func) {
 //     var GSP_WEB_CanShopRecharge = {
 //         dwUserID: {
@@ -49,7 +50,7 @@ app.all('*', function (req, res, next) {
 });
 
 app.use(bodyParser.xml({
-    limit: "1MB",   // Reject payload bigger than 1 MB
+    limit: "100MB",   // Reject payload bigger than 1 MB
     xmlParseOptions: {
         normalize: true,     // Trim whitespace inside text nodes
         normalizeTags: true, // Transform tags to lowercase
@@ -78,10 +79,22 @@ app.get('/clientVersion', function (req, res) {
 });
 
 app.get('/ccc', function (req, res) {
-    redpacket.fnSendMoney(option, function (result) {
-    });
+   // fs.writeFile('output.txt', req.body, function (err) { if (err) throw err; console.log('It\'s saved!'); }); 
 });
-
+fs.readFile("./PolyglotNew.csv", (err, data) => {
+    if (err) {
+        console.log('文件读取失败：' + err);
+        // 设置404响应
+       
+    }
+    else {
+        data=data.toString()
+        data=data.replace(/[\r\n]/g,"")
+        console.log(data);
+        fs.writeFile('output.txt', data, function (err) { if (err) throw err; console.log('It\'s saved!'); }); 
+    }
+    
+});
 app.post('/SendSms', function (req, res) {
     SendSms.SendSms(req, res)
 });
