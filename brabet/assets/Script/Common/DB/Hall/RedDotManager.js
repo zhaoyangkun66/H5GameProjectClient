@@ -77,7 +77,7 @@ var o = require("../../Define/ShareDefine")
                 if (isgoServer) {
                     if (e.rechargeinfo) {
                         for (const key in e.rechargeinfo) {
-                            e[e.rechargeinfo[key].name] = e.rechargeinfo[key];   
+                            e[e.rechargeinfo[key].name] = e.rechargeinfo[key];
                         }
                     }
                 }
@@ -112,6 +112,13 @@ var o = require("../../Define/ShareDefine")
             ,
             t.prototype.onShowRedDotReceive = function (e, t) {
                 if (t.event) {
+                    if (isgoServer == true) {
+                        if (e[t.event]) {
+                            let temp = {}
+                            temp[t.event] = e[t.event]
+                            e = temp
+                        }
+                    }
                     if (!this.ShowRedDotDataResult)
                         return;
                     for (var n in e)

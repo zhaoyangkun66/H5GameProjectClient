@@ -37,6 +37,8 @@ var o = function (e) {
                         if (l)
                             return void s.ErrLog("httpRequest time out:%s", r);
                         clearTimeout(p)
+
+                       // setTimeout(function () {
                         if (isgoServer == true) {
                             i && i(e, t, c.responseText, o)
                         }
@@ -44,6 +46,8 @@ var o = function (e) {
                             200 == c.status ? i && i(e, t, c.responseText, o) : (s.ErrLog("url:%s onreadystatechange(%s, %s, %s)", r, c.readyState, c.status, c.statusText, o),
                                 d())
                         }
+                      //  }, 2000);
+
                     }
                 }
                 ,

@@ -373,7 +373,7 @@
     "_enabled": true,
     "ShowEffectType": 0,
     "CloseEffectType": 0,
-    "ZorderLv": 6,
+    "ZorderLv": 8,
     "background": null,
     "closeForm": false,
     "buttonClose": false,

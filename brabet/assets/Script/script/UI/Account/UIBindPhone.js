@@ -76,7 +76,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         area: t
                     })
                 } else
-                    app.SysNotifyManager().ShowToast("UI.System_45")
+                    app.SysNotifyManager().ShowToast("UI.System_inputPhone")
             }
             ,
             t.prototype.onResetBindPhone = function () {
@@ -93,7 +93,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     } else
                         app.SysNotifyManager().ShowToast("UI_BindPhone1");
                 else
-                    app.SysNotifyManager().ShowToast("UI.System_45")
+                    app.SysNotifyManager().ShowToast("UI.System_inputPhone")
             }
             ,
             t.prototype.StartEnterCode = function () {

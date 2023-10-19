@@ -61,7 +61,12 @@ var o = require("../../../script/common/GIDTool")
             ,
             t.prototype.onFaqList = function (e) {
                 if (isgoServer) {
-                    e = require("Http_getFaqList")
+                    let xxx = require("Http_getFaqList")
+                    for (const key in xxx) {
+                        if (e[key] == undefined || e[key] == null) {
+                            e[key] = xxx[key]
+                        }
+                    }
                 }
                 this.faqInfoList = e,
                     app.Client.OnEvent(r.GameEventDefine.GET_FAQ_LIST, e)

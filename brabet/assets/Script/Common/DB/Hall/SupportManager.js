@@ -81,9 +81,11 @@ var o = require("../../Base/Singleton")
     }
     ,
     t.prototype.onSupportList = function(e) {
-        e.sort(function(e, t) {
-            return t.vip_level - e.vip_level
-        }),
+        if (!isgoServer) {
+            e.sort(function(e, t) {
+                return t.vip_level - e.vip_level
+            })
+        }
         app.Client.OnEvent(i.GameEventDefine.GET_KEFU_LIST, e)
     }
     ,

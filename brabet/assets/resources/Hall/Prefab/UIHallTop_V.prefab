@@ -1535,8 +1535,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        36.951,
-        -38.683,
+        37,
+        -37,
         0,
         0,
         0,
@@ -2501,11 +2501,11 @@
     },
     "_enabled": true,
     "_defaultClip": {
-      "__uuid__": "1c221e56-7749-4c7e-8b23-6a1e5b1acb83"
+      "__uuid__": "e7599040-c807-4ddb-b6c1-a57992297b43"
     },
     "_clips": [
       {
-        "__uuid__": "1c221e56-7749-4c7e-8b23-6a1e5b1acb83"
+        "__uuid__": "e7599040-c807-4ddb-b6c1-a57992297b43"
       }
     ],
     "playOnLoad": false,
@@ -6452,7 +6452,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 30.810000000000002,
+      "width": 30.11,
       "height": 30
     },
     "_anchorPoint": {
@@ -6464,8 +6464,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -0.017,
-        0.785,
+        0,
+        0,
         0,
         0,
         0,
@@ -6516,7 +6516,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 14.81,
+      "width": 13.51,
       "height": 30.24
     },
     "_anchorPoint": {
@@ -6528,7 +6528,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -8.881784197001252e-16,
+        0,
         0,
         0,
         0,
@@ -6574,7 +6574,7 @@
     "_lineHeight": 24,
     "_enableWrapText": true,
     "_N$file": {
-      "__uuid__": "14640ad7-4182-4258-881d-392c02fbf0ef"
+      "__uuid__": "0d2c2250-353d-4ebb-8ded-19542fe330f0"
     },
     "_isSystemFontUsed": false,
     "_spacingX": 0,
@@ -6641,7 +6641,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 30.810000000000002,
+      "width": 30.11,
       "height": 30
     },
     "_resize": 1,
@@ -6652,8 +6652,8 @@
       "height": 40
     },
     "_N$startAxis": 0,
-    "_N$paddingLeft": 8,
-    "_N$paddingRight": 8,
+    "_N$paddingLeft": 8.3,
+    "_N$paddingRight": 8.3,
     "_N$paddingTop": 0,
     "_N$paddingBottom": 0,
     "_N$spacingX": 0,

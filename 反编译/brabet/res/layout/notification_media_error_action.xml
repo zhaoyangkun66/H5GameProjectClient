@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/error_page" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/error_icon" android:layout_width="120.0dip" android:layout_height="120.0dip" android:layout_marginTop="80.0dip" />
+    <TextView android:textSize="16.0dip" android:textColor="#ff999999" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/error_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:lineSpacingMultiplier="1.5" />
+    <Button android:textSize="14.0dip" android:textStyle="bold" android:textColor="#ff5a5a5a" android:layout_gravity="center_horizontal" android:id="@id/error_buttom" android:background="@drawable/black_rectangle_bg" android:visibility="gone" android:layout_width="258.0dip" android:layout_height="44.0dip" android:layout_marginTop="29.0dip" android:text="@string/reload_web" />
+</LinearLayout>

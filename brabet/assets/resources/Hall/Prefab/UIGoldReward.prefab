@@ -187,7 +187,7 @@
     "node": {
       "__id__": 2
     },
-    "_enabled": true,
+    "_enabled": false,
     "_materials": [
       {
         "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
@@ -1181,7 +1181,9 @@
     "ShowEffectType": 6,
     "CloseEffectType": 6,
     "ZorderLv": 6,
-    "background": null,
+    "background": {
+      "__uuid__": "612e5f26-b463-4ed6-a90b-2ca2f5eb94a2"
+    },
     "closeForm": false,
     "buttonClose": false,
     "router": false,

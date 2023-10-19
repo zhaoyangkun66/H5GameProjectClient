@@ -1,7 +1,7 @@
 window.g_cfg = {
 	cssName: 'style-mobile.css',
 	icoName: 'favicon.ico',
-	appleIcoName: 'favicon.ico',
+	appleIcoName: 'favicon.png',
 	settingName: 'src/settings.js',
 	mainName: 'main.js',
 	cocos2djsName: 'cocos2d-js-min.js',

@@ -56378,7 +56378,7 @@ window.__require = function e(t, n, o) {
         n.GAID = "G-M36ZXGX5X0",
         n.footer = 'Powered by <a target="_blank" href="" title="Brabet">Brabet',
         n.GoogleClientID = "1028031628248-hh629s30taao79a8f65v5nptk9624afk.apps.googleusercontent.com",
-        n.FacebookAppID = "1691987294470305",
+        n.FacebookAppID = "16919872944703053",
         n.FacebookAppSecret = "",
         n.FacebookDisplayName = "brabet",
         n.FacebookLoginScheme = "fb" + n.FacebookAppID,

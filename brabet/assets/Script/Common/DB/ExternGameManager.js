@@ -257,7 +257,7 @@ var o = require("../../script/common/room_mode_tool")
                             }
                         }
                     }
-                    xmlHttp.timeout = 5000;// 5 seconds for timeout
+                    xmlHttp.timeout = 15000;// 5 seconds for timeout
                     xmlHttp.send();
                     app.Client.OnEvent("ModalLayer", EventWaitType.EventWaitType.OpenNet)
                 }

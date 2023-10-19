@@ -52,7 +52,10 @@ var o = require("../../../Common/Base/BaseForm")
                         if (e && 0 == e[a.VisibleBtnTag.DownloadBtn])
                             return void (this.DownApp.active = false);
                         if (cc.sys.os == cc.sys.OS_ANDROID)
+                        {
                             this.DownApp.active = !app.ComTool().AndroidHybirdPlatform();
+                            this.DownApp.active = (!(window.matchMedia('(display-mode: standalone)').matches));
+                        }
                         else if (cc.sys.os == cc.sys.OS_IOS) {
                             var t = app.ClientConfigManager().getLocalUrlDataByName("ioswebclip");
                             this.DownApp.active = !(1 == Number(t)),

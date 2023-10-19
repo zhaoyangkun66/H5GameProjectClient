@@ -45,7 +45,7 @@ function(e) {
             o && i) {
                 var a = t;
                 i.tagname = a.name,
-                cc.find("Background/Label", i).getComponent(cc.Label).string = a.title,
+                cc.find("Label", i).getComponent(cc.Label).string = a.title,
                 o.addChild(i)
             }
         })

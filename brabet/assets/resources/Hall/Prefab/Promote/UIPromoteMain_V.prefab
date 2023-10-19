@@ -59,7 +59,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 3630.16
+      "height": 2870.16
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -4131,8 +4131,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "https://www.brabet.com/?agentid=159093636",
-    "_N$string": "https://www.brabet.com/?agentid=159093636",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 20,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -6499,7 +6499,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 24.01,
+      "width": 0,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -6551,8 +6551,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "0",
-    "_N$string": "0",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 36,
     "_lineHeight": 36,
     "_enableWrapText": true,
@@ -8377,8 +8377,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "1.bonus",
-    "_N$string": "1.bonus",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -8487,8 +8487,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "O membro\nO membro",
-    "_N$string": "O membro\nO membro",
+    "_string": "\n",
+    "_N$string": "\n",
     "_fontSize": 22,
     "_lineHeight": 32,
     "_enableWrapText": true,
@@ -9094,8 +9094,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "1.bonus",
-    "_N$string": "1.bonus",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -9204,8 +9204,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "O membro\nO membro",
-    "_N$string": "O membro\nO membro",
+    "_string": "\n",
+    "_N$string": "\n",
     "_fontSize": 22,
     "_lineHeight": 32,
     "_enableWrapText": true,
@@ -9811,8 +9811,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "1.bonus",
-    "_N$string": "1.bonus",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -9921,8 +9921,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "O membro\nO membro",
-    "_N$string": "O membro\nO membro",
+    "_string": "\n",
+    "_N$string": "\n",
     "_fontSize": 22,
     "_lineHeight": 32,
     "_enableWrapText": true,
@@ -18824,8 +18824,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "er\ngames",
-    "_N$string": "er\ngames",
+    "_string": "\n",
+    "_N$string": "\n",
     "_fontSize": 20,
     "_lineHeight": 24,
     "_enableWrapText": true,
@@ -45448,7 +45448,7 @@
         "__id__": 1300
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 1340
@@ -45471,7 +45471,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 760
+      "height": 290
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -45483,7 +45483,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -2840.16,
+        -160,
         0,
         0,
         0,
@@ -45515,7 +45515,7 @@
       "__id__": 1227
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 1229
@@ -46168,7 +46168,7 @@
         "__id__": 1249
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 1253
@@ -49641,7 +49641,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 760
+      "height": 290
     },
     "_resize": 1,
     "_N$layoutType": 2,
@@ -49726,7 +49726,7 @@
     "_layoutSize": {
       "__type__": "cc.Size",
       "width": 750,
-      "height": 3630.16
+      "height": 2870.16
     },
     "_resize": 1,
     "_N$layoutType": 2,

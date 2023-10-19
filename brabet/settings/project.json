@@ -4,7 +4,18 @@
       true
     ]
   ],
-  "excluded-modules": [],
+  "excluded-modules": [
+    "Collider",
+    "DragonBones",
+    "Physics",
+    "Spine Skeleton",
+    "TiledMap",
+    "3D",
+    "3D Primitive",
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle"
+  ],
   "group-list": [
     "default"
   ],
@@ -20,7 +31,7 @@
     "width": 960,
     "height": 640
   },
-  "last-module-event-record-time": 1696431649467,
+  "last-module-event-record-time": 1697081139415,
   "preview-port": 7456,
   "clear-simulator-cache": true,
   "facebook": {

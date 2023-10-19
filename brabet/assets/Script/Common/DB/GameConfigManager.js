@@ -238,7 +238,6 @@ var o = require("../Define/HttpServerDefine")
             ,
             t.prototype.OnGameList = function (e, t) {
                 if (e) {
-                    e["other_game"] = []
                     if (isgoServer) {
                         let xxx = require("Http_gameList")
                         for (const key2 in e["game_type"]) {

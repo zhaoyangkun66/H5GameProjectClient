@@ -46,28 +46,6 @@ var o = require("../../../Base/Singleton")
             }
             ,
             t.prototype.onGetEmailList = function (e) {
-                if (isgoServer) {
-                    if (!(e instanceof Array)) {
-                        e = []
-                        e = [
-                            {
-                                "id": 6145,
-                                "gold": 0,
-                                "title": "Notícia Importante",
-                                "content": "Caros usuários do BRABET, para melhor atendê-lo. Você pode nos encontrar através deles a partir de hoje! \r\nwww.brabet.com , www.1brabet.com , www.2brabet.com , www.3brabet.com , www.4brabet.com , www.5brabet.com , www.6brabet.com , www.7brabet.com , www.8brabet.com , www.9brabet.com \r\nTodos os itens acima são endereços oficialmente certificados.",
-                                "url_text": "",
-                                "in_url": 0,
-                                "out_url": "",
-                                "bet_multiple": 0,
-                                "create_time": "2023-09-07 12:03:45",
-                                "expire_day": 30,
-                                "expire_ymd": "2023-10-07 00:00:00",
-                                "expire_time": 1696647600,
-                                "status": 0
-                            }
-                        ]
-                    }
-                }
                 e.sort(function (e, t) {
                     return e.status - t.status
                 }),

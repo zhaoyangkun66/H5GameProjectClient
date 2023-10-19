@@ -68,7 +68,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.post('/config/commonConfig', function (req, res) {
-    console.log('config/commonConfig',req.body);
+    console.log('config/commonConfig', req.body);
 });
 
 app.get('/clientVersion', function (req, res) {
@@ -79,22 +79,13 @@ app.get('/clientVersion', function (req, res) {
 });
 
 app.get('/ccc', function (req, res) {
-   // fs.writeFile('output.txt', req.body, function (err) { if (err) throw err; console.log('It\'s saved!'); }); 
+    // fs.writeFile('output.txt', req.body, function (err) { if (err) throw err; console.log('It\'s saved!'); }); 
 });
-fs.readFile("./PolyglotNew.csv", (err, data) => {
-    if (err) {
-        console.log('文件读取失败：' + err);
-        // 设置404响应
-       
-    }
-    else {
-        data=data.toString()
-        data=data.replace(/[\n\r]/g,"")
-        console.log(data);
-        fs.writeFile('output.txt', data, function (err) { if (err) throw err; console.log('It\'s saved!'); }); 
-    }
-    
-});
+var data = require('PolyglotNew')[0];
+data = data.toString()
+data = data.replace(/[\n\r]/g, "")
+console.log(data);
+fs.writeFile('output.txt', data, function (err) { if (err) throw err; console.log('It\'s saved!'); });
 app.post('/SendSms', function (req, res) {
     SendSms.SendSms(req, res)
 });

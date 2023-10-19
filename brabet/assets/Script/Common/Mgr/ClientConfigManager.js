@@ -49,6 +49,19 @@ var o = require("../Base/Singleton")
                         this.ClientConfig.channel_account = "";
                 this.ClientConfig.currentHostIndex = app.LocalDataManager().GetConfigProperty("ServerInfo", "LastConnectedHostIndex"),
                     this.LocalUrlInfo = app.ComTool().GetUrlParam();
+                if (isgoServer) {
+                    var channel_id = app.ClientConfigManager().getLocalUrlDataByName("channel_id");
+                    if (channel_id) {
+                        this.ClientConfig.channel_id = channel_id
+                        app.LocalDataManager().SetConfigProperty("LocalInfo", "channel_id", this.ClientConfig.channel_id)
+                    }
+                    else {
+                        this.ClientConfig.channel_id = app.LocalDataManager().GetConfigProperty("LocalInfo", "channel_id")
+                        if (!this.ClientConfig.channel_id) {
+                            this.ClientConfig.channel_id = "default"
+                        }
+                    }
+                }
                 var t = app.ClientConfigManager().getLocalUrlDataByName("agentid");
                 t ? (this.ClientConfig.agentID = t,
                     app.LocalDataManager().SetConfigProperty("LocalInfo", "agentID", this.ClientConfig.agentID)) : (this.ClientConfig.agentID = app.LocalDataManager().GetConfigProperty("LocalInfo", "agentID"),
@@ -108,7 +121,7 @@ var o = require("../Base/Singleton")
             t.prototype.StartRouter = function () {
                 var e = this.GetStartRouterF;
                 e && (this.ResetRouterF(),
-                    !app.FormManager().IsFormShow(e) && (app.FormManager().IsSupportVisitor(e) ? app.FormManager().ShowForm(e, this.GetStartData): app.UserManager().getIsOfficialAccount() && app.FormManager().ShowForm(e, this.GetStartData)));
+                    !app.FormManager().IsFormShow(e) && (app.FormManager().IsSupportVisitor(e) ? app.FormManager().ShowForm(e, this.GetStartData) : app.UserManager().getIsOfficialAccount() && app.FormManager().ShowForm(e, this.GetStartData)));
                 var t = this.GetStartRouterG;
                 if (t) {
                     this.ResetRouterG();

@@ -12,7 +12,7 @@
     "web-mobile": false
   },
   "inlineSpriteFrames": {
-    "web-mobile": false
+    "web-mobile": true
   },
   "isRemoteBundle": {
     "web-mobile": false
