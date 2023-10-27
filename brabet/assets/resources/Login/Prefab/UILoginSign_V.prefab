@@ -1804,8 +1804,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Login",
-    "_N$string": "Login",
+    "_string": "UI_Login",
+    "_N$string": "UI_Login",
     "_fontSize": 32,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -1999,8 +1999,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Login",
-    "_N$string": "Login",
+    "_string": "UI_Login",
+    "_N$string": "UI_Login",
     "_fontSize": 32,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -2365,8 +2365,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Register",
-    "_N$string": "Register",
+    "_string": "UI_Signup",
+    "_N$string": "UI_Signup",
     "_fontSize": 32,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -3629,7 +3629,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 86.16,
+      "width": 135.09,
       "height": 50
     },
     "_anchorPoint": {
@@ -3696,7 +3696,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 86.16,
+      "width": 135.09,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -3748,8 +3748,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Login",
-    "_N$string": "Login",
+    "_string": "UI_Login",
+    "_N$string": "UI_Login",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -3800,7 +3800,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 86.16,
+      "width": 135.09,
       "height": 50
     },
     "_resize": 1,
@@ -4482,7 +4482,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 177.26,
+      "width": 170.2,
       "height": 35.28
     },
     "_anchorPoint": {
@@ -4534,8 +4534,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Remember me",
-    "_N$string": "Remember me",
+    "_string": "UI_Remember",
+    "_N$string": "UI_Remember",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -4609,7 +4609,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 208.72,
+      "width": 240.49,
       "height": 47.88
     },
     "_anchorPoint": {
@@ -4755,8 +4755,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Forget password?",
-    "_N$string": "Forget password?",
+    "_string": "UI_Forget_Password",
+    "_N$string": "UI_Forget_Password",
     "_fontSize": 23,
     "_lineHeight": 38,
     "_enableWrapText": true,
@@ -5288,8 +5288,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Password",
-    "_N$string": "Password",
+    "_string": "UI_Password",
+    "_N$string": "UI_Password",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -7516,8 +7516,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Email",
-    "_N$string": "Email",
+    "_string": "UI_EnterMail",
+    "_N$string": "UI_EnterMail",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -8758,8 +8758,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Phone number",
-    "_N$string": "Phone number",
+    "_string": "UI.Login_0_main_1",
+    "_N$string": "UI.Login_0_main_1",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -10158,8 +10158,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Phone number",
-    "_N$string": "Phone number",
+    "_string": "UI.Login_0_main_1",
+    "_N$string": "UI.Login_0_main_1",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -10990,8 +10990,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Email",
-    "_N$string": "Email",
+    "_string": "UI_EnterMail",
+    "_N$string": "UI_EnterMail",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -11839,8 +11839,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Password",
-    "_N$string": "Password",
+    "_string": "UI_Password",
+    "_N$string": "UI_Password",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -13197,7 +13197,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 84.16,
+      "width": 319.07,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -13249,8 +13249,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Code",
-    "_N$string": "Code",
+    "_string": "UI.Login_0_main_10",
+    "_N$string": "UI.Login_0_main_10",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -14732,7 +14732,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": false,
-    "_N$string": "Receive Email promos",
+    "_N$string": "UI_Receive_Email",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 23,
     "_N$font": {
@@ -14958,7 +14958,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 231.72,
+      "width": 282.09,
       "height": 50
     },
     "_anchorPoint": {
@@ -15025,7 +15025,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 231.72,
+      "width": 282.09,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -15077,8 +15077,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Create account",
-    "_N$string": "Create account",
+    "_string": "UI_Account_POP4",
+    "_N$string": "UI_Account_POP4",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -15129,7 +15129,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 231.72,
+      "width": 282.09,
       "height": 50
     },
     "_resize": 1,
@@ -16790,7 +16790,7 @@
       "__id__": 295
     },
     "validateCode": {
-      "__id__": 340
+      "__id__": 347
     },
     "password": {
       "__id__": 319
@@ -17216,7 +17216,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 203.84,
+      "width": 210.11,
       "height": 63
     },
     "_anchorPoint": {
@@ -17268,8 +17268,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Or sign up with",
-    "_N$string": "Or sign up with",
+    "_string": "UI_Orignupwith",
+    "_N$string": "UI_Orignupwith",
     "_fontSize": 26,
     "_lineHeight": 50,
     "_enableWrapText": true,

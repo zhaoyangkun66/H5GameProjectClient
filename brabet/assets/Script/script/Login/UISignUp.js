@@ -259,7 +259,7 @@ var o = require("../../Common/Define/UINameDefine")
             ,
             __decorate([h(cc.EditBox)], t.prototype, "phone_account", undefined),
             __decorate([h(c.default)], t.prototype, "mail_account", undefined),
-            __decorate([h(cc.Label)], t.prototype, "validateCode", undefined),
+            __decorate([h(cc.EditBox)], t.prototype, "validateCode", undefined),
             __decorate([h(cc.EditBox)], t.prototype, "password", undefined),
             __decorate([h(cc.RichText)], t.prototype, "countdown", undefined),
             __decorate([h(cc.Node)], t.prototype, "btnSendValidate", undefined),

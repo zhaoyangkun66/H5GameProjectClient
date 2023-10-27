@@ -25,26 +25,26 @@ var o = require("../Base/Singleton")
             }
             ,
             t.prototype.OnGetLanguageList = function (e) {
-                if (isgoServer) {
-                    e.push({
-                        "id": 3,
-                        "icon": "https://d37kgoga0nrx6r.cloudfront.net/static/images/lang/zh-cn.png",
-                        "lang": "zh-hk",
-                        "name": "中文繁体",
-                        "default": 0,
-                        "sort": 2
-                    })
-                }
-                else {
-                    e.push({
-                        "id": 3,
-                        "icon": "https://d37kgoga0nrx6r.cloudfront.net/static/images/lang/zh-cn.png",
-                        "lang": "zh-hk",
-                        "name": "中文繁体",
-                        "default": 0,
-                        "sort": 2
-                    })
-                }
+                // if (isgoServer) {
+                //     e.push({
+                //         "id": 3,
+                //         "icon": "https://d37kgoga0nrx6r.cloudfront.net/static/images/lang/zh-cn.png",
+                //         "lang": "zh-hk",
+                //         "name": "中文繁体",
+                //         "default": 0,
+                //         "sort": 2
+                //     })
+                // }
+                // else {
+                //     e.push({
+                //         "id": 3,
+                //         "icon": "https://d37kgoga0nrx6r.cloudfront.net/static/images/lang/zh-cn.png",
+                //         "lang": "zh-hk",
+                //         "name": "中文繁体",
+                //         "default": 0,
+                //         "sort": 2
+                //     })
+                // }
                 this._LanguageList = e,
                     this.SetServerDefaultLanguage()
             }

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">yotubet</string>
+    <string name="facebook_app_id">245027431503594</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">a4a2407a963464d3d7c3fbf9400d1ddd</string>
+</resources>

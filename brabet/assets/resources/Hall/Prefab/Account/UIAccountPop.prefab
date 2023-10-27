@@ -197,7 +197,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 325.02,
+      "width": 292.29,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -453,8 +453,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Edit Phone Number",
-    "_N$string": "Edit Phone Number",
+    "_string": "UI_Account_POP1",
+    "_N$string": "UI_Account_POP1",
     "_fontSize": 32,
     "_lineHeight": 36,
     "_enableWrapText": true,
@@ -1439,8 +1439,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Phone Number",
-    "_N$string": "Phone Number",
+    "_string": "UI.Login_0_main_1",
+    "_N$string": "UI.Login_0_main_1",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -1494,7 +1494,7 @@
       "__id__": 32
     },
     "_enabled": true,
-    "_dataID": "UI.cashout_1_bank_10",
+    "_dataID": "UI.Login_0_main_1",
     "_id": ""
   },
   {
@@ -2392,7 +2392,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 73.64,
+      "width": 279.19,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -2444,8 +2444,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Code",
-    "_N$string": "Code",
+    "_string": "UI.Login_0_main_10",
+    "_N$string": "UI.Login_0_main_10",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -2969,7 +2969,7 @@
       "__id__": 37
     },
     "code": {
-      "__id__": 48
+      "__id__": 55
     },
     "codeLabel": {
       "__id__": 19
@@ -3576,8 +3576,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Email",
-    "_N$string": "Email",
+    "_string": "UI_EnterMail",
+    "_N$string": "UI_EnterMail",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -4490,8 +4490,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Promo code (optional)",
-    "_N$string": "Promo code (optional)",
+    "_string": "UI_Promo_code",
+    "_N$string": "UI_Promo_code",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -4810,7 +4810,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 73.64,
+      "width": 279.19,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -4862,8 +4862,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Code",
-    "_N$string": "Code",
+    "_string": "UI.Login_0_main_10",
+    "_N$string": "UI.Login_0_main_10",
     "_fontSize": 28,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -5997,8 +5997,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Current Password",
-    "_N$string": "Current Password",
+    "_string": "UI_Account_POP5",
+    "_N$string": "UI_Account_POP5",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -7036,8 +7036,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "New Password",
-    "_N$string": "New Password",
+    "_string": "UI.Login_0_main_2",
+    "_N$string": "UI.Login_0_main_2",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -8075,8 +8075,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Confirm New Password",
-    "_N$string": "Confirm New Password",
+    "_string": "UI_Redefinir_TOP",
+    "_N$string": "UI_Redefinir_TOP",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -8797,7 +8797,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 179.97,
+      "width": 281.43,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -8849,8 +8849,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Bind Phone",
-    "_N$string": "Bind Phone",
+    "_string": "UI_Account_POP6",
+    "_N$string": "UI_Account_POP6",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,

@@ -31,13 +31,25 @@ var o = require("../../../Common/Base/BaseForm")
                 t.prototype.OnShow = function () {
                     for (var e = [], t = 0; t < arguments.length; t++)
                         e[t] = arguments[t];
-                    this.UISevice.active = true,
-                        true === app.ClientConfigManager().GetGlobalConfig.HideBtnDownLoad ? this.DownApp.active = false : (this.UIDownApp_IOS.active = cc.sys.os == cc.sys.OS_IOS,
-                            this.UIDownApp_Android.active = cc.sys.os == cc.sys.OS_ANDROID,
-                            this.onIsShowDownBtn()),
-                        this.initRechargeView()
-                }
-                ,
+                    this.UISevice.active = true
+                    if (true === app.ClientConfigManager().GetGlobalConfig.HideBtnDownLoad) {
+                        this.DownApp.active = false
+                    }
+                    else {
+                        this.UIDownApp_IOS.active = cc.sys.os == cc.sys.OS_IOS
+                        this.UIDownApp_Android.active = cc.sys.os == cc.sys.OS_ANDROID
+                       // app.GameConfigManager().GetGameConfig().down_urls.android_download_url = ""
+                        if (app.GameConfigManager().GetGameConfig().down_urls && app.GameConfigManager().GetGameConfig().down_urls.android_download_url) {
+
+                        }
+                        else {
+                            this.UIDownApp_Android.active = false;
+                            this.UIDownApp_IOS.active = true
+                        }
+                        this.onIsShowDownBtn()
+                    }
+                    this.initRechargeView()
+                },
                 t.prototype.OnClick = function () { }
                 ,
                 t.prototype.initRechargeView = function () {
@@ -47,14 +59,21 @@ var o = require("../../../Common/Base/BaseForm")
                 ,
                 t.prototype.onIsShowDownBtn = function () {
                     if (app.ComTool().H5Platform()) {
-                        cc.find("icon", this.UIDownApp_IOS).getComponent(cc.Label).string = cc.sys.os == cc.sys.OS_ANDROID ? app.i18n.t("UI_Menu_downloadAndroid") : app.i18n.t("UI_Dice_Add_to_Home_Screen");
+                        cc.find("icon", this.UIDownApp_IOS).getComponent(cc.Label).string = app.i18n.t("UI_Dice_Add_to_Home_Screen");
                         var e = app.UserManager().UserInfo.user_config.show_arr;
                         if (e && 0 == e[a.VisibleBtnTag.DownloadBtn])
                             return void (this.DownApp.active = false);
-                        if (cc.sys.os == cc.sys.OS_ANDROID)
-                        {
-                            this.DownApp.active = !app.ComTool().AndroidHybirdPlatform();
-                            this.DownApp.active = (!(window.matchMedia('(display-mode: standalone)').matches));
+                        if (cc.sys.os == cc.sys.OS_ANDROID) {
+                            if (this.DownApp.active) {
+                                this.DownApp.active = !app.ComTool().AndroidHybirdPlatform();
+                            }
+
+                            if (this.DownApp.active) {
+                                this.DownApp.active = !(window.matchMedia('(display-mode: standalone)').matches);
+                            }
+                            if (this.DownApp.active) {
+                                this.DownApp.active = ("undefined" == typeof androidOther);
+                            }
                         }
                         else if (cc.sys.os == cc.sys.OS_IOS) {
                             var t = app.ClientConfigManager().getLocalUrlDataByName("ioswebclip");

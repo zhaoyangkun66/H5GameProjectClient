@@ -115,7 +115,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
             }
             ,
             __decorate([l(cc.EditBox)], t.prototype, "account", undefined),
-            __decorate([l(cc.Label)], t.prototype, "code", undefined),
+            __decorate([l(cc.EditBox)], t.prototype, "code", undefined),
             __decorate([l(cc.Label)], t.prototype, "codeLabel", undefined),
             __decorate([l(cc.RichText)], t.prototype, "countdown", undefined),
             __decorate([l(cc.Node)], t.prototype, "btnSendValidate", undefined),

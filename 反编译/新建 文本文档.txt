@@ -1,6 +1,0 @@
-java -jar jar brabet.jar
-apktool.bat d brabet.apk
-
-apktool d brabet.apk
-
-d2j-dex2jar.bat classes.dex

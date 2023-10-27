@@ -178,7 +178,7 @@ var o = require("../../Common/Base/BaseForm")
     ,
     __decorate([l(cc.EditBox)], t.prototype, "mail_account", undefined),
     __decorate([l(cc.EditBox)], t.prototype, "phone_account", undefined),
-    __decorate([l(cc.Label)], t.prototype, "validateCode", undefined),
+    __decorate([l(cc.EditBox)], t.prototype, "validateCode", undefined),
     __decorate([l(cc.EditBox)], t.prototype, "password", undefined),
     __decorate([l(cc.RichText)], t.prototype, "countdown", undefined),
     __decorate([l(cc.Node)], t.prototype, "btnSendValidate", undefined),

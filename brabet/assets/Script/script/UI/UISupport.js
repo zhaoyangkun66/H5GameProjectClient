@@ -207,7 +207,7 @@ var l = cc._decorator
             t.prototype.InitItemList = function (e) {
                 if (isgoServer) {
                     this.ToWechatOrQQClient({
-                        chat_url: e,
+                        chat_url: window.location.origin + "/client/kefu/?uid=" + app.UserManager().UserInfo.uid + "&nickname=" + app.UserManager().GetUserInfo.nickname + "&channel_id=" + app.ClientConfigManager().GetClientConfig.channel_id + "&vip_id=" + (app.UserManager().GetUserInfo.vip_id - 1) + "&license=" + e,
                         is_small: 1
                     })
                 }
