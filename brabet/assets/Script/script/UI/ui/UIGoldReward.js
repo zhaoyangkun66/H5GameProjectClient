@@ -49,6 +49,11 @@ function(e) {
             }),
             app.Client.OnEvent(i.GameEventDefine.UPDATE_USER_INFO),
             void app.Client.OnEvent(i.GameEventDefine.UPDATE_GAME_GOLD))
+    },
+    t.prototype.OnClose = function () {
+        for (var e = [], t = 0; t < arguments.length; t++)
+            e[t] = arguments[t];
+            app.UserManager().RequstUserWallet()
     }
     ,
     __decorate([r], t)

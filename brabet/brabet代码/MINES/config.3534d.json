@@ -1,0 +1,947 @@
+{
+    "paths": {
+        "0": [
+            "9Grid/ani_reward",
+            0
+        ],
+        "1": [
+            "9Grid/ani_reward",
+            2
+        ],
+        "2": [
+            "atlas/11",
+            2
+        ],
+        "3": [
+            "atlas/22",
+            2
+        ],
+        "4": [
+            "atlas/33",
+            2
+        ],
+        "5": [
+            "atlas/44",
+            2
+        ],
+        "6": [
+            "atlas/55",
+            2
+        ],
+        "7": [
+            "atlas/bg_input",
+            2
+        ],
+        "8": [
+            "atlas/bg_show",
+            2
+        ],
+        "9": [
+            "atlas/boom_Da",
+            2
+        ],
+        "10": [
+            "atlas/btn_1",
+            2
+        ],
+        "11": [
+            "atlas/btn_choose",
+            2
+        ],
+        "12": [
+            "atlas/btn_help",
+            2
+        ],
+        "13": [
+            "atlas/btn_page",
+            2
+        ],
+        "14": [
+            "atlas/finger_lighr",
+            2
+        ],
+        "15": [
+            "atlas/finger_light1",
+            2
+        ],
+        "16": [
+            "atlas/finger",
+            2
+        ],
+        "17": [
+            "atlas/gold_Da",
+            2
+        ],
+        "18": [
+            "atlas/gold",
+            2
+        ],
+        "19": [
+            "atlas/icon_bfb",
+            2
+        ],
+        "20": [
+            "atlas/icon_boom",
+            2
+        ],
+        "21": [
+            "atlas/icon_boom0",
+            2
+        ],
+        "22": [
+            "atlas/icon_gold",
+            2
+        ],
+        "23": [
+            "atlas/icon_gold0",
+            2
+        ],
+        "24": [
+            "atlas/icon_nomal",
+            2
+        ],
+        "25": [
+            "atlas/icon_red",
+            2
+        ],
+        "26": [
+            "atlas/icon_wuqiong",
+            2
+        ],
+        "27": [
+            "atlas/icon_zw0",
+            2
+        ],
+        "28": [
+            "atlas/input",
+            2
+        ],
+        "29": [
+            "atlas/MINES_help1",
+            2
+        ],
+        "30": [
+            "atlas/MINES_help2",
+            2
+        ],
+        "31": [
+            "atlas/MINES_help3",
+            2
+        ],
+        "32": [
+            "atlas/MINES_help4",
+            2
+        ],
+        "33": [
+            "atlas/spr_gold",
+            2
+        ],
+        "34": [
+            "atlas/title_0",
+            2
+        ],
+        "35": [
+            "atlas/title_1",
+            2
+        ],
+        "36": [
+            "font/win_num",
+            2
+        ],
+        "38": [
+            "9Grid/ani_reward",
+            1
+        ],
+        "39": [
+            "9Grid/ani_reward",
+            3,
+            1
+        ],
+        "40": [
+            "animation/award",
+            5
+        ],
+        "41": [
+            "animation/bao",
+            5
+        ],
+        "42": [
+            "animation/close",
+            5
+        ],
+        "43": [
+            "animation/guide",
+            5
+        ],
+        "44": [
+            "animation/open",
+            5
+        ],
+        "45": [
+            "animation/scaleAnim_H",
+            5
+        ],
+        "46": [
+            "atlas/11",
+            3,
+            1
+        ],
+        "47": [
+            "atlas/22",
+            3,
+            1
+        ],
+        "48": [
+            "atlas/33",
+            3,
+            1
+        ],
+        "49": [
+            "atlas/44",
+            3,
+            1
+        ],
+        "50": [
+            "atlas/55",
+            3,
+            1
+        ],
+        "51": [
+            "atlas/bg_input",
+            3,
+            1
+        ],
+        "52": [
+            "atlas/bg_show",
+            3,
+            1
+        ],
+        "53": [
+            "atlas/boom_Da",
+            3,
+            1
+        ],
+        "54": [
+            "atlas/btn_1",
+            3,
+            1
+        ],
+        "55": [
+            "atlas/btn_choose",
+            3,
+            1
+        ],
+        "56": [
+            "atlas/btn_help",
+            3,
+            1
+        ],
+        "57": [
+            "atlas/btn_page",
+            3,
+            1
+        ],
+        "58": [
+            "atlas/finger_lighr",
+            3,
+            1
+        ],
+        "59": [
+            "atlas/finger_light1",
+            3,
+            1
+        ],
+        "60": [
+            "atlas/finger",
+            3,
+            1
+        ],
+        "61": [
+            "atlas/gold_Da",
+            3,
+            1
+        ],
+        "62": [
+            "atlas/gold",
+            3,
+            1
+        ],
+        "63": [
+            "atlas/icon_bfb",
+            3,
+            1
+        ],
+        "64": [
+            "atlas/icon_boom",
+            3,
+            1
+        ],
+        "65": [
+            "atlas/icon_boom0",
+            3,
+            1
+        ],
+        "66": [
+            "atlas/icon_gold",
+            3,
+            1
+        ],
+        "67": [
+            "atlas/icon_gold0",
+            3,
+            1
+        ],
+        "68": [
+            "atlas/icon_nomal",
+            3,
+            1
+        ],
+        "69": [
+            "atlas/icon_red",
+            3,
+            1
+        ],
+        "70": [
+            "atlas/icon_wuqiong",
+            3,
+            1
+        ],
+        "71": [
+            "atlas/icon_zw0",
+            3,
+            1
+        ],
+        "72": [
+            "atlas/input",
+            3,
+            1
+        ],
+        "73": [
+            "atlas/MINES_help1",
+            3,
+            1
+        ],
+        "74": [
+            "atlas/MINES_help2",
+            3,
+            1
+        ],
+        "75": [
+            "atlas/MINES_help3",
+            3,
+            1
+        ],
+        "76": [
+            "atlas/MINES_help4",
+            3,
+            1
+        ],
+        "77": [
+            "atlas/spr_gold",
+            3,
+            1
+        ],
+        "78": [
+            "atlas/title_0",
+            3,
+            1
+        ],
+        "79": [
+            "atlas/title_1",
+            3,
+            1
+        ],
+        "80": [
+            "font/win_num",
+            6
+        ],
+        "81": [
+            "font/win_num",
+            3,
+            1
+        ],
+        "82": [
+            "Form/FormH",
+            4
+        ],
+        "83": [
+            "Form/FormV",
+            4
+        ],
+        "84": [
+            "prefab/game_Mines_H",
+            7
+        ],
+        "85": [
+            "prefab/game_Mines_V",
+            7
+        ],
+        "86": [
+            "prefab/MINES_help",
+            7
+        ]
+    },
+    "types": [
+        "cc.Asset",
+        "sp.SkeletonData",
+        "cc.Texture2D",
+        "cc.SpriteFrame",
+        "cc.TextAsset",
+        "cc.AnimationClip",
+        "cc.BitmapFont",
+        "cc.Prefab"
+    ],
+    "uuids": [
+        "95KbNMPuBCm6pa9nAEpsDw",
+        "cfdxSFn4dD/IwXWBdSBQ0y",
+        "00fg5//UtAbp8WHbpr6bZG",
+        "017nSyiC1KipQ37FVSleXO",
+        "83pX4N/b9DcaiJXPc23a79",
+        "25CxOCDXZIha667JL6WCBn",
+        "1fmQHsrtZIU5xXctrlMRwO",
+        "8bGXScmP5AZK1uyxe0neMn",
+        "e49QwDVmlObJs9M+2N8HaH",
+        "6f6dC58oRGWp5HOXAWWpnr",
+        "60aQDCfddIfq3n1ydrSTBk",
+        "49NGUhuXNDdqvyR5+y0meA",
+        "43MqSgnVVK9YRzjUQ9lZaO",
+        "e4+Pa2wylNiLlDsnspwa6l",
+        "b7WTbUxSZEC6bgQAWV7Y48",
+        "55KzRj0aJB8KZQkt5lS4a5",
+        "86eXMx1gxA/ZwUUfnSedqM",
+        "63V7kJuJ9CCZnGpsh+Ommo",
+        "72rrAlPBpKIKec3e0viLSj",
+        "f8DHBiWo1N0ZKoXp57KLRS",
+        "67B2OLxvVIS5UDawR5NjCo",
+        "217Vj/getAUKVoz+RKC/dH",
+        "4aqCEVXxdLa4vj4kV3sbUE",
+        "a52aN9GEhBkKWJZYbySKDl",
+        "02bhVcLOhAwqbb35xDBxoX",
+        "42XEpxgo9OapvnvlTa7cE9",
+        "14FY2az4lAxLW+Uj0ipbVw",
+        "a57hHOYVNKxY0PHPhkV3kX",
+        "12CeOllqpDlo4NjCx3eLxC",
+        "61kTlHOFtDo7K5ReNWfWBB",
+        "e26O8frSJP6pMFCj4R0NDT",
+        "8apjPlgz9Dx66XV8GN0mUx",
+        "edKhdbmPlMgaDdjTy9596k",
+        "a9Awxcx29E/ajyM3q+yNk4",
+        "1b6dR1ENtIQYWKAlJDyeba",
+        "b2SFKTKdtFq7JnBr7nvGPp",
+        "f4SU+NGSxO/IzpHI1yE1jf",
+        "129490320",
+        "adGtwF6VBOAInhqCpvw1p7",
+        "eckUP8DQBPg6YxNe179und",
+        "caWv3lrWJIA52R+CqzM5Zp",
+        "4cqgfnrUVLL4bFnRFk66Jg",
+        "3e+h2HHvZNzpKRCNZiVWS2",
+        "dePgD/RnZKQ4+sT0PcqS/B",
+        "3crot4LCZK3JWPUjJo9VC2",
+        "36fLFYCH9Hj7aWaxY31J20",
+        "b0FDRHEyBDBLVxrv2yG+zU",
+        "10vSlm0PJEWpkIf0TcpeI7",
+        "c76gtS6j1A965Pe6SqeHC1",
+        "8b3JGbH2pAvqnQiq/G9BNK",
+        "c6YGhbL+pFR7I2BQCWf0/g",
+        "4811yHds1Nuawh95d7QKql",
+        "5acyQtBx9LyLLNmWBEtX4s",
+        "b8cywZyu5E462hBNUzBvwe",
+        "c6nDAEfqxN1qrvjJNupg88",
+        "65Ou8rRLhH6quScifgdxwI",
+        "3dtgQzpgpNg7Pjh2rnqJF9",
+        "d9PaH6o2lIE7ybNXJZBA8T",
+        "78RMMyeeBLBruUxJjvnN90",
+        "fdHMbGuAVOdLG52U5z0g3n",
+        "65s5LDZcdFCrHm3Ugb1mOC",
+        "3cQvFYPDlJAazgO+OEnfSj",
+        "7eW79RkL9AjJ0+QPZkIrMr",
+        "58aM/NTCVHgLM19bSqchsi",
+        "afoenDB1hHC5LDrvSyFSKB",
+        "6aRyinD+xKbJdwctqOM1HX",
+        "22c3l6PHNNvoGqah3rYnaU",
+        "abm5jhXyJG35cRWK85D+DI",
+        "d09QidsMhOuqr/Pail+Vyj",
+        "cenlbVRhhPu48pjqdrZ8Ml",
+        "c5R5mzKcxD+Zszzg85pEld",
+        "24KhVtEOpLRI4BPpAmHhpL",
+        "92UOiyOAtOYILiU9MZ7Bte",
+        "2fvcNNd/lIsLx+4ONemL9P",
+        "88GKe8WBNGKZnOaIqh4lv3",
+        "d4DqNKG8tCqICeJhxTpQbx",
+        "6aTwhqT3pJ/5KNdt0d5xdu",
+        "14DoUTevJFb4cnhyooJaRc",
+        "6144YY5NlAd7sKaSheQxJF",
+        "89KPUeowRN/IWmj0sq3OmX",
+        "39cm5tgPtHO4SmJOfZVEJQ",
+        "02WTNX945HGJtZgdmaiTcR",
+        "eb5G1P73NLCJE5XW0PZG73",
+        "eecHnF6nhBLpRQ7yrRbPQi",
+        "d5vcVNBaVGXJPudnlkjfy2",
+        "3dPs5UPEpJdav+AiuFr8b+",
+        "94066P37RG4qu66lQZLKGJ",
+        "f4F2JGGUFOu5MqcPHTrh6M",
+        "d27c+hCD1Pba1e+bgtXr3s",
+        "56fc2Ai/RFNYpaMT8crweK",
+        "9dYAAftfRHJqYpJlnj3tC4",
+        "1a049fe4e",
+        "15a669b97",
+        "16b16ad1a",
+        "158dcb2e0",
+        "169ac394c",
+        "ecpdLyjvZBwrvm+cedCcQy",
+        "b44Y3FvQ1DTbXyyBlvM2wD",
+        "21rv7oZ+hN6qJWPIAl3oG6",
+        "d06dcgeghLqbO34+hnXGEB",
+        "2caP616g5O+qtWKj/nGwEE",
+        "a2MjXRFdtLlYQ5ouAFv/+R",
+        "7a/QZLET9IDreTiBfRn2PD",
+        "20c7Dyd6RMybV8EL1bmUvl",
+        "85I/2tOSlBybGt0JQb1UAu",
+        "a07775oXJK+r9sZFum/uax",
+        "254nRyRDdMQaqcM1UOOJcZ",
+        "70esd+MXFIVpjFO/iHDOXT",
+        "5cO7kybDxGj4ipyMYdRYZB",
+        "5f5dyqtRNNxaFmVzYns6FZ",
+        "e7q6FL+VZEgLJUjVeDLic/",
+        "1aMvx28L1PZpgPVpKcDKCz",
+        "17pkGEEYxDFaKiNq6aBEfr",
+        "18JtDHHNxHcY3fCi+RZOew",
+        "e97GVMl6JHh5Ml5qEDdSGa",
+        "f0BIwQ8D5Ml7nTNQbh1YlS",
+        "29FYIk+N1GYaeWH/q1NxQO",
+        "9bvaMerUlDyary99mJa6xp",
+        "c9+lH/PwFGAY+AMl0bEdq3",
+        "e5BDG8iKVDPI6Te0G0JLGW",
+        "d9DMcdYh5NaIbP0nS2Y2Lz",
+        "82JUbuDKtFaamAaG+zNgYS",
+        "2bVsmlOB9C9Yu2Azc1PnU6",
+        "42C0mGdKlD5Z+aymlXQacv",
+        "a31Q5izLdPR5uZwh4nkloT",
+        "8ezFE7xq9ORakQuEngHm2B",
+        "80B0LpvQ1Pn6sYyAe3afSe",
+        "d3nZ1hJeFPY7jU0EIdxA1k",
+        "f4ChFvz2tIfo/ZoipFvOni",
+        "a3Du/urFdLcrR9qQcU9Zyn",
+        "19T2rHE1lExr3OZ4wy2xe6",
+        "97gQH2jwFNxZeiyC2fNtD/",
+        "96n6GM6fRDy5drV4Hd1nNP",
+        "f9cVaLNstFy4x+mD2eYr/G",
+        "8fYRXdvMVIqqxERp2olCTu",
+        "acve8koaJE3KBWQ29iIvws",
+        "d2E6ujED1Elo+3oSiZWcKW",
+        "a23bOx1aFFyYBheYJog9De",
+        "ea9j94Bn1KcJzuEWs7uAZI",
+        "bfkl6juUNI2KZMSioytZVO",
+        "8cUuTNqrtOJZlxOG0M6Lf2",
+        "80u9XQ/X5Ca7HfGKaC9bNT",
+        "e7J5b+xCtLoLm3qZgppvMg",
+        "a3USAohgREApuMxRhLD7MW",
+        "71EvC/W9dAO6cM6ytkNlAt",
+        "46TPXF9l5DEr7kLcK4pG0D",
+        "4bG094gtpCYrQ1PWqXjOrH",
+        "9b4JQW4oNLpb1ZKyVg6zn2",
+        "45KOVPui1O6rsAIHnpV/tv",
+        "2fz0+DKrFBqrl56dYrFA1A",
+        "bab/s2oF5ByZ2AAMQ1iBRa",
+        "32lLjeeO5J1p8tWRggUUTS",
+        "4e60yl2WdAVq0YD+8EhnRF",
+        "41rXg4HUVCZrXLcPeYglO4",
+        "d8TSRRHplIObzwdmLcDJw2",
+        "02oTl7wKRNeb4iwhmwRfIy",
+        "05CgwNjtNDX75R8samowj0",
+        "563oFGlNRBj50XCIrKkY+x",
+        "42v2G9E6NKfojKG0sA1qGa",
+        "3aWsTOI5BKjqsiI9O9HAOi",
+        "76k9sBjApGC68bnXnFGE5j",
+        "a2i/wHv9JC9osGDX2QwtUw",
+        "1fNFgEvwFGy4sx7SZbmBPF",
+        "95U7gIDOlIdaBplgoWmDhm",
+        "92oj9w8exJSbazk/8EqHxi",
+        "f1AYtTQwBHsrBDAPjByX72",
+        "05u73ooc1PVKT9HPV6e3UJ",
+        "e0sbms/NpITqm3W0Zilq+l",
+        "8dn+0blLtFg4EBsexVMOgS",
+        "acAd6wCrVBQ4G4BJ8jXwSF",
+        "83Uv8oZzZEIrekuNkgUQdG",
+        "1aPRDBTl5BD4DNYt/HeAJh",
+        "fcZ4lvqSNIDafVhivknz2m",
+        "4daMWuegRJILkBiYVPBc/U",
+        "58t4WAGD1Mc4QzuMfY7Obx",
+        "2cAqvOeIhJXaPas8gTEO9H",
+        "7cUdXpcotPoYKO6smeVluv",
+        "988LCZXWBIhZfYT+deVPe1",
+        "cbAbtGRctJbZsCTXhuAvXT",
+        "2bpUgRBo9APbs6NhFWk93r",
+        "3bXgh61QZNIb0jVgz/P9La",
+        "c66Ua5QXFNA4DMRkR6SsbC",
+        "08z33FCMtP2rV1XHpQpiCb",
+        "17kWz23pNIerJvFyYYbbIS",
+        "d35ZMskuVKzqdOEdG2e/za",
+        "02Zq0xkVxCeIOrLUL/qKfD",
+        "3ci5AjpshLGrgGiesXve+k",
+        "cbvZYvDMNEF5SRhZl4L4Ah",
+        "d4BdwHixJFDIHavPtmaDgD",
+        "b9Gh1Lye1IerBqMeRaTtE0",
+        "eeVKn4PN1LyoKCk6Pzkzbg",
+        "c66ZIrebpIG4Hvzj4xFcCX",
+        "fexbgAmeZGsb1TwSQp8UJL",
+        "3bwlY8VSdKV4VLbkJ7bHRi",
+        "c46w8FB4VCsLaPeFxDhlLu",
+        "ccmPAFhIJAlaxtPGbZw2OM",
+        "241pVLR2REI4rnd9ilFBKh",
+        "0f9/XKgF5J4LIeOPE8Fd9Z",
+        "23Rgv2BXtH/JYFkm5qrDa/",
+        "75bqQOvXNF36SjIgy17too",
+        "1f/ICNNeRLfo7J3TQ2IJml",
+        "e8/FngOo5A7aGIAM9+nK+P",
+        "dcZR1dlz1HyImH2EIfoJqt",
+        "feOnpBq4dHSLY8LdGyowaB",
+        "c5POsW8qRBGpmXi+otqswG",
+        "45hsQ4LGVCnrFUBt0F3ng7",
+        "5fHZebfnRETbQgrtqxsJvf",
+        "af+k4CKSpDM6OvAfGPUcjS",
+        "c1Iuj1ALZJs4Gu6/Meq07d"
+    ],
+    "scenes": {},
+    "redirect": [
+        96,
+        0,
+        98,
+        1,
+        99,
+        1,
+        100,
+        1,
+        101,
+        1,
+        102,
+        0,
+        103,
+        1,
+        108,
+        1,
+        109,
+        1,
+        114,
+        1,
+        115,
+        1,
+        116,
+        1,
+        117,
+        1,
+        118,
+        1
+    ],
+    "deps": [
+        "internal",
+        "resources"
+    ],
+    "packs": {
+        "0bc9d5d1d": [
+            2,
+            3,
+            81,
+            185,
+            24,
+            155,
+            156,
+            166,
+            182,
+            197,
+            47,
+            28,
+            37,
+            77,
+            26,
+            94,
+            92,
+            95,
+            93,
+            183,
+            112,
+            113,
+            130,
+            91,
+            111,
+            171,
+            34,
+            162,
+            6,
+            200,
+            21,
+            66,
+            198,
+            71,
+            196,
+            5,
+            106,
+            122,
+            179,
+            175,
+            73,
+            149,
+            151,
+            45,
+            80,
+            159,
+            180,
+            193,
+            61,
+            186,
+            44,
+            85,
+            56,
+            42,
+            153,
+            123,
+            25,
+            158,
+            12,
+            148,
+            205,
+            145,
+            51,
+            11,
+            22,
+            146,
+            41,
+            173,
+            152,
+            15,
+            89,
+            157,
+            63,
+            174,
+            52,
+            206,
+            10,
+            29,
+            78,
+            17,
+            55,
+            60,
+            20,
+            65,
+            76,
+            9,
+            107,
+            144,
+            18,
+            199,
+            160,
+            58,
+            176,
+            62,
+            126,
+            141,
+            121,
+            170,
+            4,
+            104,
+            16,
+            74,
+            79,
+            31,
+            7,
+            49,
+            140,
+            168,
+            125,
+            134,
+            72,
+            164,
+            86,
+            0,
+            163,
+            132,
+            131,
+            177,
+            147,
+            90,
+            105,
+            161,
+            137,
+            129,
+            143,
+            124,
+            23,
+            27,
+            33,
+            67,
+            169,
+            135,
+            38,
+            64,
+            207,
+            46,
+            35,
+            97,
+            14,
+            53,
+            189,
+            150,
+            139,
+            208,
+            194,
+            204,
+            70,
+            50,
+            54,
+            181,
+            191,
+            48,
+            40,
+            178,
+            187,
+            195,
+            69,
+            1,
+            68,
+            136,
+            88,
+            127,
+            184,
+            188,
+            75,
+            84,
+            154,
+            120,
+            57,
+            202,
+            43,
+            167,
+            30,
+            8,
+            13,
+            119,
+            142,
+            110,
+            201,
+            138,
+            82,
+            39,
+            32,
+            190,
+            83,
+            165,
+            128,
+            87,
+            36,
+            19,
+            133,
+            172,
+            59,
+            203,
+            192
+        ]
+    },
+    "name": "MINES",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": false,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "0bc9d5d1d",
+            "21cd2"
+        ],
+        "native": [
+            37,
+            "3b35c",
+            2,
+            "4cfd6",
+            3,
+            "f79a7",
+            24,
+            "6fb46",
+            28,
+            "6093f",
+            26,
+            "5d751",
+            94,
+            "ba58e",
+            92,
+            "94e36",
+            95,
+            "6e56a",
+            93,
+            "69e1c",
+            91,
+            "9efca",
+            34,
+            "79825",
+            6,
+            "84381",
+            21,
+            "49fc0",
+            5,
+            "fb7af",
+            25,
+            "6f37c",
+            12,
+            "3fd2f",
+            11,
+            "18eae",
+            22,
+            "081d1",
+            15,
+            "6bbfd",
+            89,
+            "5f1d9",
+            10,
+            "09f9e",
+            29,
+            "7087b",
+            17,
+            "e4375",
+            20,
+            "c5358",
+            9,
+            "f5ec9",
+            18,
+            "d9b9d",
+            4,
+            "f0ff2",
+            16,
+            "aed89",
+            31,
+            "ad6f2",
+            7,
+            "6944a",
+            0,
+            "f2613",
+            90,
+            "e0234",
+            23,
+            "59244",
+            27,
+            "43aaf",
+            33,
+            "731c2",
+            35,
+            "55a86",
+            14,
+            "c8367",
+            1,
+            "94282",
+            88,
+            "09f9e",
+            30,
+            "050b3",
+            8,
+            "afe91",
+            13,
+            "e9dd7",
+            32,
+            "ee5e8",
+            87,
+            "09f9e",
+            36,
+            "bb453",
+            19,
+            "ae516"
+        ]
+    }
+}

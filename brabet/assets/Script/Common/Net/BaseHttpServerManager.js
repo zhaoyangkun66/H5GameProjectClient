@@ -109,8 +109,39 @@ var o = require("../Define/EventWaitType")
                         }
                     })
                 })
-            }
-            ,
+            },
+            t.prototype.SendHttpCB = function (e, t, n, i) {
+                var r = this;
+                void 0 === t && (t = {}),
+                    void 0 === i && (i = !1);
+                var s = app.LanguageManager().GetLocalLanguage(!0);
+                t.language = s;
+                var c = app.ClientConfigManager().GetGlobalConfig.hosts
+                    , l = app.ClientConfigManager().GetGlobalConfig.scheme + "://" + c[this.CurrentHostIndex];
+                i && app.Client.OnEvent("ModalLayer", o.EventWaitType.OpenNet),
+                    this.NetLog("[SendHttp]:", l + e, t, "b-g"),
+                    this.HttpRequest.SendHttpRequest(l, e, "POST", t, function (e, t, s) {
+                        var c;
+                        i && app.Client.OnEvent("ModalLayer", o.EventWaitType.ReceiveNet);
+                        try {
+                            c = JSON.parse(s)
+                        } catch (l) {
+                            return void r.ErrLog("OnReceiveHttpPack(%s) error:%s", t, s)
+                        }
+                        if (r.IsDevelopment() && r.NetLog("[RecvHttp]:", e + t, JSON.parse(JSON.stringify(c)), "b-gb"),
+                            c.code == a.ReqFailCode.TokenInviable)
+                            return app.GameManager().BackLoginScene(),
+                                void r.Log("TokenInviable");
+                        try {
+                            n && n(c)
+                        } catch (p) {
+                            return void r.ErrLog("SendHttpCB (%s%s)", e, t)
+                        }
+                    }, function () {
+                        app.Client.OnEvent("ModalLayer", o.EventWaitType.ReceiveNet),
+                            app.SysNotifyManager().ShowToast("UI.System_44")
+                    })
+            },
             t
     }(i.Singleton);
 n.BaseHttpServerManager = s,

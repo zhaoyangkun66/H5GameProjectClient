@@ -30,14 +30,11 @@
         "__id__": 34
       },
       {
-        "__id__": 487
+        "__id__": 488
       }
     ],
     "_active": true,
     "_components": [
-      {
-        "__id__": 492
-      },
       {
         "__id__": 493
       },
@@ -46,10 +43,13 @@
       },
       {
         "__id__": 495
+      },
+      {
+        "__id__": 496
       }
     ],
     "_prefab": {
-      "__id__": 496
+      "__id__": 497
     },
     "_opacity": 255,
     "_color": {
@@ -1338,9 +1338,6 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 482
-      },
-      {
         "__id__": 483
       },
       {
@@ -1348,10 +1345,13 @@
       },
       {
         "__id__": 485
+      },
+      {
+        "__id__": 486
       }
     ],
     "_prefab": {
-      "__id__": 486
+      "__id__": 487
     },
     "_opacity": 255,
     "_color": {
@@ -1804,8 +1804,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Login",
-    "_N$string": "UI_Login",
+    "_string": "Login",
+    "_N$string": "Login",
     "_fontSize": 32,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -1999,8 +1999,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Login",
-    "_N$string": "UI_Login",
+    "_string": "Login",
+    "_N$string": "Login",
     "_fontSize": 32,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -2365,8 +2365,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Signup",
-    "_N$string": "UI_Signup",
+    "_string": "Register",
+    "_N$string": "Register",
     "_fontSize": 32,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -3629,7 +3629,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 135.09,
+      "width": 86.16,
       "height": 50
     },
     "_anchorPoint": {
@@ -3696,7 +3696,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 135.09,
+      "width": 86.16,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -3748,8 +3748,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Login",
-    "_N$string": "UI_Login",
+    "_string": "Login",
+    "_N$string": "Login",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -3800,7 +3800,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 135.09,
+      "width": 86.16,
       "height": 50
     },
     "_resize": 1,
@@ -4482,7 +4482,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 170.2,
+      "width": 177.26,
       "height": 35.28
     },
     "_anchorPoint": {
@@ -4534,8 +4534,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Remember",
-    "_N$string": "UI_Remember",
+    "_string": "Remember me",
+    "_N$string": "Remember me",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -4609,7 +4609,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 240.49,
+      "width": 208.72,
       "height": 47.88
     },
     "_anchorPoint": {
@@ -4755,8 +4755,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Forget_Password",
-    "_N$string": "UI_Forget_Password",
+    "_string": "Forget password?",
+    "_N$string": "Forget password?",
     "_fontSize": 23,
     "_lineHeight": 38,
     "_enableWrapText": true,
@@ -5288,8 +5288,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Password",
-    "_N$string": "UI_Password",
+    "_string": "Password",
+    "_N$string": "Password",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -7516,8 +7516,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_EnterMail",
-    "_N$string": "UI_EnterMail",
+    "_string": "Email",
+    "_N$string": "Email",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -8758,8 +8758,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.Login_0_main_1",
-    "_N$string": "UI.Login_0_main_1",
+    "_string": "Phone number",
+    "_N$string": "Phone number",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -10158,8 +10158,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.Login_0_main_1",
-    "_N$string": "UI.Login_0_main_1",
+    "_string": "Phone number",
+    "_N$string": "Phone number",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -10990,8 +10990,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_EnterMail",
-    "_N$string": "UI_EnterMail",
+    "_string": "Email",
+    "_N$string": "Email",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -11839,8 +11839,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Password",
-    "_N$string": "UI_Password",
+    "_string": "Password",
+    "_N$string": "Password",
     "_fontSize": 23,
     "_lineHeight": 28,
     "_enableWrapText": false,
@@ -13197,7 +13197,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 319.07,
+      "width": 84.16,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -13249,8 +13249,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.Login_0_main_10",
-    "_N$string": "UI.Login_0_main_10",
+    "_string": "Code",
+    "_N$string": "Code",
     "_fontSize": 32,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -14732,7 +14732,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": false,
-    "_N$string": "UI_Receive_Email",
+    "_N$string": "Receive Email promos",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 23,
     "_N$font": {
@@ -14958,7 +14958,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 282.09,
+      "width": 231.72,
       "height": 50
     },
     "_anchorPoint": {
@@ -15025,7 +15025,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 282.09,
+      "width": 231.72,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -15077,8 +15077,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Account_POP4",
-    "_N$string": "UI_Account_POP4",
+    "_string": "Create account",
+    "_N$string": "Create account",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -15129,7 +15129,7 @@
     "_enabled": true,
     "_layoutSize": {
       "__type__": "cc.Size",
-      "width": 282.09,
+      "width": 231.72,
       "height": 50
     },
     "_resize": 1,
@@ -17133,11 +17133,11 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 480
+        "__id__": 481
       }
     ],
     "_prefab": {
-      "__id__": 481
+      "__id__": 482
     },
     "_opacity": 255,
     "_color": {
@@ -17216,7 +17216,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 210.11,
+      "width": 203.84,
       "height": 63
     },
     "_anchorPoint": {
@@ -17268,8 +17268,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI_Orignupwith",
-    "_N$string": "UI_Orignupwith",
+    "_string": "Or sign up with",
+    "_N$string": "Or sign up with",
     "_fontSize": 26,
     "_lineHeight": 50,
     "_enableWrapText": true,
@@ -17326,9 +17326,13 @@
       }
     ],
     "_active": true,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 479
+      }
+    ],
     "_prefab": {
-      "__id__": 479
+      "__id__": 480
     },
     "_opacity": 255,
     "_color": {
@@ -17340,7 +17344,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 300,
+      "width": 80,
       "height": 80
     },
     "_anchorPoint": {
@@ -17385,7 +17389,7 @@
       "__id__": 468
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 470
@@ -17419,7 +17423,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -49,
+        -55,
         0,
         0,
         0,
@@ -17623,7 +17627,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        51,
+        0,
         0,
         0,
         0,
@@ -17784,6 +17788,38 @@
     },
     "fileId": "bes1XnBHxJdItd4emQ5WF/",
     "sync": false
+  },
+  {
+    "__type__": "cc.Layout",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 468
+    },
+    "_enabled": true,
+    "_layoutSize": {
+      "__type__": "cc.Size",
+      "width": 80,
+      "height": 80
+    },
+    "_resize": 1,
+    "_N$layoutType": 1,
+    "_N$cellSize": {
+      "__type__": "cc.Size",
+      "width": 40,
+      "height": 40
+    },
+    "_N$startAxis": 0,
+    "_N$paddingLeft": 0,
+    "_N$paddingRight": 0,
+    "_N$paddingTop": 0,
+    "_N$paddingBottom": 0,
+    "_N$spacingX": 30,
+    "_N$spacingY": 0,
+    "_N$verticalDirection": 1,
+    "_N$horizontalDirection": 0,
+    "_N$affectedByScale": false,
+    "_id": ""
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -18018,13 +18054,13 @@
     },
     "_children": [
       {
-        "__id__": 488
+        "__id__": 489
       }
     ],
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 491
+      "__id__": 492
     },
     "_opacity": 255,
     "_color": {
@@ -18078,17 +18114,17 @@
     "_name": "lb_num",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 487
+      "__id__": 488
     },
     "_children": [],
     "_active": true,
     "_components": [
       {
-        "__id__": 489
+        "__id__": 490
       }
     ],
     "_prefab": {
-      "__id__": 490
+      "__id__": 491
     },
     "_opacity": 255,
     "_color": {
@@ -18142,7 +18178,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 488
+      "__id__": 489
     },
     "_enabled": true,
     "_materials": [

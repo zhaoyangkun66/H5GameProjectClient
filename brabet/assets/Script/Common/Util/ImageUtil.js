@@ -24,7 +24,10 @@ var o = function (e) {
         ,
         t.prototype.LoadRemoteImage = function (e, t) {
             if (e) {
+                //  t = t + '?version=1'
+               // t = 'https://lh3.googleusercontent.com/a/AGNmyxa1CobziYwbIVctzveO-lsp3A0uNnSh6Efes5vD=s96-c'
                 var n = t.substring(t.lastIndexOf(".") + 1);
+              //  n = "png"
                 "jpeg" == n || "png" == n || "jpg" == n ? app.ControlManager().CreateLoadPromiseByUrl(t).then(function (t) {
                     var n = function (e) {
                         if (cc.isValid(e, true) && e && e.getComponent(cc.Sprite)) {

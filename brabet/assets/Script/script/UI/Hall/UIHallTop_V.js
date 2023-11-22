@@ -67,6 +67,7 @@ function(e) {
                             if ("btn_shuaxin" != e) {
                                 if ("logo" == e)
                                     return this.onSelectToggleContainer(r.Hall_SelectTopToggle.Home),
+                                   // app.HNoticeManager().RequestCanGetRedenvelope(),
                                     void app.HallManager().ShowHallForm();
                                 if ("toggle_games" != e)
                                     if ("toggle_allactivity" != e)
@@ -98,7 +99,10 @@ function(e) {
                                     else
                                         app.HallManager().ShowHallForm(i.UINameDefine.UIAllActivity);
                                 else
+                                {
+                                //    app.HNoticeManager().RequestCanGetRedenvelope()
                                     app.HallManager().ShowHallForm()
+                                }
                             } else
                                 this.refreshGoldCoins(t);
                         else

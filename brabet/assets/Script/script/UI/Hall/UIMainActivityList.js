@@ -46,7 +46,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
             ,
             t.prototype.renderActivityList = function () {
                 var e = this
-                    , t = [c.ActivityType.recharge_send_gold, c.ActivityType.welcome_bonus, c.ActivityType.recharge_reward, c.ActivityType.week_month_card, c.ActivityType.limit_recharge, c.ActivityType.week_month_card, c.ActivityType.first_recharge_gift, c.ActivityType.ordinary_recharge_gift, c.ActivityType.subordinate_recharge_gift, c.ActivityType.reserve_event_one, c.ActivityType.reserve_event_two, c.ActivityType.reserve_event_three, c.ActivityType.progressive_recharge_time, c.ActivityType.recharge_bussiness_one_gift, c.ActivityType.recharge_bussiness_two_gift, c.ActivityType.recharge_bussiness_three_gift, c.ActivityType.reserve_event_four, c.ActivityType.reserve_event_five]
+                    , t = [c.ActivityType.recharge_send_gold, c.ActivityType.welcome_bonus, c.ActivityType.recharge_reward, c.ActivityType.week_month_card, c.ActivityType.limit_recharge, c.ActivityType.week_month_card, c.ActivityType.first_recharge_gift, c.ActivityType.ordinary_recharge_gift, c.ActivityType.subordinate_recharge_gift, c.ActivityType.reserve_event_one, c.ActivityType.reserve_event_two, c.ActivityType.reserve_event_three, c.ActivityType.progressive_recharge_time, c.ActivityType.recharge_bussiness_one_gift, c.ActivityType.recharge_bussiness_two_gift, c.ActivityType.recharge_bussiness_three_gift, c.ActivityType.rain_of_red_envelopes, c.ActivityType.reserve_event_five]
                     , n = cc.find("/node_btnGroup", this.node);
                 n.removeAllChildren();
                 for (var o = app.RedDotManager().RechargeInfoDataResult.activity_config, i = function (i) {
@@ -101,8 +101,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         else if (l == c.ActivityType.reserve_event_three)
                             _ = 1 == (g = app.RedDotManager().RechargeInfoDataResult.reserve_event_three).switch && !!r.is_show,
                                 a.showItem(l, _, g.title);
-                        else if (l == c.ActivityType.reserve_event_four)
-                            _ = 1 == (g = app.RedDotManager().RechargeInfoDataResult.reserve_event_four).switch && !!r.is_show,
+                        else if (l == c.ActivityType.rain_of_red_envelopes)
+                            _ = 1 == (g = app.RedDotManager().RechargeInfoDataResult.rain_of_red_envelopes).switch && !!r.is_show,
                                 a.showItem(l, _, g.title);
                         else if (l == c.ActivityType.reserve_event_five)
                             _ = 1 == (g = app.RedDotManager().RechargeInfoDataResult.reserve_event_five).switch && !!r.is_show,
@@ -190,7 +190,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     case c.ActivityType.reserve_event_one:
                     case c.ActivityType.reserve_event_two:
                     case c.ActivityType.reserve_event_three:
-                    case c.ActivityType.reserve_event_four:
+                    case c.ActivityType.rain_of_red_envelopes:
                     case c.ActivityType.reserve_event_five:
                         app.FormManager().IsFormShow(a.UINameDefine.UIActivity) && app.FormManager().CloseForm(a.UINameDefine.UIActivity),
                             app.FormManager().ShowForm(a.UINameDefine.UIActivity, e);

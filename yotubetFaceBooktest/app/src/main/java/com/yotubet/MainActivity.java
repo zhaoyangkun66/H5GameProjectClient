@@ -50,6 +50,7 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.time.Instant;
@@ -62,14 +63,12 @@ public class MainActivity extends AppCompatActivity {
     WebView webView;
     CallbackManager callbackManager;
     ProfileTracker profileTracker;
-    private static MainActivity app = null;
     String url = "https://zhaoyangkun66.github.io/test/";
     //String url = "https://www.brabet.com/?f=UIHall";
     @SuppressLint("JavascriptInterface")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        app=this;
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         webView = (WebView) findViewById(R.id.webview);
@@ -77,55 +76,66 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setSupportZoom(false);
         webView.getSettings().setDomStorageEnabled(true);
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-        });
+        webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(url);
-       // FacebookSdk.sdkInitialize(getApplicationContext());
-       // AppEventsLogger.activateApp(this);
         callbackManager = CallbackManager.Factory.create();
         profileTracker = new ProfileTracker() {
             @Override
             protected void onCurrentProfileChanged(
                     Profile oldProfile,
                     Profile currentProfile) {
-                webView.loadUrl("javascript:cc.loginResult(\"" + "onSuccess22"+ "\")");
-                // App code
+             //   webView.loadUrl("javascript:cc.loginResult(\"" + currentProfile.getId()+currentProfile.getName()+ "\")");
+                    JSONObject jsonObject = new JSONObject();
+                    try {
+                        jsonObject.put("uid", currentProfile.getId());
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                    try {
+                        jsonObject.put("name", currentProfile.getName());
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    webView.loadUrl("javascript:app.NativeMgr.loginFaceBookSuccess(JSON.stringify("+jsonObject.toString()+"))");
             }
         };
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        Profile profile = Profile.getCurrentProfile();
+                        Profile currentProfile = Profile.getCurrentProfile();
+                        if (currentProfile!=null)
+                        {
+                            JSONObject jsonObject = new JSONObject();
+                            try {
+                                jsonObject.put("uid", currentProfile.getId());
+                            } catch (JSONException e) {
+                                throw new RuntimeException(e);
+                            }
+                            try {
+                                jsonObject.put("name", currentProfile.getName());
+                            } catch (JSONException e) {
+                                throw new RuntimeException(e);
+                            }
 
-                        webView.loadUrl("javascript:cc.loginResult(\"" + "onSuccess"+ "\")");
+                            webView.loadUrl("javascript:app.NativeMgr.loginFaceBookSuccess(JSON.stringify("+jsonObject.toString()+"))");
+                        }
                     }
-
                     @Override
                     public void onCancel() {
-                        webView.loadUrl("javascript:cc.loginResult(\"" + "onCancel"+ "\")");
                     }
-
                     @Override
                     public void onError(FacebookException exception) {
-                        webView.loadUrl("javascript:cc.loginResult(\"" + "onError"+ "\")");
                     }
                 });
     }
     @JavascriptInterface
     public void callJava(String keyCode, String event) {
-
         webView.post(new Runnable() {
             @Override
             public void run() {
-               // LoginManager.getInstance().logInWithReadPermissions(app, Arrays.asList("public_profile,email"));
-                LoginManager.getInstance().logInWithReadPermissions(app, Arrays.asList("gaming_profile,email"));
-               // webView.loadUrl("javascript:cc.loginResult(\"" + keyCode+ "\")");
+                LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("gaming_profile,email"));
             }
         });
         runOnUiThread(new Runnable() {
@@ -134,6 +144,11 @@ public class MainActivity extends AppCompatActivity {
                 webView.loadUrl("javascript:cc.loginResult(\"" + event+ "\")");
             }
         });
+
+    }
+    @JavascriptInterface
+    public void loginFaceBook()  {
+        LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("gaming_profile,email"));
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

@@ -60,6 +60,7 @@ var o = require("../../../Common/Base/BaseForm")
                     this.isRenderGameTypeList ? this.refreshGameType() : (this.RenderAll(),
                         app.NativeMgr().InitHallEnd(),
                         app.EventTrackManager().LogEvent(r.default.ENTER_HALL_SCENE))
+                app.HNoticeManager().RequestCanGetRedenvelope()
             }
             ,
             t.prototype.pushModelPanel = function () {

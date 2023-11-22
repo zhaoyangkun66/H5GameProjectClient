@@ -197,7 +197,7 @@ var d = function(e) {
             else if (22118 == e)
                 app.FormManager().ShowForm(l.UINameDefine.UIActivity, s.ActivityType.reserve_event_three);
             else if (22119 == e)
-                app.FormManager().ShowForm(l.UINameDefine.UIActivity, s.ActivityType.reserve_event_four);
+                app.FormManager().ShowForm(l.UINameDefine.UIActivity, s.ActivityType.rain_of_red_envelopes);
             else if (22136 == e)
                 app.FormManager().ShowForm(l.UINameDefine.UIActivity, s.ActivityType.reserve_event_five);
             else if (22120 == e)

@@ -68,6 +68,7 @@ var o = require("../Base/Singleton")
                         }
                     }
                     e.ai_chat_robot_switch = 0
+                    e.pay_channel_version = 1
                     // e.gs_sport = "28966"
                 }
 

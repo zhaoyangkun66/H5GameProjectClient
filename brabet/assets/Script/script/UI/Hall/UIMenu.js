@@ -96,7 +96,13 @@ var o, i = require("../../../Common/Base/BaseForm"),
                         this.OnFastGameHiedBg(),
                         this.OnGetLanguageHide(),
                         "btn_vip" != e)
-                        if ("btn_ExpServer" != e && "btn_normalServer" != e)
+                        if ("newCanalOficial" == e) {
+                            cc.sys.openURL("https://t.me/Yotubet01")
+                        } 
+                        else if ("newGrupodeatividades" == e) {
+                            cc.sys.openURL("https://t.me/sol888886")
+                        }
+                        else if ("btn_ExpServer" != e && "btn_normalServer" != e)
                             if ("btn_wheel" != e) {
                                 if ("btn_AllGames" == e)
                                     return t.getChildByName("checkmark").active = true,

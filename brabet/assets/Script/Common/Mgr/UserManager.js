@@ -125,6 +125,13 @@ var l = function (e) {
         }
         ,
         t.prototype.onGetUserWallet = function (e) {
+            // if (isgoServer) {
+            //     e.percent = 0
+            //     e.agent_percent = 0
+            //     e.percent = 0
+            //     e.agent_usdt_percent
+            //     e.usdt_percent
+            // }
             this.UserWallet = e,
                 this.UserInfo.cash = e.withdraw_gold,
                 this.UserInfo.gold = Number(e.gold),

@@ -35,8 +35,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         });
                         var n = app.GameConfigManager().GetGameConfig().down_urls
                             , o = ""
-                            , r = app.ClientConfigManager().getLocalUrlDataByName("agentid");
-                        r && app.NativeMgr().copyToClipBoard(r, "UI_DownCopyed")
+                       //     , r = app.ClientConfigManager().getLocalUrlDataByName("agentid");
+                      //  r && app.NativeMgr().copyToClipBoard(r, "UI_DownCopyed")
                         cc.sys.os == cc.sys.OS_ANDROID ? o = n.android_download_url : cc.sys.os == cc.sys.OS_IOS && (o = app.GameConfigManager().GetGameConfig().down_urls.ios_download_url)
                         if (app.ComTool().H5Platform() && cc.sys.os == cc.sys.OS_IOS) {
                             app.FormManager().ShowForm(a.UINameDefine.UIJudge)

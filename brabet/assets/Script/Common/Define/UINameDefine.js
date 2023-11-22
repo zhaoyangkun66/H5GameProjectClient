@@ -97,6 +97,7 @@ var o = function() {
     e.UIGuide = "UIGuide",
     e.UIGameLoading = "UIGameLoading",
     e.UILoadingFail = "UILoadingFail",
+    e.UIReceiveRedEnvelope = "UIReceiveRedEnvelope",
     e
 }();
 n.UINameDefine = o

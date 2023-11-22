@@ -219,7 +219,7 @@ module.exports = {
         },
         {
             "id": 24,
-            "title": "reserve event four",
+            "title": "rain_of_red_envelopes",
             "type": 2,
             "sort": 7,
             "icon_url": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/kf\/20230216\/85479a23c578aff38a4c84e6053de43b.png",
@@ -364,7 +364,7 @@ module.exports = {
         "icon_url": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/kf\/20230216\/e995f3f3ce2ffded79cb7565204a361a.png",
         "is_show": 1
     },
-    "reserve_event_four": {
+    "rain_of_red_envelopes": {
         "switch": 0,
         "title": "2x Progresso de Saque",
         "img": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/notice_image\/20230905\/e20d58795f43ca2c1f5b33f892ffb8ff.jpeg",
@@ -380,23 +380,6 @@ module.exports = {
         "sort": 7,
         "icon_url": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/kf\/20230216\/85479a23c578aff38a4c84e6053de43b.png",
         "is_show": 1
-    },
-    "reserve_event_five": {
-        "switch": 0,
-        "title": "20% Bônus de Apostas",
-        "img": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/notice_image\/20230905\/e316f332c7b01f91afec114862152fc7.jpeg",
-        "content": "<color=#f9de06><size=26><span font-weight: 700;>Jogue apostas esportivas, g<\/span><b>anhe um bônus de aposta de 20% até R$5000 por semana!<\/b><\/size><\/color><br\/><size=24><color=#ffffff><br\/><\/size><\/color><br\/><color=#f9de06><size=26><span font-weight: 700;>Detalhes da Atividade:<\/span><\/size><\/color><br\/><size=24><color=#ffffff>1. <\/size><\/color><color=#f98806><size=24><span font-weight: 700;>Tempo da atividade: 2023.09.07 - 2023.10.08<\/span><\/size><\/color><br\/><size=24><color=#ffffff>2. <\/size><\/color><span color: rgb(255, 255, 255); font-size: small;>Aposte um total de R$20 ou mais em qualquer evento de apostas esportivas em uma semana e receba um bônus grátis de 20% em sua aposta! O bônus é limitado a R$5000.<\/span><br\/><color=#ffffff><size=24><br\/><\/size><\/color><br\/><color=#ffffff><size=24>Por exemplo, se você apostar um total de R$100 em qualquer evento esportivo em uma semana, receberá um bônus grátis de R$20 na segunda-feira seguinte. Se apostar um total de R$10 em eventos esportivos durante a semana, não receberá nenhum bônus.<\/size><\/color><br\/><br\/><br\/><color=#f9de06><size=26><b>Regras de Bônus<\/b><\/size><\/color><span color: rgb(249, 222, 6); font-size: medium; font-weight: 700;>:<\/span><br\/><color=#ffffff><size=24>1.O ciclo semanal é fixado entre 00:00 de segunda-feira e 23:59 de domingo e o bônus grátis será enviado na segunda-feira seguinte por meio do endereço de e-mail do jogo após o cumprimento dos requisitos, portanto, confirme em seu e-mail e solicite seu bônus!<\/size><\/color><br\/><color=#ffffff><size=24>2. Condições de retirada do bônus: o valor da aposta efetiva é igual a 5 vezes o valor do bônus.<\/size><\/color><br\/><br\/><size=24><color=#ffffff><br\/><\/size><\/color><br\/><color=#f9de06><size=26><span font-weight: 700;>Nota Especial:<\/span><\/size><\/color><br\/><span color: rgb(255, 255, 255); font-size: small;>Certifique-se de que o seu nome, detalhes de contacto e CPF são exactos e únicos. Se o mesmo jogador usar IPs de rede diferentes para registrar várias contas para participar do evento, isso será considerado trapaça e sua conta será congelada permanentemente.<\/span><br\/><br\/><color=#ffffff><size=24>A BRABET reserva-se o direito de modificar, suspender, cancelar, rejeitar ou cancelar este evento a seu exclusivo critério.<\/size><\/color><br\/>",
-        "content_type": "1",
-        "entrance_img": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/notice_image\/20230905\/6ceaeefc9866d3661496025c5e7e8c0c.jpeg",
-        "inside": "0",
-        "outside": "",
-        "button_name": "Jogue Agora",
-        "mobile_title": "20% Bônus de Apostas",
-        "mobile_intro": "Jogue apostas esportivas, ganhe um bônus de aposta de 20% até R$5000 por semana!",
-        "act_id": 28,
-        "sort": 0,
-        "icon_url": "",
-        "is_show": 0
     },
     "recharge_bussiness_one_gift": {
         "switch": 0,
@@ -447,6 +430,23 @@ module.exports = {
         "act_id": 27,
         "sort": 2400,
         "icon_url": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/kf\/20230213\/fc7384a7cc588a9f3b53f02a90345173.png",
+        "is_show": 0
+    },
+    "reserve_event_five": {
+        "switch": 0,
+        "title": "20% Bônus de Apostas",
+        "img": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/notice_image\/20230905\/e316f332c7b01f91afec114862152fc7.jpeg",
+        "content": "<color=#f9de06><size=26><span font-weight: 700;>Jogue apostas esportivas, g<\/span><b>anhe um bônus de aposta de 20% até R$5000 por semana!<\/b><\/size><\/color><br\/><size=24><color=#ffffff><br\/><\/size><\/color><br\/><color=#f9de06><size=26><span font-weight: 700;>Detalhes da Atividade:<\/span><\/size><\/color><br\/><size=24><color=#ffffff>1. <\/size><\/color><color=#f98806><size=24><span font-weight: 700;>Tempo da atividade: 2023.09.07 - 2023.10.08<\/span><\/size><\/color><br\/><size=24><color=#ffffff>2. <\/size><\/color><span color: rgb(255, 255, 255); font-size: small;>Aposte um total de R$20 ou mais em qualquer evento de apostas esportivas em uma semana e receba um bônus grátis de 20% em sua aposta! O bônus é limitado a R$5000.<\/span><br\/><color=#ffffff><size=24><br\/><\/size><\/color><br\/><color=#ffffff><size=24>Por exemplo, se você apostar um total de R$100 em qualquer evento esportivo em uma semana, receberá um bônus grátis de R$20 na segunda-feira seguinte. Se apostar um total de R$10 em eventos esportivos durante a semana, não receberá nenhum bônus.<\/size><\/color><br\/><br\/><br\/><color=#f9de06><size=26><b>Regras de Bônus<\/b><\/size><\/color><span color: rgb(249, 222, 6); font-size: medium; font-weight: 700;>:<\/span><br\/><color=#ffffff><size=24>1.O ciclo semanal é fixado entre 00:00 de segunda-feira e 23:59 de domingo e o bônus grátis será enviado na segunda-feira seguinte por meio do endereço de e-mail do jogo após o cumprimento dos requisitos, portanto, confirme em seu e-mail e solicite seu bônus!<\/size><\/color><br\/><color=#ffffff><size=24>2. Condições de retirada do bônus: o valor da aposta efetiva é igual a 5 vezes o valor do bônus.<\/size><\/color><br\/><br\/><size=24><color=#ffffff><br\/><\/size><\/color><br\/><color=#f9de06><size=26><span font-weight: 700;>Nota Especial:<\/span><\/size><\/color><br\/><span color: rgb(255, 255, 255); font-size: small;>Certifique-se de que o seu nome, detalhes de contacto e CPF são exactos e únicos. Se o mesmo jogador usar IPs de rede diferentes para registrar várias contas para participar do evento, isso será considerado trapaça e sua conta será congelada permanentemente.<\/span><br\/><br\/><color=#ffffff><size=24>A BRABET reserva-se o direito de modificar, suspender, cancelar, rejeitar ou cancelar este evento a seu exclusivo critério.<\/size><\/color><br\/>",
+        "content_type": "1",
+        "entrance_img": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/notice_image\/20230905\/6ceaeefc9866d3661496025c5e7e8c0c.jpeg",
+        "inside": "0",
+        "outside": "",
+        "button_name": "Jogue Agora",
+        "mobile_title": "20% Bônus de Apostas",
+        "mobile_intro": "Jogue apostas esportivas, ganhe um bônus de aposta de 20% até R$5000 por semana!",
+        "act_id": 28,
+        "sort": 0,
+        "icon_url": "",
         "is_show": 0
     },
     "agency_promotion": {

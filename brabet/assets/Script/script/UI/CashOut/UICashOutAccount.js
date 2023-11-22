@@ -120,7 +120,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
             }
             ,
             t.prototype.onBindBankAccount = function (e) {
-                e || this.setBindBankUserData()
+                // e ||
+                this.setBindBankUserData()
             }
             ,
             t.prototype.setBindBankUserData = function () {
@@ -138,7 +139,11 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         //  this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).string = "",
                         // this.SelectBankName.getChildByName("editbox_bank_name").getComponent(cc.EditBox).string = "",
                         this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).string = "",
+                        this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).enabled = true,
+                        this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).enabled = true,
+
                         this.PixType_Node.getChildByName("editbox_pix_type").getComponent(cc.EditBox).string = "",
+
                         // this.li_Encrypted_NodeEdit.getComponent(cc.EditBox).string = "",
                         //  this.li_Province.getChildByName("editbox").getComponent(cc.EditBox).string = "",
                         //  this.li_City.getChildByName("editbox").getComponent(cc.EditBox).string = "",
@@ -164,8 +169,12 @@ var o = require("../../../Common/Base/UIBaseComponent")
                             this.Email.getComponent(cc.EditBox).placeholder = ""),
                         // e.upi && "" !== e.upi && (this.UpiNode.getComponent(cc.EditBox).string = e.upi,
                         //     this.UpiNode.getComponent(cc.EditBox).placeholder = ""),
+                        //  e.taxid="12345678901",
+                        //  e.pix_key="12345678901",
                         e.taxid && "" !== e.taxid && (this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).string = app.ComUtil().translate(e.taxid + ""),
-                            this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
+                            this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).placeholder = "",
+                            this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).enabled = false
+                        ),
                         // e.zipcode && "" !== e.zipcode && (this.ZipCode_Node.getChildByName("editbox").getComponent(cc.EditBox).string = e.zipcode,
                         //     this.ZipCode_Node.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
                         // e.account_digit && "" !== e.account_digit && (this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).string = e.account_digit,
@@ -186,9 +195,10 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         //     this.BankName.getComponent(cc.EditBox).placeholder = "") : this.SelectBankCodeData = null,
                         e.pix_key && "" !== e.pix_key) {
                         var t = e.pix_key;
-                        "CPF" != e.pix_type && "CNPJ" != e.pix_type || (t = app.ComUtil().translate(e.pix_key + "")),
+                        "CPF" != e.pix_type && "CNPJ" != e.pix_type || (t = (e.pix_key + "")),
                             this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).string = t,
-                            this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""
+                            this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).placeholder = "",
+                            this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).enabled = false
                     }
                     if (this.PixType_Node.getChildByName("editbox_pix_type").getComponent(cc.EditBox).string = "CPF",
                         e.pix_type && "" !== e.pix_type) {

@@ -74,12 +74,34 @@ var o = require("../../Define/ShareDefine")
             }
             ,
             t.prototype.onRechargeInfo = function (e) {
-                if (isgoServer) {
-                    if (e.rechargeinfo) {
-                        for (const key in e.rechargeinfo) {
-                            e[e.rechargeinfo[key].name] = e.rechargeinfo[key];
-                        }
-                    }
+                if (isgoServer == true) {
+                    // if (e.rain_of_red_envelopes == null) {
+                    //     e.rain_of_red_envelopes = {
+                    //         "switch": 1,
+                    //         "title": "Envelope vermelho",
+                    //         "img": "https://www.yotubet.com/uploads/notice_image/rainOfRedEnvelopes.png",
+                    //         "content": "<size=26><color=#f9de06><b>Hora do evento(UTC-3):</b></size></color><br/><br/><size=24><color=#ffffff>Hora de distribuicao: 00:00 - 02:00,02:00 - 03:59...........20:00 - 21:59,22:00 - 23:59 Emitido periodicamente a cada 2 horas</size></color><br/><br/><color=#f9de06><size=26>Condicies do Evento: </size></color><br/><size=24><color=#ffffff>Os usuários que usaram o código de resgate e obtiveram recompensas são elegíveis para ativação (o código de resgate é divulgado no canal oficial) Canal oficial do Telegram: @yotubet01</size></color><br/><br/><color=#f9de06><size=26><b>InstrucGes Do Evento:</b></size></color><br/><size=24><color=#ffffff>1. Os usuários que utilizaram com sucesso o código de resgate podem participar do evento. Um número indefinido de envelopes vermelhos é distribuído todos os dias, cada envelope vermelho custa R$ 10</size></color><br/><size=24><color=#ffffff>2. Envelopes vermelhos serão distribuídos em cada período e os jogadores poderão participar repetidamente</size></color><br/><size=24><color=#ffffff>3. Durante o evento, envelopes vermelhos aparecerão na interface do lobby. (Os jogadores precisam retornar ao lobby para recebê-lo)</size></color><br/><size=24><color=#ffffff>4. O bônus deste evento requer 1 vez de giro antes de poder ser sacado.</size></color><br/><size=24><color=#ffffff>5. Caso os jogadores obtenham recompensas por meios ilegais, as recompensas obtidas serão deduzidas e a conta será congelada. Caso haja diferenças na interpretação das regras, a plataforma reserva-se o direito final de interpretar este evento.</size></color><br/>",
+                    //         "content_type": "1",
+                    //         "entrance_img": "https://www.yotubet.com/uploads/notice_image/rainOfRedEnvelopes.png",
+                    //         "inside": "0",
+                    //         "outside": "https://t.me/Yotubet01",
+                    //         "button_name": "Entre no canal oficial",
+                    //         "mobile_title": "Envelope vermelho",
+                    //         "mobile_intro": "Entre no canal oficial Disponível em todos os períodos Ganhe até R$ 10",
+                    //         "act_id": 24,
+                    //         "sort": 7,
+                    //         "icon_url": "",
+                    //         "is_show": 1
+                    //     }
+                    //     e.activity_config.push({
+                    //         "id": 24,
+                    //         "title": "Envelope vermelho",
+                    //         "type": 2,
+                    //         "sort": 7,
+                    //         "icon_url": "https://www.yotubet.com/uploads/images/activity_config/HB.png",
+                    //         "is_show": 1
+                    //     })
+                    // }
                 }
                 this.RechargeInfoDataResult = e,
                     this.RechargeInfoDataResult.activity_config.sort(function (e, t) {

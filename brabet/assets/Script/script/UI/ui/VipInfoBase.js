@@ -266,7 +266,11 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 this.GetWndComponent("spr_vip", cc.Sprite, n).spriteFrame = this.vipSprS[t];
                 var o = app.VIPManager().getShowVipList(e);
                 if (o) {
-                    for (var i = ["UI_Taxa_da_retirada", "UI_VIP_Daily_withdrawals", "UI_VIP_Single_withdrawal_limit", "UI_VIP_Daily_withdrawal_limit", "UI_Vip_USDT_Fee", "UI_Vip_USDT_Daily", "UI_Vip_USDT_Limit", "UI_Vip_USDT_Linit", "UI_VIP_Code_Rewards"], a = [o.withdraw_fee_rate, this.formatScore(o.withdraw_num), this.formatScore(o.withdraw_each_limit), this.formatScore(o.withdraw_day_limit), o.usdt_withdraw_fee_rate, this.formatScore(o.usdt_withdraw_num), this.formatScore(o.usdt_withdraw_each_limit), this.formatScore(o.usdt_withdraw_day_limit), o.internal_percent], r = this.GetWndNode("content", n), s = this.GetWndNode("con", n), c = 0; c < a.length; c++) {
+                    /*  */
+                    // var i = ["UI_Taxa_da_retirada", "UI_VIP_Daily_withdrawals", "UI_VIP_Single_withdrawal_limit", "UI_VIP_Daily_withdrawal_limit", "UI_Vip_USDT_Fee", "UI_Vip_USDT_Daily", "UI_Vip_USDT_Limit", "UI_Vip_USDT_Linit", "UI_VIP_Code_Rewards"]
+                    for (var i = ["UI_Taxa_da_retirada", "UI_VIP_Daily_withdrawals", "UI_VIP_Single_withdrawal_limit", /*"UI_VIP_Daily_withdrawal_limit", */"UI_Vip_USDT_Fee", "UI_Vip_USDT_Daily", "UI_Vip_USDT_Limit", "UI_Vip_USDT_Linit", "UI_VIP_Code_Rewards"],
+                        a = [o.withdraw_fee_rate, this.formatScore(o.withdraw_num), o.withdraw_each_limit,/* this.formatScore(o.withdraw_day_limit), */o.usdt_withdraw_fee_rate, this.formatScore(o.usdt_withdraw_num), this.formatScore(o.usdt_withdraw_each_limit), this.formatScore(o.usdt_withdraw_day_limit), o.internal_percent],
+                        r = this.GetWndNode("content", n), s = this.GetWndNode("con", n), c = 0; c < a.length; c++) {
                         var l = a[c]
                             , p = r.children[c];
                         if (p || (p = cc.instantiate(s),

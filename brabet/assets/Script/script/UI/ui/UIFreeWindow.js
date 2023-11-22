@@ -27,13 +27,13 @@ var o = require("../../../Common/Base/BaseForm")
     }
     ,
     t.prototype.OnNodeDisable = function(e) {
-        this.GoldNod.active = e == i.FreeWindowType.GoldNod,
-        this.GetWndNode("glod/btn_free", this.GoldNod).active = app.GameConfigManager().IsExperienceServerShow;
+        this.GoldNod.active = e == i.FreeWindowType.GoldNod
+     //   this.GetWndNode("glod/btn_free", this.GoldNod).active = app.GameConfigManager().IsExperienceServerShow;
         var t = app.GameConfigManager().IsExperienceServerShow ? "UI_Guide_text1" : "UI_Guide_text4";
-        this.GetWndComponent("lbl", cc.Label, this.GoldNod).string = app.i18n.t(t),
-        this.FreeOutGame.active = e == i.FreeWindowType.FreeOutGame,
-        this.FreeNotice.active = e == i.FreeWindowType.FreeNotice,
-        this.FreeInFreeGameNotice.active = e == i.FreeWindowType.FreeInFreeGameNotice
+        this.GetWndComponent("lbl", cc.Label, this.GoldNod).string = app.i18n.t(t)
+       // this.FreeOutGame.active = e == i.FreeWindowType.FreeOutGame,
+       // this.FreeNotice.active = e == i.FreeWindowType.FreeNotice,
+       // this.FreeInFreeGameNotice.active = e == i.FreeWindowType.FreeInFreeGameNotice
     }
     ,
     t.prototype.OnClick = function(e) {

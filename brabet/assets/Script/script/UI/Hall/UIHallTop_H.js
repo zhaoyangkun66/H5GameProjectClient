@@ -108,7 +108,10 @@ function(e) {
                         app.FormManager().IsFormShow(a.UINameDefine.UIMenu) ? (app.FormManager().CloseForm(a.UINameDefine.UIMenu),
                         app.Client.OnEvent(o.GameEventDefine.HallWidgetVariety)) : app.FormManager().ShowForm(a.UINameDefine.UIMenu);
                 else
+                {
+                   // app.HNoticeManager().RequestCanGetRedenvelope()
                     app.FormManager().IsFormShow(a.UINameDefine.UIHall) || app.GameManager().enterSceneByRoomMode(s.RoomMode.HALL);
+                }
             else
                 app.FormManager().ShowForm(a.UINameDefine.UILoginSign, 2);
         else

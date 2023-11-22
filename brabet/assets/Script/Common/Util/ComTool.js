@@ -54,7 +54,7 @@ var o = function(e) {
     }
     ,
     t.prototype.CheckPlatform = function() {
-        return !this.AndroidHybirdPlatform() && !cc.sys.isNative
+        return !cc.sys.isNative
     }
     ,
     t.prototype.getPackageName = function() {

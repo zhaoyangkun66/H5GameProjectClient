@@ -148,6 +148,10 @@ if (isgoServer) {
     o.GAME_UP = "/other_game/gameup"
     o.GET_OPEN_REDBAG = "/activitie/openRed"
     o.GET_KEFU_LIST = "/kefu/getKefuUrl"
+    o.CANGET_Redenvelope = "/Redenvelope/CanGetRedenvelope"//o.GET_NOTICE_LIST
+    o.GET_Redenvelope = "/Redenvelope/GetRedenvelope"//o.GET_NOTICE_LIST
+   // o.CANGET_Redenvelope = o.GET_NOTICE_LIST
+   // o.GET_Redenvelope = o.GET_NOTICE_LIST
 }
 n.HttpAPI = o,
     function (e) {

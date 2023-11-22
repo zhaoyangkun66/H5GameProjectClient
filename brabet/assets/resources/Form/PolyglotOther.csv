@@ -4,3 +4,20 @@ UI.TP_0_Main_2,Mine,मेन्यू,ลูกระเบิด,Menu,账号,C
 UI_Plinko_Enter,Enter,दर्ज,เข้า,Enter,進入,Đi vào,Masuk,Enter,Enter,Digitar,Ingresar,,
 Bao_Dian_Cancelar,Cancel,रद्द करें,ยกเลิก,Cancelar,取消,Hủy bỏ,Membatalkan,Cancelar,Cancelar,Cancelar,Cancelar,,
 Bao_Dian_Quantia,Amount,राशि,ปริมาณ,Quantia,數量,Số tiền,Jumlah,Quantia,Quantia,Quantia,Importe,,
+UI_Cash_StarColor_IFSCCodeNew,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,<b><color=#495669>Nome da conta</color><color=#ff0000>*</color></b>,<b><color=#495669>Nome da conta</color><color=#ff0000>*</color></b>
+UI_Shop_InputTaxIdNew,Enter name,Introduza o nome,Introduza o nome,Introduza o nome,Introduza o nome,Introduza o nome,Introduza o nome,Introduza o nome,Introduza o nome,Introduza o nome,Introduza o nome
+UI_Input_PixNew,Enter the number of 11 digits of the CPF,Introduza o número de 11 digitos do CPF,Introduza o número de 11 digitos do CPF,Introduza o número de 11 digitos do CPF,Introduza o número de 11 digitos do CPF,Introduza o número de 11 digitos do CPF,Introduza o número de 11 digitos do CPF,Introduza o número de 11 digitos do CPF,Introduza o número de 11 digitos do CPF,Introduza o número de 11 digitos do CPF,Introduza o número de 11 digitos do CPF
+UI.newOfficial,Official channel,hi-in,th-th,zh-cn,zh-hk,vi-vn,id-id,in-telugu,in-marathi,Canal oficial,es-es,,
+UI.newGroupofactivities,Group of activities,hi-in,th-th,zh-cn,zh-hk,vi-vn,id-id,in-telugu,in-marathi,Grupo de atividades,es-es,,
+UI.UIReceiveRedEnvelope1,GRAB,hi-in,th-th,zh-cn,zh-hk,vi-vn,id-id,in-telugu,in-marathi,AGARR AR,es-es,,
+UI.UIReceiveRedEnvelope2,Rain of red envelopes,hi-in,th-th,zh-cn,zh-hk,vi-vn,id-id,in-telugu,in-marathi,Chuva de pacotes vermelhos,es-es,,
+UI.UIReceiveRedEnvelope3,The bonus has been deposited into your wallet,hi-in,th-th,zh-cn,zh-hk,vi-vn,id-id,in-telugu,in-marathi,O bônus foi depositado na sua carteira,es-es,,
+UI.UIReceiveRedEnvelope4,Congratulations on the award,hi-in,th-th,zh-cn,zh-hk,vi-vn,id-id,in-telugu,in-marathi,Parabéns pelo prêmio,es-es,,
+UI_Mines_cashout,CASHOUT,नकदी निकलना,เงินสด,CASHOUT,兌現,RÚT TIỀN,KAS KELUAR,కాషౌట్,पैसे काढणे,SAQUE,RETIRO,,
+UI_Mines_Bet,Bet,लेकिन,เดิมพัน,Bet,賭注,Cược,Taruhan,కానీ,परंतु,Mas,apostar,,
+UI_Mines_START,START,प्रारंभ,เริ่ม,START,開始,BẮT ĐẦU,MULAI,ప్రారంభించు,प्रारंभ,COMEÇAR,COMIENZO,,
+UI_Mines_Stop,Stop,रुकना,หยุด,Stop,停止,Dừng lại,Berhenti,ఆపండి,थांबा,Pare,Deténgase,,
+UI_Mines_Autopick,Autopick,ऑटोपिक,รับโดยอัตโนมัติ,Autopick,自動拾取,Tự chọn,Otomatis memilih,స్వీయ ఎంపిక,ऑटोपिक,Escolha automática,selección automática,,
+UI_Mines_Mines,Mines,खानों,ระเบิด,Mines,炸彈,Mìn,Tambang,గనులు,खाणी,Minas,Minas,,
+UI_Mines_Bets,Bets,दांव,การเดิมพัน,Bets,投注,Cược,Taruhan,పందాలు,बेट्स,Apostas,Apuestas,,
+UI_Mines_Gold,Gold,सोने,เหรียญทอง,Gold,金幣,Vàng,Emas,బంగారం,सोना,Ouro,Oro,,

@@ -84,3 +84,4 @@ UIGuide	Hall/Prefab/Guide/UIGuide_V	0	false	0	1
 UIGameLoading	common/prefab/loading_game_V	0	false	0	1
 UILoadingFail	common/prefab/UILoadingFail	0	false	0	1
 UIUpdateHint	Hall/Prefab/UpdateHInt/UIUpdateHint	0	false	0	0
+UIReceiveRedEnvelope	Hall/Prefab/UIReceiveRedEnvelope	0	false	0	1

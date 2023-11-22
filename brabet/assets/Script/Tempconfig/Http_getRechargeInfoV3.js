@@ -101,7 +101,7 @@ module.exports = {
         "icon_url": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/kf\/20230216\/e995f3f3ce2ffded79cb7565204a361a.png",
         "is_show": 1
     },
-    "reserve_event_four": {
+    "rain_of_red_envelopes": {
         "switch": 0,
         "title": "2x Progresso de Saque",
         "img": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/notice_image\/20230905\/e20d58795f43ca2c1f5b33f892ffb8ff.jpeg",
