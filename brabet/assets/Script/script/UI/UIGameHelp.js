@@ -56,7 +56,7 @@ var o = require("../../Common/Base/BaseForm")
     }
     ,
     t.prototype.setBtnDisable = function(e) {
-        this.btn_next.active = e,
+        this.btn_next.active = e
         this.btn_close.active = !e
     }
     ,

@@ -98,10 +98,11 @@ var o = require("../../../Common/Define/UINameDefine")
                         this.autoWinNumInput = cc.find("layout1/ganhar/TEXT_LABEL", this.panelAuto).getComponent(cc.Label),
                         this.autoFailNumInput = cc.find("layout1/perder/TEXT_LABEL", this.panelAuto).getComponent(cc.Label),
                         this.autoWinAddNumInput = cc.find("vencer/toggleContainer/editbox_xsje/TEXT_LABEL", this.panelAuto).getComponent(cc.Label),
-                        this.autoFailAddNumInput = cc.find("perder/toggleContainer/editbox_xsje/TEXT_LABEL", this.panelAuto).getComponent(cc.Label)) : (this.manualBaseInput = cc.find("Quantia/Quantia/editbox_xsje", this.panelManual).getComponent(cc.EditBox),
-                            this.autoMaxRoundInput = cc.find("Rounds/Apostas/editbox_xsje", this.panelAuto).getComponent(cc.EditBox),
-                            this.autoWinNumInput = cc.find("layout1/ganhar/editbox_xsje", this.panelAuto).getComponent(cc.EditBox),
-                            this.autoFailNumInput = cc.find("layout1/perder/editbox_xsje", this.panelAuto).getComponent(cc.EditBox),
+                        this.autoFailAddNumInput = cc.find("perder/toggleContainer/editbox_xsje/TEXT_LABEL", this.panelAuto).getComponent(cc.Label))
+                        : (this.manualBaseInput = cc.find("Quantia/Quantia", this.panelManual).getComponent(cc.EditBox),
+                            this.autoMaxRoundInput = cc.find("Rounds/Apostas", this.panelAuto).getComponent(cc.EditBox),
+                            this.autoWinNumInput = cc.find("layout1/ganhar", this.panelAuto).getComponent(cc.EditBox),
+                            this.autoFailNumInput = cc.find("layout1/perder", this.panelAuto).getComponent(cc.EditBox),
                             this.autoWinAddNumInput = cc.find("vencer/toggleContainer/editbox_xsje", this.panelAuto).getComponent(cc.EditBox),
                             this.autoFailAddNumInput = cc.find("perder/toggleContainer/editbox_xsje", this.panelAuto).getComponent(cc.EditBox)),
                     this.winPanelBg.on(cc.Node.EventType.TOUCH_END, this.OnTheWinPanelShow, this),
@@ -214,20 +215,20 @@ var o = require("../../../Common/Define/UINameDefine")
             }
             ,
             e.prototype.OnClick = function (t, e, n) {
-                "Autobtn" != t ? "page_left" != t ? "page_right" != t ? "help" != t && "btn_help" != t 
-                ? "toggle1" != t && "toggle2" != t
-                    ? "btn_mines_hide" != t ? "btn_minesCount" != t 
-                    ? "toggle2_perder" != t && "toggle1_perder" != t && "toggle1_vencer" != t && "toggle2_vencer" != t
-                        ? app.UserManager().GetIsOfficialPopup() || ("betbtn" != t ? "Autobetbtn" != t
-                            ? "btn" != t && "btn2" != t ? "mines_btn" != t ? "btn_mines_show" != t || this.btnMinesNumShow()
-                                : this.btnQuickSelectionMines(n)
-                                : this.btnInputValue(n)
-                            : this.btnAutoBet(e)
-                            : this.btnNetBet())
-                        : this.autoTextChanged()
-                        : this.btnSetMinesNum(e)
-                        : this.btnMinesNumHide()
-                    : this.onToggle(e)
+                "Autobtn" != t ? "page_left" != t ? "page_right" != t ? "help" != t && "btn_help" != t
+                    ? "toggle1" != t && "toggle2" != t
+                        ? "btn_mines_hide" != t ? "btn_minesCount" != t
+                            ? "toggle2_perder" != t && "toggle1_perder" != t && "toggle1_vencer" != t && "toggle2_vencer" != t
+                                ? app.UserManager().GetIsOfficialPopup() || ("betbtn" != t ? "Autobetbtn" != t
+                                    ? "btn" != t && "btn2" != t ? "mines_btn" != t ? "btn_mines_show" != t || this.btnMinesNumShow()
+                                        : this.btnQuickSelectionMines(n)
+                                        : this.btnInputValue(n)
+                                    : this.btnAutoBet(e)
+                                    : this.btnNetBet())
+                                : this.autoTextChanged()
+                            : this.btnSetMinesNum(e)
+                            : this.btnMinesNumHide()
+                        : this.onToggle(e)
                     : this.onOpenHelp()
                     : this.btnAddBetScalePage()
                     : this.btnReduceBetScalePage()
@@ -610,26 +611,26 @@ var o = require("../../../Common/Define/UINameDefine")
                 this.MinesTool.onPlayBtnAnim(this.guide, t)
             }
             ,
-            e.prototype.setBetBtnAllText = function(t, e) {
+            e.prototype.setBetBtnAllText = function (t, e) {
                 t && (this.betBtn.getChildByName("node").getChildByName("label").getComponent(cc.Label).string = t),
-                this.betBtn.getChildByName("node").getChildByName("numlbl").active = e > 0,
-                this.betBtn.getChildByName("node").getChildByName("numlbl").getComponent(cc.Label).string = e.toFixed(2),
-                this.getWebGoldShow(e.toFixed(2))
+                    this.betBtn.getChildByName("node").getChildByName("numlbl").active = e > 0,
+                    this.betBtn.getChildByName("node").getChildByName("numlbl").getComponent(cc.Label).string = e.toFixed(2),
+                    this.getWebGoldShow(e.toFixed(2))
             }
             ,
-            e.prototype.setBetBtnColor = function(t) {
+            e.prototype.setBetBtnColor = function (t) {
                 this.MinesTool.getMinesNodeCol(this.betBtn, this.NodeColorList[t])
             }
             ,
-            e.prototype.setAutoBetBtnStr = function(t) {
+            e.prototype.setAutoBetBtnStr = function (t) {
                 this.AutoBetBtn.getChildByName("node").getChildByName("label").getComponent(cc.Label).string = t
             }
             ,
-            e.prototype.setAutoBetBtnNumStr = function(t) {
+            e.prototype.setAutoBetBtnNumStr = function (t) {
                 this.AutoBetBtn.getChildByName("node").getChildByName("numlbl").active = t > -2;
                 var e = this.AutoBetBtn.getChildByName("node").getChildByName("numlbl").getComponent(cc.Label);
                 e.string = t >= 0 ? t + "" : "\u221e",
-                e.fontSize = t >= 0 ? 24 : 50
+                    e.fontSize = t >= 0 ? 24 : 50
             }
             ,
             e.prototype.setAutoBtnColor = function (t) {
@@ -735,12 +736,12 @@ var o = require("../../../Common/Define/UINameDefine")
             e.prototype.OnTheWinPanelShow = function (t) {
                 this.awardAni.getChildByName("label").opacity = 0,
                     this.awardAni.active = !!t && 1 == t;
-                // var e = this.GetWndComponent("ani_reward", sp.Skeleton, this.awardAni);
-                // e.node.active = !!t && 1 == t,
-                // e.clearTracks(),
-                // e.node.active && (e.node.opacity = 0,
-                // e.setToSetupPose(),
-                // e.setAnimation(0, "ani_reward", false))
+                var e = this.GetWndComponent("ani_reward", sp.Skeleton, this.awardAni);
+                e.node.active = !!t && 1 == t,
+                e.clearTracks(),
+                e.node.active && (e.node.opacity = 0,
+                e.setToSetupPose(),
+                e.setAnimation(0, "ani_reward", false))
             }
             ,
             e.prototype.GetIsClick = function () {
@@ -859,8 +860,8 @@ var o = require("../../../Common/Define/UINameDefine")
             }
             ,
             e.prototype.OnClose = function () {
-                 this.awardAni.getComponent(cc.Animation).stop(),
-                this.clearTimeouts(),
+                this.awardAni.getComponent(cc.Animation).stop(),
+                    this.clearTimeouts(),
                     t.prototype.OnClose.call(this)
             }
             ,

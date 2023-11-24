@@ -402,8 +402,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 425,
-      "height": 151
+      "width": 270,
+      "height": 311
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1508,7 +1508,7 @@
     "vertical": true,
     "inertia": true,
     "brake": 0.5,
-    "elastic": true,
+    "elastic": false,
     "bounceDuration": 1,
     "scrollEvents": [],
     "cancelInnerEvents": true,

@@ -248,6 +248,32 @@ var o = require("../Define/HttpServerDefine")
                                 e["game_type"][key2].game_list = []
                             }
                         }
+                        // e["game_type"].push({
+                        //     "type_id": 9,
+                        //     "type_name": "In-House",
+                        //     "icon": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/game_type_icon\/20230201\/e92936f29e1876cb599ea8454387ff3d.png",
+                        //     "icon_on": "https:\/\/d37kgoga0nrx6r.cloudfront.net\/uploads\/game_type_icon\/20230201\/e92936f29e1876cb599ea8454387ff3d.png",
+                        //     "client_status": 1,
+                        //     "game_list": [
+                        //         {
+                        //             "gid": 550,
+                        //             "is_external": 0,
+                        //             "game_name": "Mines",
+                        //             "type_id": 9,
+                        //             "game_sort": 9991
+                        //         }
+                        //     ],
+                        //     "has_child": 0,
+                        //     "child_list": [],
+                        //     "factory_is_show": 0,
+                        //     "num_of_phone": 9,
+                        //     "type_name_arr": {
+                        //         "other": "In-House",
+                        //         "th-th": "In-House",
+                        //         "hi-in": "In-House",
+                        //         "en-us": "In-House"
+                        //     }
+                        // })
                         // if (!e["other_game"]) {
                         //     e["other_game"] = []
                         // }

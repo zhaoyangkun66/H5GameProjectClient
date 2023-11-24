@@ -225,7 +225,6 @@ var h = function (e) {
                 , o = t.gaid
                 , i = t.ajtrackerName
                 , a = t.aj_gaid;
-
             // n && 
             (e.agentid = n),
                 o && (e.gaid = o),
@@ -233,11 +232,26 @@ var h = function (e) {
                 a && (e.aj_gaid = a),
                 cc.sys.platform && (e.Type = cc.sys.platform),
                 e.source = "10",
-                e.Type = cc.sys.platform,
-                e.os = cc.sys.os,
-                e.ioswebclip = 1 == Number(app.ClientConfigManager().getLocalUrlDataByName("ioswebclip")) ? 1 : 0,
-                e.isShell = app.ComTool().AndroidHybirdPlatform() ? 1 : 0,
-                0 == e.ioswebclip && (e.ioswebclip = app.ComTool().getIosBrowserType() ? 1 : 0);
+                e.Type = cc.sys.platform
+            e.os = cc.sys.os
+            e.ioswebclip = 1 == Number(app.ClientConfigManager().getLocalUrlDataByName("ioswebclip")) ? 1 : 0
+
+            if (isgoServer) {
+                if (("undefined" != typeof androidOther)) {
+                    e.isShell = 2
+                }
+                else if ((window.matchMedia('(display-mode: standalone)').matches)) {
+                    e.isShell = 1
+                }
+                else {
+                    e.isShell = 0
+                }
+            }
+            else {
+                e.isShell = app.ComTool().AndroidHybirdPlatform() ? 1 : 0
+            }
+
+            0 == e.ioswebclip && (e.ioswebclip = app.ComTool().getIosBrowserType() ? 1 : 0);
             var r = app.GoogleReCaptChaManager().Token;
             r && (e.recaptcha = r);
             var s = app.ClientConfigManager().getLocalUrlDataByName("tj_task");

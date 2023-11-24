@@ -9,7 +9,7 @@
   "wrapMode": 1,
   "curveData": {
     "paths": {
-      "icon": {
+      "icon1": {
         "props": {
           "active": [
             {
@@ -26,7 +26,7 @@
               "frame": 0,
               "value": {
                 "__type__": "cc.Vec3",
-                "x": 0,
+                "x": 1,
                 "y": 1,
                 "z": 1
               }
@@ -36,14 +36,14 @@
               "value": {
                 "__type__": "cc.Vec3",
                 "x": 0,
-                "y": 0,
+                "y": 1,
                 "z": 1
               }
             }
           ]
         }
       },
-      "icon1": {
+      "icon": {
         "props": {
           "active": [
             {
@@ -57,7 +57,7 @@
               "value": {
                 "__type__": "cc.Vec3",
                 "x": 0,
-                "y": 0,
+                "y": 1,
                 "z": 1
               }
             },
@@ -65,7 +65,7 @@
               "frame": 0.25,
               "value": {
                 "__type__": "cc.Vec3",
-                "x": 0,
+                "x": 1,
                 "y": 1,
                 "z": 1
               }

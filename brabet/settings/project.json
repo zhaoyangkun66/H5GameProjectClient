@@ -8,7 +8,6 @@
     "Collider",
     "DragonBones",
     "Physics",
-    "Spine Skeleton",
     "TiledMap",
     "3D",
     "3D Primitive",
@@ -19,7 +18,6 @@
   "group-list": [
     "default"
   ],
-  "start-scene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
   "design-resolution-width": 750,
   "design-resolution-height": 1334,
   "fit-width": true,
