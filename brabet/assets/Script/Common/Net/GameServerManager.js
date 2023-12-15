@@ -566,7 +566,7 @@ var g = function (e, t, n, o) {
                                 this.handlers[o.default.EVENT_LOGIN_FINISH]());
                         break;
                     case 1009:
-                        this.Log("\u5145\u503c");
+                        this.Log("充值");
                         var y = t.Body.UpdateUserinfo;
                         if (null == y)
                             return void cc.error("receive error data");
@@ -1098,6 +1098,7 @@ var g = function (e, t, n, o) {
             }
             ,
             t.prototype.sendPacket = function (e, t) {
+                console.log("sendPacket", e)
                 if (isgoServer) {
                     return
                 }

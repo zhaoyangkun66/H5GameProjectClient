@@ -137,11 +137,22 @@ var o = require("../../script/common/room_mode_tool")
                 enumerable: false,
                 configurable: true
             }),
-            t.prototype.IsExternGame = function (e) {
-                var t = this.GetExternGameInfo(e);
+            t.prototype.IsExternGame = function (e, subId) {
+                if (subId && isgoServer) {
+                    return this.IsExternGameSubId(subId)
+                }
+                else {
+                    var t = this.GetExternGameInfo(e);
+                    return !!t && t.is_external
+                }
+            },
+            t.prototype.IsExternGameSubId = function (e) {
+                var t = this.GetExternGameInfoSubId(e);
                 return !!t && t.is_external
-            }
-            ,
+            },
+            t.prototype.GetExternGameInfoSubId = function (e) {
+                return app.GameConfigManager().GetGameListItemSubId(e)
+            },
             t.prototype.GetExternGameInfo = function (e) {
                 return app.GameConfigManager().GetGameListItem(e)
             }

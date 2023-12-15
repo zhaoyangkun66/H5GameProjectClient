@@ -14,6 +14,7 @@ UIBonuses	Hall/Prefab/Bonuses/UIBonuses_H	0	false	1	0
 UISupport	Hall/Prefab/Support/UISupport_H	0	false	0	1
 UIAiSupport	Hall/Prefab/Support/UIAiSupport_H	0	false	0	1
 UIStoreQR	Hall/Prefab/Deposit_Withdraw/UIStoreQR_H	0	false	0	0
+UIStoreQRWebview	Hall/Prefab/Deposit_Withdraw/UIStoreQRWebview	0	false	0	0
 UIStoreQRUSDT	Hall/Prefab/Deposit_Withdraw/UIStoreQRUSDT_H	0	false	0	0
 UIMonthCard	Hall/Prefab/Activity/UIMonthCard_H	0	false	1	0
 UISettlement	Hall/Prefab/UISettlement	0	false	0	1

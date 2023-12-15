@@ -55,21 +55,18 @@ var o = require("../../Common/Base/UIBaseComponent")
                             }
                         }
                     this.node.getComponent(cc.Layout).updateLayout()
-                }
-                ,
+                },
                 t.prototype.InitLanSelect = function () {
                     var e = app.LanguageManager().GetLocalLanguage(true);
                     null != e && this.OnVisible(e)
-                }
-                ,
+                },
                 t.prototype.OnVisible = function (e) {
                     for (var t in this.LanguageNodeList)
                         if (Object.hasOwnProperty.call(this.LanguageNodeList, t)) {
                             var n = this.LanguageNodeList[t];
                             n && (cc.find("checkmark", n).active = e == t)
                         }
-                }
-                ,
+                },
                 t.prototype.OnClick = function (e) {
                     var t = this.getLanguage(e);
                     if ("" != t)

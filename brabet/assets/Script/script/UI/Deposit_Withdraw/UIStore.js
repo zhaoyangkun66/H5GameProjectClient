@@ -353,8 +353,13 @@ var o, i = require("../../../Common/Base/UIBaseComponent"), a = require("../../.
             t.prototype.onGoodsPay = function (e) {
                 var t = app.StoreManager().GetPayGoodResult();
                 if (t) {
-                    var n = app.StoreManager().GetChannel(this._SelectChannelID);
-                    n.is_usdt ? app.FormManager().ShowForm(s.UINameDefine.UIStoreQRUSDT, e.amount, n.usdt_desc) : app.FormManager().ShowForm(s.UINameDefine.UIStoreQR, t)
+                    if (t.payURL) {
+                        app.FormManager().ShowForm(s.UINameDefine.UIStoreQRWebview, t)
+                    }
+                    else {
+                        var n = app.StoreManager().GetChannel(this._SelectChannelID);
+                        n.is_usdt ? app.FormManager().ShowForm(s.UINameDefine.UIStoreQRUSDT, e.amount, n.usdt_desc) : app.FormManager().ShowForm(s.UINameDefine.UIStoreQR, t)
+                    }
                 }
             }
             ,

@@ -227,7 +227,7 @@ var d = function(e) {
             else if (22132 == e)
                 d = 4;
             else if (22133 == e)
-                app.FormManager().ShowForm(l.UINameDefine.UIActivity, s.ActivityType.recharge_bussiness_one_gift);
+                app.FormManager().ShowForm(l.UINameDefine.UIActivity, s.ActivityType.Atividades_de_Natal);
             else if (22134 == e)
                 app.FormManager().ShowForm(l.UINameDefine.UIActivity, s.ActivityType.recharge_bussiness_two_gift);
             else if (22135 == e)

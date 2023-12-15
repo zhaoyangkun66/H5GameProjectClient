@@ -36,6 +36,12 @@ var o = require("../../../script/common/GIDTool")
             }
             ,
             t.prototype.onGetFooterPics = function (e) {
+                if (isgoServer) {
+                    if (e[1] && e[1].jump_url == "") {
+                        e[1].jump_url = "111"
+                    }
+                }
+
                 this.footerPics = e,
                     app.Client.OnEvent(r.GameEventDefine.GET_FOOTER_PICS)
             }
@@ -109,13 +115,13 @@ var o = require("../../../script/common/GIDTool")
             }
             ,
             t.prototype.IsDownload = function (e) {
-                if (app.ExternGameManager().IsExternGame(e))
-                    return true;
-                if (cc.sys.isNative) {
-                    var t = app.RoomManager().GetRoomModeInfoByGid(e);
-                    return t ? !(!cc.sys.localStorage.getItem(t.BundleName) && !jsb.fileUtils.isDirectoryExist("assets/" + t.BundleName)) : (this.ErrLog("GetRoomModeInfoByGid failed: " + e),
-                        false)
-                }
+                // if (app.ExternGameManager().IsExternGame(e))
+                //     return true;
+                // if (cc.sys.isNative) {
+                //     var t = app.RoomManager().GetRoomModeInfoByGid(e);
+                //     return t ? !(!cc.sys.localStorage.getItem(t.BundleName) && !jsb.fileUtils.isDirectoryExist("assets/" + t.BundleName)) : (this.ErrLog("GetRoomModeInfoByGid failed: " + e),
+                //         false)
+                // }
                 return true
             }
             ,
@@ -147,35 +153,35 @@ var o = require("../../../script/common/GIDTool")
                             subGid: t
                         });
                     else if (app.GameTypeManager().SetHistoryGame(e, t),
-                        app.ExternGameManager().IsExternGame(e)) {
+                        app.ExternGameManager().IsExternGame(e, t)) {
                         if (app.UserManager().GetIsOfficialPopup())
                             return;
                         app.ExternGameManager().EnterGame(e, t)
                     } else {
-                        var n = app.GameConfigManager().GetGameRoomModeInfo(e);
-                        if (n)
-                            if (0 != n.length) {
-                                var o = app.RoomManager().GetRoomModeInfoByGid(e);
-                                if (o) {
-                                    if (o.RoomMode != app.UserManager().GetUserInfo.roomMode)
-                                        if (1 != n.length)
-                                            if (o.RoomType == i.RoomType.ROOM_SINGLE)
-                                                this.EnterRoomGame(o.RoomMode);
-                                            else {
-                                                var a = {
-                                                    gid: e,
-                                                    extern: false
-                                                };
-                                                this.EnterRoomGame(o.RoomMode, a)
-                                            }
-                                        else
-                                            this.EnterRoomGame(n[0].way_id)
-                                } else
-                                    this.ErrLog("EnterGame failed GetRoomModeInfoByGid: " + e)
-                            } else
-                                this.ErrLog("EnterGame failed to get way list = 0: " + e);
-                        else
-                            this.ErrLog("EnterGame failed to get way list: " + e)
+                        //var n = app.GameConfigManager().GetGameRoomModeInfo(e);
+                        // if (n)
+                        //  if (0 != n.length) {
+                        var o = app.RoomManager().GetRoomModeInfoByGid(t || e);
+                        if (o) {
+                            if (o.RoomMode != app.UserManager().GetUserInfo.roomMode)
+                                // if (1 != n.length)
+                                //  if (o.RoomType == i.RoomType.ROOM_SINGLE)
+                                this.EnterRoomGame(o.RoomMode);
+                            //  else {
+                            //     var a = {
+                            //         gid: e,
+                            //         extern: false
+                            //    };
+                            //    this.EnterRoomGame(o.RoomMode, a)
+                            // }
+                            // else
+                            //    this.EnterRoomGame(n[0].way_id)
+                        } else
+                            this.ErrLog("EnterGame failed GetRoomModeInfoByGid: " + e)
+                        /// } else
+                        //    this.ErrLog("EnterGame failed to get way list = 0: " + e);
+                        // else
+                        //    this.ErrLog("EnterGame failed to get way list: " + e)
                     }
                 else {
                     var r = app.TextManager().GetTextInfo(l.TextDefine.limit);

@@ -1,0 +1,13 @@
+{
+    "Eno": 0,
+    "Type": 3,
+    "HallId": 280000,
+    "Data": {
+        "NotifyInfo": {
+            "Uin": 10071107,
+            "Target": 0,
+            "Data": 0
+        }
+    },
+    "event_type": "HallNotify"
+}

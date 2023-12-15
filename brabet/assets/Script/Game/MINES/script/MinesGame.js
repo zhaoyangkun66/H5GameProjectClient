@@ -215,23 +215,30 @@ var o = require("../../../Common/Define/UINameDefine")
             }
             ,
             e.prototype.OnClick = function (t, e, n) {
-                "Autobtn" != t ? "page_left" != t ? "page_right" != t ? "help" != t && "btn_help" != t
-                    ? "toggle1" != t && "toggle2" != t
-                        ? "btn_mines_hide" != t ? "btn_minesCount" != t
-                            ? "toggle2_perder" != t && "toggle1_perder" != t && "toggle1_vencer" != t && "toggle2_vencer" != t
-                                ? app.UserManager().GetIsOfficialPopup() || ("betbtn" != t ? "Autobetbtn" != t
-                                    ? "btn" != t && "btn2" != t ? "mines_btn" != t ? "btn_mines_show" != t || this.btnMinesNumShow()
-                                        : this.btnQuickSelectionMines(n)
-                                        : this.btnInputValue(n)
-                                    : this.btnAutoBet(e)
-                                    : this.btnNetBet())
-                                : this.autoTextChanged()
-                            : this.btnSetMinesNum(e)
-                            : this.btnMinesNumHide()
-                        : this.onToggle(e)
-                    : this.onOpenHelp()
-                    : this.btnAddBetScalePage()
-                    : this.btnReduceBetScalePage()
+                "Autobtn" != t
+                    ? "page_left" != t
+                        ? "page_right" != t
+                            ? "help" != t && "btn_help" != t
+                                ? "toggle1" != t && "toggle2" != t
+                                    ? "btn_mines_hide" != t
+                                        ? "btn_minesCount" != t
+                                            ? "toggle2_perder" != t && "toggle1_perder" != t && "toggle1_vencer" != t && "toggle2_vencer" != t
+                                                ? app.UserManager().GetIsOfficialPopup() || ("betbtn" != t
+                                                    ? "Autobetbtn" != t
+                                                        ? "btn" != t && "btn2" != t
+                                                            ? "mines_btn" != t
+                                                                ? "btn_mines_show" != t || this.btnMinesNumShow()
+                                                                : this.btnQuickSelectionMines(n)
+                                                            : this.btnInputValue(n)
+                                                        : this.btnAutoBet(e)
+                                                    : this.btnNetBet())
+                                                : this.autoTextChanged()
+                                            : this.btnSetMinesNum(e)
+                                        : this.btnMinesNumHide()
+                                    : this.onToggle(e)
+                                : this.onOpenHelp()
+                            : this.btnAddBetScalePage()
+                        : this.btnReduceBetScalePage()
                     : this.btnAutoPick()
             }
             ,
@@ -363,6 +370,12 @@ var o = require("../../../Common/Define/UINameDefine")
             }
             ,
             e.prototype.onGameOver = function (t) {
+                if (t.type == 1) {
+                    app.UserManager().GetUserInfo.gold = app.UserManager().GetUserInfo.gold + t.bets_gold
+                }
+                else if (t.type == 2) {
+                    app.UserManager().GetUserInfo.gold = app.UserManager().GetUserInfo.gold - t.bet_gold
+                }
                 var e = this
                     , n = Number(t.gold);
                 if (this.gameStatus = u.GameStatus.GAME_END,
@@ -690,10 +703,10 @@ var o = require("../../../Common/Define/UINameDefine")
                 i && e > i && (e = i,
                     o && app.SysNotifyManager().ShowToast("UI_GameBetMax", ["" + e])),
                     (!e || e < this.GameBetSizeLimit.min) && (e = this.GameBetSizeLimit.min,
-                        o && app.SysNotifyManager().ShowToast("UI_GameBetMin", ["" + e])),
-                    this.isAutoBet && (this.autoBetDataInfo.nextTempBet = e),
-                    this.manualBaseInput.string = app.ScoreUtil().toFixedString(e),
-                    t.prototype.onBetGoldNum.call(this, e, this.manualBaseInput.node.parent)
+                        o && app.SysNotifyManager().ShowToast("UI_GameBetMin", ["" + e]))
+                this.isAutoBet && (this.autoBetDataInfo.nextTempBet = e)
+                this.manualBaseInput.string = app.ScoreUtil().toFixedString(e)
+                t.prototype.onBetGoldNum.call(this, e, this.manualBaseInput.node.parent)
             }
             ,
             e.prototype.autoTextChanged = function () {
@@ -708,14 +721,14 @@ var o = require("../../../Common/Define/UINameDefine")
                     var o = Number(this.autoFailNumInput.string);
                     this.setLabelTipShow(this.autoFailNumInput.node.parent);
                     var i = this.autoWinAddNumToggle2.getComponent(cc.Toggle).isChecked
-                        , a = this.autoFailAddNumToggle2.getComponent(cc.Toggle).isChecked
-                        , s = Number(this.autoWinAddNumInput.string)
-                        , u = Number(this.autoFailAddNumInput.string);
-                    this.autoWinAddNumToggle1.getComponent(cc.Toggle).isChecked && (this.autoWinAddNumInput.string = ""),
-                        this.autoFailAddNumToggle1.getComponent(cc.Toggle).isChecked && (this.autoFailAddNumInput.string = ""),
-                        this.setLabelTipShow(this.autoWinAddNumInput.node.parent),
-                        this.setLabelTipShow(this.autoFailAddNumInput.node.parent),
-                        t >= 1 && this.userAllGold > 0 ? this.MinesTool.getMinesNodeCol(this.AutoBetBtn, this.NodeColorList[1]) : this.MinesTool.getMinesNodeCol(this.AutoBetBtn, this.NodeColorList[0]),
+                    var a = this.autoFailAddNumToggle2.getComponent(cc.Toggle).isChecked
+                    this.autoWinAddNumToggle1.getComponent(cc.Toggle).isChecked && (this.autoWinAddNumInput.string = "")
+                    this.autoFailAddNumToggle1.getComponent(cc.Toggle).isChecked && (this.autoFailAddNumInput.string = "")
+                    var s = Number(this.autoWinAddNumInput.string)
+                    var u = Number(this.autoFailAddNumInput.string);
+                    this.setLabelTipShow(this.autoWinAddNumInput.node.parent)
+                    this.setLabelTipShow(this.autoFailAddNumInput.node.parent)
+                    t >= 1 && this.userAllGold > 0 ? this.MinesTool.getMinesNodeCol(this.AutoBetBtn, this.NodeColorList[1]) : this.MinesTool.getMinesNodeCol(this.AutoBetBtn, this.NodeColorList[0]),
                         this.autoBetDataInfo = {
                             base: t,
                             round: e,
@@ -738,10 +751,10 @@ var o = require("../../../Common/Define/UINameDefine")
                     this.awardAni.active = !!t && 1 == t;
                 var e = this.GetWndComponent("ani_reward", sp.Skeleton, this.awardAni);
                 e.node.active = !!t && 1 == t,
-                e.clearTracks(),
-                e.node.active && (e.node.opacity = 0,
-                e.setToSetupPose(),
-                e.setAnimation(0, "ani_reward", false))
+                    e.clearTracks(),
+                    e.node.active && (e.node.opacity = 0,
+                        e.setToSetupPose(),
+                        e.setAnimation(0, "ani_reward", false))
             }
             ,
             e.prototype.GetIsClick = function () {

@@ -1761,13 +1761,14 @@
     "_id": ""
   },
   {
-    "__type__": "2666bWxAZZFQZgpxw3v6sMw",
+    "__type__": "72d68dWcF5PJ78TEx3VE+Qh",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 2
     },
     "_enabled": true,
+    "scaleInput": 0.6,
     "_id": ""
   },
   {

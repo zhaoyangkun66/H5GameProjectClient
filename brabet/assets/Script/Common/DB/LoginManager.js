@@ -311,6 +311,7 @@ var h = function (e) {
                 if (isgoServer) {
                     if (!e.user_config.show_arr) {
                         e.user_config.show_arr = require("Http_login").user_config.show_arr
+                     //   e.user_config.game_arr = require("Http_login").user_config.game_arr
                     }
                     if (e.is_official_account == 1) {
                         e.is_official_account = 0

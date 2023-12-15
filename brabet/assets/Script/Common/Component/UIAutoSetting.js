@@ -30,8 +30,8 @@ var o = require("../Base/BaseForm")
     t.prototype.OnCreateInit = function() {
         this.RegEvent(i.GameEventDefine.KEYBOARD_POS, this.OnNodeHight),
         app.ComTool().H5Platform() ? (this.autoMaxRoundInput = this.GetWndComponent("general/Auto/Rounds/Apostas/editbox_xsje/TEXT_LABEL", cc.Label, this.node),
-        this.autoWinNumInput = this.GetWndComponent("general/Auto/layout1/ganhar/editbox_xsje/TEXT_LABEL", cc.Label, this.node),
-        this.autoFailNumInput = this.GetWndComponent("general/Auto/layout1/perder/editbox_xsje/TEXT_LABEL", cc.Label, this.node),
+        this.autoWinNumInput = this.GetWndComponent("general/Auto/layout1/ganhar/TEXT_LABEL", cc.Label, this.node),
+        this.autoFailNumInput = this.GetWndComponent("general/Auto/layout1/perder/TEXT_LABEL", cc.Label, this.node),
         this.autoWinAddNumInput = this.GetWndComponent("general/Auto/vencer/toggleContainer/editbox_xsje/TEXT_LABEL", cc.Label, this.node),
         this.autoFailAddNumInput = this.GetWndComponent("general/Auto/perder/toggleContainer/editbox_xsje/TEXT_LABEL", cc.Label, this.node)) : (this.autoMaxRoundInput = this.GetWndComponent("general/Auto/Rounds/Apostas/editbox_xsje", cc.EditBox, this.node),
         this.autoWinNumInput = this.GetWndComponent("general/Auto/layout1/ganhar/editbox_xsje", cc.EditBox, this.node),

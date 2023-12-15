@@ -11980,7 +11980,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": false,
-    "_N$string": "<b><color=#495669>Phone Number</color><color=#ff0000>*</color></b>",
+    "_N$string": "<b><color=#59677C>Phone Number</color><color=#ff0000>*</color></b>",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 22,
     "_N$font": {
@@ -13235,7 +13235,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": false,
-    "_N$string": "<b><color=#495669>Pix type</color><color=#ff0000>*</color></b>",
+    "_N$string": "<b><color=#59677C>Pix type</color><color=#ff0000>*</color></b>",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 22,
     "_N$font": {
@@ -14859,7 +14859,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": false,
-    "_N$string": "<b><color=#495669>Chave Pix (CPF)</color><color=#ff0000>*</color></b>",
+    "_N$string": "<b><color=#59677C>Chave Pix (CPF)</color><color=#ff0000>*</color></b>",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 22,
     "_N$font": {
@@ -21135,13 +21135,14 @@
     "_id": ""
   },
   {
-    "__type__": "2666bWxAZZFQZgpxw3v6sMw",
+    "__type__": "72d68dWcF5PJ78TEx3VE+Qh",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 2
     },
     "_enabled": true,
+    "scaleInput": 0.6,
     "_id": ""
   },
   {

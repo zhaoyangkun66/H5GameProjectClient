@@ -15,6 +15,7 @@ UIBonuses	Hall/Prefab/Bonuses/UIBonuses_V	0	false	1	0
 UISupport	Hall/Prefab/Support/UISupport_H	0	false	0	1
 UIAiSupport	Hall/Prefab/Support/UIAiSupport_V	0	false	0	1
 UIStoreQR	Hall/Prefab/Deposit_Withdraw/UIStoreQR	0	false	0	0
+UIStoreQRWebview	Hall/Prefab/Deposit_Withdraw/UIStoreQRWebview	0	false	0	0
 UIStoreQRUSDT	Hall/Prefab/Deposit_Withdraw/UIStoreQRUSDT	0	false	0	0
 UIMonthCard	Hall/Prefab/Activity/UIMonthCard_V	0	false	1	0
 UISettlement	Hall/Prefab/UISettlement	0	false	0	1
@@ -45,6 +46,7 @@ UIViBankName_2	Hall/Prefab/Vietnam_DepositWithdraw_2/UIViBankName_2_V	0	false	0	
 UIDepositComponent	Hall/Prefab/Vietnam_DepositWithdraw/UIDepositComponent_V	0	false	0	0
 UIText	Hall/Prefab/Faq/UIText_V	0	false	1	1
 UIFAQ	Hall/Prefab/Faq/UIFAQ	0	false	1	1
+UIGC	Hall/Prefab/Faq/UIGC	0	false	1	1
 UIHallNotice	Hall/Prefab/UIHallNotice_V	0	false	0	1
 UIActivity	Hall/Prefab/Activity/UIActivity_V	0	false	1	1
 UIAccount	Hall/Prefab/Account/UIAccount_V	0	false	1	0

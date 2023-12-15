@@ -248,6 +248,76 @@ var o = require("../Define/HttpServerDefine")
                                 e["game_type"][key2].game_list = []
                             }
                         }
+                        // if (!e["other_game"]) {
+                        //     e["other_game"] = []
+                        // }
+                        for (const key in xxx) {
+                            if (e[key] == undefined || e[key] == null) {
+                                e[key] = xxx[key]
+                            }
+                        }
+                        // e["game_type"] = []
+                        // e["game_type"].push(
+                        //     {
+                        //         "type_id": 9,
+                        //         "type_name": "In-House",
+                        //         "icon": "http://192.168.1.100:280/client/uploads/images/game_lobby_type/Inhouse.png",
+                        //         "icon_on": "http://192.168.1.100:280/client/uploads/images/game_lobby_type/Inhouse.png",
+                        //         "client_status": 1,
+                        //         "game_list": [
+                        //             {
+                        //                 "gid": 500,
+                        //                 "is_external": 0,
+                        //                 "game_name": "In-House",
+                        //                 "type_id": 9,
+                        //                 "way_id": 0,
+                        //                 "sub_gid": 500,
+                        //                 "game_show": 1,
+                        //                 "url": "",
+                        //                 "least_gold": 0,
+                        //                 "mtc_status": 0,
+                        //                 "mtc_msg": "",
+                        //                 "mtc_st_date": 0,
+                        //                 "mtc_end_date": 0,
+                        //                 "game_sort": 0,
+                        //                 "rate_tips": "",
+                        //                 "show_rate_tips": 0,
+                        //                 "sub_game_sort": 0,
+                        //                 "sub_game_list": [
+                        //                     {
+                        //                         "gid": 500,
+                        //                         "is_external": 0,
+                        //                         "game_name": "",
+                        //                         "type_id": 9,
+                        //                         "way_id": 0,
+                        //                         "sub_gid": 550,
+                        //                         "game_show": 1,
+                        //                         "url": "https://bridge.yotuwin.com/api/game_url?game_uid=",
+                        //                         "least_gold": 0,
+                        //                         "mtc_status": 0,
+                        //                         "mtc_msg": "",
+                        //                         "mtc_st_date": 0,
+                        //                         "mtc_end_date": 0,
+                        //                         "game_sort": 10010,
+                        //                         "sub_game_sort": 10010,
+                        //                         "icon": "http://192.168.1.100:280/client/uploads/gameicon/inhouse/mines.png",
+                        //                         "fury_icon": "http://192.168.1.100:280/client/uploads/gameicon/inhouse/mines.png"
+                        //                     }
+                        //                 ]
+                        //             }
+                        //         ],
+                        //         "has_child": 0,
+                        //         "child_list": null,
+                        //         "factory_is_show": 0,
+                        //         "num_of_phone": 0,
+                        //         "type_name_arr": {
+                        //             "en-us": "In-House",
+                        //             "hi-in": "In-House",
+                        //             "other": "In-House",
+                        //             "th-th": "In-House"
+                        //         }
+                        //     })
+
                         // e["game_type"].push({
                         //     "type_id": 9,
                         //     "type_name": "In-House",
@@ -256,7 +326,7 @@ var o = require("../Define/HttpServerDefine")
                         //     "client_status": 1,
                         //     "game_list": [
                         //         {
-                        //             "gid": 550,
+                        //             "gid": 500,
                         //             "is_external": 0,
                         //             "game_name": "Mines",
                         //             "type_id": 9,
@@ -274,14 +344,30 @@ var o = require("../Define/HttpServerDefine")
                         //         "en-us": "In-House"
                         //     }
                         // })
-                        // if (!e["other_game"]) {
-                        //     e["other_game"] = []
-                        // }
-                        for (const key in xxx) {
-                            if (e[key] == undefined || e[key] == null) {
-                                e[key] = xxx[key]
-                            }
-                        }
+                        // e["game_info"]=[]
+                        // e["game_info"].push({
+                        //     "gid": 500,
+                        //     "least_gold": 1,
+                        //     "longgu_url": "",
+                        //     "game_type": 0,
+                        //     "is_user_collection": 1,
+                        //     "tab": 2,
+                        //     "back_pic": "",
+                        //     "position_set": null,
+                        //     "way_list": [
+                        //         {
+                        //             "way_id": 15000
+                        //         }
+                        //     ],
+                        //     "way_bet_gold": [
+                        //         {
+                        //             "way_id": 15000,
+                        //             "min_bet_gold": "0.01",
+                        //             "max_bet_gold": "0.00"
+                        //         }
+                        //     ]
+                        // })
+
 
                     }
                     if (t.dataVersion == e.data_version && isgoServer == false) {
@@ -400,8 +486,40 @@ var o = require("../Define/HttpServerDefine")
                             return r
                     }
                 return null
-            }
-            ,
+            },
+            t.prototype.GetGameListItemSubId = function (e) {
+                if (this.GameConfig.game_type)
+                    var SubIdSelect = function (t) {
+                        for (var n = 0; n < t.length; n++) {
+                            var o = t[n];
+                            if (o.sub_gid == e)
+                                return o
+                        }
+                        return null
+                    }
+                for (var t = function (t) {
+                    for (var n = 0; n < t.length; n++) {
+                        var o = t[n];
+                        if (o.sub_game_list) {
+                            var r;
+                            if (r = SubIdSelect(o.sub_game_list))
+                            return r
+                        }
+                    }
+                    return null
+                }, n = this.GameConfig.game_type.length, o = 0; o < n; o++) {
+                    var i = this.GameConfig.game_type[o];
+                    if (i.has_child)
+                        for (var a = 0; a < i.child_list.length; a++) {
+                            var r;
+                            if (r = t(i.child_list[a].game_list))
+                                return r
+                        }
+                    else if (r = t(i.game_list))
+                        return r
+                }
+                return null
+            },
             t.prototype.GetGameChildLisItem = function (e) {
                 var t = {
                     HGame: null,
@@ -467,17 +585,17 @@ var o = require("../Define/HttpServerDefine")
                     min: 1,
                     max: 0
                 }
-                    , n = this.GetGameInfoByGid(e);
-                if (n)
-                    for (var o = 0; o < n.way_bet_gold.length; o++) {
-                        var i = n.way_bet_gold[o];
-                        i.way_id == app.UserManager().GetUserInfo.roomMode && (t = {
-                            min: Number(i.min_bet_gold) > 1 ? Number(i.min_bet_gold) : 1,
-                            max: Number(i.max_bet_gold)
-                        })
-                    }
-                else
-                    this.ErrLog("GameBetSizeLimit fail gid: ", e);
+                //     , n = this.GetGameInfoByGid(e);
+                // if (n)
+                //     for (var o = 0; o < n.way_bet_gold.length; o++) {
+                //         var i = n.way_bet_gold[o];
+                //         i.way_id == app.UserManager().GetUserInfo.roomMode && (t = {
+                //             min: Number(i.min_bet_gold) > 1 ? Number(i.min_bet_gold) : 1,
+                //             max: Number(i.max_bet_gold)
+                //         })
+                //     }
+                // else
+                //     this.ErrLog("GameBetSizeLimit fail gid: ", e);
                 return t
             }
             ,

@@ -1,0 +1,16 @@
+{
+    "Head": {
+        "Cmd": 22,
+        "Uin": 108228902
+    },
+    "Body": {
+        "Bet": {
+            "BetSeat": 1,
+            "BetPlayerID": 108228902,
+            "Nickname": "Santos",
+            "BetMulti": 99900,
+            "BetGold": 20
+        }
+    },
+    "event_type": "resp_game_message"
+}

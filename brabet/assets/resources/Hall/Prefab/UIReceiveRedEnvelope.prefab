@@ -170,7 +170,7 @@
       "__uuid__": "0a55c999-d8be-4bfa-988e-ef254a1bca8d"
     },
     "_texture": null,
-    "_stopped": false,
+    "_stopped": true,
     "playOnLoad": true,
     "autoRemoveOnFinish": false,
     "totalParticles": 200,
@@ -1583,13 +1583,14 @@
     "sync": false
   },
   {
-    "__type__": "2666bWxAZZFQZgpxw3v6sMw",
+    "__type__": "72d68dWcF5PJ78TEx3VE+Qh",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 5
     },
     "_enabled": true,
+    "scaleInput": 0.6,
     "_id": ""
   },
   {

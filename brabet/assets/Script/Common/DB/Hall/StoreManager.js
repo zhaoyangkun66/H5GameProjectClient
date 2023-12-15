@@ -62,8 +62,8 @@ var l = function (e) {
                     }
                 }
 
-               // let xxx = require("Http_goodsList")
-               // e.push(xxx[0])
+                // let xxx = require("Http_goodsList")
+                // e.push(xxx[0])
                 // for (const key in xxx) {
                 //     e.push(e[0])
                 //     // if (!e[key]) {
@@ -143,6 +143,9 @@ var l = function (e) {
         }
         ,
         t.prototype.onGoodsPay = function (e, t) {
+            // if (true) {
+            //     e = {"appID":"OW231206220712934","outTradeNo":"2312111120017690","payURL":"https://pix.sitobank.com?param=DRrW_OtWd2j8ilTIionBofdzRMP-LPgHBUUmHIeWPIA=","resultCode":"0000","sign":"E591681BDC7810EEBDCC8327A5BA0432","stateInfo":"提交成功"}
+            // }
             this.PayGoodResult = e,
                 t.type != o.GooglePay ? app.Client.OnEvent(a.GameEventDefine.GOODS_PAY, t) : app.NativeMgr().OpenGooglePay(app.UserManager().GetUserInfo.uid, e.orderid, t.amount)
         }

@@ -42,24 +42,16 @@ var o = require("../Base/Singleton")
             ,
             t.prototype.onGetDeskNotice = function (e) {
 
-                // if (isgoServer) {
-                //     e.push({
-                //         "link": 22119,
-                //         "image": "https://www.yotubet.com/uploads/notice_image/rainOfRedEnvelopes.png",
-                //         "external_link": "",
-                //         "start_time_stamp": 0,
-                //         "end_time_stamp": 0,
-                //         "cur_time": 1692770787
-                //     })
-                //     e.push({
-                //         "link": 22115,
-                //         "image": "https://www.yotubet.com/uploads/notice_image/bonusdeConvite1.png",
-                //         "external_link": "",
-                //         "start_time_stamp": 0,
-                //         "end_time_stamp": 0,
-                //         "cur_time": 1692770787
-                //     })
-                // }
+                if (isgoServer) {
+                    // e.unshift({
+                    //     "link": 22133,
+                    //     "image": "https://www.yotubet.com/uploads/notice_image/AtividadesdeNatal.png",
+                    //     "external_link": "",
+                    //     "start_time_stamp": 0,
+                    //     "end_time_stamp": 0,
+                    //     "cur_time": 1692770787
+                    // })
+                }
 
                 this._DeskInfo = e,
                     app.PlaceholderManager().DeskNoticeEnd = true;

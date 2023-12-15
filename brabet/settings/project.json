@@ -29,7 +29,7 @@
     "width": 1334,
     "height": 750
   },
-  "last-module-event-record-time": 1700463943245,
+  "last-module-event-record-time": 1702365661047,
   "preview-port": 7456,
   "clear-simulator-cache": true,
   "facebook": {
@@ -41,5 +41,6 @@
     "audience": {
       "enable": false
     }
-  }
+  },
+  "start-scene": "2d2f792f-a40c-49bb-a189-ed176a246e49"
 }

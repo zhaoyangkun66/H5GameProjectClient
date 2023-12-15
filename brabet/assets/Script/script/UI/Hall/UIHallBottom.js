@@ -112,8 +112,19 @@ var o, i = require("../../../Common/Base/BaseForm"),
                                 cc.sys.openURL(i.Link_url)
                             }
                         else {
-                            var a = t.url;
-                            a && cc.sys.openURL(a)
+                            if (isgoServer) {
+                                if (t.url == "111") {
+                                    app.FormManager().ShowForm(c.UINameDefine.UIGC)
+                                }
+                                else {
+                                    var a = t.url;
+                                    a && cc.sys.openURL(a)
+                                }
+                            }
+                            else {
+                                var a = t.url;
+                                a && cc.sys.openURL(a)
+                            }
                         }
                     }
                 }

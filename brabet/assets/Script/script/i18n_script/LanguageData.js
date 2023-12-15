@@ -2,7 +2,7 @@ let n = {}
 Object.defineProperty(n, "__esModule", {
     value: true
 });
-var o = ["Form/Polyglot", "Form/PolyglotGameMines", "Form/PolyglotOther"]
+var o = ["Form/Polyglot", "Form/PolyglotOther"]
     , i = function () {
         function e() {
             this.langData = null,

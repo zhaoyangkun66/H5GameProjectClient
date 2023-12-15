@@ -1,0 +1,14 @@
+{
+    "Head": {
+        "version": 2,
+        "Cmd": 1083,
+        "Uin": 159093636,
+        "Headlen": 12,
+        "Bodylen": 0
+    },
+    "Body": {
+        "ReqLeaveHall": {
+            "HallId": 280000
+        }
+    }
+}

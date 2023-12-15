@@ -1,0 +1,1422 @@
+{
+    "Eno": 0,
+    "HallInfo": {
+        "HallId": 280000,
+        "CreateTime": 0,
+        "RoomBasicMode": 28,
+        "RoomMode": 280000,
+        "LineID": "10.0.3.13",
+        "State": 4,
+        "GameState": 2,
+        "Round": 45341,
+        "Turn": 0,
+        "MaxMemberCount": 256,
+        "MemberCount": 49,
+        "MemberInfo": [
+            {
+                "Uin": 280000,
+                "Nickname": "系统庄家",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "0",
+                "LoginsrvID": "0.0.0.0",
+                "ClientIP": "0.0.0.0",
+                "Cash": 999998809.9673,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 134599472,
+                "Nickname": "Cruz Gonçalv",
+                "Sex": 1,
+                "Online": 1,
+                "Imageurl": "03",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "168.197.74.187",
+                "Cash": 99938.5027,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        1.52,
+                        0,
+                        4.03
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 153646495,
+                "Nickname": "Maximiliano ",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "1",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "200.173.208.37",
+                "Cash": 34168.53,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10013059,
+                "Nickname": "Bonifacio Me",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "10",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 10021.15,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        80,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10015494,
+                "Nickname": "Hugo Braga",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "14",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 9987.67,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        85,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10092702,
+                "Nickname": "Celestino Mo",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "07",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 9859.69,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        76,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10025701,
+                "Nickname": "Breno Vila",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "01",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 9643.64,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        13,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10023553,
+                "Nickname": "Paulinho San",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "11",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 9136.79,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        87,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10086618,
+                "Nickname": "Celso Soares",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "01",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 8991.46,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        22,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10053327,
+                "Nickname": "David Corte-",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "08",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 8516.31,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        60,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10007316,
+                "Nickname": "Isac Antunes",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "10",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 8442.77,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        84,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10028671,
+                "Nickname": "Thiago Seque",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "12",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 8290.82,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        58,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10039983,
+                "Nickname": "Elpidio Paiv",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "14",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 8198.18,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        89,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10053210,
+                "Nickname": "Reynaldo Res",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "13",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 7113.32,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        75,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10046626,
+                "Nickname": "Aníbal Cruz",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "15",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 6691.25,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        22,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10099272,
+                "Nickname": "Hermínio Lei",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "02",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 6373.17,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        33,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10092480,
+                "Nickname": "Altair Medei",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "06",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 6353.96,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        20,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10056856,
+                "Nickname": "Ambrósio Gon",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "09",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 5631.83,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        4,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10000806,
+                "Nickname": "Tiago Couto",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "10",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 3085.52,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        87,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 78674675,
+                "Nickname": "Jefferson Po",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "1",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "177.51.222.144",
+                "Cash": 2637.21,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 110933553,
+                "Nickname": "Clemente Lim",
+                "Sex": 1,
+                "Online": 1,
+                "Imageurl": "05",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "191.57.182.132",
+                "Cash": 2250.31,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        200,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10064418,
+                "Nickname": "Henrique Mou",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "12",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 1616.38,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        83,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 159233610,
+                "Nickname": "Sérgio Gusmã",
+                "Sex": 2,
+                "Online": 1,
+                "Imageurl": "10",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "187.106.40.202",
+                "Cash": 1586.26,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 164542301,
+                "Nickname": "Viriato Vasc",
+                "Sex": 2,
+                "Online": 1,
+                "Imageurl": "04",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "187.106.40.202",
+                "Cash": 1348.65,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10077248,
+                "Nickname": "Paulo Mendez",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "03",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 1319.13,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        99,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10029071,
+                "Nickname": "Cosme Mendes",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "04",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 1205.89,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        89,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 10022537,
+                "Nickname": "Luiz Araújo",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "15",
+                "LoginsrvID": "10.1.6.100",
+                "ClientIP": "0.0.0.0",
+                "Cash": 837.16,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        8,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 36242150,
+                "Nickname": "Patricia Soa",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "8",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "187.44.233.110",
+                "Cash": 762.66,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 159686493,
+                "Nickname": "Santos",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "1",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "177.223.23.54",
+                "Cash": 537.02,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 85983627,
+                "Nickname": "Aline",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "6",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "45.4.133.152",
+                "Cash": 446.66,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        25.83,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 125157907,
+                "Nickname": "Pedro Silva",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "11",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "131.196.45.69",
+                "Cash": 220.15,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        30,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 169256673,
+                "Nickname": "Jackive",
+                "Sex": 2,
+                "Online": 1,
+                "Imageurl": "10",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "187.40.220.44",
+                "Cash": 182.73,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 162909134,
+                "Nickname": "J B Neto",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "1",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "190.171.84.7",
+                "Cash": 151,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 166892159,
+                "Nickname": "Cau-13",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "10",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "187.40.220.44",
+                "Cash": 147.05,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 95010339,
+                "Nickname": "sebastiÃ£o b",
+                "Sex": 2,
+                "Online": 1,
+                "Imageurl": "https://lh3.googleusercontent.com/a/ALm5wu3eCalp2dbKFDu3cH3hYkS6hmNilJKIaKY7h06t=s96-c",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "152.250.15.149",
+                "Cash": 145.87,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        10,
+                        0,
+                        5.74
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 145875022,
+                "Nickname": "Toppooooooo",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "7",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "168.197.72.77",
+                "Cash": 75,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 123199002,
+                "Nickname": "Renato Ferna",
+                "Sex": 1,
+                "Online": 1,
+                "Imageurl": "11",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "138.118.59.77",
+                "Cash": 70.77,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 169992294,
+                "Nickname": "Rosicleia Me",
+                "Sex": 2,
+                "Online": 1,
+                "Imageurl": "https://lh3.googleusercontent.com/a/ACg8ocLT1MIAI6oIyk8Z20SyR0G7a61a5omCppoNPgLAwnUn=s96-c",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "191.205.208.253",
+                "Cash": 51.41,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        1,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 169159967,
+                "Nickname": "Camilo Lopes",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "7",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "177.155.212.154",
+                "Cash": 46.64,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 169582177,
+                "Nickname": "ALTAMIR",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "11",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "187.101.198.98",
+                "Cash": 45.09,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 86091994,
+                "Nickname": "Mayres",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "6",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "177.54.225.174",
+                "Cash": 39.38,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        1,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 59140590,
+                "Nickname": "Larissa",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "2",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "189.36.130.8",
+                "Cash": 35.03,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        5,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 108228902,
+                "Nickname": "Santos",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "11",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "189.40.93.181",
+                "Cash": 20,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 159093636,
+                "Nickname": "Moisés Marti",
+                "Sex": 2,
+                "Online": 1,
+                "Imageurl": "06",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "45.162.230.58",
+                "Cash": 4.87,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 136405560,
+                "Nickname": "Edmundo Lobo",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "1",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "167.249.18.186",
+                "Cash": 0.29,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 158644056,
+                "Nickname": "Antônio Furt",
+                "Sex": 0,
+                "Online": 1,
+                "Imageurl": "7",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "45.162.230.58",
+                "Cash": 0,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            },
+            {
+                "Uin": 169186881,
+                "Nickname": "Estevão Moni",
+                "Sex": 1,
+                "Online": 1,
+                "Imageurl": "09",
+                "LoginsrvID": "10.0.2.1",
+                "ClientIP": "168.121.193.72",
+                "Cash": 0,
+                "Score": 0,
+                "BetInfo": {
+                    "PlayerID": 0,
+                    "CompeteGold": 0,
+                    "BetPosLimit": 4,
+                    "BetGold": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "BetResult": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LeaveHall": 0
+                }
+            }
+        ],
+        "HallConfig": {
+            "BankerName": "系统庄家",
+            "BankerHead": "0",
+            "TablePlayerCount": 0,
+            "BetMulti": 1,
+            "WinMulti": 1,
+            "WinTakePercent": 0,
+            "BankerWinTakePercent": 0,
+            "MinEnterGold": 0,
+            "MinPlayGold": 1,
+            "MinCompeteGold": 0,
+            "MinBetGold": 0.01,
+            "MaxBetGold": 0,
+            "CompeteLeftSecond": 0,
+            "BetLeftSecond": 9,
+            "PreSettlementSecond": 1,
+            "SettlementSecond": 2,
+            "ChipGold": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "RealtimeBet": 1,
+            "LeaveInGame": 1
+        },
+        "GameSettings": {
+            "HallSettings": {
+                "Res": 0
+            }
+        },
+        "BankerID": 280000,
+        "BankerTimes": 0,
+        "ActionIntervalMS": 0,
+        "NextActionLeftSecond": 0
+    },
+    "PlayerChipCount": 0,
+    "event_type": "RspHallInfo"
+}

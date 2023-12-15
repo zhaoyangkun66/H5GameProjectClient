@@ -1,0 +1,607 @@
+{ 
+    "RoomID": 280000,
+    "RoomBasicMode": 28,
+    "RoomMode": 280000,
+    "HallType": 0,
+    "MasterID": 280000,
+    "DummyCount": 7,
+    "Round": 45341,
+    "BeginTime": 1702454110,
+    "EndTime": 1702454127,
+    "Duration": 17,
+    "EndInfo": {
+        "Horse": 0,
+        "Joker": 0,
+        "WinTakePercent": 0,
+        "WinMulti": 1,
+        "FireMulti": 0,
+        "BankerID": 280000,
+        "TableCards": "133 0 0",
+        "PlayerNum": 0
+    },
+    "CFlag": 0,
+    "CPattern": 0,
+    "NextStartTime": 2,
+    "MemberCount": 34,
+    "HallPlayerBetInfo": [
+        {
+            "PlayerID": 280000,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                0,
+                0,
+                0
+            ],
+            "BetResult": [
+                -1190.0327,
+                -1189.67,
+                0,
+                -0.3627
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10000806,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                16,
+                0,
+                0
+            ],
+            "BetResult": [
+                1.6,
+                1.6,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10007316,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                53,
+                0,
+                0
+            ],
+            "BetResult": [
+                -53,
+                -53,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10013059,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                58,
+                0,
+                0
+            ],
+            "BetResult": [
+                12.18,
+                12.18,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10015494,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                72,
+                0,
+                0
+            ],
+            "BetResult": [
+                -72,
+                -72,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10022537,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                14,
+                0,
+                0
+            ],
+            "BetResult": [
+                -14,
+                -14,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10023553,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                32,
+                0,
+                0
+            ],
+            "BetResult": [
+                -32,
+                -32,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10025701,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                27,
+                0,
+                0
+            ],
+            "BetResult": [
+                -27,
+                -27,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10028671,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                88,
+                0,
+                0
+            ],
+            "BetResult": [
+                13.2,
+                13.2,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10029071,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                88,
+                0,
+                0
+            ],
+            "BetResult": [
+                14.96,
+                14.96,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10039983,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                7,
+                0,
+                0
+            ],
+            "BetResult": [
+                -7,
+                -7,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10046626,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                95,
+                0,
+                0
+            ],
+            "BetResult": [
+                -95,
+                -95,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10053210,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                4,
+                0,
+                0
+            ],
+            "BetResult": [
+                -4,
+                -4,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10053327,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                51,
+                0,
+                0
+            ],
+            "BetResult": [
+                -51,
+                -51,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10056856,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                61,
+                0,
+                0
+            ],
+            "BetResult": [
+                17.08,
+                17.08,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10064418,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                77,
+                0,
+                0
+            ],
+            "BetResult": [
+                -77,
+                -77,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10071107,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                41,
+                0,
+                0
+            ],
+            "BetResult": [
+                9.43,
+                9.43,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10077248,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                69,
+                0,
+                0
+            ],
+            "BetResult": [
+                -69,
+                -69,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10086618,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                90,
+                0,
+                0
+            ],
+            "BetResult": [
+                -90,
+                -90,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10088470,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                48,
+                0,
+                0
+            ],
+            "BetResult": [
+                -48,
+                -48,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10092480,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                53,
+                0,
+                0
+            ],
+            "BetResult": [
+                -53,
+                -53,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10092702,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                80,
+                0,
+                0
+            ],
+            "BetResult": [
+                -80,
+                -80,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 10099272,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                66,
+                0,
+                0
+            ],
+            "BetResult": [
+                -66,
+                -66,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 59140590,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                5,
+                0,
+                0
+            ],
+            "BetResult": [
+                -5,
+                -5,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 85983627,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                25.83,
+                0,
+                0
+            ],
+            "BetResult": [
+                -25.83,
+                -25.83,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 86091994,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                1,
+                0,
+                0
+            ],
+            "BetResult": [
+                -1,
+                -1,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 95010339,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                2.87,
+                0,
+                0
+            ],
+            "BetResult": [
+                -2.87,
+                -2.87,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 108228902,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                20,
+                0,
+                0
+            ],
+            "BetResult": [
+                -20,
+                -20,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 110933553,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                200,
+                0,
+                0
+            ],
+            "BetResult": [
+                -200,
+                -200,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 125157907,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                20,
+                0,
+                0
+            ],
+            "BetResult": [
+                -20,
+                -20,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 134599472,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                1.52,
+                99900,
+                4.03
+            ],
+            "BetResult": [
+                -1.1573,
+                -1.52,
+                0,
+                0.3627
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 145875022,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                5,
+                0,
+                0
+            ],
+            "BetResult": [
+                -5,
+                -5,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 169582177,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                1,
+                0,
+                0
+            ],
+            "BetResult": [
+                -1,
+                -1,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        },
+        {
+            "PlayerID": 169992294,
+            "CompeteGold": 0,
+            "BetPosLimit": 4,
+            "BetGold": [
+                1,
+                0,
+                0
+            ],
+            "BetResult": [
+                -1,
+                -1,
+                0,
+                0
+            ],
+            "LeaveHall": 0
+        }
+    ],
+    "event_type": "HallEndRound"
+}

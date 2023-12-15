@@ -1,0 +1,20 @@
+{
+    "Head": {
+        "Cmd": 36,
+        "Uin": 0
+    },
+    "Body": {
+        "DummyPlay": {
+            "PlayerID": 134599472,
+            "PatternID": 3,
+            "Nickname": "Cruz Gonçalv",
+            "CardCount": 3,
+            "Cards": [
+                109,
+                3312,
+                439
+            ]
+        }
+    },
+    "event_type": "resp_game_message"
+}

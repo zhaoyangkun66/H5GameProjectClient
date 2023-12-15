@@ -212,23 +212,23 @@ var o = require("../../Define/ShareDefine")
             ,
             t.prototype.onGetAllPromotion = function (e) {
                 if (isgoServer == true) {
-                    // e.rain_of_red_envelopes = {
+                    // e.push({
                     //     "switch": 1,
-                    //     "title": "Envelope vermelho",
-                    //     "img": "https://www.yotubet.com/uploads/notice_image/rainOfRedEnvelopes.png?id=11013209",
-                    //     "content": "<size=26><color=#f9de06><b>Hora do evento(UTC-3):</b></size></color><br/><br/><size=24><color=#ffffff>Hora de distribuicao: 00:00 - 02:00,02:00 - 03:59...........20:00 - 21:59,22:00 - 23:59 Emitido periodicamente a cada 2 horas</size></color><br/><br/><color=#f9de06><size=26>Condicies do Evento: </size></color><br/><size=24><color=#ffffff>Os usuários que usaram o código de resgate e obtiveram recompensas são elegíveis para ativação (o código de resgate é divulgado no canal oficial) Canal oficial do Telegram: @yotubet01</size></color><br/><br/><color=#f9de06><size=26><b>InstrucGes Do Evento:</b></size></color><br/><size=24><color=#ffffff>1. Os usuários que utilizaram com sucesso o código de resgate podem participar do evento. Um número indefinido de envelopes vermelhos é distribuído todos os dias, cada envelope vermelho custa R$ 10</size></color><br/><size=24><color=#ffffff>2. Envelopes vermelhos serão distribuídos em cada período e os jogadores poderão participar repetidamente</size></color><br/><size=24><color=#ffffff>3. Durante o evento, envelopes vermelhos aparecerão na interface do lobby. (Os jogadores precisam retornar ao lobby para recebê-lo)</size></color><br/><size=24><color=#ffffff>4. O bônus deste evento requer 1 vez de giro antes de poder ser sacado.</size></color><br/><size=24><color=#ffffff>5. Caso os jogadores obtenham recompensas por meios ilegais, as recompensas obtidas serão deduzidas e a conta será congelada. Caso haja diferenças na interpretação das regras, a plataforma reserva-se o direito final de interpretar este evento.</size></color><br/>",
+                    //     "title": "Atividades de Natal",
+                    //     "img": "https://www.yotubet.com/uploads/notice_image/AtividadesdeNatal.png",
+                    //     "content": "<size=26><color=#f9de06><b>Condições para participação no evento (UTC-3):</b></size></color><br/><size=24><color=#ffffff>Depósitos acumulados superiores a R$ 500 de 1º a 25 de dezembro</size></color><br/><br/><color=#f9de06><size=26><b>Conteúdo da recompensa:</b></size></color><br/><size=24><color=#ffffff>2 pessoas receberão recompensa de R$ 5.000</size></color><br/><size=24><color=#ffffff>3 pessoas receberão recompensa de R$ 3.000</size></color><br/><size=24><color=#ffffff>5 pessoas receberão recompensa de R$ 2.000</size></color><br/><size=24><color=#ffffff>10 pessoas receberão recompensa de R$ 1.000</size></color><br/><size=24><color=#ffffff>30 pessoas receberão recompensa de R$ 500</size></color><br/><br/><color=#ffffff>O sorteio será realizado no dia 26 de dezembro, e a lista dos vencedores será divulgada no canal oficial do Telegram</size></color><br/><br/><color=#f9de06><size=26>InstrucGes Do Evento: </size></color><br/><size=24><color=#ffffff>Caso os jogadores obtenham recompensas por meios ilegais, as recompensas obtidas serão deduzidas e a conta será congelada. Caso haja diferenças na interpretação das regras, a plataforma reserva-se o direito final de interpretar este evento.</size></color><br/>",
                     //     "content_type": "1",
-                    //     "entrance_img": "https://www.yotubet.com/uploads/notice_image/rainOfRedEnvelopes.png?id=11013209",
+                    //     "entrance_img": "https://www.yotubet.com/uploads/notice_image/AtividadesdeNatal.png",
                     //     "inside": "0",
                     //     "outside": "https://t.me/Yotubet01",
                     //     "button_name": "Entre no canal oficial",
-                    //     "mobile_title": "Envelope vermelho",
-                    //     "mobile_intro": "Entre no canal oficial Disponível em todos os períodos Ganhe até R$ 10",
-                    //     "act_id": 24,
+                    //     "mobile_title": "Atividades de Natal",
+                    //     "mobile_intro": "Bônus de depósito de Natal, até R$ 5000",
+                    //     "act_id": 25,
                     //     "sort": 7,
                     //     "icon_url": "",
                     //     "is_show": 1
-                    // }
+                    // })
                 }
                 var t = [];
                 for (var n in e)
