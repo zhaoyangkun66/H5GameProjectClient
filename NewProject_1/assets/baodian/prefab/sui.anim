@@ -1,0 +1,139 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "sui",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.5166666666666667,
+  "sample": 60,
+  "speed": 0.2,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {},
+    "paths": {
+      "img": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": [
+              {
+                "frame": 0,
+                "value": {
+                  "__uuid__": "6e9f1f58-412f-48f0-8190-9166e888cec9"
+                }
+              },
+              {
+                "frame": 0.16666666666666666,
+                "value": {
+                  "__uuid__": "99321f21-b0e3-47e0-9ef8-6db9a3083cda"
+                }
+              },
+              {
+                "frame": 0.3333333333333333,
+                "value": {
+                  "__uuid__": "99bfa528-2270-4d53-a9a3-628b3e7e7931"
+                }
+              },
+              {
+                "frame": 0.5,
+                "value": {
+                  "__uuid__": "d17d3667-ecdd-4a2f-a87a-ecdbf494adc7"
+                }
+              }
+            ]
+          }
+        },
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.5,
+              "value": 0
+            }
+          ],
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                0
+              ],
+              "motionPath": [
+                [
+                  6,
+                  -78,
+                  0,
+                  -41,
+                  13,
+                  -121
+                ]
+              ]
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": [
+                17,
+                -166
+              ],
+              "motionPath": [
+                [
+                  33,
+                  -240,
+                  21,
+                  -207,
+                  45,
+                  -276
+                ]
+              ]
+            },
+            {
+              "frame": 0.31666666666666665,
+              "value": [
+                61,
+                -311
+              ],
+              "motionPath": [
+                [
+                  115,
+                  -408,
+                  84,
+                  -365,
+                  143,
+                  -446
+                ]
+              ]
+            },
+            {
+              "frame": 0.5,
+              "value": [
+                178,
+                -474
+              ],
+              "motionPath": []
+            }
+          ],
+          "angle": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": -8
+            },
+            {
+              "frame": 0.31666666666666665,
+              "value": -14
+            },
+            {
+              "frame": 0.5,
+              "value": -20
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

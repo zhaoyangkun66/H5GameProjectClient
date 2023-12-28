@@ -25,24 +25,25 @@ var o = require("../Base/Singleton")
             }
             ,
             t.prototype.OnGetLanguageList = function (e) {
-                // if (isgoServer) {
+                // if (isgoServer && channelID == 2) {
                 //     e.push({
                 //         "id": 3,
-                //         "icon": "https://d37kgoga0nrx6r.cloudfront.net/static/images/lang/zh-cn.png",
-                //         "lang": "zh-hk",
-                //         "name": "中文繁体",
+                //         "icon": "https://www.yotubet.com/uploads/images/langconfig/es-es.png",
+                //         "lang": "es-es",
+                //         "name": "Español",
                 //         "default": 0,
-                //         "sort": 2
+                //         "sort": 3
                 //     })
                 // }
                 // else {
                 //     e.push({
                 //         "id": 3,
-                //         "icon": "https://d37kgoga0nrx6r.cloudfront.net/static/images/lang/zh-cn.png",
-                //         "lang": "zh-hk",
-                //         "name": "中文繁体",
+                //         "icon": "https://www.yotubet.com/uploads/images/langconfig/es-es.png",
+                //         //"icon": "https://d37kgoga0nrx6r.cloudfront.net/static/images/lang/es-es.png",
+                //         "lang": "es-es",
+                //         "name": "Español",
                 //         "default": 0,
-                //         "sort": 2
+                //         "sort": 3
                 //     })
                 // }
                 this._LanguageList = e,

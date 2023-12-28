@@ -64,17 +64,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     this.lb_KindTip = this.GetWndComponent("view/content/layout_con/label_Kind_tips", cc.Label),
                     this.lb_KindTip1 = this.GetWndComponent("view/content/li_Encrypted/label_Kind_tips", cc.Label),
                     this.lbl_PleaseTip = this.GetWndComponent("view/content/layout_con/label_tips", cc.Label),
-                    this.lbl_PleaseTip1 = this.GetWndComponent("view/content/li_Encrypted/label_tips", cc.Label),
-                    this.rfcEditbox = this.GetWndComponent("view/content/layout_con/li_RFC/node_Rfc1/node/editbox", cc.EditBox),
-                    this.rfcEditbox.addComponent(i.default).initRegExp(i.RegExpType.test),
-                    this.curpEditbox = this.GetWndComponent("view/content/layout_con/li_RFC/node_Rfc2/node/editbox", cc.EditBox),
-                    this.curpEditbox.addComponent(i.default).initRegExp(i.RegExpType.test),
-                    this.debitEditbox = this.GetWndComponent("view/content/layout_con/li_Card/node_card1/node/editbox", cc.EditBox),
-                    this.debitEditbox.addComponent(i.default).initRegExp(i.RegExpType.test),
-                    this.phoneEditbox = this.GetWndComponent("view/content/layout_con/li_Card/node_card2/node/editbox", cc.EditBox),
-                    this.phoneEditbox.addComponent(i.default).initRegExp(i.RegExpType.test),
-                    this.clabeEditbox = this.GetWndComponent("view/content/layout_con/li_Card/node_card3/node/editbox", cc.EditBox),
-                    this.clabeEditbox.addComponent(i.default).initRegExp(i.RegExpType.test)
+                    this.lbl_PleaseTip1 = this.GetWndComponent("view/content/li_Encrypted/label_tips", cc.Label)
+
             }
             ,
             t.prototype.OnEnable = function () {
@@ -112,7 +103,23 @@ var o = require("../../../Common/Base/UIBaseComponent")
             ,
             t.prototype.OnClick = function (e, t, n) {
                 this.Log(e),
-                    "button_bind" != e ? "editbox_bank_name" != e ? "editbox_pix_type" != e ? "btn_close_pix_type" != e ? "toggle1" != e && "toggle2" != e ? "toggle1_Gcash" != e && "toggle2_Gcash" != e && "toggle3_Gcash" != e ? "CPF" != e && "CNPJ" != e && "PHONE" != e && "EMAIL" != e && "code_EVP" != e ? "toggleRfc_1" != e && "toggleRfc_2" != e ? "toggleCard_1" != e && "toggleCard_2" != e && "toggleCard_3" != e || this.CardTypeToggleCallBack(n) : this.RFCTypeToggleCallBack(n) : this.PixTypeCallBack(e) : this.PrepayTypeToggleCallBack(n) : this.AccountTypeToggleCallBack(n) : this.ClosePixTypeList() : this.openPixTypeList() : this.OpenBankCode() : this.SendBindBankNumBtnCallBack()
+                    "button_bind" != e
+                        ? "editbox_bank_name" != e
+                            ? "editbox_pix_type" != e
+                                ? "btn_close_pix_type" != e
+                                    ? "toggle1" != e && "toggle2" != e
+                                        ? "toggle1_Gcash" != e && "toggle2_Gcash" != e && "toggle3_Gcash" != e
+                                            ? "CPF" != e && "CNPJ" != e && "PHONE" != e && "EMAIL" != e && "code_EVP" != e
+                                                ? "toggleRfc_1" != e && "toggleRfc_2" != e
+                                                    ? "toggleCard_1" != e && "toggleCard_2" != e && "toggleCard_3" != e || this.CardTypeToggleCallBack(n)
+                                                    : this.RFCTypeToggleCallBack(n)
+                                                : this.PixTypeCallBack(e)
+                                            : this.PrepayTypeToggleCallBack(n)
+                                        : this.AccountTypeToggleCallBack(n)
+                                    : this.ClosePixTypeList()
+                                : this.openPixTypeList()
+                            : this.OpenBankCode()
+                        : this.SendBindBankNumBtnCallBack()
             }
             ,
             t.prototype.onBindUserWallet = function (e) {
@@ -129,14 +136,11 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 if (e) {
                     if (//this.AccountNumber.getComponent(cc.EditBox).string = "",
                         // this.BankUserName.getComponent(cc.EditBox).string = "",
-                        // this.IfSCCode.getComponent(cc.EditBox).string = "",
                         // this.BankName.getComponent(cc.EditBox).string = "",
-                        // this.BranchBankName.getComponent(cc.EditBox).string = "",
                         this.PhoneNumber.getComponent(cc.EditBox).string = "",
                         this.Email.getComponent(cc.EditBox).string = "",
-                        // this.UpiNode.getComponent(cc.EditBox).string = "",
                         this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).string = "",
-                        //  this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).string = "",
+
                         // this.SelectBankName.getChildByName("editbox_bank_name").getComponent(cc.EditBox).string = "",
                         this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).string = "",
                         this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).enabled = true,
@@ -145,30 +149,17 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         this.PixType_Node.getChildByName("editbox_pix_type").getComponent(cc.EditBox).string = "",
 
                         // this.li_Encrypted_NodeEdit.getComponent(cc.EditBox).string = "",
-                        //  this.li_Province.getChildByName("editbox").getComponent(cc.EditBox).string = "",
-                        //  this.li_City.getChildByName("editbox").getComponent(cc.EditBox).string = "",
                         //   this.li_GcashNumber.getChildByName("editbox").getComponent(cc.EditBox).string = "",
                         //  this.li_BeneficiarvName.getChildByName("editbox").getComponent(cc.EditBox).string = "",
                         //  this.li_PayMayaPhilippines.getChildByName("editbox").getComponent(cc.EditBox).string = "",
-                        // this.rfcEditbox.string = "",
-                        // this.curpEditbox.string = "",
-                        // this.debitEditbox.string = "",
-                        // this.phoneEditbox.string = "",
-                        // this.clabeEditbox.string = "",
                         // e.bank_account && "" !== e.bank_account && (this.AccountNumber.getComponent(cc.EditBox).string = e.bank_account,
                         //     this.AccountNumber.getComponent(cc.EditBox).placeholder = ""),
                         // e.cardholder_name && "" !== e.cardholder_name && (this.BankUserName.getComponent(cc.EditBox).string = e.cardholder_name,
                         //     this.BankUserName.getComponent(cc.EditBox).placeholder = ""),
-                        // e.ifsc_code && "" !== e.ifsc_code && (this.IfSCCode.getComponent(cc.EditBox).string = e.ifsc_code,
-                        //     this.IfSCCode.getComponent(cc.EditBox).placeholder = ""),
-                        // e.branch_bank && "" !== e.branch_bank && (this.BranchBankName.getComponent(cc.EditBox).string = e.branch_bank,
-                        //     this.BranchBankName.getComponent(cc.EditBox).placeholder = ""),
                         e.cardholder_tel && "" !== e.cardholder_tel && (this.PhoneNumber.getComponent(cc.EditBox).string = e.cardholder_tel,
                             this.PhoneNumber.getComponent(cc.EditBox).placeholder = ""),
                         e.email && "" !== e.email && (this.Email.getComponent(cc.EditBox).string = e.email,
                             this.Email.getComponent(cc.EditBox).placeholder = ""),
-                        // e.upi && "" !== e.upi && (this.UpiNode.getComponent(cc.EditBox).string = e.upi,
-                        //     this.UpiNode.getComponent(cc.EditBox).placeholder = ""),
                         //  e.taxid="12345678901",
                         //  e.pix_key="12345678901",
                         e.taxid && "" !== e.taxid && (this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).string = app.ComUtil().translate(e.taxid + ""),
@@ -177,8 +168,6 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         ),
                         // e.zipcode && "" !== e.zipcode && (this.ZipCode_Node.getChildByName("editbox").getComponent(cc.EditBox).string = e.zipcode,
                         //     this.ZipCode_Node.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
-                        // e.account_digit && "" !== e.account_digit && (this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).string = e.account_digit,
-                        //     this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
                         // cc.find("toggleContainer/toggle1", this.Account_Type).getComponent(cc.Toggle).check(),
                         // e.account_type && "" !== e.account_type && (1 == Number(e.account_type) ? (this.SendAccountType = 1,
                         // cc.find("toggleContainer/toggle1", this.Account_Type).getComponent(cc.Toggle).check(),
@@ -212,10 +201,6 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     }
                     // e.user_wallet && "" !== e.user_wallet && (this.li_Encrypted_NodeEdit.getComponent(cc.EditBox).string = e.user_wallet,
                     //     this.li_Encrypted_NodeEdit.getComponent(cc.EditBox).placeholder = ""),
-                    //     e.province && "" !== e.province && (this.li_Province.getChildByName("editbox").getComponent(cc.EditBox).string = e.province,
-                    //         this.li_Province.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
-                    //     e.city && "" !== e.city && (this.li_City.getChildByName("editbox").getComponent(cc.EditBox).string = e.city,
-                    //         this.li_City.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
                     //     e.gcash_number && "" !== e.gcash_number && (this.li_GcashNumber.getChildByName("editbox").getComponent(cc.EditBox).string = e.gcash_number,
                     //         this.li_GcashNumber.getChildByName("editbox").getComponent(cc.EditBox).placeholder = ""),
                     //     e.pay_maya_account && "" !== e.pay_maya_account && (this.li_PayMayaPhilippines.getChildByName("editbox").getComponent(cc.EditBox).string = e.pay_maya_account,
@@ -248,11 +233,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                                     this.SendRFCType = Number(c),
                                     s.getComponent(cc.Toggle).check()) : s.getComponent(cc.Toggle).isChecked = false
                     }
-                    this.ShowRfcChildren(),
-                        e.repay_rfc && "" !== e.repay_rfc && (this.rfcEditbox.string = e.repay_rfc,
-                            this.rfcEditbox.placeholder = ""),
-                        e.repay_curp && "" !== e.repay_curp && (this.curpEditbox.string = e.repay_curp,
-                            this.curpEditbox.placeholder = "");
+                    this.ShowRfcChildren()
                     var p = this.GetWndNode("node_cardToggle/node/toggleCard", this.li_card);
                     this.SendCardType = 0;
                     var d = false;
@@ -278,12 +259,6 @@ var o = require("../../../Common/Base/UIBaseComponent")
                                     s.getComponent(cc.Toggle).check()) : s.getComponent(cc.Toggle).isChecked = false
                     }
                     this.ShowCardChildren(),
-                        e.repay_card_debit && "" !== e.repay_card_debit && (this.debitEditbox.string = e.repay_card_debit,
-                            this.debitEditbox.placeholder = ""),
-                        e.repay_card_phone && "" !== e.repay_card_phone && (this.phoneEditbox.string = e.repay_card_phone,
-                            this.phoneEditbox.placeholder = ""),
-                        e.repay_card_clabe && "" !== e.repay_card_clabe && (this.clabeEditbox.string = e.repay_card_clabe,
-                            this.clabeEditbox.placeholder = ""),
                         this.PrepayTypeToggleCallBack(this.SendPrepayType)
                 }
             }
@@ -364,8 +339,6 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         //  this.Account_Type.zIndex = -1 * Number(t.account_type),
                         // this.ZipCode_Node.active = 1 == e.zipcode,
                         //  this.ZipCode_Node.zIndex = -1 * Number(t.zipcode),
-                        //  this.Account_digit.active = 1 == e.account_digit,
-                        // this.Account_digit.zIndex = -1 * Number(t.account_digit),
                         //this.UpiAllNode.active = 1 == e.upi,
                         // this.UpiAllNode.zIndex = -1 * Number(t.upi),
                         this.Pixkey_Node.active = "1" == e.pix_key,
@@ -394,11 +367,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                             1 == e.pay_maya_type && s.push(app.i18n.t("UI_Cash_TitlePayMaya")),
                             this.GetWndComponent("view/content/layout_con/li_Bank_Gcash/label", cc.Label).string = s.join("/")
                     }
-                    // if (this.li_Province.active = 1 == e.province,
-                    //this.li_Province.zIndex = -1 * Number(t.province),
-                    // this.li_City.active = 1 == e.city,
-                    // this.li_City.zIndex = -1 * Number(t.city),
-                    //   this.li_GcashNumber.active = 1 == e.gcash_number,
+                    // if (this.li_GcashNumber.active = 1 == e.gcash_number,
                     //   this.li_GcashNumber.zIndex = -1 * Number(t.gcash_number),
                     //   this.li_PayMayaPhilippines.active = 1 == e.pay_maya_account,
                     // this.li_PayMayaPhilippines.zIndex = -1 * Number(t.pay_maya_account),
@@ -445,16 +414,6 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         if (14 !== t.length && 11 !== t.length)
                             return void app.SysNotifyManager().ShowToast("UI.Shop_CPF_LengthHint")
                     }
-                    // if (this.li_rfc.active) {
-                    //     var n = this.rfcEditbox.string;
-                    //     if ("" == n.trim() && 1 == this.SendRFCType)
-                    //         return void app.SysNotifyManager().ShowToast("UI_Rfc_Null");
-                    //     if ("" == (n = this.curpEditbox.string).trim() && 2 == this.SendRFCType)
-                    //         return void app.SysNotifyManager().ShowToast("UI_CURP_Null")
-                    // }
-                    // if (this.li_card.active && ("" == this.debitEditbox.string.trim() && 1 == this.SendCardType || "" == this.phoneEditbox.string.trim() && 2 == this.SendCardType || "" == this.clabeEditbox.string.trim() && 3 == this.SendCardType))
-                    //     app.SysNotifyManager().ShowToast("UI_Card_Null");
-                    // else 
                     {
                         var o = app.UserManager().GetUserWallet()
                             , i = o ? o.v_position : 1
@@ -468,21 +427,21 @@ var o = require("../../../Common/Base/UIBaseComponent")
                             token: app.UserManager().GetUserInfo.token,
                             bank_account: "",//this.AccountNumber.getComponent(cc.EditBox).string,
                             bank_name: "",//this.BankName.getComponent(cc.EditBox).string,
-                            branch_bank: "",//this.BranchBankName.getComponent(cc.EditBox).string,
-                            ifsc_code: "",//this.IfSCCode.getComponent(cc.EditBox).string.replace(/[&\|\\\*^%$ #@\-.]/g, ""),
+                            branch_bank: "",
+                            ifsc_code: "",
                             cardholder_name: "",// this.BankUserName.getComponent(cc.EditBox).string,
                             email: this.Email.getComponent(cc.EditBox).string,
-                            upi: "",//this.UpiNode.getComponent(cc.EditBox).string,
+                            upi: "",
                             account_type: this.SendAccountType,
                             taxid: this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).string.replace(/[&\|\\\*^%$ #@\-.]/g, ""),
                             zipcode: "",//this.ZipCode_Node.getChildByName("editbox").getComponent(cc.EditBox).string,
-                            account_digit: "",//this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).string.replace(/[&\|\\\*^%$ #@\-.]/g, ""),
+                            account_digit: "",
                             pix_key: r,
                             pix_type: this.PixType_Node.getChildByName("editbox_pix_type").getComponent(cc.EditBox).string,
                             bank_code: "",
                             prepay_type: this.SendPrepayType,
-                            province: "",//this.li_Province.getChildByName("editbox").getComponent(cc.EditBox).string,
-                            city: "",//this.li_City.getChildByName("editbox").getComponent(cc.EditBox).string,
+                            province: "",
+                            city: "",
                             gcash_number: "",// this.li_GcashNumber.getChildByName("editbox").getComponent(cc.EditBox).string,
                             pay_maya_account: "",//this.li_PayMayaPhilippines.getChildByName("editbox").getComponent(cc.EditBox).string,
                             beneficiary_name: "",// this.li_BeneficiarvName.getChildByName("editbox").getComponent(cc.EditBox).string,
@@ -494,8 +453,6 @@ var o = require("../../../Common/Base/UIBaseComponent")
                             repay_card_phone: "",
                             repay_card_clabe: ""
                         };
-                        //this.SendRFCType > 0 && this.li_rfc.active && (1 == this.SendRFCType ? c.repay_rfc = this.rfcEditbox.string : 2 == this.SendRFCType && (c.repay_curp = this.curpEditbox.string)),
-                        // this.SendCardType > 0 && this.li_card.active && (1 == this.SendCardType ? c.repay_card_debit = this.debitEditbox.string : 2 == this.SendCardType ? c.repay_card_phone = this.phoneEditbox.string : 3 == this.SendCardType && (c.repay_card_clabe = this.clabeEditbox.string)),
                         this.SelectBankCodeData && (c.bank_code = this.SelectBankCodeData.bank_code,
                             c.bank_name = this.SelectBankCodeData.bank_name),
                             app.CashOutManager().RequstBindBankAccount(c)
@@ -545,9 +502,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     e = this.SendPrepayType;
                     var t = app.GameConfigManager().GetGameConfig().pay_userinfo_fields.prepay
                         , n = 1 == e;
-                    1 == t.city && (this.li_City.active = n),
-                        1 == t.province && (this.li_Province.active = n),
-                        1 == t.bank && (this.SelectBankName.active = n),
+                    1 == t.bank && (this.SelectBankName.active = n),
                         1 == t.account && (this.Account_Number_Node.active = n),
                         1 == t.gcash_number && (this.li_GcashNumber.active = 2 == e),
                         1 == t.beneficiary_name && (this.li_BeneficiarvName.active = 2 == e || 3 == e),
@@ -606,38 +561,35 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 "CPF" != t && "CNPJ" != t || (e = e.replace(/[&\|\\\*^%$ #@\-.]/g, ""));
                 var n = {
                     cardholder_tel: this.PhoneNumber.getComponent(cc.EditBox).string,
-                    bank_account: "",//this.AccountNumber.getComponent(cc.EditBox).string,
-                    bank_name: "",//this.BankName.getComponent(cc.EditBox).string,
-                    branch_bank: "",//this.BranchBankName.getComponent(cc.EditBox).string,
-                    ifsc_code: "",// this.IfSCCode.getComponent(cc.EditBox).string.replace(/[&\|\\\*^%$ #@\-.]/g, ""),
                     cardholder_name: "",// this.BankUserName.getComponent(cc.EditBox).string,
+                    bank_name: "",//this.BankName.getComponent(cc.EditBox).string,
+                    bank_account: "",//this.AccountNumber.getComponent(cc.EditBox).string,
+                    idType: "",
+                    idNumber: "",
+                    branch_bank: "",
+                    ifsc_code: "",
                     email: this.Email.getComponent(cc.EditBox).string,
-                    upi: "",//this.UpiNode.getComponent(cc.EditBox).string,
+                    upi: "",
                     taxid: this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).string.replace(/[&\|\\\*^%$ #@\-.]/g, ""),
-                    account_digit: "",//this.Account_digit.getChildByName("editbox").getComponent(cc.EditBox).string.replace(/[&\|\\\*^%$ #@\-.]/g, ""),
+                    account_digit: "",
                     pix_key: e,
                     account_type: this.SendAccountType,
                     pix_type: this.PixType_Node.getChildByName("editbox_pix_type").getComponent(cc.EditBox).string,
                     prepay_type: this.SendPrepayType,
-                    province: "",//this.li_Province.getChildByName("editbox").getComponent(cc.EditBox).string,
-                    city: "",//this.li_City.getChildByName("editbox").getComponent(cc.EditBox).string,
+                    province: "",
+                    city: "",
                     gcash_number: "",//this.li_GcashNumber.getChildByName("editbox").getComponent(cc.EditBox).string,
                     beneficiary_name: "",//this.li_BeneficiarvName.getChildByName("editbox").getComponent(cc.EditBox).string,
                     pay_maya_account: "",//this.li_PayMayaPhilippines.getChildByName("editbox").getComponent(cc.EditBox).string,
                     document_type: this.SendRFCType,
                     card_type: this.SendCardType,
-                    repay_rfc: this.rfcEditbox.string,
-                    repay_curp: this.curpEditbox.string,
-                    repay_card_debit: this.debitEditbox.string,
-                    repay_card_phone: this.phoneEditbox.string,
-                    repay_card_clabe: this.clabeEditbox.string
+                    repay_rfc: "",
+                    repay_curp: "",
+                    repay_card_debit: "",
+                    repay_card_phone: "",
+                    repay_card_clabe: ""
                 }
                     , o = app.UserManager().GetUserInfo;
-                //  this.li_rfc.active && (1 == this.SendRFCType ? n.repay_curp = o.repay_curp : 2 == this.SendRFCType && (n.repay_rfc = o.repay_rfc)),
-                // this.li_card.active && (1 == this.SendCardType ? (n.repay_card_phone = o.repay_card_phone,
-                //     n.repay_card_clabe = o.repay_card_clabe) : 2 == this.SendCardType ? (n.repay_card_debit = o.repay_card_debit,
-                //         n.repay_card_clabe = o.repay_card_clabe) : 3 == this.SendCardType && (n.repay_card_debit = o.repay_card_debit,
-                //             n.repay_card_phone = o.repay_card_phone));
                 var i = app.GameConfigManager().GetGameConfig().pay_userinfo_fields.prepay;
                 for (var a in n)
                     if (Object.prototype.hasOwnProperty.call(n, a)) {

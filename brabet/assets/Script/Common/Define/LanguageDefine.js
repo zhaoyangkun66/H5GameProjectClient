@@ -14,7 +14,7 @@ var o = function() {
     e.intelugu = "in-telugu",
     e.inmarathi = "in-marathi",
     e.ptpt = "pt-pt",
-    e.eses = "es-es",
+    e.eses = "es_co",
     e
 }();
 n.default = o,

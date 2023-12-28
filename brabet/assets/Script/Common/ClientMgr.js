@@ -87,9 +87,9 @@ var o = require("./Base/BaseComponent")
                 ,
                 t.prototype.OnGameConfig = function (e) {
                     // e && e.is_debug && this.InitDebug(true)
-                   if (!isgoServer) {
+                   //if (!isgoServer) {
                     //  this.InitDebug(true)
-                   }
+                   //}
                 }
                 ,
                 t.prototype.InitDebug = function (e) {

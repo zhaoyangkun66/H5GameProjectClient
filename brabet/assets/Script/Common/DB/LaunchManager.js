@@ -69,9 +69,11 @@ var o = require("../Base/Singleton")
                     }
                     e.ai_chat_robot_switch = 0
                     e.pay_channel_version = 1
-                    // e.gs_sport = "28966"
+                    // e.gs_host = "gss.brabet.com"
+                   // e.gs_host = "127.0.0.1"
+                   // e.gs_sport = ""
+                   // e.gs_port = "28966"
                 }
-
                 if (!e)
                     return app.Client.OnEvent(i.GameEventDefine.GET_GAME_CONFIG_FAILED),
                         void this.GetBackUpUrl();

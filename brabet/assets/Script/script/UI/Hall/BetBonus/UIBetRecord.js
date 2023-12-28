@@ -108,8 +108,8 @@ var o = require("../../../../Common/Base/UIBaseComponent")
                                     , s = n.children[i];
                                 s || ((s = cc.instantiate(n.children[0])).parent = n),
                                     o && (s.width = 120),
-                                    e.GetWndComponent("lbl", cc.Label, s).string = r,
-                                    s.active = true
+                                    e.GetWndComponent("lbl", cc.Label, s).string = app.i18n.t("UI.UIBetRecord" + a),//r,
+                                s.active = true
                             }
                     }),
                     n.getComponent(cc.Layout).updateLayout(),

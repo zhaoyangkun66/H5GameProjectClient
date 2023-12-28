@@ -468,24 +468,41 @@ var g = function (e, t, n, o) {
             ,
             t.prototype.connect = function (e) {
                 if (isgoServer) {
-                    return
+                    this.Log("connect: " + e),
+                        this.isConnecting || (this.Close(),
+                            this.url = e,
+                            this.needConnect = true,
+                            this.isConnecting = true,
+                            this.connectTime = Date.now(),
+                            this.connectCount++,
+                            3 == this.connectCount && (app.Client.OnEvent(a.GameEventDefine.GAME_SERVER_UNCONNECTED),
+                                this.connectCount = 0),
+                            this.socket = new WebSocket(e),
+                            //  this.socket.binaryType = "Blob",
+                            this.curr_lineID = "0.0.0.0",
+                            this.socket.onopen = this.OnOpen.bind(this),
+                            this.socket.onmessage = this.OnMessage.bind(this),
+                            this.socket.onerror = this.OnError.bind(this),
+                            this.socket.onclose = this.OnClose.bind(this))
                 }
-                this.Log("connect: " + e),
-                    this.isConnecting || (this.Close(),
-                        this.url = e,
-                        this.needConnect = true,
-                        this.isConnecting = true,
-                        this.connectTime = Date.now(),
-                        this.connectCount++,
-                        3 == this.connectCount && (app.Client.OnEvent(a.GameEventDefine.GAME_SERVER_UNCONNECTED),
-                            this.connectCount = 0),
-                        this.socket = new WebSocket(e),
-                        this.socket.binaryType = "arraybuffer",
-                        this.curr_lineID = "0.0.0.0",
-                        this.socket.onopen = this.OnOpen.bind(this),
-                        this.socket.onmessage = this.OnMessage.bind(this),
-                        this.socket.onerror = this.OnError.bind(this),
-                        this.socket.onclose = this.OnClose.bind(this))
+                else {
+                    this.Log("connect: " + e),
+                        this.isConnecting || (this.Close(),
+                            this.url = e,
+                            this.needConnect = true,
+                            this.isConnecting = true,
+                            this.connectTime = Date.now(),
+                            this.connectCount++,
+                            3 == this.connectCount && (app.Client.OnEvent(a.GameEventDefine.GAME_SERVER_UNCONNECTED),
+                                this.connectCount = 0),
+                            this.socket = new WebSocket(e),
+                            this.socket.binaryType = "arraybuffer",
+                            this.curr_lineID = "0.0.0.0",
+                            this.socket.onopen = this.OnOpen.bind(this),
+                            this.socket.onmessage = this.OnMessage.bind(this),
+                            this.socket.onerror = this.OnError.bind(this),
+                            this.socket.onclose = this.OnClose.bind(this))
+                }
             }
             ,
             t.prototype.OnOpen = function () {
@@ -500,15 +517,18 @@ var g = function (e, t, n, o) {
             }
             ,
             t.prototype.OnMessage = function (e) {
-                if (isgoServer) {
-                    return
-                }
                 this.heartBeatFlag && (this.heartBeatFlag = false,
                     this.lastReceivedTime = Date.now(),
                     this.delayMS = this.lastReceivedTime - this.lastSendTime);
-                var t, n = pako.inflate(e.data, {
-                    to: "string"
-                });
+                if (isgoServer) {
+                    var t = e.data
+                    var n = e.data
+                }
+                else {
+                    var t, n = pako.inflate(e.data, {
+                        to: "string"
+                    });
+                }
                 try {
                     var r = '"RoomAccId":';
                     t = (d = n.indexOf(r)) > -1 ? JSON.parse(JSON.stringify(p.parse(n))) : JSON.parse(n)
@@ -526,6 +546,8 @@ var g = function (e, t, n, o) {
                         return void this.ErrLog("\u89e3\u6790\u670d\u52a1\u5668\u8fd4\u56de\u6570\u636e\u9519\u8bef strBody:%s,error:%s", n, w.stack)
                     }
                 }
+
+                console.log("OnMessage", t)
                 switch (1100 != t.Head.Cmd && this.IsDevelopment() && this.NetLog("OnMessage: ", JSON.parse(JSON.stringify(n)), "b-gb1"),
                 t.Head.Cmd) {
                     case 1004:
@@ -1099,12 +1121,16 @@ var g = function (e, t, n, o) {
             ,
             t.prototype.sendPacket = function (e, t) {
                 console.log("sendPacket", e)
-                if (isgoServer) {
-                    return
-                }
+                // if (isgoServer) {
+                //     return
+                // }
                 if (null != this.socket && this.connected) {
                     var n = JSON.stringify(e)
-                        , o = pako ? pako.deflate(n, {}) : n;
+                    var o = pako ? pako.deflate(n, {}) : n;
+                    if (isgoServer) {
+                        var o = n;
+                    }
+
                     1100 != e.Head.Cmd && this.SysLog("SendMessage: ", n, "b-g"),
                         t && app.Client.OnEvent("ModalLayer", l.EventWaitType.OpenNet),
                         this.socket.send(o)

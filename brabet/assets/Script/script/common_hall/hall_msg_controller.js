@@ -287,8 +287,8 @@ var o = require("../../Common/Define/GameEventDefine")
                         this.view && this.view.preDealUpRocket(e);
                         break;
                     case i.COMMONGAME_MSG.COMMONGAME_START_GAME:
-                         this.action_pre_deal(e),
-                             this.view && this.view.playUpRocket(e);
+                        this.action_pre_deal(e),
+                            this.view && this.view.playUpRocket(e);
                         break;
                     case i.COMMONGAME_MSG.COMMONGAME_ACTION_FAIL:
                         a.RoomModeTool.isCrash(app.UserManager().UserInfo.roomMode) && 50001 == e.Body.ActionFail.ErrorCode && (e.Body.ActionFail.ErrorCode = 528e3),

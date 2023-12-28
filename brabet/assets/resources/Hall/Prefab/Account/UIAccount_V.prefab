@@ -1297,7 +1297,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 135.21,
+      "width": 199.16,
       "height": 35.28
     },
     "_anchorPoint": {
@@ -1349,8 +1349,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Unbound",
-    "_N$string": "Unbound",
+    "_string": "Sin consolidar",
+    "_N$string": "Sin consolidar",
     "_fontSize": 28,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -1609,7 +1609,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 135.21,
+      "width": 199.16,
       "height": 35.28
     },
     "_anchorPoint": {
@@ -1661,8 +1661,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Unbound",
-    "_N$string": "Unbound",
+    "_string": "Sin consolidar",
+    "_N$string": "Sin consolidar",
     "_fontSize": 28,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -2789,7 +2789,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 145.03,
+      "width": 121.34,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -2841,8 +2841,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "My Account",
-    "_N$string": "My Account",
+    "_string": "Mi cuenta",
+    "_N$string": "Mi cuenta",
     "_fontSize": 24,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -2981,7 +2981,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 145.03,
+      "width": 121.34,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -3033,8 +3033,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "My Account",
-    "_N$string": "My Account",
+    "_string": "Mi cuenta",
+    "_N$string": "Mi cuenta",
     "_fontSize": 24,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -3430,7 +3430,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 90.1,
+      "width": 183.84,
       "height": 45.36
     },
     "_anchorPoint": {
@@ -3482,8 +3482,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "My Info",
-    "_N$string": "My Info",
+    "_string": "Mi información",
+    "_N$string": "Mi información",
     "_fontSize": 24,
     "_lineHeight": 36,
     "_enableWrapText": false,
@@ -5875,7 +5875,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 235.16,
+      "width": 122.6,
       "height": 56.7
     },
     "_anchorPoint": {
@@ -5927,8 +5927,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Withdrawal",
-    "_N$string": "Withdrawal",
+    "_string": "Retiro",
+    "_N$string": "Retiro",
     "_fontSize": 40,
     "_lineHeight": 45,
     "_enableWrapText": true,
@@ -6790,7 +6790,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 280,
+      "width": 320,
       "height": 79.1
     },
     "_anchorPoint": {
@@ -6842,8 +6842,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Play to unlock more withdrawable amount",
-    "_N$string": "Play to unlock more withdrawable amount",
+    "_string": "Apuesta para desbloquear más cantidades retirables",
+    "_N$string": "Apuesta para desbloquear más cantidades retirables",
     "_fontSize": 22,
     "_lineHeight": 35,
     "_enableWrapText": true,
@@ -7037,8 +7037,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Amount to be unlocked",
-    "_N$string": "Amount to be unlocked",
+    "_string": "Cantidad a desbloquear",
+    "_N$string": "Cantidad a desbloquear",
     "_fontSize": 22,
     "_lineHeight": 35,
     "_enableWrapText": true,
@@ -8125,7 +8125,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 63.279999999999994
+      "height": 35.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -8176,8 +8176,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Withdrawable Amount",
-    "_N$string": "Withdrawable Amount",
+    "_string": "Monto Retirable",
+    "_N$string": "Monto Retirable",
     "_fontSize": 24,
     "_lineHeight": 28,
     "_enableWrapText": true,
@@ -8438,7 +8438,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 256.16,
+      "width": 112.72,
       "height": 75.6
     },
     "_anchorPoint": {
@@ -8490,8 +8490,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Transactions",
-    "_N$string": "Transactions",
+    "_string": "Actas",
+    "_N$string": "Actas",
     "_fontSize": 40,
     "_lineHeight": 60,
     "_enableWrapText": true,
@@ -8707,7 +8707,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 187.8,
+      "width": 262.49,
       "height": 30.24
     },
     "_anchorPoint": {
@@ -8759,8 +8759,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Deposit History",
-    "_N$string": "Deposit History",
+    "_string": "Historial de depósitos",
+    "_N$string": "Historial de depósitos",
     "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": false,
@@ -8902,7 +8902,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 187.8,
+      "width": 262.49,
       "height": 30.24
     },
     "_anchorPoint": {
@@ -8954,8 +8954,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Deposit History",
-    "_N$string": "Deposit History",
+    "_string": "Historial de depósitos",
+    "_N$string": "Historial de depósitos",
     "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": false,
@@ -9268,7 +9268,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 234.12,
+      "width": 222.02,
       "height": 30.24
     },
     "_anchorPoint": {
@@ -9320,8 +9320,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Withdrawal History",
-    "_N$string": "Withdrawal History",
+    "_string": "Historial de retiros",
+    "_N$string": "Historial de retiros",
     "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": false,
@@ -10641,7 +10641,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 69.18,
+      "width": 70.28,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -10693,8 +10693,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Search",
-    "_N$string": "Search",
+    "_string": "Buscar",
+    "_N$string": "Buscar",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -11238,7 +11238,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 56.49999999999999
+      "height": 81.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -11289,8 +11289,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Transaction ID",
-    "_N$string": "Transaction ID",
+    "_string": "ID de transacción",
+    "_N$string": "ID de transacción",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -11413,8 +11413,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Date",
-    "_N$string": "Date",
+    "_string": "Fecha",
+    "_N$string": "Fecha",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -11486,7 +11486,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
-      "height": 56.49999999999999
+      "height": 81.5
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -11537,8 +11537,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Deposit Amount",
-    "_N$string": "Deposit Amount",
+    "_string": "Cantidad del depósito",
+    "_N$string": "Cantidad del depósito",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -11661,8 +11661,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Bonus",
-    "_N$string": "Bonus",
+    "_string": "Bonos",
+    "_N$string": "Bonos",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -11785,8 +11785,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Status",
-    "_N$string": "Status",
+    "_string": "Estado",
+    "_N$string": "Estado",
     "_fontSize": 22,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -16287,8 +16287,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "No data",
-    "_N$string": "No data",
+    "_string": "sin datos",
+    "_N$string": "sin datos",
     "_fontSize": 23,
     "_lineHeight": 23,
     "_enableWrapText": false,
@@ -16509,7 +16509,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 120.3,
+      "width": 119.35,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -16561,8 +16561,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Load more",
-    "_N$string": "Load more",
+    "_string": "Carga más",
+    "_N$string": "Carga más",
     "_fontSize": 22,
     "_lineHeight": 40,
     "_enableWrapText": false,

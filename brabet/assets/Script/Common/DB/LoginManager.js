@@ -311,7 +311,7 @@ var h = function (e) {
                 if (isgoServer) {
                     if (!e.user_config.show_arr) {
                         e.user_config.show_arr = require("Http_login").user_config.show_arr
-                     //   e.user_config.game_arr = require("Http_login").user_config.game_arr
+                        //   e.user_config.game_arr = require("Http_login").user_config.game_arr
                     }
                     if (e.is_official_account == 1) {
                         e.is_official_account = 0
@@ -484,15 +484,29 @@ var h = function (e) {
         }
         ,
         t.prototype.getUserLoginCode = function () {
-            return app.LocalDataManager().GetConfigObject("loginCode") || {
-                code: "",
-                mark: "",
-                nation: "",
-                phone_account: "",
-                mail_account: "",
-                phone_password: "",
-                mail_password: ""
+            if (channelID == 2) {
+                return app.LocalDataManager().GetConfigObject("loginCode") || {
+                    code: "57",
+                    mark: "",
+                    nation: "Colombia",
+                    phone_account: "",
+                    mail_account: "",
+                    phone_password: "",
+                    mail_password: ""
+                }
             }
+            else {
+                return app.LocalDataManager().GetConfigObject("loginCode") || {
+                    code: "55",
+                    mark: "",
+                    nation: "Brazil",
+                    phone_account: "",
+                    mail_account: "",
+                    phone_password: "",
+                    mail_password: ""
+                }
+            }
+
         }
         ,
         t.prototype.RequestOnlineNum = function () {

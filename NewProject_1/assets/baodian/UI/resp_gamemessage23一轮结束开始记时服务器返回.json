@@ -1,0 +1,16 @@
+{
+    "Head": {
+        "Cmd": 23,
+        "Uin": 280000
+    },
+    "Body": {
+        "ChangeBanker": {
+            "NewBankerID": 280000,
+            "Seat": 0,
+            "Compete": 0,
+            "BankerGold": 0,
+            "BetLeftSecond": 9
+        }
+    },
+    "event_type": "resp_game_message"
+}

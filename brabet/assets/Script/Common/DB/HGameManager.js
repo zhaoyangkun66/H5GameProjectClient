@@ -91,6 +91,9 @@ var o = require("../Base/Singleton")
             }
             ,
             t.prototype.onRoomBetGoldConfigs = function (e) {
+                if (isgoServer) {
+                    e = require("Http_roomBetGoldConfigs")
+                }
                 this.RoomBetGoldConfigs = e,
                     app.Client.OnEvent(i.GameEventDefine.ROOM_BET_GOLD_CONFIGS)
             }

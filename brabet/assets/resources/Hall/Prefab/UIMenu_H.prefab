@@ -835,8 +835,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "VIP BONUS",
-    "_N$string": "VIP BONUS",
+    "_string": "BONO VIP",
+    "_N$string": "BONO VIP",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1372,8 +1372,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "REFER\nEARN",
-    "_N$string": "REFER\nEARN",
+    "_string": "REFERIR\nGANAR",
+    "_N$string": "REFERIR\nGANAR",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1909,8 +1909,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Betting Bonus",
-    "_N$string": "Betting Bonus",
+    "_string": "bono de apuesta",
+    "_N$string": "bono de apuesta",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -2520,7 +2520,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 213.77,
+      "width": 241.2,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -2572,8 +2572,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Promotions",
-    "_N$string": "Promotions",
+    "_string": "Promociones",
+    "_N$string": "Promociones",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -3981,8 +3981,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "All promotions",
-    "_N$string": "All promotions",
+    "_string": "Todas las promociones",
+    "_N$string": "Todas las promociones",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -5790,8 +5790,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Official channel",
-    "_N$string": "Official channel",
+    "_string": "Canal oficial",
+    "_N$string": "Canal oficial",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -6308,8 +6308,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Group of activities",
-    "_N$string": "Group of activities",
+    "_string": "grupo de actividades",
+    "_N$string": "grupo de actividades",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -6779,7 +6779,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 320.54,
+      "width": 400,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -6831,8 +6831,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Scan code to download",
-    "_N$string": "Scan code to download",
+    "_string": "Escanea el código para descargar",
+    "_N$string": "Escanea el código para descargar",
     "_fontSize": 27,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -6847,7 +6847,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
-    "_N$overflow": 0,
+    "_N$overflow": 2,
     "_N$cacheMode": 0,
     "_id": ""
   },
@@ -7086,7 +7086,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 240.21,
+      "width": 371.57,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -7138,8 +7138,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Download for App",
-    "_N$string": "Download for App",
+    "_string": "Descargar para la aplicación",
+    "_N$string": "Descargar para la aplicación",
     "_fontSize": 26,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -7324,7 +7324,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 275.4,
+      "width": 280,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -7376,8 +7376,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "APP Download",
-    "_N$string": "APP Download",
+    "_string": "Descargar en el móvil",
+    "_N$string": "Descargar en el móvil",
     "_fontSize": 36,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -7392,7 +7392,7 @@
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
-    "_N$overflow": 0,
+    "_N$overflow": 2,
     "_N$cacheMode": 0,
     "_id": ""
   },
@@ -8690,7 +8690,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "toggle_zh_HK",
+    "_name": "toggle_Spanish",
     "_objFlags": 0,
     "_parent": {
       "__id__": 207

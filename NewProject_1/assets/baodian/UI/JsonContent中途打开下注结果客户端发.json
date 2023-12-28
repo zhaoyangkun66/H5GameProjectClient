@@ -1,0 +1,15 @@
+{
+    "Head": {
+        "version": 2,
+        "Cmd": 1071,
+        "Uin": 159093636,
+        "Headlen": 12,
+        "Bodylen": 0
+    },
+    "Body": {
+        "GameJsonPkg": {
+            "RoomID": 280000,
+            "JsonContent": "{\"Head\":{\"Cmd\":36,\"Uin\":159093636},\"Body\":{\"DummyPlay\":{\"PlayerID\":159093636,\"PatternID\":1,\"CardCount\":0,\"Cards\":0}}}"
+        }
+    }
+}

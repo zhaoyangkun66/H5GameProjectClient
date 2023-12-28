@@ -50,7 +50,13 @@ var o = require("../../../Common/Base/UIBaseComponent")
             ,
             t.prototype.OnClick = function (e, t, n) {
                 this.Log(e),
-                    "btn_service" != e ? "toggle1" != e && "toggle2" != e ? "button_withdraw" != e && "btn_Withdraw" != e ? "btn_help" != e || app.FormManager().ShowForm(c.UINameDefine.UIWithdrawDesc) : this.txRequest() : this.toggleSwitchCallBack(t, n) : cc.systemEvent.emit("open_help_panel")
+                    "btn_service" != e
+                        ? "toggle1" != e && "toggle2" != e
+                            ? "button_withdraw" != e && "btn_Withdraw" != e
+                                ? "btn_help" != e || app.FormManager().ShowForm(c.UINameDefine.UIWithdrawDesc)
+                                : this.txRequest()
+                            : this.toggleSwitchCallBack(t, n)
+                        : cc.systemEvent.emit("open_help_panel")
             }
             ,
             t.prototype.initLayer = function () {

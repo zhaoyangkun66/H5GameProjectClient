@@ -33,6 +33,7 @@ var o = require("../../Common/Base/UIBaseComponent")
         this.RegEvent(r.GameEventDefine.STOP_LOGIN_ANIM, this.OnStopLoginAnim),
         this.RegEvent(r.GameEventDefine.GOOGLRECAPTCHAFINISH, this.GoogleRecaptChaFinsh),
         this.account = this.GetWndNode("account")
+        this.codeLabel.string = "+" + app.LoginManager().getUserLoginCode().code
     }
     ,
     t.prototype.OnEnable = function() {

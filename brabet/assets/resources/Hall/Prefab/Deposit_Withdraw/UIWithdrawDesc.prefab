@@ -382,7 +382,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 365.94,
+      "width": 341.88,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -434,8 +434,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Withdrawal instructions",
-    "_N$string": "Withdrawal instructions",
+    "_string": "Instrucciones de retiro",
+    "_N$string": "Instrucciones de retiro",
     "_fontSize": 30,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -788,7 +788,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 235.16,
+      "width": 122.6,
       "height": 56.7
     },
     "_anchorPoint": {
@@ -840,8 +840,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Withdrawal",
-    "_N$string": "Withdrawal",
+    "_string": "Retiro",
+    "_N$string": "Retiro",
     "_fontSize": 40,
     "_lineHeight": 45,
     "_enableWrapText": true,
@@ -1707,7 +1707,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 280,
+      "width": 320,
       "height": 79.1
     },
     "_anchorPoint": {
@@ -1759,8 +1759,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Play to unlock more withdrawable amount",
-    "_N$string": "Play to unlock more withdrawable amount",
+    "_string": "Apuesta para desbloquear más cantidades retirables",
+    "_N$string": "Apuesta para desbloquear más cantidades retirables",
     "_fontSize": 22,
     "_lineHeight": 35,
     "_enableWrapText": true,
@@ -1954,8 +1954,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Amount to be unlocked",
-    "_N$string": "Amount to be unlocked",
+    "_string": "Cantidad a desbloquear",
+    "_N$string": "Cantidad a desbloquear",
     "_fontSize": 22,
     "_lineHeight": 35,
     "_enableWrapText": true,
@@ -3054,7 +3054,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 200,
-      "height": 63.279999999999994
+      "height": 35.28
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -3105,8 +3105,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Withdrawable Amount",
-    "_N$string": "Withdrawable Amount",
+    "_string": "Monto Retirable",
+    "_N$string": "Monto Retirable",
     "_fontSize": 24,
     "_lineHeight": 28,
     "_enableWrapText": true,
