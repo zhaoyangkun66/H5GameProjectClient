@@ -5,7 +5,6 @@ Object.defineProperty(n, "__esModule", {
 var o = require("../../../Common/Base/BaseForm")
     , i = require("../../../Common/Define/GameEventDefine")
     , a = require("../../../Common/Define/ShareDefine")
-    , UINameDefine = require("../../../Common/Define/UINameDefine")
     , UICashWheelWithdrawRecord = require("./Item/UICashWheelWithdrawRecord")
     , HttpServerDefine = require("../../../../Common/Define/HttpServerDefine")
     , r = cc._decorator
@@ -35,14 +34,7 @@ var o = require("../../../Common/Base/BaseForm")
             ,
             t.prototype.OnShow = function (e) {
 
-                this.UICashWheelWithdrawRecord.getComponent(UICashWheelWithdrawRecord.default).setOldRoundsData()
-                this.UICashWheelWithdrawRecord.getComponent(UICashWheelWithdrawRecord.default).setIsRequest(false)
-                this.UICashWheelWithdrawRecord.getComponent(UICashWheelWithdrawRecord.default).GetInitRequest()
-                //  this.node.active = false
-                app.ActivityManager().RequestCashWheel()
-                // app.HttpServerManager().SendHttpPack(HttpServerDefine.HttpAPI.GET_cashWheel, {
-                //     token: app.UserManager().GetUserInfo.token
-                // })
+              
 
             }
             ,
@@ -121,40 +113,11 @@ var o = require("../../../Common/Base/BaseForm")
             ,
             t.prototype.OnClick = function (e) {
 
-                if ("buttonShare" == e) {
+                if ("btn_Withdraw" == e) {
                     app.NativeMgr().copyToClipBoard(window.location.origin + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid)
                 }
-                else if ("btTurn" == e) {
-                    // app.ActivityManager().RequestOpenCashWheel()
-                    let data =
-                    {
-                        "lastwheel": 0,                             //剩余几次转盘的机会
-                        "receivedGold": 47923,                      //已经累计获得了多少转盘奖励
-                        "totalGold": 50000,                         //一共需要获得多少奖励才算完成任务（结合receivedGold组成奖励完成进度）
-                        "resultid": 5,                              //转盘奖励索引(1~5)(只有在opencashWheel消息中会返回值)
-                        "resultgold": 232,                            //本次旋转获得多少奖励(只有在opencashWheel消息中会返回值)
-                        "lasttime": 121765                          //活动结束剩余时间(剩余多少秒)
-                    }
-                    this.onGetCashWheel(data)
-
-
-
-                    // if (this.data.canReceive == 0) {
-                    //     app.SysNotifyManager().ShowToast("UI.UIStoreAndCashCompletethe")
-                    // }
-                    // else {
-
-                    // }
-                    // if (this.data) {
-                    //     if (this.data.lLastNorSignNum == 0) {
-                    //         UIManager.openTipEffect("今日免费次数已用完，请明日再来！")
-                    //         return;
-                    //     }
-                    // }
-                    // appFacade.retrieveProxy('GameToolProxy').RequestSingUpState(1)
-                }
-                else if ("btn_Receive" == e) {
-                    app.FormManager().ShowForm(UINameDefine.UINameDefine.UICashWheelWithdraw);
+                else if ("btn_copy" == e) {
+                    app.NativeMgr().copyToClipBoard(window.location.origin + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid)
                 }
 
             }

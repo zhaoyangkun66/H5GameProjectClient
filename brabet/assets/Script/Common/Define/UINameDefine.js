@@ -65,6 +65,7 @@ var o = function() {
     e.UIActivity = "UIActivity",
     e.UIActivityDailyRegistrations = "UIActivityDailyRegistrations",
     e.UICashWheel = "UICashWheel",
+    e.UICashWheelWithdraw = "UICashWheelWithdraw",
     e.UIAccount = "UIAccount",
     e.UIAccountPop = "UIAccountPop",
     e.UIAccountSetting = "UIAccountSetting",
