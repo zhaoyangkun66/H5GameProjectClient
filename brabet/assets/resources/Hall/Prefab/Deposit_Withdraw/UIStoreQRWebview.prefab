@@ -597,7 +597,7 @@
       "__id__": 2
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 16
@@ -903,7 +903,10 @@
     "OpenClip": null,
     "CloseClip": null,
     "webview": {
-      "__id__": 16
+      "__uuid__": "573d9ca8-ffd2-4ae8-8a1f-c5d571762ca8"
+    },
+    "bg": {
+      "__id__": 2
     },
     "_id": ""
   },

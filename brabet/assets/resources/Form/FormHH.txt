@@ -46,6 +46,8 @@ UIText	Hall/Prefab/Faq/UIText_H	0	false	1	1
 UIFAQ	Hall/Prefab/Faq/UIFAQ	0	false	1	1
 UIHallNotice	Hall/Prefab/UIHallNotice_H	0	false	0	1
 UIActivity	Hall/Prefab/Activity/UIActivity_H	0	false	1	1
+UIActivityDailyRegistrations	Hall/Prefab/Activity/UIActivityDailyRegistrations_V	0	false	1	1
+UICashWheel	Hall/Prefab/Activity/UICashWheel	0	false	0	1
 UIAccount	Hall/Prefab/Account/UIAccount_H	0	false	1	0
 UIAccountPop	Hall/Prefab/Account/UIAccountPop_H	0	false	0	0
 UIAccountSetting	Hall/Prefab/Account/UIAccountSetting_H	0	false	0	0
@@ -61,6 +63,7 @@ UIWheel	Hall/Prefab/Wheel/UIWheel_H	0	false	1	1
 UIWheelHelp	Hall/Prefab/Wheel/UIWheelHelp	0	false	0	1
 UIBankName	Hall/Prefab/Deposit_Withdraw/UIBankName_H	0	false	0	1
 UILimit	Launch/Prefab/UILimit	0	false	0	1
+UISelectRegion	Launch/Prefab/UISelectRegion	0	false	0	1
 UIRedeemCode	Hall/Prefab/UIRedeemCode	0	false	0	1
 UIFail	Launch/Prefab/UIFail	0	false	0	1
 UIAutoSetting	common/prefab/UIAutoSetting_H	0	false	0	1

@@ -1,17 +1,18 @@
 
 var n = {
-    hosts: ["api.bbh5sdffi01.com"],
+    hosts: [""],
     scheme: "https"
 };
-if (isgoServer) {
+if (!isgoServer) {
     n = {
-        hosts: [goServer_hosts],
-        scheme: goServer_scheme
+        hosts: ["api.bbh5sdffi01.com"],
+        scheme: "https"
     };
+    //  n = {
+    //      hosts: [goServer_hosts],
+    //      scheme: goServer_scheme
+    //  };
 }
-
-
-n.webapi_url = n.scheme + "://" + n.hosts[0],
     n.mainVer = 1,
     n.subVer = 1,
     n.buildVer = "0712-219",

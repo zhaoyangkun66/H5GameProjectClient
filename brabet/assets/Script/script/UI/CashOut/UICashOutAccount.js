@@ -15,30 +15,28 @@ var o = require("../../../Common/Base/UIBaseComponent")
     , u = function (e) {
         function t() {
             var t = null !== e && e.apply(this, arguments) || this;
-            return t.AccountNumber = null,
-                t.IfSCCode = null,
+            return t.BankAccountNumber = null,
                 t.BankName = null,
-                t.BranchBankName = null,
+                t.ColombiaIdNumber = null,
                 t.Email = null,
                 t.PhoneNumber = null,
                 t.BankUserName = null,
-                t.UpiNode = null,
-                t.Account_Number_Node = null,
-                t.Bank_name_Node = null,
-                t.IFCS_Code_Node = null,
+                t.BankAccountNumber_Node = null,
+                t.BankName_Node = null,
                 t.Phone_Number_Node = null,
                 t.Email_Address_Node = null,
-                t.User_Name_Node = null,
+                t.BankUserName_Node = null,
                 t.Texid_Node = null,
                 t.lblCpfNode = null,
                 t.ZipCode_Node = null,
                 t.Account_Type = null,
                 t.Account_digit = null,
                 t.SelectBankName = null,
-                t.UpiAllNode = null,
+                t.ColombiaIdType_Node = null,
+                t.BankAccountType_Node = null,
                 t.Pixkey_Node = null,
                 t.PixType_Node = null,
-                t.BranchBankName_Node = null,
+                t.ColombiaIdNumber_Node = null,
                 t.li_Encrypted_Node = null,
                 t.li_Encrypted_NodeEdit = null,
                 t.scrollview_PixType = null,
@@ -102,7 +100,14 @@ var o = require("../../../Common/Base/UIBaseComponent")
             }
             ,
             t.prototype.OnClick = function (e, t, n) {
-                this.Log(e),
+                this.Log(e)
+                if ("CC" == e || "TI" == e || "CE" == e || "NIT" == e) {
+                    this.Colombia_idTypeCallBack(e)
+                }
+                else if ("CHECKING" == e || "SAVINGS" == e) {
+                    this.BankAccountTypeallBack(e)
+                }
+                else {
                     "button_bind" != e
                         ? "editbox_bank_name" != e
                             ? "editbox_pix_type" != e
@@ -120,6 +125,7 @@ var o = require("../../../Common/Base/UIBaseComponent")
                                 : this.openPixTypeList()
                             : this.OpenBankCode()
                         : this.SendBindBankNumBtnCallBack()
+                }
             }
             ,
             t.prototype.onBindUserWallet = function (e) {
@@ -127,35 +133,68 @@ var o = require("../../../Common/Base/UIBaseComponent")
             }
             ,
             t.prototype.onBindBankAccount = function (e) {
-                // e ||
-                this.setBindBankUserData()
+                e || this.setBindBankUserData()
             }
             ,
             t.prototype.setBindBankUserData = function () {
                 var e = app.UserManager().GetUserInfo;
                 if (e) {
-                    if (//this.AccountNumber.getComponent(cc.EditBox).string = "",
-                        // this.BankUserName.getComponent(cc.EditBox).string = "",
-                        // this.BankName.getComponent(cc.EditBox).string = "",
-                        this.PhoneNumber.getComponent(cc.EditBox).string = "",
-                        this.Email.getComponent(cc.EditBox).string = "",
-                        this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).string = "",
 
-                        // this.SelectBankName.getChildByName("editbox_bank_name").getComponent(cc.EditBox).string = "",
-                        this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).string = "",
-                        this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).enabled = true,
-                        this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).enabled = true,
 
-                        this.PixType_Node.getChildByName("editbox_pix_type").getComponent(cc.EditBox).string = "",
+                    // e.cardholder_name = 123456
+                    // e.bank_name = 123456
+                    // e.bank_code = 123456
+                    // e.bank_account = 123456
+                    //  e.colombia_idType = "CE"
+                    //  e.bankAccountType = "SAVINGS"
+                    // e.colombia_idNumber = 123456
+                    //  e.withdrawType: channelID, //1巴西2哥伦比亚
 
-                        // this.li_Encrypted_NodeEdit.getComponent(cc.EditBox).string = "",
-                        //   this.li_GcashNumber.getChildByName("editbox").getComponent(cc.EditBox).string = "",
-                        //  this.li_BeneficiarvName.getChildByName("editbox").getComponent(cc.EditBox).string = "",
-                        //  this.li_PayMayaPhilippines.getChildByName("editbox").getComponent(cc.EditBox).string = "",
-                        // e.bank_account && "" !== e.bank_account && (this.AccountNumber.getComponent(cc.EditBox).string = e.bank_account,
-                        //     this.AccountNumber.getComponent(cc.EditBox).placeholder = ""),
-                        // e.cardholder_name && "" !== e.cardholder_name && (this.BankUserName.getComponent(cc.EditBox).string = e.cardholder_name,
-                        //     this.BankUserName.getComponent(cc.EditBox).placeholder = ""),
+                    this.BankAccountNumber.getComponent(cc.EditBox).string = ""
+                    this.BankUserName.getComponent(cc.EditBox).string = ""
+                    this.BankName.getComponent(cc.EditBox).string = ""
+                    this.PhoneNumber.getComponent(cc.EditBox).string = ""
+                    this.Email.getComponent(cc.EditBox).string = ""
+                    this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).string = ""
+
+                    this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).string = ""
+                    this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).enabled = true
+                    this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).enabled = true
+                    this.PixType_Node.getChildByName("editbox_pix_type").getComponent(cc.EditBox).string = ""
+
+                    e.cardholder_name && "" !== e.cardholder_name && (this.BankUserName.getComponent(cc.EditBox).string = e.cardholder_name,
+                        this.BankUserName.getComponent(cc.EditBox).placeholder = "")
+                    e.bank_name && "" !== e.bank_name ? (this.SelectBankCodeData = {
+                        bank_code: e.bank_code,
+                        bank_name: e.bank_name
+                    },
+                        this.BankName.getComponent(cc.EditBox).string = e.bank_name,
+                        this.BankName.getComponent(cc.EditBox).placeholder = "") : this.SelectBankCodeData = null
+                    e.bank_account && "" !== e.bank_account && (this.BankAccountNumber.getComponent(cc.EditBox).string = e.bank_account,
+                        this.BankAccountNumber.getComponent(cc.EditBox).placeholder = "")
+
+                    this.ColombiaIdType_Node.getChildByName("editbox").getComponent(cc.EditBox).string = "CC"
+                    if (e.colombia_idType && "" !== e.colombia_idType) {
+                        this.ColombiaIdType_Node.getChildByName("editbox").getComponent(cc.EditBox).string = e.colombia_idType
+                        for (var n = cc.find("toggleContainer", this.ColombiaIdType_Node).children, o = 0; o < n.length; o++) {
+                            var i = n[o];
+                            i.name == e.colombia_idType ? i.getComponent(cc.Toggle).check() : i.getComponent(cc.Toggle).isChecked = false
+                        }
+                        // app.CashOutManager().SetSendPixType(e.pix_type)
+                    }
+                    this.BankAccountType_Node.getChildByName("editbox").getComponent(cc.EditBox).string = "CHECKING"
+                    if (e.bankAccountType && "" !== e.bankAccountType) {
+                        this.BankAccountType_Node.getChildByName("editbox").getComponent(cc.EditBox).string = e.bankAccountType
+                        for (var n = cc.find("toggleContainer", this.BankAccountType_Node).children, o = 0; o < n.length; o++) {
+                            var i = n[o];
+                            i.name == e.bankAccountType ? i.getComponent(cc.Toggle).check() : i.getComponent(cc.Toggle).isChecked = false
+                        }
+                    }
+                    e.colombia_idNumber && "" !== e.colombia_idNumber && (this.ColombiaIdNumber.getComponent(cc.EditBox).string = e.colombia_idNumber,
+                        this.ColombiaIdNumber.getComponent(cc.EditBox).placeholder = "")
+
+                    if (
+
                         e.cardholder_tel && "" !== e.cardholder_tel && (this.PhoneNumber.getComponent(cc.EditBox).string = e.cardholder_tel,
                             this.PhoneNumber.getComponent(cc.EditBox).placeholder = ""),
                         e.email && "" !== e.email && (this.Email.getComponent(cc.EditBox).string = e.email,
@@ -174,14 +213,6 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         // cc.find("toggleContainer/toggle2", this.Account_Type).getComponent(cc.Toggle).isChecked = false) : (this.SendAccountType = 2,
                         // cc.find("toggleContainer/toggle2", this.Account_Type).getComponent(cc.Toggle).check(),
                         // cc.find("toggleContainer/toggle1", this.Account_Type).getComponent(cc.Toggle).isChecked = false)),
-                        // e.bank_name && "" !== e.bank_name ? (this.SelectBankCodeData = {
-                        //     bank_code: e.bank_code,
-                        //     bank_name: e.bank_name
-                        // },
-                        //     this.SelectBankName.getChildByName("editbox_bank_name").getComponent(cc.EditBox).string = e.bank_name,
-                        //     this.SelectBankName.getChildByName("editbox_bank_name").getComponent(cc.EditBox).placeholder = "",
-                        //     this.BankName.getComponent(cc.EditBox).string = e.bank_name,
-                        //     this.BankName.getComponent(cc.EditBox).placeholder = "") : this.SelectBankCodeData = null,
                         e.pix_key && "" !== e.pix_key) {
                         var t = e.pix_key;
                         "CPF" != e.pix_type && "CNPJ" != e.pix_type || (t = (e.pix_key + "")),
@@ -321,52 +352,55 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     , t = app.GameConfigManager().GetGameConfig().pay_userinfo_fields.weight
                     , n = app.GameConfigManager().GetGameConfig().pay_userinfo_fields.cpf_tips;
                 if (e && t) {
-                    if (//this.Account_Number_Node.active = 1 == e.account,
-                        // this.Account_Number_Node.zIndex = -1 * Number(t.account),
-                        //this.IFCS_Code_Node.active = 1 == e.ifsc_code,
-                        //this.IFCS_Code_Node.zIndex = -1 * Number(t.ifsc_code),
-                        this.Phone_Number_Node.active = "1" == e.tel,
-                        // this.Phone_Number_Node.zIndex = -1 * Number(t.tel),
-                        this.Email_Address_Node.active = "1" == e.email,
-                        //   this.Email_Address_Node.zIndex = -1 * Number(t.email),
-                        // this.User_Name_Node.active = 1 == e.name,
-                        // this.User_Name_Node.zIndex = -1 * Number(t.name),
-                        this.Texid_Node.active = "1" == e.taxid,
-                        // this.Texid_Node.zIndex = -1 * Number(t.taxid),
-                        //   this.lblCpfNode.active = "" != n,
-                        //   this.lblCpfNode.getComponent(cc.Label).string = n,
-                        // this.Account_Type.active = 1 == e.account_type,
-                        //  this.Account_Type.zIndex = -1 * Number(t.account_type),
-                        // this.ZipCode_Node.active = 1 == e.zipcode,
-                        //  this.ZipCode_Node.zIndex = -1 * Number(t.zipcode),
-                        //this.UpiAllNode.active = 1 == e.upi,
-                        // this.UpiAllNode.zIndex = -1 * Number(t.upi),
-                        this.Pixkey_Node.active = "1" == e.pix_key,
-                        // this.Pixkey_Node.zIndex = -1 * Number(t.pix_key),
-                        this.PixType_Node.active = "1" == e.pix_type,
-                        // this.PixType_Node.zIndex = -1 * Number(t.pix_type),
-                        //  this.BranchBankName_Node.active = 1 == e.branch_bank,
-                        // this.BranchBankName_Node.zIndex = -1 * Number(t.branch_bank),
-                        //  this.li_Bank_Gcash.active = 1 == e.prepay_type,
-                        // this.li_Bank_Gcash.zIndex = -1 * Number(t.prepay_type),
-                        1 == e.prepay_type) {
-                        var o = this.GetWndNode("toggleContainer/toggle1_Gcash", this.li_Bank_Gcash)
-                            , i = this.GetWndNode("toggleContainer/toggle2_Gcash", this.li_Bank_Gcash)
-                            , a = this.GetWndNode("toggleContainer/toggle3_Gcash", this.li_Bank_Gcash);
-                        o.active = 1 == e.bank_card_type,
-                            o.zIndex = -1 * Number(t.bank_card_type),
-                            i.active = 1 == e.gcash_type,
-                            i.zIndex = -1 * Number(t.gcash_type),
-                            a.active = 1 == e.pay_maya_type,
-                            a.zIndex = -1 * Number(t.pay_maya_type);
-                        var r = 0 == e.bank_card_type && 0 == e.gcash_type && 0 == e.pay_maya_type;
-                        this.li_Bank_Gcash.active = !r;
-                        var s = [];
-                        1 == e.bank_card_type && s.push(app.i18n.t("UI_Cash_TitleBankcard")),
-                            1 == e.gcash_type && s.push(app.i18n.t("UI_Cash_TitleGcash")),
-                            1 == e.pay_maya_type && s.push(app.i18n.t("UI_Cash_TitlePayMaya")),
-                            this.GetWndComponent("view/content/layout_con/li_Bank_Gcash/label", cc.Label).string = s.join("/")
+                    if (channelID == 2) {
+                        this.Phone_Number_Node.active = true
+                        this.Email_Address_Node.active = true
+
+                        this.BankUserName_Node.active = true
+                        this.BankName_Node.active = true
+                        this.BankAccountNumber_Node.active = true
+                        this.ColombiaIdType_Node.active = true
+                        this.BankAccountType_Node.active = true
+                        this.ColombiaIdNumber_Node.active = true
+
+                        this.Texid_Node.active = false
+                        this.Pixkey_Node.active = false
+                        this.PixType_Node.active = false
+                    } else {
+                        this.Phone_Number_Node.active = true
+                        this.Email_Address_Node.active = true
+
+                        this.BankUserName_Node.active = false
+                        this.BankName_Node.active = false
+                        this.BankAccountNumber_Node.active = false
+                        this.ColombiaIdType_Node.active = false
+                        this.BankAccountType_Node.active = false
+                        this.ColombiaIdNumber_Node.active = false
+
+                        this.Texid_Node.active = true
+                        this.Pixkey_Node.active = true
+                        this.PixType_Node.active = true
                     }
+
+
+                    // if (1 == e.prepay_type) {
+                    //     var o = this.GetWndNode("toggleContainer/toggle1_Gcash", this.li_Bank_Gcash)
+                    //         , i = this.GetWndNode("toggleContainer/toggle2_Gcash", this.li_Bank_Gcash)
+                    //         , a = this.GetWndNode("toggleContainer/toggle3_Gcash", this.li_Bank_Gcash);
+                    //     o.active = 1 == e.bank_card_type,
+                    //         o.zIndex = -1 * Number(t.bank_card_type),
+                    //         i.active = 1 == e.gcash_type,
+                    //         i.zIndex = -1 * Number(t.gcash_type),
+                    //         a.active = 1 == e.pay_maya_type,
+                    //         a.zIndex = -1 * Number(t.pay_maya_type);
+                    //     var r = 0 == e.bank_card_type && 0 == e.gcash_type && 0 == e.pay_maya_type;
+                    //     this.li_Bank_Gcash.active = !r;
+                    //     var s = [];
+                    //     1 == e.bank_card_type && s.push(app.i18n.t("UI_Cash_TitleBankcard")),
+                    //         1 == e.gcash_type && s.push(app.i18n.t("UI_Cash_TitleGcash")),
+                    //         1 == e.pay_maya_type && s.push(app.i18n.t("UI_Cash_TitlePayMaya")),
+                    //         this.GetWndComponent("view/content/layout_con/li_Bank_Gcash/label", cc.Label).string = s.join("/")
+                    // }
                     // if (this.li_GcashNumber.active = 1 == e.gcash_number,
                     //   this.li_GcashNumber.zIndex = -1 * Number(t.gcash_number),
                     //   this.li_PayMayaPhilippines.active = 1 == e.pay_maya_account,
@@ -392,12 +426,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     // this.li_BeneficiarvName.active = 1 == e.beneficiary_name,
                     // this.li_BeneficiarvName.zIndex = -1 * Number(t.beneficiary_name),
                     //  this.SelectBankName.active = false,
-                    //     this.Bank_name_Node.active = false;
                     var d = app.UserManager().GetUserWallet();
-                    if (//d && "1" == d.v_position ? (this.Bank_name_Node.active = 1 == e.bank,
-                        // this.Bank_name_Node.zIndex = -1 * Number(t.bank)) : (this.SelectBankName.active = 1 == e.bank,
-                        // this.SelectBankName.zIndex = -1 * Number(t.bank)),
-                        d)
+                    if (d)
                         for (var h = cc.find("/view/content/layout_con/li_pix_type/toggleContainer", this.node), u = 0; u < d.pix_type_list.length; u++) {
                             var _ = d.pix_type_list[u];
                             h.getChildByName(_).active = true
@@ -414,6 +444,31 @@ var o = require("../../../Common/Base/UIBaseComponent")
                         if (14 !== t.length && 11 !== t.length)
                             return void app.SysNotifyManager().ShowToast("UI.Shop_CPF_LengthHint")
                     }
+                    if (this.BankUserName_Node.active) {
+                        var t = this.BankUserName_Node.getChildByName("editbox").getComponent(cc.EditBox).string
+                        if (t == "") {
+                            return void app.SysNotifyManager().ShowToast("UI.UIStoreAndCashInputCardholderName")
+                        }
+                    }
+                    if (this.BankName_Node.active) {
+                        var t = this.BankName_Node.getChildByName("editbox").getComponent(cc.EditBox).string
+                        if (t == "") {
+                            return void app.SysNotifyManager().ShowToast("UI.UIStoreAndCashSelectBank")
+                        }
+                    }
+                    if (this.BankAccountNumber_Node.active) {
+                        var t = this.BankAccountNumber_Node.getChildByName("editbox").getComponent(cc.EditBox).string
+                        if (t == "") {
+                            return void app.SysNotifyManager().ShowToast("UI.UIStoreAndCashInputInBankAccount")
+                        }
+                    }
+                    if (this.ColombiaIdNumber_Node.active) {
+                        var t = this.ColombiaIdNumber_Node.getChildByName("editbox").getComponent(cc.EditBox).string
+                        if (t == "") {
+                            return void app.SysNotifyManager().ShowToast("UI.UIStoreAndCashCompletethe")
+                        }
+                    }
+
                     {
                         var o = app.UserManager().GetUserWallet()
                             , i = o ? o.v_position : 1
@@ -425,11 +480,16 @@ var o = require("../../../Common/Base/UIBaseComponent")
                             type: i,
                             tel: this.PhoneNumber.getComponent(cc.EditBox).string,
                             token: app.UserManager().GetUserInfo.token,
-                            bank_account: "",//this.AccountNumber.getComponent(cc.EditBox).string,
-                            bank_name: "",//this.BankName.getComponent(cc.EditBox).string,
+                            bankAccountType: this.BankAccountType_Node.getChildByName("editbox").getComponent(cc.EditBox).string,
+                            bank_account: this.BankAccountNumber.getComponent(cc.EditBox).string,
+                            bank_name: this.BankName.getComponent(cc.EditBox).string,
                             branch_bank: "",
                             ifsc_code: "",
-                            cardholder_name: "",// this.BankUserName.getComponent(cc.EditBox).string,
+                            cardholder_name: this.BankUserName.getComponent(cc.EditBox).string,
+                            colombia_idType: this.ColombiaIdType_Node.getChildByName("editbox").getComponent(cc.EditBox).string,
+                            colombia_idNumber: this.ColombiaIdNumber_Node.getChildByName("editbox").getComponent(cc.EditBox).string,
+                            withdrawType: channelID, //1巴西2哥伦比亚
+
                             email: this.Email.getComponent(cc.EditBox).string,
                             upi: "",
                             account_type: this.SendAccountType,
@@ -503,7 +563,6 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     var t = app.GameConfigManager().GetGameConfig().pay_userinfo_fields.prepay
                         , n = 1 == e;
                     1 == t.bank && (this.SelectBankName.active = n),
-                        1 == t.account && (this.Account_Number_Node.active = n),
                         1 == t.gcash_number && (this.li_GcashNumber.active = 2 == e),
                         1 == t.beneficiary_name && (this.li_BeneficiarvName.active = 2 == e || 3 == e),
                         1 == t.pay_maya_account && (this.li_PayMayaPhilippines.active = 3 == e)
@@ -533,7 +592,6 @@ var o = require("../../../Common/Base/UIBaseComponent")
             ,
             t.prototype.onSetBankCode = function (e) {
                 this.SelectBankCodeData = e,
-                    this.SelectBankName.getChildByName("editbox_bank_name").getComponent(cc.EditBox).string = e.bank_name,
                     this.BankName.getComponent(cc.EditBox).string = e.bank_name
             }
             ,
@@ -541,6 +599,15 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 this.PixType_Node.getChildByName("editbox_pix_type").getComponent(cc.EditBox).string = e,
                     app.CashOutManager().SetSendPixType(e),
                     this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).string = ""
+            }
+            ,
+            t.prototype.Colombia_idTypeCallBack = function (e) {
+                this.ColombiaIdType_Node.getChildByName("editbox").getComponent(cc.EditBox).string = e
+                this.ColombiaIdNumber_Node.getChildByName("editbox").getComponent(cc.EditBox).string = ""
+            },
+            t.prototype.BankAccountTypeallBack = function (e) {
+                this.BankAccountType_Node.getChildByName("editbox").getComponent(cc.EditBox).string = e
+                this.BankAccountNumber.getComponent(cc.EditBox).string = ""
             }
             ,
             t.prototype.OpenBankCode = function () {
@@ -561,33 +628,35 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 "CPF" != t && "CNPJ" != t || (e = e.replace(/[&\|\\\*^%$ #@\-.]/g, ""));
                 var n = {
                     cardholder_tel: this.PhoneNumber.getComponent(cc.EditBox).string,
-                    cardholder_name: "",// this.BankUserName.getComponent(cc.EditBox).string,
-                    bank_name: "",//this.BankName.getComponent(cc.EditBox).string,
-                    bank_account: "",//this.AccountNumber.getComponent(cc.EditBox).string,
-                    idType: "",
-                    idNumber: "",
-                    branch_bank: "",
-                    ifsc_code: "",
+                    cardholder_name: this.BankUserName.getComponent(cc.EditBox).string,
+                    bank_name: this.BankName.getComponent(cc.EditBox).string,
+                    bankAccountType: this.BankAccountType_Node.getChildByName("editbox").getComponent(cc.EditBox).string,
+                    bank_account: this.BankAccountNumber.getComponent(cc.EditBox).string,
+                    colombia_idType: this.ColombiaIdType_Node.getChildByName("editbox").getComponent(cc.EditBox).string,
+                    colombia_idNumber: this.ColombiaIdNumber.getComponent(cc.EditBox).string,
+                    // withdrawType: channelID, //1巴西2哥伦比亚
+                    //  branch_bank: "",
+                    //  ifsc_code: "",
                     email: this.Email.getComponent(cc.EditBox).string,
-                    upi: "",
+                    //   upi: "",
                     taxid: this.Texid_Node.getChildByName("editbox").getComponent(cc.EditBox).string.replace(/[&\|\\\*^%$ #@\-.]/g, ""),
-                    account_digit: "",
+                    // account_digit: "",
                     pix_key: e,
-                    account_type: this.SendAccountType,
+                    //   account_type: this.SendAccountType,
                     pix_type: this.PixType_Node.getChildByName("editbox_pix_type").getComponent(cc.EditBox).string,
                     prepay_type: this.SendPrepayType,
-                    province: "",
-                    city: "",
-                    gcash_number: "",//this.li_GcashNumber.getChildByName("editbox").getComponent(cc.EditBox).string,
-                    beneficiary_name: "",//this.li_BeneficiarvName.getChildByName("editbox").getComponent(cc.EditBox).string,
-                    pay_maya_account: "",//this.li_PayMayaPhilippines.getChildByName("editbox").getComponent(cc.EditBox).string,
-                    document_type: this.SendRFCType,
-                    card_type: this.SendCardType,
-                    repay_rfc: "",
-                    repay_curp: "",
-                    repay_card_debit: "",
-                    repay_card_phone: "",
-                    repay_card_clabe: ""
+                    //    province: "",
+                    //  city: "",
+                    //   gcash_number: "",//this.li_GcashNumber.getChildByName("editbox").getComponent(cc.EditBox).string,
+                    //  beneficiary_name: "",//this.li_BeneficiarvName.getChildByName("editbox").getComponent(cc.EditBox).string,
+                    //  pay_maya_account: "",//this.li_PayMayaPhilippines.getChildByName("editbox").getComponent(cc.EditBox).string,
+                    //   document_type: this.SendRFCType,
+                    //  card_type: this.SendCardType,
+                    // repay_rfc: "",
+                    // repay_curp: "",
+                    // repay_card_debit: "",
+                    // repay_card_phone: "",
+                    // repay_card_clabe: ""
                 }
                     , o = app.UserManager().GetUserInfo;
                 var i = app.GameConfigManager().GetGameConfig().pay_userinfo_fields.prepay;
@@ -602,30 +671,30 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 return true
             }
             ,
-            __decorate([h(cc.Node)], t.prototype, "AccountNumber", undefined),
-            __decorate([h(cc.Node)], t.prototype, "IfSCCode", undefined),
-            __decorate([h(cc.Node)], t.prototype, "BankName", undefined),
-            __decorate([h(cc.Node)], t.prototype, "BranchBankName", undefined),
-            __decorate([h(cc.Node)], t.prototype, "Email", undefined),
-            __decorate([h(cc.Node)], t.prototype, "PhoneNumber", undefined),
             __decorate([h(cc.Node)], t.prototype, "BankUserName", undefined),
-            __decorate([h(cc.Node)], t.prototype, "UpiNode", undefined),
-            __decorate([h(cc.Node)], t.prototype, "Account_Number_Node", undefined),
-            __decorate([h(cc.Node)], t.prototype, "Bank_name_Node", undefined),
-            __decorate([h(cc.Node)], t.prototype, "IFCS_Code_Node", undefined),
+            __decorate([h(cc.Node)], t.prototype, "BankName", undefined),
+            __decorate([h(cc.Node)], t.prototype, "BankAccountNumber", undefined),
+            __decorate([h(cc.Node)], t.prototype, "ColombiaIdNumber", undefined),
+            __decorate([h(cc.Node)], t.prototype, "PhoneNumber", undefined),
+            __decorate([h(cc.Node)], t.prototype, "Email", undefined),
+
+            __decorate([h(cc.Node)], t.prototype, "BankUserName_Node", undefined),
+            __decorate([h(cc.Node)], t.prototype, "BankName_Node", undefined),
+            __decorate([h(cc.Node)], t.prototype, "BankAccountType_Node", undefined),
+            __decorate([h(cc.Node)], t.prototype, "BankAccountNumber_Node", undefined),
+            __decorate([h(cc.Node)], t.prototype, "ColombiaIdType_Node", undefined),
+            __decorate([h(cc.Node)], t.prototype, "ColombiaIdNumber_Node", undefined),
             __decorate([h(cc.Node)], t.prototype, "Phone_Number_Node", undefined),
             __decorate([h(cc.Node)], t.prototype, "Email_Address_Node", undefined),
-            __decorate([h(cc.Node)], t.prototype, "User_Name_Node", undefined),
+
             __decorate([h(cc.Node)], t.prototype, "Texid_Node", undefined),
             __decorate([h(cc.Node)], t.prototype, "lblCpfNode", undefined),
             __decorate([h(cc.Node)], t.prototype, "ZipCode_Node", undefined),
             __decorate([h(cc.Node)], t.prototype, "Account_Type", undefined),
             __decorate([h(cc.Node)], t.prototype, "Account_digit", undefined),
             __decorate([h(cc.Node)], t.prototype, "SelectBankName", undefined),
-            __decorate([h(cc.Node)], t.prototype, "UpiAllNode", undefined),
             __decorate([h(cc.Node)], t.prototype, "Pixkey_Node", undefined),
             __decorate([h(cc.Node)], t.prototype, "PixType_Node", undefined),
-            __decorate([h(cc.Node)], t.prototype, "BranchBankName_Node", undefined),
             __decorate([h(cc.Node)], t.prototype, "li_Encrypted_Node", undefined),
             __decorate([h(cc.Node)], t.prototype, "li_Encrypted_NodeEdit", undefined),
             __decorate([h(cc.Node)], t.prototype, "scrollview_PixType", undefined),

@@ -335,11 +335,11 @@ window.__require = function e(t, n, o) {
             function S(e, t, n, o) {
                 return Z(Y(t, e.length - n), e, n, o)
             }
-            function M(e, t, n, o) {
+            function G(e, t, n, o) {
                 return Z(z(t), e, n, o)
             }
-            function G(e, t, n, o) {
-                return M(e, t, n, o)
+            function M(e, t, n, o) {
+                return G(e, t, n, o)
             }
             function T(e, t, n, o) {
                 return Z(X(t), e, n, o)
@@ -611,10 +611,10 @@ window.__require = function e(t, n, o) {
                             case "utf-8":
                                 return S(this, e, t, n);
                             case "ascii":
-                                return M(this, e, t, n);
+                                return G(this, e, t, n);
                             case "latin1":
                             case "binary":
-                                return G(this, e, t, n);
+                                return M(this, e, t, n);
                             case "base64":
                                 return T(this, e, t, n);
                             case "ucs2":
@@ -1719,8 +1719,8 @@ window.__require = function e(t, n, o) {
             , E = e("./DB/Hall/BetBonusManager")
             , b = e("./DB/Hall/LoseWaiverManager")
             , S = e("./DB/Hall/HallManager")
-            , M = e("./DB/Hall/CashOutManager")
-            , G = e("./Mgr/UserManager")
+            , G = e("./DB/Hall/CashOutManager")
+            , M = e("./Mgr/UserManager")
             , T = e("./DB/Hall/StoreManager")
             , R = e("./DB/Hall/ActivityManager")
             , N = e("./DB/Hall/WheelManager")
@@ -1773,8 +1773,8 @@ window.__require = function e(t, n, o) {
             , Ee = e("./Base/GameEventMgr")
             , be = e("./Base/VibrationMgr")
             , Se = e("./Util/ScoreUtil")
-            , Me = e("./Util/ImageUtil")
-            , Ge = e("./DB/PlaceholderManager")
+            , Ge = e("./Util/ImageUtil")
+            , Me = e("./DB/PlaceholderManager")
             , Te = e("../script/HallScene/Guide/GuideManager")
             , Re = e("./DB/GoogleReCaptChaManager")
             , Ne = e("./DB/IndexManager")
@@ -1790,7 +1790,8 @@ window.__require = function e(t, n, o) {
             , Fe = e("./DB/HallTrackManager")
             , xe = e("./DB/TikTokPixelTrackManager")
             , He = e("./DB/KwaiPixelTrackManager")
-            , We = e("./DB/Hall/RewardsManager");
+            , We = e("./DB/Hall/RewardsManager")
+            , Ve = e("./Mgr/RouterMgr");
         new (function (t) {
             function n() {
                 var n = t.call(this) || this;
@@ -1847,7 +1848,7 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 n.prototype.ImageUtil = function () {
-                    return Me.default.GetInstance()
+                    return Ge.default.GetInstance()
                 }
                 ,
                 n.prototype.ChatUtil = function () {
@@ -1958,7 +1959,7 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 n.prototype.PlaceholderManager = function () {
-                    return Ge.PlaceholderManager.GetInstance()
+                    return Me.PlaceholderManager.GetInstance()
                 }
                 ,
                 n.prototype.LanguageManager = function () {
@@ -1971,6 +1972,10 @@ window.__require = function e(t, n, o) {
                 ,
                 n.prototype.KeyManager = function () {
                     return Q.default.GetInstance()
+                }
+                ,
+                n.prototype.RouterMgr = function () {
+                    return Ve.default.GetInstance()
                 }
                 ,
                 n.prototype.EffectMgr = function () {
@@ -2054,11 +2059,11 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 n.prototype.CashOutManager = function () {
-                    return M.CashOutManager.GetInstance()
+                    return G.CashOutManager.GetInstance()
                 }
                 ,
                 n.prototype.UserManager = function () {
-                    return G.UserManager.GetInstance()
+                    return M.UserManager.GetInstance()
                 }
                 ,
                 n.prototype.StoreManager = function () {
@@ -2278,6 +2283,7 @@ window.__require = function e(t, n, o) {
         "./Mgr/LogManager": "LogManager",
         "./Mgr/NoSleepMgr": "NoSleepMgr",
         "./Mgr/ResManager": "ResManager",
+        "./Mgr/RouterMgr": "RouterMgr",
         "./Mgr/SoundManager": "SoundManager",
         "./Mgr/SysDataManager": "SysDataManager",
         "./Mgr/SysNotifyManager": "SysNotifyManager",
@@ -2960,7 +2966,7 @@ window.__require = function e(t, n, o) {
                 t.prototype.ShowForm = function (e) {
                     var t = this;
                     e || (e = []);
-                    var n = this._formInfo.Independent == h.FormType.Independent ? app.Client.GetIndependentLayer() : this._formInfo.Independent == h.FormType.Crossing ? app.Client.GetHomeLayer() : app.Client.GetContentLayer();
+                    var n = this._formInfo.Independent == h.FormType.Independent || this._formInfo.Independent == h.FormType.IndependentGame ? app.Client.GetIndependentLayer() : this._formInfo.Independent == h.FormType.Crossing ? app.Client.GetHomeLayer() : app.Client.GetContentLayer();
                     if (n)
                         if (this._showAction || this._showAnimationState)
                             this.Log("Form is Opening...");
@@ -3056,7 +3062,8 @@ window.__require = function e(t, n, o) {
                             this._formInfo.FormRelease && (this._background.destroy(),
                                 this.FormManager.DestroyForm(this._formInfo.FormName),
                                 this.ControlManager.ReleaseCache(this._formInfo.FormPath),
-                                this.node.destroy()))
+                                this.node.destroy()),
+                            this.FormManager.IsGameForm(this._formInfo) && app.HallManager().onGameExit())
                 }
                 ,
                 t.prototype.ShowFormName = function () {
@@ -3838,10 +3845,9 @@ window.__require = function e(t, n, o) {
                         var i = app.LanguageManager().GetLocalLanguage(!0);
                         t.language = i,
                             n && app.Client.OnEvent("ModalLayer", o.EventWaitType.OpenNet);
-                        var a = app.ClientConfigManager().GetGlobalConfig.hosts[this.CurrentHostIndex]
-                            , r = app.ClientConfigManager().GetGlobalConfig.scheme + "://" + a;
-                        this.IsDevelopment() && this.NetLog("[SendHttp]:", r + e, t, "b-g"),
-                            this.HttpRequest.SendHttpRequest(r, e, "POST", t, this.OnReceiveHttpPack.bind(this), this.OnConnectHttpFail.bind(this))
+                        var a = this.ApiUrl;
+                        this.IsDevelopment() && this.NetLog("[SendHttp]:", a + e, t, "b-g"),
+                            this.HttpRequest.SendHttpRequest(a, e, "POST", t, this.OnReceiveHttpPack.bind(this), this.OnConnectHttpFail.bind(this))
                     }
                     ,
                     t.prototype.OnReceiveHttpPack = function (e, t, n, i) {
@@ -3879,11 +3885,10 @@ window.__require = function e(t, n, o) {
                             void 0 === s && (s = 0);
                         var p = app.LanguageManager().GetLocalLanguage(!0);
                         t.language = p;
-                        var d = app.ClientConfigManager().GetGlobalConfig.hosts
-                            , h = app.ClientConfigManager().GetGlobalConfig.scheme + "://" + d[this.CurrentHostIndex];
+                        var d = this.ApiUrl;
                         i && app.Client.OnEvent("ModalLayer", o.EventWaitType.OpenNet),
-                            this.NetLog("[SendHttp]:", h + e, t, "b-g"),
-                            this.HttpRequest.SendHttpRequest(h, e, "POST", t, function (e, t, r) {
+                            this.NetLog("[SendHttp]:", d + e, t, "b-g"),
+                            this.HttpRequest.SendHttpRequest(d, e, "POST", t, function (e, t, r) {
                                 var s;
                                 i && app.Client.OnEvent("ModalLayer", o.EventWaitType.ReceiveNet);
                                 try {
@@ -3900,22 +3905,31 @@ window.__require = function e(t, n, o) {
                                 } catch (p) {
                                     return void l.ErrLog("SendHttpCB (%s%s)", e, t)
                                 }
-                            }, function (e, t, p, h, u) {
+                            }, function (e, t, p, d, h) {
                                 if (app.Client.OnEvent("ModalLayer", o.EventWaitType.ReceiveNetNow),
                                     s > 0)
-                                    r == a.RetryType.ResetHost ? (l.CurrentHostIndex = ++l.CurrentHostIndex % d.length,
+                                    r == a.RetryType.ResetHost ? (l.CurrentHostIndex = ++l.CurrentHostIndex % app.ClientConfigManager().GetGlobalConfig.hosts.length,
                                         setTimeout(function () {
-                                            l.SendHttpCB(t, u, n, i, r, --s, c)
-                                        }, 1e3)) : r == a.RetryType.State40 ? 4 == p && 0 == h && setTimeout(function () {
-                                            l.SendHttpCB(t, u, n, i, r, --s, c)
+                                            l.SendHttpCB(t, h, n, i, r, --s, c)
+                                        }, 1e3)) : r == a.RetryType.State40 ? 4 == p && 0 == d && setTimeout(function () {
+                                            l.SendHttpCB(t, h, n, i, r, --s, c)
                                         }, 1e3) : setTimeout(function () {
-                                            l.SendHttpCB(t, u, n, i, r, --s, c)
+                                            l.SendHttpCB(t, h, n, i, r, --s, c)
                                         }, 1e3);
                                 else if (c)
-                                    return void c(e, t, p, h, u)
+                                    return void c(e, t, p, d, h)
                             })
                     }
                     ,
+                    Object.defineProperty(t.prototype, "ApiUrl", {
+                        get: function () {
+                            var e = app.ClientConfigManager().GetGlobalConfig
+                                , t = e.hosts[this.CurrentHostIndex] || e.hosts[0];
+                            return e.scheme + "://" + t
+                        },
+                        enumerable: !1,
+                        configurable: !0
+                    }),
                     t
             }(i.Singleton);
         n.BaseHttpServerManager = r,
@@ -4375,7 +4389,6 @@ window.__require = function e(t, n, o) {
                             app.HttpServerManager().RegNetPack(a.HttpAPI.BET_PERCENTLIST, this.onPercentList, this),
                             app.HttpServerManager().RegNetPack(a.HttpAPI.NEW_PERCENTLIST, this.onNewPercentList, this),
                             app.HttpServerManager().RegNetPack(a.HttpAPI.New_CleanBetList, this.onCleanBetHistoryList, this),
-                            app.Client.RegEvent(i.GameEventDefine.LOAD_HALL_SUCCESS, this.OnLoadHallSuccess, this),
                             app.Client.RegEvent(i.GameEventDefine.SINGLE_CLEARBAT, this.GetBackHallBetBonus, this)
                     }
                     ,
@@ -4460,7 +4473,7 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.onCleanBet = function (e) {
                         this.RequestBetBonusInfo(),
-                            app.GoldRewardManager().FormGoldReward({
+                            0 != e.gold && app.GoldRewardManager().FormGoldReward({
                                 gold: e.gold,
                                 source: app.i18n.t("UI_Player_Vip_WashCode"),
                                 send_type: 11
@@ -4544,8 +4557,9 @@ window.__require = function e(t, n, o) {
                         enumerable: !1,
                         configurable: !0
                     }),
-                    t.prototype.OnLoadHallSuccess = function () {
-                        app.UserManager().getIsOfficialAccount() && app.GameConfigManager().GetGameConfig().auto_clean_bet_switch && !app.UserManager().GetUserInfo.day_first_login && this.RequestCleanBet()
+                    t.prototype.QuestAutoBonus = function () {
+                        app.UserManager().getIsOfficialAccount() && app.GameConfigManager().GetGameConfig().auto_clean_bet_switch && !app.UserManager().GetUserInfo.day_first_login && (app.UserManager().GetUserInfo.day_first_login = 1,
+                            this.RequestCleanBet())
                     }
                     ,
                     t.prototype.GetBackHallBetBonus = function () {
@@ -4629,6 +4643,7 @@ window.__require = function e(t, n, o) {
                 SLOT2_777: "777_slot2",
                 BAODIAN: "baodian",
                 CRASH2: "crash2",
+                Crash3: "Crash3",
                 SHIJIEBEI: "shijiebei",
                 LROLLER: "LuckyRoller",
                 Roulette: "Roulette",
@@ -4653,12 +4668,14 @@ window.__require = function e(t, n, o) {
                 Game920: "Game920",
                 Game970: "Game970",
                 Game1050: "Game1050",
+                Game1090: "Game1090",
                 Game1241: "Game1241",
                 GameBetCom: "GameBetCom",
                 LROLLER2: "LuckyRoller2",
                 Game1260: "Game1260",
                 Dice2: "Dice2",
-                Game1270: "Game1270"
+                Game1270: "Game1270",
+                Game1670: "Game1670"
             },
             cc._RF.pop()
     }
@@ -5459,18 +5476,20 @@ window.__require = function e(t, n, o) {
         var o = e("../../Base/Singleton")
             , i = e("../../Define/GameEventDefine")
             , a = e("../../Define/HttpServerDefine")
-            , r = e("../../Define/ShareDefine");
+            , r = e("../../Define/ShareDefine")
+            , s = e("../../Define/UINameDefine");
         (function (e) {
             e[e.Bank = 1] = "Bank",
                 e[e.USDT = 2] = "USDT"
         }
         )(n.CashOutType || (n.CashOutType = {}));
-        var s = function (e) {
+        var c = function (e) {
             function t() {
                 var t = null !== e && e.apply(this, arguments) || this;
                 return t.CurrentCashOutType = 1,
                     t.SendPixType = "CPF",
                     t.NigeriaData = null,
+                    t.ghanaPhoneData = null,
                     t.isAgentTx = !1,
                     t
             }
@@ -5485,7 +5504,8 @@ window.__require = function e(t, n, o) {
                         app.HttpServerManager().RegNetPack(a.HttpAPI.GET_TXRECORDDETAILS, this.onTxRecordDetails, this),
                         app.HttpServerManager().RegNetPack(a.HttpAPI.GET_TX, this.onRecvTx, this),
                         app.HttpServerManager().RegNetPack(a.HttpAPI.GET_AGENTTX, this.onRecvAgentTx, this),
-                        app.HttpServerManager().RegNetPack(a.HttpAPI.GET_TXRECORD, this.onRecvTxRecord, this)
+                        app.HttpServerManager().RegNetPack(a.HttpAPI.GET_TXRECORD, this.onRecvTxRecord, this),
+                        app.HttpServerManager().RegNetPack(a.HttpAPI.USER_WITHDRAW_NOTIFY, this.OnWithdrawNotify, this)
                 }
                 ,
                 t.prototype.RequestTx = function (e) {
@@ -5584,9 +5604,21 @@ window.__require = function e(t, n, o) {
                     return 0
                 }
                 ,
+                t.prototype.GetGhanaPhoneData = function () {
+                    return this.ghanaPhoneData || (this.ghanaPhoneData = app.GameConfigManager().GetGameConfig().ghana_phone_list),
+                        this.ghanaPhoneData
+                }
+                ,
                 t.prototype.SetNigeriaDataSelected = function (e) {
                     for (var t = 0; t < this.NigeriaData.length; t++) {
                         var n = this.NigeriaData[t];
+                        n.selected = e == n.id
+                    }
+                }
+                ,
+                t.prototype.SetGhanaPhoneDataSelected = function (e) {
+                    for (var t = 0; t < this.ghanaPhoneData.length; t++) {
+                        var n = this.ghanaPhoneData[t];
                         n.selected = e == n.id
                     }
                 }
@@ -5651,8 +5683,16 @@ window.__require = function e(t, n, o) {
                         t.repay_card_debit && (app.UserManager().GetUserInfo.repay_card_debit = t.repay_card_debit),
                         t.repay_card_phone && (app.UserManager().GetUserInfo.repay_card_phone = t.repay_card_phone),
                         t.repay_card_clabe && (app.UserManager().GetUserInfo.repay_card_clabe = t.repay_card_clabe),
+                        t.ghana_prepay_phone_code && (app.UserManager().GetUserInfo.ghana_prepay_phone_code = t.ghana_prepay_phone_code),
+                        t.ghana_prepay_type && (app.UserManager().GetUserInfo.ghana_prepay_type = t.ghana_prepay_type),
                         app.UserManager().SaveLoginUser(app.UserManager().GetUserInfo),
                         app.Client.OnEvent(i.GameEventDefine.BIND_BANK_ACCOUNT, e)
+                }
+                ,
+                t.prototype.RequstWithdrawNotify = function () {
+                    app.HttpServerManager().SendHttpPack(a.HttpAPI.USER_WITHDRAW_NOTIFY, {
+                        token: app.UserManager().GetUserInfo.token
+                    })
                 }
                 ,
                 t.prototype.GetWithdrawGold = function () {
@@ -5666,16 +5706,21 @@ window.__require = function e(t, n, o) {
                     return e
                 }
                 ,
+                t.prototype.OnWithdrawNotify = function (e) {
+                    e.status && app.FormManager().ShowForm(s.UINameDefine.UIWithdrawRemind, e)
+                }
+                ,
                 t
         }(o.Singleton);
-        n.CashOutManager = s,
+        n.CashOutManager = c,
             cc._RF.pop()
     }
         , {
         "../../Base/Singleton": "Singleton",
         "../../Define/GameEventDefine": "GameEventDefine",
         "../../Define/HttpServerDefine": "HttpServerDefine",
-        "../../Define/ShareDefine": "ShareDefine"
+        "../../Define/ShareDefine": "ShareDefine",
+        "../../Define/UINameDefine": "UINameDefine"
     }],
     ChatUtil: [function (e, t, n) {
         (function (o) {
@@ -5760,9 +5805,8 @@ window.__require = function e(t, n, o) {
             n.ClientConfigManager = void 0;
         var o = e("../Base/Singleton")
             , i = e("../../script/common/global_config")
-            , a = e("../../script/common/GIDTool")
-            , r = function () { }
-            , s = function (e) {
+            , a = function () { }
+            , r = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t.maxRetryCount = 0,
@@ -5774,7 +5818,7 @@ window.__require = function e(t, n, o) {
                     t.prototype.Init = function () {
                         this.JS_Name = "ClientConfigManager",
                             this.Log("Init"),
-                            this.ClientConfig = new r
+                            this.ClientConfig = new a
                     }
                     ,
                     Object.defineProperty(t.prototype, "GetClientConfig", {
@@ -5808,10 +5852,8 @@ window.__require = function e(t, n, o) {
                         t ? (this.ClientConfig.agentID = t,
                             app.LocalDataManager().SetConfigProperty("LocalInfo", "agentID", this.ClientConfig.agentID)) : (this.ClientConfig.agentID = app.LocalDataManager().GetConfigProperty("LocalInfo", "agentID"),
                                 this.ClientConfig.ajtrackerName = app.LocalDataManager().GetConfigProperty("LocalInfo", "ajtrackerName"),
-                                this.ClientConfig.aj_gaid = app.LocalDataManager().GetConfigProperty("LocalInfo", "aj_gaid"));
-                        var n = this.getLocalUrlDataByName("f");
-                        n && (n.startsWith("game") ? this.startRouterG = n : this.startRouterF = n,
-                            this.startData = this.getLocalUrlDataByName("d"))
+                                this.ClientConfig.aj_gaid = app.LocalDataManager().GetConfigProperty("LocalInfo", "aj_gaid")),
+                            app.RouterMgr().LoadUrlInfo()
                     }
                     ,
                     t.prototype.SetRoomNumber = function () {
@@ -5829,62 +5871,6 @@ window.__require = function e(t, n, o) {
                             }
                         }
                         this.ClientConfig.roomNumber = e
-                    }
-                    ,
-                    Object.defineProperty(t.prototype, "GetStartRouterF", {
-                        get: function () {
-                            return this.startRouterF
-                        },
-                        enumerable: !1,
-                        configurable: !0
-                    }),
-                    t.prototype.ResetRouterF = function () {
-                        this.startRouterF = null
-                    }
-                    ,
-                    Object.defineProperty(t.prototype, "GetStartRouterG", {
-                        get: function () {
-                            return this.startRouterG
-                        },
-                        enumerable: !1,
-                        configurable: !0
-                    }),
-                    t.prototype.ResetRouterG = function () {
-                        this.startRouterG = null
-                    }
-                    ,
-                    Object.defineProperty(t.prototype, "GetStartData", {
-                        get: function () {
-                            return this.startData
-                        },
-                        enumerable: !1,
-                        configurable: !0
-                    }),
-                    t.prototype.StartRouter = function () {
-                        var e = this.GetStartRouterF
-                            , t = !1;
-                        if (e)
-                            if (this.ResetRouterF(),
-                                t = !0,
-                                "ExternGameBt" === e) {
-                                var n = this.getLocalUrlDataByName("page");
-                                app.ExternGameManager().setBtGameLastPage(n),
-                                    app.HallManager().enterSport(a.GIDTool.BETBY)
-                            } else if ("ExternGameSB" === e)
-                                app.HallManager().enterSport(a.GIDTool.SABA_SPORT);
-                            else if ("ExternGameExtend" === e) {
-                                var o = Number(this.getLocalUrlDataByName("gid"))
-                                    , i = Number(this.getLocalUrlDataByName("subGid"));
-                                app.ExternGameManager().isNoSignGame(o, i) && app.HallManager().EnterGame(o, i)
-                            } else
-                                app.FormManager().IsFormShow(e) || (app.FormManager().IsSupportVisitor(e) ? app.FormManager().ShowForm(e, this.GetStartData) : app.UserManager().getIsOfficial() && app.FormManager().ShowForm(e, this.GetStartData));
-                        var r = this.GetStartRouterG;
-                        if (r) {
-                            this.ResetRouterG();
-                            var s = app.RoomManager().GetRoomModeInfoBySceneName(r);
-                            s ? app.HallManager().EnterRoomGame(Number(s.RoomMode)) : this.ErrLog("GetRoomModeInfoBySceneName error: " + e)
-                        }
-                        return t
                     }
                     ,
                     t.prototype.setAgentID = function () {
@@ -5933,7 +5919,7 @@ window.__require = function e(t, n, o) {
                     }),
                     Object.defineProperty(t.prototype, "ApiUrl", {
                         get: function () {
-                            return this.ClientConfig.webapi_url || this.GetGlobalConfig.scheme + "://" + this.GetGlobalConfig.hosts[0]
+                            return this.ClientConfig.webapi_url || app.HttpServerManager().ApiUrl
                         },
                         enumerable: !1,
                         configurable: !0
@@ -5944,11 +5930,10 @@ window.__require = function e(t, n, o) {
                     ,
                     t
             }(o.Singleton);
-        n.ClientConfigManager = s,
+        n.ClientConfigManager = r,
             cc._RF.pop()
     }
         , {
-        "../../script/common/GIDTool": "GIDTool",
         "../../script/common/global_config": "global_config",
         "../Base/Singleton": "Singleton"
     }],
@@ -5997,6 +5982,7 @@ window.__require = function e(t, n, o) {
                                 app.RoomMessageCenter(),
                                 app.RedDotManager(),
                                 app.KeyManager(),
+                                app.RouterMgr(),
                                 app.EventTrackManager(),
                                 app.GoogleLoginManager(),
                                 app.BetBonusManager(),
@@ -6609,16 +6595,6 @@ window.__require = function e(t, n, o) {
                                 for (r = e; r < i; ++r)
                                     o[r].active = !1;
                             return !0
-                        }
-                        ,
-                        t.prototype.cutStr = function (e, t) {
-                            void 0 === t && (t = 8);
-                            for (var n = 0, o = "", i = 0; i < e.length; i++)
-                                if (e.charCodeAt(i) > 128 ? n += 2 : n++,
-                                    o += e.charAt(i),
-                                    n >= t)
-                                    return o + "...";
-                            return o
                         }
                         ,
                         t.prototype.CheckDateEventTimeIn = function (e, t, n) {
@@ -7536,11 +7512,13 @@ window.__require = function e(t, n, o) {
                 e[e.InviteBounsNum = 15] = "InviteBounsNum",
                 e[e.BetBonusVIP = 16] = "BetBonusVIP",
                 e[e.PopupLightTips = 17] = "PopupLightTips",
-                e[e.FirstSignInTips = 18] = "FirstSignInTips"
+                e[e.FirstSignInTips = 18] = "FirstSignInTips",
+                e[e.RechargeCountDown = 19] = "RechargeCountDown",
+                e[e.JudgeHint = 20] = "JudgeHint"
         }
         )(o || (o = {}));
-        var d = ["#FFFFFF", "#59677C", "#FFFFFF", "#FFFFFF", "#BADAFF", "#71ABFF", "#3085FF", "#FFFFFF", "#FFFFFF", "#59677C", "#B8D7FF", "#59677C", "#FFFFFF", "#BAE5FF", "#D2E7FF", "#FFFFFF", "#FFFFFF", "#B8D7FF", "#9ca6be"]
-            , h = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        var d = ["#FFFFFF", "#59677C", "#FFFFFF", "#FFFFFF", "#BADAFF", "#71ABFF", "#3085FF", "#FFFFFF", "#FFFFFF", "#59677C", "#B8D7FF", "#59677C", "#FFFFFF", "#BAE5FF", "#D2E7FF", "#FFFFFF", "#FFFFFF", "#B8D7FF", "#9ca6be", "#FFFF00", "#EC4949"]
+            , h = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             , u = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
@@ -7749,11 +7727,12 @@ window.__require = function e(t, n, o) {
                 e[e.StoreLeftCheck = 11] = "StoreLeftCheck",
                 e[e.TileToggle = 12] = "TileToggle",
                 e[e.TileToggleCheck = 13] = "TileToggleCheck",
-                e[e.ScrollNumItem = 14] = "ScrollNumItem"
+                e[e.ScrollNumItem = 14] = "ScrollNumItem",
+                e[e.TextHint = 15] = "TextHint"
         }
         )(o || (o = {}));
-        var d = ["#FFFFFF", "#59677C", "#FFFFFF", "#FFFFFF", "#59677C", "#B8D7FF", "#FFFFFF", "#00FF2E", "#FFFFFF", "#59677C", "#8C83C8", "#FFFFFF", "#59677C", "#FFFFFF", "#FFFFFF"]
-            , h = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        var d = ["#FFFFFF", "#59677C", "#FFFFFF", "#FFFFFF", "#59677C", "#B8D7FF", "#FFFFFF", "#00FF2E", "#FFFFFF", "#59677C", "#8C83C8", "#FFFFFF", "#59677C", "#FFFFFF", "#FFFFFF", "#ED1D49"]
+            , h = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             , u = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
@@ -7910,6 +7889,66 @@ window.__require = function e(t, n, o) {
         , {
         "./BaseDefaultNodeSetSelect": "BaseDefaultNodeSetSelect"
     }],
+    DefaultNodeWheel: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "65a1eIuOcFEs749b0n8cPfE", "DefaultNodeWheel"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o, i = e("./BaseDefaultNodeSetSelect"), a = cc._decorator, r = a.ccclass, s = a.executeInEditMode, c = a.disallowMultiple, l = a.menu, p = a.property;
+        (function (e) {
+            e[e.White = 0] = "White",
+                e[e.TopToggle = 1] = "TopToggle",
+                e[e.TopToggleCheck = 2] = "TopToggleCheck",
+                e[e.TextLight = 3] = "TextLight",
+                e[e.TextDark = 4] = "TextDark",
+                e[e.ItemText = 5] = "ItemText",
+                e[e.Date = 6] = "Date",
+                e[e.TextHint = 7] = "TextHint"
+        }
+        )(o || (o = {}));
+        var d = ["#FFFFFF", "#737373", "#947EFF", "#FFFFFF", "#59677C", "#ababab", "#97BEF6", "#ED1D49"]
+            , h = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+            , u = function (e) {
+                function t() {
+                    var t = null !== e && e.apply(this, arguments) || this;
+                    return t._colorType = o.White,
+                        t
+                }
+                return __extends(t, e),
+                    Object.defineProperty(t.prototype, "colorType", {
+                        get: function () {
+                            return this._colorType
+                        },
+                        set: function (e) {
+                            this._colorType = e,
+                                this.SetColor()
+                        },
+                        enumerable: !1,
+                        configurable: !0
+                    }),
+                    t.prototype.onLoad = function () {
+                        this.SetColor()
+                    }
+                    ,
+                    t.prototype.SetColor = function () {
+                        var t = d[this.colorType];
+                        e.prototype.SetColorAndFontSize.call(this, t, h[this.colorType])
+                    }
+                    ,
+                    __decorate([p()], t.prototype, "_colorType", void 0),
+                    __decorate([p({
+                        tooltip: !1,
+                        type: cc.Enum(o)
+                    })], t.prototype, "colorType", null),
+                    __decorate([r, c(), s, l("Art/DefaultNodeStore")], t)
+            }(i.default);
+        n.default = u,
+            cc._RF.pop()
+    }
+        , {
+        "./BaseDefaultNodeSetSelect": "BaseDefaultNodeSetSelect"
+    }],
     DemoServerManager: [function (e, t, n) {
         "use strict";
         cc._RF.push(t, "a8511Tmsg9MQ7BsGunVPnrW", "DemoServerManager"),
@@ -7981,6 +8020,43 @@ window.__require = function e(t, n, o) {
             cc._RF.pop()
     }
         , {}],
+    DisableInputBoxScroll: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "69ad948y99JubyQz2IZin/c", "DisableInputBoxScroll"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = e("../Base/UIBaseComponent")
+            , i = cc._decorator
+            , a = i.ccclass
+            , r = (i.property,
+                i.disallowMultiple)
+            , s = i.menu
+            , c = function (e) {
+                function t() {
+                    var t = null !== e && e.apply(this, arguments) || this;
+                    return t.inputBox = null,
+                        t
+                }
+                return __extends(t, e),
+                    t.prototype.OnLoadInit = function () {
+                        this.inputBox = this.node.getComponent(cc.EditBox),
+                            this.inputBox._impl._elem.setAttribute("onmousewheel", "return false"),
+                            cc.sys.BROWSER_TYPE_FIREFOX && this.inputBox._impl._elem.addEventListener("DOMMouseScroll", this.MouseWhell, !1)
+                    }
+                    ,
+                    t.prototype.MouseWhell = function (e) {
+                        e.preventDefault()
+                    }
+                    ,
+                    __decorate([a, r(), s("\u81ea\u5b9a\u4e49\u7ec4\u4ef6/DisableInputBoxScroll")], t)
+            }(o.default);
+        n.default = c,
+            cc._RF.pop()
+    }
+        , {
+        "../Base/UIBaseComponent": "UIBaseComponent"
+    }],
     DropDownItem: [function (e, t, n) {
         "use strict";
         cc._RF.push(t, "0e0c1OzYPVOfpEPKQp433tu", "DropDownItem"),
@@ -8417,9 +8493,6 @@ window.__require = function e(t, n, o) {
                         this.JS_Name = "EmailManager",
                             this.Log("Init"),
                             app.HttpServerManager().RegNetPack(a.HttpAPI.GET_EMAIL_LIST, this.onGetEmailList, this),
-                            app.HttpServerManager().RegNetPack(a.HttpAPI.ET_EMAIL_DETAIL, this.onGetEmailDetail, this),
-                            app.HttpServerManager().RegNetPack(a.HttpAPI.EMAIL_RECEIVE, this.onGetEmailRecvie, this),
-                            app.HttpServerManager().RegNetPack(a.HttpAPI.EMAIL_RECEIVEAll, this.onEmailRecvieAll, this),
                             app.HttpServerManager().RegNetPack(a.HttpAPI.EMAIL_DEl_ALL, this.onEmailDelAll, this)
                     }
                     ,
@@ -8428,14 +8501,13 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.RequstEmailRecvieAll = function () {
-                        app.HttpServerManager().SendHttpPack(a.HttpAPI.EMAIL_RECEIVEAll, {
+                        app.HttpServerManager().SendHttpCB(a.HttpAPI.EMAIL_RECEIVEAll, {
                             token: app.UserManager().GetUserInfo.token
-                        })
-                    }
-                    ,
-                    t.prototype.onEmailRecvieAll = function (e) {
-                        app.Client.OnEvent(i.GameEventDefine.EMAIL_RECEIVEAll, e),
-                            app.RewardsManager().updateRewards()
+                        }, function (e) {
+                            var t = e.data;
+                            e.code ? app.Client.OnEvent(i.GameEventDefine.EMAIL_ERROR_EVENT, e) : (app.Client.OnEvent(i.GameEventDefine.EMAIL_RECEIVEAll, t),
+                                app.RewardsManager().updateRewards())
+                        }, !0)
                     }
                     ,
                     t.prototype.RequstEmailDelAll = function () {
@@ -8448,11 +8520,6 @@ window.__require = function e(t, n, o) {
                         app.Client.OnEvent(i.GameEventDefine.EMAIL_DEl_ALL, e)
                     }
                     ,
-                    t.prototype.onGetEmailDetail = function (e) {
-                        app.Client.OnEvent(i.GameEventDefine.ET_EMAIL_DETAIL, e),
-                            app.RewardsManager().updateRewards()
-                    }
-                    ,
                     t.prototype.onGetEmailList = function (e) {
                         e.sort(function (e, t) {
                             return e.status - t.status
@@ -8461,7 +8528,11 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.RequstGetEmailDetail = function (e) {
-                        app.HttpServerManager().SendHttpPack(a.HttpAPI.ET_EMAIL_DETAIL, e)
+                        app.HttpServerManager().SendHttpCB(a.HttpAPI.ET_EMAIL_DETAIL, e, function (e) {
+                            var t = e.data;
+                            e.code ? app.Client.OnEvent(i.GameEventDefine.EMAIL_ERROR_EVENT, e) : (app.Client.OnEvent(i.GameEventDefine.ET_EMAIL_DETAIL, t),
+                                app.RewardsManager().updateRewards())
+                        }, !0)
                     }
                     ,
                     t.prototype.RequstGetEmailList = function (e) {
@@ -8469,12 +8540,11 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.RequstGetEmailRecive = function (e) {
-                        app.HttpServerManager().SendHttpPack(a.HttpAPI.EMAIL_RECEIVE, e)
-                    }
-                    ,
-                    t.prototype.onGetEmailRecvie = function (e) {
-                        app.Client.OnEvent(i.GameEventDefine.EMAIL_RECEIVE, e),
-                            app.RewardsManager().updateRewards()
+                        app.HttpServerManager().SendHttpCB(a.HttpAPI.EMAIL_RECEIVE, e, function (e) {
+                            var t = e.data;
+                            e.code ? app.Client.OnEvent(i.GameEventDefine.EMAIL_ERROR_EVENT, e) : (app.Client.OnEvent(i.GameEventDefine.EMAIL_RECEIVE, t),
+                                app.RewardsManager().updateRewards())
+                        }, !0)
                     }
                     ,
                     t
@@ -8974,6 +9044,7 @@ window.__require = function e(t, n, o) {
                                 betSlipOffsetTop: this.getBetSlipTop(),
                                 betSlipOffsetBottom: this.getBetSlipBottom(),
                                 betslipZIndex: 999,
+                                stickyTop: 0,
                                 onTokenExpired: function () { },
                                 onRouteChange: function () { },
                                 onLogin: function () {
@@ -9058,10 +9129,9 @@ window.__require = function e(t, n, o) {
                             e.prototype.init.call(this, t, n)
                     }
                     ,
-                    t.prototype.show = function (t) {
-                        void 0 === t && (t = ""),
-                            this.isDSGame() ? (this.showDiv(),
-                                this.initScript(t)) : e.prototype.show.call(this, t)
+                    t.prototype.show = function () {
+                        this.isDSGame() ? (this.showDiv(),
+                            this.initScript()) : e.prototype.show.call(this)
                     }
                     ,
                     t.prototype.UpdateUserInfo = function () {
@@ -9088,24 +9158,27 @@ window.__require = function e(t, n, o) {
                             e.className = "scroll-custom"
                     }
                     ,
-                    t.prototype.initScript = function (e) {
-                        var t = Object.create(null);
-                        if (this.isDSGame()) {
-                            var n = e;
-                            if (e.indexOf("?") > -1) {
-                                var o = e.split("?");
-                                o = (o = o[1]).substring(o.indexOf("=") + 1),
-                                    n = atob(o)
+                    t.prototype.initScript = function () {
+                        var e = this.gameUpInfo.base_url || this.gameUpInfo.url;
+                        if (e) {
+                            if (this.isDSGame()) {
+                                var t = e;
+                                if (e.indexOf("?") > -1) {
+                                    var n = e.split("?");
+                                    n = (n = n[1]).substring(n.indexOf("=") + 1),
+                                        t = atob(n)
+                                }
+                                var o = t.split("&").reduce(function (e, t) {
+                                    var n = t.split("=")
+                                        , o = decodeURIComponent(n[0])
+                                        , i = decodeURIComponent(n[1]);
+                                    return e[o] = i,
+                                        e
+                                }, {});
+                                this.initDSScript(o)
                             }
-                            t = n.split("&").reduce(function (e, t) {
-                                var n = t.split("=")
-                                    , o = decodeURIComponent(n[0])
-                                    , i = decodeURIComponent(n[1]);
-                                return e[o] = i,
-                                    e
-                            }, {}),
-                                this.initDSScript(t)
-                        }
+                        } else
+                            console.error("initScript failed.")
                     }
                     ,
                     t.prototype.renderCashLabel = function () {
@@ -9239,6 +9312,7 @@ window.__require = function e(t, n, o) {
                 return t._webExternGameExtend = null,
                     t._webExternGameBt = null,
                     t._webExternGameSB = null,
+                    t._ExternGameInfo = {},
                     t.timer = 0,
                     t.gid = 0,
                     t.subGid = 0,
@@ -9433,7 +9507,9 @@ window.__require = function e(t, n, o) {
                 ,
                 t.prototype.RequestGameUp = function (e, t, n) {
                     var o = this;
-                    this.gid = e,
+                    void 0 === t && (t = 0),
+                        void 0 === n && (n = 1),
+                        this.gid = e,
                         this.subGid = t;
                     var i = {
                         token: app.UserManager().GetUserInfo.token,
@@ -9461,10 +9537,10 @@ window.__require = function e(t, n, o) {
                         return this.ErrLog("OnGameUp error, code: " + e.code + ", msg: " + e.msg),
                             this.RequestGameDown(!0),
                             void (this.isSportGame(t) ? this.intervalSportGameUp() : app.SysNotifyManager().ShowToast("UI.System_44"));
-                    this.clearIntervalTimer();
+                    this.clearIntervalTimer(),
+                        app.ComTool().CheckPlatform() || 0 !== n || l.default.setOrientation(cc.find("Canvas").getComponent(cc.Canvas), "H");
                     var o = e.data;
-                    o.base_url ? (app.ComTool().CheckPlatform() || 0 !== n || l.default.setOrientation(cc.find("Canvas").getComponent(cc.Canvas), "H"),
-                        this.initExternGame(o)) : this.ErrLog("Invalid base_url")
+                    this.initExternGame(o)
                 }
                 ,
                 t.prototype.OnExperienceGame = function (e) {
@@ -9579,9 +9655,47 @@ window.__require = function e(t, n, o) {
                             var n = app.GameConfigManager().GetGameConfig().sport_jump_game;
                             n && 2 == n && (t = _.GIDTool.SABA_SPORT)
                         }
-                        app.GameTypeManager().SetHistoryGame(t),
-                            this.RequestGameUp(t, 0, 1)
+                        if (this.IsMaintain(t))
+                            return app.HallManager().showPreSelectForm(),
+                                void app.FormManager().ShowForm(c.UINameDefine.UIGameHintWindow, {
+                                    gid: t
+                                });
+                        this.CheckMaintain(t)
                     }
+                }
+                ,
+                t.prototype.CheckMaintain = function (e) {
+                    var t = this
+                        , n = this._ExternGameInfo[e];
+                    if (n) {
+                        var o = Date.now()
+                            , i = n.mtc_st_date
+                            , r = n.mtc_end_date;
+                        if (Number(n.mtc_status) && o >= i && o <= r) {
+                            var s = {
+                                mtc_st_date: i,
+                                mtc_end_date: r
+                            };
+                            app.HallManager().showPreSelectForm(),
+                                app.FormManager().ShowForm(c.UINameDefine.UIGameHintWindow, s)
+                        } else
+                            app.GameTypeManager().SetHistoryGame(e),
+                                this.RequestGameUp(e)
+                    } else
+                        app.HttpServerManager().SendHttpCB(a.HttpAPI.GET_GAME_INFO, {
+                            gid: e,
+                            token: app.UserManager().GetUserInfo.token
+                        }, function (n) {
+                            0 == n.code ? (t._ExternGameInfo[e] = n.data,
+                                t.CheckMaintain(e)) : app.SysNotifyManager().ShowToast(n.msg)
+                        }, !0)
+                }
+                ,
+                t.prototype.UpdateExternGameInfo = function (e) {
+                    var t = this._ExternGameInfo[e.gid];
+                    t && (t.mtc_status = Number(e.mtc_status),
+                        t.mtc_st_date = e.mtc_st_date,
+                        t.mtc_end_date = e.mtc_end_date)
                 }
                 ,
                 t.prototype.reRequestSportGameUp = function () {
@@ -9600,7 +9714,7 @@ window.__require = function e(t, n, o) {
                     var e = this;
                     if (!this.intervalTimer) {
                         var t = 3;
-                        this.intervalTimer = setInterval(function () {
+                        this.intervalTimer = window.setInterval(function () {
                             if (--t < 0)
                                 return e.clearIntervalTimer(),
                                     void (e.getExternGameIsGameUp() && (app.SysNotifyManager().ShowToast("UI.System_44"),
@@ -9791,7 +9905,8 @@ window.__require = function e(t, n, o) {
                                 app.HallManager().GetFreeOutGameWindow()),
                             this.scoringEnd = !1,
                             window.removeEventListener("message", this.OnMessage.bind(this), !1),
-                            cc.view.off("canvas-resize", this.onResized, this)
+                            cc.view.off("canvas-resize", this.onResized, this),
+                            app.HallManager().onGameExit()
                     }
                     ,
                     t.prototype.hideAllView = function () {
@@ -9979,7 +10094,6 @@ window.__require = function e(t, n, o) {
                 return __extends(t, e),
                     t.prototype.Init = function () {
                         this.JS_Name = "ExternGame",
-                            this.initWebIframe(),
                             this.initLoadingIframe(),
                             this.initBtn(),
                             this.initTips(),
@@ -9990,19 +10104,18 @@ window.__require = function e(t, n, o) {
                     t.prototype.init = function (e, t) {
                         void 0 === t && (t = !0),
                             this.gameUpInfo = e,
+                            this.initWebIframe(),
                             app.ExternGameManager().isNoSignGame() && app.KeyManager().RegRouterEvent(this, [{
                                 gid: app.ExternGameManager().GetGid,
                                 subGid: app.ExternGameManager().GetSubGid
-                            }]);
-                        var n = e.base_url ? e.base_url : e.url;
-                        this.Log("init " + n),
+                            }]),
                             cc.sys.isBrowser ? (this.scoreEnd = t,
                                 app.EventTrackManager().LogEvent(i.default.ENTER_GAME, {
                                     gid: this.gameUpInfo.gid
                                 }),
                                 this.showLoading(),
                                 this.setBackBtnInfo(),
-                                this.show(n)) : this.ErrLog("ExternGame init failed: " + n)
+                                this.show()) : this.ErrLog("ExternGame init failed")
                     }
                     ,
                     t.prototype.OnMessage = function (e) {
@@ -10361,11 +10474,12 @@ window.__require = function e(t, n, o) {
                         e.innerHTML = app.i18n.t(t)
                     }
                     ,
-                    t.prototype.show = function (e) {
+                    t.prototype.show = function () {
                         try {
-                            var t = document.getElementById("Game");
-                            t.style.display = "block",
-                                t.src = e
+                            var e = document.getElementById("Game");
+                            e.style.display = "block";
+                            var t = this.gameUpInfo.base_url || this.gameUpInfo.url;
+                            t ? e.src = t : this.gameUpInfo.html ? e.srcdoc = this.gameUpInfo.html : this.ErrLog("show url error: not find url")
                         } catch (n) {
                             this.ErrLog("show url", n.message)
                         }
@@ -10415,13 +10529,12 @@ window.__require = function e(t, n, o) {
                             this.hideTips(),
                             this.hideLoading(),
                             app.ComTool().CheckPlatform() || r.default.setOrientation(cc.find("Canvas").getComponent(cc.Canvas), "V"),
-                            app.HallManager().ShowHall()
+                            app.GameManager().BackHallScene(),
+                            app.HallManager().onGameExit()
                     }
                     ,
                     t.prototype.hideIframe = function () {
-                        var e = document.getElementById("Game");
-                        e.src = "about:blank",
-                            e.style.display = "none"
+                        document.getElementById("Game").remove()
                     }
                     ,
                     t
@@ -10595,7 +10708,8 @@ window.__require = function e(t, n, o) {
                     e.SceneInfo = "SceneInfo",
                     e.Sound = "Sound",
                     e.RoomModeInfo = "RoomModeInfo",
-                    e.Effect = "Effect"
+                    e.Effect = "Effect",
+                    e.Image = "Image"
             }(n.FormDefine || (n.FormDefine = {})),
             cc._RF.pop()
     }
@@ -10610,15 +10724,17 @@ window.__require = function e(t, n, o) {
         var o = e("../Bundle/BundleManager")
             , i = e("../Define/EventWaitType")
             , a = e("../Define/FormDefine")
-            , r = e("../Define/ShareDefine")
-            , s = e("./BaseForm")
-            , c = function (e) {
+            , r = e("../Define/GameEventDefine")
+            , s = e("../Define/ShareDefine")
+            , c = e("./BaseForm")
+            , l = function (e) {
                 function t() {
                     var t = e.call(this) || this;
                     return t.form = null,
                         t.ControlManager = app.ControlManager(),
                         t.queueShowDict = {},
                         t.NoneIndependentForm = [],
+                        t.isSendLoading = !1,
                         t.JS_Name = "FormManager",
                         t.form = app.SysDataManager().GetTableDict(a.FormDefine.Form),
                         t.createFormDict = {},
@@ -10635,11 +10751,19 @@ window.__require = function e(t, n, o) {
                         return this.showFormList
                     }
                     ,
+                    t.prototype.GetFormInfo = function (e) {
+                        return this.form[e]
+                    }
+                    ,
+                    t.prototype.IsGameForm = function (e) {
+                        return e && (e.Independent == s.FormType.HallGame || e.Independent == s.FormType.IndependentGame)
+                    }
+                    ,
                     t.prototype.CreateForm = function (e) {
                         var t = this;
                         if (this.createFormDict.hasOwnProperty(e)) {
                             this.Log("The form has already been created. No need to create it again. form:", e);
-                            var n = this.createFormDict[e].getComponent(s.default);
+                            var n = this.createFormDict[e].getComponent(c.default);
                             return Promise.resolve(n)
                         }
                         if (!this.form.hasOwnProperty(e))
@@ -10659,7 +10783,7 @@ window.__require = function e(t, n, o) {
                                     return t.ErrLog("Failed to load res (%s) . Unable to create the form.", e),
                                         null;
                                 var o = cc.instantiate(n)
-                                    , a = o.getComponent(s.default);
+                                    , a = o.getComponent(c.default);
                                 if (!a)
                                     return t.ErrLog("Unable to find component (%s) for creating the form.", e),
                                         null;
@@ -10691,8 +10815,9 @@ window.__require = function e(t, n, o) {
                         if (this.AddShowingForm(o),
                             this.createFormDict.hasOwnProperty(o)) {
                             var a = this.createFormDict[o]
-                                , r = a.getComponent(s.default);
-                            return r.ShowForm(t),
+                                , r = a.getComponent(c.default);
+                            return this.SendLoadingHide(o),
+                                r.ShowForm(t),
                                 Promise.resolve(r)
                         }
                         return app.Client.OnEvent("ModalLayer", i.EventWaitType.CreateFormBegin),
@@ -10725,22 +10850,30 @@ window.__require = function e(t, n, o) {
                             this.createFormDict.hasOwnProperty(e)) {
                             var n = this.createFormDict[e];
                             if (n) {
-                                var o = n.getComponent(s.default);
+                                var o = n.getComponent(c.default);
                                 o ? o.CloseForm(t) : this.ErrLog("Close form error, not find :%s", e)
                             } else
                                 this.ErrLog("Close form (%s) null", e)
                         }
                     }
                     ,
+                    t.prototype.SendLoadingHide = function (e) {
+                        if (!this.isSendLoading) {
+                            var t = this.form[e];
+                            this.IsGameForm(t) && (this.isSendLoading = !0,
+                                app.Client.OnEvent(r.GameEventDefine.HIDE_LOGADING))
+                        }
+                    }
+                    ,
                     t.prototype.IsDependentForm = function (e) {
                         var t = this.form[e];
-                        return !!t && t.Independent == r.FormType.Independent
+                        return !!t && (t.Independent == s.FormType.Independent || t.Independent == s.FormType.IndependentGame)
                     }
                     ,
                     t.prototype.AddNoneIndependentForm = function (e) {
                         var t = this
                             , n = this.form[e];
-                        n && (n.Independent != r.FormType.Hall && n.Independent != r.FormType.HallGame || (this.NoneIndependentForm.forEach(function (n) {
+                        n && (n.Independent != s.FormType.Hall && n.Independent != s.FormType.HallGame || (this.NoneIndependentForm.forEach(function (n) {
                             n != e && t.CloseForm(n)
                         }),
                             this.NoneIndependentForm = [e]))
@@ -10902,13 +11035,14 @@ window.__require = function e(t, n, o) {
                     ,
                     t
             }(e("./Singleton").Singleton);
-        n.FormManager = c,
+        n.FormManager = l,
             cc._RF.pop()
     }
         , {
         "../Bundle/BundleManager": "BundleManager",
         "../Define/EventWaitType": "EventWaitType",
         "../Define/FormDefine": "FormDefine",
+        "../Define/GameEventDefine": "GameEventDefine",
         "../Define/ShareDefine": "ShareDefine",
         "./BaseForm": "BaseForm",
         "./Singleton": "Singleton"
@@ -11011,6 +11145,7 @@ window.__require = function e(t, n, o) {
                 e.Keno = 920,
                 e.Bonanza = 970,
                 e.Slot1 = 1310,
+                e.Slot5 = 1090,
                 e.BlindBox2 = 1260,
                 e.Plinko2 = 1270,
                 e.Dice2 = 1280,
@@ -11052,6 +11187,7 @@ window.__require = function e(t, n, o) {
                 e.PB2_Sports = 1360,
                 e.CP2 = 1370,
                 e.SABA_SPORT = 1660,
+                e.Christmas = 1670,
                 e
         }();
         n.GIDTool = o,
@@ -11681,7 +11817,10 @@ window.__require = function e(t, n, o) {
                             this.GameConfig.fb_event_config && this.GameConfig.fb_event_config.forEach(function (e) {
                                 t.FBEventConfig[e.type] = e
                             }),
-                            this.ws_time_diff = this.GameConfig.current_sys_time ? Math.round(this.GameConfig.current_sys_time - Date.now() / 1e3) : 0
+                            this.ws_time_diff = this.GameConfig.current_sys_time ? Math.round(this.GameConfig.current_sys_time - Date.now() / 1e3) : 0,
+                            this.GameConfig.pay_userinfo_fields.prepay && ("1" == this.GameConfig.pay_userinfo_fields.prepay.ghana_prepay_bank && (this.GameConfig.pay_userinfo_fields.prepay.account = 0,
+                                this.GameConfig.pay_userinfo_fields.prepay.bank = 0),
+                                "1" == this.GameConfig.pay_userinfo_fields.prepay.ghana_prepay_phone && (this.GameConfig.pay_userinfo_fields.prepay.tel = 0))
                     }
                     ,
                     Object.defineProperty(t.prototype, "IsExperienceServer", {
@@ -12015,7 +12154,7 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.OnGameMaintainNotice = function (e) {
-                        for (var t = this, n = e, o = function (e, n, o) {
+                        for (var t = this, n = function (e, n, o) {
                             if (e) {
                                 var i = t.GetMainTenanceLanguageText(n);
                                 i && (e.mtc_msg = i),
@@ -12027,20 +12166,21 @@ window.__require = function e(t, n, o) {
                                         sub_gid: o
                                     })
                             }
-                        }, i = function (e) {
-                            var i = n[e]
-                                , a = r.GetGameListItem(i.gid);
-                            if (!a)
+                        }, o = function (o) {
+                            var a = e[o];
+                            app.ExternGameManager().UpdateExternGameInfo(a);
+                            var r = i.GetGameListItem(a.gid);
+                            if (!r)
                                 return "continue";
-                            i.sub_gids && i.sub_gids.length > 0 ? i.sub_gids.forEach(function (e) {
-                                a = t.GetSubGameListItem(i.gid, e),
-                                    o(a, i, e)
-                            }) : (o(a, i),
-                                a.sub_game_list && a.sub_game_list.length > 0 && a.sub_game_list.forEach(function (e) {
-                                    o(e, i)
+                            a.sub_gids && a.sub_gids.length > 0 ? a.sub_gids.forEach(function (e) {
+                                r = t.GetSubGameListItem(a.gid, e),
+                                    n(r, a, e)
+                            }) : (n(r, a),
+                                r.sub_game_list && r.sub_game_list.length > 0 && r.sub_game_list.forEach(function (e) {
+                                    n(e, a)
                                 }))
-                        }, r = this, s = 0; s < n.length; s++)
-                            i(s)
+                        }, i = this, r = 0; r < e.length; r++)
+                            o(r)
                     }
                     ,
                     t.prototype.GetMainTenanceLanguageText = function (e) {
@@ -12060,8 +12200,24 @@ window.__require = function e(t, n, o) {
                             }
                     }
                     ,
+                    t.prototype.GetIsBindMethod = function (e) {
+                        var t = this.GameConfig.reg_login_weight_conf;
+                        if (!t)
+                            return !0;
+                        for (var n = 0; n < t.length; n++) {
+                            var o = t[n];
+                            if (o.key == e && 1 == o.status)
+                                return !0
+                        }
+                        return !1
+                    }
+                    ,
                     t.prototype.GetManufacturerFiltering = function () {
                         return this.ManufacturerType === r.MANUFACTUREREM.DE
+                    }
+                    ,
+                    t.prototype.IsGuideOpen = function () {
+                        return void 0 === this.GameConfig.new_player_guid_switch || 1 === this.GameConfig.new_player_guid_switch
                     }
                     ,
                     t
@@ -12132,6 +12288,7 @@ window.__require = function e(t, n, o) {
                     e.GET_AndOrder_REC = " GET_AndOrder_REC",
                     e.GET_AndOrder_WITH = " GET_AndOrder_WITH",
                     e.BANK_CODE_CLICK = " BANK_CODE_CLICK",
+                    e.OPERATOR_CODE_CLICK = " OPERATOR_CODE_CLICK",
                     e.WITHDRAW_CLICK = " WITHDRAW_CLICK",
                     e.GET_GOODS_LIST = " GET_GOODS_LIST",
                     e.PAY_CHANNEL_TYPES = " PAY_CHANNEL_TYPES",
@@ -12187,10 +12344,11 @@ window.__require = function e(t, n, o) {
                     e.REQ_EMAIL_LIST = "REQ_EMAIL_LIST",
                     e.EMAIL_RECEIVE = "EMAIL_RECEIVE",
                     e.ET_EMAIL_DETAIL = "ET_EMAIL_DETAIL",
+                    e.EMAIL_ERROR_EVENT = "EMAIL_ERROR_EVENT",
                     e.EMAIL_RECEIVEAll = "EMAIL_RECEIVEAll",
                     e.EMAIL_DEl_ALL = "EMAIL_DEl_ALL",
                     e.HallWidgetVariety = "HallWidgetVariety",
-                    e.SHOW_BG = "SHOW_BG",
+                    e.HIDE_LOGADING = "HIDE_LOGADING",
                     e.SET_VISIBLE_BOTTOM = "SET_VISIBLE_BOTTOM",
                     e.UPDATE_CURSOR = "UPDATE_CURSOR",
                     e.SHOW_GAME_ICON = "SHOW_GAME_ICON",
@@ -12296,7 +12454,6 @@ window.__require = function e(t, n, o) {
                     e.GET_TXRECORD = "GET_TXRECORD",
                     e.GAME_USER_HISTORY = "GAME_USER_HISTORY",
                     e.GET_USERGUIDE = "GET_USERGUIDE",
-                    e.GUIDE_WITHDRAW = "GUIDE_WITHDRAW",
                     e.GOOGLRECAPTCHAFINISH = "GOOGLRECAPTCHAFINISH",
                     e.GAME_LOADING_SUCCESS = "GAME_LOADING_SUCCESS",
                     e.GAME_LOADING_FAILED = "GAME_LOADING_FAILED",
@@ -12405,6 +12562,8 @@ window.__require = function e(t, n, o) {
                                 var t = -(this.itemNum - e - 1) * this.itemHeight;
                                 this.opacityPosYData.push(t)
                             }
+                        var n = this.content.getComponent(cc.Layout);
+                        n && (n.enabled = !1)
                     }
                     ,
                     t.prototype.OnEnable = function () {
@@ -12991,8 +13150,6 @@ window.__require = function e(t, n, o) {
                 e.DOUBLE_HISTORY = "/goldGame/double_history",
                 e.BCBM_HISTORY = "/goldgame/bcbm_history",
                 e.BCBM_RANKINGS = "/game_rankings/bcbm_rankings",
-                e.LONGHU_HISTORY = "/goldgame/longhu_bai_history",
-                e.LONGHU_RANKINGS = "/game_rankings/longhu_rankings",
                 e.DiceHundred_HISTORY = "/goldgame/dice_history",
                 e.SJB_GAME_END = "/single_game.world_cup_slot/gameEnd",
                 e.SJB_GAME_RESULT = "/single_game.world_cup_slot/gameResult",
@@ -13313,16 +13470,16 @@ window.__require = function e(t, n, o) {
                 value: !0
             }),
             n.GameManager = void 0;
-        var o = e("../../Common/Define/GameEventDefine")
-            , i = e("../../script/common/room_mode_tool")
-            , a = e("../../script/common/Global")
-            , r = e("../../Common/Base/Singleton")
-            , s = e("../../Common/Define/FormDefine")
-            , c = e("../../Common/Define/UINameDefine")
+        var o = e("../../script/common/room_mode_tool")
+            , i = e("../../script/common/Global")
+            , a = e("../../Common/Base/Singleton")
+            , r = e("../../Common/Define/FormDefine")
+            , s = e("../../Common/Define/UINameDefine")
+            , c = e("../../Common/Define/ShareDefine")
             , l = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
-                    return t.sceneInfo = app.SysDataManager().GetTableDict(s.FormDefine.SceneInfo),
+                    return t.sceneInfo = app.SysDataManager().GetTableDict(r.FormDefine.SceneInfo),
                         t
                 }
                 return __extends(t, e),
@@ -13333,62 +13490,67 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.initCommon = function () {
                         cc.mg = {},
-                            this.curr_scene_name = i.GameScene.LAUNCH,
+                            this.curr_scene_name = o.GameScene.LAUNCH,
                             this.last_scene_name = "",
                             this.loading = !1,
-                            cc.mg.global = new a.default,
+                            cc.mg.global = new i.default,
                             app.ClientConfigManager().GetGlobalConfig.debug ? app.Client.InitDebug(!0) : cc.sys.isBrowser && app.Client.EnableLog(app.ClientConfigManager().GetGlobalConfig.EnableLog),
                             cc.mg.native_class = app.NativeMgr()
                     }
                     ,
-                    t.prototype.enterScene = function (e, t) {
-                        var n = this;
-                        this.Log("enterScene call scene_name = " + e);
-                        var i = this.GetSceneInfo(e)
-                            , a = e.indexOf("game") > -1;
+                    t.prototype.enterScene = function (e, t, n) {
+                        var o = this;
+                        this.Log("enterScene call scene_name = " + t);
+                        var i = this.GetSceneInfo(t)
+                            , a = t.indexOf("game") > -1;
                         if (i) {
                             var r = i.DefaultForm.slice();
-                            a && r.push(e),
-                                e != this.curr_scene_name ? this.loading ? this.ErrLog("call error: someone scene is loading") : (this.loading = !0,
-                                    this.curr_scene_name && (this.last_scene_name = this.curr_scene_name),
-                                    app.SoundManager().StopAll(),
-                                    app.EffectMgr().ClearAnimation(),
-                                    app.Client.OnEvent(o.GameEventDefine.SHOW_BG),
-                                    app.FormManager().ChangeToFormList(r).then(function () {
-                                        n.curr_scene_name = e,
-                                            n.loading = !1,
-                                            t && t()
-                                    }).catch(function (e) {
-                                        n.ErrLog(e)
-                                    })) : app.FormManager().ChangeToFormList(r).then(function () {
-                                        t && t()
-                                    })
+                            if (a) {
+                                var l = app.FormManager().GetFormInfo(t);
+                                if (!app.FormManager().IsGameForm(l))
+                                    return void this.ErrLog("enter game error: Independent: " + l.Independent);
+                                l && l.Independent == c.FormType.IndependentGame ? r = [t] : r.push(t),
+                                    app.RoomManager().isGameLoading(e) && r.splice(r.length - 1, 0, s.UINameDefine.UIGameLoading)
+                            }
+                            t != this.curr_scene_name ? this.loading ? this.ErrLog("call error: someone scene is loading") : (this.loading = !0,
+                                this.curr_scene_name && (this.last_scene_name = this.curr_scene_name),
+                                app.SoundManager().StopAll(),
+                                app.EffectMgr().ClearAnimation(),
+                                app.FormManager().ChangeToFormList(r).then(function () {
+                                    o.curr_scene_name = t,
+                                        o.loading = !1,
+                                        n && n()
+                                }).catch(function (e) {
+                                    o.ErrLog(e)
+                                })) : app.FormManager().ChangeToFormList(r).then(function () {
+                                    n && n()
+                                })
                         } else
-                            this.ErrLog("enterScene error: scene_name: " + e)
+                            this.ErrLog("enterScene error: scene_name: " + t)
                     }
                     ,
                     t.prototype.enterSceneByRoomMode = function (e, t) {
                         var n = this
-                            , o = app.RoomManager().GetRoomModeInfoByRoomMode(e);
-                        if (o) {
+                            , i = app.RoomManager().GetRoomModeInfoByRoomMode(e);
+                        if (i) {
                             var a = function () {
-                                n.enterScene(o.SceneName, t)
+                                n.enterScene(e, i.SceneName, t)
                             };
-                            if (this.curr_scene_name == o.SceneName)
-                                return void this.enterScene(i.GameScene.HALL, function () {
+                            if (this.curr_scene_name == i.SceneName)
+                                return void this.enterScene(e, o.GameScene.HALL, function () {
                                     app.HallManager().ImmediateEnterGame(e, a)
                                 });
                             app.HallManager().ImmediateEnterGame(e, a)
                         } else
-                            0 == e ? app.GameConfigManager().IsExperienceServer && app.UserManager().GetUserInfo.roomMode ? this.enterScene(i.GameScene.HALL, function () {
+                            0 == e ? app.GameConfigManager().IsExperienceServer && app.UserManager().GetUserInfo.roomMode ? this.enterScene(e, o.GameScene.HALL, function () {
                                 t && t(),
                                     app.HallManager().GetFreeOutGameWindow()
-                            }) : this.enterScene(i.GameScene.HALL, t) : this.ErrLog("roomMode: " + e + " not exist!")
+                            }) : this.enterScene(e, o.GameScene.HALL, t) : this.ErrLog("roomMode: " + e + " not exist!")
                     }
                     ,
                     Object.defineProperty(t.prototype, "InHallScene", {
                         get: function () {
-                            return this.curr_scene_name == i.GameScene.HALL
+                            return this.curr_scene_name == o.GameScene.HALL
                         },
                         enumerable: !1,
                         configurable: !0
@@ -13405,28 +13567,18 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.BackHallScene = function (e) {
-                        this.enterSceneByRoomMode(i.RoomMode.HALL, e)
+                        this.enterSceneByRoomMode(o.RoomMode.HALL, e)
                     }
                     ,
                     t.prototype.BackLoginScene = function (e) {
                         app.LoginManager().RemoveCurrentUser(),
-                            this.enterScene(i.GameScene.LOGIN, e)
+                            this.enterScene(0, o.GameScene.LOGIN, e)
                     }
                     ,
                     t.prototype.GetSceneInfo = function (e) {
                         var t = e.indexOf("game") > -1 ? "Fight" : e;
                         return this.sceneInfo[t] ? this.sceneInfo[t] : (this.ErrLog("GetSceneInfo: scene_name: " + e),
                             null)
-                    }
-                    ,
-                    t.prototype.PushFightDefaultForm = function () {
-                        var e = this.sceneInfo.Fight;
-                        e && -1 == e.DefaultForm.indexOf(c.UINameDefine.UIGameLoading) && e.DefaultForm.push(c.UINameDefine.UIGameLoading)
-                    }
-                    ,
-                    t.prototype.SpliceFightDefaultForm = function () {
-                        var e = this.sceneInfo.Fight;
-                        e && e.DefaultForm.splice(e.DefaultForm.indexOf(c.UINameDefine.UIGameLoading), 1)
                     }
                     ,
                     Object.defineProperty(t.prototype, "GetCurSceneInfo", {
@@ -13438,14 +13590,14 @@ window.__require = function e(t, n, o) {
                         configurable: !0
                     }),
                     t
-            }(r.Singleton);
+            }(a.Singleton);
         n.GameManager = l,
             cc._RF.pop()
     }
         , {
         "../../Common/Base/Singleton": "Singleton",
         "../../Common/Define/FormDefine": "FormDefine",
-        "../../Common/Define/GameEventDefine": "GameEventDefine",
+        "../../Common/Define/ShareDefine": "ShareDefine",
         "../../Common/Define/UINameDefine": "UINameDefine",
         "../../script/common/Global": "Global",
         "../../script/common/room_mode_tool": "room_mode_tool"
@@ -14084,11 +14236,11 @@ window.__require = function e(t, n, o) {
                                 else {
                                     var b = t.Body.RspJoinRoom.Eno
                                         , S = i.get(b)
-                                        , M = "Join Room Error: " + b;
-                                    S && (M = S()),
+                                        , G = "Join Room Error: " + b;
+                                    S && (G = S()),
                                         u({
                                             code: b,
-                                            msg: M,
+                                            msg: G,
                                             room_no: t.Body.RspJoinRoom.RoomID
                                         }),
                                         app.Client.OnEvent(a.GameEventDefine.GAME_LOADING_FAILED)
@@ -14111,9 +14263,9 @@ window.__require = function e(t, n, o) {
                                 break;
                             case 1030:
                                 u = this.handlers[o.default.EVENT_ROOM_OPERATION];
-                                var G = t.Body.RspRoomOperation;
-                                G.event_type = o.default.EVENT_ROOM_OPERATION,
-                                    u(G);
+                                var M = t.Body.RspRoomOperation;
+                                M.event_type = o.default.EVENT_ROOM_OPERATION,
+                                    u(M);
                                 break;
                             case 1032:
                                 u = this.handlers[o.default.EVENT_START];
@@ -14823,13 +14975,26 @@ window.__require = function e(t, n, o) {
                                     app.UserManager().GetUserInfoConfig.game_arr.InArray(e.gid) && n.AddGameListItem(o, e)
                                 })) : n.ErrLog("GetGameTypeList failed: " + e)
                         };
-                    return e < 0 ? app.GameConfigManager().GetGameConfig().game_type.forEach(function (e, t) {
+                    if (e < 0 ? app.GameConfigManager().GetGameConfig().game_type.forEach(function (e, t) {
                         i(t)
                     }) : i(e),
                         o = this.GetGameListSort(o),
-                        t ? o.filter(function (e) {
+                        t) {
+                        for (var a = o.filter(function (e) {
                             return e.name.toLowerCase().indexOf(t.toLowerCase()) > -1
-                        }) : o
+                        }), r = [], s = a.length, c = 0; c < s; c++) {
+                            for (var l = a[c], p = !1, d = 0; d < r.length; d++) {
+                                var h = r[d];
+                                if (l.url == h.url) {
+                                    p = !0;
+                                    break
+                                }
+                            }
+                            p || r.push(l)
+                        }
+                        return r
+                    }
+                    return o
                 }
                 ,
                 t.prototype.GetGameTypeList_2 = function (e) {
@@ -15182,7 +15347,7 @@ window.__require = function e(t, n, o) {
                         gid: e,
                         subID: t
                     }),
-                        n.length > this.MaxHistoryGame && (n.length = this.MaxHistoryGame),
+                        n.length > this.GetRecentColumCount && (n.length = this.GetRecentColumCount),
                         app.LocalDataManager().SetConfigObject("NewHistoryGame", n)
                 }
                 ,
@@ -16063,7 +16228,7 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.InitGoogleGrecaptcha = function () {
                         var e = this;
-                        this.checkGoogleGrecaptchaObject() && (this.IsInit ? grecaptcha.reset() : (this.IsInit = !0,
+                        this.checkGoogleGrecaptchaObject() && (this.IsInit ? grecaptcha.reset() : app.ClientConfigManager().GetGlobalConfig.GoogleRecaptChaID ? (this.IsInit = !0,
                             grecaptcha.render("layer2", {
                                 sitekey: app.ClientConfigManager().GetGlobalConfig.GoogleRecaptChaID,
                                 theme: "light",
@@ -16075,7 +16240,7 @@ window.__require = function e(t, n, o) {
                                                 app.Client.OnEvent(i.GameEventDefine.GOOGLRECAPTCHAFINISH)
                                         }, 1e3)
                                 }
-                            })))
+                            })) : this.ErrLog("InitGoogleGrecaptcha failed => GoogleRecaptChaID"))
                     }
                     ,
                     Object.defineProperty(t.prototype, "getRecaptcha", {
@@ -16183,7 +16348,7 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.CheckGuideByWithDraw = function () {
-                        this.RequestGuide(s.Guide_Type.Guide_withdraw)
+                        app.GameConfigManager().IsGuideOpen() && this.RequestGuide(s.Guide_Type.Guide_withdraw)
                     }
                     ,
                     t.prototype.onRecvGuideData = function (e, t) {
@@ -16446,6 +16611,10 @@ window.__require = function e(t, n, o) {
                                     formName: s.UINameDefine.UIAnnouncement,
                                     key: "hall"
                                 }),
+                                1 == app.UserManager().UserInfo.first_recharge_sign_tip_status && app.HallManager().EnqueueForm({
+                                    formName: s.UINameDefine.UIFirstRechargeSignIn,
+                                    key: "hall"
+                                }),
                                 app.UserManager().showBindingRewards()
                         }
                     }
@@ -16556,23 +16725,25 @@ window.__require = function e(t, n, o) {
                 value: !0
             }),
             n.HallManager = void 0;
-        var o = e("../../../script/common/GIDTool")
-            , i = e("../../../script/common/room_mode_tool")
-            , a = e("../../Base/Singleton")
-            , r = e("../../Define/GameEventDefine")
-            , s = e("../../Define/HttpServerDefine")
-            , c = e("../../Define/ShareDefine")
-            , l = e("../../Define/TextDefine")
-            , p = e("../../Define/TrackEventName")
-            , d = e("../../Define/UINameDefine")
-            , h = function (e) {
+        var o = e("../../../script/HallScene/Guide/GuideDefine")
+            , i = e("../../../script/common/GIDTool")
+            , a = e("../../../script/common/room_mode_tool")
+            , r = e("../../Base/Singleton")
+            , s = e("../../Define/GameEventDefine")
+            , c = e("../../Define/HttpServerDefine")
+            , l = e("../../Define/ShareDefine")
+            , p = e("../../Define/TextDefine")
+            , d = e("../../Define/TrackEventName")
+            , h = e("../../Define/UINameDefine")
+            , u = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t.textData = {},
                         t.footerPics = null,
+                        t.timer = 0,
                         t.selectState = {
-                            pre: c.HallTopNameToNode.Home,
-                            curr: c.HallTopNameToNode.Home
+                            pre: l.HallTopNameToNode.Home,
+                            curr: l.HallTopNameToNode.Home
                         },
                         t
                 }
@@ -16580,21 +16751,21 @@ window.__require = function e(t, n, o) {
                     t.prototype.Init = function () {
                         this.JS_Name = "HallManager",
                             this.Log("Init"),
-                            app.HttpServerManager().RegNetPack(s.HttpAPI.GET_FAQLIST, this.onFaqList, this),
-                            app.HttpServerManager().RegNetPack(s.HttpAPI.GET_TEXTINFO, this.onTextInfo, this),
-                            app.HttpServerManager().RegNetPack(s.HttpAPI.GET_FOOTER_PICS, this.onGetFooterPics, this),
+                            app.HttpServerManager().RegNetPack(c.HttpAPI.GET_FAQLIST, this.onFaqList, this),
+                            app.HttpServerManager().RegNetPack(c.HttpAPI.GET_TEXTINFO, this.onTextInfo, this),
+                            app.HttpServerManager().RegNetPack(c.HttpAPI.GET_FOOTER_PICS, this.onGetFooterPics, this),
                             this.textData = {}
                     }
                     ,
                     t.prototype.RequestFooterPics = function () {
-                        app.HttpServerManager().SendHttpPack(s.HttpAPI.GET_FOOTER_PICS, {
+                        app.HttpServerManager().SendHttpPack(c.HttpAPI.GET_FOOTER_PICS, {
                             token: app.UserManager().UserInfo.token
                         })
                     }
                     ,
                     t.prototype.onGetFooterPics = function (e) {
                         this.footerPics = e,
-                            app.Client.OnEvent(r.GameEventDefine.GET_FOOTER_PICS)
+                            app.Client.OnEvent(s.GameEventDefine.GET_FOOTER_PICS)
                     }
                     ,
                     t.prototype.GetFooterPics = function () {
@@ -16607,18 +16778,18 @@ window.__require = function e(t, n, o) {
                     ,
                     Object.defineProperty(t.prototype, "GetVIPFaqShow", {
                         get: function () {
-                            return this.faqInfoList && this.faqInfoList.vip_faq_list && this.faqInfoList.vip_faq_list.length > 0 && app.FormManager().IsFormShow(d.UINameDefine.UIVIP)
+                            return this.faqInfoList && this.faqInfoList.vip_faq_list && this.faqInfoList.vip_faq_list.length > 0 && app.FormManager().IsFormShow(h.UINameDefine.UIVIP)
                         },
                         enumerable: !1,
                         configurable: !0
                     }),
                     t.prototype.RequestFaqList = function () {
-                        app.HttpServerManager().SendHttpPack(s.HttpAPI.GET_FAQLIST)
+                        app.HttpServerManager().SendHttpPack(c.HttpAPI.GET_FAQLIST)
                     }
                     ,
                     t.prototype.onFaqList = function (e) {
                         this.faqInfoList = e,
-                            app.Client.OnEvent(r.GameEventDefine.GET_FAQ_LIST, e)
+                            app.Client.OnEvent(s.GameEventDefine.GET_FAQ_LIST, e)
                     }
                     ,
                     t.prototype.GetFaqText = function (e) {
@@ -16643,14 +16814,14 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.onTextInfo = function (e, t) {
                         this.SetFaqData(e.name, e.value),
-                            app.Client.OnEvent(r.GameEventDefine.GET_FAQ_INFO, {
+                            app.Client.OnEvent(s.GameEventDefine.GET_FAQ_INFO, {
                                 recvData: e,
                                 sendData: t
                             })
                     }
                     ,
                     t.prototype.RequestTextInfo = function (e, t) {
-                        app.HttpServerManager().SendHttpPack(s.HttpAPI.GET_TEXTINFO, {
+                        app.HttpServerManager().SendHttpPack(c.HttpAPI.GET_TEXTINFO, {
                             token: app.UserManager().GetUserInfo.token,
                             name: e,
                             type: t
@@ -16669,8 +16840,8 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.IsInsufficientGoldCoins = function (e) {
-                        return !app.GameConfigManager().IsExperienceServer && (app.UserManager().GetUserInfo.gold < e || app.UserManager().GetUserInfo.gold <= 0) && (app.FormManager().ShowForm(d.UINameDefine.UIFreeWindow, {
-                            type: c.FreeWindowType.GoldNod
+                        return !app.GameConfigManager().IsExperienceServer && (app.UserManager().GetUserInfo.gold < e || app.UserManager().GetUserInfo.gold <= 0) && (app.FormManager().ShowForm(h.UINameDefine.UIFreeWindow, {
+                            type: l.FreeWindowType.GoldNod
                         }),
                             !0)
                     }
@@ -16681,17 +16852,17 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.OnEnterGame = function (e, t) {
-                        app.GameConfigManager().GetShowJoinFree(e, t) ? app.FormManager().ShowForm(d.UINameDefine.UIExperience, {
+                        app.GameConfigManager().GetShowJoinFree(e, t) ? app.FormManager().ShowForm(h.UINameDefine.UIExperience, {
                             gid: e,
                             subGid: t
                         }) : this.EnterGame(e, t)
                     }
                     ,
                     t.prototype.EnterGame = function (e, t) {
-                        if (app.EventTrackManager().LogEvent(p.default.CLICK_ENTER_GAME),
+                        if (app.EventTrackManager().LogEvent(d.default.CLICK_ENTER_GAME),
                             0 != app.GameConfigManager().GetGameConfig().game_status)
                             if (app.ExternGameManager().IsGameDown() && app.UserManager().GetUserInfo.gold <= 0)
-                                app.FormManager().ShowForm(d.UINameDefine.UISettlement, {
+                                app.FormManager().ShowForm(h.UINameDefine.UISettlement, {
                                     gid: e,
                                     subGid: t
                                 });
@@ -16708,14 +16879,14 @@ window.__require = function e(t, n, o) {
                                         if (o) {
                                             if (o.RoomMode != app.UserManager().GetUserInfo.roomMode)
                                                 if (1 != n.length)
-                                                    if (o.RoomType == i.RoomType.ROOM_SINGLE)
+                                                    if (o.RoomType == a.RoomType.ROOM_SINGLE)
                                                         this.EnterRoomGame(o.RoomMode);
                                                     else {
-                                                        var a = {
+                                                        var i = {
                                                             gid: e,
                                                             extern: !1
                                                         };
-                                                        this.EnterRoomGame(o.RoomMode, a)
+                                                        this.EnterRoomGame(o.RoomMode, i)
                                                     }
                                                 else
                                                     this.EnterRoomGame(n[0].way_id)
@@ -16727,8 +16898,8 @@ window.__require = function e(t, n, o) {
                                     this.ErrLog("EnterGame failed to get way list: " + e)
                             }
                         else {
-                            var r = app.TextManager().GetTextInfo(l.TextDefine.limit);
-                            r && app.ConfirmManager().ShowConfirm(c.ConfirmType.ConfirmYN, r, null, this.OnGameForbidden, null, this)
+                            var r = app.TextManager().GetTextInfo(p.TextDefine.limit);
+                            r && app.ConfirmManager().ShowConfirm(l.ConfirmType.ConfirmYN, r, null, this.OnGameForbidden, null, this)
                         }
                     }
                     ,
@@ -16748,8 +16919,8 @@ window.__require = function e(t, n, o) {
                         configurable: !0
                     }),
                     t.prototype.GetFitRoomMode = function (e) {
-                        var t = app.HGameManager().GetRoomConfigByGid(o.GIDTool.YDZJH)
-                            , n = app.HGameManager().GetRoomConfigByGid(o.GIDTool.RUMMY);
+                        var t = app.HGameManager().GetRoomConfigByGid(i.GIDTool.YDZJH)
+                            , n = app.HGameManager().GetRoomConfigByGid(i.GIDTool.RUMMY);
                         return this.GetFitGame(e, t) || this.GetFitGame(e, n)
                     }
                     ,
@@ -16779,31 +16950,31 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.RequestHundredLeaveRoom = function (e) {
                         var t = app.RoomManager().GetRoomModeInfoByGid(e);
-                        t ? t.RoomMode != app.UserManager().GetUserInfo.roomMode && t.RoomType == i.RoomType.ROOM_HUNDRED && app.RoomManager().IsHundredGame && app.GameServerManager().send(app.GameServerManager().req_key_map.req_leave_hall.key, {
+                        t ? t.RoomMode != app.UserManager().GetUserInfo.roomMode && t.RoomType == a.RoomType.ROOM_HUNDRED && app.RoomManager().IsHundredGame && app.GameServerManager().send(app.GameServerManager().req_key_map.req_leave_hall.key, {
                             hall_id: app.UserManager().GetUserInfo.roomMode
                         }, !0) : this.ErrLog("RequestHundredLeaveRoom: " + e)
                     }
                     ,
                     t.prototype.GetFreeOutGameWindow = function () {
-                        app.GameConfigManager().IsExperienceServer && app.FormManager().ShowForm(d.UINameDefine.UIFreeWindow, {
-                            type: c.FreeWindowType.FreeOutGame
+                        app.GameConfigManager().IsExperienceServer && app.FormManager().ShowForm(h.UINameDefine.UIFreeWindow, {
+                            type: l.FreeWindowType.FreeOutGame
                         })
                     }
                     ,
                     t.prototype.CloseIndependentForm = function () {
-                        var e = app.GameManager().GetCurSceneInfo.concat(d.UINameDefine.UIDownAndSevice);
+                        var e = app.GameManager().GetCurSceneInfo.concat(h.UINameDefine.UIDownAndSevice);
                         app.FormManager().CloseIndependentForm(e)
                     }
                     ,
                     t.prototype.ShowHallForm = function (e, t) {
-                        void 0 === e && (e = d.UINameDefine.UIHall),
+                        void 0 === e && (e = h.UINameDefine.UIHall),
                             this.CloseIndependentForm(),
                             app.FormManager().IsFormShow(e) || app.FormManager().ShowForm(e, t)
                     }
                     ,
                     t.prototype.ShowHall = function () {
-                        app.Client.OnEvent(r.GameEventDefine.SELECT_TOPTOOGLE, c.HallTopNameToNode.Home),
-                            app.FormManager().IsFormShow(d.UINameDefine.UIHall) || app.FormManager().ShowForm(d.UINameDefine.UIHall)
+                        app.Client.OnEvent(s.GameEventDefine.SELECT_TOPTOOGLE, l.HallTopNameToNode.Home),
+                            app.FormManager().IsFormShow(h.UINameDefine.UIHall) || app.FormManager().ShowForm(h.UINameDefine.UIHall)
                     }
                     ,
                     t.prototype.OnReload = function () { }
@@ -16860,15 +17031,15 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.isCurrSport = function () {
-                        return this.selectState.curr == c.HallTopNameToNode.Sports
+                        return this.selectState.curr == l.HallTopNameToNode.Sports
                     }
                     ,
                     t.prototype.getReturnPreSelect = function () {
-                        return this.selectState.curr == c.HallTopNameToNode.Refer || this.selectState.curr == c.HallTopNameToNode.Mine || this.selectState.curr == c.HallTopNameToNode.Mail
+                        return this.selectState.curr == l.HallTopNameToNode.Refer || this.selectState.curr == l.HallTopNameToNode.Mine || this.selectState.curr == l.HallTopNameToNode.Mail
                     }
                     ,
                     t.prototype.enterSport = function (e) {
-                        app.Client.OnEvent(r.GameEventDefine.SELECT_TOPTOOGLE, c.HallTopNameToNode.Sports),
+                        app.Client.OnEvent(s.GameEventDefine.SELECT_TOPTOOGLE, l.HallTopNameToNode.Sports),
                             this.CloseIndependentForm(),
                             app.ExternGameManager().requestSportGameUp(!1, e)
                     }
@@ -16879,15 +17050,26 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.showPreSelectForm = function () {
                         var e = this.getPreSelect();
-                        e == c.HallTopNameToNode.Home ? this.ShowHall() : e == c.HallTopNameToNode.Promotion ? app.ActivityManager().showAllActivityForm(null, !1) : e == c.HallTopNameToNode.Mine ? app.UserManager().showAccountForm(null, !1) : e == c.HallTopNameToNode.Refer && app.PromoteMainManager().showPromoteMainForm(null, !1)
+                        e == l.HallTopNameToNode.Home ? this.ShowHall() : e == l.HallTopNameToNode.Promotion ? app.ActivityManager().showAllActivityForm(null, !1) : e == l.HallTopNameToNode.Mine ? app.UserManager().showAccountForm(null, !1) : e == l.HallTopNameToNode.Refer && app.PromoteMainManager().showPromoteMainForm(null, !1)
+                    }
+                    ,
+                    t.prototype.onGameExit = function () {
+                        var e = this;
+                        this.Log("onGameExit==>>"),
+                            this.timer && clearTimeout(this.timer),
+                            this.timer = window.setTimeout(function () {
+                                app.GameConfigManager().IsGuideOpen() && !app.GuideManager().getLocalDataGuideData(o.Guide_Type.Guide_withdraw) || (app.ExternGameManager().existExternGame() || app.CashOutManager().RequstWithdrawNotify(),
+                                    e.timer = 0)
+                            }, 500)
                     }
                     ,
                     t
-            }(a.Singleton);
-        n.HallManager = h,
+            }(r.Singleton);
+        n.HallManager = u,
             cc._RF.pop()
     }
         , {
+        "../../../script/HallScene/Guide/GuideDefine": "GuideDefine",
         "../../../script/common/GIDTool": "GIDTool",
         "../../../script/common/room_mode_tool": "room_mode_tool",
         "../../Base/Singleton": "Singleton",
@@ -17470,7 +17652,7 @@ window.__require = function e(t, n, o) {
                         , p = setTimeout(function () {
                             s.ErrLog("httpRequest time out:%s", r),
                                 d()
-                        }, 8e4)
+                        }, 8e3)
                         , d = function () {
                             l || (l = !0,
                                 clearTimeout(p),
@@ -17606,6 +17788,7 @@ window.__require = function e(t, n, o) {
                 e.CHECK_AGENT_GOLD_LIMIT = "/user/checkAgentGoldLimit",
                 e.GET_USERGUIDE = "/user/userGuide",
                 e.TRACK_SUMMARY = "/user/userTrackSummary",
+                e.USER_WITHDRAW_NOTIFY = "/user/userWithdrawNotify",
                 e.GOODS_LIST = "/pay/goodsList",
                 e.PAY_CHANNEL_LISTS = "/pay/payTypeChannelLists",
                 e.PAY_CHANNEL_TYPE_LIST = "/pay/payChannelTypeLists",
@@ -17654,6 +17837,7 @@ window.__require = function e(t, n, o) {
                 e.CHECK_GAME_STATUS = "/other_game/checkGameStatus",
                 e.GAME_DOWN = "/other_game/gameDown",
                 e.GAME_UP = "/other_game/gameUp",
+                e.GET_GAME_INFO = "/other_game/getGameInfo",
                 e.GET_EMAIL_LIST = "/message/index",
                 e.ET_EMAIL_DETAIL = "/message/info",
                 e.EMAIL_RECEIVE = "/message/receive",
@@ -18022,6 +18206,32 @@ window.__require = function e(t, n, o) {
                             app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_six);
                         else if (22191 == e)
                             app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_seven);
+                        else if (31007 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_8);
+                        else if (31008 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_9);
+                        else if (31009 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_10);
+                        else if (31010 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_11);
+                        else if (31011 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_12);
+                        else if (31012 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_13);
+                        else if (31013 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_14);
+                        else if (31014 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_15);
+                        else if (31015 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_16);
+                        else if (31016 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_17);
+                        else if (31017 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_18);
+                        else if (31018 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_19);
+                        else if (31019 == e)
+                            app.RedDotManager().showActivityForm(s.ActivityType.reserve_event_20);
                         else if (22120 == e)
                             app.DemoServerManager().EnterGame();
                         else if (22121 == e)
@@ -18074,11 +18284,23 @@ window.__require = function e(t, n, o) {
                         } else if (e >= 13001 && e <= 13013) {
                             var _ = !app.ComTool().H5Platform() && p[e + "H"] ? p[e + "H"] : p[e];
                             (null == _ ? void 0 : _.Name) == l.UINameDefine.UIPromoteMain ? app.PromoteMainManager().showPromoteMainForm(_) : (null == _ ? void 0 : _.Name) == l.UINameDefine.UIAccount ? app.UserManager().showAccountForm(_) : (null == _ ? void 0 : _.Name) == l.UINameDefine.UIActivity ? app.RedDotManager().showActivityForm(_.subName) : (null == _ ? void 0 : _.Name) == l.UINameDefine.UIAllActivity ? app.ActivityManager().showAllActivityForm(_) : (null == _ ? void 0 : _.Name) == l.UINameDefine.UIChat ? app.EmailManager().showEmailForm() : app.FormManager().ShowForm(_.Name, _)
-                        } else
-                            25102 == e ? app.FormManager().ShowForm(l.UINameDefine.UIBetBonus) : 25103 == e ? app.FormManager().ShowForm(l.UINameDefine.UIVIP) : 25104 == e ? app.FormManager().ShowForm(l.UINameDefine.UIVIP, {
+                        } else if (25102 == e)
+                            app.FormManager().ShowForm(l.UINameDefine.UIBetBonus);
+                        else if (25103 == e)
+                            app.FormManager().ShowForm(l.UINameDefine.UIVIP);
+                        else if (25104 == e)
+                            app.FormManager().ShowForm(l.UINameDefine.UIVIP, {
                                 gotoLower: !0
-                            }) : 31002 == e ? 3 == app.GameConfigManager().GetGameConfig().ai_chat_robot_switch && app.SupportManager().ShowServiceUI() : 31003 == e ? 1 == app.GameConfigManager().GetGameConfig().ai_promote_robot_switch && app.SupportManager().ShowPromoteAISupport() : 22138 == e ? app.FormManager().ShowForm(l.UINameDefine.UITaskBonus) : 22181 == e ? app.HallManager().enterSport() : e >= 20101 && e <= 20104 ? t = a.RoomMode.ROOM_MODE_DDZ_MATCH_5P_BAISC + e - 20101 : e >= 20201 && e <= 20204 ? t = a.RoomMode.ROOM_MODE_TEXAS_HOLDEM_MATCH_6P_BAISC + e - 20201 : e >= 20301 && e <= 20304 ? t = a.RoomMode.ROOM_MODE_PSZ_MATCH_5P_BAISC + e - 20301 : 20401 == e ? t = a.RoomMode.ROOM_MODE_DRAGON_TIGER_HALL : 20501 == e ? t = a.RoomMode.ROOM_MODE_RED_BLACK_HALL : 20601 == e ? t = a.RoomMode.ROOM_MODE_SHZ : e >= 20701 && e <= 20704 ? t = a.RoomMode.ROOM_MODE_13WATER_MATCH_4P_BASIC + e - 20701 : e >= 20801 && e <= 20805 ? t = a.RoomMode.ROOM_MODE_PDK_MATCH_5P_BAISC + e - 20801 : e >= 20901 && e <= 20905 ? t = 20901 == e ? a.RoomMode.ROOM_MODE_ERMJ_MATCH_5P_MIN : a.RoomMode.ROOM_MODE_ERMJ_MATCH_5P_BAISC + e - 20902 : e >= 21001 && e <= 21002 ? t = 21001 == e ? a.RoomMode.ROOM_MODE_HUNDRED_COW_10X : a.RoomMode.ROOM_MODE_HUNDRED_COW_4X : e >= 21101 && e <= 21105 ? t = 21105 == e ? a.RoomMode.ROOM_MODE_BULL_HOLDEM_MATCH_5P_MAX : a.RoomMode.ROOM_MODE_BULL_HOLDEM_MATCH_5P_BAISC + e - 21101 : e >= 21201 && e <= 21205 ? t = a.RoomMode.ROOM_MODE_BULL1_HOLDEM_MATCH_5P_BAISC + e - 21201 : 21301 == e ? t = a.RoomMode.ROOM_MODE_CAR_HALL : 22102 == e ? t = a.RoomMode.ROOM_MODE_BAO_DIAN : 22105 == e ? t = a.RoomMode.ROOM_MODE_777_SLOT_0 : 22106 == e ? t = a.RoomMode.ROOM_MODE_BAI_BACCARAT : 22107 == e ? t = a.RoomMode.ROOM_MODE_LUN_PAN : 22108 == e ? t = a.RoomMode.ROOM_MODE_ABgame : 22109 == e ? t = a.RoomMode.ROOM_MODE_Roulette : 22110 == e ? t = a.RoomMode.ROOM_MODE_LROLLER : 22111 == e ? t = a.RoomMode.ROOM_MODE_TOU_BAO : 22112 == e ? t = a.RoomMode.ROOM_MODE_MINES : 21401 == e ? n = i.GIDTool.PG : 21501 == e ? n = i.GIDTool.DG : 21601 == e ? n = i.GIDTool.TFGAMING : 21701 == e ? n = i.GIDTool.BTI : 21801 == e ? (n = i.GIDTool.EVO,
-                                o = 9e3) : 21901 == e ? n = i.GIDTool.SBO : 22101 == e ? n = i.GIDTool.NYDJ : 22104 == e ? n = i.GIDTool.SHIJIEBEI : 22201 == e ? n = i.GIDTool.CQ9 : 22401 == e || 22103 == e ? n = i.GIDTool.WINGO : 22122 == e ? n = i.GIDTool.DICE : 22123 == e ? n = i.GIDTool.PINGBO : 22139 == e ? n = i.GIDTool.BLINDBOX : 22140 == e ? n = i.GIDTool.K3 : 22141 == e ? n = i.GIDTool.TRUCOONE : 22142 == e ? n = i.GIDTool.crazyMines : 22143 == e ? n = i.GIDTool.penalty : 22144 == e ? n = i.GIDTool.Bonanza : 22146 == e ? n = i.GIDTool.YesBingo : 22147 == e ? n = i.GIDTool.CpSoft : 22148 == e ? n = i.GIDTool.TaDa : 22149 == e ? n = i.GIDTool.JiLiTable : 22150 == e ? n = i.GIDTool.KingMaker : 22151 == e ? n = i.GIDTool.PGEUR : 22152 == e ? n = i.GIDTool.Tone : 22153 == e ? n = i.GIDTool.PGSingleGame : 22154 == e ? n = i.GIDTool.PGEURSingleGame : 22155 == e ? n = i.GIDTool.PPSingleGame : 22156 == e ? n = i.GIDTool.DS88 : 22157 == e ? n = i.GIDTool.CQ9_FISH : 22158 == e ? n = i.GIDTool.CMD : 22159 == e ? n = i.GIDTool.BGS : 22160 == e ? n = i.GIDTool.JJ_FISH : 22161 == e ? n = i.GIDTool.EVoPlaySingle : 22162 == e ? n = i.GIDTool.SWAGGER : 22163 == e ? n = i.GIDTool.IMGame : 22164 == e ? n = i.GIDTool.AWC : 22165 == e ? n = i.GIDTool.AWC2 : 22166 == e ? n = i.GIDTool.HaHanero : 22167 == e ? n = i.GIDTool.Ebet : 22168 == e ? n = i.GIDTool.EVO3 : 22170 == e ? n = i.GIDTool.CRASH2 : 22171 == e ? n = i.GIDTool.Panda : 22169 == e ? n = i.GIDTool.Keno : 22172 == e ? n = i.GIDTool.Aztec : 22175 == e ? n = i.GIDTool.JDB : 22176 == e ? n = i.GIDTool.V8 : 22177 == e ? n = i.GIDTool.BNG : 22178 == e ? n = i.GIDTool.PP2 : 22179 == e ? n = i.GIDTool.DIGITAIN_SPORT : 22180 == e ? n = i.GIDTool.FPC : 30002 == e ? app.ComTool().H5Platform() ? n = i.GIDTool.WCS : app.SysNotifyManager().ShowToast("UI_WorldCup_ActiveTip") : 30003 == e ? n = i.GIDTool.LuckyAirShip : 30004 == e ? n = i.GIDTool.RacingCard : 30005 == e ? n = i.GIDTool.Plinko : 30006 == e ? n = i.GIDTool.Rich88 : 30007 == e ? n = i.GIDTool.MG : 30008 == e ? n = i.GIDTool.SPRIBE : 30010 == e ? n = i.GIDTool.PB2_Sports : 30009 == e ? n = i.GIDTool.Slot1 : 22182 == e && (n = i.GIDTool.GOALSHOOT);
+                            });
+                        else if (31002 == e)
+                            3 == app.GameConfigManager().GetGameConfig().ai_chat_robot_switch && app.SupportManager().ShowServiceUI();
+                        else if (31003 == e) {
+                            if (app.UserManager().GetIsOfficialPopup())
+                                return;
+                            1 == app.GameConfigManager().GetGameConfig().ai_promote_robot_switch && app.SupportManager().ShowPromoteAISupport()
+                        } else
+                            22138 == e ? app.FormManager().ShowForm(l.UINameDefine.UITaskBonus) : 22181 == e ? app.HallManager().enterSport() : e >= 20101 && e <= 20104 ? t = a.RoomMode.ROOM_MODE_DDZ_MATCH_5P_BAISC + e - 20101 : e >= 20201 && e <= 20204 ? t = a.RoomMode.ROOM_MODE_TEXAS_HOLDEM_MATCH_6P_BAISC + e - 20201 : e >= 20301 && e <= 20304 ? t = a.RoomMode.ROOM_MODE_PSZ_MATCH_5P_BAISC + e - 20301 : 20401 == e ? t = a.RoomMode.ROOM_MODE_DRAGON_TIGER_HALL : 20501 == e ? t = a.RoomMode.ROOM_MODE_RED_BLACK_HALL : 20601 == e ? t = a.RoomMode.ROOM_MODE_SHZ : e >= 20701 && e <= 20704 ? t = a.RoomMode.ROOM_MODE_13WATER_MATCH_4P_BASIC + e - 20701 : e >= 20801 && e <= 20805 ? t = a.RoomMode.ROOM_MODE_PDK_MATCH_5P_BAISC + e - 20801 : e >= 20901 && e <= 20905 ? t = 20901 == e ? a.RoomMode.ROOM_MODE_ERMJ_MATCH_5P_MIN : a.RoomMode.ROOM_MODE_ERMJ_MATCH_5P_BAISC + e - 20902 : e >= 21001 && e <= 21002 ? t = 21001 == e ? a.RoomMode.ROOM_MODE_HUNDRED_COW_10X : a.RoomMode.ROOM_MODE_HUNDRED_COW_4X : e >= 21101 && e <= 21105 ? t = 21105 == e ? a.RoomMode.ROOM_MODE_BULL_HOLDEM_MATCH_5P_MAX : a.RoomMode.ROOM_MODE_BULL_HOLDEM_MATCH_5P_BAISC + e - 21101 : e >= 21201 && e <= 21205 ? t = a.RoomMode.ROOM_MODE_BULL1_HOLDEM_MATCH_5P_BAISC + e - 21201 : 21301 == e ? t = a.RoomMode.ROOM_MODE_CAR_HALL : 22102 == e ? t = a.RoomMode.ROOM_MODE_BAO_DIAN : 22105 == e ? t = a.RoomMode.ROOM_MODE_777_SLOT_0 : 22106 == e ? t = a.RoomMode.ROOM_MODE_BAI_BACCARAT : 22107 == e ? t = a.RoomMode.ROOM_MODE_LUN_PAN : 22108 == e ? t = a.RoomMode.ROOM_MODE_ABgame : 22109 == e ? t = a.RoomMode.ROOM_MODE_Roulette : 22110 == e ? t = a.RoomMode.ROOM_MODE_LROLLER : 22111 == e ? t = a.RoomMode.ROOM_MODE_TOU_BAO : 22112 == e ? t = a.RoomMode.ROOM_MODE_MINES : 21401 == e ? n = i.GIDTool.PG : 21501 == e ? n = i.GIDTool.DG : 21601 == e ? n = i.GIDTool.TFGAMING : 21701 == e ? n = i.GIDTool.BTI : 21801 == e ? (n = i.GIDTool.EVO,
+                                o = 9e3) : 21901 == e ? n = i.GIDTool.SBO : 22101 == e ? n = i.GIDTool.NYDJ : 22104 == e ? n = i.GIDTool.SHIJIEBEI : 22201 == e ? n = i.GIDTool.CQ9 : 22401 == e || 22103 == e ? n = i.GIDTool.WINGO : 22122 == e ? n = i.GIDTool.DICE : 22123 == e ? n = i.GIDTool.PINGBO : 22139 == e ? n = i.GIDTool.BLINDBOX : 22140 == e ? n = i.GIDTool.K3 : 22141 == e ? n = i.GIDTool.TRUCOONE : 22142 == e ? n = i.GIDTool.crazyMines : 22143 == e ? n = i.GIDTool.penalty : 22144 == e ? n = i.GIDTool.Bonanza : 22146 == e ? n = i.GIDTool.YesBingo : 22147 == e ? n = i.GIDTool.CpSoft : 22148 == e ? n = i.GIDTool.TaDa : 22149 == e ? n = i.GIDTool.JiLiTable : 22150 == e ? n = i.GIDTool.KingMaker : 22151 == e ? n = i.GIDTool.PGEUR : 22152 == e ? n = i.GIDTool.Tone : 22153 == e ? n = i.GIDTool.PGSingleGame : 22154 == e ? n = i.GIDTool.PGEURSingleGame : 22155 == e ? n = i.GIDTool.PPSingleGame : 22156 == e ? n = i.GIDTool.DS88 : 22157 == e ? n = i.GIDTool.CQ9_FISH : 22158 == e ? n = i.GIDTool.CMD : 22159 == e ? n = i.GIDTool.BGS : 22160 == e ? n = i.GIDTool.JJ_FISH : 22161 == e ? n = i.GIDTool.EVoPlaySingle : 22162 == e ? n = i.GIDTool.SWAGGER : 22163 == e ? n = i.GIDTool.IMGame : 22164 == e ? n = i.GIDTool.AWC : 22165 == e ? n = i.GIDTool.AWC2 : 22166 == e ? n = i.GIDTool.HaHanero : 22167 == e ? n = i.GIDTool.Ebet : 22168 == e ? n = i.GIDTool.EVO3 : 22170 == e ? n = i.GIDTool.CRASH2 : 22171 == e ? n = i.GIDTool.Panda : 22169 == e ? n = i.GIDTool.Keno : 22172 == e ? n = i.GIDTool.Aztec : 22175 == e ? n = i.GIDTool.JDB : 22176 == e ? n = i.GIDTool.V8 : 22177 == e ? n = i.GIDTool.BNG : 22178 == e ? n = i.GIDTool.PP2 : 22179 == e ? n = i.GIDTool.DIGITAIN_SPORT : 22180 == e ? n = i.GIDTool.FPC : 30002 == e ? app.ComTool().H5Platform() ? n = i.GIDTool.WCS : app.SysNotifyManager().ShowToast("UI_WorldCup_ActiveTip") : 30003 == e ? n = i.GIDTool.LuckyAirShip : 30004 == e ? n = i.GIDTool.RacingCard : 30005 == e ? n = i.GIDTool.Plinko : 30006 == e ? n = i.GIDTool.Rich88 : 30007 == e ? n = i.GIDTool.MG : 30008 == e ? n = i.GIDTool.SPRIBE : 30010 == e ? n = i.GIDTool.PB2_Sports : 30009 == e ? n = i.GIDTool.Slot1 : 22182 == e ? n = i.GIDTool.GOALSHOOT : 30011 == e ? n = i.GIDTool.Slot5 : 30014 == e && (n = i.GIDTool.Christmas);
                         if (d > 0)
                             app.FormManager().IsFormShow(l.UINameDefine.UIHall) ? app.Client.OnEvent(r.GameEventDefine.INTERACTION_JUMP, d) : (app.FormManager().ShowForm(l.UINameDefine.UIHall),
                                 this.timer && clearTimeout(this.timer),
@@ -18139,108 +18361,71 @@ window.__require = function e(t, n, o) {
             Object.defineProperty(n, "__esModule", {
                 value: !0
             });
-        var o = e("../../script/common/GIDTool")
-            , i = function (e) {
-                function t() {
-                    var t = null !== e && e.apply(this, arguments) || this;
-                    return t._callbacks = [],
-                        t._targets = [],
-                        t.clickBackTime = 0,
-                        t
-                }
-                return __extends(t, e),
-                    t.prototype.Init = function () {
-                        for (var e = this, t = [], n = 0; n < arguments.length; n++)
-                            t[n] = arguments[n];
-                        this.JS_Name = "KeyManager",
-                            cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.OnKeyDown, this),
-                            cc.systemEvent.on("onBackKey", this.OnBackKey, this),
-                            window.onpopstate = function (t) {
-                                try {
-                                    if (t && t.state && "object" == typeof t.state) {
-                                        var n = t.state
-                                            , i = n.name
-                                            , a = n.data;
-                                        if (!i)
-                                            return;
-                                        app.Client.GetIndependentChildren().length > 0 && app.HallManager().CloseIndependentForm(),
-                                            "ExternGameBt" == i ? (app.ExternGameManager().setBtGameLastPage(null == a ? void 0 : a.page),
-                                                app.ExternGameManager().existExternGame() ? app.ExternGameManager().updateBtPage() : app.HallManager().enterSport(o.GIDTool.BETBY)) : "ExternGameSB" === i ? app.ExternGameManager().existExternGame() || app.HallManager().enterSport(o.GIDTool.SABA_SPORT) : (app.HallManager().isCurrSport() && app.ExternGameManager().destroyExternGame(),
-                                                    app.FormManager().ShowForm(i, a))
-                                    }
-                                } catch (r) {
-                                    e.ErrLog("onpopstate: ", r)
-                                }
-                            }
-                    }
-                    ,
-                    t.prototype.OnKeyDown = function (e) {
-                        var t = e.keyCode;
-                        this.Log("onKeyDown ==>>", t),
-                            app.ComTool().DesktopPlatform() && (t == cc.macro.KEY.escape || t == cc.macro.KEY.f5 && location.reload())
-                    }
-                    ,
-                    t.prototype.OnBackKey = function () {
-                        this.Log("onBackKey");
-                        var e = this._callbacks.length;
-                        if (0 != e) {
-                            if (!app.RoomManager().IsOutGoldGamePop())
-                                for (var t = 0; t < e; t++)
-                                    return void this._callbacks[t].apply(this._targets[t])
-                        } else if (app.ComTool().H5Platform()) {
-                            if (app.NativeMgr().getApkVersion() >= 1) {
-                                if (Date.now() - this.clickBackTime >= 2e3)
-                                    return this.clickBackTime = Date.now(),
-                                        void app.SysNotifyManager().ShowToast("ExitTip");
-                                app.NativeMgr().exitApp()
-                            }
-                            return
-                        }
-                    }
-                    ,
-                    t.prototype.RegBackEvent = function (e, t) {
-                        e && t ? (this._callbacks.splice(0, 0, e),
-                            this._targets.splice(0, 0, t)) : this.ErrLog("RegBackEvent: error")
-                    }
-                    ,
-                    t.prototype.UnRegBackEvent = function (e, t) {
-                        for (var n = 0; n < this._callbacks.length; n++)
-                            if (this._callbacks[n] === e && this._targets[n] === t) {
-                                this._callbacks.splice(n, 1),
-                                    this._targets.splice(n, 1);
-                                break
-                            }
-                    }
-                    ,
-                    t.prototype.RegRouterEvent = function (e, t) {
-                        var n, o = e.JS_Name, i = null == o ? void 0 : o.indexOf("_"), a = null == o ? void 0 : o.indexOf("game_");
-                        i > -1 && -1 == a && (o = o.substring(0, i));
-                        var r = location ? location.origin + location.pathname : "";
-                        if (!((null === (n = null === location || void 0 === location ? void 0 : location.search) || void 0 === n ? void 0 : n.includes(o)) && history && history.state) || t && !app.ComUtil().deepEqual(history.state.data, t[0])) {
-                            var s, c = r + "?f=" + o;
-                            if (t && t instanceof Array && t[0]) {
-                                var l = t[0];
-                                if (s = l,
-                                    Number.isInteger(Number(l)))
-                                    c += "&d=" + l;
-                                else if ("[object Object]" === Object.prototype.toString.call(l))
-                                    for (var p in l)
-                                        Object.prototype.hasOwnProperty.call(l, p) && (c += "&" + p + "=" + l[p])
-                            }
-                            history && history.pushState({
-                                name: o,
-                                data: s
-                            }, null, c)
-                        }
-                    }
-                    ,
+        var o = function (e) {
+            function t() {
+                var t = null !== e && e.apply(this, arguments) || this;
+                return t._callbacks = [],
+                    t._targets = [],
+                    t.clickBackTime = 0,
                     t
-            }(e("../Base/Singleton").Singleton);
-        n.default = i,
+            }
+            return __extends(t, e),
+                t.prototype.Init = function () {
+                    for (var e = [], t = 0; t < arguments.length; t++)
+                        e[t] = arguments[t];
+                    this.JS_Name = "KeyManager",
+                        cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.OnKeyDown, this),
+                        cc.systemEvent.on("onBackKey", this.OnBackKey, this)
+                }
+                ,
+                t.prototype.OnKeyDown = function (e) {
+                    var t = e.keyCode;
+                    this.Log("onKeyDown ==>>", t),
+                        app.ComTool().DesktopPlatform() && (t == cc.macro.KEY.escape || t == cc.macro.KEY.f5 && location.reload())
+                }
+                ,
+                t.prototype.OnBackKey = function () {
+                    this.Log("onBackKey");
+                    var e = this._callbacks.length;
+                    if (0 != e) {
+                        if (!app.RoomManager().IsOutGoldGamePop())
+                            for (var t = 0; t < e; t++)
+                                return void this._callbacks[t].apply(this._targets[t])
+                    } else if (app.ComTool().H5Platform()) {
+                        if (app.NativeMgr().getApkVersion() >= 1) {
+                            if (Date.now() - this.clickBackTime >= 2e3)
+                                return this.clickBackTime = Date.now(),
+                                    void app.SysNotifyManager().ShowToast("ExitTip");
+                            app.NativeMgr().exitApp()
+                        }
+                        return
+                    }
+                }
+                ,
+                t.prototype.RegBackEvent = function (e, t) {
+                    e && t ? (this._callbacks.splice(0, 0, e),
+                        this._targets.splice(0, 0, t)) : this.ErrLog("RegBackEvent: error")
+                }
+                ,
+                t.prototype.UnRegBackEvent = function (e, t) {
+                    for (var n = 0; n < this._callbacks.length; n++)
+                        if (this._callbacks[n] === e && this._targets[n] === t) {
+                            this._callbacks.splice(n, 1),
+                                this._targets.splice(n, 1);
+                            break
+                        }
+                }
+                ,
+                t.prototype.RegRouterEvent = function (e, t) {
+                    app.RouterMgr().RegRouterEvent(e, t)
+                }
+                ,
+                t
+        }(e("../Base/Singleton").Singleton);
+        n.default = o,
             cc._RF.pop()
     }
         , {
-        "../../script/common/GIDTool": "GIDTool",
         "../Base/Singleton": "Singleton"
     }],
     KwaiPixelTrackManager: [function (e, t, n) {
@@ -18279,7 +18464,7 @@ window.__require = function e(t, n, o) {
                 t.prototype.RetryInitKwai = function () {
                     if (this.GetKwaiID && !this.initialized) {
                         this.initialized = !0;
-                        var e = '\n            !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/custom/events-nr.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/custom/events-nr.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));\n            kwaiq.load(\'' + this.GetKwaiID + "');    // replace with your pixel id\n            kwaiq.page();\n            "
+                        var e = '\n            !function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.install=t():e.install=t()}(window,(function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";var r=this&&this.__spreadArray||function(e,t,n){if(n||2===arguments.length)for(var r,o=0,i=t.length;o<i;o++)!r&&o in t||(r||(r=Array.prototype.slice.call(t,0,o)),r[o]=t[o]);return e.concat(r||Array.prototype.slice.call(t))};!function(e){var t=window;t.KwaiAnalyticsObject=e,t[e]=t[e]||[];var n=t[e];n.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];var o=function(e,t){e[t]=function(){var n=Array.from(arguments),o=r([t],n,!0);e.push(o)}};n.methods.forEach((function(e){o(n,e)})),n.instance=function(e){var t=n._i[e]||[];return n.methods.forEach((function(e){o(t,e)})),t},n.load=function(t,r){n._i=n._i||{},n._i[t]=[],n._i[t]._u="https://s1.kwai.net/kos/s101/nlav11187/pixel/custom/events-nr.js",n._t=n._t||{},n._t[t]=+new Date,n._o=n._o||{},n._o[t]=r||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src="https://s1.kwai.net/kos/s101/nlav11187/pixel/custom/events-nr.js?sdkid="+t+"&lib="+e;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("kwaiq")}])}));\n            kwaiq.load(\'' + this.GetKwaiID + "');    // replace with your pixel id\n            kwaiq.page();\n            kwaiq.instance('" + this.GetKwaiID + "').track('" + i.default.CONTENT_VIEW + "');\n            "
                             , t = document.createElement("script");
                         t.innerHTML = e,
                             document.head.appendChild(t)
@@ -18324,7 +18509,7 @@ window.__require = function e(t, n, o) {
             Object.defineProperty(n, "__esModule", {
                 value: !0
             });
-        var o = ["Form/Polyglot", "Form/PolyglotGame40", "Form/PolyglotGame50", "Form/PolyglotGame60", "Form/PolyglotGame210", "Form/PolyglotGame420", "Form/PolyglotGame450", "Form/PolyglotGame520", "Form/PolyglotGame600", "Form/PolyglotGame650", "Form/PolyglotGame700", "Form/PolyglotGame730", "Form/PolyglotGame750", "Form/PolyglotGame760", "Form/PolyglotGame840", "Form/PolyglotGame850", "Form/PolyglotGame860", "Form/PolyglotGame880", "Form/PolyglotGame890", "Form/PolyglotGame920", "Form/PolyglotGame970", "Form/PolyglotGame1050", "Form/PolyglotGame1080", "Form/PolyglotGame1310", "Form/PolyglotGame1241", "Form/PolyglotGameSlot", "Form/PolyglotGameCrash", "Form/PolyglotGameDouble", "Form/PolyglotGameMines", "Form/PolyglotGameTP", "Form/PolyglotGameHelo", "Form/PolyglotGameDzpk"]
+        var o = ["Form/Polyglot", "Form/PolyglotGame40", "Form/PolyglotGame50", "Form/PolyglotGame60", "Form/PolyglotGame210", "Form/PolyglotGame420", "Form/PolyglotGame450", "Form/PolyglotGame520", "Form/PolyglotGame600", "Form/PolyglotGame650", "Form/PolyglotGame700", "Form/PolyglotGame730", "Form/PolyglotGame750", "Form/PolyglotGame760", "Form/PolyglotGame840", "Form/PolyglotGame850", "Form/PolyglotGame860", "Form/PolyglotGame880", "Form/PolyglotGame890", "Form/PolyglotGame920", "Form/PolyglotGame970", "Form/PolyglotGame1050", "Form/PolyglotGame1080", "Form/PolyglotGame1090", "Form/PolyglotGame1310", "Form/PolyglotGame1241", "Form/PolyglotGame1670", "Form/PolyglotGameSlot", "Form/PolyglotGameCrash", "Form/PolyglotGameDouble", "Form/PolyglotGameMines", "Form/PolyglotGameTP", "Form/PolyglotGameHelo", "Form/PolyglotGameDzpk"]
             , i = function () {
                 function e() {
                     this.langData = null,
@@ -18424,6 +18609,14 @@ window.__require = function e(t, n, o) {
                             var s = a[n];
                             cc.isValid(s.node) && s.node.active && s.updateSprite(this.langData.curLang)
                         }
+                        var c = [];
+                        for (n = 0; n < e.length; ++n) {
+                            var l = e[n].getComponentsInChildren("LocalizedImage");
+                            Array.prototype.push.apply(c, l)
+                        }
+                        for (n = 0; n < c.length; ++n)
+                            l = c[n],
+                                cc.isValid(l.node) && l.node.active && l.updateSprite()
                     }
                     ,
                     e.prototype.CSVToArray = function (e, t) {
@@ -18498,24 +18691,27 @@ window.__require = function e(t, n, o) {
             }),
             n.LanguageManager = void 0;
         var o = e("../Base/Singleton")
-            , i = e("../Define/GameEventDefine")
-            , a = e("../Define/HttpServerDefine")
-            , r = e("../Define/LanguageDefine")
-            , s = function (e) {
+            , i = e("../Bundle/BundleManager")
+            , a = e("../Define/FormDefine")
+            , r = e("../Define/GameEventDefine")
+            , s = e("../Define/HttpServerDefine")
+            , c = e("../Define/LanguageDefine")
+            , l = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t._LanguageList = null,
+                        t.form = null,
                         t
                 }
                 return __extends(t, e),
                     t.prototype.Init = function () {
                         this.JS_Name = "LanguageManager",
                             this.Log("Init"),
-                            app.HttpServerManager().RegNetPack(a.HttpAPI.GET_LANG_LIST, this.OnGetLanguageList, this)
+                            app.HttpServerManager().RegNetPack(s.HttpAPI.GET_LANG_LIST, this.OnGetLanguageList, this)
                     }
                     ,
                     t.prototype.RequestLangList = function () {
-                        app.HttpServerManager().SendHttpPack(a.HttpAPI.GET_LANG_LIST)
+                        app.HttpServerManager().SendHttpPack(s.HttpAPI.GET_LANG_LIST)
                     }
                     ,
                     t.prototype.OnGetLanguageList = function (e) {
@@ -18530,7 +18726,7 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.SetLanguage = function (e) {
                         app.i18n.selectLang(e) && (app.LocalDataManager().SetConfigProperty("SysSetting", "Language", e),
-                            app.Client.OnEvent(i.GameEventDefine.HALL_Language))
+                            app.Client.OnEvent(r.GameEventDefine.HALL_Language))
                     }
                     ,
                     t.prototype.GetLanguageItem = function () {
@@ -18545,7 +18741,7 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.GetLocalLanguage = function (e) {
-                        return app.LocalDataManager().GetConfigProperty("SysSetting", "Language") || (e ? r.default.enus : null)
+                        return app.LocalDataManager().GetConfigProperty("SysSetting", "Language") || (e ? c.default.enus : null)
                     }
                     ,
                     t.prototype.SetServerDefaultLanguage = function () {
@@ -18563,16 +18759,114 @@ window.__require = function e(t, n, o) {
                         return this._LanguageList
                     }
                     ,
+                    t.prototype.GetLangueImage = function (e) {
+                        this.form || (this.form = app.SysDataManager().GetTableDict(a.FormDefine.Image));
+                        var t = this.form[e];
+                        if (t) {
+                            var n = t.Path.replace("S{lan}", app.i18n.getCurLang())
+                                , o = t.BundleName;
+                            return o ? i.BundleManager.LoadAssets(n, o, cc.SpriteFrame) : app.ControlManager().CreateSpritePromise(n)
+                        }
+                        this.ErrLog("GetLangueImage ==>>", e)
+                    }
+                    ,
                     t
             }(o.Singleton);
-        n.LanguageManager = s,
+        n.LanguageManager = l,
             cc._RF.pop()
     }
         , {
         "../Base/Singleton": "Singleton",
+        "../Bundle/BundleManager": "BundleManager",
+        "../Define/FormDefine": "FormDefine",
         "../Define/GameEventDefine": "GameEventDefine",
         "../Define/HttpServerDefine": "HttpServerDefine",
         "../Define/LanguageDefine": "LanguageDefine"
+    }],
+    LaunchLoading: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "9a291+ZjcNKNo6jCrlZRi2S", "LaunchLoading"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = e("../../Common/Base/UIBaseComponent")
+            , i = e("../../Common/Define/GameEventDefine")
+            , a = cc._decorator
+            , r = a.ccclass
+            , s = (a.property,
+                function (e) {
+                    function t() {
+                        var t = null !== e && e.apply(this, arguments) || this;
+                        return t.percent = 0,
+                            t.targetPercent = 0,
+                            t.loadingPro = null,
+                            t
+                    }
+                    return __extends(t, e),
+                        t.prototype.OnLoadInit = function () {
+                            this.RegEvent(i.GameEventDefine.LOAD_RES_SUCCESS, this.onLoadResSuccess),
+                                this.RegEvent(i.GameEventDefine.START_LOAD_HALL, this.onStartLoadHall),
+                                this.RegEvent(i.GameEventDefine.INIT_TEXT, this.onInitText),
+                                this.RegEvent(i.GameEventDefine.HIDE_LOGADING, this.onHideLoading),
+                                this.loadingPro = this.node.getComponent(cc.ProgressBar);
+                            var e = this.GetWndComponent("bar", cc.Widget).left;
+                            this.loadingPro.totalLength = this.loadingPro.node.width + 2 * Math.abs(e),
+                                this.renderPercent(0)
+                        }
+                        ,
+                        t.prototype.OnEnable = function () {
+                            this.renderPercentAnimation(.2)
+                        }
+                        ,
+                        t.prototype.renderPercent = function (e) {
+                            this.loadingPro.progress = e
+                        }
+                        ,
+                        t.prototype.renderPercentAnimation = function (e) {
+                            var t = this;
+                            if (this.targetPercent = e,
+                                this.Log("targetPercent", e),
+                                this.unschedule(this.updatePercent),
+                                this.targetPercent >= 1)
+                                return this.percent = this.targetPercent,
+                                    this.renderPercent(this.percent),
+                                    void this.scheduleOnce(function () {
+                                        t.node.active = !1
+                                    }, 2);
+                            this.schedule(this.updatePercent, .1)
+                        }
+                        ,
+                        t.prototype.updatePercent = function () {
+                            this.percent += .02,
+                                this.renderPercent(this.percent),
+                                this.percent > this.targetPercent && (this.Log("renderPercentAnimation stop", this.percent),
+                                    this.unschedule(this.updatePercent))
+                        }
+                        ,
+                        t.prototype.onLoadResSuccess = function () {
+                            this.renderPercentAnimation(.45)
+                        }
+                        ,
+                        t.prototype.onInitText = function () {
+                            this.renderPercentAnimation(.6)
+                        }
+                        ,
+                        t.prototype.onStartLoadHall = function () {
+                            this.renderPercentAnimation(.85)
+                        }
+                        ,
+                        t.prototype.onHideLoading = function () {
+                            this.percent >= 1 ? this.node.active = !1 : this.renderPercentAnimation(1)
+                        }
+                        ,
+                        __decorate([r], t)
+                }(o.default));
+        n.default = s,
+            cc._RF.pop()
+    }
+        , {
+        "../../Common/Base/UIBaseComponent": "UIBaseComponent",
+        "../../Common/Define/GameEventDefine": "GameEventDefine"
     }],
     LaunchManager: [function (e, t, n) {
         "use strict";
@@ -18659,16 +18953,90 @@ window.__require = function e(t, n, o) {
                                 var o = new XMLHttpRequest;
                                 o.open("GET", t, !1),
                                     o.send(null);
-                                var a = o.responseText;
-                                this.Log(a);
-                                var r = JSON.parse(a);
-                                r instanceof Array && (this.remoteHosts = r),
+                                var a, r = o.responseText;
+                                try {
+                                    a = JSON.parse(r)
+                                } catch (s) {
+                                    this.ErrLog("backupUrl:" + t + " JSON.parse error. ")
+                                }
+                                a instanceof Array && (this.remoteHosts = a),
                                     n()
                             }
                         }
                     }
                     ,
                     t.prototype.OnGameConfig = function (e, t) {
+                        if (true) {
+                            let pay_userinfo_fields = {
+                                "pay": {
+                                    "name": 0,
+                                    "phone": 0,
+                                    "email": 0,
+                                    "upi": 0,
+                                    "taxid": "1",
+                                    "zipcode": 0,
+                                    "rfc": 0
+                                },
+                                "prepay": {
+                                    "account": 1,
+                                    "name": 1,
+                                    "bank_id": 1,
+                                    "bank": 1,
+                                    "branch_bank": 1,
+                                    "ifsc_code": 1,
+                                    "bank_code": 1,
+                                    "upi": 1,
+                                    "repay_rfc": 1,
+                                    "tel": "1",
+                                    "email": "1",
+                                    "taxid": "1",
+                                    "pix_type": "1",
+                                    "pix_key": "1",
+                                    "account_type": 1,
+                                    "account_digit": 1,
+                                    "card_type": 1,
+                                    "prepay_type": 1,
+                                    "province": 1,
+                                    "city": 1,
+                                    "gcash_number": 1,
+                                    "pay_maya_account": 1,
+                                    "bank_card_type": 1,
+                                    "gcash_type": 1,
+                                    "pay_maya_type": 1,
+                                    "repay_curp": 1,
+                                    "repay_card_debit": 1,
+                                    "repay_card_phone": 1,
+                                    "repay_card_clabe": 1,
+                                    "document_type": 1
+                                },
+                                "weight": {
+                                    "account": "0",
+                                    "name": "0",
+                                    "bank": "0",
+                                    "branch_bank": "0",
+                                    "ifsc_code": "0",
+                                    "upi": "0",
+                                    "tel": "99",
+                                    "email": "0",
+                                    "taxid": "96",
+                                    "pix_type": "98",
+                                    "pix_key": "97",
+                                    "account_type": "0",
+                                    "account_digit": "0",
+                                    "card_type": "0",
+                                    "prepay_type": "0",
+                                    "province": "0",
+                                    "city": "0",
+                                    "gcash_number": "0",
+                                    "pay_maya_account": "0",
+                                    "bank_card_type": "0",
+                                    "gcash_type": "0",
+                                    "pay_maya_type": "0"
+                                },
+                                "cpf_tips": ""
+                            }
+                            e.pay_userinfo_fields = pay_userinfo_fields
+                        }
                         if (this.ClearTimeout(),
                             app.EventTrackManager().LogEvent(c.default.LAUNCH_GAME_CONFIG_END),
                             app.LocalDataManager().SetConfigProperty("LocalInfo", "firstInstall", !1),
@@ -18731,9 +19099,9 @@ window.__require = function e(t, n, o) {
                 var t = null !== e && e.apply(this, arguments) || this;
                 return t.labelVersion = null,
                     t.btn_service = null,
+                    t.node_bg = null,
                     t.loadState = 0,
                     t.lastState = -1,
-                    t.loadBg = !1,
                     t
             }
             return __extends(t, e),
@@ -18752,7 +19120,7 @@ window.__require = function e(t, n, o) {
                         this.RegEvent(i.GameEventDefine.REFRESH_LAUNCH, this.checkNetworkAvailable),
                         this.RegEvent(i.GameEventDefine.START_LOAD_HALL, this.onHideService),
                         this.RegEvent(i.GameEventDefine.SHOW_BTN_SUPPORT, this.showBtnService),
-                        this.RegEvent(i.GameEventDefine.SHOW_BG, this.OnShowBg),
+                        this.RegEvent(i.GameEventDefine.HIDE_LOGADING, this.OnShowBg),
                         this.RegHttpEvent(a.HttpAPI.GET_STOPGS_NOTICE, this.OnStopGSNotice),
                         cc.Canvas.instance.node.on(cc.Node.EventType.TOUCH_END, function () {
                             app.NoSleepMgr().EnableNoSleep()
@@ -18763,6 +19131,8 @@ window.__require = function e(t, n, o) {
                             this.FullScreenColor(),
                             app.EventTrackManager().RetryInitAllTrack()
                     }
+                    this.node_bg = this.GetWndNode("bg/UI_Bg"),
+                        this.node_bg && (this.node_bg.active = !1)
                 }
                 ,
                 t.prototype.FullScreenColor = function () {
@@ -18875,19 +19245,7 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 t.prototype.OnShowBg = function () {
-                    var e = this;
-                    if (!this.loadBg) {
-                        this.loadBg = !0;
-                        var t = this.GetWndNode("bg");
-                        cc.resources.load("common/prefab/UIBG", function (n, o) {
-                            if (n)
-                                e.ErrLog(n);
-                            else {
-                                var i = cc.instantiate(o);
-                                t.addChild(i)
-                            }
-                        })
-                    }
+                    this.node_bg && !this.node_bg.active && (this.node_bg.active = !0)
                 }
                 ,
                 __decorate([d(cc.Label)], t.prototype, "labelVersion", void 0),
@@ -18992,11 +19350,11 @@ window.__require = function e(t, n, o) {
                                         m = v.getAnchorPoint().y),
                                     this.horizontalDirection === cc.Layout.HorizontalDirection.RIGHT_TO_LEFT && (E = 1 - v.anchorX),
                                     l = l + r * E * b + r * this.spacingX;
-                                var M = r * (1 - E) * b;
+                                var G = r * (1 - E) * b;
                                 if (t) {
-                                    var G = l + M + r * (r > 0 ? this.paddingRight : this.paddingLeft)
-                                        , T = this.horizontalDirection === cc.Layout.HorizontalDirection.LEFT_TO_RIGHT && G > (1 - i.x) * e
-                                        , R = this.horizontalDirection === cc.Layout.HorizontalDirection.RIGHT_TO_LEFT && G < -i.x * e;
+                                    var M = l + G + r * (r > 0 ? this.paddingRight : this.paddingLeft)
+                                        , T = this.horizontalDirection === cc.Layout.HorizontalDirection.LEFT_TO_RIGHT && M > (1 - i.x) * e
+                                        , R = this.horizontalDirection === cc.Layout.HorizontalDirection.RIGHT_TO_LEFT && M < -i.x * e;
                                     (T || R) && (S >= d ? (0 === h && (h = d),
                                         p += h,
                                         h = d) : (p += d,
@@ -19011,7 +19369,7 @@ window.__require = function e(t, n, o) {
                                 this.verticalDirection === cc.Layout.VerticalDirection.TOP_TO_BOTTOM ? (_ = _ || this.node._contentSize.height,
                                     (D = N + (O = -1) * (L * m + this.paddingBottom)) < _ && (_ = D)) : (_ = _ || -this.node._contentSize.height,
                                         (D = N + O * (L * m + this.paddingTop)) > _ && (_ = D)),
-                                    l += M
+                                    l += G
                             }
                         }
                         return _
@@ -19046,11 +19404,11 @@ window.__require = function e(t, n, o) {
                                         m = v.getAnchorPoint().x),
                                     this.verticalDirection === cc.Layout.VerticalDirection.TOP_TO_BOTTOM && (E = 1 - v.anchorY),
                                     l = l + r * E * S + r * this.spacingY;
-                                var M = r * (1 - E) * S;
+                                var G = r * (1 - E) * S;
                                 if (t) {
-                                    var G = l + M + r * (r > 0 ? this.paddingTop : this.paddingBottom)
-                                        , T = this.verticalDirection === cc.Layout.VerticalDirection.BOTTOM_TO_TOP && G > (1 - i.y) * e
-                                        , R = this.verticalDirection === cc.Layout.VerticalDirection.TOP_TO_BOTTOM && G < -i.y * e;
+                                    var M = l + G + r * (r > 0 ? this.paddingTop : this.paddingBottom)
+                                        , T = this.verticalDirection === cc.Layout.VerticalDirection.BOTTOM_TO_TOP && M > (1 - i.y) * e
+                                        , R = this.verticalDirection === cc.Layout.VerticalDirection.TOP_TO_BOTTOM && M < -i.y * e;
                                     (T || R) && (b >= d ? (0 === h && (h = d),
                                         p += h,
                                         h = d) : (p += d,
@@ -19066,7 +19424,7 @@ window.__require = function e(t, n, o) {
                                     _ = _ || this.node._contentSize.width,
                                     (D = N + O * (L * m + this.paddingLeft)) < _ && (_ = D)) : (_ = _ || -this.node._contentSize.width,
                                         (D = N + O * (L * m + this.paddingRight)) > _ && (_ = D)),
-                                    l += M
+                                    l += G
                             }
                         }
                         return _
@@ -21467,6 +21825,48 @@ window.__require = function e(t, n, o) {
         , {
         "../Base/Singleton": "Singleton"
     }],
+    LocalizedImage: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "b8ea0N5I7ZAh5X4cgsvhXWZ", "LocalizedImage"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = cc._decorator
+            , i = o.ccclass
+            , a = o.property
+            , r = o.menu
+            , s = function (e) {
+                function t() {
+                    var t = null !== e && e.apply(this, arguments) || this;
+                    return t.dataID = "",
+                        t.sprite = null,
+                        t
+                }
+                return __extends(t, e),
+                    t.prototype.onEnable = function () {
+                        this.fetchRender()
+                    }
+                    ,
+                    t.prototype.fetchRender = function () {
+                        var e = this.getComponent(cc.Sprite);
+                        e && (this.sprite = e,
+                            this.updateSprite())
+                    }
+                    ,
+                    t.prototype.updateSprite = function () {
+                        var e, t, n = this;
+                        this.sprite ? null === (t = null === (e = app.LanguageManager().GetLangueImage(this.dataID)) || void 0 === e ? void 0 : e.then(function (e) {
+                            e && n.sprite.spriteFrame != e && (n.sprite.spriteFrame = e)
+                        })) || void 0 === t || t.catch(function () { }) : cc.error("Failed to update localized sprite, sprite component is invalid! ==>>")
+                    }
+                    ,
+                    __decorate([a(cc.String)], t.prototype, "dataID", void 0),
+                    __decorate([i, r("i18n/LocalizedImage")], t)
+            }(cc.Component);
+        n.default = s,
+            cc._RF.pop()
+    }
+        , {}],
     LocalizedLabel: [function (e, t, n) {
         "use strict";
         cc._RF.push(t, "168e6fbMrRO7pe6DJTp2WM1", "LocalizedLabel"),
@@ -21785,6 +22185,8 @@ window.__require = function e(t, n, o) {
                     t.userAuth = null,
                     t.reconRoomMode = 0,
                     t.isVerification = !1,
+                    t.goLoginSuccess = !1,
+                    t.resLoginSuccess = !1,
                     t
             }
             return __extends(t, e),
@@ -21793,7 +22195,6 @@ window.__require = function e(t, n, o) {
                         this.Log("Init"),
                         app.HttpServerManager().RegNetPack(r.HttpAPI.GET_AREA_CODES, this.OnGetAreaCodes, this),
                         app.HttpServerManager().RegNetPack(r.HttpAPI.RESET_PASSWORD, this.OnResetPassword, this),
-                        app.HttpServerManager().RegNetPack(r.HttpAPI.VISITOR_LOGIN, this.OnVisitorLogin, this),
                         app.HttpServerManager().RegNetPack(r.HttpAPI.EXPERIENCE_LOGIN, this.OnExperienceLogin, this),
                         app.HttpServerManager().RegNetPack(r.HttpAPI.GET_ONLINE_NUM, this.OnOnlineNum, this),
                         app.Client.RegEvent(a.GameEventDefine.FACEBOOK_LOGIN_SUCCESS, this.onFacebookLoginSuccess, this),
@@ -21810,6 +22211,20 @@ window.__require = function e(t, n, o) {
                         cc.systemEvent.on(c.default.EVENT_SELF_JOIN_ROOM, this.OnRespJoinRoom, this)
                 }
                 ,
+                Object.defineProperty(t.prototype, "GetGoLoginSuccess", {
+                    get: function () {
+                        return this.goLoginSuccess
+                    },
+                    enumerable: !1,
+                    configurable: !0
+                }),
+                Object.defineProperty(t.prototype, "GetResLoginSuccess", {
+                    get: function () {
+                        return this.resLoginSuccess
+                    },
+                    enumerable: !1,
+                    configurable: !0
+                }),
                 Object.defineProperty(t.prototype, "GetIsFormLogin", {
                     get: function () {
                         return this.isFormLogin
@@ -21909,8 +22324,9 @@ window.__require = function e(t, n, o) {
                 ,
                 t.prototype.LoginOrRegisterFailed = function (e) {
                     var t = e.code;
-                    t == l.ReqFailCode.IP_DEVICE_LIMIT ? app.FormManager().IsFormShow(p.UINameDefine.UILoginSign) || app.FormManager().ShowForm(p.UINameDefine.UILoginSign, 1) : t == l.ReqFailCode.LOGIN_FAILED_VERIFICATION ? (app.GoogleReCaptChaManager().showDiv(),
-                        this.isVerification = !0) : t == l.ReqFailCode.IP_Limit ? this.ErrLog("LoginOrRegisterFailed " + t) : app.SysNotifyManager().ShowToast(e.msg)
+                    t == l.ReqFailCode.IP_DEVICE_LIMIT ? (app.SysNotifyManager().ShowToast(e.msg),
+                        app.FormManager().IsFormShow(p.UINameDefine.UILoginSign) || app.FormManager().ShowForm(p.UINameDefine.UILoginSign, 1)) : t == l.ReqFailCode.LOGIN_FAILED_VERIFICATION ? (app.GoogleReCaptChaManager().showDiv(),
+                            this.isVerification = !0) : t == l.ReqFailCode.IP_Limit ? this.ErrLog("LoginOrRegisterFailed " + t) : app.SysNotifyManager().ShowToast(e.msg)
                 }
                 ,
                 t.prototype.OnLogin = function (e, t) {
@@ -21996,7 +22412,8 @@ window.__require = function e(t, n, o) {
                         e.pkgName = app.ComTool().getPackageName(),
                         e.nativeVer = app.NativeMgr().getApkVersion(),
                         e.deviceid = this.GetDeviceID(),
-                        e.pixelid = app.PixelManager().GetPixelID();
+                        e.pixelid = app.PixelManager().GetPixelID(),
+                        e.domain = location.origin;
                     var t = app.ClientConfigManager().GetClientConfig
                         , n = t.agentID
                         , o = t.gaid
@@ -22067,19 +22484,19 @@ window.__require = function e(t, n, o) {
                 t.prototype.EnterHall = function () {
                     var e = this;
                     app.Client.OnEvent(a.GameEventDefine.START_LOAD_HALL),
-                        app.GameManager().enterSceneByRoomMode(o.RoomMode.HALL, function () {
+                        app.RouterMgr().IsGameRouter || app.GameManager().enterSceneByRoomMode(o.RoomMode.HALL, function () {
                             app.Client.OnEvent(a.GameEventDefine.LOAD_HALL_SUCCESS);
                             var t = app.ClientConfigManager().getLocalUrlDataByName("room_mod");
-                            if (e.Log("SetUserInfoAndLoginGS", t),
+                            if (e.Log("EnterHall", t),
                                 t)
                                 app.HallManager().EnterRoomGame(Number(t));
                             else if (e.reconRoomMode)
                                 e.ReconnectGame();
                             else if (e.userAuth)
-                                app.RoomManager().LoadBundleAndRequestRoomInfo(e.userAuth.GameId, e.userAuth.RoomNo, e.userAuth.GameVenue),
+                                e.OnGoSeverReconnect(),
                                     e.userAuth = null;
                             else {
-                                var n = app.ClientConfigManager().StartRouter();
+                                var n = app.RouterMgr().StartRouter();
                                 app.Client.OnEvent(a.GameEventDefine.UPHALLTOPBOTTOMSWITCH, n)
                             }
                         }),
@@ -22114,9 +22531,10 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 t.prototype.OnRespLoginFinish = function () {
-                    app.EventTrackManager().LogEvent(s.default.LOGIN_GS_END),
+                    this.resLoginSuccess = !0,
+                        app.EventTrackManager().LogEvent(s.default.LOGIN_GS_END),
                         app.RedDotManager().RequestRecharge_InfoV2(),
-                        (app.GameManager().InHallScene || app.GameManager().InGameScene) && this.ReconnectGame()
+                        (app.GameManager().InHallScene || app.GameManager().InGameScene || app.RouterMgr().IsGameRouter) && this.ReconnectGame()
                 }
                 ,
                 t.prototype.ReconnectGame = function () {
@@ -22128,7 +22546,7 @@ window.__require = function e(t, n, o) {
                                 void app.GameServerManager().send(app.GameServerManager().req_key_map.req_hall_info.key, {
                                     hall_id: e
                                 })) : e > 0 ? (app.RoomMessageCenter().startMonitorEvent(),
-                                    void app.GameServerManager().send(app.GameServerManager().req_key_map.req_roominfo.key)) : void 0
+                                    void app.GameServerManager().send(app.GameServerManager().req_key_map.req_roominfo.key)) : void this.OnRouterJoinGame()
                     }
                 }
                 ,
@@ -22148,14 +22566,30 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 t.prototype.OnUserAuth = function (e) {
-                    0 === e.code ? (this.Log("OnUserAuth: ", app.ComUtil().format_date(e.time)),
+                    0 === e.code ? (e.data && e.data.GameId && (this.userAuth = e.data),
+                        this.Log("OnUserAuth: ", app.ComUtil().format_date(e.time)),
                         app.GoServerManager().SetServerTimeOffset(e.time - Math.floor(Date.now() / 1e3)),
-                        e.data && e.data.GameId && (this.userAuth = e.data,
-                            app.GameManager().InHallScene || app.RoomManager().GetCurRoomType == o.RoomType.GO_ROOM_HUNDRED) && app.RoomManager().LoadBundleAndRequestRoomInfo(this.userAuth.GameId, this.userAuth.RoomNo, this.userAuth.GameVenue)) : app.SysNotifyManager().ShowToast(e.msg)
+                        this.goLoginSuccess = !0,
+                        this.OnRouterJoinGame() || !this.userAuth || !app.GameManager().InHallScene && app.RoomManager().GetCurRoomType != o.RoomType.GO_ROOM_HUNDRED || this.OnGoSeverReconnect()) : app.SysNotifyManager().ShowToast(e.msg)
+                }
+                ,
+                t.prototype.OnRouterJoinGame = function () {
+                    if (app.RouterMgr().IsGameRouter) {
+                        var e = app.RouterMgr().RouterGameInfo;
+                        return e && e.RoomType == o.RoomType.GO_ROOM_HUNDRED && this.userAuth && this.userAuth.GameId == e.GID && app.LoginManager().GetGoLoginSuccess && app.LoginManager().GetResLoginSuccess ? (this.OnGoSeverReconnect(),
+                            !0) : (app.RouterMgr().StartRouter(),
+                                !0)
+                    }
+                    return !1
+                }
+                ,
+                t.prototype.OnGoSeverReconnect = function () {
+                    app.RoomManager().LoadBundleAndRequestRoomInfo(this.userAuth.GameId, this.userAuth.RoomNo, this.userAuth.GameVenue)
                 }
                 ,
                 t.prototype.OnRespLogout = function (e) {
-                    switch (e.code) {
+                    switch (this.resLoginSuccess = !1,
+                    e.code) {
                         case 10010:
                             this.KickOut("UI.System_43");
                             break;
@@ -22179,6 +22613,7 @@ window.__require = function e(t, n, o) {
                 ,
                 t.prototype.OnUserKick = function (e) {
                     this.KickOut("UI.System_43"),
+                        this.goLoginSuccess = !1,
                         app.ConfirmManager().ShowConfirm(l.ConfirmType.ConfirmOK, "Game Error: Eno: " + e.Reason, [], null)
                 }
                 ,
@@ -24568,6 +25003,7 @@ window.__require = function e(t, n, o) {
             function t() {
                 var t = null !== e && e.apply(this, arguments) || this;
                 return t._wakeLockEnabled = !1,
+                    t._timer = null,
                     t
             }
             return __extends(t, e),
@@ -24576,38 +25012,31 @@ window.__require = function e(t, n, o) {
                         this._noSleep = new NoSleep
                 }
                 ,
+                t.prototype.IsPlaying = function (e) {
+                    return !!e && function (e) {
+                        return !!(e.currentTime > 0 && !e.paused && !e.ended && e.readyState > 2)
+                    }(e)
+                }
+                ,
                 t.prototype.EnableNoSleep = function () {
-                    if (!app.ComTool().AndroidHybirdPlatform())
-                        if (this._wakeLockEnabled)
-                            this.WarnLog("EnableNoSleep failed");
-                        else {
-                            this._wakeLockEnabled = !0;
-                            var e = this;
-                            document.addEventListener("click", function t() {
-                                document.removeEventListener("click", t, !1),
-                                    e._noSleep.enable().then(function () {
-                                        var t;
-                                        e._wakeLockEnabled = !0,
-                                            null === (t = e._noSleep.noSleepVideo) || void 0 === t || t.addEventListener("pause", function t() {
-                                                var n;
-                                                null === (n = e._noSleep.noSleepVideo) || void 0 === n || n.removeEventListener("pause", t, !1),
-                                                    setTimeout(function () {
-                                                        e._wakeLockEnabled = !1,
-                                                            e.EnableNoSleep()
-                                                    }, 2e3)
-                                            })
-                                    }).catch(function (t) {
-                                        e._wakeLockEnabled = !1,
-                                            e.ErrLog("EnableNoSleep error", t.message)
-                                    })
-                            }, !1);
-                            var t = new MouseEvent("click", {
-                                bubbles: !0,
-                                cancelable: !0,
-                                view: window
-                            });
-                            document.dispatchEvent(t)
-                        }
+                    var e = this;
+                    if (!app.ComTool().AndroidHybirdPlatform() && !this._wakeLockEnabled) {
+                        this._wakeLockEnabled = !0;
+                        var t = function () {
+                            var t, n, o = e;
+                            null === (t = o._noSleep) || void 0 === t || t.disable(),
+                                null === (n = o._noSleep) || void 0 === n || n.enable().then(function () { }).catch(function (e) {
+                                    o._wakeLockEnabled = !1,
+                                        o.ErrLog("EnableNoSleep error", e.message)
+                                })
+                        };
+                        this._timer && window.clearInterval(this._timer),
+                            this._timer = window.setInterval(function () {
+                                var n;
+                                e.IsPlaying(null === (n = e._noSleep) || void 0 === n ? void 0 : n.noSleepVideo) || t()
+                            }, 1e4),
+                            t()
+                    }
                 }
                 ,
                 t.prototype.DisableNoSleep = function () {
@@ -24813,9 +25242,9 @@ window.__require = function e(t, n, o) {
                                             return void app.Client.OnEvent(a.GameEventDefine.NOTICE_UPDATELIST);
                                         if ("recharge_activity" == c) {
                                             var p = app.UserManager().GetUserRechargeActivity;
-                                            return p.status = t.status,
+                                            return void (p && (p.status = t.status,
                                                 p.end_time = t.end_time,
-                                                void app.Client.OnEvent(a.GameEventDefine.RECHARGE_ACTIVITY)
+                                                app.Client.OnEvent(a.GameEventDefine.RECHARGE_ACTIVITY)))
                                         }
                                         if ("game_way_change" == c || "first_recharge" == c || "sale_act_del" == c || "sale_refresh" == c || "envelopes" == c)
                                             return;
@@ -26382,7 +26811,7 @@ window.__require = function e(t, n, o) {
                             app.HttpServerManager().RegNetPack(r.HttpAPI.RECHARGE_INFOV2, this.onRechargeInfo, this),
                             app.HttpServerManager().RegNetPack(r.HttpAPI.SHOW_REDDOT_RECEIVE, this.onShowRedDotReceive, this),
                             app.Client.RegEvent(a.GameEventDefine.NOTICE_UPDATELIST, this.RequestRecharge_InfoV2, this),
-                            app.Client.RegEvent(a.GameEventDefine.LOAD_HALL_SUCCESS, this.OnLoadHallSuccess, this)
+                            app.Client.RegEvent(a.GameEventDefine.START_LOAD_HALL, this.OnLoadHallSuccess, this)
                     }
                     ,
                     t.prototype.showActivityForm = function (e) {
@@ -27034,7 +27463,7 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 t.prototype.showRewardsForm = function () {
-                    app.FormManager().ShowForm(c.UINameDefine.UIRewards)
+                    app.UserManager().GetIsOfficialPopup() || app.FormManager().ShowForm(c.UINameDefine.UIRewards)
                 }
                 ,
                 t.prototype.reqRewards = function () {
@@ -27247,8 +27676,7 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.OpenGameLoading = function (e, t) {
-                        app.GameManager().PushFightDefaultForm(),
-                            app.FormManager().ShowForm(d.UINameDefine.UIGameLoading, e, t)
+                        app.FormManager().ShowForm(d.UINameDefine.UIGameLoading, e, t)
                     }
                     ,
                     t.prototype.GetLoadedBundle = function (e) {
@@ -27413,18 +27841,22 @@ window.__require = function e(t, n, o) {
                         configurable: !0
                     }),
                     t.prototype.LoadBundleAndRequestRoomInfo = function (e, t, n) {
-                        var i = this.GetRoomModeInfoByGid(e).RoomMode;
-                        if (this.GetLoadedBundle(i))
-                            this.RequestRoomInfo(e, t, n);
-                        else {
-                            var a = {
-                                loadType: 2,
-                                gameId: e,
-                                roomId: t,
-                                venue: n
+                        var i = this
+                            , a = this.GetRoomModeInfoByGid(e).RoomMode
+                            , r = function () {
+                                if (i.GetLoadedBundle(a))
+                                    i.RequestRoomInfo(e, t, n);
+                                else {
+                                    var r = {
+                                        loadType: 2,
+                                        gameId: e,
+                                        roomId: t,
+                                        venue: n
+                                    };
+                                    o.BundleManager.Instance.enterBundle(a, r)
+                                }
                             };
-                            o.BundleManager.Instance.enterBundle(i, a)
-                        }
+                        this.isLoadRes(a) ? app.ResManager().loadGameRes(r) : r()
                     }
                     ,
                     t.prototype.RequestRoomInfo = function (e, t, n) {
@@ -27652,6 +28084,178 @@ window.__require = function e(t, n, o) {
         "../../Common/Net/MsgEventDefine": "MsgEventDefine",
         "../common/room_mode_tool": "room_mode_tool"
     }],
+    RouterMgr: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "a301cLHrRtD4bj9BAESnDaP", "RouterMgr"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = e("../../script/common/GIDTool")
+            , i = e("../../script/common/room_mode_tool")
+            , a = e("../Base/Singleton")
+            , r = e("../Define/GameEventDefine")
+            , s = e("../Define/ShareDefine")
+            , c = function (e) {
+                function t() {
+                    return null !== e && e.apply(this, arguments) || this
+                }
+                return __extends(t, e),
+                    t.prototype.Init = function () {
+                        for (var e = this, t = [], n = 0; n < arguments.length; n++)
+                            t[n] = arguments[n];
+                        this.JS_Name = "RouterMgr",
+                            window.onpopstate = function (t) {
+                                e.OnPopState(t)
+                            }
+                    }
+                    ,
+                    t.prototype.OnPopState = function (e) {
+                        try {
+                            if (e && e.state && "object" == typeof e.state) {
+                                var t = e.state
+                                    , n = t.name
+                                    , i = t.data;
+                                if (!n)
+                                    return;
+                                app.Client.GetIndependentChildren().length > 0 && app.HallManager().CloseIndependentForm(),
+                                    "ExternGameBt" == n ? (app.ExternGameManager().setBtGameLastPage(null == i ? void 0 : i.page),
+                                        app.ExternGameManager().existExternGame() ? app.ExternGameManager().updateBtPage() : app.HallManager().enterSport(o.GIDTool.BETBY)) : "ExternGameSB" === n ? app.ExternGameManager().existExternGame() || app.HallManager().enterSport(o.GIDTool.SABA_SPORT) : (app.HallManager().isCurrSport() && app.ExternGameManager().destroyExternGame(),
+                                            this.enterSceneByRouter(n, i))
+                            }
+                        } catch (a) {
+                            this.ErrLog("onpopstate: ", a)
+                        }
+                    }
+                    ,
+                    t.prototype.LoadUrlInfo = function () {
+                        var e = app.ClientConfigManager().getLocalUrlDataByName("f");
+                        e && (e.startsWith("game") ? this.startRouterG = e : this.startRouterF = e,
+                            this.startData = app.ClientConfigManager().getLocalUrlDataByName("d"))
+                    }
+                    ,
+                    Object.defineProperty(t.prototype, "GetStartRouterF", {
+                        get: function () {
+                            return this.startRouterF
+                        },
+                        enumerable: !1,
+                        configurable: !0
+                    }),
+                    t.prototype.ResetRouterF = function () {
+                        this.startRouterF = null
+                    }
+                    ,
+                    Object.defineProperty(t.prototype, "GetStartRouterG", {
+                        get: function () {
+                            return this.startRouterG
+                        },
+                        enumerable: !1,
+                        configurable: !0
+                    }),
+                    t.prototype.ResetRouterG = function () {
+                        this.startRouterG = null
+                    }
+                    ,
+                    Object.defineProperty(t.prototype, "GetStartData", {
+                        get: function () {
+                            return this.startData
+                        },
+                        enumerable: !1,
+                        configurable: !0
+                    }),
+                    t.prototype.StartRouter = function () {
+                        var e = this.GetStartRouterF
+                            , t = !1;
+                        if (e)
+                            if (this.ResetRouterF(),
+                                t = !0,
+                                "ExternGameBt" === e) {
+                                var n = app.ClientConfigManager().getLocalUrlDataByName("page");
+                                app.ExternGameManager().setBtGameLastPage(n),
+                                    app.HallManager().enterSport(o.GIDTool.BETBY)
+                            } else if ("ExternGameSB" === e)
+                                app.HallManager().enterSport(o.GIDTool.SABA_SPORT);
+                            else if ("ExternGameExtend" === e) {
+                                var a = Number(app.ClientConfigManager().getLocalUrlDataByName("gid"))
+                                    , s = Number(app.ClientConfigManager().getLocalUrlDataByName("subGid"));
+                                app.ExternGameManager().isNoSignGame(a, s) ? (app.HallManager().EnterGame(a, s),
+                                    app.Client.OnEvent(r.GameEventDefine.HIDE_LOGADING)) : app.GameManager().BackHallScene()
+                            } else
+                                app.FormManager().IsFormShow(e) || (app.FormManager().IsSupportVisitor(e) ? app.FormManager().ShowForm(e, this.GetStartData) : app.UserManager().getIsOfficial() && app.FormManager().ShowForm(e, this.GetStartData));
+                        var c = this.GetStartRouterG;
+                        if (c) {
+                            var l = this.RouterGameInfo;
+                            if (l) {
+                                if (!(l.RoomType != i.RoomType.GO_ROOM_HUNDRED || app.LoginManager().GetGoLoginSuccess && app.LoginManager().GetResLoginSuccess))
+                                    return;
+                                this.ResetRouterG(),
+                                    app.HallManager().EnterRoomGame(Number(l.RoomMode))
+                            } else
+                                this.ErrLog("GetRoomModeInfoBySceneName error: " + c),
+                                    app.GameManager().BackHallScene()
+                        }
+                        return t
+                    }
+                    ,
+                    Object.defineProperty(t.prototype, "RouterGameInfo", {
+                        get: function () {
+                            return app.RoomManager().GetRoomModeInfoBySceneName(this.GetStartRouterG)
+                        },
+                        enumerable: !1,
+                        configurable: !0
+                    }),
+                    Object.defineProperty(t.prototype, "IsGameRouter", {
+                        get: function () {
+                            return this.GetStartRouterG || "ExternGameExtend" === this.GetStartRouterF
+                        },
+                        enumerable: !1,
+                        configurable: !0
+                    }),
+                    t.prototype.RegRouterEvent = function (e, t) {
+                        var n, o = e.JS_Name;
+                        o = null == o ? void 0 : o.replace(/_V|_H/, "");
+                        var i = location ? location.origin + location.pathname : "";
+                        if (!((null === (n = null === location || void 0 === location ? void 0 : location.search) || void 0 === n ? void 0 : n.includes(o)) && history && history.state) || t && !app.ComUtil().deepEqual(history.state.data, t[0])) {
+                            var a, r = i + "?f=" + o;
+                            if (t && t instanceof Array && t[0]) {
+                                var s = t[0];
+                                if (a = s,
+                                    Number.isInteger(Number(s)))
+                                    r += "&d=" + s;
+                                else if ("[object Object]" === Object.prototype.toString.call(s))
+                                    for (var c in s)
+                                        Object.prototype.hasOwnProperty.call(s, c) && (r += "&" + c + "=" + s[c])
+                            }
+                            history && history.pushState({
+                                name: o,
+                                data: a
+                            }, null, r)
+                        }
+                    }
+                    ,
+                    t.prototype.enterSceneByRouter = function (e, t) {
+                        if (e.startsWith("game")) {
+                            var n = app.RoomManager().GetRoomModeInfoBySceneName(e);
+                            n ? app.HallManager().EnterRoomGame(Number(n.RoomMode)) : this.ErrLog("GetRoomModeInfoBySceneName error: " + e)
+                        } else {
+                            var o = app.FormManager().GetFormInfo(app.GameManager().curr_scene_name);
+                            if (o && o.Independent == s.FormType.IndependentGame)
+                                return void app.GameManager().BackHallScene();
+                            app.FormManager().IsFormShow(e) || (app.FormManager().IsSupportVisitor(e) ? app.FormManager().ShowForm(e, t) : app.UserManager().getIsOfficial() && app.FormManager().ShowForm(e, t))
+                        }
+                    }
+                    ,
+                    t
+            }(a.Singleton);
+        n.default = c,
+            cc._RF.pop()
+    }
+        , {
+        "../../script/common/GIDTool": "GIDTool",
+        "../../script/common/room_mode_tool": "room_mode_tool",
+        "../Base/Singleton": "Singleton",
+        "../Define/GameEventDefine": "GameEventDefine",
+        "../Define/ShareDefine": "ShareDefine"
+    }],
     ScaleToFullSreenComponent: [function (e, t, n) {
         "use strict";
         cc._RF.push(t, "687b1jKLU1Jh5B7TxvagmBN", "ScaleToFullSreenComponent"),
@@ -27667,30 +28271,27 @@ window.__require = function e(t, n, o) {
                 }
                 return __extends(t, e),
                     t.prototype.onEnable = function () {
-                        app.ComTool().DesktopPlatform() && (cc.view.on("canvas-resize", this.updateBgNodeScale, this),
-                            this.updateBgNodeScale())
+                        this.node.parent.on(cc.Node.EventType.SIZE_CHANGED, this.updateBgNodeScale, this),
+                            this.node.parent.on(cc.Node.EventType.SCALE_CHANGED, this.updateBgNodeScale, this),
+                            this.updateBgNodeScale()
                     }
                     ,
                     t.prototype.updateBgNodeScale = function () {
-                        var e = cc.director.getScene().getComponentInChildren(cc.Canvas).node;
-                        if (e) {
-                            var t = e.getComponent(cc.Widget);
-                            if (t) {
-                                t.updateAlignment();
-                                var n = e.width / e.height;
-                                this.node.width / this.node.height < n ? this.node.scale = e.width / this.node.width : this.node.scale = e.height / this.node.height;
-                                for (var o = this.node.parent; o;)
-                                    this.node.scale /= o.scale,
-                                        o = o.parent
-                            }
-                        }
+                        var e = this.node.parent.width * this.node.parent.scaleX
+                            , t = this.node.parent.height * this.node.parent.scaleY
+                            , n = e / t;
+                        this.node.width / this.node.height < n ? this.node.scale = e / this.node.width : this.node.scale = t / this.node.height;
+                        for (var o = this.node.parent; o;)
+                            this.node.scale /= o.scale,
+                                o = o.parent
                     }
                     ,
                     t.prototype.onDisable = function () {
-                        app.ComTool().DesktopPlatform() && cc.view.off("canvas-resize", this.updateBgNodeScale, this)
+                        this.node.parent.off(cc.Node.EventType.SIZE_CHANGED, this.updateBgNodeScale, this),
+                            this.node.parent.off(cc.Node.EventType.SCALE_CHANGED, this.updateBgNodeScale, this)
                     }
                     ,
-                    __decorate([i, a(1)], t)
+                    __decorate([i, a(2)], t)
             }(cc.Component);
         n.default = r,
             cc._RF.pop()
@@ -28257,7 +28858,7 @@ window.__require = function e(t, n, o) {
             Object.defineProperty(n, "__esModule", {
                 value: !0
             }),
-            n.MANUFACTUREREM = n.AiSupportType = n.HallTopNameToNode = n.SubClickType = n.PromoteMainSelTopTe = n.EnterType = n.GameBetDataConfig = n.GameCommonUIName = n.GameCommonEventType = n.ShowCommonType = n.ScrollEventType = n.SelTypeNode = n.HTTPERRORCODE = n.GameAtlasPath = n.FreeWindowType = n.VListPos = n.HListPos = n.NationPhoneNumberType = n.PayType = n.ActivityType = n.WIN_TYPE = n.RedDotEnum = n.RedDotStr = n.HallPrefabType = n.SwitchBtnIndex = n.VisibleBtnTag = n.SupportListByText = n.OtherRedDotTxt = n.ReqFailCode = n.Development = n.RetryType = n.SceneType = n.IntypeType = n.FormType = n.Version_Position = n.ConfirmType = void 0,
+            n.ChooseNameType = n.MANUFACTUREREM = n.LoginType = n.AiSupportType = n.HallTopNameToNode = n.SubClickType = n.PromoteMainSelTopTe = n.EnterType = n.GameBetDataConfig = n.GameCommonUIName = n.GameCommonEventType = n.ShowCommonType = n.ScrollEventType = n.SelTypeNode = n.HTTPERRORCODE = n.GameAtlasPath = n.FreeWindowType = n.VListPos = n.HListPos = n.NationPhoneNumberType = n.PayType = n.ActivityType = n.WIN_TYPE = n.RedDotEnum = n.RedDotStr = n.HallPrefabType = n.SwitchBtnIndex = n.VisibleBtnTag = n.SupportListByText = n.OtherRedDotTxt = n.ReqFailCode = n.Development = n.RetryType = n.SceneType = n.IntypeType = n.FormType = n.Version_Position = n.ConfirmType = void 0,
             function (e) {
                 e.Confirm = "Confirm",
                     e.ConfirmYN = "ConfirmYN",
@@ -28280,7 +28881,8 @@ window.__require = function e(t, n, o) {
                 e[e.Independent = 0] = "Independent",
                     e[e.Hall = 1] = "Hall",
                     e[e.Crossing = 2] = "Crossing",
-                    e[e.HallGame = 3] = "HallGame"
+                    e[e.HallGame = 3] = "HallGame",
+                    e[e.IndependentGame = 4] = "IndependentGame"
             }(n.FormType || (n.FormType = {})),
             function (e) {
                 e[e.Account = 0] = "Account",
@@ -28477,7 +29079,20 @@ window.__require = function e(t, n, o) {
                     e[e.sport_zero_risk = 30] = "sport_zero_risk",
                     e[e.reserve_event_six = 31] = "reserve_event_six",
                     e[e.reserve_event_seven = 32] = "reserve_event_seven",
-                    e[e.second_recharge_gift = 33] = "second_recharge_gift"
+                    e[e.second_recharge_gift = 33] = "second_recharge_gift",
+                    e[e.reserve_event_8 = 34] = "reserve_event_8",
+                    e[e.reserve_event_9 = 35] = "reserve_event_9",
+                    e[e.reserve_event_10 = 36] = "reserve_event_10",
+                    e[e.reserve_event_11 = 37] = "reserve_event_11",
+                    e[e.reserve_event_12 = 38] = "reserve_event_12",
+                    e[e.reserve_event_13 = 39] = "reserve_event_13",
+                    e[e.reserve_event_14 = 40] = "reserve_event_14",
+                    e[e.reserve_event_15 = 41] = "reserve_event_15",
+                    e[e.reserve_event_16 = 42] = "reserve_event_16",
+                    e[e.reserve_event_17 = 43] = "reserve_event_17",
+                    e[e.reserve_event_18 = 44] = "reserve_event_18",
+                    e[e.reserve_event_19 = 45] = "reserve_event_19",
+                    e[e.reserve_event_20 = 46] = "reserve_event_20"
             }(n.ActivityType || (n.ActivityType = {})),
             function (e) {
                 e[e.CASHFREE = 1] = "CASHFREE",
@@ -28581,9 +29196,63 @@ window.__require = function e(t, n, o) {
             }(n.HallTopNameToNode || (n.HallTopNameToNode = {})),
             (n.AiSupportType || (n.AiSupportType = {})).Promote = "Promote",
             function (e) {
+                e.Email = "email",
+                    e.Mobile = "mobile"
+            }(n.LoginType || (n.LoginType = {})),
+            function (e) {
                 e[e.DE = 0] = "DE",
                     e[e.IG = 1] = "IG"
             }(n.MANUFACTUREREM || (n.MANUFACTUREREM = {})),
+            function (e) {
+                e[e.bankName = 0] = "bankName",
+                    e[e.operatorName = 1] = "operatorName"
+            }(n.ChooseNameType || (n.ChooseNameType = {})),
+            cc._RF.pop()
+    }
+        , {}],
+    ShowAllFit: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "42f3896FPRNH4u0WvdTqFyY", "ShowAllFit"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = cc._decorator
+            , i = o.ccclass
+            , a = o.property
+            , r = o.executionOrder
+            , s = function (e) {
+                function t() {
+                    var t = null !== e && e.apply(this, arguments) || this;
+                    return t.designResolution = cc.size(750, 1334),
+                        t
+                }
+                return __extends(t, e),
+                    t.prototype.onEnable = function () {
+                        app.ComTool().DesktopPlatform() ? (this.node.parent.on(cc.Node.EventType.SIZE_CHANGED, this.fitHeight, this),
+                            this.fitHeight()) : (this.node.parent.on(cc.Node.EventType.SIZE_CHANGED, this.fitWidth, this),
+                                this.fitWidth())
+                    }
+                    ,
+                    t.prototype.fitHeight = function () {
+                        this.node.scale = this.node.parent.height / this.designResolution.height;
+                        for (var e = this.node.parent; e;)
+                            this.node.scale /= e.scale,
+                                e = e.parent
+                    }
+                    ,
+                    t.prototype.fitWidth = function () {
+                        var e = this.node.parent.width / this.node.parent.height;
+                        this.designResolution.width / this.designResolution.height < e ? this.fitHeight() : this.node.scale = 1
+                    }
+                    ,
+                    t.prototype.onDisable = function () {
+                        app.ComTool().DesktopPlatform() ? this.node.parent.off(cc.Node.EventType.SIZE_CHANGED, this.fitHeight, this) : this.node.parent.off(cc.Node.EventType.SIZE_CHANGED, this.fitWidth, this)
+                    }
+                    ,
+                    __decorate([a(cc.Size)], t.prototype, "designResolution", void 0),
+                    __decorate([i, r(1)], t)
+            }(cc.Component);
+        n.default = s,
             cc._RF.pop()
     }
         , {}],
@@ -29388,24 +30057,18 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 t.prototype.IsJoinAtWillActivity = function (e) {
-                    var t = app.StoreManager().GetSubChannel(e)
-                        , n = (t.sale.cur_time,
-                            Math.round(Date.now() / 1e3),
-                            t.act_send);
-                    if (n)
-                        for (var o = 0; o < n.length; o++) {
-                            var i = n[o].activity_info;
-                            if (i && 0 === i.end_time_stamp && 0 === i.start_time_stamp)
+                    var t = app.StoreManager().GetSubChannel(e).act_send;
+                    if (t)
+                        for (var n = 0; n < t.length; n++) {
+                            var o = t[n].activity_info;
+                            if (o && 0 === o.end_time_stamp && 0 === o.start_time_stamp)
                                 return !0
                         }
                     return !1
                 }
                 ,
                 t.prototype.IsJoinActivity = function (e) {
-                    var t = app.StoreManager().GetSubChannel(e).sale.cur_time - Math.round(Date.now() / 1e3);
-                    return t && t,
-                        Math.round(Date.now() / 1e3),
-                        !!this.IsJoinAtWillActivity(e) || !!this.IsJoinTimerActivity(e)
+                    return !!this.IsJoinAtWillActivity(e) || !!this.IsJoinTimerActivity(e)
                 }
                 ,
                 t.prototype.IsShowActivityInfoTime = function (e) {
@@ -29420,22 +30083,19 @@ window.__require = function e(t, n, o) {
                 ,
                 t.prototype.IsJoinTimerActivity = function (e) {
                     var t = app.StoreManager().GetSubChannel(e)
-                        , n = 0
-                        , o = t.sale.cur_time - Math.round(Date.now() / 1e3);
-                    o && (n = o);
-                    var i = Math.round(Date.now() / 1e3) + n;
+                        , n = t.cur_time;
                     if (t.act_send.length <= 0)
                         return !1;
-                    for (var a = 0; a < t.act_send.length; a++) {
-                        var r = t.act_send[a]
-                            , s = r.activity_info;
-                        if (s && s.start_time_stamp && s.end_time_stamp && i >= s.start_time_stamp && i <= s.end_time_stamp)
+                    for (var o = 0; o < t.act_send.length; o++) {
+                        var i = t.act_send[o]
+                            , a = i.activity_info;
+                        if (a && a.start_time_stamp && a.end_time_stamp && n >= a.start_time_stamp && n <= a.end_time_stamp)
                             return !0;
-                        var c = r.channel_recharge_activity_info;
-                        if (c)
-                            for (var l = 0; l < c.length; l++) {
-                                var p = c[l];
-                                if (p.start_time_stamp && p.end_time_stamp && i >= p.start_time_stamp && i <= p.end_time_stamp)
+                        var r = i.channel_recharge_activity_info;
+                        if (r)
+                            for (var s = 0; s < r.length; s++) {
+                                var c = r[s];
+                                if (c.start_time_stamp && c.end_time_stamp && n >= c.start_time_stamp && n <= c.end_time_stamp)
                                     return !0
                             }
                     }
@@ -29445,6 +30105,19 @@ window.__require = function e(t, n, o) {
                 t.prototype.GetIsPop = function () {
                     var e = app.GameConfigManager().GetGameConfig().pay_channel_version;
                     return e == r.PayUIType.Pay_UI_Type_Brazil ? this.GetSubChannel(this.ChosePayChennelId).is_pop : e == r.PayUIType.Pay_UI_Type_Vietnam_Channel ? app.Store2Manager().GetChoseTypeItem().is_pop : e == r.PayUIType.Pay_UI_Type_Vietnam_Type ? app.Store3Manager().GetChoseType().is_pop : 1
+                }
+                ,
+                t.prototype.GetActivityEndTime = function (e) {
+                    var t = null
+                        , n = e.activity_info;
+                    n && 0 != n.end_time_stamp && 0 != n.start_time_stamp && (t = n.end_time_stamp - (Math.round(Date.now() / 1e3) + this.DiffTime));
+                    var o = e.channel_recharge_activity_info;
+                    if (o)
+                        for (var i = 0; i < o.length; i++) {
+                            var a = o[i].end_time_stamp - (Math.round(Date.now() / 1e3) + this.DiffTime);
+                            (null == t || a < t) && (t = a)
+                        }
+                    return t
                 }
                 ,
                 t
@@ -29495,6 +30168,52 @@ window.__require = function e(t, n, o) {
                     return n
                 }
                 ,
+                t.prototype.cutStr = function (e, t) {
+                    void 0 === t && (t = 8);
+                    for (var n = 0, o = "", i = 0; i < e.length; i++)
+                        if (e.charCodeAt(i) > 128 ? n += 2 : n++,
+                            o += e.charAt(i),
+                            n >= t)
+                            return o + "...";
+                    return o
+                }
+                ,
+                t.prototype.LabelCutStr = function (e, t) {
+                    var n = cc.instantiate(e)
+                        , o = n.getComponent(cc.Label)
+                        , i = n.width;
+                    o.overflow = cc.Label.Overflow.NONE;
+                    var a = Math.floor(3 * i / o.fontSize);
+                    if (t = t.slice(0, a),
+                        o.string = t,
+                        o._forceUpdateRenderData(),
+                        n.width >= i) {
+                        for (; n.width > i && t.length > 0;)
+                            t = t.slice(0, -1),
+                                o.string = t + "...",
+                                o._forceUpdateRenderData();
+                        t = o.string
+                    }
+                    return n.destroy(),
+                        t
+                }
+                ,
+                t.prototype.SetScaleRichText = function (e, t) {
+                    if (e)
+                        if (1 != e.node.scale) {
+                            var n = 1 / e.node.scale
+                                , o = t.match(/<size=(\d+)>/g);
+                            if (o)
+                                for (var i = 0, a = o; i < a.length; i++) {
+                                    var r = a[i]
+                                        , s = parseInt(r.match(/\d+/)[0]) * n;
+                                    t = t.replace(r, "<size=" + s + ">")
+                                }
+                            e.string = t
+                        } else
+                            e.string = t
+                }
+                ,
                 t
         }(e("../Base/Singleton").Singleton);
         n.StringUtil = o,
@@ -29525,9 +30244,9 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.LoadSubGameForm = function (e) {
                         return __awaiter(this, void 0, void 0, function () {
-                            var t, n, o, a, r, s;
-                            return __generator(this, function (c) {
-                                switch (c.label) {
+                            var t, n, o, a, r, s, c;
+                            return __generator(this, function (l) {
+                                switch (l.label) {
                                     case 0:
                                         return t = app.SysDataManager().GetTableDict(i.FormDefine.Form),
                                             n = "Form/",
@@ -29537,9 +30256,11 @@ window.__require = function e(t, n, o) {
                                             a.push(this.CreateTextPromise("" + n + i.FormDefine.Effect, r, e + "/" + i.FormDefine.Effect, e)),
                                             s = app.SysDataManager().GetTableDict(i.FormDefine.Sound),
                                             a.push(this.CreateTextPromise("" + n + i.FormDefine.Sound, s, e + "/" + i.FormDefine.Sound, e)),
+                                            c = app.SysDataManager().GetTableDict(i.FormDefine.Image),
+                                            a.push(this.CreateTextPromise("" + n + i.FormDefine.Image, c, e + "/" + i.FormDefine.Image, e)),
                                             [4, Promise.all(a)];
                                     case 1:
-                                        return c.sent(),
+                                        return l.sent(),
                                             [2]
                                 }
                             })
@@ -30768,12 +31489,21 @@ window.__require = function e(t, n, o) {
                         return this.WarnLog("TikTokPixel LogEvent failed"),
                             !1;
                     var n = a[e];
-                    return !!n && (e === i.default.RECHARGE || e === i.default.FIRST_RECHARGE ? ttq.track(n, {
-                        content_type: "product",
-                        value: t,
-                        currency: "USD"
-                    }) : ttq.track(n),
-                        !0)
+                    if (n) {
+                        if (e === i.default.RECHARGE || e === i.default.FIRST_RECHARGE) {
+                            var o = e === i.default.FIRST_RECHARGE ? "SKU 1" : "SKU 2";
+                            ttq.track(n, {
+                                content_id: o,
+                                content_type: "product",
+                                content_name: n,
+                                value: t,
+                                currency: "USD"
+                            })
+                        } else
+                            ttq.track(n);
+                        return !0
+                    }
+                    return !1
                 }
                 ,
                 t
@@ -30973,6 +31703,7 @@ window.__require = function e(t, n, o) {
                 e.GET_USER_SIGN = "get_user_sign",
                 e.GET_WAY_SELECT = "get_way_select",
                 e.SIGN_LOAD_SUCCESS = "sign_load_success",
+                e.CONTENT_VIEW = "contentView",
                 e.USER_REGISTER = "register",
                 e.REG_OFFICIAL = "reg_official",
                 e.OPEN_RECHARGE = "openrecharge",
@@ -31094,6 +31825,221 @@ window.__require = function e(t, n, o) {
     }
         , {
         "./BaseComponent": "BaseComponent"
+    }],
+    UI18_H: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "02f4f3a4XBNPpSjt0ZwuWg/", "UI18_H"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = e("../../autoui/Prefab/auto_UI18_H")
+            , i = e("./UI18")
+            , a = cc._decorator
+            , r = a.ccclass
+            , s = a.menu
+            , c = (a.property,
+                function (e) {
+                    function t() {
+                        return null !== e && e.apply(this, arguments) || this
+                    }
+                    return __extends(t, e),
+                        t.prototype.OnCreateInit = function () {
+                            this.JS_Name = "UI18_H"
+                        }
+                        ,
+                        t.prototype.OnLoad = function () {
+                            this.ui = this.node.addComponent(o.default),
+                                this.ui.AutoBindEvent(this),
+                                this.init()
+                        }
+                        ,
+                        __decorate([r, s("UI/Prefab/UI18_H")], t)
+                }(i.default));
+        n.default = c,
+            cc._RF.pop()
+    }
+        , {
+        "../../autoui/Prefab/auto_UI18_H": "auto_UI18_H",
+        "./UI18": "UI18"
+    }],
+    UI18: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "43b76fm4O5CEaxjpk26Jszz", "UI18"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = e("../../../../Common/Base/BaseForm")
+            , i = e("../../../../Common/Component/ListView")
+            , a = e("../../autoui/Prefab/auto_UI18")
+            , r = e("../../../../Common/Define/ColorDefine")
+            , s = cc.color(89, 103, 124)
+            , c = cc._decorator
+            , l = c.ccclass
+            , p = c.menu
+            , d = (c.property,
+                function (e) {
+                    function t() {
+                        var t = null !== e && e.apply(this, arguments) || this;
+                        return t.ui = null,
+                            t.dateIndex = 0,
+                            t
+                    }
+                    return __extends(t, e),
+                        t.prototype.OnCreateInit = function () {
+                            this.JS_Name = "UI18"
+                        }
+                        ,
+                        t.prototype.OnLoad = function () {
+                            this.ui = this.node.addComponent(a.default),
+                                this.ui.AutoBindEvent(this),
+                                this.init()
+                        }
+                        ,
+                        t.prototype.OnShow = function () {
+                            for (var e = [], t = 0; t < arguments.length; t++)
+                                e[t] = arguments[t];
+                            this.showDateView(!1)
+                        }
+                        ,
+                        t.prototype.OnClick = function (e, t) {
+                            this.ui.btn_yy == t ? this.showYY() : this.ui.btn_mm == t ? this.showMM() : this.ui.btn_dd == t ? this.showDD() : this.ui.btn_ok == t ? this.changeConfirm() : this.ui.btn_close == t && this.showDateView(!1)
+                        }
+                        ,
+                        t.prototype.OnClose = function () {
+                            for (var e = [], t = 0; t < arguments.length; t++)
+                                e[t] = arguments[t]
+                        }
+                        ,
+                        t.prototype.init = function () {
+                            var e = this.ui.scrollview_date.getComponent(cc.ScrollView)
+                                , t = e.content.children;
+                            this.itemNode = t[0];
+                            for (var n = 0; n < t.length; n++)
+                                t[n].active = !1;
+                            this.ui.lb_yy.string = "2023",
+                                this.ui.lb_mm.string = "06",
+                                this.ui.lb_dd.string = "15";
+                            var o = this;
+                            this.listView = new i.ListView({
+                                scrollview: e,
+                                mask: e.content.parent,
+                                item_tpl: o.itemNode,
+                                gap_y: 0,
+                                left: 0,
+                                item_setter: function (e, t) {
+                                    !e.getComponent(cc.Button) && e.addComponent(cc.Button);
+                                    var n = new cc.Component.EventHandler;
+                                    n.target = o.node,
+                                        n.component = o.JS_Name,
+                                        n.handler = "dateItemCallBack";
+                                    var i = JSON.stringify(t);
+                                    n.customEventData = i,
+                                        e.getComponent(cc.Button).clickEvents = [],
+                                        e.getComponent(cc.Button).clickEvents.push(n),
+                                        o.GetWndComponent("lbl_num", cc.Label, e).string = t;
+                                    var a = o.ui.lb_yy.string;
+                                    1 == o.dateIndex ? a = o.ui.lb_mm.string : 2 == o.dateIndex && (a = o.ui.lb_dd.string);
+                                    var c = a == t;
+                                    o.GetWndNode("select_check", e).active = c,
+                                        o.GetWndNode("lbl_num", e).color = c ? r.default.Color_White : s
+                                }
+                            })
+                        }
+                        ,
+                        t.prototype.showDateView = function (e) {
+                            this.ui.scrollview_date.active = e
+                        }
+                        ,
+                        t.prototype.showYY = function () {
+                            this.dateIndex = 0,
+                                this.showDateView(!0);
+                            for (var e = (new Date).getFullYear(), t = [], n = e; n >= e - 100; n--)
+                                t.push(n);
+                            this.listView.set_data(t),
+                                this.scrollItem(t, this.ui.lb_yy.string)
+                        }
+                        ,
+                        t.prototype.showMM = function () {
+                            this.dateIndex = 1,
+                                this.showDateView(!0);
+                            for (var e = [], t = 1; t <= 12; t++)
+                                e.push(t);
+                            this.listView.set_data(e),
+                                this.scrollItem(e, this.ui.lb_mm.string)
+                        }
+                        ,
+                        t.prototype.showDD = function () {
+                            this.dateIndex = 2,
+                                this.showDateView(!0);
+                            for (var e = this.getDaysInCurrentMonth(), t = [], n = 1; n <= e; n++)
+                                t.push(n);
+                            this.listView.set_data(t),
+                                this.scrollItem(t, this.ui.lb_dd.string)
+                        }
+                        ,
+                        t.prototype.dateItemCallBack = function (e, t) {
+                            this.showDateView(!1);
+                            var n = JSON.parse(t)
+                                , o = new Date;
+                            if (0 == this.dateIndex)
+                                this.ui.lb_yy.string = "" + n,
+                                    this.getIsOutCurrDate() && (this.ui.lb_mm.string = "1",
+                                        this.ui.lb_dd.string = "1");
+                            else if (1 == this.dateIndex) {
+                                if (this.ui.lb_mm.string = "" + n,
+                                    this.getIsOutCurrDate()) {
+                                    var i = o.getMonth() + 1;
+                                    this.ui.lb_mm.string = "" + i,
+                                        this.ui.lb_dd.string = "1"
+                                }
+                                this.getDaysInCurrentMonth() < Number(this.ui.lb_dd.string) && (this.ui.lb_dd.string = "1")
+                            } else
+                                2 == this.dateIndex && (this.ui.lb_dd.string = "" + n,
+                                    this.getIsOutCurrDate() && (this.ui.lb_dd.string = "" + o.getDate()))
+                        }
+                        ,
+                        t.prototype.changeConfirm = function () {
+                            var e = Number(this.ui.lb_yy.string)
+                                , t = Number(this.ui.lb_mm.string)
+                                , n = Number(this.ui.lb_dd.string);
+                            this.is18YearsOld(e, t, n) ? (app.LocalDataManager().SetConfigObject(app.UserManager().UserInfo.uid + "open_UI18", {
+                                open: !1
+                            }),
+                                this.CloseForm()) : app.SysNotifyManager().ShowToast("Sorry, under 18 years old are not allowed to play this game!")
+                        }
+                        ,
+                        t.prototype.scrollItem = function (e, t) {
+                            var n = e.indexOf(Number(t));
+                            this.listView.scroll_to(n)
+                        }
+                        ,
+                        t.prototype.getDaysInCurrentMonth = function () {
+                            var e = Number(this.ui.lb_yy.string)
+                                , t = Number(this.ui.lb_mm.string);
+                            return new Date(e, t, 0).getDate()
+                        }
+                        ,
+                        t.prototype.getIsOutCurrDate = function () {
+                            var e = this.ui.lb_yy.string + "/" + this.ui.lb_mm.string + "/" + this.ui.lb_dd.string;
+                            return new Date(e).getTime() > (new Date).getTime()
+                        }
+                        ,
+                        t.prototype.is18YearsOld = function (e, t, n) {
+                            var o = new Date
+                                , i = new Date(e, t - 1, n);
+                            return (o.getTime() - i.getTime()) / 315576e5 >= 18
+                        }
+                        ,
+                        __decorate([l, p("UI/Prefab/UI18")], t)
+                }(o.default));
+        n.default = d,
+            cc._RF.pop()
+    }
+        , {
+        "../../../../Common/Base/BaseForm": "BaseForm",
+        "../../../../Common/Component/ListView": "ListView",
+        "../../../../Common/Define/ColorDefine": "ColorDefine",
+        "../../autoui/Prefab/auto_UI18": "auto_UI18"
     }],
     UIAISupport: [function (e, t, n) {
         "use strict";
@@ -31837,18 +32783,12 @@ window.__require = function e(t, n, o) {
         cc._RF.push(t, "51ebbMQ0XdDZr01gi+Y9tQB", "UIAccountInfo"),
             Object.defineProperty(n, "__esModule", {
                 value: !0
-            }),
-            n.LoginType = void 0;
+            });
         var o = e("../../../Common/Define/UINameDefine")
             , i = e("../../../Common/Base/UIBaseComponent")
             , a = e("../../../Common/Define/GameEventDefine")
-            , r = e("../../../Common/Define/ShareDefine");
-        (function (e) {
-            e.Email = "email",
-                e.Mobile = "mobile"
-        }
-        )(n.LoginType || (n.LoginType = {}));
-        var s = cc._decorator
+            , r = e("../../../Common/Define/ShareDefine")
+            , s = cc._decorator
             , c = s.ccclass
             , l = s.property
             , p = function (e) {
@@ -31866,18 +32806,6 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.OnEnable = function () {
                         this.initCenter()
-                    }
-                    ,
-                    t.prototype.getIsBindMethod = function (e) {
-                        var t = app.GameConfigManager().GetGameConfig().reg_login_weight_conf;
-                        if (!t)
-                            return !0;
-                        for (var n = 0; n < t.length; n++) {
-                            var o = t[n];
-                            if (o.key == e && 1 == o.status)
-                                return !0
-                        }
-                        return !1
                     }
                     ,
                     t.prototype.initCenter = function () {
@@ -32024,15 +32952,12 @@ window.__require = function e(t, n, o) {
         cc._RF.push(t, "5731dhLsSVFvKwTLWPsxlIw", "UIAccountSetting"),
             Object.defineProperty(n, "__esModule", {
                 value: !0
-            }),
-            n.LoginType = void 0;
-        var o, i = e("../../../Common/Define/UINameDefine"), a = e("../../../Common/Define/GameEventDefine"), r = e("../../../Common/Base/BaseForm");
-        (function (e) {
-            e.Email = "email",
-                e.Mobile = "mobile"
-        }
-        )(o = n.LoginType || (n.LoginType = {}));
-        var s = cc._decorator
+            });
+        var o = e("../../../Common/Define/UINameDefine")
+            , i = e("../../../Common/Define/GameEventDefine")
+            , a = e("../../../Common/Base/BaseForm")
+            , r = e("../../../Common/Define/ShareDefine")
+            , s = cc._decorator
             , c = s.ccclass
             , l = s.property
             , p = function (e) {
@@ -32043,9 +32968,9 @@ window.__require = function e(t, n, o) {
                 }
                 return __extends(t, e),
                     t.prototype.OnCreateInit = function () {
-                        this.RegEvent(a.GameEventDefine.GET_BIND_EMAIL, this.GetEmail),
-                            this.RegEvent(a.GameEventDefine.GET_BIND_TEL, this.GetTel),
-                            this.RegEvent(a.GameEventDefine.CHANGE_BIRTHDAY, this.initBirthday),
+                        this.RegEvent(i.GameEventDefine.GET_BIND_EMAIL, this.GetEmail),
+                            this.RegEvent(i.GameEventDefine.GET_BIND_TEL, this.GetTel),
+                            this.RegEvent(i.GameEventDefine.CHANGE_BIRTHDAY, this.initBirthday),
                             this.InitBindMethod()
                     }
                     ,
@@ -32056,20 +32981,8 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.InitBindMethod = function () {
-                        this.GetWndNode("phone", this.infoNode).active = this.getIsBindMethod(o.Mobile),
-                            this.GetWndNode("email", this.infoNode).active = this.getIsBindMethod(o.Email)
-                    }
-                    ,
-                    t.prototype.getIsBindMethod = function (e) {
-                        var t = app.GameConfigManager().GetGameConfig().reg_login_weight_conf;
-                        if (!t)
-                            return !0;
-                        for (var n = 0; n < t.length; n++) {
-                            var o = t[n];
-                            if (o.key == e && 1 == o.status)
-                                return !0
-                        }
-                        return !1
+                        this.GetWndNode("phone", this.infoNode).active = app.GameConfigManager().GetIsBindMethod(r.LoginType.Mobile),
+                            this.GetWndNode("email", this.infoNode).active = app.GameConfigManager().GetIsBindMethod(r.LoginType.Email)
                     }
                     ,
                     t.prototype.initInfo = function () {
@@ -32080,7 +32993,7 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.GetTel = function () {
                         this.initPhone(),
-                            app.FormManager().CloseForm(i.UINameDefine.UIAccountPop)
+                            app.FormManager().CloseForm(o.UINameDefine.UIAccountPop)
                     }
                     ,
                     t.prototype.initPhone = function () {
@@ -32097,7 +33010,7 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.GetEmail = function () {
                         this.initEmail(),
-                            app.FormManager().CloseForm(i.UINameDefine.UIAccountPop)
+                            app.FormManager().CloseForm(o.UINameDefine.UIAccountPop)
                     }
                     ,
                     t.prototype.initEmail = function () {
@@ -32133,11 +33046,11 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.OnClick = function (e) {
-                        "btn_bindEmail" != e ? "btn_bindPhone" != e ? "btn_pas" != e ? "btn_back" != e ? "btn_setBirthday" != e || app.FormManager().ShowForm(i.UINameDefine.UIAccountBirthday, {
+                        "btn_bindEmail" != e ? "btn_bindPhone" != e ? "btn_pas" != e ? "btn_back" != e ? "btn_setBirthday" != e || app.FormManager().ShowForm(o.UINameDefine.UIAccountBirthday, {
                             isNone: !0
                         }) : app.UserManager().showAccountForm({
                             isNone: !0
-                        }) : app.FormManager().ShowForm(i.UINameDefine.UIAccountPop, 2) : app.FormManager().ShowForm(i.UINameDefine.UIAccountPop, 0) : app.FormManager().ShowForm(i.UINameDefine.UIAccountPop, 1)
+                        }) : app.FormManager().ShowForm(o.UINameDefine.UIAccountPop, 2) : app.FormManager().ShowForm(o.UINameDefine.UIAccountPop, 0) : app.FormManager().ShowForm(o.UINameDefine.UIAccountPop, 1)
                     }
                     ,
                     t.prototype.OnClose = function () {
@@ -32147,13 +33060,14 @@ window.__require = function e(t, n, o) {
                     ,
                     __decorate([l(cc.Node)], t.prototype, "infoNode", void 0),
                     __decorate([c], t)
-            }(r.default);
+            }(a.default);
         n.default = p,
             cc._RF.pop()
     }
         , {
         "../../../Common/Base/BaseForm": "BaseForm",
         "../../../Common/Define/GameEventDefine": "GameEventDefine",
+        "../../../Common/Define/ShareDefine": "ShareDefine",
         "../../../Common/Define/UINameDefine": "UINameDefine"
     }],
     UIAccount: [function (e, t, n) {
@@ -32373,25 +33287,61 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.OnInitView = function (e) {
                         if (e) {
-                            var t = cc.instantiate(this.img_Item);
-                            if (e.img && (app.ImageUtil().LoadImage(t, e.img),
-                                t.active = !0,
-                                t.parent = this.content),
-                                e.content) {
-                                var n = cc.instantiate(this.txt_Item);
-                                n.getComponent(cc.RichText).string = e.content,
-                                    n.active = !0,
-                                    n.parent = this.content
-                            }
-                            if (this.type === a.ActivityType.agency_promotion && (e.button_name = e.btn_txt),
+                            if (e.img && this.AddImg(e.img, cc.Sprite.SizeMode.CUSTOM),
+                                e.content && this.AddContent(e.content),
+                                e.default_img && this.AddImg(e.default_img, cc.Sprite.SizeMode.RAW),
+                                e.default_content && this.AddContent(e.default_content),
+                                this.type === a.ActivityType.agency_promotion && (e.button_name = e.btn_txt),
                                 e.button_name) {
-                                var o = cc.instantiate(this.btn_node);
-                                cc.find("Background/Label", o).getComponent(cc.Label).string = e.button_name,
-                                    o.active = !0,
-                                    o.parent = this.content
+                                var t = cc.instantiate(this.btn_node);
+                                cc.find("Background/Label", t).getComponent(cc.Label).string = e.button_name,
+                                    t.active = !0,
+                                    t.parent = this.content
                             }
                             this.OnLayOutStatus(!1)
                         }
+                    }
+                    ,
+                    t.prototype.SetEqualScalingWith = function (e) {
+                        var t = e.getComponent(cc.Sprite)
+                            , n = e.width;
+                        if (n > this.content.width) {
+                            var o = e.height
+                                , i = this.content.width / n
+                                , a = n * i
+                                , r = o * i;
+                            t.node.width = a,
+                                t.node.height = r
+                        }
+                        this.OnLayOutStatus(!1)
+                    }
+                    ,
+                    t.prototype.AddImg = function (e, t) {
+                        var n = this
+                            , o = cc.instantiate(this.img_Item);
+                        o.getComponent(cc.Sprite).sizeMode = t,
+                            app.ControlManager().CreateLoadPromiseByUrl(e).then(function (e) {
+                                var i = function (o) {
+                                    if (cc.isValid(o, !0) && o && o.getComponent(cc.Sprite)) {
+                                        var i = new cc.SpriteFrame(e);
+                                        o.getComponent(cc.Sprite).spriteFrame = i,
+                                            t == cc.Sprite.SizeMode.RAW && n.SetEqualScalingWith(o)
+                                    }
+                                };
+                                Array.isArray(o) ? o.forEach(function (e) {
+                                    i(e)
+                                }) : i(o)
+                            }).catch(function () { }),
+                            o.active = !0,
+                            o.parent = this.content
+                    }
+                    ,
+                    t.prototype.AddContent = function (e) {
+                        var t = cc.instantiate(this.txt_Item)
+                            , n = t.getComponent(cc.RichText);
+                        app.StringUtil().SetScaleRichText(n, e),
+                            t.active = !0,
+                            t.parent = this.content
                     }
                     ,
                     t.prototype.OnClick = function (e) {
@@ -32909,35 +33859,6 @@ window.__require = function e(t, n, o) {
         "../Define/GameEventDefine": "GameEventDefine",
         "./UINumKeyPadLabel": "UINumKeyPadLabel"
     }],
-    UIBG: [function (e, t, n) {
-        "use strict";
-        cc._RF.push(t, "7d321UmPMpMC7itc/ZST6Do", "UIBG"),
-            Object.defineProperty(n, "__esModule", {
-                value: !0
-            });
-        var o = e("../../../Common/Base/UIBaseComponent")
-            , i = cc._decorator
-            , a = i.ccclass
-            , r = (i.property,
-                function (e) {
-                    function t() {
-                        return null !== e && e.apply(this, arguments) || this
-                    }
-                    return __extends(t, e),
-                        t.prototype.OnLoadInit = function () {
-                            this.JS_Name = "UIBG"
-                        }
-                        ,
-                        t.prototype.OnEnable = function () { }
-                        ,
-                        __decorate([a], t)
-                }(o.default));
-        n.default = r,
-            cc._RF.pop()
-    }
-        , {
-        "../../../Common/Base/UIBaseComponent": "UIBaseComponent"
-    }],
     UIBackground: [function (e, t, n) {
         "use strict";
         cc._RF.push(t, "0264anBS1RNJLUiDadPqvWM", "UIBackground"),
@@ -33171,11 +34092,12 @@ window.__require = function e(t, n, o) {
             });
         var o = e("../../../Common/Base/UIBaseComponent")
             , i = e("../../../Common/Define/GameEventDefine")
-            , a = e("../../../Common/Define/UINameDefine")
-            , r = cc._decorator
-            , s = r.ccclass
-            , c = r.property
-            , l = function (e) {
+            , a = e("../../../Common/Define/ShareDefine")
+            , r = e("../../../Common/Define/UINameDefine")
+            , s = cc._decorator
+            , c = s.ccclass
+            , l = s.property
+            , p = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t.nation = null,
@@ -33193,15 +34115,17 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.onBtnClick = function () {
-                        app.CashOutManager().SetNigeriaDataSelected(this.record.id),
-                            app.Client.OnEvent(i.GameEventDefine.BANK_CODE_CLICK, this.record),
-                            app.FormManager().CloseForm(a.UINameDefine.UIBankName)
+                        this.chooseType == a.ChooseNameType.bankName ? (app.CashOutManager().SetNigeriaDataSelected(this.record.id),
+                            app.Client.OnEvent(i.GameEventDefine.BANK_CODE_CLICK, this.record)) : this.chooseType == a.ChooseNameType.operatorName && (app.CashOutManager().SetGhanaPhoneDataSelected(this.record.id),
+                                app.Client.OnEvent(i.GameEventDefine.OPERATOR_CODE_CLICK, this.record)),
+                            app.FormManager().CloseForm(r.UINameDefine.UIBankName)
                     }
                     ,
-                    t.prototype.setItemData = function (e) {
+                    t.prototype.setItemData = function (e, t) {
                         this.record = e,
-                            this.nation.string = app.ComUtil().cutStr(e.bank_name, 40),
-                            this.nation2.string = app.ComUtil().cutStr(e.bank_name, 40),
+                            this.chooseType = t,
+                            this.nation.string = app.StringUtil().cutStr(e.bank_name, 40),
+                            this.nation2.string = app.StringUtil().cutStr(e.bank_name, 40),
                             this.RenderSelected(this.record.selected)
                     }
                     ,
@@ -33211,16 +34135,17 @@ window.__require = function e(t, n, o) {
                             cc.find("checkmark", this.node).active = t
                     }
                     ,
-                    __decorate([c(cc.Label)], t.prototype, "nation", void 0),
-                    __decorate([c(cc.Label)], t.prototype, "nation2", void 0),
-                    __decorate([s], t)
+                    __decorate([l(cc.Label)], t.prototype, "nation", void 0),
+                    __decorate([l(cc.Label)], t.prototype, "nation2", void 0),
+                    __decorate([c], t)
             }(o.default);
-        n.default = l,
+        n.default = p,
             cc._RF.pop()
     }
         , {
         "../../../Common/Base/UIBaseComponent": "UIBaseComponent",
         "../../../Common/Define/GameEventDefine": "GameEventDefine",
+        "../../../Common/Define/ShareDefine": "ShareDefine",
         "../../../Common/Define/UINameDefine": "UINameDefine"
     }],
     UIBankName: [function (e, t, n) {
@@ -33232,11 +34157,12 @@ window.__require = function e(t, n, o) {
         var o = e("../../../Common/Base/BaseForm")
             , i = e("../../../Common/Component/ListView")
             , a = e("../../../Common/Define/GameEventDefine")
-            , r = e("./UIBankNameItem")
-            , s = cc._decorator
-            , c = s.ccclass
-            , l = s.property
-            , p = function (e) {
+            , r = e("../../../Common/Define/ShareDefine")
+            , s = e("./UIBankNameItem")
+            , c = cc._decorator
+            , l = c.ccclass
+            , p = c.property
+            , d = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t.itemPrefabName = null,
@@ -33244,6 +34170,7 @@ window.__require = function e(t, n, o) {
                 }
                 return __extends(t, e),
                     t.prototype.OnCreateInit = function () {
+                        var e = this;
                         this.JS_Name = "UIBankName",
                             this.RegEvent(a.GameEventDefine.GET_NIGERIA, this.onNigeria),
                             this.RegEvent(a.GameEventDefine.BANK_CODE_CLICK, this.OnBankCode),
@@ -33253,8 +34180,8 @@ window.__require = function e(t, n, o) {
                                 item_tpl: this.itemPrefabName,
                                 gap_y: 0,
                                 left: 10,
-                                item_setter: function (e, t) {
-                                    e.getComponent(r.default).setItemData(t)
+                                item_setter: function (t, n) {
+                                    t.getComponent(s.default).setItemData(n, e.chooseType)
                                 }
                             })
                     }
@@ -33262,7 +34189,13 @@ window.__require = function e(t, n, o) {
                     t.prototype.OnShow = function () {
                         for (var e = [], t = 0; t < arguments.length; t++)
                             e[t] = arguments[t];
-                        app.CashOutManager().NigeriaData ? this.listView.set_data(app.CashOutManager().NigeriaData, !1) : app.CashOutManager().RequestNigeria()
+                        if (this.chooseType = e[0],
+                            this.chooseType == r.ChooseNameType.bankName)
+                            app.CashOutManager().NigeriaData ? this.listView.set_data(app.CashOutManager().NigeriaData, !1) : app.CashOutManager().RequestNigeria();
+                        else if (this.chooseType == r.ChooseNameType.operatorName) {
+                            var n = app.CashOutManager().GetGhanaPhoneData();
+                            this.listView.set_data(n, !1)
+                        }
                     }
                     ,
                     t.prototype.OnBankCode = function () {
@@ -33273,16 +34206,17 @@ window.__require = function e(t, n, o) {
                         this.listView.set_data(app.CashOutManager().NigeriaData, !0)
                     }
                     ,
-                    __decorate([l(cc.Prefab)], t.prototype, "itemPrefabName", void 0),
-                    __decorate([c], t)
+                    __decorate([p(cc.Prefab)], t.prototype, "itemPrefabName", void 0),
+                    __decorate([l], t)
             }(o.default);
-        n.default = p,
+        n.default = d,
             cc._RF.pop()
     }
         , {
         "../../../Common/Base/BaseForm": "BaseForm",
         "../../../Common/Component/ListView": "ListView",
         "../../../Common/Define/GameEventDefine": "GameEventDefine",
+        "../../../Common/Define/ShareDefine": "ShareDefine",
         "./UIBankNameItem": "UIBankNameItem"
     }],
     UIBankNextComponent_2_H: [function (e, t, n) {
@@ -33871,21 +34805,22 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.OnGetFaqInfo = function (e) {
+                        var t;
                         if (this.recvData = e,
                             e && "" != e.recvData.value && this.isChoseBet) {
-                            var t = e.recvData;
+                            var n = e.recvData;
                             if (e.recvData.name == r.TextDefine.draw_amount) {
                                 this.nodeTtips.active = !0;
-                                var n = ""
-                                    , o = Number((null == t ? void 0 : t.inside_data.id) ? t.inside_data.id : 0);
-                                o ? n = "link_:" + o : t.url && (n = "url_:" + t.url);
-                                var i = t.value
-                                    , a = '<on click="Click" param="' + n + '">';
-                                i = this.addStr(i, a, "<u>", 0),
-                                    i = this.addStr(i, "</on>", "</u>", "</on>".length);
-                                var c = this.GetWndNode("label_restore", this.nodeTtips);
-                                c.getComponent(cc.RichText).string = i,
-                                    c.getComponent(s.default).setData(null == t ? void 0 : t.inside_data)
+                                var o = ""
+                                    , i = Number((null === (t = null == n ? void 0 : n.inside_data) || void 0 === t ? void 0 : t.id) ? n.inside_data.id : 0);
+                                i ? o = "link_:" + i : n.url && (o = "url_:" + n.url);
+                                var a = n.value
+                                    , c = '<on click="Click" param="' + o + '">';
+                                a = this.addStr(a, c, "<u>", 0),
+                                    a = this.addStr(a, "</on>", "</u>", "</on>".length);
+                                var l = this.GetWndNode("label_restore", this.nodeTtips);
+                                l.getComponent(cc.RichText).string = a,
+                                    l.getComponent(s.default).setData(null == n ? void 0 : n.inside_data)
                             }
                         } else
                             this.nodeTtips.active = !1
@@ -33902,12 +34837,13 @@ window.__require = function e(t, n, o) {
                             var e = app.ActivityManager().newGamePromotion;
                             this.nodeActivity.active = !0,
                                 this.GetWndComponent("lab_actTitle", cc.Label, this.nodeActivity).string = e.lang_title;
-                            var t = e.content;
-                            this.GetWndComponent("richtext_actContent", cc.RichText, this.nodeActivity).string = t;
-                            var n = e.start_time_stamp
-                                , o = e.end_time_stamp;
+                            var t = e.content
+                                , n = this.GetWndComponent("richtext_actContent", cc.RichText, this.nodeActivity);
+                            app.StringUtil().SetScaleRichText(n, t);
+                            var o = e.start_time_stamp
+                                , i = e.end_time_stamp;
                             return this.activityInfo = e,
-                                void (n && o && (this.CheckDateEvent(n, o) ? this.schedule(this.UpdateTime, 1) : this.nodeActivity.active = !1))
+                                void (o && i && (this.CheckDateEvent(o, i) ? this.schedule(this.UpdateTime, 1) : this.nodeActivity.active = !1))
                         }
                         this.nodeActivity.active = !1
                     }
@@ -34170,7 +35106,7 @@ window.__require = function e(t, n, o) {
                             this.GetWndNode("profit", t).getComponent(cc.Label).string = n.game_profit + "";
                         var r = this.GetWndNode("player/name", t);
                         t.name = n.nickname,
-                            r.getComponent(cc.Label).string = n.nickname.length > 10 ? app.ComUtil().cutStr(n.nickname, 10) : n.nickname;
+                            r.getComponent(cc.Label).string = n.nickname.length > 10 ? app.StringUtil().cutStr(n.nickname, 10) : n.nickname;
                         var s = this.GetWndNode("player/face/mask/tx", t);
                         app.ImageUtil().LoadHead(s, n.headimg ? n.headimg : "01")
                     }
@@ -35561,6 +36497,7 @@ window.__require = function e(t, n, o) {
                         t.li_PayMayaPhilippines = null,
                         t.li_rfc = null,
                         t.li_card = null,
+                        t.li_ghana = null,
                         t.lb_KindTip = null,
                         t.lb_KindTip1 = null,
                         t.lbl_PleaseTip = null,
@@ -35572,13 +36509,18 @@ window.__require = function e(t, n, o) {
                         this.RegEvent(r.GameEventDefine.BIND_USER_WALLET, this.onBindUserWallet),
                             this.RegEvent(r.GameEventDefine.BIND_BANK_ACCOUNT, this.onBindBankAccount),
                             this.RegEvent(r.GameEventDefine.BANK_CODE_CLICK, this.onSetBankCode),
+                            this.RegEvent(r.GameEventDefine.OPERATOR_CODE_CLICK, this.OnSetOperatorCode),
                             this.RegEvent(r.GameEventDefine.NATION_PHONE_CODE, this.UpdateCode),
                             this.RegEvent(r.GameEventDefine.GET_AREA_CODES, this.OnGetAreaCode),
                             this.lb_KindTip = this.GetWndComponent("view/content/layout_con/label_Kind_tips", cc.Label),
                             this.lb_KindTip1 = this.GetWndComponent("view/content/li_Encrypted/label_Kind_tips", cc.Label),
                             this.lbl_PleaseTip = this.GetWndComponent("view/content/layout_con/label_tips", cc.Label),
                             this.lbl_PleaseTip1 = this.GetWndComponent("view/content/li_Encrypted/label_tips", cc.Label),
-                            this.codeLabel = this.GetWndComponent("view/content/layout_con/li_PayMayaPhilippines/btn_code/label", cc.Label),
+                            this.codeLabel = this.GetWndComponent("view/content/layout_con/li_PayMayaPhilippines/btn_code/label", cc.Label);
+                        var e = this.GetWndNode("/node_card1/bg_gold_input/editbox_ghana_bank_name", this.li_ghana);
+                        this.ghana_bankNameEditbox = e.getComponent(cc.EditBox);
+                        var t = this.GetWndNode("/node_card2/bg_gold_input/editbox_ghana_operator_name", this.li_ghana);
+                        this.ghana_operatorNameEditbox = t.getComponent(cc.EditBox),
                             this.rfcEditbox = this.GetWndComponent("view/content/layout_con/li_RFC/node_Rfc1/node/editbox", cc.EditBox),
                             this.rfcEditbox.addComponent(i.default).initRegExp(i.RegExpType.test),
                             this.curpEditbox = this.GetWndComponent("view/content/layout_con/li_RFC/node_Rfc2/node/editbox", cc.EditBox),
@@ -35588,7 +36530,11 @@ window.__require = function e(t, n, o) {
                             this.phoneEditbox = this.GetWndComponent("view/content/layout_con/li_Card/node_card2/node/editbox", cc.EditBox),
                             this.phoneEditbox.addComponent(i.default).initRegExp(i.RegExpType.test),
                             this.clabeEditbox = this.GetWndComponent("view/content/layout_con/li_Card/node_card3/node/editbox", cc.EditBox),
-                            this.clabeEditbox.addComponent(i.default).initRegExp(i.RegExpType.test)
+                            this.clabeEditbox.addComponent(i.default).initRegExp(i.RegExpType.test),
+                            this.ghana_bankEditbox = this.GetWndComponent("view/content/layout_con/li_Ghana/node_card1/node/editbox", cc.EditBox),
+                            this.ghana_bankEditbox.addComponent(i.default).initRegExp(i.RegExpType.NUM_And_Zero),
+                            this.ghana_phoneEditbox = this.GetWndComponent("view/content/layout_con/li_Ghana/node_card2/node/editbox", cc.EditBox),
+                            this.ghana_phoneEditbox.addComponent(i.default).initRegExp(i.RegExpType.NUM_And_Zero)
                     }
                     ,
                     t.prototype.OnEnable = function () {
@@ -35637,10 +36583,10 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.OnClick = function (e, t, n) {
                         this.Log(e),
-                            "button_bind" != e ? "editbox_bank_name" != e ? "editbox_pix_type" != e ? "btn_close_pix_type" != e ? "toggle1" != e && "toggle2" != e ? "toggle1_Gcash" != e && "toggle2_Gcash" != e && "toggle3_Gcash" != e ? "CPF" != e && "CNPJ" != e && "PHONE" != e && "EMAIL" != e && "code_EVP" != e ? "toggleRfc_1" != e && "toggleRfc_2" != e ? "toggleCard_1" != e && "toggleCard_2" != e && "toggleCard_3" != e ? "btn_code" != e || app.FormManager().ShowForm(l.UINameDefine.UINationPhoneCode, {
+                            "button_bind" != e ? "editbox_bank_name" != e && "editbox_ghana_bank_name" != e ? "editbox_ghana_operator_name" != e ? "editbox_pix_type" != e ? "btn_close_pix_type" != e ? "toggle1" != e && "toggle2" != e ? "toggle1_Gcash" != e && "toggle2_Gcash" != e && "toggle3_Gcash" != e ? "CPF" != e && "CNPJ" != e && "PHONE" != e && "EMAIL" != e && "code_EVP" != e ? "toggleRfc_1" != e && "toggleRfc_2" != e ? "toggleCard_1" != e && "toggleCard_2" != e && "toggleCard_3" != e ? "toggleGhana_1" != e && "toggleGhana_2" != e ? "btn_code" != e || app.FormManager().ShowForm(l.UINameDefine.UINationPhoneCode, {
                                 type: s.NationPhoneNumberType.BindPhone,
                                 node: this.codeLabel.node.parent
-                            }) : this.CardTypeToggleCallBack(n) : this.RFCTypeToggleCallBack(n) : this.PixTypeCallBack(e) : this.PrepayTypeToggleCallBack(n) : this.AccountTypeToggleCallBack(n) : this.ClosePixTypeList() : this.openPixTypeList() : this.OpenBankCode() : this.SendBindBankNumBtnCallBack()
+                            }) : this.GhanaTypeToggleCallBack(n) : this.CardTypeToggleCallBack(n) : this.RFCTypeToggleCallBack(n) : this.PixTypeCallBack(e) : this.PrepayTypeToggleCallBack(n) : this.AccountTypeToggleCallBack(n) : this.ClosePixTypeList() : this.openPixTypeList() : this.OpenBankCode(s.ChooseNameType.operatorName) : this.OpenBankCode(s.ChooseNameType.bankName) : this.SendBindBankNumBtnCallBack()
                     }
                     ,
                     t.prototype.onBindUserWallet = function (e) {
@@ -35678,8 +36624,14 @@ window.__require = function e(t, n, o) {
                                 this.debitEditbox.string = "",
                                 this.phoneEditbox.string = "",
                                 this.clabeEditbox.string = "",
+                                this.ghana_bankEditbox.string = "",
+                                this.ghana_phoneEditbox.string = "",
+                                this.ghana_bankNameEditbox.getComponent(cc.EditBox).string = "",
+                                this.ghana_operatorNameEditbox.getComponent(cc.EditBox).string = "",
                                 e.bank_account && "" !== e.bank_account && (this.AccountNumber.getComponent(cc.EditBox).string = e.bank_account,
-                                    this.AccountNumber.getComponent(cc.EditBox).placeholder = ""),
+                                    this.AccountNumber.getComponent(cc.EditBox).placeholder = "",
+                                    this.ghana_bankEditbox.string = e.bank_account,
+                                    this.ghana_bankEditbox.placeholder = ""),
                                 e.cardholder_name && "" !== e.cardholder_name && (this.BankUserName.getComponent(cc.EditBox).string = e.cardholder_name,
                                     this.BankUserName.getComponent(cc.EditBox).placeholder = ""),
                                 e.ifsc_code && "" !== e.ifsc_code && (this.IfSCCode.getComponent(cc.EditBox).string = e.ifsc_code,
@@ -35712,6 +36664,12 @@ window.__require = function e(t, n, o) {
                                     this.SelectBankName.getChildByName("editbox_bank_name").getComponent(cc.EditBox).placeholder = "",
                                     this.BankName.getComponent(cc.EditBox).string = e.bank_name,
                                     this.BankName.getComponent(cc.EditBox).placeholder = "") : this.SelectBankCodeData = null,
+                                e.ghana_prepay_phone_code && "" !== e.ghana_prepay_phone_code ? this.SelectOperatorCodeData = {
+                                    bank_code: e.ghana_prepay_phone_code,
+                                    bank_name: e.ghana_prepay_phone_code
+                                } : this.SelectOperatorCodeData = null,
+                                e.bank_name && "" !== e.bank_name ? (this.ghana_bankNameEditbox.string = e.bank_name,
+                                    this.ghana_bankNameEditbox.placeholder = "") : this.SelectBankCodeData = null,
                                 e.pix_key && "" !== e.pix_key) {
                                 var t = e.pix_key;
                                 "CPF" != e.pix_type && "CNPJ" != e.pix_type || (t = app.ComUtil().translate(e.pix_key + "")),
@@ -35794,13 +36752,42 @@ window.__require = function e(t, n, o) {
                                             this.SendCardType = Number(c),
                                             s.getComponent(cc.Toggle).check()) : s.getComponent(cc.Toggle).isChecked = !1
                             }
-                            this.ShowCardChildren(),
+                            this.ShowCardChildren();
+                            var h = this.GetWndNode("node_ghanaToggle/node/toggleGhana", this.li_ghana);
+                            this.SendGhanaType = 0;
+                            var u = !1;
+                            for (o = 0; o < h.children.length; o++)
+                                s = h.children[o],
+                                    !u && s.active ? (u = !0,
+                                        c = this.GetSubstr(s.name, "toggleGhana_"),
+                                        this.SendGhanaType = Number(c),
+                                        s.getComponent(cc.Toggle).check()) : s.getComponent(cc.Toggle).isChecked = !1;
+                            if (e.ghana_prepay_type && e.ghana_prepay_type > 0) {
+                                for (l = !1,
+                                    o = 0; o < h.children.length; o++)
+                                    (s = h.children[o]).getComponent(cc.Toggle).isChecked = !1,
+                                        c = this.GetSubstr(s.name, "toggleGhana_"),
+                                        Number(c) == e.ghana_prepay_type && s.active && (l = !0,
+                                            this.SendGhanaType = Number(c),
+                                            s.getComponent(cc.Toggle).check());
+                                if (!l)
+                                    for (o = 0; o < h.children.length; o++)
+                                        (s = h.children[o]).active ? (l = !0,
+                                            c = this.GetSubstr(s.name, "toggleGhana_"),
+                                            this.SendGhanaType = Number(c),
+                                            s.getComponent(cc.Toggle).check()) : s.getComponent(cc.Toggle).isChecked = !1
+                            }
+                            this.ShowGhanaChildren(),
                                 e.repay_card_debit && "" !== e.repay_card_debit && (this.debitEditbox.string = e.repay_card_debit,
                                     this.debitEditbox.placeholder = ""),
                                 e.repay_card_phone && "" !== e.repay_card_phone && (this.phoneEditbox.string = e.repay_card_phone,
                                     this.phoneEditbox.placeholder = ""),
                                 e.repay_card_clabe && "" !== e.repay_card_clabe && (this.clabeEditbox.string = e.repay_card_clabe,
                                     this.clabeEditbox.placeholder = ""),
+                                e.cardholder_tel && "" !== e.cardholder_tel && (this.ghana_phoneEditbox.string = e.cardholder_tel,
+                                    this.ghana_phoneEditbox.placeholder = ""),
+                                e.ghana_prepay_phone_code && "" !== e.ghana_prepay_phone_code && (this.ghana_operatorNameEditbox.string = e.ghana_prepay_phone_code,
+                                    this.ghana_operatorNameEditbox.placeholder = ""),
                                 this.PrepayTypeToggleCallBack(this.SendPrepayType)
                         }
                     }
@@ -35855,6 +36842,14 @@ window.__require = function e(t, n, o) {
                             var t = this.li_card.children[e]
                                 , n = this.GetSubstr(t.name, "node_card");
                             t.active = Number(n) == this.SendCardType
+                        }
+                    }
+                    ,
+                    t.prototype.ShowGhanaChildren = function () {
+                        for (var e = 1; e < this.li_ghana.children.length; e++) {
+                            var t = this.li_ghana.children[e]
+                                , n = this.GetSubstr(t.name, "node_card");
+                            t.active = Number(n) == this.SendGhanaType
                         }
                     }
                     ,
@@ -35939,21 +36934,33 @@ window.__require = function e(t, n, o) {
                                 p.active = "1" == e.repay_card_clabe,
                                     p.zIndex = -1 * Number(t.repay_card_clabe)
                             }
+                            if (this.UpdateShowAndZindex(this.li_ghana, e.ghana_prepay_type, Number(t.ghana_prepay_type)),
+                                this.li_ghana.active) {
+                                var d = this.GetWndNode("node_ghanaToggle/node/toggleGhana/toggleGhana_1", this.li_ghana);
+                                this.UpdateShowAndZindex(d, e.ghana_prepay_bank, Number(t.ghana_prepay_bank));
+                                var h = this.GetWndNode("node_ghanaToggle/node/toggleGhana/toggleGhana_2", this.li_ghana);
+                                this.UpdateShowAndZindex(h, e.ghana_prepay_phone, Number(t.ghana_prepay_phone))
+                            }
                             this.li_BeneficiarvName.active = 1 == e.beneficiary_name,
                                 this.li_BeneficiarvName.zIndex = -1 * Number(t.beneficiary_name),
                                 this.SelectBankName.active = !1,
                                 this.Bank_name_Node.active = !1;
-                            var d = app.UserManager().GetUserWallet();
-                            if (d && "1" == d.v_position ? (this.Bank_name_Node.active = 1 == e.bank,
+                            var u = app.UserManager().GetUserWallet();
+                            if (u && "1" == u.v_position ? (this.Bank_name_Node.active = 1 == e.bank,
                                 this.Bank_name_Node.zIndex = -1 * Number(t.bank)) : (this.SelectBankName.active = 1 == e.bank,
                                     this.SelectBankName.zIndex = -1 * Number(t.bank)),
-                                d)
-                                for (var h = cc.find("/view/content/layout_con/li_pix_type/toggleContainer", this.node), u = 0; u < d.pix_type_list.length; u++) {
-                                    var _ = d.pix_type_list[u];
-                                    h.getChildByName(_).active = !0
+                                u)
+                                for (var _ = cc.find("/view/content/layout_con/li_pix_type/toggleContainer", this.node), m = 0; m < u.pix_type_list.length; m++) {
+                                    var f = u.pix_type_list[m];
+                                    _.getChildByName(f).active = !0
                                 }
                             this.PrepayTypeToggleCallBack(this.SendPrepayType)
                         }
+                    }
+                    ,
+                    t.prototype.UpdateShowAndZindex = function (e, t, n) {
+                        e.active = "1" == t,
+                            e.zIndex = -1 * n
                     }
                     ,
                     t.prototype.SendBindBankNumBtnCallBack = function () {
@@ -35974,6 +36981,18 @@ window.__require = function e(t, n, o) {
                             if (this.li_card.active && ("" == this.debitEditbox.string.trim() && 1 == this.SendCardType || "" == this.phoneEditbox.string.trim() && 2 == this.SendCardType || "" == this.clabeEditbox.string.trim() && 3 == this.SendCardType))
                                 app.SysNotifyManager().ShowToast("UI_Card_Null");
                             else {
+                                if (this.li_ghana.active)
+                                    if (1 == this.SendGhanaType) {
+                                        if (!this.SelectBankCodeData)
+                                            return void app.SysNotifyManager().ShowToast("UI_Cash_Ghana_noSelectedBank");
+                                        if ("" == this.ghana_bankEditbox.string.trim())
+                                            return void app.SysNotifyManager().ShowToast("UI_Card_Null")
+                                    } else if (2 == this.SendGhanaType) {
+                                        if (!this.SelectOperatorCodeData || "" == this.SelectOperatorCodeData.bank_code.trim())
+                                            return void app.SysNotifyManager().ShowToast("UI_Cash_Ghana_noSelectedOperator");
+                                        if ("" == this.ghana_phoneEditbox.string.trim())
+                                            return void app.SysNotifyManager().ShowToast("UI_Cash_Ghana_noPhoneNum")
+                                    }
                                 var o = app.UserManager().GetUserWallet()
                                     , i = o ? o.v_position : 1
                                     , r = this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).string
@@ -36006,14 +37025,18 @@ window.__require = function e(t, n, o) {
                                     beneficiary_name: this.li_BeneficiarvName.getChildByName("editbox").getComponent(cc.EditBox).string,
                                     document_type: this.SendRFCType,
                                     card_type: this.SendCardType,
+                                    ghana_prepay_type: this.SendGhanaType,
                                     repay_rfc: "",
                                     repay_curp: "",
                                     repay_card_debit: "",
                                     repay_card_phone: "",
-                                    repay_card_clabe: ""
+                                    repay_card_clabe: "",
+                                    ghana_prepay_phone_code: ""
                                 };
                                 this.SendRFCType > 0 && this.li_rfc.active && (1 == this.SendRFCType ? c.repay_rfc = this.rfcEditbox.string : 2 == this.SendRFCType && (c.repay_curp = this.curpEditbox.string)),
                                     this.SendCardType > 0 && this.li_card.active && (1 == this.SendCardType ? c.repay_card_debit = this.debitEditbox.string : 2 == this.SendCardType ? c.repay_card_phone = this.phoneEditbox.string : 3 == this.SendCardType && (c.repay_card_clabe = this.clabeEditbox.string)),
+                                    this.SendGhanaType > 0 && this.li_ghana.active && (1 == this.SendGhanaType ? c.bank_account = this.ghana_bankEditbox.string : 2 == this.SendGhanaType && (c.tel = this.ghana_phoneEditbox.string,
+                                        this.SelectOperatorCodeData && (c.ghana_prepay_phone_code = this.SelectOperatorCodeData.bank_code))),
                                     this.SelectBankCodeData && (c.bank_code = this.SelectBankCodeData.bank_code,
                                         c.bank_name = this.SelectBankCodeData.bank_name),
                                     app.CashOutManager().RequstBindBankAccount(c)
@@ -36054,6 +37077,19 @@ window.__require = function e(t, n, o) {
                                 Number(i) == this.SendCardType ? o.getComponent(cc.Toggle).check() : o.getComponent(cc.Toggle).isChecked = !1
                             }
                             this.ShowCardChildren()
+                        }
+                    }
+                    ,
+                    t.prototype.GhanaTypeToggleCallBack = function (e) {
+                        if (e) {
+                            var t = this.GetWndNode("node_ghanaToggle/node/toggleGhana", this.li_ghana);
+                            this.SendGhanaType = Number(e);
+                            for (var n = 0; n < t.children.length; n++) {
+                                var o = t.children[n]
+                                    , i = this.GetSubstr(o.name, "toggleGhana_");
+                                Number(i) == this.SendGhanaType ? o.getComponent(cc.Toggle).check() : o.getComponent(cc.Toggle).isChecked = !1
+                            }
+                            this.ShowGhanaChildren()
                         }
                     }
                     ,
@@ -36098,7 +37134,13 @@ window.__require = function e(t, n, o) {
                     t.prototype.onSetBankCode = function (e) {
                         this.SelectBankCodeData = e,
                             this.SelectBankName.getChildByName("editbox_bank_name").getComponent(cc.EditBox).string = e.bank_name,
-                            this.BankName.getComponent(cc.EditBox).string = e.bank_name
+                            this.BankName.getComponent(cc.EditBox).string = e.bank_name,
+                            this.ghana_bankNameEditbox.getComponent(cc.EditBox).string = e.bank_name
+                    }
+                    ,
+                    t.prototype.OnSetOperatorCode = function (e) {
+                        this.SelectOperatorCodeData = e,
+                            this.ghana_operatorNameEditbox.getComponent(cc.EditBox).string = e.bank_name
                     }
                     ,
                     t.prototype.PixTypeCallBack = function (e) {
@@ -36107,8 +37149,8 @@ window.__require = function e(t, n, o) {
                             this.Pixkey_Node.getChildByName("editbox").getComponent(cc.EditBox).string = ""
                     }
                     ,
-                    t.prototype.OpenBankCode = function () {
-                        app.FormManager().ShowForm(l.UINameDefine.UIBankName)
+                    t.prototype.OpenBankCode = function (e) {
+                        app.FormManager().ShowForm(l.UINameDefine.UIBankName, e)
                     }
                     ,
                     t.prototype.openPixTypeList = function () {
@@ -36145,6 +37187,8 @@ window.__require = function e(t, n, o) {
                             pay_maya_account: this.li_PayMayaPhilippines.getChildByName("editbox").getComponent(cc.EditBox).string,
                             document_type: this.SendRFCType,
                             card_type: this.SendCardType,
+                            ghana_prepay_type: this.SendGhanaType,
+                            ghana_prepay_phone_code: "",
                             repay_rfc: this.rfcEditbox.string,
                             repay_curp: this.curpEditbox.string,
                             repay_card_debit: this.debitEditbox.string,
@@ -36156,7 +37200,11 @@ window.__require = function e(t, n, o) {
                             this.li_card.active && (1 == this.SendCardType ? (n.repay_card_phone = o.repay_card_phone,
                                 n.repay_card_clabe = o.repay_card_clabe) : 2 == this.SendCardType ? (n.repay_card_debit = o.repay_card_debit,
                                     n.repay_card_clabe = o.repay_card_clabe) : 3 == this.SendCardType && (n.repay_card_debit = o.repay_card_debit,
-                                        n.repay_card_phone = o.repay_card_phone));
+                                        n.repay_card_phone = o.repay_card_phone)),
+                            this.li_ghana.active && (this.SendGhanaType == s.ChooseNameType.bankName + 1 ? (n.bank_name = this.ghana_bankNameEditbox.string,
+                                n.bank_account = this.ghana_bankEditbox.string,
+                                o.ghana_prepay_phone_code && (n.ghana_prepay_phone_code = o.ghana_prepay_phone_code)) : this.SendGhanaType == s.ChooseNameType.operatorName + 1 && (n.cardholder_tel = this.ghana_phoneEditbox.string,
+                                    this.SelectOperatorCodeData && (n.ghana_prepay_phone_code = this.SelectOperatorCodeData.bank_code)));
                         var i = app.GameConfigManager().GetGameConfig().pay_userinfo_fields.prepay;
                         for (var a in n)
                             if (Object.prototype.hasOwnProperty.call(n, a)) {
@@ -36164,7 +37212,8 @@ window.__require = function e(t, n, o) {
                                 if (("prepay_type" == a || "account_type" == a || "repay_rfc" == a || "repay_card_debit" == a || "repay_curp" == a || "repay_card_phone" == a || "repay_card_clabe" == a || "document_type" == a || "card_type" == a) && 0 == i[a])
                                     continue;
                                 if (o[a] != r)
-                                    return !1
+                                    return this.Log("key===========", a),
+                                        !1
                             }
                         return !0
                     }
@@ -36220,6 +37269,7 @@ window.__require = function e(t, n, o) {
                     __decorate([h(cc.Node)], t.prototype, "li_PayMayaPhilippines", void 0),
                     __decorate([h(cc.Node)], t.prototype, "li_rfc", void 0),
                     __decorate([h(cc.Node)], t.prototype, "li_card", void 0),
+                    __decorate([h(cc.Node)], t.prototype, "li_ghana", void 0),
                     __decorate([d], t)
             }(o.default);
         n.default = u,
@@ -36336,8 +37386,7 @@ window.__require = function e(t, n, o) {
                             var n = this.isAgentTx ? this.UserWallerData.agent_usdt_percent : this.UserWallerData.usdt_percent;
                             this.cash_rate = Number(n) / 100
                         }
-                        app.Client.OnEvent(r.GameEventDefine.GUIDE_WITHDRAW, e.active),
-                            cc.find("/view/content/layout/huilv/label", this.node).getComponent(cc.Label).string = "" + this.UserWallerData.rate_text,
+                        cc.find("/view/content/layout/huilv/label", this.node).getComponent(cc.Label).string = "" + this.UserWallerData.rate_text,
                             cc.find("/view/content/layout/huilv/label1", this.node).getComponent(cc.Label).string = app.i18n.t("UI_Shop_USDT_Tether") + " " + app.GameConfigManager().GetCurrency + " " + this.UserWallerData.rate
                     }
                     ,
@@ -36763,23 +37812,20 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.CheckDateEvent = function (e, t) {
-                        var n = this.goodsChannel.sale.cur_time - Math.round(Date.now() / 1e3);
-                        n = n || 0;
-                        var o = Math.round(Date.now() / 1e3) + n;
-                        return !(!e || !t || o > t || o < e)
+                        var n = this.goodsChannel.cur_time;
+                        return !(!e || !t || n > t || n < e || (this.tDiffTime = n - Math.round(Date.now() / 1e3),
+                            0))
                     }
                     ,
                     t.prototype.UpdateTime = function () {
                         if (this.activityInfo) {
-                            var e = this.goodsChannel.sale.cur_time - Math.round(Date.now() / 1e3);
-                            e = e || 0;
-                            var t = this.activityInfo.end_time_stamp - (Math.round(Date.now() / 1e3) + e);
-                            if (t < 1)
+                            var e = this.activityInfo.end_time_stamp - (Math.round(Date.now() / 1e3) + this.tDiffTime);
+                            if (e < 1)
                                 return this.unscheduleAllCallbacks(),
                                     void (this.node.active = !1);
-                            this.ui.lb_tit.string = this.activityInfo.name + "    " + app.TimeUtil().FormatTimeWithNum(t);
-                            var n = this.activityInfo.use_num + "/" + this.activityInfo.total_num;
-                            this.ui.lb_activityNum.string = "" + n
+                            this.ui.lb_tit.string = this.activityInfo.name + "    " + app.TimeUtil().FormatTimeWithNum(e);
+                            var t = this.activityInfo.use_num + "/" + this.activityInfo.total_num;
+                            this.ui.lb_activityNum.string = "" + t
                         }
                     }
                     ,
@@ -37523,6 +38569,7 @@ window.__require = function e(t, n, o) {
                         this.JS_Name = "UIEmail",
                             this.RegEvent(o.GameEventDefine.GET_EMAIL_LIST, this.updateList),
                             this.RegEvent(o.GameEventDefine.ET_EMAIL_DETAIL, this.updateEmailDetail),
+                            this.RegEvent(o.GameEventDefine.EMAIL_ERROR_EVENT, this.onEmailError),
                             this.RegEvent(o.GameEventDefine.EMAIL_RECEIVE, this.emailRecived),
                             this.RegEvent(o.GameEventDefine.EMAIL_RECEIVEAll, this.emailRecivedAll),
                             this.RegEvent(o.GameEventDefine.EMAIL_DEl_ALL, this.emailDelAll)
@@ -37585,7 +38632,7 @@ window.__require = function e(t, n, o) {
                                 };
                                 app.EmailManager().RequstGetEmailDetail(a)
                             } else
-                                cc.find("email_item/bg/label", o).getComponent(cc.Label).string = app.ComUtil().cutStr(n.content, 30),
+                                cc.find("email_item/bg/label", o).getComponent(cc.Label).string = app.StringUtil().cutStr(n.content, 30),
                                     cc.find("email_item/bg/chip", o).active = !1,
                                     cc.find("email_item/bg/btn_label", o).active = !1;
                             cc.find("email_item/bg/below/show/Background/label", o).getComponent(cc.Label).string = i ? app.i18n.t("UI_Notice_Hide") : app.i18n.t("UI.Settings_1_Help_9")
@@ -37625,6 +38672,11 @@ window.__require = function e(t, n, o) {
                             })
                     }
                     ,
+                    t.prototype.onEmailError = function (e) {
+                        app.SysNotifyManager().ShowToast(e.msg),
+                            5001 == e.code && this.updateEmailList()
+                    }
+                    ,
                     t.prototype.emailRecived = function () {
                         var e = this.EmalListNode[this.n_selectIndex.id];
                         e && (cc.find("email_item/bg/chip/bg_off", e).active = !0,
@@ -37658,8 +38710,8 @@ window.__require = function e(t, n, o) {
                             var o = e[n]
                                 , i = cc.instantiate(this.EmailItem);
                             cc.find("email_item/title/time", i).getComponent(cc.Label).string = o.create_time,
-                                cc.find("email_item/bg/title", i).getComponent(cc.Label).string = app.ComUtil().cutStr(o.title, 18),
-                                cc.find("email_item/bg/label", i).getComponent(cc.Label).string = app.ComUtil().cutStr(o.content, 30);
+                                cc.find("email_item/bg/title", i).getComponent(cc.Label).string = app.StringUtil().cutStr(o.title, 18),
+                                cc.find("email_item/bg/label", i).getComponent(cc.Label).string = app.StringUtil().cutStr(o.content, 30);
                             var a = this.GetWndComponent("email_item/bg/below/lbl_RemainTime", cc.Label, i);
                             a.string = "";
                             var r = app.GameConfigManager().GetAsTime();
@@ -37727,22 +38779,20 @@ window.__require = function e(t, n, o) {
                             gold: e.gold,
                             source: app.i18n.t("UI.MakeMoney_4_Promotion_3")
                         }),
-                            this.InitListUpdate(),
-                            app.RedDotManager().updateSingleData({
-                                type: r.RedDotStr.mail,
-                                bShow: !1
-                            })
+                            this.updateEmailList()
                     }
                     ,
                     t.prototype.emailDelAll = function () {
+                        this.updateEmailList()
+                    }
+                    ,
+                    t.prototype.updateEmailList = function () {
                         this.InitListUpdate(),
                             app.RedDotManager().updateSingleData({
                                 type: r.RedDotStr.mail,
                                 bShow: !1
                             })
                     }
-                    ,
-                    t.prototype.onDestroy = function () { }
                     ,
                     __decorate([l(cc.Node)], t.prototype, "EmailItem", void 0),
                     __decorate([l(cc.Node)], t.prototype, "EmailDetail", void 0),
@@ -38087,12 +39137,13 @@ window.__require = function e(t, n, o) {
                     t.name.indexOf("item_day") > -1 ? this.RequestReceive(t.reward_index, t.day_num) : "btn_recharge" == e && (app.StoreManager().ShowStoreUI({
                         in_type: c.default.PAGETRACK_EVENT_RECHARGE_ENTER
                     }),
-                        app.ComTool().DesktopPlatform() && this.CloseForm())
+                        this.CloseForm())
                 }
                 ,
                 t.prototype.OnClose = function () {
                     for (var e = [], t = 0; t < arguments.length; t++)
-                        e[t] = arguments[t]
+                        e[t] = arguments[t];
+                    app.FormManager().ShowNextQueueForm("hall")
                 }
                 ,
                 t.prototype.RequestFirstRechargeSignList = function () {
@@ -38103,7 +39154,7 @@ window.__require = function e(t, n, o) {
                 ,
                 t.prototype.OnSignList = function (e) {
                     var t = this;
-                    this.richtext.string = e.content,
+                    app.StringUtil().SetScaleRichText(this.richtext, e.content),
                         e.sign_data.forEach(function (e, n) {
                             t.UpdateItemInfo(e, n)
                         })
@@ -38869,15 +39920,11 @@ window.__require = function e(t, n, o) {
                         }
                         ,
                         t.prototype.OnShow = function (e) {
-                            var t = app.ExternGameManager().GetExternGameInfoOrSubGameInfo(e.gid, e.sub_gid)
-                                , n = this.GetWndComponent("Gold/lbl", cc.RichText)
-                                , o = app.i18n.t("UI_gameHintTip").replace(/({st_time}|{end_time})/gi, function (e, n) {
-                                    return {
-                                        "{st_time}": app.ComUtil().timeStr(t.mtc_st_date),
-                                        "{end_time}": app.ComUtil().timeStr(t.mtc_end_date)
-                                    }[n]
-                                });
-                            n.string = o
+                            var t = e.gid ? app.ExternGameManager().GetExternGameInfoOrSubGameInfo(e.gid, e.sub_gid) : e;
+                            this.GetWndComponent("Gold/lbl", cc.RichText).string = app.i18n.t("UI_gameHintTip", {
+                                st_time: app.ComUtil().timeStr(t.mtc_st_date),
+                                end_time: app.ComUtil().timeStr(t.mtc_end_date)
+                            })
                         }
                         ,
                         __decorate([a], t)
@@ -39081,15 +40128,9 @@ window.__require = function e(t, n, o) {
                         ,
                         t.prototype.renderTagView = function () {
                             var e, t = null;
-                            (t = this._data.sub_gid
-                                ? null == (e = app.GameConfigManager().GetOtherGameList(this._data.gid, this._data.sub_gid))
-                                    ? void 0
-                                    : e.tab
-                                : null == (e = app.GameConfigManager().GetGameInfoByGid(this._data.gid))
-                                    ? void 0
-                                    : e.tab) && this.tagNode && (this.tagNode.active = !0,
-                                        this.GetWndNode("new", this.tagNode).active = 3 == t,
-                                        this.GetWndNode("hot", this.tagNode).active = 2 == t)
+                            (t = this._data.sub_gid ? null == (e = app.GameConfigManager().GetOtherGameList(this._data.gid, this._data.sub_gid)) ? void 0 : e.tab : null == (e = app.GameConfigManager().GetGameInfoByGid(this._data.gid)) ? void 0 : e.tab) && this.tagNode && (this.tagNode.active = !0,
+                                this.GetWndNode("new", this.tagNode).active = 3 == t,
+                                this.GetWndNode("hot", this.tagNode).active = 2 == t)
                         }
                         ,
                         t.prototype.renderSkeleton = function (e) {
@@ -39364,8 +40405,7 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.OnClose = function () {
                         for (var e = [], t = 0; t < arguments.length; t++)
-                            e[t] = arguments[t];
-                        app.GameManager().SpliceFightDefaultForm()
+                            e[t] = arguments[t]
                     }
                     ,
                     __decorate([c(cc.Node)], t.prototype, "bg", void 0),
@@ -39878,15 +40918,15 @@ window.__require = function e(t, n, o) {
                     function t() {
                         var t = null !== e && e.apply(this, arguments) || this;
                         return t._SelNodeParent = null,
-                            t.SelIndex = 0,
+                            t.SelIndex = -1,
+                            t.targetNode = null,
                             t
                     }
                     return __extends(t, e),
                         t.prototype.OnCreateInit = function () {
                             this.JS_Name = "UIGuide",
-                                app.Client.RegEvent(i.GameEventDefine.GUIDE_WITHDRAW, this.setGuideWithdrawPos, this),
-                                app.Client.RegEvent(i.GameEventDefine.RETURN_GUIDE, this.PlayGuideList, this),
-                                app.Client.RegEvent(i.GameEventDefine.CLOSE_GUIDE, this.CloseForm, this)
+                                this.RegEvent(i.GameEventDefine.RETURN_GUIDE, this.PlayGuideList),
+                                this.RegEvent(i.GameEventDefine.CLOSE_GUIDE, this.CloseForm)
                         }
                         ,
                         t.prototype.OnShow = function () {
@@ -39900,7 +40940,7 @@ window.__require = function e(t, n, o) {
                         }
                         ,
                         t.prototype.InitData = function () {
-                            this.SelIndex = 0,
+                            this.SelIndex = -1,
                                 this._GuideType = null,
                                 this._SelNodeParent = null
                         }
@@ -39913,6 +40953,8 @@ window.__require = function e(t, n, o) {
                         ,
                         t.prototype.PlayGuideList = function (e) {
                             if (this._SelNodeParent) {
+                                this.targetNode = e,
+                                    this.SelIndex++;
                                 for (var t = app.GuideManager().RecvGuideList[s.GuideTypeByNum[this._GuideType]], n = 0; n < this._SelNodeParent.children.length; n++)
                                     this._SelNodeParent.children[n].active = !1;
                                 this._SelNodeParent.active = !0;
@@ -39934,8 +40976,7 @@ window.__require = function e(t, n, o) {
                                 } else
                                     app.GuideManager().RequestGuide(this._GuideType, 1),
                                         app.GuideManager().setLocalDataGuideData(this._GuideType),
-                                        this.CloseForm();
-                                this.SelIndex++
+                                        this.CloseForm()
                             }
                         }
                         ,
@@ -39956,16 +40997,14 @@ window.__require = function e(t, n, o) {
                             })
                         }
                         ,
-                        t.prototype.setGuideWithdrawPos = function (e) {
-                            app.GuideManager().b_UpdateNodePos = e
-                        }
-                        ,
                         t.prototype.update = function () {
-                            if (this._GuideType == s.Guide_Type.Guide_withdraw && !app.GuideManager().b_UpdateNodePos)
-                                for (var e = app.ComTool().H5Platform() ? 100 : 64, t = 2; t < 4; t++) {
-                                    var n = this._SelNodeParent.children[t];
-                                    n && (n.y = e * n.scale)
-                                }
+                            var e, t;
+                            if (this._GuideType == s.Guide_Type.Guide_withdraw && this.targetNode && (null === (e = this._SelNodeParent) || void 0 === e ? void 0 : e.children[this.SelIndex])) {
+                                var n = app.ComTool().NodeAConvertToNodeBSpaceAR(this.targetNode, this._SelNodeParent)
+                                    , o = null === (t = this._SelNodeParent) || void 0 === t ? void 0 : t.children[this.SelIndex];
+                                o.x = n.x,
+                                    o.y = n.y
+                            }
                         }
                         ,
                         __decorate([l], t)
@@ -40103,6 +41142,16 @@ window.__require = function e(t, n, o) {
                         }
                     }
                     ,
+                    t.prototype.OnClickNoEffect = function (e, t) {
+                        if (this._closeAction || this._closeAnimationState)
+                            this.ErrLog("OnClick_BtnWnd doing closeAction");
+                        else {
+                            var n = e.currentTarget
+                                , o = n.name;
+                            this.OnClick(o, n, t)
+                        }
+                    }
+                    ,
                     t.prototype.OnFastGameJoinList = function () {
                         var e = this
                             , t = app.GameConfigManager().GetBottomFastGame();
@@ -40158,6 +41207,7 @@ window.__require = function e(t, n, o) {
                                         o.active = !0,
                                         o.is_jump = t.is_jump,
                                         o.jump_url = t.jump_url,
+                                        o.getComponent(cc.Button).enabled = !!t.jump_url,
                                         e.list_icon.addChild(o))
                                 })
                         }
@@ -40171,6 +41221,7 @@ window.__require = function e(t, n, o) {
                                         n.active = !0,
                                         n.is_jump = t.is_jump,
                                         n.jump_url = t.jump_url,
+                                        n.getComponent(cc.Button).enabled = !!t.jump_url,
                                         e.list_logo.addChild(n))
                                 })
                         }
@@ -40187,6 +41238,7 @@ window.__require = function e(t, n, o) {
                                     var o = cc.instantiate(n);
                                     o && (app.ImageUtil().LoadImage(o, t.img_url),
                                         o.url = t.jump_url,
+                                        o.getComponent(cc.Button).enabled = !!t.jump_url,
                                         o.active = !0,
                                         e.textNode.addChild(o))
                                 })
@@ -40312,7 +41364,7 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.setContent = function (e, t) {
-                        this.conRichtext.string = t
+                        app.StringUtil().SetScaleRichText(this.conRichtext, t)
                     }
                     ,
                     t.prototype.OnClose = function () {
@@ -40428,11 +41480,10 @@ window.__require = function e(t, n, o) {
             , a = e("../../../Common/Define/TrackEventName")
             , r = e("../../../Common/Define/UINameDefine")
             , s = e("../../../Common/Net/MsgEventDefine")
-            , c = e("../../common/room_mode_tool")
-            , l = e("./UIHallTop")
-            , p = cc._decorator
-            , d = p.ccclass
-            , h = (p.property,
+            , c = e("./UIHallTop")
+            , l = cc._decorator
+            , p = l.ccclass
+            , d = (l.property,
                 function (e) {
                     function t() {
                         var t = null !== e && e.apply(this, arguments) || this;
@@ -40517,7 +41568,8 @@ window.__require = function e(t, n, o) {
                             if ("btnLogin" != e)
                                 if ("btnSignUp" != e) {
                                     if ("logo" == e)
-                                        return app.FormManager().IsFormShow(r.UINameDefine.UIHall) || app.GameManager().enterSceneByRoomMode(c.RoomMode.HALL),
+                                        return this.onToggle(i.HallTopNameToNode.Home),
+                                            app.HallManager().ShowHallForm(),
                                             void app.ExternGameManager().closeExternGame();
                                     if ("btn_menu" == e)
                                         return app.FormManager().IsFormShow(r.UINameDefine.UIMenu) ? (app.FormManager().CloseForm(r.UINameDefine.UIMenu),
@@ -40540,7 +41592,7 @@ window.__require = function e(t, n, o) {
                                     if ("btn_notice" != e) {
                                         if ("btn_home" == e)
                                             return app.HallManager().setSelectState(i.HallTopNameToNode.Home),
-                                                app.FormManager().IsFormShow(r.UINameDefine.UIHall) || app.GameManager().enterSceneByRoomMode(c.RoomMode.HALL),
+                                                app.HallManager().ShowHallForm(),
                                                 void app.ExternGameManager().closeExternGame();
                                         "btn_sports" != e || app.HallManager().enterSport()
                                     } else {
@@ -40625,9 +41677,9 @@ window.__require = function e(t, n, o) {
                                     t.getChildByName("btn_sports").getComponent(cc.Toggle).check())
                         }
                         ,
-                        __decorate([d], t)
-                }(l.default));
-        n.default = h,
+                        __decorate([p], t)
+                }(c.default));
+        n.default = d,
             cc._RF.pop()
     }
         , {
@@ -40636,7 +41688,6 @@ window.__require = function e(t, n, o) {
         "../../../Common/Define/TrackEventName": "TrackEventName",
         "../../../Common/Define/UINameDefine": "UINameDefine",
         "../../../Common/Net/MsgEventDefine": "MsgEventDefine",
-        "../../common/room_mode_tool": "room_mode_tool",
         "./UIHallTop": "UIHallTop"
     }],
     UIHallTop_V: [function (e, t, n) {
@@ -41021,7 +42072,7 @@ window.__require = function e(t, n, o) {
                         t.prototype.OnCreateInit = function () {
                             e.prototype.OnCreateInit.call(this),
                                 app.GameTypeManager().SetRecentColumCount(8),
-                                app.GameTypeManager().SetMaxHistoryGame(8),
+                                app.GameTypeManager().SetMaxHistoryGame(24),
                                 this.toggleGroup = this.GetWndNode("node_home/game_type_buttons/type/view/content/toggleContainer"),
                                 this.typeNode = this.GetWndNode("node_home/game_type_buttons/type")
                         }
@@ -41056,7 +42107,7 @@ window.__require = function e(t, n, o) {
                         t.prototype.OnCreateInit = function () {
                             e.prototype.OnCreateInit.call(this),
                                 app.GameTypeManager().SetRecentColumCount(5),
-                                app.GameTypeManager().SetMaxHistoryGame(5),
+                                app.GameTypeManager().SetMaxHistoryGame(24),
                                 this.toggleGroup = this.GetWndNode("node_home/type/view/content/type"),
                                 this.nodeSearch = this.GetWndNode("node_home/Search"),
                                 this.typeNode = this.GetWndNode("node_home/type"),
@@ -41119,12 +42170,13 @@ window.__require = function e(t, n, o) {
             , i = e("../../../Common/Define/GameEventDefine")
             , a = e("../../../Common/Define/ShareDefine")
             , r = e("../../../Common/Define/TrackEventName")
-            , s = e("./UIGameSelectAll")
-            , c = e("./UIGameTypeItem")
-            , l = cc._decorator
-            , p = l.ccclass
-            , d = l.property
-            , h = function (e) {
+            , s = e("../../../Common/Define/UINameDefine")
+            , c = e("./UIGameSelectAll")
+            , l = e("./UIGameTypeItem")
+            , p = cc._decorator
+            , d = p.ccclass
+            , h = p.property
+            , u = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t.prefabGameListItem = null,
@@ -41148,14 +42200,14 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.OnCreateInit = function () {
-                        this.gameTypeList = this.GetWndNode("node_home/game_type_list"),
+                        app.Client.OnEvent(i.GameEventDefine.HIDE_LOGADING),
+                            this.gameTypeList = this.GetWndNode("node_home/game_type_list"),
                             this.gameAll = this.GetWndNode("node_home/games_all"),
                             this.RegEvent(i.GameEventDefine.SELECT_GAME_TYPE, this.OnSelectGameType),
                             this.RegEvent(i.GameEventDefine.RefreshGameSelectAll, this.OnRefreshGameSelectAll),
                             this.RegEvent(i.GameEventDefine.SEND_END, this.OnGameList),
                             this.RegEvent(i.GameEventDefine.GET_USER_INFO, this.OnGetUserInfo),
                             this.RegEvent(i.GameEventDefine.BETBONUS_RECEIVE, this.OnSelectPushPanel),
-                            this.RegEvent(i.GameEventDefine.LOAD_HALL_SUCCESS, this.OnLoadHallSuccess),
                             this.RegEvent(i.GameEventDefine.INTERACTION_JUMP, this.OnInteraction),
                             this.RegEvent(i.GameEventDefine.HALL_Language, this.OnSetLanguage),
                             this.nodeList = this.GetWndNode("node_home/list")
@@ -41164,7 +42216,8 @@ window.__require = function e(t, n, o) {
                     t.prototype.OnShow = function () {
                         for (var e = [], t = 0; t < arguments.length; t++)
                             e[t] = arguments[t];
-                        this.nodeList && (this.nodeList.active = !!app.GameConfigManager().GetGameConfig().ranking_show_status),
+                        app.GameConfigManager().GetGameConfig().user_age_limit_switch && app.UserManager().GetOpenUI18 && app.FormManager().ShowForm(s.UINameDefine.UI18),
+                            this.nodeList && (this.nodeList.active = !!app.GameConfigManager().GetGameConfig().ranking_show_status),
                             this.renderLobbyRootNode(),
                             app.RedDotManager().updateSingleData({
                                 type: a.RedDotStr.clean_bet
@@ -41179,9 +42232,9 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.pushModelPanel = function () {
-                        app.VIPManager().CheckVipReduced(),
-                            app.VIPManager().checkVipUpgrade(),
+                        app.VIPManager().checkVipUpgrade(),
                             app.GuideManager().CheckGuideByWithDraw(),
+                            app.BetBonusManager().QuestAutoBonus(),
                             this.OnSelectPushPanel()
                     }
                     ,
@@ -41210,10 +42263,6 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.OnGetUserInfo = function () {
                         this.renderLobby()
-                    }
-                    ,
-                    t.prototype.OnLoadHallSuccess = function () {
-                        app.VIPManager().CheckVipReduced()
                     }
                     ,
                     t.prototype.OnClick = function (e, t) {
@@ -41350,7 +42399,7 @@ window.__require = function e(t, n, o) {
                             var e = app.GameTypeManager().GetHistoryGame()
                                 , t = this.gameTypeList.children[0];
                             0 == e.length ? t.active = !1 : (t.active = !0,
-                                t.getComponent(c.default).renderHistory());
+                                t.getComponent(l.default).renderHistory());
                             var n = app.GameConfigManager().GetGameConfig().game_type;
                             if (n) {
                                 for (var o = 0, i = this.gameTypeList.children; o < n.length; o++) {
@@ -41358,7 +42407,7 @@ window.__require = function e(t, n, o) {
                                     if (a) {
                                         a.active = !0;
                                         var r = null != this.GetToggleByIndex(o);
-                                        a.getComponent(c.default).renderGameType(o, r)
+                                        a.getComponent(l.default).renderGameType(o, r)
                                     } else
                                         this.ErrLog("refreshGameType error: " + o)
                                 }
@@ -41411,12 +42460,12 @@ window.__require = function e(t, n, o) {
                             this.nodeSearch && (this.nodeSearch.active = !0),
                             0 == e)
                             this.SetGameListNodeVisible(!0),
-                                this.gameAll.getComponent(s.default).renderGame(-1, t);
+                                this.gameAll.getComponent(c.default).renderGame(-1, t);
                         else if (1 == e) {
                             this.SetGameListNodeVisible(!0);
                             var o = app.GameTypeManager().GetFavoriteGameBuffer();
                             app.GameTypeManager().LoadTime = 0,
-                                this.gameAll.getComponent(s.default).renderGame(o, null, a.HallPrefabType.Favorite)
+                                this.gameAll.getComponent(c.default).renderGame(o, null, a.HallPrefabType.Favorite)
                         } else {
                             if (null == n)
                                 return void this.ErrLog("RenderGameList idx error: " + n);
@@ -41424,7 +42473,7 @@ window.__require = function e(t, n, o) {
                                 return void this.ErrLog("RenderGameList error: " + n);
                             this.SetGameListNodeVisible(!0),
                                 app.GameTypeManager().LoadTime = 0,
-                                this.gameAll.getComponent(s.default).renderGame(n, null, null, !0)
+                                this.gameAll.getComponent(c.default).renderGame(n, null, null, !0)
                         }
                     }
                     ,
@@ -41449,7 +42498,7 @@ window.__require = function e(t, n, o) {
                         if (1 == app.GameTypeManager().GetSelectToggleIdx) {
                             app.GameTypeManager().LoadTime = 0;
                             var e = app.GameTypeManager().GetFavoriteGameBuffer();
-                            this.gameAll.getComponent(s.default).renderGame(e, null, a.HallPrefabType.Favorite)
+                            this.gameAll.getComponent(c.default).renderGame(e, null, a.HallPrefabType.Favorite)
                         }
                     }
                     ,
@@ -41463,7 +42512,7 @@ window.__require = function e(t, n, o) {
                     t.prototype.OnInteraction = function (e) {
                         for (var t = this.gameTypeList.children, n = 0; n < t.length; n++) {
                             var o = t[n];
-                            if (o.getComponent(c.default).GetTypeID == e) {
+                            if (o.getComponent(l.default).GetTypeID == e) {
                                 var a = this.gameTypeList.convertToWorldSpaceAR(o.getPosition());
                                 app.Client.OnEvent(i.GameEventDefine.MAIN_JUMP_INTERACTION, a);
                                 break
@@ -41485,10 +42534,10 @@ window.__require = function e(t, n, o) {
                     ,
                     t.Start_Index = 2,
                     t.RenderDelay = .01,
-                    __decorate([d(cc.Prefab)], t.prototype, "prefabGameListItem", void 0),
-                    n = __decorate([p], t)
+                    __decorate([h(cc.Prefab)], t.prototype, "prefabGameListItem", void 0),
+                    n = __decorate([d], t)
             }(o.default);
-        n.default = h,
+        n.default = u,
             cc._RF.pop()
     }
         , {
@@ -41496,6 +42545,7 @@ window.__require = function e(t, n, o) {
         "../../../Common/Define/GameEventDefine": "GameEventDefine",
         "../../../Common/Define/ShareDefine": "ShareDefine",
         "../../../Common/Define/TrackEventName": "TrackEventName",
+        "../../../Common/Define/UINameDefine": "UINameDefine",
         "./UIGameSelectAll": "UIGameSelectAll",
         "./UIGameTypeItem": "UIGameTypeItem"
     }],
@@ -41717,7 +42767,7 @@ window.__require = function e(t, n, o) {
                         if (0 == t.length) {
                             this.isWaiting = !0;
                             var n = this.getNextBroadcast();
-                            this.richtext.getComponent(cc.RichText).string = n.content,
+                            app.StringUtil().SetScaleRichText(this.richtext.getComponent(cc.RichText), n.content),
                                 this.runTrumperActionForever();
                             var o = Date.parse((new Date).toString()) - this.lastEndTime;
                             (o = n.time - o) > n.time && (o = 0),
@@ -41726,7 +42776,7 @@ window.__require = function e(t, n, o) {
                                 }, o / 1e3)
                         } else {
                             var a = t.shift();
-                            this.richtext.getComponent(cc.RichText).string = a,
+                            app.StringUtil().SetScaleRichText(this.richtext.getComponent(cc.RichText), a),
                                 this.runTrumperActionForever()
                         }
                     }
@@ -42271,9 +43321,9 @@ window.__require = function e(t, n, o) {
                         var n = e.getChildByName("game")
                             , o = n.getChildByName("icon");
                         o && t.pic_url && app.ImageUtil().LoadImage(o, t.pic_url),
-                            n.getChildByName("lbl").getComponent(cc.Label).string = "" + (t.game_name.length > 10 ? app.ComUtil().cutStr(t.game_name, 10) : t.game_name),
+                            n.getChildByName("lbl").getComponent(cc.Label).string = "" + (t.game_name.length > 10 ? app.StringUtil().cutStr(t.game_name, 10) : t.game_name),
                             this.GetWndNode("amount", e).getComponent(cc.Label).string = t.total_bet_gold + "",
-                            this.GetWndNode("player/name", e).getComponent(cc.Label).string = t.nickname.length > 10 ? app.ComUtil().cutStr(t.nickname, 10) : t.nickname;
+                            this.GetWndNode("player/name", e).getComponent(cc.Label).string = t.nickname.length > 10 ? app.StringUtil().cutStr(t.nickname, 10) : t.nickname;
                         var i = this.GetWndNode("player/face/mask/tx", e);
                         app.ImageUtil().LoadHead(i, t.headimg ? t.headimg : "01")
                     }
@@ -42476,18 +43526,17 @@ window.__require = function e(t, n, o) {
         cc._RF.push(t, "a9b2eB5P3hHeYyxKj5lzFRa", "UILoginSign"),
             Object.defineProperty(n, "__esModule", {
                 value: !0
-            }),
-            n.LoginType = void 0;
-        var o, i = e("../../Common/Base/BaseForm"), a = e("../../Common/Component/EditBox"), r = e("../../Common/Define/GameEventDefine"), s = e("../../Common/Define/ShareDefine"), c = e("../../Common/Define/TrackEventName"), l = e("../common_component/RichTextCallBack");
-        (function (e) {
-            e.Email = "email",
-                e.Mobile = "mobile"
-        }
-        )(o = n.LoginType || (n.LoginType = {}));
-        var p = cc._decorator
-            , d = p.ccclass
-            , h = p.property
-            , u = function (e) {
+            });
+        var o = e("../../Common/Base/BaseForm")
+            , i = e("../../Common/Component/EditBox")
+            , a = e("../../Common/Define/GameEventDefine")
+            , r = e("../../Common/Define/ShareDefine")
+            , s = e("../../Common/Define/TrackEventName")
+            , c = e("../common_component/RichTextCallBack")
+            , l = cc._decorator
+            , p = l.ccclass
+            , d = l.property
+            , h = function (e) {
                 function t() {
                     var t = null !== e && e.apply(this, arguments) || this;
                     return t.UILogin = null,
@@ -42512,16 +43561,16 @@ window.__require = function e(t, n, o) {
                 return __extends(t, e),
                     t.prototype.OnCreateInit = function () {
                         if (this.JS_Name = "UILoginSign",
-                            this.RegEvent(r.GameEventDefine.GET_AREA_CODES, this.OnGetAreaCode),
+                            this.RegEvent(a.GameEventDefine.GET_AREA_CODES, this.OnGetAreaCode),
                             this.lbl_tlt = app.ComTool().H5Platform() ? this.GetWndNode("layer/top/lb_text") : this.GetWndNode("layer/right/top/lb_text"),
                             this.InitLoginMethod(),
                             this.UILogin.getComponent("UILogin").setLoginAnimPra(this.login_ani),
                             this.UISign.getComponent("UISignUp").setLoginAnimPra(this.login_ani),
-                            this.RegEvent(r.GameEventDefine.GET_ONLINE_NUM, this.OnGetOnline_Num),
+                            this.RegEvent(a.GameEventDefine.GET_ONLINE_NUM, this.OnGetOnline_Num),
                             this.OnlineNumNode = this.GetWndNode("/online"),
                             this.OnlineNumNode) {
                             var e = app.UserManager().GetUserInfoConfig;
-                            e && 1 == e.show_arr[s.VisibleBtnTag.LoginOnline] ? this.OnlineNumNode.active = !0 : this.OnlineNumNode.active = !1
+                            e && 1 == e.show_arr[r.VisibleBtnTag.LoginOnline] ? this.OnlineNumNode.active = !0 : this.OnlineNumNode.active = !1
                         }
                     }
                     ,
@@ -42534,26 +43583,26 @@ window.__require = function e(t, n, o) {
                             if (n && (n.enabled = t),
                                 this.lbl_tlt.active = !t,
                                 t)
-                                for (var i = 0; i < e.length; i++) {
-                                    var a;
-                                    if (1 == (a = e[i]).status) {
-                                        var r = a.key == o.Email ? cc.instantiate(this.mailNode) : cc.instantiate(this.phoneNode);
-                                        0 == i && (r.getComponent(cc.Toggle).isChecked = !0,
-                                            this.InterfaceType = a.key == o.Email ? 0 : 1),
-                                            r.active = !0,
-                                            r.parent = this.toggleContainer
+                                for (var o = 0; o < e.length; o++) {
+                                    var i;
+                                    if (1 == (i = e[o]).status) {
+                                        var a = i.key == r.LoginType.Email ? cc.instantiate(this.mailNode) : cc.instantiate(this.phoneNode);
+                                        0 == o && (a.getComponent(cc.Toggle).isChecked = !0,
+                                            this.InterfaceType = i.key == r.LoginType.Email ? 0 : 1),
+                                            a.active = !0,
+                                            a.parent = this.toggleContainer
                                     }
                                 }
                             else
-                                (a = e[0]) && (this.lbl_tlt.getComponent(cc.Label).string = a.key == o.Email ? app.i18n.t("UI_LOGIN_Mail") : app.i18n.t("UI_LOGIN_Phone"),
-                                    this.InterfaceType = a.key == o.Email ? 0 : 1)
+                                (i = e[0]) && (this.lbl_tlt.getComponent(cc.Label).string = i.key == r.LoginType.Email ? app.i18n.t("UI_LOGIN_Mail") : app.i18n.t("UI_LOGIN_Phone"),
+                                    this.InterfaceType = i.key == r.LoginType.Email ? 0 : 1)
                         } else
                             for (this.InterfaceType = 0,
-                                i = 0; i < 2; i++)
-                                r = 0 == i ? cc.instantiate(this.mailNode) : cc.instantiate(this.phoneNode),
-                                    0 == i && (r.getComponent(cc.Toggle).isChecked = !0),
-                                    r.active = !0,
-                                    r.parent = this.toggleContainer
+                                o = 0; o < 2; o++)
+                                a = 0 == o ? cc.instantiate(this.mailNode) : cc.instantiate(this.phoneNode),
+                                    0 == o && (a.getComponent(cc.Toggle).isChecked = !0),
+                                    a.active = !0,
+                                    a.parent = this.toggleContainer
                     }
                     ,
                     t.prototype.OnShow = function (e) {
@@ -42572,15 +43621,21 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.onLoginBtnSwitch = function () {
-                        var e = app.UserManager().GetUserInfoConfig || app.GameConfigManager().GetGameConfig();
+                        var e = app.UserManager().GetUserInfoConfig || app.GameConfigManager().GetGameConfig()
+                            , t = this.GetWndNode("layer/btn_other") || this.GetWndNode("layer/right/btn_other");
                         if (e) {
-                            var t = app.ComTool().H5Platform() ? "layer/btn_other/login/btn_fb_login" : "layer/right/btn_other/login/btn_fb_login"
-                                , n = app.ComTool().H5Platform() ? "layer/btn_other/login/login_google" : "layer/right/btn_other/login/login_google"
-                                , o = app.ComTool().H5Platform() ? "layer/btn_other/login/login_tg" : "layer/right/btn_other/login/login_tg";
-                            cc.find(t, this.node).active = 1 === e.show_arr[s.VisibleBtnTag.btn_facebookBtn],
-                                cc.find(n, this.node).active = 1 === e.show_arr[s.VisibleBtnTag.GoogleLoginBtn],
-                                cc.find(o, this.node).active = 1 === e.show_arr[s.VisibleBtnTag.TeleGramBtn]
-                        }
+                            var n = app.ComTool().H5Platform() ? "layer/btn_other/login/btn_fb_login" : "layer/right/btn_other/login/btn_fb_login"
+                                , o = app.ComTool().H5Platform() ? "layer/btn_other/login/login_google" : "layer/right/btn_other/login/login_google"
+                                , i = app.ComTool().H5Platform() ? "layer/btn_other/login/login_tg" : "layer/right/btn_other/login/login_tg"
+                                , a = this.GetWndNode(n)
+                                , s = this.GetWndNode(o)
+                                , c = this.GetWndNode(i);
+                            a.active = 1 === e.show_arr[r.VisibleBtnTag.btn_facebookBtn],
+                                s.active = 1 === e.show_arr[r.VisibleBtnTag.GoogleLoginBtn],
+                                c.active = 1 === e.show_arr[r.VisibleBtnTag.TeleGramBtn],
+                                t.active = a.active || s.active || c.active
+                        } else
+                            t.active = !1
                     }
                     ,
                     t.prototype.onLoginShow = function (e) {
@@ -42626,7 +43681,7 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.GoogleLoginClick = function () {
-                        !app.ComTool().CheckPlatform() && app.NativeMgr().getApkVersion() < 1100 ? app.ConfirmManager().ShowConfirm(s.ConfirmType.ConfirmYN, app.i18n.t("UI_GoogleLoginHintUpVersion"), null, function () {
+                        !app.ComTool().CheckPlatform() && app.NativeMgr().getApkVersion() < 1100 ? app.ConfirmManager().ShowConfirm(r.ConfirmType.ConfirmYN, app.i18n.t("UI_GoogleLoginHintUpVersion"), null, function () {
                             var e = app.GameConfigManager().GetGameConfig().down_urls;
                             app.NativeMgr().downloadApp(e.android_download_url)
                         }) : app.GoogleLoginManager().showTips()
@@ -42637,7 +43692,7 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.facebookLoginClick = function () {
-                        app.EventTrackManager().LogEvent(c.default.CLICK_BTN_FB),
+                        app.EventTrackManager().LogEvent(s.default.CLICK_BTN_FB),
                             app.ComTool().CheckPlatform() ? app.FacebookManager().WebFacebookLogin() : this.indiaLogin(function () {
                                 app.NativeMgr().loginFaceBook()
                             })
@@ -42660,7 +43715,7 @@ window.__require = function e(t, n, o) {
                                 e.getChildByName("editbox_phone").getComponent(cc.EditBox).string = this.myCode.phone_account ? this.myCode.phone_account : "";
                             var t = this.UILogin.getChildByName("text_mail");
                             t.active = 0 == this.InterfaceType,
-                                t.getChildByName("editbox_mail").getComponent(a.default).string = this.myCode.mail_account ? this.myCode.mail_account : "";
+                                t.getChildByName("editbox_mail").getComponent(i.default).string = this.myCode.mail_account ? this.myCode.mail_account : "";
                             var n = this.UILogin.getChildByName("text_password")
                                 , o = n.getChildByName("editbox_password").getComponent(cc.EditBox);
                             o.inputFlag = cc.EditBox.InputFlag.PASSWORD,
@@ -42714,8 +43769,8 @@ window.__require = function e(t, n, o) {
                                     e.OnClick("terms")
                                 }
                             };
-                        t && t.getComponent(l.default).setRichtextStrCallBack(o),
-                            n && n.getComponent(l.default).setRichtextStrCallBack(o)
+                        t && t.getComponent(c.default).setRichtextStrCallBack(o),
+                            n && n.getComponent(c.default).setRichtextStrCallBack(o)
                     }
                     ,
                     t.prototype.OnClose = function () {
@@ -42726,8 +43781,8 @@ window.__require = function e(t, n, o) {
                             app.GoogleReCaptChaManager().hideDiv(),
                             this.unschedule(this.onSetGoogleWebState),
                             app.NativeMgr().openInternalWindow(!1),
-                            app.Client.OnEvent(r.GameEventDefine.UILoginClose),
-                            !app.UserManager().getIsOfficial() && app.HallManager().getReturnPreSelect() ? app.Client.OnEvent(r.GameEventDefine.SELECT_TOPTOOGLE, app.HallManager().getPreSelect()) : app.ExternGameManager().reShowExternGame()
+                            app.Client.OnEvent(a.GameEventDefine.UILoginClose),
+                            !app.UserManager().getIsOfficial() && app.HallManager().getReturnPreSelect() ? app.Client.OnEvent(a.GameEventDefine.SELECT_TOPTOOGLE, app.HallManager().getPreSelect()) : app.ExternGameManager().reShowExternGame()
                     }
                     ,
                     t.prototype.OnGetOnline_Num = function (e) {
@@ -42757,22 +43812,22 @@ window.__require = function e(t, n, o) {
                             this.GetWndComponent(t + "/UISignUp/text_otp/editbox_enter_otp/TEXT_LABEL", cc.Label).fontSize = e
                     }
                     ,
-                    __decorate([h(cc.Node)], t.prototype, "UILogin", void 0),
-                    __decorate([h(cc.Node)], t.prototype, "UISign", void 0),
-                    __decorate([h(cc.Node)], t.prototype, "terms_login", void 0),
-                    __decorate([h(cc.Node)], t.prototype, "btn_login", void 0),
-                    __decorate([h(cc.Node)], t.prototype, "btn_sign", void 0),
-                    __decorate([h(cc.Toggle)], t.prototype, "Toggle_login", void 0),
-                    __decorate([h(cc.Toggle)], t.prototype, "Toggle_sign", void 0),
-                    __decorate([h(cc.Node)], t.prototype, "mailNode", void 0),
-                    __decorate([h(cc.Node)], t.prototype, "phoneNode", void 0),
-                    __decorate([h(cc.Node)], t.prototype, "toggleContainer", void 0),
-                    __decorate([h(cc.Node)], t.prototype, "freeNode", void 0),
-                    __decorate([h(cc.Label)], t.prototype, "lbl_bottom", void 0),
-                    __decorate([h(cc.Prefab)], t.prototype, "login_ani", void 0),
-                    __decorate([d], t)
-            }(i.default);
-        n.default = u,
+                    __decorate([d(cc.Node)], t.prototype, "UILogin", void 0),
+                    __decorate([d(cc.Node)], t.prototype, "UISign", void 0),
+                    __decorate([d(cc.Node)], t.prototype, "terms_login", void 0),
+                    __decorate([d(cc.Node)], t.prototype, "btn_login", void 0),
+                    __decorate([d(cc.Node)], t.prototype, "btn_sign", void 0),
+                    __decorate([d(cc.Toggle)], t.prototype, "Toggle_login", void 0),
+                    __decorate([d(cc.Toggle)], t.prototype, "Toggle_sign", void 0),
+                    __decorate([d(cc.Node)], t.prototype, "mailNode", void 0),
+                    __decorate([d(cc.Node)], t.prototype, "phoneNode", void 0),
+                    __decorate([d(cc.Node)], t.prototype, "toggleContainer", void 0),
+                    __decorate([d(cc.Node)], t.prototype, "freeNode", void 0),
+                    __decorate([d(cc.Label)], t.prototype, "lbl_bottom", void 0),
+                    __decorate([d(cc.Prefab)], t.prototype, "login_ani", void 0),
+                    __decorate([p], t)
+            }(o.default);
+        n.default = h,
             cc._RF.pop()
     }
         , {
@@ -43196,7 +44251,7 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.renderActivityList = function () {
                         var e = this
-                            , t = [c.ActivityType.recharge_send_gold, c.ActivityType.welcome_bonus, c.ActivityType.recharge_reward, c.ActivityType.week_month_card, c.ActivityType.limit_recharge, c.ActivityType.week_month_card, c.ActivityType.first_recharge_gift, c.ActivityType.ordinary_recharge_gift, c.ActivityType.subordinate_recharge_gift, c.ActivityType.reserve_event_one, c.ActivityType.reserve_event_two, c.ActivityType.reserve_event_three, c.ActivityType.progressive_recharge_time, c.ActivityType.recharge_bussiness_one_gift, c.ActivityType.recharge_bussiness_two_gift, c.ActivityType.recharge_bussiness_three_gift, c.ActivityType.reserve_event_four, c.ActivityType.reserve_event_five, c.ActivityType.sport_vote_gift, c.ActivityType.sport_zero_risk, c.ActivityType.reserve_event_six, c.ActivityType.reserve_event_seven, c.ActivityType.second_recharge_gift]
+                            , t = [c.ActivityType.recharge_send_gold, c.ActivityType.welcome_bonus, c.ActivityType.recharge_reward, c.ActivityType.week_month_card, c.ActivityType.limit_recharge, c.ActivityType.week_month_card, c.ActivityType.first_recharge_gift, c.ActivityType.ordinary_recharge_gift, c.ActivityType.subordinate_recharge_gift, c.ActivityType.reserve_event_one, c.ActivityType.reserve_event_two, c.ActivityType.reserve_event_three, c.ActivityType.progressive_recharge_time, c.ActivityType.recharge_bussiness_one_gift, c.ActivityType.recharge_bussiness_two_gift, c.ActivityType.recharge_bussiness_three_gift, c.ActivityType.reserve_event_four, c.ActivityType.reserve_event_five, c.ActivityType.sport_vote_gift, c.ActivityType.sport_zero_risk, c.ActivityType.reserve_event_six, c.ActivityType.reserve_event_seven, c.ActivityType.second_recharge_gift, c.ActivityType.reserve_event_8, c.ActivityType.reserve_event_9, c.ActivityType.reserve_event_10, c.ActivityType.reserve_event_11, c.ActivityType.reserve_event_12, c.ActivityType.reserve_event_13, c.ActivityType.reserve_event_14, c.ActivityType.reserve_event_15, c.ActivityType.reserve_event_16, c.ActivityType.reserve_event_17, c.ActivityType.reserve_event_18, c.ActivityType.reserve_event_19, c.ActivityType.reserve_event_20]
                             , n = cc.find("/node_btnGroup", this.node);
                         n.removeAllChildren();
                         for (var o = app.RedDotManager().RechargeInfoDataResult.activity_config, i = function (i) {
@@ -43218,7 +44273,7 @@ window.__require = function e(t, n, o) {
                                     }, a),
                                     u.getChildByName("icon").getComponent(cc.Sprite).spriteFrame = null,
                                     r.icon_url && app.ImageUtil().LoadImage(u.getChildByName("icon"), r.icon_url),
-                                    u.getChildByName("label").getComponent(cc.Label).string = r.title,
+                                    a.SetTitle(u.getChildByName("label"), r.title),
                                     n.addChild(u),
                                     a.ActivityItems[p] = u,
                                     l === c.ActivityType.progressive_recharge_time) {
@@ -43233,7 +44288,7 @@ window.__require = function e(t, n, o) {
                                         a.showItem(l, f);
                                 else if (l === c.ActivityType.limit_recharge)
                                     ;
-                                else if (l === c.ActivityType.first_recharge_gift || l === c.ActivityType.ordinary_recharge_gift || l === c.ActivityType.subordinate_recharge_gift || l === c.ActivityType.reserve_event_one || l === c.ActivityType.reserve_event_two || l === c.ActivityType.reserve_event_three || l === c.ActivityType.reserve_event_four || l === c.ActivityType.reserve_event_five || l === c.ActivityType.recharge_bussiness_one_gift || l === c.ActivityType.recharge_bussiness_two_gift || l === c.ActivityType.recharge_bussiness_three_gift || l === c.ActivityType.sport_vote_gift || l === c.ActivityType.sport_zero_risk || l === c.ActivityType.reserve_event_six || l === c.ActivityType.reserve_event_seven || l === c.ActivityType.second_recharge_gift) {
+                                else if (l === c.ActivityType.first_recharge_gift || l === c.ActivityType.ordinary_recharge_gift || l === c.ActivityType.subordinate_recharge_gift || l === c.ActivityType.reserve_event_one || l === c.ActivityType.reserve_event_two || l === c.ActivityType.reserve_event_three || l === c.ActivityType.reserve_event_four || l === c.ActivityType.reserve_event_five || l === c.ActivityType.recharge_bussiness_one_gift || l === c.ActivityType.recharge_bussiness_two_gift || l === c.ActivityType.recharge_bussiness_three_gift || l === c.ActivityType.sport_vote_gift || l === c.ActivityType.sport_zero_risk || l === c.ActivityType.reserve_event_six || l === c.ActivityType.reserve_event_seven || l === c.ActivityType.second_recharge_gift || l === c.ActivityType.reserve_event_8 || l === c.ActivityType.reserve_event_9 || l === c.ActivityType.reserve_event_10 || l === c.ActivityType.reserve_event_11 || l === c.ActivityType.reserve_event_12 || l === c.ActivityType.reserve_event_13 || l === c.ActivityType.reserve_event_14 || l === c.ActivityType.reserve_event_15 || l === c.ActivityType.reserve_event_16 || l === c.ActivityType.reserve_event_17 || l === c.ActivityType.reserve_event_18 || l === c.ActivityType.reserve_event_19 || l === c.ActivityType.reserve_event_20) {
                                     var g;
                                     _ = 1 === (g = app.RedDotManager().GetActiveInfo(c.ActivityType[l])).switch && !!r.is_show,
                                         a.showItem(l, _, g.title)
@@ -43309,7 +44364,12 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.showItem = function (e, t, n) {
                         this.ActivityItems[e] ? (this.ActivityItems[e].active = t,
-                            n && (this.ActivityItems[e].getChildByName("label").getComponent(cc.Label).string = n)) : this.ErrLog("idx: " + e)
+                            n && this.SetTitle(this.ActivityItems[e].getChildByName("label"), n)) : this.ErrLog("idx: " + e)
+                    }
+                    ,
+                    t.prototype.SetTitle = function (e, t) {
+                        var n = app.StringUtil().LabelCutStr(e, t);
+                        e.getComponent(cc.Label).string = n
                     }
                     ,
                     __decorate([d(cc.Node)], t.prototype, "moreItem", void 0),
@@ -43666,8 +44726,11 @@ window.__require = function e(t, n, o) {
                                                                                 app.FormManager().ShowForm(s.UINameDefine.UIRegressionTask);
                                                                         else
                                                                             app.RewardsManager().showRewardsForm();
-                                                                    else
-                                                                        app.FormManager().ShowForm(s.UINameDefine.UITaskBonus);
+                                                                    else {
+                                                                        if (app.UserManager().GetIsOfficialPopup())
+                                                                            return;
+                                                                        app.FormManager().ShowForm(s.UINameDefine.UITaskBonus)
+                                                                    }
                                                                 else
                                                                     app.ActivityManager().showAllActivityForm();
                                                             else
@@ -44138,6 +45201,8 @@ window.__require = function e(t, n, o) {
                 e.UIRegressionTaskTips = "UIRegressionTaskTips",
                 e.UIFirstRechargeSignIn = "UIFirstRechargeSignIn",
                 e.UIRegressionTaskSignIn = "UIRegressionTaskSignIn",
+                e.UIWithdrawRemind = "UIWithdrawRemind",
+                e.UI18 = "UI18",
                 e
         }();
         n.UINameDefine = o,
@@ -44171,7 +45236,7 @@ window.__require = function e(t, n, o) {
                         t.prototype.setData = function (e) {
                             this.data = e;
                             var t = this.node.children;
-                            t[1].getComponent(cc.Label).string = "" + app.ComUtil().cutStr(e.nation, 14),
+                            t[1].getComponent(cc.Label).string = "" + app.StringUtil().cutStr(e.nation, 14),
                                 t[2].getComponent(cc.Label).string = "+" + e.code
                         }
                         ,
@@ -46028,7 +47093,7 @@ window.__require = function e(t, n, o) {
                             var o = e[n]
                                 , i = t.children[n] ? t.children[n] : cc.instantiate(this.itemPrefabNameH);
                             if (i) {
-                                for (var r = [app.ComUtil().cutStr(o.nickname, 17), o.uid, o.team_num, o.level, o.create_time, app.ScoreUtil().formatScore22(o.total_cash)], s = 0; s < i.children.length && s < r.length; ++s)
+                                for (var r = [app.StringUtil().cutStr(o.nickname, 17), o.uid, o.team_num, o.level, o.create_time, app.ScoreUtil().formatScore22(o.total_cash)], s = 0; s < i.children.length && s < r.length; ++s)
                                     i.children[s].children[0].getComponent(cc.Label).string = "" + r[s];
                                 i.active = !0,
                                     t.children[n] || t.addChild(i)
@@ -46624,9 +47689,8 @@ window.__require = function e(t, n, o) {
                         }
                         ,
                         t.prototype.CheckDateEvent = function (e, t) {
-                            var n = this.ChannelInfo.sale.cur_time - Math.round(Date.now() / 1e3)
-                                , o = Math.round(Date.now() / 1e3) + n;
-                            return !(!e || !t || o > t || o < e)
+                            var n = this.ChannelInfo.cur_time;
+                            return !(!e || !t || n > t || n < e)
                         }
                         ,
                         t.prototype.UpdateInfo = function (e) {
@@ -46775,9 +47839,8 @@ window.__require = function e(t, n, o) {
                         }
                         ,
                         t.prototype.CheckDateEvent = function (e, t) {
-                            var n = this.ChannelInfo.sale.cur_time - Math.round(Date.now() / 1e3)
-                                , o = Math.round(Date.now() / 1e3) + n;
-                            return !(!e || !t || o > t || o < e)
+                            var n = this.ChannelInfo.cur_time;
+                            return !(!e || !t || n > t || n < e)
                         }
                         ,
                         t.prototype.UpdateInfo = function (e) {
@@ -47194,11 +48257,14 @@ window.__require = function e(t, n, o) {
                             var o = Math.floor(t / 60 % 60) + "";
                             Number(o) < 10 && (o = "0" + o);
                             var i = Math.floor(t / 3600) + "";
-                            Number(i) < 10 && (i = "0" + i),
+                            if (Number(i) < 10 && (i = "0" + i),
                                 this.initTime(i, o, n),
-                                t <= 1 && (app.UserManager().GetUserRechargeActivity.status = 0,
+                                t <= 1) {
+                                var a = app.UserManager().GetUserRechargeActivity;
+                                a && (a.status = 0),
                                     this.initTime("00", "00", "00"),
-                                    this.node.active = !1)
+                                    this.node.active = !1
+                            }
                         }
                     }
                     ,
@@ -49421,7 +50487,7 @@ window.__require = function e(t, n, o) {
                         }
                         ,
                         t.prototype.ShowShareUrl = function () {
-                            this.defualtCopyNode && this.ShareUrl && (this.defualtCopyNode.getComponent(cc.Label).string = app.ComUtil().cutStr(this.ShareUrl + "", app.ComTool().H5Platform() ? 47 : 63));
+                            this.defualtCopyNode && this.ShareUrl && (this.defualtCopyNode.getComponent(cc.Label).string = app.StringUtil().cutStr(this.ShareUrl + "", app.ComTool().H5Platform() ? 47 : 63));
                             var e = cc.find("/node_Progress/node_copy/img_btnBg/button", this.node);
                             e && e.on("click", this.onCopyLinkClick, this)
                         }
@@ -50028,23 +51094,20 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.CheckDateEvent = function (e, t) {
-                        var n = this.goodsChannel.sale.cur_time - Math.round(Date.now() / 1e3);
-                        n = n || 0;
-                        var o = Math.round(Date.now() / 1e3) + n;
-                        return !(!e || !t || o > t || o < e)
+                        var n = this.goodsChannel.cur_time;
+                        return !(!e || !t || n > t || n < e || (this.tDiffTime = n - Math.round(Date.now() / 1e3),
+                            0))
                     }
                     ,
                     t.prototype.UpdateTime = function () {
                         if (this.activityInfo) {
-                            var e = this.goodsChannel.sale.cur_time - Math.round(Date.now() / 1e3);
-                            e = e || 0;
-                            var t = this.activityInfo.end_time_stamp - (Math.round(Date.now() / 1e3) + e);
-                            if (t < 1)
+                            var e = this.activityInfo.end_time_stamp - (Math.round(Date.now() / 1e3) + this.tDiffTime);
+                            if (e < 1)
                                 return this.unscheduleAllCallbacks(),
                                     void (this.node.active = !1);
-                            this.ui.lb_tit.string = this.activityInfo.name + "    " + app.TimeUtil().FormatTimeWithNum(t);
-                            var n = this.activityInfo.use_num + "/" + this.activityInfo.total_num;
-                            this.ui.lb_activityNum.string = "" + n
+                            this.ui.lb_tit.string = this.activityInfo.name + "    " + app.TimeUtil().FormatTimeWithNum(e);
+                            var t = this.activityInfo.use_num + "/" + this.activityInfo.total_num;
+                            this.ui.lb_activityNum.string = "" + t
                         }
                     }
                     ,
@@ -50539,11 +51602,12 @@ window.__require = function e(t, n, o) {
             });
         var o = e("../../../../Common/Base/UIBaseComponent")
             , i = e("../../../../Common/Define/GameEventDefine")
-            , a = e("../../../../Common/Define/UINameDefine")
-            , r = cc._decorator
-            , s = r.ccclass
-            , c = r.menu
-            , l = (r.property,
+            , a = e("../../../../Common/Define/ShareDefine")
+            , r = e("../../../../Common/Define/UINameDefine")
+            , s = cc._decorator
+            , c = s.ccclass
+            , l = s.menu
+            , p = (s.property,
                 function (e) {
                     function t() {
                         var t = null !== e && e.apply(this, arguments) || this;
@@ -50621,17 +51685,18 @@ window.__require = function e(t, n, o) {
                         }
                         ,
                         t.prototype.OnClick = function (e, t) {
-                            t != this.ui.btn_confirm ? t != this.ui.btn_arrow || app.FormManager().ShowForm(a.UINameDefine.UIBankName) : this.UpdateParams()
+                            t != this.ui.btn_confirm ? t != this.ui.btn_arrow || app.FormManager().ShowForm(r.UINameDefine.UIBankName, a.ChooseNameType.bankName) : this.UpdateParams()
                         }
                         ,
-                        __decorate([s, c("UI/Vietnam_DepositWithdraw/UIBankComponent_V")], t)
+                        __decorate([c, l("UI/Vietnam_DepositWithdraw/UIBankComponent_V")], t)
                 }(o.default));
-        n.default = l,
+        n.default = p,
             cc._RF.pop()
     }
         , {
         "../../../../Common/Base/UIBaseComponent": "UIBaseComponent",
         "../../../../Common/Define/GameEventDefine": "GameEventDefine",
+        "../../../../Common/Define/ShareDefine": "ShareDefine",
         "../../../../Common/Define/UINameDefine": "UINameDefine"
     }],
     UIStoreBankName: [function (e, t, n) {
@@ -51131,6 +52196,7 @@ window.__require = function e(t, n, o) {
                     ,
                     t.prototype.OnEnable = function () {
                         this.GetWndNode("scrollview_content").active = !1,
+                            this.unscheduleAllCallbacks(),
                             this.Refresh()
                     }
                     ,
@@ -51244,7 +52310,7 @@ window.__require = function e(t, n, o) {
                                 var p = app.GameConfigManager().GetCurrency;
                                 c.getComponent(cc.Label).string = app.i18n.t("UI_Shop_USDT_Tether") + " " + p + " " + i.rate
                             }
-                            var d = a.sale.cur_time - Math.round(Date.now() / 1e3);
+                            var d = a.cur_time - Math.round(Date.now() / 1e3);
                             d && (this.DiffTime = d);
                             var h = app.GameConfigManager().GetCurrency;
                             r && (h = app.i18n.t("UI_Shop_USDT_TetherText")),
@@ -51337,95 +52403,65 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.prototype.SetShopNumNodeData = function (e) {
-                        var t = app.StoreManager().GetSubChannel(this._SelectChannelID)
-                            , n = app.StoreManager().GetActSendPercent(t, e)
-                            , o = 0;
+                        var t = this
+                            , n = app.StoreManager().GetSubChannel(this._SelectChannelID)
+                            , o = app.StoreManager().GetActSendPercent(n, e)
+                            , i = 0;
                         this.unscheduleAllCallbacks();
-                        var i = this.GetWndNode("/scrollview_content/view/content/UIAccMessage")
-                            , a = this.GetWndNode("/scrollview_content/view/content/node_AccMessage");
+                        var a = this.GetWndNode("/scrollview_content/view/content/node_AccMessage");
                         if (a.removeAllChildren(),
+                            a.active = !0,
                             a.height = 0,
-                            i.active = !1,
-                            n) {
-                            if (o = Number(n.send_percent),
-                                app.StoreManager().IsShowActivityInfoTime(n) && app.StoreManager().IsJoinTimerActivity(this._SelectChannelID) && (this._SingleTimeData = n,
-                                    this.schedule(this.updateTime, 1)),
-                                n.activity_info && this._ischeckPercentBox.isChecked && this.CheckPercentNode.active) {
-                                i.active = !0,
-                                    cc.find("/view/content/MessageItem/lb_tit", i).getComponent(cc.Label).string = n.activity_info.name;
-                                var r = cc.find("/view/content/MessageItem/lb_num", i)
-                                    , s = app.StoreManager().IsShowActivityInfoCount(n);
-                                if (r.active = s,
-                                    s) {
-                                    var c = n.activity_info.use_num + "/" + n.activity_info.total_num;
-                                    r.getComponent(cc.Label).string = "" + c
-                                }
-                            } else
-                                i.active = !1;
-                            if ((m = n.channel_recharge_activity_info) && this._ischeckPercentBox.isChecked)
-                                for (var l = 0; l < m.length; l++) {
-                                    var p = m[l]
-                                        , d = cc.instantiate(this.UIDW_AccMessage);
-                                    a.addChild(d),
-                                        a.height += d.height,
-                                        d.getComponent(this.UIDW_AccMessage.name).UpdateActivity(p, t)
+                            o) {
+                            if (i = Number(o.send_percent),
+                                app.StoreManager().IsJoinActivity(this._SelectChannelID)) {
+                                var r = app.StoreManager().GetActivityEndTime(o);
+                                null !== r && this.scheduleOnce(function () {
+                                    t.Refresh()
+                                }, r + 6)
+                            }
+                            if (o.activity_info && this._ischeckPercentBox.isChecked && this.CheckPercentNode.active && this.AddAccMessage(o.activity_info),
+                                (h = o.channel_recharge_activity_info) && this._ischeckPercentBox.isChecked)
+                                for (var s = 0; s < h.length; s++) {
+                                    var c = h[s];
+                                    this.AddAccMessage(c)
                                 }
                         }
                         this.lblExtra.getComponent(cc.Label).string = "";
-                        var h = app.GameConfigManager().GetCurrency
-                            , u = app.StoreManager().GetChannel(this._SelectChannelID)
-                            , _ = 0;
+                        var l = app.GameConfigManager().GetCurrency
+                            , p = app.StoreManager().GetChannel(this._SelectChannelID)
+                            , d = 0;
                         if (this._ischeckPercentBox.isChecked && this.CheckPercentNode.active) {
-                            var m, f = "";
-                            if (o > 0 && (_ = Number(e) * o / 100),
-                                n && (m = n.channel_recharge_activity_info))
-                                for (l = 0; l < m.length; l++) {
-                                    var g = m[l]
-                                        , y = Number(g.send_percent);
-                                    _ += Number(e) * y / 100
+                            var h, u = "";
+                            if (i > 0 && (d = Number(e) * i / 100),
+                                o && (h = o.channel_recharge_activity_info))
+                                for (s = 0; s < h.length; s++) {
+                                    var _ = h[s]
+                                        , m = Number(_.send_percent);
+                                    d += Number(e) * m / 100
                                 }
-                            _ > 0 && (f = app.i18n.t("UI_UIStore_Extra") + "+",
-                                u.is_usdt ? f += "USDT" : f += h,
-                                f += _.toFixed(2),
-                                this.lblExtra.getComponent(cc.Label).string = f + t.multiple_unit,
+                            d > 0 && (u = app.i18n.t("UI_UIStore_Extra") + "+",
+                                p.is_usdt ? u += "USDT" : u += l,
+                                u += d.toFixed(2),
+                                this.lblExtra.getComponent(cc.Label).string = u + n.multiple_unit,
                                 this.lblExtra.active = !0)
                         }
-                        if (u.is_usdt) {
-                            var v, C = this.GetWndNode("scrollview_content/view/content/node_lbUsdt/lbl_usdtTotal");
-                            v = this._ischeckPercentBox.isChecked ? h + Big(_ + Number(e)).times(Number(u.rate)).toFixed(2) : h + Big(Number(e)).times(Number(u.rate)).toFixed(2),
-                                C.getComponent(cc.Label).string = app.i18n.t("UI_Shop_USDT_Total", {
-                                    gold: v
+                        if (p.is_usdt) {
+                            var f, g = this.GetWndNode("scrollview_content/view/content/node_lbUsdt/lbl_usdtTotal");
+                            f = this._ischeckPercentBox.isChecked ? l + Big(d + Number(e)).times(Number(p.rate)).toFixed(2) : l + Big(Number(e)).times(Number(p.rate)).toFixed(2),
+                                g.getComponent(cc.Label).string = app.i18n.t("UI_Shop_USDT_Total", {
+                                    gold: f
                                 })
                         }
                     }
                     ,
-                    t.prototype.updateTime = function () {
-                        var e = app.StoreManager().GetSubChannel(this._SelectChannelID).act_send;
-                        if (this._SingleTimeData && (r = this._SingleTimeData.activity_info) && 0 != r.end_time_stamp && 0 != r.start_time_stamp) {
-                            if ((s = r.end_time_stamp - (Math.round(Date.now() / 1e3) + this.DiffTime)) < -6)
-                                return this.unscheduleAllCallbacks(),
-                                    void this.Refresh();
-                            if (s < 1)
-                                return;
-                            var t = this.GetWndNode("/scrollview_content/view/content/UIAccMessage");
-                            cc.find("/view/content/MessageItem/lb_tit", t).getComponent(cc.Label).string = r.name + "    " + app.TimeUtil().FormatTimeWithNum(s);
-                            var n = r.use_num + "/" + r.total_num;
-                            cc.find("/view/content/MessageItem/lb_num", t).getComponent(cc.Label).string = "" + n
-                        }
-                        for (var o = 0; o < e.length; o++) {
-                            var i = e[o].channel_recharge_activity_info;
-                            if (i)
-                                for (var a = 0; a < i.length; a++) {
-                                    var r, s;
-                                    if ((s = (r = i[a]).end_time_stamp - (Math.round(Date.now() / 1e3) + this.DiffTime)) < -6)
-                                        return this.unscheduleAllCallbacks(),
-                                            void this.Refresh();
-                                    if (s < 1)
-                                        return;
-                                    if (a + 1 == i.length)
-                                        return
-                                }
-                        }
+                    t.prototype.AddAccMessage = function (e) {
+                        var t = this.GetWndNode("/scrollview_content/view/content/node_AccMessage")
+                            , n = app.StoreManager().GetSubChannel(this._SelectChannelID)
+                            , o = cc.instantiate(this.UIDW_AccMessage);
+                        t.addChild(o),
+                            t.height += o.height,
+                            o.getComponent(this.UIDW_AccMessage.name).UpdateActivity(e, n)
                     }
                     ,
                     t.prototype.goodlistSetColor = function () {
@@ -51684,7 +52720,7 @@ window.__require = function e(t, n, o) {
                             var a = n[i];
                             if (a.answer) {
                                 var r = cc.instantiate(this.node_DetailRich);
-                                r.getComponent(cc.RichText).string = a.answer,
+                                app.StringUtil().SetScaleRichText(r.getComponent(cc.RichText), a.answer),
                                     r.active = !0,
                                     this.node_detailContent.addChild(r)
                             }
@@ -51761,7 +52797,7 @@ window.__require = function e(t, n, o) {
                         var n = JSON.parse(t);
                         if (n.answer) {
                             var i = cc.instantiate(this.node_DetailRich);
-                            i.getComponent(cc.RichText).string = n.answer,
+                            app.StringUtil().SetScaleRichText(i.getComponent(cc.RichText), n.answer),
                                 i.active = !0,
                                 this.node_detailContent.addChild(i)
                         }
@@ -53545,8 +54581,8 @@ window.__require = function e(t, n, o) {
                         this._payTypeInfo.pay_type == a.PayType.Pay_Type_BANK ? (n = e.id == app.Store3Manager().PayChoseBankId,
                             t = e.bank_name) : this._payTypeInfo.pay_type == a.PayType.Pay_Type_USDT && (n = e.id == app.Store3Manager().ChoseUsdtId,
                                 t = e.name),
-                            this.nation.string = app.ComUtil().cutStr(t, 40),
-                            this.nation2.string = app.ComUtil().cutStr(t, 40),
+                            this.nation.string = app.StringUtil().cutStr(t, 40),
+                            this.nation2.string = app.StringUtil().cutStr(t, 40),
                             this.RenderSelected(n)
                     }
                     ,
@@ -53614,8 +54650,8 @@ window.__require = function e(t, n, o) {
                         this._payTypeInfo.pay_type == a.PayType.Pay_Type_BANK ? (n = e.id == app.Store2Manager().PayChoseBankId,
                             t = e.bank_name) : this._payTypeInfo.pay_type == a.PayType.Pay_Type_USDT && (n = e.id == app.Store2Manager().ChoseUsdtId,
                                 t = e.name),
-                            this.nation.string = app.ComUtil().cutStr(t, 40),
-                            this.nation2.string = app.ComUtil().cutStr(t, 40),
+                            this.nation.string = app.StringUtil().cutStr(t, 40),
+                            this.nation2.string = app.StringUtil().cutStr(t, 40),
                             this.RenderSelected(n)
                     }
                     ,
@@ -54026,297 +55062,331 @@ window.__require = function e(t, n, o) {
             Object.defineProperty(n, "__esModule", {
                 value: !0
             });
-        var o, i = e("../../../Common/Base/BaseForm"), a = e("../../../Common/DB/Hall/WheelManager"), r = e("../../../Common/Define/GameEventDefine"), s = e("../../../Common/Define/UINameDefine"), c = e("./wheelEffect"), l = e("./WheelHistory"), p = (o = cc.Node,
-            __extends(function () {
-                return null !== o && o.apply(this, arguments) || this
-            }, o),
-            cc._decorator), d = p.ccclass, h = (p.property,
-                function (e) {
-                    function t() {
-                        var t = null !== e && e.apply(this, arguments) || this;
-                        return t.topNode = null,
-                            t.lotteryNode = null,
-                            t.wheelNode = null,
-                            t.vipContent = null,
-                            t.vipItemContent = null,
-                            t.HisLayout = null,
-                            t.HisItem = null,
-                            t.icon_zw = null,
-                            t.drawNum = null,
-                            t.bg_bottom = null,
-                            t.Ani = null,
-                            t.logo = null,
-                            t.result = null,
-                            t.bg_bottom1 = null,
-                            t.bg_huan = null,
-                            t.isWheel = !1,
-                            t.runTimeStart = null,
-                            t.RecordNode = null,
-                            t.Ispaging = !1,
-                            t.IsPush = !0,
-                            t.lbl_vipLevel = null,
-                            t.node_Timeinterval = null,
-                            t.oldNodePosData = null,
-                            t
-                    }
-                    return __extends(t, e),
-                        t.prototype.OnCreateInit = function () {
-                            var e = this;
-                            this.topNode = this.GetWndNode("content/top"),
-                                this.lotteryNode = this.GetWndNode("content/top/lottery"),
-                                this.wheelNode = this.GetWndNode("content/top/wheel"),
-                                this.vipContent = this.GetWndNode("content/scrollview/view/content"),
-                                this.vipItemContent = this.GetWndNode("content/layer"),
-                                this.HisLayout = this.GetWndNode("content/list/Recharge/layout"),
-                                this.HisItem = this.GetWndNode("content/list/Recharge/layout/li"),
-                                this.icon_zw = this.GetWndNode("content/list/icon_zw"),
-                                this.drawNum = this.GetWndNode("tipNode/num", this.lotteryNode).getComponent(cc.Label),
-                                this.bg_bottom = this.GetWndNode("bg_bottom", this.topNode),
-                                this.Ani = this.GetWndNode("Ani", this.topNode),
-                                this.logo = this.GetWndNode("logo", this.topNode),
-                                this.result = this.GetWndNode("result", this.topNode),
-                                this.bg_bottom1 = this.GetWndNode("huan/bg_bottom1", this.topNode),
-                                this.bg_huan = this.GetWndNode("huan/bg_huan", this.topNode),
-                                this.RecordNode = this.GetWndNode("content/list"),
-                                this.lbl_vipLevel = this.GetWndComponent("content/top/wheel/spin/vip/label_num", cc.Label),
-                                this.node_Timeinterval = this.GetWndComponent("content/top/time", cc.Label),
-                                this.oldNodePosData = {
-                                    bg_bottom: {
-                                        x: this.bg_bottom.x,
-                                        y: this.bg_bottom.y
-                                    },
-                                    Ani: {
-                                        x: this.Ani.x,
-                                        y: this.Ani.y
-                                    },
-                                    logo: {
-                                        x: this.logo.x,
-                                        y: this.logo.y
-                                    },
-                                    result: {
-                                        x: this.result.x,
-                                        y: this.result.y
-                                    },
-                                    bg_bottom1: {
-                                        x: this.bg_bottom1.x,
-                                        y: this.bg_bottom1.y
-                                    },
-                                    bg_huan: {
-                                        x: this.bg_huan.x,
-                                        y: this.bg_huan.y
-                                    },
-                                    lotteryNode: {
-                                        x: this.lotteryNode.x,
-                                        y: this.lotteryNode.y
-                                    },
-                                    wheelNode: {
-                                        x: this.wheelNode.x,
-                                        y: this.wheelNode.y
-                                    }
+        var o = e("../../../Common/Base/BaseForm")
+            , i = e("../../../Common/DB/Hall/WheelManager")
+            , a = e("../../../Common/Define/GameEventDefine")
+            , r = e("../../../Common/Define/UINameDefine")
+            , s = e("./wheelEffect")
+            , c = e("./WheelHistory")
+            , l = cc._decorator
+            , p = l.ccclass
+            , d = l.property
+            , h = function (e) {
+                function t() {
+                    var t = null !== e && e.apply(this, arguments) || this;
+                    return t.arraySprites = [],
+                        t.iconArr = [],
+                        t.topNode = null,
+                        t.lotteryNode = null,
+                        t.wheelNode = null,
+                        t.vipContent = null,
+                        t.vipItemContent = null,
+                        t.HisLayout = null,
+                        t.HisItem = null,
+                        t.icon_zw = null,
+                        t.drawNum = null,
+                        t.bg_bottom = null,
+                        t.Ani = null,
+                        t.logo = null,
+                        t.result = null,
+                        t.bg_bottom1 = null,
+                        t.bg_huan = null,
+                        t.isWheel = !1,
+                        t.runTimeStart = null,
+                        t.RecordNode = null,
+                        t.Ispaging = !1,
+                        t.IsPush = !0,
+                        t.lbl_vipLevel = null,
+                        t.node_Timeinterval = null,
+                        t.oldNodePosData = null,
+                        t
+                }
+                return __extends(t, e),
+                    t.prototype.OnCreateInit = function () {
+                        var e = this;
+                        this.topNode = this.GetWndNode("content/top"),
+                            this.lotteryNode = this.GetWndNode("content/top/lottery"),
+                            this.wheelNode = this.GetWndNode("content/top/wheel"),
+                            this.vipContent = this.GetWndNode("content/scrollview/view/content"),
+                            this.vipItemContent = this.GetWndNode("content/layer"),
+                            this.HisLayout = this.GetWndNode("content/list/Recharge/layout"),
+                            this.HisItem = this.GetWndNode("content/list/Recharge/layout/li"),
+                            this.icon_zw = this.GetWndNode("content/list/icon_zw"),
+                            this.drawNum = this.GetWndNode("tipNode/num", this.lotteryNode).getComponent(cc.Label),
+                            this.bg_bottom = this.GetWndNode("bg_bottom", this.topNode),
+                            this.Ani = this.GetWndNode("Ani", this.topNode),
+                            this.logo = this.GetWndNode("logo", this.topNode),
+                            this.result = this.GetWndNode("result", this.topNode),
+                            this.bg_bottom1 = this.GetWndNode("huan/bg_bottom1", this.topNode),
+                            this.bg_huan = this.GetWndNode("huan/bg_huan", this.topNode),
+                            this.RecordNode = this.GetWndNode("content/list"),
+                            this.lbl_vipLevel = this.GetWndComponent("content/top/wheel/spin/vip/label_num", cc.Label),
+                            this.node_Timeinterval = this.GetWndComponent("content/top/time", cc.Label),
+                            this.oldNodePosData = {
+                                bg_bottom: {
+                                    x: this.bg_bottom.x,
+                                    y: this.bg_bottom.y
                                 },
-                                this.RegEvent(r.GameEventDefine.GET_WheelInfo, this.OnGetWheelInfo),
-                                this.RegEvent(r.GameEventDefine.GET_WheelRun, this.OnPlayWheel),
-                                this.RegEvent(r.GameEventDefine.GET_WheelRecord, this.OnWheelRecord),
-                                this.RegEvent(r.GameEventDefine.WHEEL_FINISHED, function () {
-                                    e.GetWndComponent("content/list/scrollview/view/content/toggleContainer/tog_rewards", cc.Toggle).isChecked && app.WheelManager().RequestWheelRecord(a.WheelRecordType.Myrecord)
-                                }),
-                                this.RegEvent(r.GameEventDefine.COMPANY_PAYMENT, function () {
-                                    e.scheduleOnce(function () {
-                                        app.WheelManager().RequestWheelConf()
-                                    }, 1)
-                                }),
-                                app.Client.RegEvent(r.GameEventDefine.UPGRADE_VIPLV, function () {
-                                    app.WheelManager().RequestWheelConf()
-                                }, this)
-                        }
-                        ,
-                        t.prototype.OnShow = function () {
-                            for (var e = [], t = 0; t < arguments.length; t++)
-                                e[t] = arguments[t];
-                            this.onQuestNodeDisable(),
-                                app.WheelManager().RequestWheelConf(),
-                                this.Ispaging = !1,
-                                app.WheelManager().RequestWheelRecord(a.WheelRecordType.Allrecord),
-                                this.SwitchRecordTitle(!0),
-                                this.setBtnRun(!1),
-                                this.IsPush = !0,
-                                this.node_Timeinterval.string = "",
-                                this.result.active = !0,
-                                this.result.children.forEach(function (e) {
-                                    e.active = !1,
-                                        e.opacity = 255
-                                })
-                        }
-                        ,
-                        t.prototype.OnGetWheelInfo = function () {
-                            var e = app.WheelManager().GetWheelInfo;
-                            if (e) {
-                                this.OnWheelView(e.wheel_config),
-                                    this.setDrawNum(e.draw_num),
-                                    this.GetWndComponent("content/explain/richtext", cc.RichText).string = e.wheel_desc,
-                                    this.node_Timeinterval.string = e.start_date + " - " + e.end_date;
-                                var t = app.UserManager().GetUserInfo.vip_id
-                                    , n = app.UserManager().GetNewVipLv(t) - 1;
-                                this.lbl_vipLevel.string = "" + n
-                            }
-                        }
-                        ,
-                        t.prototype.setDrawNum = function (e) {
-                            e = Math.max(e, 0),
-                                this.drawNum.string = e + "",
-                                this.setBtnRun(e > 0)
-                        }
-                        ,
-                        t.prototype.setBtnRun = function (e) {
-                            this.GetWndNode("button", this.lotteryNode).getComponent(cc.Button).interactable = e
-                        }
-                        ,
-                        t.prototype.onQuestNodeDisable = function () {
-                            this.GetWndNode("guest", this.lotteryNode).active = !app.UserManager().getIsOfficialAccount(),
-                                this.GetWndNode("button", this.lotteryNode).active = app.UserManager().getIsOfficialAccount(),
-                                this.GetWndNode("tipNode", this.lotteryNode).active = app.UserManager().getIsOfficialAccount()
-                        }
-                        ,
-                        t.prototype.OnClick = function (e) {
-                            var t = this;
-                            if ("button" != e)
-                                if ("btn_back" != e) {
-                                    if ("help" != e)
-                                        return "tog_history" == e ? (app.WheelManager().RequestWheelRecord(a.WheelRecordType.Allrecord),
-                                            void this.SwitchRecordTitle(!0)) : "tog_rewards" == e ? (app.WheelManager().RequestWheelRecord(a.WheelRecordType.Myrecord),
-                                                void this.SwitchRecordTitle(!1)) : void 0;
-                                    app.FormManager().ShowForm(s.UINameDefine.UIWheelHelp)
-                                } else {
-                                    this.isWheel = !1,
-                                        this.GetWndComponent("btn_back", cc.Button, this.result).interactable = !1,
-                                        this.result;
-                                    var n = this.topNode.getComponent(cc.Animation)
-                                        , o = app.ComTool().H5Platform() ? "result_quit_V" : "result_quit_H";
-                                    this.onPlayAnimEndFn(n, o, function () {
-                                        t.OnSetResultLabel();
-                                        var e = app.ComTool().H5Platform() ? "movie_quit" : "movie_web_quit";
-                                        n.play(e),
-                                            t.scheduleOnce(function () {
-                                                t.GetWndComponent("btn_back", cc.Button, t.result).interactable = !0
-                                            }, 2)
-                                    })
+                                Ani: {
+                                    x: this.Ani.x,
+                                    y: this.Ani.y
+                                },
+                                logo: {
+                                    x: this.logo.x,
+                                    y: this.logo.y
+                                },
+                                result: {
+                                    x: this.result.x,
+                                    y: this.result.y
+                                },
+                                bg_bottom1: {
+                                    x: this.bg_bottom1.x,
+                                    y: this.bg_bottom1.y
+                                },
+                                bg_huan: {
+                                    x: this.bg_huan.x,
+                                    y: this.bg_huan.y
+                                },
+                                lotteryNode: {
+                                    x: this.lotteryNode.x,
+                                    y: this.lotteryNode.y
+                                },
+                                wheelNode: {
+                                    x: this.wheelNode.x,
+                                    y: this.wheelNode.y
                                 }
-                            else
-                                this.isWheel || (this.isWheel = !0,
-                                    app.WheelManager().RequestWheelRun(),
-                                    this.runTimeStart = setTimeout(function () {
-                                        clearTimeout(t.runTimeStart),
-                                            t.isWheel = !1,
-                                            t.setBtnRun(!0)
-                                    }, 3e3),
-                                    this.setBtnRun(!1))
-                        }
-                        ,
-                        t.prototype.OnPlayWheel = function (e) {
-                            var t = this;
-                            clearTimeout(this.runTimeStart),
-                                this.GetWndComponent("btn_back", cc.Button, this.result).interactable = !0,
-                                this.isWheel = !0;
-                            var n = this.topNode.getComponent(cc.Animation)
-                                , o = app.ComTool().H5Platform() ? "movie" : "movie_web";
-                            this.onPlayAnimEndFn(n, o, function () {
-                                var n = t.wheelNode.getComponent(c.default);
-                                n && n.SetTargetIDAngle(e.stall_id),
-                                    t.OnSetResultLabel("" + e.gold)
+                            },
+                            this.RegEvent(a.GameEventDefine.GET_WheelInfo, this.OnGetWheelInfo),
+                            this.RegEvent(a.GameEventDefine.GET_WheelRun, this.OnPlayWheel),
+                            this.RegEvent(a.GameEventDefine.GET_WheelRecord, this.OnWheelRecord),
+                            this.RegEvent(a.GameEventDefine.WHEEL_FINISHED, function () {
+                                e.GetWndComponent("content/list/scrollview/view/content/toggleContainer/tog_rewards", cc.Toggle).isChecked && app.WheelManager().RequestWheelRecord(i.WheelRecordType.Myrecord)
                             }),
-                                this.setDrawNum(e.draw_num)
-                        }
-                        ,
-                        t.prototype.SwitchRecordTitle = function (e) {
-                            this.GetWndNode("content/list/title_rewards").active = !e,
-                                this.GetWndNode("content/list/title_history").active = e
-                        }
-                        ,
-                        t.prototype.OnWheelRecord = function (e) {
-                            var t = app.WheelManager().GetWheelRecord;
-                            if (e == a.WheelRecordType.Allrecord && this.Ispaging)
-                                return this.HisToryDate = t,
-                                    void (this.Ispaging = !1);
-                            var n = [];
-                            this.HisToryDate = t;
-                            var o = this.RecordNode.getComponent(l.default);
-                            this.unscheduleAllCallbacks(),
-                                e == a.WheelRecordType.Allrecord ? (n = this.HisToryDate.length > 20 ? this.HisToryDate.splice(20, this.HisToryDate.length - 20) : this.HisToryDate,
-                                    o.historyDate = n,
-                                    this.IsPush = !0,
-                                    this.schedule(this.UpdateRecord, 1)) : (n = this.HisToryDate,
-                                        o.historyDate = n),
-                                o.historytype = e,
-                                o.parent = this.node,
-                                o.int()
-                        }
-                        ,
-                        t.prototype.UpdateRecord = function () {
-                            var e = this;
-                            this.IsPush && (this.IsPush = !1,
-                                this.scheduleOnce(function () {
-                                    var t = e.RecordNode.getComponent(l.default);
-                                    e.HisToryDate.length > 0 ? t.BackPushData(e.HisToryDate.splice(0, 1)[0]) : (e.Ispaging = !0,
-                                        app.WheelManager().RequestWheelRecord(a.WheelRecordType.Allrecord)),
-                                        e.IsPush = !0
-                                }, Math.round(5 * Math.random())))
-                        }
-                        ,
-                        t.prototype.OnSetResultLabel = function (e) {
-                            void 0 === e && (e = ""),
-                                this.GetWndNode("content/top/result/gold_bg/gold/lbl").getComponent(cc.Label).string = e
-                        }
-                        ,
-                        t.prototype.onPlayAnimEndFn = function (e, t, n) {
-                            e.play(t),
-                                e.once("finished", n)
-                        }
-                        ,
-                        t.prototype.OnWheelView = function (e) {
-                            this.GetWndNode("wheel", this.wheelNode).children.forEach(function (t, n) {
-                                if (e[n]) {
-                                    var o = e[n].gold.replace(/(\.0+)+$/, "");
-                                    t.getChildByName("lbl").getComponent(cc.Label).string = o
-                                }
+                            this.RegEvent(a.GameEventDefine.COMPANY_PAYMENT, function () {
+                                e.scheduleOnce(function () {
+                                    app.WheelManager().RequestWheelConf()
+                                }, 1)
+                            }),
+                            app.Client.RegEvent(a.GameEventDefine.UPGRADE_VIPLV, function () {
+                                app.WheelManager().RequestWheelConf()
+                            }, this)
+                    }
+                    ,
+                    t.prototype.OnShow = function () {
+                        for (var e = [], t = 0; t < arguments.length; t++)
+                            e[t] = arguments[t];
+                        this.onQuestNodeDisable(),
+                            app.WheelManager().RequestWheelConf(),
+                            this.Ispaging = !1,
+                            app.WheelManager().RequestWheelRecord(i.WheelRecordType.Allrecord),
+                            this.SwitchRecordTitle(!0),
+                            this.setBtnRun(!1),
+                            this.IsPush = !0,
+                            this.node_Timeinterval.string = "",
+                            this.result.active = !0,
+                            this.result.children.forEach(function (e) {
+                                e.active = !1,
+                                    e.opacity = 255
                             })
+                    }
+                    ,
+                    t.prototype.OnGetWheelInfo = function () {
+                        var e = app.WheelManager().GetWheelInfo;
+                        if (e) {
+                            this.OnWheelView(e.wheel_config),
+                                this.setDrawNum(e.draw_num),
+                                this.GetWndComponent("content/explain/richtext", cc.RichText).string = e.wheel_desc,
+                                this.node_Timeinterval.string = e.start_date + " - " + e.end_date;
+                            var t = app.UserManager().GetUserInfo.vip_id
+                                , n = app.UserManager().GetNewVipLv(t) - 1;
+                            this.lbl_vipLevel.string = "" + n
                         }
-                        ,
-                        t.prototype.OnReductionUI = function () {
-                            this.topNode.getComponent(cc.Animation).stop(),
-                                app.ComTool().H5Platform() ? (this.bg_bottom.y = this.oldNodePosData.bg_bottom.y,
-                                    this.Ani.y = this.oldNodePosData.Ani.y,
-                                    this.logo.y = this.oldNodePosData.logo.y,
-                                    this.result.y = this.oldNodePosData.result.y,
-                                    this.bg_huan.y = this.oldNodePosData.bg_huan.y,
-                                    this.bg_bottom1.y = this.oldNodePosData.bg_bottom1.y,
-                                    this.lotteryNode.y = this.oldNodePosData.lotteryNode.y,
-                                    this.wheelNode.y = this.oldNodePosData.wheelNode.y,
-                                    this.wheelNode.scale = 1.3) : (this.bg_bottom.x = this.oldNodePosData.bg_bottom.x,
-                                        this.Ani.x = this.oldNodePosData.Ani.x,
-                                        this.logo.x = this.oldNodePosData.logo.x,
-                                        this.result.x = this.oldNodePosData.result.x,
-                                        this.bg_huan.x = this.oldNodePosData.bg_huan.x,
-                                        this.bg_bottom1.x = this.oldNodePosData.bg_bottom1.x,
-                                        this.lotteryNode.x = this.oldNodePosData.lotteryNode.x,
-                                        this.wheelNode.x = this.oldNodePosData.wheelNode.x,
-                                        this.wheelNode.scale = 1),
-                                this.logo.opacity = 255,
-                                this.lotteryNode.opacity = 255
+                    }
+                    ,
+                    t.prototype.OnWheelView = function (e) {
+                        this.UpdateWheelData(e)
+                    }
+                    ,
+                    t.prototype.UpdateWheelData = function (e) {
+                        var t = this.GetWndNode("wheel_center", this.wheelNode)
+                            , n = this.GetWndNode("bar", this.wheelNode);
+                        n.active = !1,
+                            t.removeAllChildren();
+                        var o = e.length
+                            , i = 360 / o;
+                        n.children[0].angle = i / 2,
+                            n.getComponent(cc.Sprite).fillRange = 1 / o;
+                        for (var a = 0; a < o; a++) {
+                            var r = e[a]
+                                , s = cc.instantiate(n);
+                            t.addChild(s),
+                                s.angle = -i * (a + .5),
+                                s.active = !0,
+                                1 == r.lucky_wheel_icon && (s.getComponent(cc.Sprite).spriteFrame = this.arraySprites[0]);
+                            var c = r.gold.replace(/(\.0+)+$/, "")
+                                , l = s.getChildByName("node")
+                                , p = l.getChildByName("label_num").getComponent(cc.Label)
+                                , d = l.getChildByName("node_icon").getComponent(cc.Sprite);
+                            p.string = c,
+                                d.spriteFrame = this.iconArr[r.lucky_wheel_icon - 1]
                         }
-                        ,
-                        t.prototype.OnClose = function () {
-                            for (var e = [], t = 0; t < arguments.length; t++)
-                                e[t] = arguments[t];
-                            this.OnReductionUI(),
-                                clearTimeout(this.runTimeStart),
+                        t.active = !0
+                    }
+                    ,
+                    t.prototype.setDrawNum = function (e) {
+                        e = Math.max(e, 0),
+                            this.drawNum.string = e + "",
+                            this.setBtnRun(e > 0)
+                    }
+                    ,
+                    t.prototype.setBtnRun = function (e) {
+                        this.GetWndNode("button", this.lotteryNode).getComponent(cc.Button).interactable = e
+                    }
+                    ,
+                    t.prototype.onQuestNodeDisable = function () {
+                        this.GetWndNode("guest", this.lotteryNode).active = !app.UserManager().getIsOfficialAccount(),
+                            this.GetWndNode("button", this.lotteryNode).active = app.UserManager().getIsOfficialAccount(),
+                            this.GetWndNode("tipNode", this.lotteryNode).active = app.UserManager().getIsOfficialAccount()
+                    }
+                    ,
+                    t.prototype.OnClick = function (e) {
+                        var t = this;
+                        if ("button" != e)
+                            if ("btn_back" != e) {
+                                if ("help" != e)
+                                    return "tog_history" == e ? (app.WheelManager().RequestWheelRecord(i.WheelRecordType.Allrecord),
+                                        void this.SwitchRecordTitle(!0)) : "tog_rewards" == e ? (app.WheelManager().RequestWheelRecord(i.WheelRecordType.Myrecord),
+                                            void this.SwitchRecordTitle(!1)) : void 0;
+                                app.FormManager().ShowForm(r.UINameDefine.UIWheelHelp)
+                            } else {
                                 this.isWheel = !1,
-                                this.unscheduleAllCallbacks(),
-                                app.RoomManager().SetWheelAnimation(!1),
-                                app.Client.OnEvent(r.GameEventDefine.UPDATE_USER_INFO)
-                        }
-                        ,
-                        __decorate([d], t)
-                }(i.default));
+                                    this.GetWndComponent("btn_back", cc.Button, this.result).interactable = !1,
+                                    this.result;
+                                var n = this.topNode.getComponent(cc.Animation)
+                                    , o = app.ComTool().H5Platform() ? "result_quit_V" : "result_quit_H";
+                                this.onPlayAnimEndFn(n, o, function () {
+                                    t.OnSetResultLabel();
+                                    var e = app.ComTool().H5Platform() ? "movie_quit" : "movie_web_quit";
+                                    n.play(e),
+                                        t.scheduleOnce(function () {
+                                            t.GetWndComponent("btn_back", cc.Button, t.result).interactable = !0
+                                        }, 2)
+                                })
+                            }
+                        else
+                            this.isWheel || (this.isWheel = !0,
+                                app.WheelManager().RequestWheelRun(),
+                                this.runTimeStart = setTimeout(function () {
+                                    clearTimeout(t.runTimeStart),
+                                        t.isWheel = !1,
+                                        t.setBtnRun(!0)
+                                }, 3e3),
+                                this.setBtnRun(!1))
+                    }
+                    ,
+                    t.prototype.OnPlayWheel = function (e) {
+                        var t = this;
+                        clearTimeout(this.runTimeStart),
+                            this.GetWndComponent("btn_back", cc.Button, this.result).interactable = !0,
+                            this.isWheel = !0;
+                        var n = this.topNode.getComponent(cc.Animation)
+                            , o = app.ComTool().H5Platform() ? "movie" : "movie_web";
+                        this.onPlayAnimEndFn(n, o, function () {
+                            var n = t.wheelNode.getComponent(s.default);
+                            if (n)
+                                for (var o = app.WheelManager().GetWheelInfo, i = 0; i < o.wheel_config.length; i++)
+                                    if (o.wheel_config[i].stall_id == e.stall_id) {
+                                        n.SetTargetIDAngle(i);
+                                        break
+                                    }
+                            t.OnSetResultLabel("" + e.gold)
+                        }),
+                            this.setDrawNum(e.draw_num)
+                    }
+                    ,
+                    t.prototype.SwitchRecordTitle = function (e) {
+                        this.GetWndNode("content/list/title_rewards").active = !e,
+                            this.GetWndNode("content/list/title_history").active = e
+                    }
+                    ,
+                    t.prototype.OnWheelRecord = function (e) {
+                        var t = app.WheelManager().GetWheelRecord;
+                        if (e == i.WheelRecordType.Allrecord && this.Ispaging)
+                            return this.HisToryDate = t,
+                                void (this.Ispaging = !1);
+                        var n = [];
+                        this.HisToryDate = t;
+                        var o = this.RecordNode.getComponent(c.default);
+                        this.unscheduleAllCallbacks(),
+                            e == i.WheelRecordType.Allrecord ? (n = this.HisToryDate.length > 20 ? this.HisToryDate.splice(20, this.HisToryDate.length - 20) : this.HisToryDate,
+                                o.historyDate = n,
+                                this.IsPush = !0,
+                                this.schedule(this.UpdateRecord, 1)) : (n = this.HisToryDate,
+                                    o.historyDate = n),
+                            o.historytype = e,
+                            o.parent = this.node,
+                            o.int()
+                    }
+                    ,
+                    t.prototype.UpdateRecord = function () {
+                        var e = this;
+                        this.IsPush && (this.IsPush = !1,
+                            this.scheduleOnce(function () {
+                                var t = e.RecordNode.getComponent(c.default);
+                                e.HisToryDate.length > 0 ? t.BackPushData(e.HisToryDate.splice(0, 1)[0]) : (e.Ispaging = !0,
+                                    app.WheelManager().RequestWheelRecord(i.WheelRecordType.Allrecord)),
+                                    e.IsPush = !0
+                            }, Math.round(5 * Math.random())))
+                    }
+                    ,
+                    t.prototype.OnSetResultLabel = function (e) {
+                        void 0 === e && (e = ""),
+                            this.GetWndNode("content/top/result/gold_bg/gold/lbl").getComponent(cc.Label).string = e
+                    }
+                    ,
+                    t.prototype.onPlayAnimEndFn = function (e, t, n) {
+                        e.play(t),
+                            e.once("finished", n)
+                    }
+                    ,
+                    t.prototype.OnReductionUI = function () {
+                        this.topNode.getComponent(cc.Animation).stop(),
+                            app.ComTool().H5Platform() ? (this.bg_bottom.y = this.oldNodePosData.bg_bottom.y,
+                                this.Ani.y = this.oldNodePosData.Ani.y,
+                                this.logo.y = this.oldNodePosData.logo.y,
+                                this.result.y = this.oldNodePosData.result.y,
+                                this.bg_huan.y = this.oldNodePosData.bg_huan.y,
+                                this.bg_bottom1.y = this.oldNodePosData.bg_bottom1.y,
+                                this.lotteryNode.y = this.oldNodePosData.lotteryNode.y,
+                                this.wheelNode.y = this.oldNodePosData.wheelNode.y,
+                                this.wheelNode.scale = 1.3) : (this.bg_bottom.x = this.oldNodePosData.bg_bottom.x,
+                                    this.Ani.x = this.oldNodePosData.Ani.x,
+                                    this.logo.x = this.oldNodePosData.logo.x,
+                                    this.result.x = this.oldNodePosData.result.x,
+                                    this.bg_huan.x = this.oldNodePosData.bg_huan.x,
+                                    this.bg_bottom1.x = this.oldNodePosData.bg_bottom1.x,
+                                    this.lotteryNode.x = this.oldNodePosData.lotteryNode.x,
+                                    this.wheelNode.x = this.oldNodePosData.wheelNode.x,
+                                    this.wheelNode.scale = 1),
+                            this.logo.opacity = 255,
+                            this.lotteryNode.opacity = 255
+                    }
+                    ,
+                    t.prototype.OnClose = function () {
+                        for (var e = [], t = 0; t < arguments.length; t++)
+                            e[t] = arguments[t];
+                        this.OnReductionUI(),
+                            clearTimeout(this.runTimeStart),
+                            this.isWheel = !1,
+                            this.unscheduleAllCallbacks(),
+                            app.RoomManager().SetWheelAnimation(!1),
+                            app.Client.OnEvent(a.GameEventDefine.UPDATE_USER_INFO)
+                    }
+                    ,
+                    __decorate([d([cc.SpriteFrame])], t.prototype, "arraySprites", void 0),
+                    __decorate([d([cc.SpriteFrame])], t.prototype, "iconArr", void 0),
+                    __decorate([p], t)
+            }(o.default);
         n.default = h,
             cc._RF.pop()
     }
@@ -54591,6 +55661,68 @@ window.__require = function e(t, n, o) {
         "../../../../Common/Define/UINameDefine": "UINameDefine",
         "../../autoui/Deposit_Withdraw/auto_UIWithdrawRecord": "auto_UIWithdrawRecord",
         "./UIWithdrawRecordItem": "UIWithdrawRecordItem"
+    }],
+    UIWithdrawRemind: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "2e3e8agkj9FHZeHNIjxicnC", "UIWithdrawRemind"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = e("../../../../Common/Base/BaseForm")
+            , i = e("../../../../Common/Define/ShareDefine")
+            , a = e("../../autoui/Deposit_Withdraw/auto_UIWithdrawRemind")
+            , r = cc._decorator
+            , s = r.ccclass
+            , c = r.menu
+            , l = (r.property,
+                function (e) {
+                    function t() {
+                        var t = null !== e && e.apply(this, arguments) || this;
+                        return t.ui = null,
+                            t
+                    }
+                    return __extends(t, e),
+                        t.prototype.OnCreateInit = function () {
+                            this.JS_Name = "UIWithdrawRemind"
+                        }
+                        ,
+                        t.prototype.OnLoad = function () {
+                            this.ui = this.node.addComponent(a.default),
+                                this.ui.AutoBindEvent(this)
+                        }
+                        ,
+                        t.prototype.OnShow = function () {
+                            for (var e = [], t = 0; t < arguments.length; t++)
+                                e[t] = arguments[t];
+                            var n = e[0]
+                                , o = n.tip;
+                            o || (o = app.i18n.t("UI_WithdrawRemind_remind")),
+                                this.ui.label_remind.string = o
+                        }
+                        ,
+                        t.prototype.OnClick = function (e, t) {
+                            if (this.ui.btn_close != t)
+                                return this.ui.btn_go == t ? (this.CloseForm(),
+                                    void app.StoreManager().ShowStoreUI({
+                                        ShowType: i.WIN_TYPE.CASHOUT
+                                    })) : void 0;
+                            this.CloseForm()
+                        }
+                        ,
+                        t.prototype.OnClose = function () {
+                            for (var e = [], t = 0; t < arguments.length; t++)
+                                e[t] = arguments[t]
+                        }
+                        ,
+                        __decorate([s, c("UI/Deposit_Withdraw/UIWithdrawRemind")], t)
+                }(o.default));
+        n.default = l,
+            cc._RF.pop()
+    }
+        , {
+        "../../../../Common/Base/BaseForm": "BaseForm",
+        "../../../../Common/Define/ShareDefine": "ShareDefine",
+        "../../autoui/Deposit_Withdraw/auto_UIWithdrawRemind": "auto_UIWithdrawRemind"
     }],
     UIWithdraw_2_H: [function (e, t, n) {
         "use strict";
@@ -54877,7 +56009,7 @@ window.__require = function e(t, n, o) {
                 ,
                 t.prototype.RequestGetGamerati = function () {
                     app.HttpServerManager().SendHttpPack(a.HttpAPI.GET_GAMERATIO, {
-                        token: app.UserManager().GetUserInfo.token
+                        token: this.UserInfo.token
                     })
                 }
                 ,
@@ -54890,7 +56022,7 @@ window.__require = function e(t, n, o) {
                 }),
                 t.prototype.RequestUserAndOrder = function (e, t, n, o, i) {
                     var r = {
-                        token: app.UserManager().GetUserInfo.token,
+                        token: this.UserInfo.token,
                         type: e,
                         limit: t,
                         page: n
@@ -54902,7 +56034,7 @@ window.__require = function e(t, n, o) {
                 ,
                 t.prototype.RequstUserWallet = function (e) {
                     app.HttpServerManager().SendHttpPack(a.HttpAPI.GET_USER_WALLET, {
-                        token: app.UserManager().GetUserInfo.token,
+                        token: this.UserInfo.token,
                         type: e ? e.type : null
                     })
                 }
@@ -54945,9 +56077,9 @@ window.__require = function e(t, n, o) {
                     var n = e.code
                         , o = e.data;
                     if (n) {
-                        if (n === r.ReqFailCode.IP_DEVICE_LIMIT)
-                            return void app.FormManager().ShowForm(c.UINameDefine.UILoginSign, 1);
-                        this.ErrLog("onGetUserInfo fail, code: " + n + ", msg: " + e.msg)
+                        if (app.SysNotifyManager().ShowToast(e.msg),
+                            n === r.ReqFailCode.IP_DEVICE_LIMIT)
+                            return void app.FormManager().ShowForm(c.UINameDefine.UILoginSign, 1)
                     } else
                         this.onGetUserInfo(o, t)
                 }
@@ -54961,7 +56093,7 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 t.prototype.SetUserInfo = function (e) {
-                    this.UserInfo = e,
+                    e ? (this.UserInfo = e,
                         this.UserInfo.gold = e.gold || 0,
                         this.UserInfo.user_config.is_open_debug && app.Client.InitDebug(!0),
                         0 == e.user_config.game_arr.length && app.SysNotifyManager().ShowToast("Get User Configuration Failed."),
@@ -54971,7 +56103,7 @@ window.__require = function e(t, n, o) {
                         app.HNoticeManager().RequestDeskNotice(),
                         app.TaskManager(),
                         app.Client.OnEvent(i.GameEventDefine.GET_USER_INFO),
-                        e.first_login && app.EventTrackManager().LogEvent(s.default.USER_REGISTER)
+                        e.first_login && app.EventTrackManager().LogEvent(s.default.USER_REGISTER)) : this.ErrLog("SetUserInfo data failed")
                 }
                 ,
                 Object.defineProperty(t.prototype, "GetUserInfo", {
@@ -54987,7 +56119,7 @@ window.__require = function e(t, n, o) {
                 ,
                 Object.defineProperty(t.prototype, "GetUserRechargeActivity", {
                     get: function () {
-                        return this.UserInfo.recharge_activity
+                        return this.UserInfo && this.UserInfo.recharge_activity
                     },
                     enumerable: !1,
                     configurable: !0
@@ -55011,17 +56143,20 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 t.prototype.UpdateUserInfo = function (e) {
-                    this.UserInfo.ip = e.ip,
+                    this.UserInfo ? (this.UserInfo.ip = e.ip,
                         this.UserInfo.card_num = e.card_num,
                         this.UserInfo.gold = e.gold,
                         this.UserInfo.room_no = null == e.room_no ? 0 : e.room_no,
                         this.UserInfo.is_reconned = this.UserInfo.room_no > 0,
                         this.UserInfo.roomMode || (this.UserInfo.roomMode = e.roomMode),
-                        this.SaveCurrentUser()
+                        this.SaveCurrentUser()) : this.ErrLog("UpdateUserInfo not found UserInfo")
                 }
                 ,
                 t.prototype.getIsOfficialAccount = function (e) {
-                    var t = "" === (e = e || this.UserInfo).third_token && "" === e.tel && "" === e.account && "" === e.email;
+                    if (!(e = e || this.UserInfo))
+                        return this.ErrLog("getIsOfficialAccount not found userInfo"),
+                            !1;
+                    var t = "" === e.third_token && "" === e.tel && "" === e.account && "" === e.email;
                     return 1 == Number(e.is_official_account) && (t = !1),
                         !t
                 }
@@ -55144,6 +56279,18 @@ window.__require = function e(t, n, o) {
                     }
                 }
                 ,
+                Object.defineProperty(t.prototype, "GetOpenUI18", {
+                    get: function () {
+                        if (this.UserInfo) {
+                            var e = app.LocalDataManager().GetConfigObject(this.UserInfo.uid + "open_UI18");
+                            if (e)
+                                return e.open
+                        }
+                        return !0
+                    },
+                    enumerable: !1,
+                    configurable: !0
+                }),
                 t
         }(o.Singleton);
         n.UserManager = l,
@@ -55256,8 +56403,6 @@ window.__require = function e(t, n, o) {
                             })
                         }
                     }
-                    ,
-                    t.prototype.CheckVipReduced = function () { }
                     ,
                     t.prototype.onVipList = function (e) {
                         this.VIPList = e,
@@ -55538,22 +56683,22 @@ window.__require = function e(t, n, o) {
                             this.GetWndComponent("progressBar_still", cc.ProgressBar, f).progress = b > 1 ? 1 : b;
                             var S = this.GetWndNode("label_topup", E);
                             this.setVipLblColor(S, i);
-                            var M = this.GetWndNode("label_topup1", E);
-                            M.getComponent(cc.Label).string = "V" + o,
-                                this.setVipLblColor(M, i),
+                            var G = this.GetWndNode("label_topup1", E);
+                            G.getComponent(cc.Label).string = "V" + o,
+                                this.setVipLblColor(G, i),
                                 f.active = o >= app.UserManager().UserInfo.vip_id && o < t.show_vip_list.length
                         } else
                             f.active = !1;
-                        var G = this.GetWndComponent("lb_MaxLevel", cc.Label, d);
-                        this.setVipLblColor(G.node, i),
-                            G.node.active = o >= t.show_vip_list.length;
+                        var M = this.GetWndComponent("lb_MaxLevel", cc.Label, d);
+                        this.setVipLblColor(M.node, i),
+                            M.node.active = o >= t.show_vip_list.length;
                         var T = o >= t.show_vip_list.length && this.getSelfVip(o) ? 0 : 1;
-                        G.string = app.i18n.t(c[T]);
+                        M.string = app.i18n.t(c[T]);
                         var R = this.GetWndNode("relegation", d);
                         if (this.getIsReceive(o)) {
                             R.active = !0,
                                 f.active = !1,
-                                G.node.active = !1,
+                                M.node.active = !1,
                                 this.setVipLblColor(this.GetWndNode("topup/label_topup", R), i),
                                 this.setVipLblColor(this.GetWndNode("label", R), i);
                             var N = this.GetWndNode("relegationPro", R);
@@ -55655,9 +56800,15 @@ window.__require = function e(t, n, o) {
                                     s.addChild(d)),
                                     d.active = null != p && "NaN" != p,
                                     d.active) {
-                                    var h = a[l];
-                                    this.GetWndNode("lb_tit", d).getComponent(cc.Label).string = app.i18n.t(h),
-                                        this.GetWndNode("lb_num", d).getComponent(cc.Label).string = p
+                                    var h = a[l]
+                                        , u = app.GameConfigManager().GetCurrency
+                                        , _ = this.GetWndNode("lb_tit", d).getComponent(cc.Label)
+                                        , m = app.ComTool().H5Platform() ? u ? 48 : 40 : _.fontSize;
+                                    _.string = app.i18n.t(h),
+                                        _.fontSize = m;
+                                    var f = this.GetWndNode("lb_num", d).getComponent(cc.Label);
+                                    f.fontSize = m,
+                                        f.string = p
                                 }
                             }
                             this.getVIPKeepView(e)
@@ -56050,7 +57201,11 @@ window.__require = function e(t, n, o) {
                 }
                 return __extends(t, e),
                     t.prototype.onLoad = function () {
-                        this.togHistory = cc.find("scrollview/view/content/toggleContainer/tog_history", this.node).getComponent(cc.Toggle)
+                        this.togHistory = cc.find("scrollview/view/content/toggleContainer/tog_history", this.node).getComponent(cc.Toggle);
+                        var e = cc.find("MyHistory", this.node);
+                        e && (e.active = !0),
+                            this.item.active = !1,
+                            this.Myitem.active = !1
                     }
                     ,
                     t.prototype.start = function () { }
@@ -56605,6 +57760,92 @@ window.__require = function e(t, n, o) {
                     }
                     ,
                     t.URL = "db://assets/resources/Hall/Prefab/TaskBonus/TaskBonusItem_V.prefab",
+                    __decorate([i], t)
+            }(o.default);
+        n.default = a,
+            cc._RF.pop()
+    }
+        , {
+        "../../../../Common/Base/AutoBaseComponent": "AutoBaseComponent"
+    }],
+    auto_UI18_H: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "50a78RR3NZNvIZVcCqDBLyg", "auto_UI18_H"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = e("../../../../Common/Base/AutoBaseComponent")
+            , i = cc._decorator.ccclass
+            , a = function (e) {
+                function t() {
+                    return null !== e && e.apply(this, arguments) || this
+                }
+                return __extends(t, e),
+                    t.prototype.onLoad = function () {
+                        this.UI18_H = this.node,
+                            this.btn_dd = this.GetWndNode("layer/birthday/dd/btn_dd"),
+                            this.lb_dd = this.GetWndComponent("layer/birthday/dd/btn_dd/lb_dd", cc.Label),
+                            this.btn_mm = this.GetWndNode("layer/birthday/mm/btn_mm"),
+                            this.lb_mm = this.GetWndComponent("layer/birthday/mm/btn_mm/lb_mm", cc.Label),
+                            this.btn_yy = this.GetWndNode("layer/birthday/yy/btn_yy"),
+                            this.lb_yy = this.GetWndComponent("layer/birthday/yy/btn_yy/lb_yy", cc.Label),
+                            this.btn_ok = this.GetWndNode("layer/btn_ok"),
+                            this.scrollview_date = this.GetWndNode("scrollview_date"),
+                            this.btn_close = this.GetWndNode("scrollview_date/btn_close")
+                    }
+                    ,
+                    t.prototype.AutoBindEvent = function (e) {
+                        this.AutoBindButtonEvent(e, this.btn_dd.getComponent(cc.Button), "OnClick_BtnWnd"),
+                            this.AutoBindButtonEvent(e, this.btn_mm.getComponent(cc.Button), "OnClick_BtnWnd"),
+                            this.AutoBindButtonEvent(e, this.btn_yy.getComponent(cc.Button), "OnClick_BtnWnd"),
+                            this.AutoBindButtonEvent(e, this.btn_ok.getComponent(cc.Button), "OnClick_BtnWnd"),
+                            this.AutoBindButtonEvent(e, this.btn_close.getComponent(cc.Button), "OnClick_BtnWnd")
+                    }
+                    ,
+                    t.URL = "db://assets/resources/Hall/Prefab/UI18_H.prefab",
+                    __decorate([i], t)
+            }(o.default);
+        n.default = a,
+            cc._RF.pop()
+    }
+        , {
+        "../../../../Common/Base/AutoBaseComponent": "AutoBaseComponent"
+    }],
+    auto_UI18: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "2f622mwQ+lMv4KmUiw3hxEG", "auto_UI18"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = e("../../../../Common/Base/AutoBaseComponent")
+            , i = cc._decorator.ccclass
+            , a = function (e) {
+                function t() {
+                    return null !== e && e.apply(this, arguments) || this
+                }
+                return __extends(t, e),
+                    t.prototype.onLoad = function () {
+                        this.UI18 = this.node,
+                            this.btn_dd = this.GetWndNode("layer/birthday/dd/btn_dd"),
+                            this.lb_dd = this.GetWndComponent("layer/birthday/dd/btn_dd/lb_dd", cc.Label),
+                            this.btn_mm = this.GetWndNode("layer/birthday/mm/btn_mm"),
+                            this.lb_mm = this.GetWndComponent("layer/birthday/mm/btn_mm/lb_mm", cc.Label),
+                            this.btn_yy = this.GetWndNode("layer/birthday/yy/btn_yy"),
+                            this.lb_yy = this.GetWndComponent("layer/birthday/yy/btn_yy/lb_yy", cc.Label),
+                            this.btn_ok = this.GetWndNode("layer/btn_ok"),
+                            this.scrollview_date = this.GetWndNode("scrollview_date"),
+                            this.btn_close = this.GetWndNode("scrollview_date/btn_close")
+                    }
+                    ,
+                    t.prototype.AutoBindEvent = function (e) {
+                        this.AutoBindButtonEvent(e, this.btn_dd.getComponent(cc.Button), "OnClick_BtnWnd"),
+                            this.AutoBindButtonEvent(e, this.btn_mm.getComponent(cc.Button), "OnClick_BtnWnd"),
+                            this.AutoBindButtonEvent(e, this.btn_yy.getComponent(cc.Button), "OnClick_BtnWnd"),
+                            this.AutoBindButtonEvent(e, this.btn_ok.getComponent(cc.Button), "OnClick_BtnWnd"),
+                            this.AutoBindButtonEvent(e, this.btn_close.getComponent(cc.Button), "OnClick_BtnWnd")
+                    }
+                    ,
+                    t.URL = "db://assets/resources/Hall/Prefab/UI18.prefab",
                     __decorate([i], t)
             }(o.default);
         n.default = a,
@@ -59244,6 +60485,41 @@ window.__require = function e(t, n, o) {
         , {
         "../../../../Common/Base/AutoBaseComponent": "AutoBaseComponent"
     }],
+    auto_UIWithdrawRemind: [function (e, t, n) {
+        "use strict";
+        cc._RF.push(t, "dda7c9WZDhF/YYd4/nomZ19", "auto_UIWithdrawRemind"),
+            Object.defineProperty(n, "__esModule", {
+                value: !0
+            });
+        var o = e("../../../../Common/Base/AutoBaseComponent")
+            , i = cc._decorator.ccclass
+            , a = function (e) {
+                function t() {
+                    return null !== e && e.apply(this, arguments) || this
+                }
+                return __extends(t, e),
+                    t.prototype.onLoad = function () {
+                        this.UIWithdrawRemind = this.node,
+                            this.node_remind = this.GetWndNode("node_remind"),
+                            this.btn_close = this.GetWndNode("node_remind/btn_close"),
+                            this.label_remind = this.GetWndComponent("node_remind/item/label_remind", cc.Label),
+                            this.btn_go = this.GetWndNode("node_remind/item/btn_go")
+                    }
+                    ,
+                    t.prototype.AutoBindEvent = function (e) {
+                        this.AutoBindButtonEvent(e, this.btn_close.getComponent(cc.Button), "OnClick_BtnWnd"),
+                            this.AutoBindButtonEvent(e, this.btn_go.getComponent(cc.Button), "OnClick_BtnWnd")
+                    }
+                    ,
+                    t.URL = "db://assets/resources/Hall/Prefab/Deposit_Withdraw/UIWithdrawRemind.prefab",
+                    __decorate([i], t)
+            }(o.default);
+        n.default = a,
+            cc._RF.pop()
+    }
+        , {
+        "../../../../Common/Base/AutoBaseComponent": "AutoBaseComponent"
+    }],
     auto_UIWithdraw_2_H: [function (e, t, n) {
         "use strict";
         cc._RF.push(t, "9bb114n2ZpP3YcObt9W1BLH", "auto_UIWithdraw_2_H"),
@@ -59453,7 +60729,7 @@ window.__require = function e(t, n, o) {
                     return e
                 }
                 (n = function e(t) {
-                    var n, C, I, E, b, S, M, G, T, R = W.prototype = {
+                    var n, C, I, E, b, S, G, M, T, R = W.prototype = {
                         constructor: W,
                         toString: null,
                         valueOf: null
@@ -59945,7 +61221,7 @@ window.__require = function e(t, n, o) {
                                     ;
                             }
                             return function (o, i, r, s, p) {
-                                var d, h, _, m, f, g, y, v, C, I, E, b, S, M, G, T, R, N = o.s == i.s ? 1 : -1, D = o.c, O = i.c;
+                                var d, h, _, m, f, g, y, v, C, I, E, b, S, G, M, T, R, N = o.s == i.s ? 1 : -1, D = o.c, O = i.c;
                                 if (!(D && D[0] && O && O[0]))
                                     return new W(o.s && i.s && (D ? !O || D[0] != O[0] : O) ? D && 0 == D[0] || !O ? 0 * N : N / 0 : NaN);
                                 for (C = (v = new W(N)).c = [],
@@ -59960,27 +61236,27 @@ window.__require = function e(t, n, o) {
                                     C.push(1),
                                         m = !0;
                                 else {
-                                    for (M = D.length,
+                                    for (G = D.length,
                                         T = O.length,
                                         _ = 0,
                                         N += 2,
                                         (f = a(p / (O[0] + 1))) > 1 && (O = e(O, f, p),
                                             D = e(D, f, p),
                                             T = O.length,
-                                            M = D.length),
+                                            G = D.length),
                                         S = T,
                                         E = (I = D.slice(0, T)).length; E < T; I[E++] = 0)
                                         ;
                                     R = O.slice(),
                                         R = [0].concat(R),
-                                        G = O[0],
-                                        O[1] >= p / 2 && G++;
+                                        M = O[0],
+                                        O[1] >= p / 2 && M++;
                                     do {
                                         if (f = 0,
                                             (d = t(O, I, T, E)) < 0) {
                                             if (b = I[0],
                                                 T != E && (b = b * p + (I[1] || 0)),
-                                                (f = a(b / G)) > 1)
+                                                (f = a(b / M)) > 1)
                                                 for (f >= p && (f = p - 1),
                                                     y = (g = e(O, f, p)).length,
                                                     E = I.length; 1 == t(g, I, y, E);)
@@ -60005,7 +61281,7 @@ window.__require = function e(t, n, o) {
                                         C[_++] = f,
                                             I[0] ? I[E++] = D[S] || 0 : (I = [D[S]],
                                                 E = 1)
-                                    } while ((S++ < M || null != I[0]) && N--);
+                                    } while ((S++ < G || null != I[0]) && N--);
                                     m = null != I[0],
                                         C[0] || C.splice(0, 1)
                                 }
@@ -60023,12 +61299,12 @@ window.__require = function e(t, n, o) {
                         }(),
                         b = /^(-?)0([xbo])(?=\w[\w.]*$)/i,
                         S = /^([^.]+)\.$/,
-                        M = /^\.([^.]+)$/,
-                        G = /^-?(Infinity|NaN)$/,
+                        G = /^\.([^.]+)$/,
+                        M = /^-?(Infinity|NaN)$/,
                         T = /^\s*\+(?=[\w.])|^\s+|\s+$/g,
                         I = function (e, t, n, o) {
                             var i, a = n ? t : t.replace(T, "");
-                            if (G.test(a))
+                            if (M.test(a))
                                 e.s = isNaN(a) ? null : a < 0 ? -1 : 1;
                             else {
                                 if (!n && (a = a.replace(b, function (e, t, n) {
@@ -60036,7 +61312,7 @@ window.__require = function e(t, n, o) {
                                         o && o != i ? e : t
                                 }),
                                     o && (i = o,
-                                        a = a.replace(S, "$1").replace(M, "0.$1")),
+                                        a = a.replace(S, "$1").replace(G, "0.$1")),
                                     t != a))
                                     return new W(a, i);
                                 if (W.DEBUG)
@@ -60929,48 +62205,7 @@ window.__require = function e(t, n, o) {
     game_build: [function (e, t) {
         "use strict";
         cc._RF.push(t, "8cd83P6uTJC2p//zMuJuQxa", "game_build"),
-            t.exports = {
-                "777slot": 1,
-                "777_slot2": 1,
-                LuckyRoller: 1,
-                LuckyRoller2: 1,
-                MINES: 1,
-                Game620: 1,
-                Baccarat: 1,
-                toubao: 1,
-                car: 1,
-                DragonTiger: 1,
-                honghei: 1,
-                lunpan: 1,
-                baodian: 1,
-                crash2: 1,
-                Roulette: 1,
-                Game210: 1,
-                Game30: 1,
-                Game910: 1,
-                Game900: 1,
-                GameTP: 1,
-                Dice: 1,
-                Game650: 1,
-                Game700: 1,
-                Game760: 1,
-                Game850: 1,
-                Game730: 1,
-                Game750: 1,
-                Game840: 1,
-                Game860: 1,
-                Game890: 1,
-                Game920: 1,
-                Game970: 1,
-                Game1050: 1,
-                Slot1: 1,
-                Game1080: 1,
-                Helo: 1,
-                Game1241: 1,
-                Game1260: 1,
-                Dice2: 1,
-                Game1270: 1
-            },
+            t.exports = {},
             cc._RF.pop()
     }
         , {}],
@@ -61347,7 +62582,7 @@ window.__require = function e(t, n, o) {
     }],
     global_config: [function (e, t) {
         "use strict";
-        cc._RF.push(t, "7e869I34wFLJ4zygsrqeRMt", "global_config");
+        cc._RF.push(t, "240e3gJ9LxLhr/dvFKwYQLF", "global_config");
         var n = {
             hosts: ["api.bbh5sdffi01.com", "api.bbh5adfinn02.com", "api.bbh5ifnnau03.com"],
             scheme: "https"
@@ -61355,7 +62590,7 @@ window.__require = function e(t, n, o) {
         n.webapi_url = n.scheme + "://" + n.hosts[0],
             n.mainVer = 1,
             n.subVer = 1,
-            n.buildVer = "1117-280",
+            n.buildVer = "1220-281",
             n.oem = "BRABET",
             n.appName = "BRABET",
             n.packageName = "",
@@ -61367,6 +62602,8 @@ window.__require = function e(t, n, o) {
             n.GAID = "G-M36ZXGX5X0",
             n.OpenActivity = !1,
             n.descriptionStr = "Convide amigos e compartilhe o b\xf4nus de 100 milh\xf5es.",
+            n.OpenActivity = !0,
+            n.LoadingID = 1,
             n.footer = 'Powered by <a target="_blank" href="" title="Brabet">Brabet',
             n.GoogleClientID = "1028031628248-hh629s30taao79a8f65v5nptk9624afk.apps.googleusercontent.com",
             n.FacebookAppID = "1691987294470305",
@@ -63238,7 +64475,7 @@ window.__require = function e(t, n, o) {
                                         0 === t.pending && (t.pending_out = 0))
                             }
                             function s(e, t) {
-                                M._tr_flush_block(e, e.block_start >= 0 ? e.block_start : -1, e.strstart - e.block_start, t),
+                                G._tr_flush_block(e, e.block_start >= 0 ? e.block_start : -1, e.strstart - e.block_start, t),
                                     e.block_start = e.strstart,
                                     r(e.strm)
                             }
@@ -63254,7 +64491,7 @@ window.__require = function e(t, n, o) {
                                 return i > o && (i = o),
                                     0 === i ? 0 : (e.avail_in -= i,
                                         S.arraySet(t, e.input, e.next_in, i, n),
-                                        1 === e.state.wrap ? e.adler = G(e.adler, t, i, n) : 2 === e.state.wrap && (e.adler = T(e.adler, t, i, n)),
+                                        1 === e.state.wrap ? e.adler = M(e.adler, t, i, n) : 2 === e.state.wrap && (e.adler = T(e.adler, t, i, n)),
                                         e.next_in += i,
                                         e.total_in += i,
                                         i)
@@ -63334,7 +64571,7 @@ window.__require = function e(t, n, o) {
                                             e.head[e.ins_h] = e.strstart),
                                         0 !== n && e.strstart - n <= e.w_size - q && (e.match_length = d(e, n)),
                                         e.match_length >= j)
-                                        if (o = M._tr_tally(e, e.strstart - e.match_start, e.match_length - j),
+                                        if (o = G._tr_tally(e, e.strstart - e.match_start, e.match_length - j),
                                             e.lookahead -= e.match_length,
                                             e.match_length <= e.max_lazy_match && e.lookahead >= j) {
                                             e.match_length--;
@@ -63351,7 +64588,7 @@ window.__require = function e(t, n, o) {
                                                 e.ins_h = e.window[e.strstart],
                                                 e.ins_h = (e.ins_h << e.hash_shift ^ e.window[e.strstart + 1]) & e.hash_mask;
                                     else
-                                        o = M._tr_tally(e, 0, e.window[e.strstart]),
+                                        o = G._tr_tally(e, 0, e.window[e.strstart]),
                                             e.lookahead--,
                                             e.strstart++;
                                     if (o && (s(e, !1),
@@ -63383,7 +64620,7 @@ window.__require = function e(t, n, o) {
                                             e.match_length <= 5 && (e.strategy === B || e.match_length === j && e.strstart - e.match_start > 4096) && (e.match_length = j - 1)),
                                         e.prev_length >= j && e.match_length <= e.prev_length) {
                                         i = e.strstart + e.lookahead - j,
-                                            o = M._tr_tally(e, e.strstart - 1 - e.prev_match, e.prev_length - j),
+                                            o = G._tr_tally(e, e.strstart - 1 - e.prev_match, e.prev_length - j),
                                             e.lookahead -= e.prev_length - 1,
                                             e.prev_length -= 2;
                                         do {
@@ -63398,7 +64635,7 @@ window.__require = function e(t, n, o) {
                                                 0 === e.strm.avail_out))
                                             return K
                                     } else if (e.match_available) {
-                                        if ((o = M._tr_tally(e, 0, e.window[e.strstart - 1])) && s(e, !1),
+                                        if ((o = G._tr_tally(e, 0, e.window[e.strstart - 1])) && s(e, !1),
                                             e.strstart++,
                                             e.lookahead--,
                                             0 === e.strm.avail_out)
@@ -63408,7 +64645,7 @@ window.__require = function e(t, n, o) {
                                             e.strstart++,
                                             e.lookahead--
                                 }
-                                return e.match_available && (o = M._tr_tally(e, 0, e.window[e.strstart - 1]),
+                                return e.match_available && (o = G._tr_tally(e, 0, e.window[e.strstart - 1]),
                                     e.match_available = 0),
                                     e.insert = e.strstart < j - 1 ? e.strstart : j - 1,
                                     t === D ? (s(e, !0),
@@ -63431,10 +64668,10 @@ window.__require = function e(t, n, o) {
                                         e.match_length = J - (a - i),
                                             e.match_length > e.lookahead && (e.match_length = e.lookahead)
                                     }
-                                    if (e.match_length >= j ? (n = M._tr_tally(e, 1, e.match_length - j),
+                                    if (e.match_length >= j ? (n = G._tr_tally(e, 1, e.match_length - j),
                                         e.lookahead -= e.match_length,
                                         e.strstart += e.match_length,
-                                        e.match_length = 0) : (n = M._tr_tally(e, 0, e.window[e.strstart]),
+                                        e.match_length = 0) : (n = G._tr_tally(e, 0, e.window[e.strstart]),
                                             e.lookahead--,
                                             e.strstart++),
                                         n && (s(e, !1),
@@ -63455,7 +64692,7 @@ window.__require = function e(t, n, o) {
                                         break
                                     }
                                     if (e.match_length = 0,
-                                        n = M._tr_tally(e, 0, e.window[e.strstart]),
+                                        n = G._tr_tally(e, 0, e.window[e.strstart]),
                                         e.lookahead--,
                                         e.strstart++,
                                         n && (s(e, !1),
@@ -63564,7 +64801,7 @@ window.__require = function e(t, n, o) {
                                     t.status = t.wrap ? Y : z,
                                     e.adler = 2 === t.wrap ? 0 : 1,
                                     t.last_flush = N,
-                                    M._tr_init(t),
+                                    G._tr_init(t),
                                     O) : o(e, L)
                             }
                             function I(e) {
@@ -63608,7 +64845,7 @@ window.__require = function e(t, n, o) {
                                     c.method = n,
                                     I(e)
                             }
-                            var b, S = e("../utils/common"), M = e("./trees"), G = e("./adler32"), T = e("./crc32"), R = e("./messages"), N = 0, D = 4, O = 0, L = -2, A = -1, B = 1, U = 4, w = 2, P = 8, k = 9, F = 286, x = 30, H = 19, W = 2 * F + 1, V = 15, j = 3, J = 258, q = J + j + 1, Y = 42, z = 113, K = 1, X = 2, Z = 3, Q = 4;
+                            var b, S = e("../utils/common"), G = e("./trees"), M = e("./adler32"), T = e("./crc32"), R = e("./messages"), N = 0, D = 4, O = 0, L = -2, A = -1, B = 1, U = 4, w = 2, P = 8, k = 9, F = 286, x = 30, H = 19, W = 2 * F + 1, V = 15, j = 3, J = 258, q = J + j + 1, Y = 42, z = 113, K = 1, X = 2, Z = 3, Q = 4;
                             b = [new g(0, 0, 0, 0, function (e, t) {
                                 var n = 65535;
                                 for (n > e.pending_buf_size - 5 && (n = e.pending_buf_size - 5); ;) {
@@ -63766,7 +65003,7 @@ window.__require = function e(t, n, o) {
                                             u === K || u === Z)
                                             return 0 === e.avail_out && (s.last_flush = -1),
                                                 O;
-                                        if (u === X && (1 === t ? M._tr_align(s) : 5 !== t && (M._tr_stored_block(s, 0, 0, !1),
+                                        if (u === X && (1 === t ? G._tr_align(s) : 5 !== t && (G._tr_stored_block(s, 0, 0, !1),
                                             3 === t && (a(s.head),
                                                 0 === s.lookahead && (s.strstart = 0,
                                                     s.block_start = 0,
@@ -63802,7 +65039,7 @@ window.__require = function e(t, n, o) {
                                         return L;
                                     if (2 === (r = (n = e.state).wrap) || 1 === r && n.status !== Y || n.lookahead)
                                         return L;
-                                    for (1 === r && (e.adler = G(e.adler, t, d, 0)),
+                                    for (1 === r && (e.adler = M(e.adler, t, d, 0)),
                                         n.wrap = 0,
                                         d >= n.w_size && (0 === r && (a(n.head),
                                             n.strstart = 0,
@@ -64139,7 +65376,7 @@ window.__require = function e(t, n, o) {
                                 return e.opt_len += 14 + 3 * (t + 1),
                                     t
                             }
-                            function M(e, t, n, o) {
+                            function G(e, t, n, o) {
                                 var i;
                                 for (c(e, t - 257, 5),
                                     c(e, n - 1, 5),
@@ -64149,7 +65386,7 @@ window.__require = function e(t, n, o) {
                                 b(e, e.dyn_ltree, t - 1),
                                     b(e, e.dyn_dtree, n - 1)
                             }
-                            function G(e) {
+                            function M(e) {
                                 var t, n = 4093624447;
                                 for (t = 0; t <= 31; t++,
                                     n >>>= 1)
@@ -64214,7 +65451,7 @@ window.__require = function e(t, n, o) {
                                 n._tr_stored_block = T,
                                 n._tr_flush_block = function (e, t, n, o) {
                                     var i, a, r = 0;
-                                    e.level > 0 ? (2 === e.strm.data_type && (e.strm.data_type = G(e)),
+                                    e.level > 0 ? (2 === e.strm.data_type && (e.strm.data_type = M(e)),
                                         I(e, e.l_desc),
                                         I(e, e.d_desc),
                                         r = S(e),
@@ -64222,7 +65459,7 @@ window.__require = function e(t, n, o) {
                                         (a = e.static_len + 3 + 7 >>> 3) <= i && (i = a)) : i = a = n + 5,
                                         n + 4 <= i && -1 !== t ? T(e, t, n, o) : 4 === e.strategy || a === i ? (c(e, 2 + (o ? 1 : 0), 3),
                                             C(e, K, X)) : (c(e, 4 + (o ? 1 : 0), 3),
-                                                M(e, e.l_desc.max_code + 1, e.d_desc.max_code + 1, r + 1),
+                                                G(e, e.l_desc.max_code + 1, e.d_desc.max_code + 1, r + 1),
                                                 C(e, e.dyn_ltree, e.dyn_dtree)),
                                         m(e),
                                         o && f(e)
@@ -64650,13 +65887,13 @@ window.__require = function e(t, n, o) {
                             , {}],
                         7: [function (e, t) {
                             t.exports = function (e, t) {
-                                var n, o, i, a, r, s, c, l, p, d, h, u, _, m, f, g, y, v, C, I, E, b, S, M, G;
+                                var n, o, i, a, r, s, c, l, p, d, h, u, _, m, f, g, y, v, C, I, E, b, S, G, M;
                                 n = e.state,
                                     o = e.next_in,
-                                    M = e.input,
+                                    G = e.input,
                                     i = o + (e.avail_in - 5),
                                     a = e.next_out,
-                                    G = e.output,
+                                    M = e.output,
                                     r = a - (t - e.avail_out),
                                     s = a + (e.avail_out - 257),
                                     c = n.dmax,
@@ -64671,16 +65908,16 @@ window.__require = function e(t, n, o) {
                                     g = (1 << n.lenbits) - 1,
                                     y = (1 << n.distbits) - 1;
                                 e: do {
-                                    _ < 15 && (u += M[o++] << _,
+                                    _ < 15 && (u += G[o++] << _,
                                         _ += 8,
-                                        u += M[o++] << _,
+                                        u += G[o++] << _,
                                         _ += 8),
                                         v = m[u & g];
                                     t: for (; ;) {
                                         if (u >>>= C = v >>> 24,
                                             _ -= C,
                                             0 == (C = v >>> 16 & 255))
-                                            G[a++] = 65535 & v;
+                                            M[a++] = 65535 & v;
                                         else {
                                             if (!(16 & C)) {
                                                 if (0 == (64 & C)) {
@@ -64696,14 +65933,14 @@ window.__require = function e(t, n, o) {
                                                 break e
                                             }
                                             I = 65535 & v,
-                                                (C &= 15) && (_ < C && (u += M[o++] << _,
+                                                (C &= 15) && (_ < C && (u += G[o++] << _,
                                                     _ += 8),
                                                     I += u & (1 << C) - 1,
                                                     u >>>= C,
                                                     _ -= C),
-                                                _ < 15 && (u += M[o++] << _,
+                                                _ < 15 && (u += G[o++] << _,
                                                     _ += 8,
-                                                    u += M[o++] << _,
+                                                    u += G[o++] << _,
                                                     _ += 8),
                                                 v = f[u & y];
                                             n: for (; ;) {
@@ -64719,8 +65956,8 @@ window.__require = function e(t, n, o) {
                                                     break e
                                                 }
                                                 if (E = 65535 & v,
-                                                    _ < (C &= 15) && (u += M[o++] << _,
-                                                        (_ += 8) < C && (u += M[o++] << _,
+                                                    _ < (C &= 15) && (u += G[o++] << _,
+                                                        (_ += 8) < C && (u += G[o++] << _,
                                                             _ += 8)),
                                                     (E += u & (1 << C) - 1) > c) {
                                                     e.msg = "invalid distance too far back",
@@ -64742,54 +65979,54 @@ window.__require = function e(t, n, o) {
                                                             C < I) {
                                                             I -= C;
                                                             do {
-                                                                G[a++] = h[b++]
+                                                                M[a++] = h[b++]
                                                             } while (--C);
                                                             b = a - E,
-                                                                S = G
+                                                                S = M
                                                         }
                                                     } else if (d < C) {
                                                         if (b += l + d - C,
                                                             (C -= d) < I) {
                                                             I -= C;
                                                             do {
-                                                                G[a++] = h[b++]
+                                                                M[a++] = h[b++]
                                                             } while (--C);
                                                             if (b = 0,
                                                                 d < I) {
                                                                 I -= C = d;
                                                                 do {
-                                                                    G[a++] = h[b++]
+                                                                    M[a++] = h[b++]
                                                                 } while (--C);
                                                                 b = a - E,
-                                                                    S = G
+                                                                    S = M
                                                             }
                                                         }
                                                     } else if (b += d - C,
                                                         C < I) {
                                                         I -= C;
                                                         do {
-                                                            G[a++] = h[b++]
+                                                            M[a++] = h[b++]
                                                         } while (--C);
                                                         b = a - E,
-                                                            S = G
+                                                            S = M
                                                     }
                                                     for (; I > 2;)
-                                                        G[a++] = S[b++],
-                                                            G[a++] = S[b++],
-                                                            G[a++] = S[b++],
+                                                        M[a++] = S[b++],
+                                                            M[a++] = S[b++],
+                                                            M[a++] = S[b++],
                                                             I -= 3;
-                                                    I && (G[a++] = S[b++],
-                                                        I > 1 && (G[a++] = S[b++]))
+                                                    I && (M[a++] = S[b++],
+                                                        I > 1 && (M[a++] = S[b++]))
                                                 } else {
                                                     b = a - E;
                                                     do {
-                                                        G[a++] = G[b++],
-                                                            G[a++] = G[b++],
-                                                            G[a++] = G[b++],
+                                                        M[a++] = M[b++],
+                                                            M[a++] = M[b++],
+                                                            M[a++] = M[b++],
                                                             I -= 3
                                                     } while (I > 2);
-                                                    I && (G[a++] = G[b++],
-                                                        I > 1 && (G[a++] = G[b++]))
+                                                    I && (M[a++] = M[b++],
+                                                        I > 1 && (M[a++] = M[b++]))
                                                 }
                                                 break
                                             }
@@ -64863,7 +66100,7 @@ window.__require = function e(t, n, o) {
                                     t.hold = 0,
                                     t.bits = 0,
                                     t.lencode = t.lendyn = new u.Buf32(S),
-                                    t.distcode = t.distdyn = new u.Buf32(M),
+                                    t.distcode = t.distdyn = new u.Buf32(G),
                                     t.sane = 1,
                                     t.back = -1,
                                     C) : I
@@ -64895,7 +66132,7 @@ window.__require = function e(t, n, o) {
                                     n) : I
                             }
                             function l(e) {
-                                if (G) {
+                                if (M) {
                                     var t;
                                     for (d = new u.Buf32(512),
                                         h = new u.Buf32(32),
@@ -64915,7 +66152,7 @@ window.__require = function e(t, n, o) {
                                     g(v, e.lens, 0, 32, h, 0, e.work, {
                                         bits: 5
                                     }),
-                                        G = !1
+                                        M = !1
                                 }
                                 e.lencode = d,
                                     e.lenbits = 9,
@@ -64939,7 +66176,7 @@ window.__require = function e(t, n, o) {
                                                     a.whave < a.wsize && (a.whave += i))),
                                     0
                             }
-                            var d, h, u = e("../utils/common"), _ = e("./adler32"), m = e("./crc32"), f = e("./inffast"), g = e("./inftrees"), y = 1, v = 2, C = 0, I = -2, E = 1, b = 12, S = 852, M = 592, G = !0;
+                            var d, h, u = e("../utils/common"), _ = e("./adler32"), m = e("./crc32"), f = e("./inffast"), g = e("./inftrees"), y = 1, v = 2, C = 0, I = -2, E = 1, b = 12, S = 852, G = 592, M = !0;
                             n.inflateReset = r,
                                 n.inflateReset2 = s,
                                 n.inflateResetKeep = a,
@@ -64949,7 +66186,7 @@ window.__require = function e(t, n, o) {
                                 ,
                                 n.inflateInit2 = c,
                                 n.inflate = function (e, t) {
-                                    var n, i, a, r, s, c, d, h, S, M, G, T, R, N, D, O, L, A, B, U, w, P, k, F, x = 0, H = new u.Buf8(4), W = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15];
+                                    var n, i, a, r, s, c, d, h, S, G, M, T, R, N, D, O, L, A, B, U, w, P, k, F, x = 0, H = new u.Buf8(4), W = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15];
                                     if (!e || !e.state || !e.output || !e.input && 0 !== e.avail_in)
                                         return I;
                                     (n = e.state).mode === b && (n.mode = 13),
@@ -64961,8 +66198,8 @@ window.__require = function e(t, n, o) {
                                         c = e.avail_in,
                                         h = n.hold,
                                         S = n.bits,
-                                        M = c,
-                                        G = d,
+                                        G = c,
+                                        M = d,
                                         P = C;
                                     e: for (; ;)
                                         switch (n.mode) {
@@ -65433,7 +66670,7 @@ window.__require = function e(t, n, o) {
                                                         e.avail_in = c,
                                                         n.hold = h,
                                                         n.bits = S,
-                                                        f(e, G),
+                                                        f(e, M),
                                                         s = e.next_out,
                                                         a = e.output,
                                                         d = e.avail_out,
@@ -65566,7 +66803,7 @@ window.__require = function e(t, n, o) {
                                             case 25:
                                                 if (0 === d)
                                                     break e;
-                                                if (T = G - d,
+                                                if (T = M - d,
                                                     n.offset > T) {
                                                     if ((T = n.offset - T) > n.whave && n.sane) {
                                                         e.msg = "invalid distance too far back",
@@ -65605,11 +66842,11 @@ window.__require = function e(t, n, o) {
                                                             h |= i[r++] << S,
                                                             S += 8
                                                     }
-                                                    if (G -= d,
-                                                        e.total_out += G,
-                                                        n.total += G,
-                                                        G && (e.adler = n.check = n.flags ? m(n.check, a, G, s - G) : _(n.check, a, G, s - G)),
-                                                        G = d,
+                                                    if (M -= d,
+                                                        e.total_out += M,
+                                                        n.total += M,
+                                                        M && (e.adler = n.check = n.flags ? m(n.check, a, M, s - M) : _(n.check, a, M, s - M)),
+                                                        M = d,
                                                         (n.flags ? h : o(h)) !== n.check) {
                                                         e.msg = "incorrect data check",
                                                             n.mode = 30;
@@ -65655,15 +66892,15 @@ window.__require = function e(t, n, o) {
                                         e.avail_in = c,
                                         n.hold = h,
                                         n.bits = S,
-                                        (n.wsize || G !== e.avail_out && n.mode < 30 && (n.mode < 27 || 4 !== t)) && p(e, e.output, e.next_out, G - e.avail_out) ? (n.mode = 31,
-                                            -4) : (M -= e.avail_in,
-                                                G -= e.avail_out,
-                                                e.total_in += M,
-                                                e.total_out += G,
-                                                n.total += G,
-                                                n.wrap && G && (e.adler = n.check = n.flags ? m(n.check, a, G, e.next_out - G) : _(n.check, a, G, e.next_out - G)),
+                                        (n.wsize || M !== e.avail_out && n.mode < 30 && (n.mode < 27 || 4 !== t)) && p(e, e.output, e.next_out, M - e.avail_out) ? (n.mode = 31,
+                                            -4) : (G -= e.avail_in,
+                                                M -= e.avail_out,
+                                                e.total_in += G,
+                                                e.total_out += M,
+                                                n.total += M,
+                                                n.wrap && M && (e.adler = n.check = n.flags ? m(n.check, a, M, e.next_out - M) : _(n.check, a, M, e.next_out - M)),
                                                 e.data_type = n.bits + (n.last ? 64 : 0) + (n.mode === b ? 128 : 0) + (20 === n.mode || 15 === n.mode ? 256 : 0),
-                                                (0 === M && 0 === G || 4 === t) && P === C && (P = -5),
+                                                (0 === G && 0 === M || 4 === t) && P === C && (P = -5),
                                                 P)
                                 }
                                 ,
@@ -65706,29 +66943,29 @@ window.__require = function e(t, n, o) {
                                 , a = [1, 2, 3, 4, 5, 7, 9, 13, 17, 25, 33, 49, 65, 97, 129, 193, 257, 385, 513, 769, 1025, 1537, 2049, 3073, 4097, 6145, 8193, 12289, 16385, 24577, 0, 0]
                                 , r = [16, 16, 16, 16, 17, 17, 18, 18, 19, 19, 20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 26, 26, 27, 27, 28, 28, 29, 29, 64, 64];
                             t.exports = function (e, t, s, c, l, p, d, h) {
-                                var u, _, m, f, g, y, v, C, I, E = h.bits, b = 0, S = 0, M = 0, G = 0, T = 0, R = 0, N = 0, D = 0, O = 0, L = 0, A = null, B = 0, U = new n.Buf16(16), w = new n.Buf16(16), P = null, k = 0;
+                                var u, _, m, f, g, y, v, C, I, E = h.bits, b = 0, S = 0, G = 0, M = 0, T = 0, R = 0, N = 0, D = 0, O = 0, L = 0, A = null, B = 0, U = new n.Buf16(16), w = new n.Buf16(16), P = null, k = 0;
                                 for (b = 0; b <= 15; b++)
                                     U[b] = 0;
                                 for (S = 0; S < c; S++)
                                     U[t[s + S]]++;
                                 for (T = E,
-                                    G = 15; G >= 1 && 0 === U[G]; G--)
+                                    M = 15; M >= 1 && 0 === U[M]; M--)
                                     ;
-                                if (T > G && (T = G),
-                                    0 === G)
+                                if (T > M && (T = M),
+                                    0 === M)
                                     return l[p++] = 20971520,
                                         l[p++] = 20971520,
                                         h.bits = 1,
                                         0;
-                                for (M = 1; M < G && 0 === U[M]; M++)
+                                for (G = 1; G < M && 0 === U[G]; G++)
                                     ;
-                                for (T < M && (T = M),
+                                for (T < G && (T = G),
                                     D = 1,
                                     b = 1; b <= 15; b++)
                                     if (D <<= 1,
                                         (D -= U[b]) < 0)
                                         return -1;
-                                if (D > 0 && (0 === e || 1 !== G))
+                                if (D > 0 && (0 === e || 1 !== M))
                                     return -1;
                                 for (w[1] = 0,
                                     b = 1; b < 15; b++)
@@ -65745,7 +66982,7 @@ window.__require = function e(t, n, o) {
                                             y = -1),
                                     L = 0,
                                     S = 0,
-                                    b = M,
+                                    b = G,
                                     g = p,
                                     R = T,
                                     N = 0,
@@ -65760,7 +66997,7 @@ window.__require = function e(t, n, o) {
                                                 I = A[B + d[S]]) : (C = 96,
                                                     I = 0),
                                         u = 1 << b - N,
-                                        M = _ = 1 << R;
+                                        G = _ = 1 << R;
                                     do {
                                         l[g + (L >> N) + (_ -= u)] = v << 24 | C << 16 | I | 0
                                     } while (0 !== _);
@@ -65770,14 +67007,14 @@ window.__require = function e(t, n, o) {
                                         L += u) : L = 0,
                                         S++,
                                         0 == --U[b]) {
-                                        if (b === G)
+                                        if (b === M)
                                             break;
                                         b = t[s + d[S]]
                                     }
                                     if (b > T && (L & f) !== m) {
                                         for (0 === N && (N = T),
-                                            g += M,
-                                            D = 1 << (R = b - N); R + N < G && !((D -= U[R + N]) <= 0);)
+                                            g += G,
+                                            D = 1 << (R = b - N); R + N < M && !((D -= U[R + N]) <= 0);)
                                             R++,
                                                 D <<= 1;
                                         if (O += 1 << R,
@@ -66566,6 +67803,7 @@ window.__require = function e(t, n, o) {
                 ROOM_MODE_BAO_DIAN: 28e4,
                 ROOM_MODE_EXP_BAO_DIAN: 281e3,
                 ROOM_MODE_CRASH2: 282e3,
+                ROOM_MODE_CRASH3: 284e3,
                 ROOM_MODE_SHZ: 999999,
                 ROOM_MODE_LROLLER: 1400,
                 ROOM_MODE_Roulette: 3e5,
@@ -66615,7 +67853,7 @@ window.__require = function e(t, n, o) {
                 TBNN: "game_jdnn",
                 QZNN: "game_qznn",
                 LHDZ: "game_lhdz",
-                HHDZ: "game50Form",
+                HHDZ: "game_50",
                 BCBM: "game_car",
                 SHZ: "game_shz",
                 DDZ: "game_ddz",
@@ -66729,7 +67967,7 @@ window.__require = function e(t, n, o) {
                 }
                 ,
                 e.isCrash = function (e) {
-                    return e == n.RoomMode.ROOM_MODE_BAO_DIAN || e == n.RoomMode.ROOM_MODE_CRASH2
+                    return e == n.RoomMode.ROOM_MODE_BAO_DIAN || e == n.RoomMode.ROOM_MODE_CRASH2 || e == n.RoomMode.ROOM_MODE_CRASH3
                 }
                 ,
                 Object.defineProperty(e, "isDouble", {
@@ -68263,17 +69501,17 @@ window.__require = function e(t, n, o) {
                 for (var b = -1, S = 0; S < i.length; S++)
                     i[S] > 4 && (b = S);
                 if (b > -1) {
-                    for (var M = [2 + 16 * b, 3 + 16 * b, 4 + 16 * b, 5 + 16 * b, 14 + 16 * b], G = 0, T = 0; T < t[2].length; T++)
-                        t[2][T] == 2 + 16 * b && (G += 1);
+                    for (var G = [2 + 16 * b, 3 + 16 * b, 4 + 16 * b, 5 + 16 * b, 14 + 16 * b], M = 0, T = 0; T < t[2].length; T++)
+                        t[2][T] == 2 + 16 * b && (M += 1);
                     for (var R = 0; R < t[3].length; R++)
-                        t[3][R] == 3 + 16 * b && (G += 1);
+                        t[3][R] == 3 + 16 * b && (M += 1);
                     for (var N = 0; N < t[4].length; N++)
-                        t[4][N] == 4 + 16 * b && (G += 1);
+                        t[4][N] == 4 + 16 * b && (M += 1);
                     for (var D = 0; D < t[5].length; D++)
-                        t[5][D] == 5 + 16 * b && (G += 1);
+                        t[5][D] == 5 + 16 * b && (M += 1);
                     for (var O = 0; O < t[14].length; O++)
-                        t[14][O] == 14 + 16 * b && (G += 1);
-                    if (5 == G) {
+                        t[14][O] == 14 + 16 * b && (M += 1);
+                    if (5 == M) {
                         var L = {
                             desc: "",
                             priority: 0,
@@ -68281,7 +69519,7 @@ window.__require = function e(t, n, o) {
                         };
                         return L.desc = app.i18n.t("DZPK_PRIORITY_SERIAL_SAME"),
                             L.priority = 8,
-                            L.card = M,
+                            L.card = G,
                             L
                     }
                 }
@@ -68491,7 +69729,8 @@ window.__require = function e(t, n, o) {
                 }
                 return __extends(t, e),
                     t.prototype.OnLoadInit = function () {
-                        this.gearAngle = 360 / this.gearNum,
+                        this.RegEvent(i.GameEventDefine.GET_WheelInfo, this.OnGetWheelInfo),
+                            this.gearAngle = 360 / this.gearNum,
                             this.PlayResultName = app.ComTool().H5Platform() ? "result_V" : "result_H"
                     }
                     ,
@@ -68503,6 +69742,12 @@ window.__require = function e(t, n, o) {
                             this.wheelSp.angle = 0
                     }
                     ,
+                    t.prototype.OnGetWheelInfo = function () {
+                        var e = app.WheelManager().GetWheelInfo;
+                        e && e.wheel_config.length > 0 && (this.gearAngle = 360 / e.wheel_config.length,
+                            this.Log("update  gearAngle ", e.wheel_config.length, this.gearAngle))
+                    }
+                    ,
                     t.prototype.SetTargetIDAngle = function (e) {
                         this.Log(e),
                             0 === this.wheelState && (this.wheelState = 1,
@@ -68510,7 +69755,7 @@ window.__require = function e(t, n, o) {
                                 this.curSpeed = 0,
                                 this.spinTime = 0,
                                 this.OnSpinNodeShow(!0),
-                                this.finalAngle = (e - 1) * this.gearAngle,
+                                this.finalAngle = e * this.gearAngle,
                                 this.springBack && (this.finalAngle -= this.gearAngle))
                     }
                     ,
@@ -68690,4 +69935,4 @@ window.__require = function e(t, n, o) {
             cc._RF.pop()
     }
         , {}]
-}, {}, ["App", "BaseDefaultNodeSetSelect", "ColorReplace", "DefaultBGColor", "DefaultNodeAccount", "DefaultNodeList", "DefaultNodeLogin", "DefaultNodeSetSelect", "DefaultNodeStore", "DefaultNodeSupport", "DefaultNodeVIP", "AutoBaseComponent", "BaseClass", "BaseComponent", "BaseForm", "BaseGameMgr", "BaseHttpMgr", "BaseRoomDefine", "BaseRoomMgr", "BaseScene", "ClickInterceptorHelp", "EventFunAdapter", "FormManager", "GameEventMgr", "PropertyManager", "Singleton", "SubGameLoadManager", "TalkManager", "TweenAdapter", "UIBaseComponent", "VibrationMgr", "imageToBase64", "BundleConfig", "BundleManager", "BundleUpdate", "EventDefine", "EventListener", "ClientMgr", "AnimFinishedDestroy", "CoinFlyAnim", "CountDown", "DependentClickEvent", "DropDown", "DropDownItem", "EdiTextClearSpaces", "EditBox", "EditBoxRegExp", "LayoutUtil", "LazyLayout", "List", "ListIndicator", "ListItem", "ListView", "Marquee", "NodePool", "NodeSet", "PageView", "ScaleToFullSreenComponent", "ScrollViewExtend", "ScrollViewHack", "UIAutoSetting", "UICalendarView", "UIGameKeyBoard", "UIHeightToScale", "UIHeightToScale_V", "UIManufacturerSwitchNode", "UINumKeyPadLabel", "UIScale", "UIScrollSelect", "UIScrollViewItem", "UIScrollview", "UIToggle", "UIWidthToScale", "delayAction", "window", "AdjustEventTrackManager", "CameraMgr", "DemoServerManager", "EventTrackManager", "ExternGameManager", "FBEventTrackManager", "FacebookManager", "FirebaseManager", "GameConfigManager", "GoogleAnalyticsManager", "GoogleLoginManager", "GoogleReCaptChaManager", "HGameManager", "HNoticeManager", "ActivityManager", "BetBonusManager", "CashOutManager", "EmailManager", "GameListManager", "GameTypeManager", "GoldRewardManager", "HallManager", "LoseWaiverManager", "MenuManager", "PromoteMainManager", "RedDotManager", "RewardsManager", "Store2Manager", "Store3Manager", "StoreManager", "SupportManager", "TaskManager", "VIPManager", "WheelManager", "WorldCupManager", "HallTrackManager", "IndexManager", "KwaiPixelTrackManager", "LanguageManager", "LaunchManager", "LoadTextManager", "LoginManager", "NotifyManager", "PageTrackManager", "PixelManager", "PlaceholderManager", "PushTrackRecordManager", "RoomManager", "TeleGramManager", "TextManager", "TikTokPixelTrackManager", "WebClientManager", "DebugLayer", "DebugLog", "TestForm", "UIDebug", "ColorDefine", "EffectPosTypeDefine", "EventWaitType", "FormDefine", "FormStructDefine", "GameEventDefine", "GameHttpDefine", "HttpServerDefine", "LanguageDefine", "MsgIDDefine", "ShareDefine", "TableDefine", "TextDefine", "TrackEventName", "UINameDefine", "common_mj_cmd", "GaussianBlur", "TopLayer", "JsonBigint", "bignumber", "parse", "stringify", "pako_deflate.min", "pako_inflate.min", "ClientConfigManager", "GameBetCommonMgr", "CompressStorageMgr", "ConfirmManager", "ControlManager", "EffectMgr", "InteractionMgr", "KeyManager", "LocalDataManager", "LogManager", "NoSleepMgr", "ResDefine", "ResManager", "SoundManager", "SysDataManager", "SysNotifyManager", "TestManager", "UserManager", "EditorAsset", "D_PromoteMember", "BaseDefine", "BaseHttpServerManager", "GameServerManager", "GoServerManager", "HttpRequest", "HttpRequestPromise", "HttpServerManager", "MsgEventDefine", "emitter", "UIRoot", "ChatUtil", "ComTool", "ComUtil", "ImageUtil", "MathUtil", "ScoreUtil", "StringUtil", "TimeUtil", "UIHelper", "Game730Help", "UIBackground", "UIGameHelp", "UIGameHelpCom", "UIGameLoading", "UIGameSetting", "UIGameTPHelp", "UILoadingFail", "UINationPhoneCode", "UINationPhoneCodeItem", "UIRechargeInfo", "UIRedDot", "UIToast", "texasBase_Define", "texasBase_model", "texasBase_player", "texasBase_utils", "UIAccMessage", "UIAccMessageItem", "UIAccount", "UIAccountBind", "UIAccountInfo", "UIAccountPop", "UIAccountSetting", "UIBindEmail", "UIBindPhone", "UICashAccount", "UICashDetails", "UIChangePassword", "UIUniversalList", "UIActivity", "UIAllActivity", "UIDiscount", "UILoseWaiver", "UILoseWaiverItem", "UIMainActivityList", "UIMonthCard", "UIRechargeLimitedTime", "UIRechargeTime", "UIAnnouncementItem", "UIAnnouncement_V", "UIBonuses", "UIBankName", "UIBankNameItem", "UICashOut", "UICashOutAccount", "UIWithdrawDesc", "auto_UIExperience", "UIExperience", "UIRecommendedGame", "ExternGame", "ExternGameBt", "ExternGameExtend", "ExternGameSB", "ExternGameSportBase", "UIFAQ", "UIText", "UIGoldReward", "GuideDefine", "GuideManager", "UIGuide", "PageBanner", "PageBannerItem", "UIBiggestToDay", "UILatestRounds", "UIRankingList", "UIBG", "UIChat", "UIDownAndSevice", "UIDownApp", "UIGameHierarchy", "UIGameIconBlurMask", "UIGameIconItem", "UIGameSelectAll", "UIGameTypeItem", "UIHall", "UIHallBottom", "UIHallTop", "UIHallTopLogo", "UIHallTop_H", "UIHallTop_V", "UIHall_H", "UIHall_V", "UIHorseRaceLamp", "UIJudge", "UIMain", "UIMenu", "UIRecharge", "UISettlement", "UISevice", "UIUpgrade", "UIBetBonus", "UIBetBonusGold", "UIBetRecord", "UIBonusRecords", "UIBonusRichTextClick", "UIEmail", "UINotice", "UIShare", "UIPlayerEditInfo", "UIPlayerInfo", "PromoteMemberLayer", "UIPromoteInfo", "UIPromoteMain", "UIPromoteMemberLayer_H", "UIReferInfo", "UIFreeWindow", "UIGameHintWindow", "UIRedeemCode", "NewUIRoomList", "UIRoomList", "UIStore", "UIStoreQR", "UIStoreQRUSDT", "UIInsideWebView", "UIStoreAndCash", "UIAISupport", "UIHallNotice", "UIKeyBoard_V", "UILanguage", "UISupport", "UIUpdateHint", "UIVIP", "UIVIPReduced", "VIPGoldAnim", "VipInfoBase", "VipInfoLayer_H", "VipInfoLayer_V", "UIWheel", "UIWheelHelp", "UIWheelRecord", "WheelHistory", "wheelEffect", "LaunchScene", "UIFail", "UILaunchNotice", "UILimit", "UIMessage", "UIForgetEmailPassword", "UIForgetPassword", "UILogin", "UILoginScene", "UILoginSign", "UISignUp", "BaseWebviewScene", "GameLandscape", "GamePortrait", "BaseNativeMgr", "ExtendList", "GIDTool", "GameManager", "Global", "HotUpdate", "NativeMgr", "Orientation", "left_menu", "right_classic", "error_define", "game_build", "global_config", "room_mode_tool", "RichTextCallBack", "canvasSize", "CommonCardsSF", "GameHistoryTrend", "LightningEffect", "NewWayChart", "NestableScrollView_Inner", "NestableScrollView_Outer", "gamemsg_controller", "table_controller", "table_model", "BaseGameForm", "BaseSingleGameHistory", "GameBaseDataForm", "GameBaseForm", "GameBaseHttpForm", "GameHistoryListBase", "HallMessageCenter", "MegHandleBase", "StandGameHistoryList", "chip_pool", "dispatch", "hall_controller", "hall_model", "hall_msg_controller", "hall_view", "RoomMessageCenter", "room_controller", "room_model", "room_view", "roommsg_controller", "LanguageData", "LocalizedLabel", "LocalizedSprite", "SpriteFrameSet", "auto_UIAccountBirthday_V", "auto_UIAccMessage_H", "auto_UIAccMessage_V", "auto_UIWithdrawRecord", "auto_UIWithdrawRecordItem", "auto_UIRemittancePeriod", "auto_UIRemittancePeriod_H", "auto_UIRemittancePeriod_V", "auto_RegressionTaskItem_H", "auto_RegressionTaskItem_V", "auto_UIRegressionTaskSignIn_H", "auto_UIRegressionTaskSignIn_V", "auto_UIRegressionTaskTips", "auto_UIRegressionTask_H", "auto_UIRegressionTask_V", "auto_RewardsItem_H", "auto_RewardsItem_V", "auto_UIRewards_H", "auto_UIRewards_V", "auto_UIFirstRechargeSignIn_H", "auto_UIFirstRechargeSignIn_V", "auto_TaskBonusItem_H", "auto_TaskBonusItem_V", "auto_UITaskBonus_H", "auto_UITaskBonus_V", "auto_UIBankComponent_H", "auto_UIBankComponent_V", "auto_UIBankNameItem", "auto_UIBankNextComponent_H", "auto_UIBankNextComponent_V", "auto_UIDepositComponent_H", "auto_UIDepositComponent_V", "auto_UIOnlinePay_H", "auto_UIOnlinePay_V", "auto_UIPayItem_H", "auto_UIPayItem_V", "auto_UIRechargeItem_H", "auto_UIRechargeItem_V", "auto_UIStoreAndCashVi_H", "auto_UIStoreAndCashVi_V", "auto_UIToggleItem_H", "auto_UIToggleItem_V", "auto_UIUSDTComponent_H", "auto_UIUSDTComponent_V", "auto_UIViAccMessage_H", "auto_UIViAccMessage_V", "auto_UIViBankNameItem", "auto_UIViBankName_H", "auto_UIViBankName_V", "auto_UIWithdraw_H", "auto_UIWithdraw_V", "auto_UIBankComponent_2_H", "auto_UIBankComponent_2_V", "auto_UIBankNextComponent_2_H", "auto_UIBankNextComponent_2_V", "auto_UIDepositComponent_2_H", "auto_UIDepositComponent_2_V", "auto_UIOnlinePay_2_H", "auto_UIOnlinePay_2_V", "auto_UIPayItem_2_H", "auto_UIPayItem_2_V", "auto_UIRechargeItem_2_H", "auto_UIRechargeItem_2_V", "auto_UIStoreAndCashVi_2_H", "auto_UIStoreAndCashVi_2_V", "auto_UIToggleItem_2_H", "auto_UIToggleItem_2_V", "auto_UIUSDTComponent_2_H", "auto_UIUSDTComponent_2_V", "auto_UIViAccMessage_2_H", "auto_UIViAccMessage_2_V", "auto_UIViBankNameItem_2", "auto_UIViBankName_2_H", "auto_UIViBankName_2_V", "auto_UIWithdraw_2_H", "auto_UIWithdraw_2_V", "UIAccountBirthdayBase", "UIAccountBirthday_V", "UIAccMessage_H", "UIAccMessage_V", "UIDW_AccMessage", "UIWithdrawRecord", "UIWithdrawRecordItem", "UIRemittancePeriod", "UIRemittancePeriod_H", "UIRemittancePeriod_V", "RegressionTaskItem", "RegressionTaskItem_H", "RegressionTaskItem_V", "UIRegressionTask", "UIRegressionTaskSignIn", "UIRegressionTaskSignIn_H", "UIRegressionTaskSignIn_V", "UIRegressionTaskTips", "UIRegressionTask_H", "UIRegressionTask_V", "RewardsItem", "RewardsItem_H", "RewardsItem_V", "UIRewards", "UIRewards_H", "UIRewards_V", "UIFirstRechargeSignIn", "UIFirstRechargeSignIn_H", "UIFirstRechargeSignIn_V", "TaskBonusItem", "TaskBonusItem_H", "TaskBonusItem_V", "UITaskBonus", "UITaskBonus_H", "UITaskBonus_V", "UIStoreAccMessage", "UIStoreAndCashView", "UIStoreBankComponent", "UIStoreBankName", "UIStoreBankNextComponent", "UIStoreUSDTComponent", "UIStoreWithdraw", "UIBankComponent", "UIBankComponent_H", "UIBankComponent_V", "UIBankNextComponent", "UIBankNextComponent_H", "UIBankNextComponent_V", "UIDepositComponent", "UIDepositComponent_H", "UIDepositComponent_V", "UIOnlinePay", "UIOnlinePay_H", "UIOnlinePay_V", "UIPayItem", "UIPayItem_H", "UIPayItem_V", "UIRechargeItem", "UIRechargeItem_H", "UIRechargeItem_V", "UIStoreAndCashVi", "UIStoreAndCashVi_H", "UIStoreAndCashVi_V", "UIToggleItem", "UIToggleItem_H", "UIToggleItem_V", "UIUSDTComponent", "UIUSDTComponent_H", "UIUSDTComponent_V", "UIViAccMessage", "UIViAccMessage_H", "UIViAccMessage_V", "UIViBankName", "UIViBankNameItem", "UIViBankName_H", "UIViBankName_V", "UIWithdraw", "UIWithdraw_H", "UIWithdraw_V", "UIBankComponent_2", "UIBankComponent_2_H", "UIBankComponent_2_V", "UIBankNextComponent_2", "UIBankNextComponent_2_H", "UIBankNextComponent_2_V", "UIDepositComponent_2", "UIDepositComponent_2_H", "UIDepositComponent_2_V", "UIOnlinePay_2", "UIOnlinePay_2_H", "UIOnlinePay_2_V", "UIPayItem_2", "UIPayItem_2_H", "UIPayItem_2_V", "UIRechargeItem_2", "UIRechargeItem_2_H", "UIRechargeItem_2_V", "UIStoreAndCashVi_2", "UIStoreAndCashVi_2_H", "UIStoreAndCashVi_2_V", "UIToggleItem_2", "UIToggleItem_2_H", "UIToggleItem_2_V", "UIUSDTComponent_2", "UIUSDTComponent_2_H", "UIUSDTComponent_2_V", "UIViAccMessage_2", "UIViAccMessage_2_H", "UIViAccMessage_2_V", "UIViBankNameItem_2", "UIViBankName_2", "UIViBankName_2_H", "UIViBankName_2_V", "UIWithdraw_2", "UIWithdraw_2_H", "UIWithdraw_2_V"]);
+}, {}, ["App", "BaseDefaultNodeSetSelect", "ColorReplace", "DefaultBGColor", "DefaultNodeAccount", "DefaultNodeList", "DefaultNodeLogin", "DefaultNodeSetSelect", "DefaultNodeStore", "DefaultNodeSupport", "DefaultNodeVIP", "DefaultNodeWheel", "AutoBaseComponent", "BaseClass", "BaseComponent", "BaseForm", "BaseGameMgr", "BaseHttpMgr", "BaseRoomDefine", "BaseRoomMgr", "BaseScene", "ClickInterceptorHelp", "EventFunAdapter", "FormManager", "GameEventMgr", "PropertyManager", "Singleton", "SubGameLoadManager", "TalkManager", "TweenAdapter", "UIBaseComponent", "VibrationMgr", "imageToBase64", "BundleConfig", "BundleManager", "BundleUpdate", "EventDefine", "EventListener", "ClientMgr", "AnimFinishedDestroy", "CoinFlyAnim", "CountDown", "DependentClickEvent", "DisableInputBoxScroll", "DropDown", "DropDownItem", "EdiTextClearSpaces", "EditBox", "EditBoxRegExp", "LayoutUtil", "LazyLayout", "List", "ListIndicator", "ListItem", "ListView", "Marquee", "NodePool", "NodeSet", "PageView", "ScaleToFullSreenComponent", "ScrollViewExtend", "ScrollViewHack", "UIAutoSetting", "UICalendarView", "UIGameKeyBoard", "UIHeightToScale", "UIHeightToScale_V", "UIManufacturerSwitchNode", "UINumKeyPadLabel", "UIScale", "UIScrollSelect", "UIScrollViewItem", "UIScrollview", "UIToggle", "UIWidthToScale", "delayAction", "window", "AdjustEventTrackManager", "CameraMgr", "DemoServerManager", "EventTrackManager", "ExternGameManager", "FBEventTrackManager", "FacebookManager", "FirebaseManager", "GameConfigManager", "GoogleAnalyticsManager", "GoogleLoginManager", "GoogleReCaptChaManager", "HGameManager", "HNoticeManager", "ActivityManager", "BetBonusManager", "CashOutManager", "EmailManager", "GameListManager", "GameTypeManager", "GoldRewardManager", "HallManager", "LoseWaiverManager", "MenuManager", "PromoteMainManager", "RedDotManager", "RewardsManager", "Store2Manager", "Store3Manager", "StoreManager", "SupportManager", "TaskManager", "VIPManager", "WheelManager", "WorldCupManager", "HallTrackManager", "IndexManager", "KwaiPixelTrackManager", "LanguageManager", "LaunchManager", "LoadTextManager", "LoginManager", "NotifyManager", "PageTrackManager", "PixelManager", "PlaceholderManager", "PushTrackRecordManager", "RoomManager", "TeleGramManager", "TextManager", "TikTokPixelTrackManager", "WebClientManager", "DebugLayer", "DebugLog", "TestForm", "UIDebug", "ColorDefine", "EffectPosTypeDefine", "EventWaitType", "FormDefine", "FormStructDefine", "GameEventDefine", "GameHttpDefine", "HttpServerDefine", "LanguageDefine", "MsgIDDefine", "ShareDefine", "TableDefine", "TextDefine", "TrackEventName", "UINameDefine", "common_mj_cmd", "GaussianBlur", "TopLayer", "JsonBigint", "bignumber", "parse", "stringify", "pako_deflate.min", "pako_inflate.min", "ClientConfigManager", "GameBetCommonMgr", "CompressStorageMgr", "ConfirmManager", "ControlManager", "EffectMgr", "InteractionMgr", "KeyManager", "LocalDataManager", "LogManager", "NoSleepMgr", "ResDefine", "ResManager", "RouterMgr", "SoundManager", "SysDataManager", "SysNotifyManager", "TestManager", "UserManager", "EditorAsset", "D_PromoteMember", "BaseDefine", "BaseHttpServerManager", "GameServerManager", "GoServerManager", "HttpRequest", "HttpRequestPromise", "HttpServerManager", "MsgEventDefine", "emitter", "UIRoot", "ChatUtil", "ComTool", "ComUtil", "ImageUtil", "MathUtil", "ScoreUtil", "StringUtil", "TimeUtil", "UIHelper", "Game730Help", "UIBackground", "UIGameHelp", "UIGameHelpCom", "UIGameLoading", "UIGameSetting", "UIGameTPHelp", "UILoadingFail", "UINationPhoneCode", "UINationPhoneCodeItem", "UIRechargeInfo", "UIRedDot", "UIToast", "texasBase_Define", "texasBase_model", "texasBase_player", "texasBase_utils", "UIAccMessage", "UIAccMessageItem", "UIAccount", "UIAccountBind", "UIAccountInfo", "UIAccountPop", "UIAccountSetting", "UIBindEmail", "UIBindPhone", "UICashAccount", "UICashDetails", "UIChangePassword", "UIUniversalList", "UIActivity", "UIAllActivity", "UIDiscount", "UILoseWaiver", "UILoseWaiverItem", "UIMainActivityList", "UIMonthCard", "UIRechargeLimitedTime", "UIRechargeTime", "UIAnnouncementItem", "UIAnnouncement_V", "UIBonuses", "UIBankName", "UIBankNameItem", "UICashOut", "UICashOutAccount", "UIWithdrawDesc", "auto_UIExperience", "UIExperience", "UIRecommendedGame", "ExternGame", "ExternGameBt", "ExternGameExtend", "ExternGameSB", "ExternGameSportBase", "UIFAQ", "UIText", "UIGoldReward", "GuideDefine", "GuideManager", "UIGuide", "PageBanner", "PageBannerItem", "UIBiggestToDay", "UILatestRounds", "UIRankingList", "UIChat", "UIDownAndSevice", "UIDownApp", "UIGameHierarchy", "UIGameIconBlurMask", "UIGameIconItem", "UIGameSelectAll", "UIGameTypeItem", "UIHall", "UIHallBottom", "UIHallTop", "UIHallTopLogo", "UIHallTop_H", "UIHallTop_V", "UIHall_H", "UIHall_V", "UIHorseRaceLamp", "UIJudge", "UIMain", "UIMenu", "UIRecharge", "UISettlement", "UISevice", "UIUpgrade", "UIBetBonus", "UIBetBonusGold", "UIBetRecord", "UIBonusRecords", "UIBonusRichTextClick", "UIEmail", "UINotice", "UIShare", "UIPlayerEditInfo", "UIPlayerInfo", "PromoteMemberLayer", "UIPromoteInfo", "UIPromoteMain", "UIPromoteMemberLayer_H", "UIReferInfo", "UIFreeWindow", "UIGameHintWindow", "UIRedeemCode", "NewUIRoomList", "UIRoomList", "UIStore", "UIStoreQR", "UIStoreQRUSDT", "UIInsideWebView", "UIStoreAndCash", "UIAISupport", "UIHallNotice", "UIKeyBoard_V", "UILanguage", "UISupport", "UIUpdateHint", "UIVIP", "UIVIPReduced", "VIPGoldAnim", "VipInfoBase", "VipInfoLayer_H", "VipInfoLayer_V", "UIWheel", "UIWheelHelp", "UIWheelRecord", "WheelHistory", "wheelEffect", "LaunchLoading", "LaunchScene", "UIFail", "UILaunchNotice", "UILimit", "UIMessage", "UIForgetEmailPassword", "UIForgetPassword", "UILogin", "UILoginScene", "UILoginSign", "UISignUp", "BaseWebviewScene", "GameLandscape", "GamePortrait", "BaseNativeMgr", "ExtendList", "GIDTool", "GameManager", "Global", "HotUpdate", "NativeMgr", "Orientation", "left_menu", "right_classic", "error_define", "game_build", "global_config", "room_mode_tool", "RichTextCallBack", "canvasSize", "CommonCardsSF", "GameHistoryTrend", "LightningEffect", "NewWayChart", "ShowAllFit", "NestableScrollView_Inner", "NestableScrollView_Outer", "gamemsg_controller", "table_controller", "table_model", "BaseGameForm", "BaseSingleGameHistory", "GameBaseDataForm", "GameBaseForm", "GameBaseHttpForm", "GameHistoryListBase", "HallMessageCenter", "MegHandleBase", "StandGameHistoryList", "chip_pool", "dispatch", "hall_controller", "hall_model", "hall_msg_controller", "hall_view", "RoomMessageCenter", "room_controller", "room_model", "room_view", "roommsg_controller", "LanguageData", "LocalizedImage", "LocalizedLabel", "LocalizedSprite", "SpriteFrameSet", "auto_UIAccountBirthday_V", "auto_UIAccMessage_H", "auto_UIAccMessage_V", "auto_UIWithdrawRecord", "auto_UIWithdrawRecordItem", "auto_UIWithdrawRemind", "auto_UI18", "auto_UI18_H", "auto_UIRemittancePeriod", "auto_UIRemittancePeriod_H", "auto_UIRemittancePeriod_V", "auto_RegressionTaskItem_H", "auto_RegressionTaskItem_V", "auto_UIRegressionTaskSignIn_H", "auto_UIRegressionTaskSignIn_V", "auto_UIRegressionTaskTips", "auto_UIRegressionTask_H", "auto_UIRegressionTask_V", "auto_RewardsItem_H", "auto_RewardsItem_V", "auto_UIRewards_H", "auto_UIRewards_V", "auto_UIFirstRechargeSignIn_H", "auto_UIFirstRechargeSignIn_V", "auto_TaskBonusItem_H", "auto_TaskBonusItem_V", "auto_UITaskBonus_H", "auto_UITaskBonus_V", "auto_UIBankComponent_H", "auto_UIBankComponent_V", "auto_UIBankNameItem", "auto_UIBankNextComponent_H", "auto_UIBankNextComponent_V", "auto_UIDepositComponent_H", "auto_UIDepositComponent_V", "auto_UIOnlinePay_H", "auto_UIOnlinePay_V", "auto_UIPayItem_H", "auto_UIPayItem_V", "auto_UIRechargeItem_H", "auto_UIRechargeItem_V", "auto_UIStoreAndCashVi_H", "auto_UIStoreAndCashVi_V", "auto_UIToggleItem_H", "auto_UIToggleItem_V", "auto_UIUSDTComponent_H", "auto_UIUSDTComponent_V", "auto_UIViAccMessage_H", "auto_UIViAccMessage_V", "auto_UIViBankNameItem", "auto_UIViBankName_H", "auto_UIViBankName_V", "auto_UIWithdraw_H", "auto_UIWithdraw_V", "auto_UIBankComponent_2_H", "auto_UIBankComponent_2_V", "auto_UIBankNextComponent_2_H", "auto_UIBankNextComponent_2_V", "auto_UIDepositComponent_2_H", "auto_UIDepositComponent_2_V", "auto_UIOnlinePay_2_H", "auto_UIOnlinePay_2_V", "auto_UIPayItem_2_H", "auto_UIPayItem_2_V", "auto_UIRechargeItem_2_H", "auto_UIRechargeItem_2_V", "auto_UIStoreAndCashVi_2_H", "auto_UIStoreAndCashVi_2_V", "auto_UIToggleItem_2_H", "auto_UIToggleItem_2_V", "auto_UIUSDTComponent_2_H", "auto_UIUSDTComponent_2_V", "auto_UIViAccMessage_2_H", "auto_UIViAccMessage_2_V", "auto_UIViBankNameItem_2", "auto_UIViBankName_2_H", "auto_UIViBankName_2_V", "auto_UIWithdraw_2_H", "auto_UIWithdraw_2_V", "UIAccountBirthdayBase", "UIAccountBirthday_V", "UIAccMessage_H", "UIAccMessage_V", "UIDW_AccMessage", "UIWithdrawRecord", "UIWithdrawRecordItem", "UIWithdrawRemind", "UI18", "UI18_H", "UIRemittancePeriod", "UIRemittancePeriod_H", "UIRemittancePeriod_V", "RegressionTaskItem", "RegressionTaskItem_H", "RegressionTaskItem_V", "UIRegressionTask", "UIRegressionTaskSignIn", "UIRegressionTaskSignIn_H", "UIRegressionTaskSignIn_V", "UIRegressionTaskTips", "UIRegressionTask_H", "UIRegressionTask_V", "RewardsItem", "RewardsItem_H", "RewardsItem_V", "UIRewards", "UIRewards_H", "UIRewards_V", "UIFirstRechargeSignIn", "UIFirstRechargeSignIn_H", "UIFirstRechargeSignIn_V", "TaskBonusItem", "TaskBonusItem_H", "TaskBonusItem_V", "UITaskBonus", "UITaskBonus_H", "UITaskBonus_V", "UIStoreAccMessage", "UIStoreAndCashView", "UIStoreBankComponent", "UIStoreBankName", "UIStoreBankNextComponent", "UIStoreUSDTComponent", "UIStoreWithdraw", "UIBankComponent", "UIBankComponent_H", "UIBankComponent_V", "UIBankNextComponent", "UIBankNextComponent_H", "UIBankNextComponent_V", "UIDepositComponent", "UIDepositComponent_H", "UIDepositComponent_V", "UIOnlinePay", "UIOnlinePay_H", "UIOnlinePay_V", "UIPayItem", "UIPayItem_H", "UIPayItem_V", "UIRechargeItem", "UIRechargeItem_H", "UIRechargeItem_V", "UIStoreAndCashVi", "UIStoreAndCashVi_H", "UIStoreAndCashVi_V", "UIToggleItem", "UIToggleItem_H", "UIToggleItem_V", "UIUSDTComponent", "UIUSDTComponent_H", "UIUSDTComponent_V", "UIViAccMessage", "UIViAccMessage_H", "UIViAccMessage_V", "UIViBankName", "UIViBankNameItem", "UIViBankName_H", "UIViBankName_V", "UIWithdraw", "UIWithdraw_H", "UIWithdraw_V", "UIBankComponent_2", "UIBankComponent_2_H", "UIBankComponent_2_V", "UIBankNextComponent_2", "UIBankNextComponent_2_H", "UIBankNextComponent_2_V", "UIDepositComponent_2", "UIDepositComponent_2_H", "UIDepositComponent_2_V", "UIOnlinePay_2", "UIOnlinePay_2_H", "UIOnlinePay_2_V", "UIPayItem_2", "UIPayItem_2_H", "UIPayItem_2_V", "UIRechargeItem_2", "UIRechargeItem_2_H", "UIRechargeItem_2_V", "UIStoreAndCashVi_2", "UIStoreAndCashVi_2_H", "UIStoreAndCashVi_2_V", "UIToggleItem_2", "UIToggleItem_2_H", "UIToggleItem_2_V", "UIUSDTComponent_2", "UIUSDTComponent_2_H", "UIUSDTComponent_2_V", "UIViAccMessage_2", "UIViAccMessage_2_H", "UIViAccMessage_2_V", "UIViBankNameItem_2", "UIViBankName_2", "UIViBankName_2_H", "UIViBankName_2_V", "UIWithdraw_2", "UIWithdraw_2_H", "UIWithdraw_2_V"]);

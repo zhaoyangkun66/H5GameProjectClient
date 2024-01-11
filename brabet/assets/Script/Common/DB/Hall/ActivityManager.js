@@ -33,8 +33,13 @@ var o = require("../../Define/ShareDefine")
                     app.HttpServerManager().RegNetPack(r.HttpAPI.RECEIVE_CARD_DAILY_GOLD, this.onGetCardDailyGold, this),
                     app.HttpServerManager().RegNetPack(r.HttpAPI.GET_ALLPROMOTIONS, this.onGetAllPromotion, this),
                     app.HttpServerManager().RegNetPack(r.HttpAPI.GET_OPEN_REDBAG, this.onGetOpenRedBag, this),
+                    app.HttpServerManager().RegNetPack(r.HttpAPI.GET_DailyRegistrations, this.onGetDailyRegistrations, this),
                     app.HttpServerManager().RegNetPack(r.HttpAPI.USER_CENTER_ACTIVITIES, this.onGetUserCenterActivities, this),
                     app.HttpServerManager().RegNetPack(r.HttpAPI.LIMIT_TIME_RECHARGE, this.onGetLimitTimeRecharge, this)
+
+                app.HttpServerManager().RegNetPack(r.HttpAPI.GET_cashWheel, this.onGetCashWheel, this)
+                app.HttpServerManager().RegNetPack(r.HttpAPI.open_cashWheel, this.onOpenCashWheel, this)
+
             }
             ,
             t.prototype.onGetLimitTimeRecharge = function (e) {
@@ -214,17 +219,17 @@ var o = require("../../Define/ShareDefine")
                 if (isgoServer == true) {
                     // e.push({
                     //     "switch": 1,
-                    //     "title": "Atividades de Natal",
-                    //     "img": "https://www.yotubet.com/uploads/notice_image/AtividadesdeNatal.png",
-                    //     "content": "<size=26><color=#f9de06><b>Condições para participação no evento (UTC-3):</b></size></color><br/><size=24><color=#ffffff>Depósitos acumulados superiores a R$ 500 de 1º a 25 de dezembro</size></color><br/><br/><color=#f9de06><size=26><b>Conteúdo da recompensa:</b></size></color><br/><size=24><color=#ffffff>2 pessoas receberão recompensa de R$ 5.000</size></color><br/><size=24><color=#ffffff>3 pessoas receberão recompensa de R$ 3.000</size></color><br/><size=24><color=#ffffff>5 pessoas receberão recompensa de R$ 2.000</size></color><br/><size=24><color=#ffffff>10 pessoas receberão recompensa de R$ 1.000</size></color><br/><size=24><color=#ffffff>30 pessoas receberão recompensa de R$ 500</size></color><br/><br/><color=#ffffff>O sorteio será realizado no dia 26 de dezembro, e a lista dos vencedores será divulgada no canal oficial do Telegram</size></color><br/><br/><color=#f9de06><size=26>InstrucGes Do Evento: </size></color><br/><size=24><color=#ffffff>Caso os jogadores obtenham recompensas por meios ilegais, as recompensas obtidas serão deduzidas e a conta será congelada. Caso haja diferenças na interpretação das regras, a plataforma reserva-se o direito final de interpretar este evento.</size></color><br/>",
+                    //     "title": "Inscricoes diarias",
+                    //     "img": "https://www.yotubet.com/uploads/notice_image/Inscripciones_diarias.png",
+                    //     "content": "",
                     //     "content_type": "1",
-                    //     "entrance_img": "https://www.yotubet.com/uploads/notice_image/AtividadesdeNatal.png",
+                    //     "entrance_img": "https://www.yotubet.com/uploads/notice_image/Inscripciones_diarias.png",
                     //     "inside": "0",
-                    //     "outside": "https://t.me/Yotubet01",
-                    //     "button_name": "Entre no canal oficial",
-                    //     "mobile_title": "Atividades de Natal",
-                    //     "mobile_intro": "Bônus de depósito de Natal, até R$ 5000",
-                    //     "act_id": 25,
+                    //     "outside": "",
+                    //     "button_name": "",
+                    //     "mobile_title": "Inscricoes diarias",
+                    //     "mobile_intro": "Recibe bonificación entre 1600 y 45000 Reiniciado cuando se interrumpe",
+                    //     "act_id": 26,
                     //     "sort": 7,
                     //     "icon_url": "",
                     //     "is_show": 1
@@ -253,6 +258,34 @@ var o = require("../../Define/ShareDefine")
             ,
             t.prototype.onGetOpenRedBag = function (e) {
                 app.Client.OnEvent(a.GameEventDefine.GET_OPEN_REDBAG, e)
+            }
+            ,
+            t.prototype.RequestDailyRegistrations = function (e) {
+                app.HttpServerManager().SendHttpPack(r.HttpAPI.GET_DailyRegistrations, {
+                    token: app.UserManager().GetUserInfo.token,
+                    type: e
+                })
+            }
+            ,
+            t.prototype.onGetDailyRegistrations = function (e) {
+                app.Client.OnEvent(a.GameEventDefine.GET_DailyRegistrations, e)
+            },
+            t.prototype.RequestCashWheel = function (e) {
+                app.HttpServerManager().SendHttpPack(r.HttpAPI.GET_cashWheel, {
+                    token: app.UserManager().GetUserInfo.token
+                })
+            },
+            t.prototype.onGetCashWheel = function (e) {
+                app.Client.OnEvent(a.GameEventDefine.GET_cashWheel, e)
+            },
+            t.prototype.RequestOpenCashWheel = function (e) {
+                app.HttpServerManager().SendHttpPack(r.HttpAPI.open_cashWheel, {
+                    token: app.UserManager().GetUserInfo.token
+                })
+            }
+            ,
+            t.prototype.onOpenCashWheel = function (e) {
+                app.Client.OnEvent(a.GameEventDefine.open_cashWheel, e)
             }
             ,
             t.prototype.onGetCardDailyGold = function (e, t) {

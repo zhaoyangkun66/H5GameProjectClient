@@ -47,17 +47,21 @@ var l = function (e) {
                         e[key].channel_list[key2].sale = {}
                         e[key].channel_list[key2].cur_time = Date.now() / 1e3
                         if (!e[key].channel_list[key2].goods) {
-                            e[key].channel_list[key2].goods = [
-                                "20",
-                                "50",
-                                "100",
-                                "300",
-                                "500",
-                                "1000",
-                                "5000",
-                                "10000",
-                                "20000"
-                            ]
+                            e[key].channel_list[key2].goods = e[key].goods
+                            if (!e[key].channel_list[key2].goods) {
+                                e[key].channel_list[key2].goods =
+                                    [
+                                        "20",
+                                        "50",
+                                        "100",
+                                        "300",
+                                        "500",
+                                        "1000",
+                                        "5000",
+                                        "10000",
+                                        "20000"
+                                    ]
+                            }
                         }
                     }
                 }

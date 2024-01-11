@@ -25,7 +25,7 @@ var o = require("../Base/Singleton")
             }
             ,
             t.prototype.OnGetLanguageList = function (e) {
-                // if (isgoServer && channelID == 2) {
+                // if (isgoServer) {
                 //     e.push({
                 //         "id": 3,
                 //         "icon": "https://www.yotubet.com/uploads/images/langconfig/es-es.png",
@@ -58,6 +58,9 @@ var o = require("../Base/Singleton")
             t.prototype.SetLanguage = function (e) {
                 app.i18n.selectLang(e) && (app.LocalDataManager().SetConfigProperty("SysSetting", "Language", e),
                     app.Client.OnEvent(i.GameEventDefine.HALL_Language))
+            },
+            t.prototype.SetSelectRegion = function (e) {
+                app.LocalDataManager().SetConfigProperty("SysSetting", "LocalSelectRegion1", e)
             }
             ,
             t.prototype.GetLanguageItem = function () {
@@ -73,6 +76,9 @@ var o = require("../Base/Singleton")
             ,
             t.prototype.GetLocalLanguage = function (e) {
                 return app.LocalDataManager().GetConfigProperty("SysSetting", "Language") || (e ? r.default.enus : null)
+            },
+            t.prototype.GetLocalSelectRegion = function (e) {
+                return app.LocalDataManager().GetConfigProperty("SysSetting", "LocalSelectRegion1")
             }
             ,
             t.prototype.SetServerDefaultLanguage = function () {

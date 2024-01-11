@@ -36,7 +36,7 @@ var o = require("./Base/BaseComponent")
                         app.LoadTextManager(),
                         app.HNoticeManager(),
                         app.GuideManager(),
-                        app.LanguageManager().RequestLangList(),
+                        //app.LanguageManager().RequestLangList(),
                         app.NotifyManager(),
                         app.GameManager(),
                         app.HallMessageCenter(),

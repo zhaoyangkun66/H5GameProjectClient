@@ -252,7 +252,7 @@ var l = function (e) {
         }
         ,
         t.prototype.GetKeyLoginUserList = function () {
-            return app.GameConfigManager().IsExperienceServer ? "practice_login_user_data_v2" : "login_user_data"
+            return "login_user_data"//app.GameConfigManager().IsExperienceServer ? "practice_login_user_data_v2" :
         }
         ,
         t.prototype.GetNormalLoginUserList = function () {
@@ -313,7 +313,7 @@ var l = function (e) {
         }
         ,
         t.prototype.GetKeyUserData = function () {
-            return app.GameConfigManager().IsExperienceServer ? "practice_user_data_v2" : "userdata"
+            return "userdata"//app.GameConfigManager().IsExperienceServer ? "practice_user_data_v2" :
         }
         ,
         t.prototype.fetchValidateCode = function (e) {

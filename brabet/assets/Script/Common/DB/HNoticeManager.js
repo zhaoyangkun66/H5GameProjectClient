@@ -43,14 +43,16 @@ var o = require("../Base/Singleton")
             t.prototype.onGetDeskNotice = function (e) {
 
                 if (isgoServer) {
-                    // e.unshift({
-                    //     "link": 22133,
-                    //     "image": "https://www.yotubet.com/uploads/notice_image/AtividadesdeNatal.png",
-                    //     "external_link": "",
-                    //     "start_time_stamp": 0,
-                    //     "end_time_stamp": 0,
-                    //     "cur_time": 1692770787
-                    // })
+                    if (!isPushServer) {
+                        e.unshift({
+                            "link": 122137,
+                            "image": "https://www.yotubet.com/uploads/notice_image/CashWheel.png",
+                            "external_link": "",
+                            "start_time_stamp": 0,
+                            "end_time_stamp": 0,
+                            "cur_time": 1692770787
+                        })
+                    }
                 }
 
                 this._DeskInfo = e,

@@ -485,7 +485,7 @@ var h = function (e) {
         ,
         t.prototype.getUserLoginCode = function () {
             if (channelID == 2) {
-                return app.LocalDataManager().GetConfigObject("loginCode") || {
+                return app.LocalDataManager().GetConfigObject("loginCode" + channelID) || {
                     code: "57",
                     mark: "",
                     nation: "Colombia",
@@ -496,7 +496,7 @@ var h = function (e) {
                 }
             }
             else {
-                return app.LocalDataManager().GetConfigObject("loginCode") || {
+                return app.LocalDataManager().GetConfigObject("loginCode" + channelID) || {
                     code: "55",
                     mark: "",
                     nation: "Brazil",
@@ -518,7 +518,7 @@ var h = function (e) {
         }
         ,
         t.prototype.setUserLoginCode = function (e) {
-            app.LocalDataManager().SetConfigObject("loginCode", e)
+            app.LocalDataManager().SetConfigObject("loginCode" + channelID, e)
         }
         ,
         Object.defineProperty(t.prototype, "IsRememberPass", {

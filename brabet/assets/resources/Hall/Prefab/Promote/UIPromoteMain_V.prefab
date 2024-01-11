@@ -288,7 +288,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 77.78,
+      "width": 67.85,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -340,8 +340,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Invitar",
-    "_N$string": "Invitar",
+    "_string": "Invite",
+    "_N$string": "Invite",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -483,7 +483,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 77.78,
+      "width": 67.85,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -535,8 +535,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Invitar",
-    "_N$string": "Invitar",
+    "_string": "Invite",
+    "_N$string": "Invite",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -1161,7 +1161,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 81.31,
+      "width": 64.94,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -1213,8 +1213,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Referir",
-    "_N$string": "Referir",
+    "_string": "Refer",
+    "_N$string": "Refer",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -1832,7 +1832,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 110.83,
+      "width": 103.87,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -1884,8 +1884,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Miembro",
-    "_N$string": "Miembro",
+    "_string": "Member",
+    "_N$string": "Member",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -2503,7 +2503,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 77.02,
+      "width": 78.02,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -2555,8 +2555,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Bonos",
-    "_N$string": "Bonos",
+    "_string": "Bonus",
+    "_N$string": "Bonus",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": false,
@@ -3796,8 +3796,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Invita a tus amigos a unirse y recibirás grandes recompensas",
-    "_N$string": "Invita a tus amigos a unirse y recibirás grandes recompensas",
+    "_string": "Invite your friends to join and you will receive great rewards",
+    "_N$string": "Invite your friends to join and you will receive great rewards",
     "_fontSize": 24,
     "_lineHeight": 27,
     "_enableWrapText": true,
@@ -3868,7 +3868,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 235.92,
+      "width": 166.26,
       "height": 31.5
     },
     "_anchorPoint": {
@@ -3920,8 +3920,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Tu enlace de referencia",
-    "_N$string": "Tu enlace de referencia",
+    "_string": "Your referral link",
+    "_N$string": "Your referral link",
     "_fontSize": 20,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -4556,7 +4556,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 142.56,
+      "width": 96.84,
       "height": 31.5
     },
     "_anchorPoint": {
@@ -4608,8 +4608,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Compartir via:",
-    "_N$string": "Compartir via:",
+    "_string": "Share via:",
+    "_N$string": "Share via:",
     "_fontSize": 20,
     "_lineHeight": 25,
     "_enableWrapText": true,
@@ -4705,7 +4705,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -147.44,
+        -193.16,
         0,
         0,
         0,
@@ -6395,7 +6395,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 73.81,
+      "width": 74.77,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -6447,8 +6447,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Bonos",
-    "_N$string": "Bonos",
+    "_string": "Bonus",
+    "_N$string": "Bonus",
     "_fontSize": 23,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -6676,7 +6676,7 @@
     "_enabled": true,
     "_fontFamily": "Arial",
     "_isSystemFontUsed": false,
-    "_N$string": "La liquidación de la comisión llevará un tiempo, tenga paciencia",
+    "_N$string": "Commission settlement will take a while, please be patient",
     "_N$horizontalAlign": 0,
     "_N$fontSize": 24,
     "_N$font": {
@@ -6812,7 +6812,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 74.89,
+      "width": 110.42,
       "height": 32.76
     },
     "_anchorPoint": {
@@ -6864,8 +6864,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Retirar",
-    "_N$string": "Retirar",
+    "_string": "Withdraw",
+    "_N$string": "Withdraw",
     "_fontSize": 22,
     "_lineHeight": 26,
     "_enableWrapText": false,
@@ -7144,7 +7144,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 104.87,
+      "width": 89.87,
       "height": 32.76
     },
     "_anchorPoint": {
@@ -7196,8 +7196,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Transferir",
-    "_N$string": "Transferir",
+    "_string": "Transfer",
+    "_N$string": "Transfer",
     "_fontSize": 22,
     "_lineHeight": 26,
     "_enableWrapText": false,
@@ -7515,7 +7515,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 199.18,
+      "width": 156.56,
       "height": 25.2
     },
     "_anchorPoint": {
@@ -7567,8 +7567,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Ver todos los Bonos",
-    "_N$string": "Ver todos los Bonos",
+    "_string": "See all bonuses",
+    "_N$string": "See all bonuses",
     "_fontSize": 20,
     "_lineHeight": 20,
     "_enableWrapText": true,
@@ -7824,7 +7824,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 372.55,
+      "width": 376.32,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -7876,8 +7876,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Modelo de Comisión y Reglas",
-    "_N$string": "Modelo de Comisión y Reglas",
+    "_string": "Commission Model and Rules",
+    "_N$string": "Commission Model and Rules",
     "_fontSize": 25,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -8087,7 +8087,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 124.13,
+      "width": 105.07,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -8139,8 +8139,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.Learnmore",
-    "_N$string": "UI.Learnmore",
+    "_string": "Learn more",
+    "_N$string": "Learn more",
     "_fontSize": 18,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -8818,7 +8818,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 124.13,
+      "width": 105.07,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -8870,8 +8870,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.Learnmore",
-    "_N$string": "UI.Learnmore",
+    "_string": "Learn more",
+    "_N$string": "Learn more",
     "_fontSize": 18,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -9549,7 +9549,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 124.13,
+      "width": 105.07,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -9612,8 +9612,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "UI.Learnmore",
-    "_N$string": "UI.Learnmore",
+    "_string": "Learn more",
+    "_N$string": "Learn more",
     "_fontSize": 18,
     "_lineHeight": 40,
     "_enableWrapText": false,
@@ -10345,8 +10345,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Premio al logro por invitación",
-    "_N$string": "Premio al logro por invitación",
+    "_string": "Invitational Achievement Award",
+    "_N$string": "Invitational Achievement Award",
     "_fontSize": 24,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -19153,8 +19153,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "¿Quieres ganar S{número}+ al mes en casa? Recomiende a las personas continuamente, un futuro brillante e ingresos masivos lo están esperando.",
-    "_N$string": "¿Quieres ganar S{número}+ al mes en casa? Recomiende a las personas continuamente, un futuro brillante e ingresos masivos lo están esperando.",
+    "_string": "Want to earn S{number}+ a month at home? Refer people continuously, brilliant future and massive income are waiting for you.",
+    "_N$string": "Want to earn S{number}+ a month at home? Refer people continuously, brilliant future and massive income are waiting for you.",
     "_fontSize": 24,
     "_lineHeight": 32,
     "_enableWrapText": true,
@@ -19415,8 +19415,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Programa de afiliación",
-    "_N$string": "Programa de afiliación",
+    "_string": "Affiliate Program",
+    "_N$string": "Affiliate Program",
     "_fontSize": 28,
     "_lineHeight": 32,
     "_enableWrapText": true,
@@ -19539,8 +19539,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Modelo de ingresos",
-    "_N$string": "Modelo de ingresos",
+    "_string": "lncome Model",
+    "_N$string": "lncome Model",
     "_fontSize": 24,
     "_lineHeight": 32,
     "_enableWrapText": true,
@@ -19718,7 +19718,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 241.34,
+      "width": 156.06,
       "height": 30.24
     },
     "_anchorPoint": {
@@ -19770,8 +19770,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Recomendar miembros",
-    "_N$string": "Recomendar miembros",
+    "_string": "Refer Members",
+    "_N$string": "Refer Members",
     "_fontSize": 20,
     "_lineHeight": 24,
     "_enableWrapText": true,
@@ -19842,7 +19842,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 253.12,
+      "width": 155.46,
       "height": 30.24
     },
     "_anchorPoint": {
@@ -19894,8 +19894,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Reembolsos de apuestas",
-    "_N$string": "Reembolsos de apuestas",
+    "_string": "Wager Rebates",
+    "_N$string": "Wager Rebates",
     "_fontSize": 20,
     "_lineHeight": 24,
     "_enableWrapText": true,
@@ -19966,7 +19966,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 59.64,
+      "width": 37.98,
       "height": 30.24
     },
     "_anchorPoint": {
@@ -20018,8 +20018,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Usted",
-    "_N$string": "Usted",
+    "_string": "You",
+    "_N$string": "You",
     "_fontSize": 20,
     "_lineHeight": 24,
     "_enableWrapText": true,
@@ -20090,7 +20090,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 63.3,
+      "width": 65.26,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -20142,8 +20142,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Nivel 1",
-    "_N$string": "Nivel 1",
+    "_string": "Level 1",
+    "_N$string": "Level 1",
     "_fontSize": 20,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -20214,7 +20214,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 67.38,
+      "width": 69.34,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -20266,8 +20266,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Nivel 2",
-    "_N$string": "Nivel 2",
+    "_string": "Level 2",
+    "_N$string": "Level 2",
     "_fontSize": 20,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -20338,7 +20338,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 67.34,
+      "width": 69.3,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -20390,8 +20390,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Nivel 3",
-    "_N$string": "Nivel 3",
+    "_string": "Level 3",
+    "_N$string": "Level 3",
     "_fontSize": 20,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -20589,8 +20589,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Programa exclusivo de afiliados, hacer dinero más fácil",
-    "_N$string": "Programa exclusivo de afiliados, hacer dinero más fácil",
+    "_string": "Exclusive Affiliate Program, Making Money Easier",
+    "_N$string": "Exclusive Affiliate Program, Making Money Easier",
     "_fontSize": 24,
     "_lineHeight": 24,
     "_enableWrapText": true,

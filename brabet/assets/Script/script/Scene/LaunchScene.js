@@ -28,6 +28,7 @@ var h = function (e) {
                 this.hideBtnService(),
                 app.ComTool().H5Platform() ? this.setOrientationVertical() : this.setOrientationHorizon(),
                 this.RegEvent(i.GameEventDefine.INIT_FORM_TABLE, this.onInitFormTable),
+                this.RegEvent(i.GameEventDefine.INIT_SelectRegion, this.onInitSelectRegion),
                 this.RegEvent(i.GameEventDefine.INIT_TEXT, this.onInitText),
                 this.RegEvent(i.GameEventDefine.GET_GAME_CONFIG_FAILED, this.onGameConfigFailed),
                 this.RegEvent(i.GameEventDefine.HOT_UPDATE, this.onHotUpdate),
@@ -67,6 +68,15 @@ var h = function (e) {
                         });
                         break;
                     case 2:
+                        let localSelectRegion = app.LanguageManager().GetLocalSelectRegion()
+                        if (localSelectRegion) {
+                            this.onInitSelectRegion()
+                        }
+                        else {
+                            app.FormManager().ShowForm(r.UINameDefine.UISelectRegion)
+                        }
+                        break;
+                    case 3:
                         this.StartGameLogic()
                 }
         }
@@ -77,6 +87,22 @@ var h = function (e) {
         ,
         t.prototype.onInitFormTable = function () {
             this.loadState = 1
+        }
+        ,
+        t.prototype.onInitSelectRegion = function () {
+            let localSelectRegion = app.LanguageManager().GetLocalSelectRegion()
+            if (app.LanguageManager().GetLocalSelectRegion() == 1) {
+                window.channelID = 1
+                app.ClientConfigManager().GetGlobalConfig.hosts = [goServer_hosts1]
+                app.ClientConfigManager().GetGlobalConfig.scheme = goServer_scheme1
+            } else {
+                window.channelID = 2
+                app.ClientConfigManager().GetGlobalConfig.hosts = [goServer_hosts2]
+                app.ClientConfigManager().GetGlobalConfig.scheme  = goServer_scheme2
+            }
+            this.loadState = 3
+            app.LanguageManager().RequestLangList()
+           // app.EventTrackManager().LogEvent(c.default.LAUNCH_START_BEGIN)
         }
         ,
         t.prototype.OnClick = function (e) {
@@ -102,8 +128,8 @@ var h = function (e) {
         ,
         t.prototype.start = function () {
             this.Log("start"),
-                this.labelVersion.string = app.ClientConfigManager().GetVersion,
-                app.EventTrackManager().LogEvent(c.default.LAUNCH_START_BEGIN)
+                this.labelVersion.string = app.ClientConfigManager().GetVersion
+                //app.EventTrackManager().LogEvent(c.default.LAUNCH_START_BEGIN)
         }
         ,
         t.prototype.StartGameLogic = function () {

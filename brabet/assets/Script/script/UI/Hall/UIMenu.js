@@ -21,6 +21,7 @@ var o, i = require("../../../Common/Base/BaseForm"),
                     t.languageList = null,
                     t.lblVip = null,
                     t.data = null,
+                    t.regionSpr = [],
                     t
             }
             return __extends(t, e),
@@ -28,6 +29,7 @@ var o, i = require("../../../Common/Base/BaseForm"),
                     this.JS_Name = "UIMenu",
                         this.GameToggleContainer = this.GetWndNode("left/bg/view/content/toggleContainer"),
                         this.languageList = this.GetWndNode("left/bg/view/content/language/language_choose"),
+                        this.regionList = this.GetWndNode("left/bg/view/content/region/language_choose"),
                         this.lblVip = this.GetWndNode("left/bg/view/content/top_activity/btn_vip/vip/label"),
                         this.RegEvent(a.GameEventDefine.HALL_Language, this.OnSetLanguage),
                         this.RegEvent(a.GameEventDefine.HIDE_LANGUAGE, this.OnGetLanguageHide),
@@ -39,6 +41,9 @@ var o, i = require("../../../Common/Base/BaseForm"),
                 }
                 ,
                 t.prototype.OnShow = function () {
+                    this.OnSetRegion()
+                    this.GetWndNode("left/bg/view/content/region").active = !app.UserManager().getIsOfficialAccount()
+
                     for (var e, t = this, n = [], o = 0; o < arguments.length; o++)
                         n[o] = arguments[o];
                     app.Client.OnEvent(a.GameEventDefine.HallWidgetVariety),
@@ -92,13 +97,18 @@ var o, i = require("../../../Common/Base/BaseForm"),
                         return n && (n.scaleY = -n.scaleY),
                             void (this.languageList.active = !this.languageList.active)
                     }
-                    if ("language" != e && app.ComTool().H5Platform() && this.CloseForm(),
+                    else if ("region" == e) {
+                        var n = cc.find("title/icon_jt", t);
+                        return n && (n.scaleY = -n.scaleY),
+                            void (this.regionList.active = !this.regionList.active)
+                    }
+                    if ("language" != e &&"region" != e && app.ComTool().H5Platform() && this.CloseForm(),
                         this.OnFastGameHiedBg(),
                         this.OnGetLanguageHide(),
                         "btn_vip" != e)
                         if ("newCanalOficial" == e) {
                             cc.sys.openURL("https://t.me/Yotubet01")
-                        } 
+                        }
                         else if ("newGrupodeatividades" == e) {
                             cc.sys.openURL("https://t.me/sol888886")
                         }
@@ -145,6 +155,27 @@ var o, i = require("../../../Common/Base/BaseForm"),
                             this.GetWndNode("title/label", t).getComponent(cc.Label).string = e.name
                     }
                     this.OnGetLanguageHide()
+                }
+                ,
+                t.prototype.OnSetRegion = function () {
+                    var e = app.LanguageManager().GetLocalSelectRegion()
+                        , t = this.GetWndNode("left/bg/view/content/region");
+                    if (t && e) {
+                        if (e==1) {
+                            this.GetWndNode("title/icon", t).getComponent(cc.Sprite).spriteFrame = this.regionSpr[0]
+                            this.GetWndNode("title/label", t).getComponent(cc.Label).string = "Brasil"
+                        }
+                        else
+                        {
+                            this.GetWndNode("title/icon", t).getComponent(cc.Sprite).spriteFrame = this.regionSpr[1],
+                            this.GetWndNode("title/label", t).getComponent(cc.Label).string = "Colombia"
+                        }
+                    }
+                    if (this.regionList.active) {
+                        var e = cc.find("title/icon_jt", this.regionList.parent);
+                        e && (e.scaleY = -e.scaleY),
+                            this.regionList.active = false
+                    }
                 }
                 ,
                 t.prototype.OnGetLanguageHide = function () {
@@ -201,7 +232,7 @@ var o, i = require("../../../Common/Base/BaseForm"),
                 ,
                 t.prototype.VisibleNode = function () {
                     var e = app.UserManager().GetUserInfoConfig.show_arr;
-                        this.GetWndNode("left/bg/view/content/top_activity/quanmindai").active = 1 == e[r.VisibleBtnTag.Btn_NewMoney],
+                    this.GetWndNode("left/bg/view/content/top_activity/quanmindai").active = 1 == e[r.VisibleBtnTag.Btn_NewMoney],
                         this.GetWndNode("left/bg/view/content/top_activity/btn_vip").active = 1 == e[r.VisibleBtnTag.Btn_VIP]
                 }
                 ,
@@ -211,6 +242,7 @@ var o, i = require("../../../Common/Base/BaseForm"),
                     app.Client.OnEvent(a.GameEventDefine.HALLTOP_V_MENU, 1)
                 }
                 ,
+                __decorate([l.property([cc.SpriteFrame])], t.prototype, "regionSpr", undefined),
                 __decorate([p], t)
         }(i.default));
 n.default = d,

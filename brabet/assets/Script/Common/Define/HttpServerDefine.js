@@ -150,6 +150,10 @@ if (isgoServer) {
     o.GET_KEFU_LIST = "/kefu/getKefuUrl"
     o.CANGET_Redenvelope = "/Redenvelope/CanGetRedenvelope"//o.GET_NOTICE_LIST
     o.GET_Redenvelope = "/Redenvelope/GetRedenvelope"//o.GET_NOTICE_LIST
+    o.GET_DailyRegistrations = "/activitie/getDailyRegistrations"
+    o.GET_cashWheel = "/activitie/cashWheel"
+    o.open_cashWheel = "/activitie/opencashWheel"
+    o.GET_cashWheelHistory = "/activitie/cashWheelHistory"
    // o.CANGET_Redenvelope = o.GET_NOTICE_LIST
    // o.GET_Redenvelope = o.GET_NOTICE_LIST
 }

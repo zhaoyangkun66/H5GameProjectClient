@@ -38,3 +38,43 @@ UI.UIBetBonusSlots,Slots,,,,,,,,,Slots,Slots
 UI.UIBetBonusLive Casino,Live Casino,,,,,,,,,Live Casino,Live Casino
 UI.UIBetBonusIn-House,In-House,,,,,,,,,In-House,In-House
 UI.20% CASH BACK,20% CASH BACK,,,,,,,,,20% CASH BACK,20% CASH BACK
+UI.UIStoreAndCashCardholderName,<b><color=#59677C>Cardholder Name</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Nome do Titular</color><color=#ff0000>*</color></b>,<b><color=#59677C>Nombre del titular de la tarjeta</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashInputCardholderName,Input Cardholder Name,,,,,,,,,Insira o nome do titular do cartão,Introduzca el nombre del titular de la tarjeta
+UI.UIStoreAndCashElectronicWalletType,<b><color=#59677C>Electronic Wallet Type</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Tipo de carteira eletrônica</color><color=#ff0000>*</color></b>,<b><color=#59677C>Tipo de billetera electrónica</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashSelectBank,Select Bank,,,,,,,,,Selecione Banco,Seleccionar banco
+UI.UIStoreAndCashBankAccountType,<b><color=#59677C>Bank Account Type</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Tipo de conta bancária</color><color=#ff0000>*</color></b>,<b><color=#59677C>Tipo de cuenta bancaria</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashBankAccountNumber,<b><color=#59677C>Bank Account Number</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Número da conta de banco</color><color=#ff0000>*</color></b>,<b><color=#59677C>Número de cuenta bancaria</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashInputInBankAccount,Input In Bank Account,,,,,,,,,Entrada em conta bancária,Entrada en cuenta bancaria
+UI.UIStoreAndCashSelectType,<b><color=#59677C>Select Type</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Selecione o tipo</color><color=#ff0000>*</color></b>,<b><color=#59677C>Seleccionar el tipo</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashCertificateNumber,<b><color=#59677C>Certificate number</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Número do certificado</color><color=#ff0000>*</color></b>,<b><color=#59677C>Número de certificado</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashCompletethe,Input Certificate number,,,,,,,,,Insira o número do certificado,Número de certificado de entrada
+UI.UIActivityDailyRegistrations1,"<color=#9EA9AA>Iniciado sesión </color>",,,,,,,,,"<color=#9EA9AA>Iniciado sesión </color>","<color=#9EA9AA>Iniciado sesión </color>"
+UI.UIActivityDailyRegistrations2,"<color=#9EA9AA> días consecutivos</color>",,,,,,,,,"<color=#9EA9AA> días consecutivos</color>","<color=#9EA9AA> días consecutivos</color>"
+UI.UIActivityDailyRegistrations3,"<color=#9EA9AA>Recogido: </color>",,,,,,,,,"<color=#9EA9AA>Recogido: </color>","<color=#9EA9AA>Recogido: </color>"
+UI.UIActivityDailyRegistrations4,"<color=#9EA9AA>Y se requiere cargar：</color>",,,,,,,,,"<color=#9EA9AA>Y se requiere cargar：</color>","<color=#9EA9AA>Y se requiere cargar：</color>"
+UI.UIActivityDailyRegistrations5,"<color=#9EA9AA>Apuestas: </color>",,,,,,,,,"<color=#9EA9AA>Apuestas: </color>","<color=#9EA9AA>Apuestas: </color>"
+UI.UIActivityDailyRegistrations6,"<size=26><color=#f9de06>Event conditions:</color></size>
+Deposit + total bet of the day (redefined after 7 consecutive days)<br/>
+<size=26><color=#f9de06>Event description: </color></size>
+1. You can only get the fixed bonus if you log in and complete the deposit and betting conditions.
+2. This activity is a continuous login activity (if the login is interrupted, it will start again on the first day)
+3. Rewards can be claimed on iOS, Android, H5 and PC.
+4. The bonus attributable to this event requires 1x the bet before it can be withdrawn.
+5. This activity is limited to normal operations through this account. Using external plug-ins, taking over different devices, mutual search, arbitration, interface protocols, vulnerability scanning, group control and other technical means to participate are prohibited. Otherwise, rewards will be canceled or deducted and eventually frozen or blacklisted.
+6. To avoid differences in the understanding of the text, this platform has the final right to interpret this event.",,,,,,,,,"<size=26><color=#f9de06>Condições do evento:</color></size>
+Depósito + aposta total do dia (redefinido após 7 dias consecutivos)<br/>
+<size=26><color=#f9de06>Descrição do evento: </color></size>
+1. Você só poderá obter o bônus fixo se fizer login e preencher as condições de depósito e apostas.
+2. Esta atividade é uma atividade de login contínua (se o login for interrompido, ele será reiniciado no primeiro dia)
+3. As recompensas podem ser resgatadas em iOS, Android, H5 e PC.
+4. O bônus atribuível a este evento requer 1x a aposta antes de poder ser retirado.
+5. Esta atividade está limitada às operações normais através desta conta. É proibido o uso de plug-ins externos, o controle de diferentes dispositivos, busca mútua, arbitragem, protocolos de interface, verificação de vulnerabilidades, controle de grupo e outros meios técnicos de participação. Caso contrário, as recompensas serão canceladas ou deduzidas e eventualmente congeladas ou colocadas na lista negra.
+6. Para evitar diferenças na compreensão do texto, esta plataforma tem o direito final de interpretar este evento."​,"<size=26><color=#f9de06>Condiciones del evento:</color></size>
+Depósito + apuesta total del día (redefinida después de 7 días consecutivos)<br/>
+<size=26><color=#f9de06>Descripción del evento: </color></size>
+1. Solo puedes obtener el bono fijo si inicias sesión y completas las condiciones de depósito y apuestas.
+2. Esta actividad es una actividad de inicio de sesión continuo (si se interrumpe el inicio de sesión, comenzará nuevamente el primer día)
+3. Las recompensas se pueden reclamar en iOS, Android, H5 y PC.
+4. El bono atribuible a este evento requiere 1 vez la apuesta antes de poder retirarse.
+5. Esta actividad se limita a las operaciones normales a través de esta cuenta. Está prohibido utilizar complementos externos, apoderarse de diferentes dispositivos, búsqueda mutua, arbitraje, protocolos de interfaz, escaneo de vulnerabilidades, control de grupos y otros medios técnicos para participar. De lo contrario, las recompensas se cancelarán o deducirán y eventualmente se congelarán o se incluirán en la lista negra.
+6. Para evitar diferencias en la comprensión del texto, esta plataforma tiene el derecho final de interpretar este evento."

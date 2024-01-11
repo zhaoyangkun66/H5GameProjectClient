@@ -205,7 +205,7 @@ n.Development = o,
             e[e.agency_promotion = 23] = "agency_promotion",
             e[e.rain_of_red_envelopes = 24] = "rain_of_red_envelopes",
             e[e.Atividades_de_Natal = 25] = "Atividades_de_Natal",
-            e[e.recharge_bussiness_two_gift = 26] = "recharge_bussiness_two_gift",
+            e[e.daily_Registrations = 26] = "daily_Registrations",
             e[e.recharge_bussiness_three_gift = 27] = "recharge_bussiness_three_gift",
             e[e.reserve_event_five = 28] = "reserve_event_five"
     }(n.ActivityType || (n.ActivityType = {})),
