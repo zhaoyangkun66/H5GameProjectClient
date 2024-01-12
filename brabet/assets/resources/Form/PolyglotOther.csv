@@ -78,3 +78,31 @@ Depósito + apuesta total del día (redefinida después de 7 días consecutivos)
 4. El bono atribuible a este evento requiere 1 vez la apuesta antes de poder retirarse.
 5. Esta actividad se limita a las operaciones normales a través de esta cuenta. Está prohibido utilizar complementos externos, apoderarse de diferentes dispositivos, búsqueda mutua, arbitraje, protocolos de interfaz, escaneo de vulnerabilidades, control de grupos y otros medios técnicos para participar. De lo contrario, las recompensas se cancelarán o deducirán y eventualmente se congelarán o se incluirán en la lista negra.
 6. Para evitar diferencias en la comprensión del texto, esta plataforma tiene el derecho final de interpretar este evento."
+UI.UICashWheel1,You still need,,,,,,,,,Ainda precisa,Aún necesitas
+UI.UICashWheel2,to withdraw,,,,,,,,,retirar,retirarse
+UI.UICashWheel3,Expires at,,,,,,,,,Expira em,Vence en
+UI.UICashWheel4,Invite friends to help with withdrawals,,,,,,,,,Convide amigos para ajudar nas retiradas,Invita a amigos para que te ayuden con los retiros.
+UI.UICashWheel5,Report,,,,,,,,,Relatório,Informe
+UI.UICashWheel6,Rules,,,,,,,,,Regras,Normas
+UI.UICashWheel7,"1. During the event, each player can successfully obtain the reward once.
+2. The carousel is valid for 3 days. If you receive a reward within 3 days after opening the carousel, the carousel will no longer be opened during the event; if you do not receive a reward within 3 days, you can open the carousel again during the event.
+3. Players who log in to the carousel for the first time will get one chance to play the carousel.
+4. The first time you spin the wheel, you will get 100% reward, and a number will be randomly selected between 47000-48000 as the basic reward.
+5. After players obtain the basic carousel reward, they will receive 5 free carousel opportunities.
+6. Each time a player invites a new registered player, the number of spins will be +1.",,,,,,,,,"1. Durante o evento, cada jogador pode obter a recompensa uma vez.
+2. O carrossel é válido por 3 dias. Se você receber uma recompensa dentro de 3 dias após a abertura do carrossel, o carrossel não será mais aberto durante o evento; se você não receber uma recompensa dentro de 3 dias, você poderá abrir o carrossel novamente durante o evento.
+3. Os jogadores que fizerem login no carrossel pela primeira vez terão uma chance de jogar no carrossel.
+4. Na primeira vez que você girar a roda, você receberá 100% de recompensa e um número será selecionado aleatoriamente entre 47.000-48.000 como recompensa básica.
+5. Depois que os jogadores obtiverem a recompensa básica do carrossel, eles receberão 5 oportunidades gratuitas de carrossel.
+6. Cada vez que um jogador convida um novo jogador registado, o número de rodadas será +1.","1. Durante el evento, cada jugador puede obtener la recompensa una vez.
+2. El carrusel es válido por 3 días. Si recibe una recompensa dentro de los 3 días posteriores a la apertura del carrusel, el carrusel ya no se abrirá durante el evento; si no recibe una recompensa dentro de los 3 días, puede abrir el carrusel. nuevamente durante el evento.
+3. Los jugadores que inicien sesión en el carrusel por primera vez tendrán una oportunidad de jugar en el carrusel.
+4. La primera vez que gire la rueda, obtendrá una recompensa del 100 % y se seleccionará un número al azar entre 47000 y 48000 como recompensa básica.
+5. Después de que los jugadores obtengan la recompensa básica del carrusel, recibirán 5 oportunidades de carrusel gratis.
+6. Cada vez que un jugador invite a un nuevo jugador registrado, el número de giros será +1."
+UI.UICashWheelWithdraw1,You will soon be able to withdraw,,,,,,,,,Em breve você poderá sacar,Pronto podrás retirar
+UI.UICashWheelWithdraw2,Total money to be paid soon,,,,,,,,,Dinheiro total a ser pago em breve,Dinero total a pagar pronto
+UI.UICashWheelWithdraw3,The payment request has been submitted,,,,,,,,,A solicitação de pagamento foi enviada,La solicitud de pago ha sido enviada.
+UI.UICashWheelWithdraw4,will be paid into your account,,,,,,,,,será pago em sua conta,se pagará en su cuenta
+UI.UICashWheelWithdraw5,Invite friends to help with,,,,,,,,,Convide amigos para ajudar,Invita a amigos para que te ayuden
+UI.UIStore1,confirm payment,,,,,,,,,confirme o pagamento,confirmar pago

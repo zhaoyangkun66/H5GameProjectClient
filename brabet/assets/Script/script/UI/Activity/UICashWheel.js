@@ -47,8 +47,6 @@ var o = require("../../../Common/Base/BaseForm")
             }
             ,
             t.prototype.onGetCashWheel = function (data) {
-                this.data = data
-
                 if (data.resultid == 1 || data.resultid == 2 || data.resultid == 3) {
                     data.resultid = 7
                 }
@@ -71,8 +69,8 @@ var o = require("../../../Common/Base/BaseForm")
                 this.lastCashWheelNum.node.active = true
                 this.receivedCount.node.active = false
                 let resultid = Number(data.resultid)
+                let self = this
                 if (resultid >= 1 && resultid <= 8) {
-                    let self = this
                     this.btTurn.interactable = false
 
                     this.lastCashWheelNum.string = data.lastwheel
@@ -91,8 +89,8 @@ var o = require("../../../Common/Base/BaseForm")
                         cc.tween(obj).to(1, { num: data.resultgold }, {
                             progress: (start, end, current, t) => {
                                 let current2 = start + (end - start) * t;
-                                current2 = current2.toFixed(2)
-                                self.receivedCount.string = "+" + current2
+                                // current2 = current2.toFixed(2)
+                                self.receivedCount.string = "+" + app.ScoreUtil().toFixed(current2)
                                 return start + (end - start) * t;
                             }
                         }).start();
@@ -102,16 +100,37 @@ var o = require("../../../Common/Base/BaseForm")
                         self.needgold.string = app.ScoreUtil().toFixed(data.totalGold - data.receivedGold)
                         self.baifeibi.string = ((data.receivedGold / data.totalGold) * 100).toFixed(2) + "%"
                         self.sliderbaifeibi.progress = (data.receivedGold / data.totalGold)
+                        self.data = data
                     });
-                    let yici = cc.sequence(easeExponentialInOut, yanchi, funcall);
+                    let yici = cc.sequence(easeExponentialInOut, yanchi, funcall, cc.delayTime(2.0), cc.callFunc(function () {
+                        if (data.lastwheel <= 0) {
+                            app.FormManager().ShowForm(UINameDefine.UINameDefine.UICashWheelWithdraw, self.data);
+                        }
+                        self.lastCashWheelNum.node.active = true
+                        self.receivedCount.node.active = false
+                    }));
                     this.turntable.angle = 0
                     this.turntable.runAction(yici);
+
                 }
                 else {
-                    this.receivedGold.string = app.GameConfigManager().GetCurrency + " " + data.receivedGold
+                    // this.receivedGold.string = app.GameConfigManager().GetCurrency + " " + data.receivedGold
+                    var obj = {};
+                    obj.num = 0;
+                    self.receivedGold.string = obj.num;
+                    cc.tween(obj).to(0.3, { num: data.receivedGold }, {
+                        progress: (start, end, current, t) => {
+                            let current2 = start + (end - start) * t;
+                            self.receivedGold.string = app.GameConfigManager().GetCurrency + " " + app.ScoreUtil().toFixed(current2)
+                            return start + (end - start) * t;
+                        }
+                    }).start();
                     this.needgold.string = app.ScoreUtil().toFixed(data.totalGold - data.receivedGold)
                     this.baifeibi.string = ((data.receivedGold / data.totalGold) * 100).toFixed(2) + "%"
                     this.sliderbaifeibi.progress = (data.receivedGold / data.totalGold)
+
+
+                    this.data = data
                 }
             }
             ,
@@ -121,40 +140,34 @@ var o = require("../../../Common/Base/BaseForm")
             ,
             t.prototype.OnClick = function (e) {
 
-                if ("buttonShare" == e) {
-                    app.NativeMgr().copyToClipBoard(window.location.origin + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid)
+                if (!app.UserManager().getIsOfficialAccount()) {
+                    app.FormManager().ShowForm(UINameDefine.UINameDefine.UILoginSign, 1);
+                }
+                else if ("buttonShare" == e) {
+                    app.FormManager().ShowForm(UINameDefine.UINameDefine.UICashWheelShare);
                 }
                 else if ("btTurn" == e) {
-                    // app.ActivityManager().RequestOpenCashWheel()
                     let data =
                     {
                         "lastwheel": 0,                             //剩余几次转盘的机会
-                        "receivedGold": 47923,                      //已经累计获得了多少转盘奖励
+                        "receivedGold": 50000,                      //已经累计获得了多少转盘奖励
                         "totalGold": 50000,                         //一共需要获得多少奖励才算完成任务（结合receivedGold组成奖励完成进度）
                         "resultid": 5,                              //转盘奖励索引(1~5)(只有在opencashWheel消息中会返回值)
                         "resultgold": 232,                            //本次旋转获得多少奖励(只有在opencashWheel消息中会返回值)
                         "lasttime": 121765                          //活动结束剩余时间(剩余多少秒)
                     }
-                    this.onGetCashWheel(data)
+                    //this.onGetCashWheel(data)
 
 
-
-                    // if (this.data.canReceive == 0) {
-                    //     app.SysNotifyManager().ShowToast("UI.UIStoreAndCashCompletethe")
-                    // }
-                    // else {
-
-                    // }
-                    // if (this.data) {
-                    //     if (this.data.lLastNorSignNum == 0) {
-                    //         UIManager.openTipEffect("今日免费次数已用完，请明日再来！")
-                    //         return;
-                    //     }
-                    // }
-                    // appFacade.retrieveProxy('GameToolProxy').RequestSingUpState(1)
+                    if (this.data && this.data.lastwheel <= 0) {
+                        app.FormManager().ShowForm(UINameDefine.UINameDefine.UICashWheelShare);
+                    }
+                    else {
+                        app.ActivityManager().RequestOpenCashWheel()
+                    }
                 }
                 else if ("btn_Receive" == e) {
-                    app.FormManager().ShowForm(UINameDefine.UINameDefine.UICashWheelWithdraw);
+                    app.FormManager().ShowForm(UINameDefine.UINameDefine.UICashWheelWithdraw, this.data);
                 }
 
             }

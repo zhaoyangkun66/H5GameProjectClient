@@ -91,7 +91,11 @@ var o = require("../Base/Singleton")
                 configurable: true
             }),
             t.prototype.LoadHallSuccess = function () {
-                this.RequestGetNoticeList()
+                if (window.location.href.includes("UICashWheel")) {
+                    app.FormManager().ShowForm(s.UINameDefine.UICashWheel)
+                } else {
+                    this.RequestGetNoticeList()
+                }
                 //   this.RequestCanGetRedenvelope()
             }
             ,
