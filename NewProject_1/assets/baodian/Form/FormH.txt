@@ -1,4 +1,0 @@
-界面名	界面路径	切换场景是否释放	返回是否需要开启	是否是独立界面	bundleName
-FormName	FormPath	FormRelease	ReturnOpen	Independent	bundleName
-game_Crash	prefab/game_Crash_H	0	false	3	baodian
-UICrashAutoSetting	prefab/UIAutoSetting_H	0	false	0	baodian

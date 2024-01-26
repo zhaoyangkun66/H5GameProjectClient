@@ -81,25 +81,26 @@ Depósito + apuesta total del día (redefinida después de 7 días consecutivos)
 UI.UICashWheel1,You still need,,,,,,,,,Ainda precisa,Aún necesitas
 UI.UICashWheel2,to withdraw,,,,,,,,,retirar,retirarse
 UI.UICashWheel3,Expires at,,,,,,,,,Expira em,Vence en
-UI.UICashWheel4,Invite friends to help with withdrawals,,,,,,,,,Convide amigos para ajudar nas retiradas,Invita a amigos para que te ayuden con los retiros.
+UI.UICashWheel4,Invite friends to help,,,,,,,,,Convide amigos para ajudar,Invitar a amigos a ayudar
 UI.UICashWheel5,Report,,,,,,,,,Relatório,Informe
 UI.UICashWheel6,Rules,,,,,,,,,Regras,Normas
-UI.UICashWheel7,"1. During the event, each player can successfully obtain the reward once.
-2. The carousel is valid for 3 days. If you receive a reward within 3 days after opening the carousel, the carousel will no longer be opened during the event; if you do not receive a reward within 3 days, you can open the carousel again during the event.
-3. Players who log in to the carousel for the first time will get one chance to play the carousel.
-4. The first time you spin the wheel, you will get 100% reward, and a number will be randomly selected between 47000-48000 as the basic reward.
-5. After players obtain the basic carousel reward, they will receive 5 free carousel opportunities.
-6. Each time a player invites a new registered player, the number of spins will be +1.",,,,,,,,,"1. Durante o evento, cada jogador pode obter a recompensa uma vez.
-2. O carrossel é válido por 3 dias. Se você receber uma recompensa dentro de 3 dias após a abertura do carrossel, o carrossel não será mais aberto durante o evento; se você não receber uma recompensa dentro de 3 dias, você poderá abrir o carrossel novamente durante o evento.
-3. Os jogadores que fizerem login no carrossel pela primeira vez terão uma chance de jogar no carrossel.
-4. Na primeira vez que você girar a roda, você receberá 100% de recompensa e um número será selecionado aleatoriamente entre 47.000-48.000 como recompensa básica.
-5. Depois que os jogadores obtiverem a recompensa básica do carrossel, eles receberão 5 oportunidades gratuitas de carrossel.
-6. Cada vez que um jogador convida um novo jogador registado, o número de rodadas será +1.","1. Durante el evento, cada jugador puede obtener la recompensa una vez.
-2. El carrusel es válido por 3 días. Si recibe una recompensa dentro de los 3 días posteriores a la apertura del carrusel, el carrusel ya no se abrirá durante el evento; si no recibe una recompensa dentro de los 3 días, puede abrir el carrusel. nuevamente durante el evento.
-3. Los jugadores que inicien sesión en el carrusel por primera vez tendrán una oportunidad de jugar en el carrusel.
-4. La primera vez que gire la rueda, obtendrá una recompensa del 100 % y se seleccionará un número al azar entre 47000 y 48000 como recompensa básica.
-5. Después de que los jugadores obtengan la recompensa básica del carrusel, recibirán 5 oportunidades de carrusel gratis.
-6. Cada vez que un jugador invite a un nuevo jugador registrado, el número de giros será +1."
+UI.UICashWheel7,"1. You will be able to withdraw money when the accumulated amount reaches COL$50,000\n
+2. Inviting friends to register on YOTUBET.COM will help you withdraw money quickly. For each friend who successfully registers, you will get 1 drawing opportunity.\n
+4. Each user's activity is valid for 3 days. If no withdrawal is made within 3 days, the funds will be lost.\n
+5. The winnings will be added to your wallet and you can play for free and win more real money or withdraw it directly.\n
+6. All illegal means of obtaining bonuses will not be recognized, including but not limited to account swiping on the same IP and the same device. We will eliminate the bonuses obtained by said accounts. The final interpretation right of this activity belongs to YOTUBET. COM",,,,,,,,,"1. Você poderá sacar dinheiro quando o valor acumulado atingir COL$50.000\n
+2. Convidar amigos para se registrarem no YOTUBET.COM ajudará você a sacar dinheiro rapidamente. Para cada amigo que se registrar com sucesso, você terá 1 oportunidade de sorteio.\n
+4. A atividade de cada usuário é válida por 3 dias. Se nenhum saque for feito dentro de 3 dias, os fundos serão perdidos.\n
+5. Os ganhos serão adicionados à sua carteira e você poderá jogar de graça e ganhar mais dinheiro real ou sacá-lo diretamente.\n
+6. Todos os meios ilegais de obtenção de bônus não serão reconhecidos, incluindo, mas não limitado a, swiping de conta no mesmo IP e no mesmo dispositivo. Eliminaremos os bônus obtidos por tais contas. O direito de interpretação final desta atividade pertence ao YOTUBET. COM","1. Podrás retirar dinero cuando el monto acumulado llegue a COL$50.000\n
+2. Invitar a amigos a registrarse en YOTUBET.COM te ayudará a retirar dinero rápidamente. Por cada amigo que se registre exitosamente, obtendrás 1 oportunidad de sorteo.\n
+4. La actividad de cada usuario es válida por 3 días. Si no se realiza ningún retiro dentro de los 3 días, los fondos se perderán.\n
+5. Las ganancias se agregarán a tu billetera y podrás jugar gratis y ganar más dinero real o retirarlo directamente.\n
+6. No se reconocerán todos los medios ilegales para obtener bonos, incluidos, entre otros, el deslizamiento de la cuenta en la misma IP y el mismo dispositivo. Eliminaremos los bonos obtenidos por dichas cuentas. El derecho de interpretación final de esta actividad pertenece a YOTUBET. COM"
+UI.UICashWheel8,"We're sorry, your withdrawal progress has not reached 100%. Try again to win it.",,,,,,,,,"Lamentamos, mas o progresso da sua retirada não atingiu 100%. Tente novamente para vencer.","Lo sentimos, el progreso de tu retiro no ha alcanzado el 100%. Inténtalo nuevamente para ganarlo."
+UI.UICashWheel9,"Congratulations on successfully winning the bonus, start over and win again",,,,,,,,,"Parabéns por ganhar o bônus com sucesso, recomece e ganhe novamente","Felicitaciones por ganar exitosamente el bono, comience de nuevo y gane nuevamente"
+UI.UICashWheel10,Begin,,,,,,,,,Começar,Comenzar
+UI.UICashWheel11,TO WITHDRAW,,,,,,,,,SACAR,SACAR
 UI.UICashWheelWithdraw1,You will soon be able to withdraw,,,,,,,,,Em breve você poderá sacar,Pronto podrás retirar
 UI.UICashWheelWithdraw2,Total money to be paid soon,,,,,,,,,Dinheiro total a ser pago em breve,Dinero total a pagar pronto
 UI.UICashWheelWithdraw3,The payment request has been submitted,,,,,,,,,A solicitação de pagamento foi enviada,La solicitud de pago ha sido enviada.

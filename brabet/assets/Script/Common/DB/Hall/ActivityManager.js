@@ -39,7 +39,9 @@ var o = require("../../Define/ShareDefine")
 
                 app.HttpServerManager().RegNetPack(r.HttpAPI.GET_cashWheel, this.onGetCashWheel, this)
                 app.HttpServerManager().RegNetPack(r.HttpAPI.open_cashWheel, this.onOpenCashWheel, this)
-
+                app.HttpServerManager().RegNetPack(r.HttpAPI.GET_cashWheelwithdraw, this.onCashWheelwithdraw, this)
+                app.HttpServerManager().RegNetPack(r.HttpAPI.GET_cashWheelreset, this.onCashWheelreset, this)
+ 
             }
             ,
             t.prototype.onGetLimitTimeRecharge = function (e) {
@@ -219,18 +221,18 @@ var o = require("../../Define/ShareDefine")
                 if (isgoServer == true) {
                     // e.push({
                     //     "switch": 1,
-                    //     "title": "Inscricoes diarias",
-                    //     "img": "https://www.yotubet.com/uploads/notice_image/Inscripciones_diarias.png",
+                    //     "title": "Rueda de efectivo",
+                    //     "img": "https://www.yotubet.com/uploads/notice_image/CashWheel.png",
                     //     "content": "",
                     //     "content_type": "1",
-                    //     "entrance_img": "https://www.yotubet.com/uploads/notice_image/Inscripciones_diarias.png",
+                    //     "entrance_img": "https://www.yotubet.com/uploads/notice_image/CashWheel.png",
                     //     "inside": "0",
                     //     "outside": "",
                     //     "button_name": "",
-                    //     "mobile_title": "Inscricoes diarias",
-                    //     "mobile_intro": "Recibe bonificación entre 1600 y 45000 Reiniciado cuando se interrumpe",
-                    //     "act_id": 26,
-                    //     "sort": 7,
+                    //     "mobile_title": "Rueda de efectivo",
+                    //     "mobile_intro": "Recibe ahora COL$ 50000 y retíralo del banco",
+                    //     "act_id": 27,
+                    //     "sort": 10,
                     //     "icon_url": "",
                     //     "is_show": 1
                     // })
@@ -286,6 +288,24 @@ var o = require("../../Define/ShareDefine")
             ,
             t.prototype.onOpenCashWheel = function (e) {
                 app.Client.OnEvent(a.GameEventDefine.open_cashWheel, e)
+            },
+            t.prototype.RequestCashWheelwithdraw = function (e) {
+                app.HttpServerManager().SendHttpPack(r.HttpAPI.GET_cashWheelwithdraw, {
+                    token: app.UserManager().GetUserInfo.token
+                })
+            }
+            ,
+            t.prototype.onCashWheelwithdraw = function (e) {
+                app.Client.OnEvent(a.GameEventDefine.GET_cashWheelwithdraw, e)
+            },
+            t.prototype.RequestCashWheelreset = function (e) {
+                app.HttpServerManager().SendHttpPack(r.HttpAPI.GET_cashWheelreset, {
+                    token: app.UserManager().GetUserInfo.token
+                })
+            }
+            ,
+            t.prototype.onCashWheelreset = function (e) {
+                app.Client.OnEvent(a.GameEventDefine.GET_cashWheelreset, e)
             }
             ,
             t.prototype.onGetCardDailyGold = function (e, t) {

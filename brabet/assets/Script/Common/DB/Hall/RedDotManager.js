@@ -75,30 +75,30 @@ var o = require("../../Define/ShareDefine")
             ,
             t.prototype.onRechargeInfo = function (e) {
                 if (isgoServer == true) {
-                    // if (e.daily_Registrations == null) {
-                    //     e.daily_Registrations = {
+                    // if (e.Cash_Wheel == null) {
+                    //     e.Cash_Wheel = {
                     //         "switch": 1,
-                    //         "title": "Inscricoes diarias",
-                    //         "img": "https://www.yotubet.com/uploads/notice_image/Inscripciones_diarias.png",
+                    //         "title": "Rueda de efectivo",
+                    //         "img": "https://www.yotubet.com/uploads/notice_image/CashWheel.png",
                     //         "content": "",
                     //         "content_type": "1",
-                    //         "entrance_img": "https://www.yotubet.com/uploads/notice_image/Inscripciones_diarias.png",
+                    //         "entrance_img": "https://www.yotubet.com/uploads/notice_image/CashWheel.png",
                     //         "inside": "0",
                     //         "outside": "",
                     //         "button_name": "",
-                    //         "mobile_title": "Inscricoes diarias",
-                    //         "mobile_intro": "Recibe bonificación entre 1600 y 45000 Reiniciado cuando se interrumpe",
-                    //         "act_id": 26,
-                    //         "sort": 7,
+                    //         "mobile_title": "Rueda de efectivo",
+                    //         "mobile_intro": "Recibe ahora COL$ 50000 y retíralo del banco",
+                    //         "act_id": 27,
+                    //         "sort": 10,
                     //         "icon_url": "",
                     //         "is_show": 1
                     //     }
                     //     e.activity_config.push({
-                    //         "id": 26,
-                    //         "title": "Inscricoes diarias",
+                    //         "id": 27,
+                    //         "title": "Rueda de efectivo",
                     //         "type": 2,
-                    //         "sort": 7,
-                    //         "icon_url": "https://www.yotubet.com/uploads/images/activity_config/Inscripciones_diarias.png",
+                    //         "sort": 10,
+                    //         "icon_url": "https://www.yotubet.com/uploads/images/activity_config/CashWheel.png",
                     //         "is_show": 1
                     //     })
                     // }

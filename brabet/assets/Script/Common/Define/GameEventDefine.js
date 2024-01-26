@@ -159,6 +159,8 @@ function(e) {
     e.GET_DailyRegistrations = "GET_DailyRegistrations",
     e.GET_cashWheel = "GET_cashWheel",
     e.open_cashWheel = "open_cashWheel",
+    e.GET_cashWheelwithdraw = "GET_cashWheelwithdraw",
+    e.GET_cashWheelreset = "GET_cashWheelreset",
     e.GET_DIRECTDETAILLIST = "GET_DIRECTDETAILLIST",
     e.STOP_LOGIN_ANIM = "STOP_LOGIN_ANIM",
     e.REFRESH_LAUNCH = "REFRESH_LAUNCH",

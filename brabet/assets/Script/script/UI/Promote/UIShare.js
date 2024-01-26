@@ -169,7 +169,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     if (e) {
                         var t = e;
                         this.setLabelID(t.uid),
-                            this.ShareUrl = t.link,
+                           // this.ShareUrl = t.link + "&regionid=" + channelID,
+                            this.ShareUrl = location.origin + location.pathname + "?agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID,
                             this.QRcodeUrl = t.qr_code,
                             this.ShareContent = t.share_content,
                             this.invCount = t.share_count,
@@ -387,25 +388,25 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 ,
                 t.prototype.initShareBtnList = function () {
                     try {
-                        var e = app.GameConfigManager().GetGameConfig().share_app;
-                        if (e) {
-                            this.ShareBtnList = [],
-                                this.ShareBtnList[1] = cc.find("/node_Progress/node_group/layout/img_btnWsApp", this.node),
-                                this.ShareBtnList[2] = cc.find("/node_Progress/node_group/layout/img_btnFb", this.node),
-                                this.ShareBtnList[3] = cc.find("/node_Progress/node_group/layout/img_btnLine", this.node),
-                                this.ShareBtnList[4] = cc.find("/node_Progress/node_group/layout/img_btnZalo", this.node),
-                                this.ShareBtnList[1].getChildByName("button").on("click", this.WhatsAppShare, this),
-                                this.ShareBtnList[2].getChildByName("button").on("click", this.facebookShare, this),
-                                this.ShareBtnList[3].getChildByName("button").on("click", this.LineShare, this),
-                                this.ShareBtnList[4].getChildByName("button").on("click", this.zaloShare, this);
-                            for (var t = 1; t <= 4; t++)
-                                (n = this.ShareBtnList[t]).active = false;
-                            for (t = 0; t < e.length; t++) {
-                                var n = e[t]
-                                    , o = this.ShareBtnList[n];
-                                o && (o.active = true)
-                            }
-                        }
+                        // var e = app.GameConfigManager().GetGameConfig().share_app;
+                        // if (e) {
+                        this.ShareBtnList = [],
+                            this.ShareBtnList[1] = cc.find("/node_Progress/node_group/layout/img_btnWsApp", this.node),
+                            this.ShareBtnList[2] = cc.find("/node_Progress/node_group/layout/img_btnFb", this.node),
+                            this.ShareBtnList[3] = cc.find("/node_Progress/node_group/layout/img_btnLine", this.node),
+                            this.ShareBtnList[4] = cc.find("/node_Progress/node_group/layout/img_btnZalo", this.node),
+                            this.ShareBtnList[1].getChildByName("button").on("click", this.WhatsAppShare, this),
+                            this.ShareBtnList[2].getChildByName("button").on("click", this.facebookShare, this),
+                            this.ShareBtnList[3].getChildByName("button").on("click", this.LineShare, this),
+                            this.ShareBtnList[4].getChildByName("button").on("click", this.zaloShare, this);
+                        //  for (var t = 1; t <= 4; t++)
+                        //     (n = this.ShareBtnList[t]).active = false;
+                        //   for (t = 0; t < e.length; t++) {
+                        //     var n = e[t]
+                        //        , o = this.ShareBtnList[n];
+                        //   o && (o.active = true)
+                        // }
+                        // }
                     } catch (i) {
                         cc.error("initShareBtnList ERROR")
                     }
@@ -485,7 +486,17 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 }
                 ,
                 t.prototype.LineShare = function () {
-                    "" !== this.ShareUrl ? app.NativeMgr().LineAppShare(this.ShareContent + "    " + this.ShareUrl) : app.SysNotifyManager().ShowToast("ShareUrlError")
+                    if (channelID == 2) {
+                        var originalUrl = location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID
+                        var encodedUrl = encodeURIComponent(originalUrl);
+                        cc.sys.openURL("https://t.me/share/url?url=" + encodedUrl + "&text=Gana COL$50.000 Gratis, Retiro Rápido NEQUI")
+                    }
+                    else {
+                        var originalUrl = location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID
+                        var encodedUrl = encodeURIComponent(originalUrl);
+                        cc.sys.openURL("https://t.me/share/url?url=" + encodedUrl)
+                    }
+                    //"" !== this.ShareUrl ? app.NativeMgr().LineAppShare(this.ShareContent + "    " + this.ShareUrl) : app.SysNotifyManager().ShowToast("ShareUrlError")
                 }
                 ,
                 t.prototype.zaloShare = function () {

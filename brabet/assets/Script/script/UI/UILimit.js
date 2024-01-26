@@ -26,6 +26,7 @@ var o = require("../../Common/Base/BaseForm")
                     this.GetWndComponent("title", cc.Label, this.ban).string = app.i18n.t("UI_LimitTitle")
                 app.LanguageManager().SetSelectRegion(0)
                 app.LoginManager().RemoveCurrentUser()
+                app.KeyManager().RegRouterEvent({ JS_Name: app.ClientConfigManager().getLocalUrlDataByName("f") }, [])
             }
             ,
             t.prototype.OnClick = function (e) {

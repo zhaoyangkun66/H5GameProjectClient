@@ -96,8 +96,12 @@ var o = require("../../../Common/Base/BaseForm")
             ,
             t.prototype.ActivityItemCallBack = function (e, t) {
                 app.ComUtil().playBtnClick()
-                if (t == 26) {
-                    app.FormManager().ShowForm(r.UINameDefine.UIActivityDailyRegistrations)
+                if (t == a.ActivityType.daily_Registrations) {
+                    if (!app.UserManager().GetIsOfficialPopup())
+                        app.FormManager().ShowForm(r.UINameDefine.UIActivityDailyRegistrations)
+                }
+                else if (t == a.ActivityType.Cash_Wheel) {
+                    app.FormManager().ShowForm(r.UINameDefine.UICashWheel)
                 }
                 else {
                     app.FormManager().ShowForm(r.UINameDefine.UIActivity, t)

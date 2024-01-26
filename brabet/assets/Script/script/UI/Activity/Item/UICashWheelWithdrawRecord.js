@@ -136,7 +136,7 @@ var o = require("../../../../Common/Base/UIBaseComponent")
                 0 != e.length && (this.NewRoundsData = [],
                     this.OldRoundsData ? e.forEach(function (e) {
                         for (var n = true, o = 0; o < t.OldRoundsData.length; o++)
-                            if (t.OldRoundsData[o].creat_time == e.creat_time) {
+                            if (t.OldRoundsData[o].recordtime == e.recordtime) {
                                 n = false;
                                 break
                             }
@@ -164,7 +164,7 @@ var o = require("../../../../Common/Base/UIBaseComponent")
                             t >= this.itemNum)
                             break
                     }
-                e.length > 0 ? this.OnGetRankInfo() : this.scheduleOnce(this.OnScheduleRequestList, 60)
+                e.length > 0 ? this.OnGetRankInfo() : this.scheduleOnce(this.OnScheduleRequestList, 10)
             }
             ,
             t.prototype.OnScheduleRequestList = function () {

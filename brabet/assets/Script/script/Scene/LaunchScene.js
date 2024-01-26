@@ -68,7 +68,12 @@ var h = function (e) {
                         });
                         break;
                     case 2:
+                        let regionid = app.ClientConfigManager().getLocalUrlDataByName("regionid")
                         let localSelectRegion = app.LanguageManager().GetLocalSelectRegion()
+                        if ((regionid == 1 || regionid == 2) && (!localSelectRegion)) {
+                            app.LanguageManager().SetSelectRegion(regionid)
+                            localSelectRegion = regionid
+                        }
                         if (localSelectRegion) {
                             this.onInitSelectRegion()
                         }
@@ -98,11 +103,11 @@ var h = function (e) {
             } else {
                 window.channelID = 2
                 app.ClientConfigManager().GetGlobalConfig.hosts = [goServer_hosts2]
-                app.ClientConfigManager().GetGlobalConfig.scheme  = goServer_scheme2
+                app.ClientConfigManager().GetGlobalConfig.scheme = goServer_scheme2
             }
             this.loadState = 3
             app.LanguageManager().RequestLangList()
-           // app.EventTrackManager().LogEvent(c.default.LAUNCH_START_BEGIN)
+            // app.EventTrackManager().LogEvent(c.default.LAUNCH_START_BEGIN)
         }
         ,
         t.prototype.OnClick = function (e) {
@@ -129,7 +134,7 @@ var h = function (e) {
         t.prototype.start = function () {
             this.Log("start"),
                 this.labelVersion.string = app.ClientConfigManager().GetVersion
-                //app.EventTrackManager().LogEvent(c.default.LAUNCH_START_BEGIN)
+            //app.EventTrackManager().LogEvent(c.default.LAUNCH_START_BEGIN)
         }
         ,
         t.prototype.StartGameLogic = function () {

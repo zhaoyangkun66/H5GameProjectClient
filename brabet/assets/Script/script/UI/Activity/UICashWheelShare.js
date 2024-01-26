@@ -24,7 +24,7 @@ var o = require("../../../Common/Base/BaseForm")
             }
             ,
             t.prototype.OnShow = function (data) {
-                this.lbl_link.string = window.location.href.split("?")[0] + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid
+                this.lbl_link.string = location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID
             }
             ,
             t.prototype.OnInitView = function (e) {
@@ -33,17 +33,23 @@ var o = require("../../../Common/Base/BaseForm")
             ,
             t.prototype.OnClick = function (e) {
                 if ("img_btnWsApp" == e) {
-                    app.NativeMgr().WhatsAppShare(window.location.href.split("?")[0] + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid)
+                    app.NativeMgr().WhatsAppShare(location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID)
                 }
                 else if ("img_btnFb" == e) {
                     app.NativeMgr().FaceBookShare(JSON.stringify({
                         des: "",
-                        url: window.location.href.split("?")[0] + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid
+                        url: location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID
                     }))
                 }
                 else if ("img_btnBg" == e) {
-                    app.NativeMgr().copyToClipBoard(window.location.href.split("?")[0] + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid)
+                    app.NativeMgr().copyToClipBoard(location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID)
                 }
+                else if ("img_Telegram" == e) {
+                    var originalUrl = location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID
+                    var encodedUrl = encodeURIComponent(originalUrl);
+                    cc.sys.openURL("https://t.me/share/url?url=" + encodedUrl + "&text=Gana COL$50.000 Gratis, Retiro Rápido NEQUI")
+                }
+
 
             }
             ,

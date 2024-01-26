@@ -44,14 +44,14 @@ var o = require("../Base/Singleton")
 
                 if (isgoServer) {
                     if (!isPushServer) {
-                        e.unshift({
-                            "link": 122137,
-                            "image": "https://www.yotubet.com/uploads/notice_image/CashWheel.png",
-                            "external_link": "",
-                            "start_time_stamp": 0,
-                            "end_time_stamp": 0,
-                            "cur_time": 1692770787
-                        })
+                        // e.unshift({
+                        //     "link": 22135,
+                        //     "image": "https://www.yotubet.com/uploads/notice_image/CashWheel.png",
+                        //     "external_link": "",
+                        //     "start_time_stamp": 0,
+                        //     "end_time_stamp": 0,
+                        //     "cur_time": 1692770787
+                        // })
                     }
                 }
 

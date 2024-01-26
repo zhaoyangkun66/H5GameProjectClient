@@ -228,12 +228,16 @@ var d = function (e) {
                     d = 4;
                 else if (22133 == e)
                     app.FormManager().ShowForm(l.UINameDefine.UIActivity, s.ActivityType.Atividades_de_Natal);
-                else if (22134 == e)
-                    app.FormManager().ShowForm(l.UINameDefine.UIActivityDailyRegistrations);
+                else if (22134 == e) {
+                    if (!app.UserManager().GetIsOfficialPopup())
+                        app.FormManager().ShowForm(l.UINameDefine.UIActivityDailyRegistrations);
+                }
                 else if (22135 == e)
-                    app.FormManager().ShowForm(l.UINameDefine.UIActivity, s.ActivityType.recharge_bussiness_three_gift);
-                else if (122136 == e)
-                    app.FormManager().ShowForm(l.UINameDefine.UIActivityDailyRegistrations);
+                    app.FormManager().ShowForm(l.UINameDefine.UICashWheel);
+                else if (122136 == e) {
+                    if (!app.UserManager().GetIsOfficialPopup())
+                        app.FormManager().ShowForm(l.UINameDefine.UIActivityDailyRegistrations);
+                }
                 else if (122137 == e)
                     app.FormManager().ShowForm(l.UINameDefine.UICashWheel);
                 else if (22137 == e)

@@ -49,10 +49,11 @@ UIFAQ	Hall/Prefab/Faq/UIFAQ	0	false	1	1
 UIGC	Hall/Prefab/Faq/UIGC	0	false	1	1
 UIHallNotice	Hall/Prefab/UIHallNotice_V	0	false	0	1
 UIActivity	Hall/Prefab/Activity/UIActivity_V	0	false	1	1
-UIActivityDailyRegistrations	Hall/Prefab/Activity/UIActivityDailyRegistrations_V	0	false	1	1
+UIActivityDailyRegistrations	Hall/Prefab/Activity/UIActivityDailyRegistrations_V	0	false	1	0
 UICashWheel	Hall/Prefab/Activity/UICashWheel	0	false	0	1
 UICashWheelWithdraw	Hall/Prefab/Activity/UICashWheelWithdraw	0	false	0	1
 UICashWheelShare	Hall/Prefab/Activity/UICashWheelShare	0	false	0	1
+UICashWheelRefresh	Hall/Prefab/Activity/UICashWheelRefresh	0	false	0	1
 UIAccount	Hall/Prefab/Account/UIAccount_V	0	false	1	0
 UIAccountPop	Hall/Prefab/Account/UIAccountPop	0	false	0	0
 UIAccountSetting	Hall/Prefab/Account/UIAccountSetting	0	false	1	0

@@ -698,6 +698,9 @@ var o = require("../../../Common/Define/UINameDefine")
             }
             ,
             e.prototype.onBetGoldNum = function (e, n, o) {
+                if (channelID == 2) {
+                    this.GameBetSizeLimit.min = 1000
+                }
                 void 0 === o && (o = true);
                 var i = this.GameBetSizeLimit.max;
                 i && e > i && (e = i,

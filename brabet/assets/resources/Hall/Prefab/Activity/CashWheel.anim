@@ -3,9 +3,9 @@
   "_name": "CashWheel",
   "_objFlags": 0,
   "_native": "",
-  "_duration": 6.016666666666667,
+  "_duration": 4,
   "sample": 60,
-  "speed": 1,
+  "speed": 0.5,
   "wrapMode": 2,
   "curveData": {
     "props": {
@@ -15,7 +15,7 @@
           "value": 0
         },
         {
-          "frame": 6.016666666666667,
+          "frame": 4,
           "value": -360
         }
       ]

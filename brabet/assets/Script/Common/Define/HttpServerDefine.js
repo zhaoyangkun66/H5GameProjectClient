@@ -154,6 +154,9 @@ if (isgoServer) {
     o.GET_cashWheel = "/activitie/cashWheel"
     o.open_cashWheel = "/activitie/opencashWheel"
     o.GET_cashWheelHistory = "/activitie/cashWheelHistory"
+    o.GET_cashWheelwithdraw = "/activitie/cashWheelwithdraw"
+    o.GET_cashWheelreset = "/activitie/cashWheelreset"
+
    // o.CANGET_Redenvelope = o.GET_NOTICE_LIST
    // o.GET_Redenvelope = o.GET_NOTICE_LIST
 }
