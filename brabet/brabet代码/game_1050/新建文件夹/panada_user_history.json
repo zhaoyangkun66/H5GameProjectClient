@@ -1,0 +1,98 @@
+{
+  "list": [
+    {
+      "day": 1706670000,
+      "time": 1706693912,
+      "bet": 0.1,
+      "level": 1,
+      "type": 2,
+      "big": 1,
+      "order_id": "449015317538799617",
+      "change_gold": 29.5,
+      "result": [
+          {
+              "props": { //1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                  "1": 7,
+                  "2": 2,
+                  "3": 5,
+                  "4": 7,
+                  "5": 2,
+                  "6": 6,
+                  "7": 7,
+                  "8": 2,
+                  "9": 4
+              },
+              "win_arrs": [{
+                  roll: 2,//1或 2或 3或 4或 5
+                  win_amount: 25,//bet*level*win_odd*multiple
+                  multiple: 1,//1倍或10倍
+                  win_odd: 250//3或 5或 8 或10 或25或 10或 250 
+              },
+              { roll: 1, win_amount: 5, multiple: 10, win_odd: 5 }]
+          }
+      ],
+      "bet_gold": 0.1,
+      "end_gold": 33
+  },
+    {
+      "day": 1706670000,
+      "time": 1706690998,
+      "bet": 0.1,
+      "level": 1,
+      "type": 1,
+      "big": 0,
+      "order_id": "449003091251560449",
+      "change_gold": -0.5,
+      "result": [
+        {
+          "props": {
+            "1": 4,
+            "2": 4,
+            "3": 2,
+            "4": 1,
+            "5": 6,
+            "6": 3,
+            "7": 1,
+            "8": 7,
+            "9": 2
+          },
+          "win_arrs": []
+        }
+      ],
+      "bet_gold": 0.5,
+      "end_gold": 0.8
+    },
+    {
+      "day": 1706670000,
+      "time": 1706690994,
+      "bet": 0.1,
+      "level": 1,
+      "type": 1,
+      "big": 0,
+      "order_id": "449003074827714561",
+      "change_gold": -0.5,
+      "result": [
+        {
+          "props": {
+            "1": 2,
+            "2": 3,
+            "3": 4,
+            "4": 5,
+            "5": 5,
+            "6": 2,
+            "7": 4,
+            "8": 6,
+            "9": 6
+          },
+          "win_arrs": []
+        }
+      ],
+      "bet_gold": 0.5,
+      "end_gold": 1.3
+    }
+  ],
+  "statistics": {
+    "total_bet_gold": 1.5,
+    "total_change_gold": -1.5
+  }
+}

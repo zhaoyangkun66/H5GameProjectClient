@@ -21379,7 +21379,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "CHECKING",
+    "_name": "SAVINGS",
     "_objFlags": 0,
     "_parent": {
       "__id__": 590
@@ -21555,7 +21555,7 @@
     "asset": {
       "__uuid__": "bf0a434c-84dd-4a8e-a08a-7a36f180cc75"
     },
-    "fileId": "12e439SyJxPm6pHTRj/H92b",
+    "fileId": "e1lt6mxJ9NT5yDbFTuuNU/",
     "sync": false
   },
   {
@@ -21662,7 +21662,7 @@
     "asset": {
       "__uuid__": "bf0a434c-84dd-4a8e-a08a-7a36f180cc75"
     },
-    "fileId": "d5f81EvT59O3IYhi0b8awdA",
+    "fileId": "16FP4Z8BtG0r+VT+ifwwh+",
     "sync": false
   },
   {
@@ -21692,7 +21692,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 121.88,
+      "width": 99.62,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -21744,8 +21744,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "CHECKING",
-    "_N$string": "CHECKING",
+    "_string": "SAVINGS",
+    "_N$string": "SAVINGS",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -21873,12 +21873,12 @@
     "asset": {
       "__uuid__": "bf0a434c-84dd-4a8e-a08a-7a36f180cc75"
     },
-    "fileId": "f8ae482OYFF86r5AHHZHzkB",
+    "fileId": "93muRkUYVAqrv5dJdDL7vC",
     "sync": false
   },
   {
     "__type__": "cc.Node",
-    "_name": "SAVINGS",
+    "_name": "CHECKING",
     "_objFlags": 0,
     "_parent": {
       "__id__": 590
@@ -22054,7 +22054,7 @@
     "asset": {
       "__uuid__": "bf0a434c-84dd-4a8e-a08a-7a36f180cc75"
     },
-    "fileId": "e1lt6mxJ9NT5yDbFTuuNU/",
+    "fileId": "12e439SyJxPm6pHTRj/H92b",
     "sync": false
   },
   {
@@ -22161,7 +22161,7 @@
     "asset": {
       "__uuid__": "bf0a434c-84dd-4a8e-a08a-7a36f180cc75"
     },
-    "fileId": "16FP4Z8BtG0r+VT+ifwwh+",
+    "fileId": "d5f81EvT59O3IYhi0b8awdA",
     "sync": false
   },
   {
@@ -22191,7 +22191,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 99.62,
+      "width": 121.88,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -22243,8 +22243,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "SAVINGS",
-    "_N$string": "SAVINGS",
+    "_string": "CHECKING",
+    "_N$string": "CHECKING",
     "_fontSize": 22,
     "_lineHeight": 30,
     "_enableWrapText": true,
@@ -22372,7 +22372,7 @@
     "asset": {
       "__uuid__": "bf0a434c-84dd-4a8e-a08a-7a36f180cc75"
     },
-    "fileId": "93muRkUYVAqrv5dJdDL7vC",
+    "fileId": "f8ae482OYFF86r5AHHZHzkB",
     "sync": false
   },
   {
@@ -24608,7 +24608,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "label",
+    "_name": "labelDes",
     "_objFlags": 0,
     "_parent": {
       "__id__": 683
@@ -25040,6 +25040,9 @@
       "__id__": 196
     },
     "_enabled": true,
+    "labelDes": {
+      "__id__": 685
+    },
     "BankUserName": {
       "__id__": 652
     },

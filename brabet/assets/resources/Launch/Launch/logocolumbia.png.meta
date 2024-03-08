@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "c9090337-6bef-4ae3-aa20-9fb6184a5b08",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 350,
+  "height": 350,
+  "platformSettings": {},
+  "subMetas": {
+    "logocolumbia": {
+      "ver": "1.0.6",
+      "uuid": "286aa950-0d5b-4d70-8283-713a48da4833",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "c9090337-6bef-4ae3-aa20-9fb6184a5b08",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 2,
+      "offsetY": 6,
+      "trimX": 22,
+      "trimY": 66,
+      "width": 310,
+      "height": 206,
+      "rawWidth": 350,
+      "rawHeight": 350,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

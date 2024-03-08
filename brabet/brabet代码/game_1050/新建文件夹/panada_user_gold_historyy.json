@@ -1,0 +1,43 @@
+{
+  "list": [
+    {
+      "bet_gold": 0,
+      "change_gold": 0,
+      "day": 1707188400
+    },
+    {
+      "bet_gold": 0,
+      "change_gold": 0,
+      "day": 1707102000
+    },
+    {
+      "bet_gold": 0,
+      "change_gold": 0,
+      "day": 1707015600
+    },
+    {
+      "bet_gold": 0,
+      "change_gold": 0,
+      "day": 1706929200
+    },
+    {
+      "bet_gold": 0,
+      "change_gold": 0,
+      "day": 1706842800
+    },
+    {
+      "bet_gold": 0,
+      "change_gold": 0,
+      "day": 1706756400
+    },
+    {
+      "bet_gold": 1.5,
+      "change_gold": -1.5,
+      "day": 1706670000
+    }
+  ],
+  "statistics": {
+    "total_bet_gold": "1.50",
+    "total_change_gold": "-1.50"
+  }
+}

@@ -107,3 +107,6 @@ UI.UICashWheelWithdraw3,The payment request has been submitted,,,,,,,,,A solicit
 UI.UICashWheelWithdraw4,will be paid into your account,,,,,,,,,será pago em sua conta,se pagará en su cuenta
 UI.UICashWheelWithdraw5,Invite friends to help with,,,,,,,,,Convide amigos para ajudar,Invita a amigos para que te ayuden
 UI.UIStore1,confirm payment,,,,,,,,,confirme o pagamento,confirmar pago
+UI_Game1050_Minimum,Minimum Bet,Minimum Bet,Minimum Bet,Minimum Bet,最低投注額,Minimum Bet,Taruhan Minimum,Minimum Bet,Minimum Bet,Aposta Mínima,Apuesta Mín
+UI_Game1050_Maximum,Maximum Bet,Maximum Bet,Maximum Bet,Maximum Bet,最大賭注,Maximum Bet,Taruhan Maksimum,Maximum Bet,Maximum Bet,Aposta Máxima,Apuesta Máx
+UI_Game1050_Close,Close,Close,Close,Close,關閉,Close,Tutup,Close,Close,Fechar,Cerrar
