@@ -12,8 +12,9 @@ var o = require("../../../Common/Base/BaseForm")
         function t() {
             var t = null !== e && e.apply(this, arguments) || this;
             return t.img_ItemGold = [],
-            t.img_ItemCheck = [],
+                t.img_ItemCheck = [],
                 t.lbl = [],
+                t.lblGold = [],
                 t.btn_Receive = null,
                 t.type = 0,
                 t
@@ -44,8 +45,29 @@ var o = require("../../../Common/Base/BaseForm")
                 this.node.active = true
                 this.lbl[0].string = app.i18n.t("UI.UIActivityDailyRegistrations1") + app.ScoreUtil().toFixed(data.cumulativeDays) + app.i18n.t("UI.UIActivityDailyRegistrations2")
                 this.lbl[1].string = app.i18n.t("UI.UIActivityDailyRegistrations3") + app.ScoreUtil().toFixed(data.receivedGold)
-                this.lbl[2].string = app.i18n.t("UI.UIActivityDailyRegistrations4") + app.ScoreUtil().toFixed(data.recharge) + "/60000"
-                this.lbl[3].string = app.i18n.t("UI.UIActivityDailyRegistrations5") + app.ScoreUtil().toFixed(data.bet) + "/600000"
+
+                if (channelID == 2) {
+                    this.lblGold[0].string = 1600
+                    this.lblGold[1].string = 2400
+                    this.lblGold[2].string = 7200
+                    this.lblGold[3].string = 12000
+                    this.lblGold[4].string = 13600
+                    this.lblGold[5].string = 21600
+                    this.lblGold[6].string = 45000
+                    this.lbl[2].string = app.i18n.t("UI.UIActivityDailyRegistrations4") + app.ScoreUtil().toFixed(data.recharge) + "/60000"
+                    this.lbl[3].string = app.i18n.t("UI.UIActivityDailyRegistrations5") + app.ScoreUtil().toFixed(data.bet) + "/600000"
+                }
+                else {
+                    this.lblGold[0].string = 2
+                    this.lblGold[1].string = 2
+                    this.lblGold[2].string = 3
+                    this.lblGold[3].string = 3
+                    this.lblGold[4].string = 5
+                    this.lblGold[5].string = 5
+                    this.lblGold[6].string = 10
+                    this.lbl[2].string = app.i18n.t("UI.UIActivityDailyRegistrations4") + app.ScoreUtil().toFixed(data.recharge) + "/10"
+                    this.lbl[3].string = app.i18n.t("UI.UIActivityDailyRegistrations5") + app.ScoreUtil().toFixed(data.bet) + "/100"
+                }
 
                 if (data.gold > 0) {
                     app.GoldRewardManager().FormGoldReward({
@@ -59,7 +81,7 @@ var o = require("../../../Common/Base/BaseForm")
                 else {
                     this.btn_Receive.interactable = false
                 }
-                
+
                 for (let index = 0; index < this.img_ItemCheck.length; index++) {
                     this.img_ItemCheck[index].active = false
                     this.img_ItemGold[index].active = true
@@ -92,6 +114,7 @@ var o = require("../../../Common/Base/BaseForm")
             __decorate([c([cc.Node])], t.prototype, "img_ItemCheck", undefined),
             __decorate([c([cc.RichText])], t.prototype, "lbl", undefined),
             __decorate([c(cc.Button)], t.prototype, "btn_Receive", undefined),
+            __decorate([c([cc.Label])], t.prototype, "lblGold", undefined),
             __decorate([s], t)
     }(o.default);
 n.default = l,

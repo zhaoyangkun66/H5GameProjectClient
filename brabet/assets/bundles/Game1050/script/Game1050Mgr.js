@@ -120,43 +120,152 @@ var n = require("../../../Common/Base/BaseHttpMgr")
                     app.HttpServerManager().SendHttpPack(r.Game1050HttpAPI.BetResult, t)
                 }
                 else {
-                    this.BetResultData = {
-                        "props": [
-                            {
-                                "props": { //1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
-                                    "1": 7,
-                                    "2": 2,
-                                    "3": 1,
-                                    "4": 7,
-                                    "5": 2,
-                                    "6": 6,
-                                    "7": 7,
-                                    "8": 2,
-                                    "9": 4
-                                },
-                                "win_arrs": []
-                            }
-                        ],
-                        "type": 2,//1普通类型 2幸运类型10倍
-                        "luck_prop": 2,//幸运类型动画显示图片 0无 1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
-                        "level": 1,
-                        "big": 1, //big_win=true时候big有效 0不播放big动画1播放big动画
-                        "total_win": 100,//第一次打开界面显示total_win，后面显示bet_gold + change_gold,
-                        "big_win": true,//0不打开big_win界面1打开big_win界面
-                        "bet_gold": 0.5, //bet*level*5
-                        "change_gold": 29.5,
-                        "bet": 0.1, //bet size
-                        "end_gold": 33,
+                    if (Math.random()>0.5) {
+                        this.BetResultData = {
+                            "props": [
+                                {
+                                    "props": { //1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                                        "1": 3,
+                                        "2": 0,
+                                        "3": 0,
+                                        "4": 3,
+                                        "5": 0,
+                                        "6": 0,
+                                        "7": 3,
+                                        "8": 0,
+                                        "9": 0
+                                    },
+                                    "win_arrs": [{
+                                        roll: 2,//1或 2或 3或 4或 5
+                                        win_amount: 8,//bet*level*win_odd*multiple
+                                        multiple: 10,//1倍或10倍
+                                        win_odd: 8//3或 5或 8 或10 或25或 10或 250 
+                                    }]
+                                }, 
+                                {
+                                    "props": { //1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                                        "1": 0,
+                                        "2": 0,
+                                        "3": 0,
+                                        "4": 0,
+                                        "5": 0,
+                                        "6": 0,
+                                        "7": 0,
+                                        "8": 7,
+                                        "9": 0
+                                    },
+                                    "win_arrs": []
+                                }, 
+                                {
+                                    "props": { //1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                                        "1": 0,
+                                        "2": 0,
+                                        "3": 3,
+                                        "4": 0,
+                                        "5": 0,
+                                        "6": 0,
+                                        "7": 0,
+                                        "8": 0,
+                                        "9": 7
+                                    },
+                                    "win_arrs": []
+                                }, 
+                                {
+                                    "props": { //1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                                        "1": 0,
+                                        "2": 3,
+                                        "3": 0,
+                                        "4": 0,
+                                        "5": 0,
+                                        "6": 0,
+                                        "7": 0,
+                                        "8": 0,
+                                        "9": 0
+                                    },
+                                    "win_arrs": []
+                                }, 
+                                {
+                                    "props": { //1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                                        "1": 0,
+                                        "2": 0,
+                                        "3": 0,
+                                        "4": 0,
+                                        "5": 3,
+                                        "6": 0,
+                                        "7": 0,
+                                        "8": 0,
+                                        "9": 0
+                                    },
+                                    "win_arrs": [{ roll: 1, win_amount: 8, multiple: 10, win_odd: 8 },
+                                        { roll: 4, win_amount: 8, multiple: 10, win_odd: 8 },
+                                        { roll: 5, win_amount: 8, multiple: 10, win_odd: 8 }
+                                    ]
+                                }, 
+                                {
+                                    "props": { //1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                                        "1": 0,
+                                        "2": 0,
+                                        "3": 0,
+                                        "4": 0,
+                                        "5": 0,
+                                        "6": 0,
+                                        "7": 0,
+                                        "8": 0,
+                                        "9": 0
+                                    },
+                                    "win_arrs": []
+                                }
+                            ],
+                            "type": 2,//1普通类型 2幸运类型10倍
+                            "luck_prop": 3,//幸运类型动画显示图片 0无 1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                            "level": 1,
+                            "big": 0, //big_win=true时候big有效 0不播放big动画1播放big动画
+                            "total_win": 100,//第一次打开界面显示total_win，后面显示bet_gold + change_gold,
+                            "big_win": true,//0不打开big_win界面1打开big_win界面
+                            "bet_gold": 0.5, //bet*level*5
+                            "change_gold": 29.5,
+                            "bet": 0.1, //bet size
+                            "end_gold": 33,
+                        }
                     }
+                    else
+                    {
+                        this.BetResultData = {
+                            "props": [
+                                {
+                                    "props": { //1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                                        "1": 3,
+                                        "2": 1,
+                                        "3": 2,
+                                        "4": 3,
+                                        "5": 4,
+                                        "6": 5,
+                                        "7": 3,
+                                        "8": 6,
+                                        "9": 7
+                                    },
+                                    "win_arrs": [{
+                                        roll: 2,//1或 2或 3或 4或 5
+                                        win_amount: 5,//bet*level*win_odd*multiple
+                                        multiple: 10,//1倍或10倍
+                                        win_odd: 5//3或 5或 8 或10 或25或 10或 250 
+                                    }]
+                                }
+                            ],
+                            "type": 1,//1普通类型 2幸运类型10倍
+                            "luck_prop": 0,//幸运类型动画显示图片 0无 1竹子 2水果 3铜钱 4武器 5钱袋 6玉佩 7wild
+                            "level": 1,
+                            "big": 0, //big_win=true时候big有效 0不播放big动画1播放big动画
+                            "total_win": 100,//第一次打开界面显示total_win，后面显示bet_gold + change_gold,
+                            "big_win": false,//0不打开big_win界面1打开big_win界面
+                            "bet_gold": 0.5, //bet*level*5
+                            "change_gold": 29.5,
+                            "bet": 0.1, //bet size
+                            "end_gold": 33,
+                        }
+                    }
+                    
                     app.Client.OnEvent(r.Game1050HttpAPI.BetResult, this.BetResultData)
-                    // {
-                    //     roll: 2,//1或 2或 3或 4或 5
-                    //     win_amount: 25,//bet*level*win_odd*multiple
-                    //     multiple: 1,//1倍或10倍
-                    //     win_odd: 250//3或 5或 8 或10 或25或 10或 250 
-                    // },
-                    // { roll: 1, win_amount: 5, multiple: 10, win_odd: 5 },
-                    // { roll: 3, win_amount: 5, multiple: 10, win_odd: 5 }
                 }
             }
             ,

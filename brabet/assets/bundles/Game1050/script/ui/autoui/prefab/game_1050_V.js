@@ -81,7 +81,7 @@ var n = require("../../../../../../Common/Bundle/BundleConfig")
             }
             return __extends(e, t),
                 e.prototype.OnCreateInit = function () {
-
+                   // cc.director.getScheduler().setTimeScale(0.2);
                     var t = this;
                     this.JS_Name = "game_1050_V",
                         this.GameNode = this.GetWndNode("game"),
@@ -539,8 +539,9 @@ var n = require("../../../../../../Common/Bundle/BundleConfig")
                                 app.SoundManager().PlayBackMusic("game1050_RespinBGM", true),
                                 t.LuckModeAniNode.play("scene_x10"),
                                 t.PlayLuckEffect(),
-                                t.ReplayLuckPropSwitch = true,
+                               // t.ReplayLuckPropSwitch = true,
                                 t.LuckModeAniNode.once("finished", function () {
+                                    t.ReplayLuckPropSwitch = true
                                     t.PlayTipsIndex(h.TipsType.randomTip4)
                                 }, t)) : (t.PlayDragonBonesControl(h.Game1050DragonBonesName.anger),
                                     app.SoundManager().PlaySound("game1050_en_")),
@@ -592,13 +593,22 @@ var n = require("../../../../../../Common/Bundle/BundleConfig")
                                 this.ReplaceEndAnimSpr(),
                                 this.GameNode.getComponent(cc.Animation).play(this.getLuckAnimationEndName()).speed = this.AllAnimSpeed,
                                 void (this.gameStatus = h.enum_Game1050Status.GAME_END);
+
+                        if (!this.getRollTimeTemp) {
+                            this.getRollTimeTemp = new Date().getTime() / 1000 + this.getRollTime()
+                        }
+                        if ((new Date().getTime() / 1000) >= this.getRollTimeTemp) {
+                          //  this.AnimationPlayEnd()
+                           // return
+                        }
                         this.GameNode.getComponent(cc.Animation).play("roll_process").speed = this.AllAnimSpeed,
-                            this.ReplaceProcessAnimSpr(),
-                            this.scheduleOnce(this.AnimationPlayEnd, this.getRollTime())
+                            this.ReplaceProcessAnimSpr()
+                         this.scheduleOnce(this.AnimationPlayEnd, this.getRollTime())
                     }
                 }
                 ,
                 e.prototype.AnimationPlayEnd = function () {
+                    this.getRollTimeTemp = null
                     this.roomMgr.isLuckMode && this.unschedule(this.playGunSound),
                         this.ReplaceEndAnimSpr(),
                         this.GameNode.getComponent(cc.Animation).play(this.getLuckAnimationEndName()).speed = this.AllAnimSpeed,
@@ -1036,20 +1046,45 @@ var n = require("../../../../../../Common/Bundle/BundleConfig")
                     this.roomMgr.isLuckMode && (this.unschedule(this.playGunSound),
                         this.schedule(this.playGunSound, .1)),
                         this.HideEndWildList();
+                    // var t, e = 0;
+                    // this.ReplayLuckPropList = this.setLuckPropRm(),
+                    //     t = this.ReplayLuckPropSwitch ? this.ReplayLuckPropList : this.RandomLitsNum;
+                    // for (var i = 0; i < t.length; i++) {
+                    //     t[i];
+                    //     var n = null
+                    //         , o = Number(i + 1);
+                    //     o >= 1 && o <= 3 ? n = this.LeftParent
+                    //         : o >= 4 && o <= 6 ? n = this.CenterParent
+                    //             : o >= 7 && (n = this.RightParent),
+                    //         e >= 3 && (e = 0),
+                    //          this.roomMgr.bundleloadres(n.children[e + 6], this.BlurSprStrArr[n.children[e + 6].myprop]),
+                    //          this.ReplayLuckPropSwitch ? this.ReplayLuckPropList[Math.round(8 * Math.random())] : Math.round(6 * Math.random() + 1)
+                    //      this.roomMgr.bundleloadres(n.children[e + 3], this.BlurSprStrArr[n.children[e + 3].myprop])
+                    //      this.roomMgr.bundleloadres(n.children[e], this.BlurSprStrArr[n.children[e].myprop])
+                    //     e++
+                    // }
+                    this.ReplayLuckPropList = this.setLuckPropRm()
                     var t, e = 0;
-                    this.ReplayLuckPropList = this.setLuckPropRm(),
-                        t = this.ReplayLuckPropSwitch ? this.ReplayLuckPropList : this.RandomLitsNum;
+                    t = this.ReplayLuckPropSwitch ? this.ReplayLuckPropList : this.RandomLitsNum;
                     for (var i = 0; i < t.length; i++) {
-                        t[i];
-                        var n = null
-                            , o = Number(i + 1);
-                        o >= 1 && o <= 3 ? n = this.LeftParent : o >= 4 && o <= 6 ? n = this.CenterParent : o >= 7 && (n = this.RightParent),
+                        var n = t[i]
+                            , o = null
+                            , a = Number(i + 1);
+                        if (a >= 1 && a <= 3 ? o = this.LeftParent : a >= 4 && a <= 6 ? o = this.CenterParent : a >= 7 && (o = this.RightParent),
                             e >= 3 && (e = 0),
-                            this.roomMgr.bundleloadres(n.children[e + 6], this.BlurSprStrArr[n.children[e + 6].myprop]),
-                            this.ReplayLuckPropSwitch ? this.ReplayLuckPropList[Math.round(8 * Math.random())] : Math.round(6 * Math.random() + 1),
-                            this.roomMgr.bundleloadres(n.children[e + 3], this.BlurSprStrArr[n.children[e + 3].myprop]),
-                            this.roomMgr.bundleloadres(n.children[e], this.BlurSprStrArr[n.children[e].myprop]),
-                            e++
+                            this.roomMgr.bundleloadres(o.children[e], this.BlurSprStrArr[n]),
+                            o.children[e].myprop = n,
+                            this.roomMgr.bundleloadres(o.children[e + 6], this.BlurSprStrArr[o.children[e + 6].myprop]),
+                            o.children[e + 6].myprop = n,
+                            this.ReplayLuckPropSwitch)
+                            this.roomMgr.bundleloadres(o.children[e + 3], this.BlurSprStrArr[n]),
+                                o.children[e + 3].myprop = n;
+                        else {
+                            var r = Math.round(6 * Math.random() + 1);
+                            this.roomMgr.bundleloadres(o.children[e + 3], this.BlurSprStrArr[r]),
+                                o.children[e + 3].myprop = r
+                        }
+                        e++
                     }
                 }
                 ,
@@ -1063,7 +1098,7 @@ var n = require("../../../../../../Common/Bundle/BundleConfig")
                         r >= 1 && r <= 3 ? a = this.LeftParent : r >= 4 && r <= 6 ? a = this.CenterParent : r >= 7 && (a = this.RightParent),
                             i >= 3 && (i = 0),
                             this.ReplayLuckPropSwitch ? this.roomMgr.bundleloadres(a.children[i + 6], this.HDSprStrArr[o]) : (this.roomMgr.bundleloadres(a.children[i + 6], this.HDSprStrArr[a.children[i + 6].myprop]),
-                                a.children[i + 6].myprop = o),
+                               a.children[i + 6].myprop = o),
                             i++
                     }
                     if (1 == this.roomMgr.BetResultData.type) {
@@ -1266,6 +1301,7 @@ var n = require("../../../../../../Common/Bundle/BundleConfig")
                                     n.active = true)
                             }
                         this.LineParentNode.active = true
+                        this.LineParentNode.getChildByName("bg").active = false
                     }
                 }
                 ,
@@ -1284,7 +1320,7 @@ var n = require("../../../../../../Common/Bundle/BundleConfig")
                                 r && (r.active = false),
                                     a.active = true;
                                 var s = e.props[o + 1];
-                                7 == s ? (this.roomMgr.bundleloadres(this.GetWndComponent("spr_prop", cc.Sprite, a), this.HDSprStrArr[0]),this.addWildPrefab(a, true)) 
+                                7 == s ? (this.roomMgr.bundleloadres(this.GetWndComponent("spr_prop", cc.Sprite, a), this.HDSprStrArr[0]), this.addWildPrefab(a, true))
                                     : (this.roomMgr.bundleloadres(this.GetWndComponent("spr_prop", cc.Sprite, a), this.HDSprStrArr[s]), this.roomMgr.bundleLoadSpine(a, this.SpineStrArr[s]))
                             }
                         }
@@ -1322,7 +1358,7 @@ var n = require("../../../../../../Common/Bundle/BundleConfig")
                     }
                     this.LineParentNode.active = false,
                         this.LuckModeAniNode.getComponent(cc.Animation).stop()
-                        this.LuckModeAniNode.getComponent(cc.Animation).setCurrentTime(0, "scene_x10")
+                    this.LuckModeAniNode.getComponent(cc.Animation).setCurrentTime(0, "scene_x10")
                 }
                 ,
                 e.prototype.RequestBet = function () {

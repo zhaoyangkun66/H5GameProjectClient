@@ -48,11 +48,11 @@ UI.UIStoreAndCashInputInBankAccount,Input In Bank Account,,,,,,,,,Entrada em con
 UI.UIStoreAndCashSelectType,<b><color=#59677C>Select Type</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Selecione o tipo</color><color=#ff0000>*</color></b>,<b><color=#59677C>Seleccionar el tipo</color><color=#ff0000>*</color></b>
 UI.UIStoreAndCashCertificateNumber,<b><color=#59677C>Certificate number</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Número do certificado</color><color=#ff0000>*</color></b>,<b><color=#59677C>Número de certificado</color><color=#ff0000>*</color></b>
 UI.UIStoreAndCashCompletethe,Input Certificate number,,,,,,,,,Insira o número do certificado,Número de certificado de entrada
-UI.UIActivityDailyRegistrations1,"<color=#9EA9AA>Iniciado sesión </color>",,,,,,,,,"<color=#9EA9AA>Iniciado sesión </color>","<color=#9EA9AA>Iniciado sesión </color>"
-UI.UIActivityDailyRegistrations2,"<color=#9EA9AA> días consecutivos</color>",,,,,,,,,"<color=#9EA9AA> días consecutivos</color>","<color=#9EA9AA> días consecutivos</color>"
-UI.UIActivityDailyRegistrations3,"<color=#9EA9AA>Recogido: </color>",,,,,,,,,"<color=#9EA9AA>Recogido: </color>","<color=#9EA9AA>Recogido: </color>"
-UI.UIActivityDailyRegistrations4,"<color=#9EA9AA>Y se requiere cargar：</color>",,,,,,,,,"<color=#9EA9AA>Y se requiere cargar：</color>","<color=#9EA9AA>Y se requiere cargar：</color>"
-UI.UIActivityDailyRegistrations5,"<color=#9EA9AA>Apuestas: </color>",,,,,,,,,"<color=#9EA9AA>Apuestas: </color>","<color=#9EA9AA>Apuestas: </color>"
+UI.UIActivityDailyRegistrations1,"<color=#9EA9AA>Logged in </color>",,,,,,,,,"<color=#9EA9AA>Logado </color>","<color=#9EA9AA>Iniciado sesión </color>"
+UI.UIActivityDailyRegistrations2,"<color=#9EA9AA> consecutive days</color>",,,,,,,,,"<color=#9EA9AA> dias consecutivos</color>","<color=#9EA9AA> días consecutivos</color>"
+UI.UIActivityDailyRegistrations3,"<color=#9EA9AA>Picked up: </color>",,,,,,,,,"<color=#9EA9AA>Pegou: </color>","<color=#9EA9AA>Recogido: </color>"
+UI.UIActivityDailyRegistrations4,"<color=#9EA9AA>And loading is required：</color>",,,,,,,,,"<color=#9EA9AA>E o carregamento é necessário: </color>","<color=#9EA9AA>Y se requiere cargar：</color>"
+UI.UIActivityDailyRegistrations5,"<color=#9EA9AA>Bets: </color>",,,,,,,,,"<color=#9EA9AA>Apostas: </color>","<color=#9EA9AA>Apuestas: </color>"
 UI.UIActivityDailyRegistrations6,"<size=26><color=#f9de06>Event conditions:</color></size>
 Deposit + total bet of the day (redefined after 7 consecutive days)<br/>
 <size=26><color=#f9de06>Event description: </color></size>
