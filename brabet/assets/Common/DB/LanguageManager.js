@@ -60,7 +60,7 @@ var o = require("../Base/Singleton")
                     app.Client.OnEvent(i.GameEventDefine.HALL_Language))
             },
             t.prototype.SetSelectRegion = function (e) {
-                app.LocalDataManager().SetConfigProperty("SysSetting", "LocalSelectRegion1", e)
+                app.LocalDataManager().SetConfigProperty("SysSetting", "LocalSelectRegion4" + channelIDGlobal, e)
             }
             ,
             t.prototype.GetLanguageItem = function () {
@@ -78,7 +78,7 @@ var o = require("../Base/Singleton")
                 return app.LocalDataManager().GetConfigProperty("SysSetting", "Language") || (e ? r.default.enus : null)
             },
             t.prototype.GetLocalSelectRegion = function (e) {
-                return app.LocalDataManager().GetConfigProperty("SysSetting", "LocalSelectRegion1")
+                return app.LocalDataManager().GetConfigProperty("SysSetting", "LocalSelectRegion4" + channelIDGlobal)
             }
             ,
             t.prototype.SetServerDefaultLanguage = function () {

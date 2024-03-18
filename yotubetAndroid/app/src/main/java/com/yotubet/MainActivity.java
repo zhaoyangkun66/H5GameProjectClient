@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     // String url = "https://home.brabet.com/chat/index";
    // String url = "http://192.168.1.100:280/client/web-mobile/?f=UIHall";
    // String url = "https://zhaoyangkun66.github.io/test/indexF.html?appId=3655106758067676";
-    String url = "https://www.bigerwin.com/?channel_id=apk";
+    String url = "https://www.yotubet.com/?channel_id=apk";
     @SuppressLint("JavascriptInterface")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         webView.addJavascriptInterface(new WebAppInterface(this), "androidOther");
         webSettings.setJavaScriptEnabled(true);
         // Set User Agent
-        userAgent = System.getProperty("http.agent") + "bigerwin";
+        userAgent = System.getProperty("http.agent") + "userAgent";
         webSettings.setUserAgentString(userAgent);
 
         // Enable Cookies
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     public class myWebViewclient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-            if ("zhaoyangkun66.github.io".equals(request.getUrl().getHost())||"www.bigerwin.com".equals(request.getUrl().getHost())) {
+            if ("zhaoyangkun66.github.io".equals(request.getUrl().getHost())||"www.yotubet.com".equals(request.getUrl().getHost())||"www.bigerwin.com".equals(request.getUrl().getHost())) {
                 // This is your website, so don't override. Let your WebView load the
                 // page.
                 return false;

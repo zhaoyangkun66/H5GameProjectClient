@@ -43,9 +43,7 @@ var o, i = require("../../../Common/Base/BaseForm"),
                 t.prototype.OnShow = function () {
                     this.OnSetRegion()
                     this.GetWndNode("left/bg/view/content/region").active = !app.UserManager().getIsOfficialAccount()
-                    if (channelIDGlobal == 2) {
-                        this.GetWndNode("left/bg/view/content/region").active = false
-                    }
+                    this.GetWndNode("left/bg/view/content/region").active = false
 
                     for (var e, t = this, n = [], o = 0; o < arguments.length; o++)
                         n[o] = arguments[o];

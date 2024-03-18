@@ -1,0 +1,196 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "packet2",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 2.033333333333333,
+  "sample": 60,
+  "speed": 0.5,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            -170.388,
+            520,
+            0
+          ]
+        },
+        {
+          "frame": 0.11666666666666667,
+          "value": [
+            -170.388,
+            520,
+            0
+          ]
+        },
+        {
+          "frame": 0.16666666666666666,
+          "value": [
+            -170.388,
+            500,
+            0
+          ]
+        },
+        {
+          "frame": 0.31666666666666665,
+          "value": [
+            -170.388,
+            552.969,
+            0
+          ]
+        },
+        {
+          "frame": 0.75,
+          "value": [
+            -170.388,
+            520,
+            0
+          ]
+        }
+      ],
+      "scale": [
+        {
+          "frame": 0.11666666666666667,
+          "value": {
+            "__type__": "cc.Vec3",
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "frame": 0.16666666666666666,
+          "value": {
+            "__type__": "cc.Vec3",
+            "x": 1.02,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "frame": 0.23333333333333334,
+          "value": {
+            "__type__": "cc.Vec3",
+            "x": 0.97,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "frame": 0.35,
+          "value": {
+            "__type__": "cc.Vec3",
+            "x": 1.08,
+            "y": 1,
+            "z": 1
+          }
+        },
+        {
+          "frame": 0.75,
+          "value": {
+            "__type__": "cc.Vec3",
+            "x": 1,
+            "y": 1,
+            "z": 1
+          }
+        }
+      ]
+    },
+    "paths": {
+      "light_envelope2": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            }
+          ],
+          "angle": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 2,
+              "value": 360
+            }
+          ]
+        }
+      },
+      "light_envelope1": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 10
+            },
+            {
+              "frame": 0.5166666666666667,
+              "value": 250
+            },
+            {
+              "frame": 1.0166666666666666,
+              "value": 10
+            },
+            {
+              "frame": 1.5333333333333334,
+              "value": 250
+            },
+            {
+              "frame": 2,
+              "value": 10
+            }
+          ],
+          "angle": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 2,
+              "value": 720
+            }
+          ]
+        }
+      },
+      "wild_left2": {
+        "comps": {
+          "cc.ParticleSystem": {
+            "emissionRate": []
+          }
+        },
+        "props": {
+          "position": []
+        }
+      },
+      "light_envelope_quan": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                -3.478,
+                0
+              ]
+            }
+          ],
+          "angle": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 2.033333333333333,
+              "value": 360
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

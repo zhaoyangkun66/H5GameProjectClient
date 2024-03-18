@@ -1,0 +1,266 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "roll_start_base",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.6666666666666666,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "prop_left/roll_l": {
+        "comps": {},
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": 568,
+              "curve": "linear"
+            },
+            {
+              "frame": 0.11666666666666667,
+              "value": 620
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": -568
+            }
+          ]
+        }
+      },
+      "prop_left/prop_1": {
+        "props": {
+          "y": []
+        }
+      },
+      "prop_center/roll_c": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.18333333333333332,
+              "value": 568,
+              "curve": "linear"
+            },
+            {
+              "frame": 0.3,
+              "value": 620
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": -568
+            }
+          ]
+        }
+      },
+      "prop_right/roll_r": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.3,
+              "value": 568
+            },
+            {
+              "frame": 0.4166666666666667,
+              "value": 620
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": -568
+            }
+          ]
+        }
+      },
+      "prop_left/roll_l/spr_prop1": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_left/roll_l/spr_prop7": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_left/roll_l/spr_prop8": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_left/roll_l/spr_prop9": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_left/roll_l/spr_prop6": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_left/roll_l/spr_prop5": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_left/roll_l/spr_prop4": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_left/roll_l/spr_prop3": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_left/roll_l/spr_prop2": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_center/roll_c/spr_prop9": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_center/roll_c/spr_prop8": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_center/roll_c/spr_prop7": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_center/roll_c/spr_prop6": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_center/roll_c/spr_prop5": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_center/roll_c/spr_prop4": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_center/roll_c/spr_prop3": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_center/roll_c/spr_prop2": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_center/roll_c/spr_prop1": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_right/roll_r/spr_prop1": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_right/roll_r/spr_prop2": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_right/roll_r/spr_prop3": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_right/roll_r/spr_prop4": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_right/roll_r/spr_prop5": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_right/roll_r/spr_prop6": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_right/roll_r/spr_prop7": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_right/roll_r/spr_prop8": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      },
+      "prop_right/roll_r/spr_prop9": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": []
+          }
+        }
+      }
+    }
+  },
+  "events": []
+}

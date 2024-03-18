@@ -370,6 +370,42 @@ var o = require("../Define/HttpServerDefine")
 
 
                     }
+                    else {
+                        //https://www.bigerwin.com/uploads/gameicon/slot_pg/Fortune_Tiger.png
+                      //  e["game_type"][4].game_list = []
+                        e["game_type"][4].game_list.push({
+                            "gid": 1051,
+                            "is_external": 0,
+                            "game_name": "Fortune Panda",
+                            "type_id": 9,
+                            "game_sort": 9988
+                        })
+                       // e["game_info"] = []
+                        e["game_info"].push({
+                            "gid": 1051,
+                            "least_gold": 0,
+                            "longgu_url": "",
+                            "game_type": 0,
+                            "is_user_collection": 1,
+                            "tab": 2,
+                            "back_pic": "",
+                            "position_set": null,
+                            "way_list": [
+                                {
+                                    "way_id": 105010001
+                                }
+                            ],
+                            "way_bet_gold": [
+                                {
+                                    "way_id": 105010001,
+                                    "min_bet_gold": "0.00",
+                                    "max_bet_gold": "0.00"
+                                }
+                            ]
+                        })
+                        e.data_version = 1
+                        t.dataVersion = 2
+                    }
                     if (t.dataVersion == e.data_version && isgoServer == false) {
                         var n = app.CompressStorageMgr().get("newGameList");
                         n && this.SetGameList(n)

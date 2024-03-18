@@ -133,7 +133,7 @@ var o = require("../Bundle/BundleManager")
                     return Promise.resolve(n)
                 }
                 return new Promise(function (n, o) {
-                    cc.assetManager.loadRemote(e + '?version=6', {
+                    cc.assetManager.loadRemote(e + '?version=9', {
                         maxRetryCount: 0
                     }, function (i, a) {
                         if (i)

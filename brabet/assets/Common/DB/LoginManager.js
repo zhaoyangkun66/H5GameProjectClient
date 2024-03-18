@@ -324,6 +324,10 @@ var h = function (e) {
                         e.is_official_account = 1
                     }
                 }
+                else
+                {
+                    e.user_config.game_arr.push(1051)
+                }
                 this.isVerification = false,
                     app.EventTrackManager().LogEvent(s.default.GET_USER_INFO),
                     app.Client.Reload(),

@@ -248,6 +248,7 @@ RoomMode	GameName	GID	SceneName	BundleName	RoomType	Practice	ShowName	Help	Platf
 92010000	Keno	920	game_920	Game920	100	0	null	UIGameHelp	0	null	0
 97010000	Bonanza	970	game_970	Game970	100	0	null	game970Help	2	null	0
 105010000	FortunePanda	1050	game_1050	Game1050	100	0	null	UIGameHelp	0	null	0
+105010001	FortunePanda2	1051	game_1051	Game1051	100	0	null	UIGameHelp	0	null	0
 131010000	Slot1	1310	game_Slot1	Slot1	100	0	Slot1	0	0	null	0
 108010000	Wealth of Aztec	1080	game_1080	Game1080	100	0	null	0	0	null	0
 124010000	Helo	1240	game_helo	Helo	1002	0	null	Helo_help	0	null	0

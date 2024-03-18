@@ -84,19 +84,19 @@ UI.UICashWheel3,Expires at,,,,,,,,,Expira em,Vence en
 UI.UICashWheel4,Invite friends to help,,,,,,,,,Convide amigos para ajudar,Invitar a amigos a ayudar
 UI.UICashWheel5,Report,,,,,,,,,Relatório,Informe
 UI.UICashWheel6,Rules,,,,,,,,,Regras,Normas
-UI.UICashWheel7,"1. You will be able to withdraw money when the accumulated amount reaches COL$50,000\n
-2. Inviting friends to register on YOTUBET.COM will help you withdraw money quickly. For each friend who successfully registers, you will get 1 drawing opportunity.\n
+UI.UICashWheel7,"1. You will be able to withdraw money when the accumulated amount reaches R$100\n
+2. Inviting friends to register on Bigerwin.COM will help you withdraw money quickly. For each friend who successfully registers, you will get 1 drawing opportunity.\n
 4. Each user's activity is valid for 3 days. If no withdrawal is made within 3 days, the funds will be lost.\n
 5. The winnings will be added to your wallet and you can play for free and win more real money or withdraw it directly.\n
-6. All illegal means of obtaining bonuses will not be recognized, including but not limited to account swiping on the same IP and the same device. We will eliminate the bonuses obtained by said accounts. The final interpretation right of this activity belongs to YOTUBET. COM",,,,,,,,,"1. Você poderá sacar dinheiro quando o valor acumulado atingir COL$50.000\n
-2. Convidar amigos para se registrarem no YOTUBET.COM ajudará você a sacar dinheiro rapidamente. Para cada amigo que se registrar com sucesso, você terá 1 oportunidade de sorteio.\n
+6. All illegal means of obtaining bonuses will not be recognized, including but not limited to account swiping on the same IP and the same device. We will eliminate the bonuses obtained by said accounts. The final interpretation right of this activity belongs to Bigerwin. COM",,,,,,,,,"1. Você poderá sacar dinheiro quando o valor acumulado atingir R$100\n
+2. Convidar amigos para se registrarem no Bigerwin.COM ajudará você a sacar dinheiro rapidamente. Para cada amigo que se registrar com sucesso, você terá 1 oportunidade de sorteio.\n
 4. A atividade de cada usuário é válida por 3 dias. Se nenhum saque for feito dentro de 3 dias, os fundos serão perdidos.\n
 5. Os ganhos serão adicionados à sua carteira e você poderá jogar de graça e ganhar mais dinheiro real ou sacá-lo diretamente.\n
-6. Todos os meios ilegais de obtenção de bônus não serão reconhecidos, incluindo, mas não limitado a, swiping de conta no mesmo IP e no mesmo dispositivo. Eliminaremos os bônus obtidos por tais contas. O direito de interpretação final desta atividade pertence ao YOTUBET. COM","1. Podrás retirar dinero cuando el monto acumulado llegue a COL$50.000\n
-2. Invitar a amigos a registrarse en YOTUBET.COM te ayudará a retirar dinero rápidamente. Por cada amigo que se registre exitosamente, obtendrás 1 oportunidad de sorteo.\n
+6. Todos os meios ilegais de obtenção de bônus não serão reconhecidos, incluindo, mas não limitado a, swiping de conta no mesmo IP e no mesmo dispositivo. Eliminaremos os bônus obtidos por tais contas. O direito de interpretação final desta atividade pertence ao Bigerwin. COM","1. Podrás retirar dinero cuando el monto acumulado llegue a R$100\n
+2. Invitar a amigos a registrarse en Bigerwin.COM te ayudará a retirar dinero rápidamente. Por cada amigo que se registre exitosamente, obtendrás 1 oportunidad de sorteo.\n
 4. La actividad de cada usuario es válida por 3 días. Si no se realiza ningún retiro dentro de los 3 días, los fondos se perderán.\n
 5. Las ganancias se agregarán a tu billetera y podrás jugar gratis y ganar más dinero real o retirarlo directamente.\n
-6. No se reconocerán todos los medios ilegales para obtener bonos, incluidos, entre otros, el deslizamiento de la cuenta en la misma IP y el mismo dispositivo. Eliminaremos los bonos obtenidos por dichas cuentas. El derecho de interpretación final de esta actividad pertenece a YOTUBET. COM"
+6. No se reconocerán todos los medios ilegales para obtener bonos, incluidos, entre otros, el deslizamiento de la cuenta en la misma IP y el mismo dispositivo. Eliminaremos los bonos obtenidos por dichas cuentas. El derecho de interpretación final de esta actividad pertenece a Bigerwin. COM"
 UI.UICashWheel8,"We're sorry, your withdrawal progress has not reached 100%. Try again to win it.",,,,,,,,,"Lamentamos, mas o progresso da sua retirada não atingiu 100%. Tente novamente para vencer.","Lo sentimos, el progreso de tu retiro no ha alcanzado el 100%. Inténtalo nuevamente para ganarlo."
 UI.UICashWheel9,"Congratulations on successfully winning the bonus, start over and win again",,,,,,,,,"Parabéns por ganhar o bônus com sucesso, recomece e ganhe novamente","Felicitaciones por ganar exitosamente el bono, comience de nuevo y gane nuevamente"
 UI.UICashWheel10,Begin,,,,,,,,,Começar,Comenzar
@@ -110,3 +110,9 @@ UI.UIStore1,confirm payment,,,,,,,,,confirme o pagamento,confirmar pago
 UI_Game1050_Minimum,Minimum Bet,Minimum Bet,Minimum Bet,Minimum Bet,最低投注額,Minimum Bet,Taruhan Minimum,Minimum Bet,Minimum Bet,Aposta Mínima,Apuesta Mín
 UI_Game1050_Maximum,Maximum Bet,Maximum Bet,Maximum Bet,Maximum Bet,最大賭注,Maximum Bet,Taruhan Maksimum,Maximum Bet,Maximum Bet,Aposta Máxima,Apuesta Máx
 UI_Game1050_Close,Close,Close,Close,Close,關閉,Close,Tutup,Close,Close,Fechar,Cerrar
+UI_Game1051_FortunePanda,Fortune Tiger Feature,,,,,,,,,Característica Fortune Tiger,Fortune Tiger Feature
+UI_Game1051_Duringanyspin,"● During any spin, the Fortune Tiger Feature may be  randomly triggered while the reels are spinning.",,,,,,,,,"● Durante qualquer giro, a Característica Fortune Tiger pode ser acionada aleatoriamente enquanto os rolos estão girando.","● During any spin, the Fortune Tiger Feature may be  randomly triggered while the reels are spinning."
+UI_Game1051_DuringtheFortune,"● During the Fortune Tiger Feature, a symbol is  randomly chosen( exluding Wild symbol) , and the  reels will consist only the randomly chosen symbol, Wild symbol or blank space.",,,,,,,,,"● Durante a Característica Fortune Tiger, um symbol é escolhido aleatoriamente (excluindo o Wild symbol), e as bobinas consistirão apenas no symbol, Wild symbol ou espaço em branco escolhido aleatoriamente.","● During the Fortune Tiger Feature, a symbol is  randomly chosen( exluding Wild symbol) , and the  reels will consist only the randomly chosen symbol, Wild symbol or blank space."
+UI_Game1051_Afterallreelsstop,"● After all reels stop spinning, if there is no more  additional symbol (either a randomly chosen symbol  or a Wild symbol) appearing on the reels, the  Fortune Tiger feature ends and wins are paid.",,,,,,,,,"● Depois que todas as bobinas pararem de girar, se não houver mais symbol adicional (seja um symbol escolhido aleatoriamente ou um Wild symbol) aparecendo nas bobinas, o Característica Fortune Tiger termina e as vitórias são pagas.","● After all reels stop spinning, if there is no more  additional symbol (either a randomly chosen symbol  or a Wild symbol) appearing on the reels, the  Fortune Tiger feature ends and wins are paid."
+UI_Game1051_TipsRespins,Respins in Fortune Tiger Feature!,,,,,,,,,Respins na Característica Fortune Tiger!,Respins in Fortune Tiger Feature!
+UI_Game1051_TipsFortune,Fortune Tiger Feature,,,,,,,,,Característica Fortune Tiger!,Fortune Tiger Feature

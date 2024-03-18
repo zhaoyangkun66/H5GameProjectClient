@@ -47,7 +47,8 @@ n.BundleNames = {
     Game910: "Game910",
     Game920: "Game920",
     Game970: "Game970",
-    Game1050: "Game1050"
+    Game1050: "Game1050",
+    Game1051: "Game1051"
 }
 
 module.exports = n

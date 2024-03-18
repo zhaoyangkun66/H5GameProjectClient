@@ -70,9 +70,13 @@ var h = function (e) {
                         });
                         break;
                     case 2:
-                        let regionid = app.ClientConfigManager().getLocalUrlDataByName("regionid")
+                       // let regionid = app.ClientConfigManager().getLocalUrlDataByName("regionid")
                         let localSelectRegion = app.LanguageManager().GetLocalSelectRegion()
-                        if (channelIDGlobal == 2) {
+                        if (channelIDGlobal == 1) {
+                            regionid = 1
+                        }
+                        else
+                        {
                             regionid = 2
                         }
                         if ((regionid == 1 || regionid == 2) && (!localSelectRegion)) {

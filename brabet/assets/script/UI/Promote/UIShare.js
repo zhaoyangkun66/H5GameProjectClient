@@ -169,8 +169,8 @@ var o = require("../../../Common/Base/UIBaseComponent")
                     if (e) {
                         var t = e;
                         this.setLabelID(t.uid),
-                           // this.ShareUrl = t.link + "&regionid=" + channelID,
-                            this.ShareUrl = location.origin + location.pathname + "?agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID,
+                           // this.ShareUrl = t.link + 
+                            this.ShareUrl = location.origin + location.pathname + "?agentid=" + app.UserManager().UserInfo.uid,
                             this.QRcodeUrl = t.qr_code,
                             this.ShareContent = t.share_content,
                             this.invCount = t.share_count,
@@ -487,12 +487,12 @@ var o = require("../../../Common/Base/UIBaseComponent")
                 ,
                 t.prototype.LineShare = function () {
                     if (channelID == 2) {
-                        var originalUrl = location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID
+                        var originalUrl = location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid
                         var encodedUrl = encodeURIComponent(originalUrl);
                         cc.sys.openURL("https://t.me/share/url?url=" + encodedUrl + "&text=Gana COL$50.000 Gratis, Retiro Rápido NEQUI")
                     }
                     else {
-                        var originalUrl = location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid + "&regionid=" + channelID
+                        var originalUrl = location.origin + location.pathname + "?f=UICashWheel&agentid=" + app.UserManager().UserInfo.uid
                         var encodedUrl = encodeURIComponent(originalUrl);
                         cc.sys.openURL("https://t.me/share/url?url=" + encodedUrl)
                     }
