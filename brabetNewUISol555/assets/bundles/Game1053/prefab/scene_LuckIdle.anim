@@ -1,0 +1,209 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "scene_LuckIdle",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 2.25,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "game/mask_bg": {
+        "props": {
+          "width": [
+            {
+              "frame": 0.5166666666666667,
+              "value": 0
+            },
+            {
+              "frame": 0.7833333333333333,
+              "value": 1000
+            }
+          ],
+          "height": [
+            {
+              "frame": 0.5166666666666667,
+              "value": 0
+            },
+            {
+              "frame": 0.7833333333333333,
+              "value": 1000
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.7833333333333333,
+              "value": 255
+            },
+            {
+              "frame": 1.0166666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "effect/packet/wild_left2": {
+        "comps": {
+          "cc.ParticleSystem": {
+            "emissionRate": []
+          }
+        },
+        "props": {
+          "position": []
+        }
+      },
+      "effect/packet": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "game": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 0.9454545,
+                "y": 0.9454545,
+                "z": 1
+              }
+            },
+            {
+              "frame": 1,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 0.89,
+                "y": 0.89,
+                "z": 1
+              }
+            }
+          ],
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                172.9040744,
+                0
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                0,
+                100,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "game/sprite": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": true
+            },
+            {
+              "frame": 2.25,
+              "value": false
+            }
+          ]
+        }
+      },
+      "game/sprite2": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": false
+            },
+            {
+              "frame": 2.25,
+              "value": true
+            }
+          ]
+        }
+      },
+      "panda/bg_btm_fg": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                -382.00649999999996,
+                0
+              ]
+            },
+            {
+              "frame": 1,
+              "value": [
+                0,
+                -333.359,
+                0
+              ]
+            }
+          ],
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 1.15,
+                "y": 1.15,
+                "z": 1
+              }
+            },
+            {
+              "frame": 1,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 1,
+                "y": 1,
+                "z": 1
+              }
+            }
+          ]
+        }
+      },
+      "panda/bg_fg_left": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": -378.5
+            },
+            {
+              "frame": 1,
+              "value": -490
+            }
+          ]
+        }
+      },
+      "panda/bg_fg_right": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": 380
+            },
+            {
+              "frame": 1,
+              "value": 503
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

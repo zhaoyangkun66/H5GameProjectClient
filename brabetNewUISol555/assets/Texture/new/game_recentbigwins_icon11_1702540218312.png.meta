@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "93df1d93-9a48-4533-be3a-04fcdcc225b9",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 400,
+  "height": 400,
+  "platformSettings": {},
+  "subMetas": {
+    "game_recentbigwins_icon11_1702540218312": {
+      "ver": "1.0.6",
+      "uuid": "436917cd-601a-47a7-88ea-961a5b206c2d",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "93df1d93-9a48-4533-be3a-04fcdcc225b9",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 400,
+      "height": 400,
+      "rawWidth": 400,
+      "rawHeight": 400,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

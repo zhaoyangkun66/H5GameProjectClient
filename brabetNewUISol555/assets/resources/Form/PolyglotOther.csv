@@ -1,0 +1,333 @@
+﻿none,en-us,hi-in,th-th,zh-cn,zh-hk,vi-vn,id-id,in-telugu,in-marathi,pt-pt,es_co
+UI_Login2,"Sign in",,,,,,,,,"Entrar","Iniciar sesión"
+UI_Sign_Up2,"Sign up",,,,,,,,,"Registro","Inscribirse"
+UI_Promote_PopTypeHint,Please bind your phone number first,कृपया पहले अपना फ़ोन नंबर बाइंड करें,กรุณาผูกหมายเลขโทรศัพท์ของคุณก่อน,Please bind your phone number first,Please bind your phone number first,Vui lòng liên kết số điện thoại của bạn trước,Please bind your phone number first,Please bind your phone number first,Please bind your phone number first,"Por favor, vincule seu número de telefone primeiro.",Por favor vincula tu número de teléfono primero.
+UI.System_inputPhone,Please input your phone number,कृपया अपना फोन संख्या इनपुट करें,กรุณากรอกหมายเลขโทรศัพท์,Please input your phone number,Please input your phone number,Vui lòng nhập số điện thoại của bạn,Please input your phone number,Please input your phone number,Please input your phone number,"Por favor, introduz seu número de telefone",Introduzca su número de teléfono
+UIRedeemCode_Receive,Receive,प्राप्त करें,รับ,Receive,收到,Nhận được,Menerima,స్వీకరించండి,प्राप्त करा,Receber,Recibir
+UIRemittance_Remittance,Remittance period,प्रेषण अवधि,ระยะเวลาการโอนเงิน,Remittance period,匯款期限,Kỳ chuyển tiền,Periode pengiriman uang,చెల్లింపు కాలం,प्रेषण कालावधी,Período de remessa,Periodo de remesa
+UIRemittance_Recharge,Recharge within the specified time toenjoy a recharge discount,रिचार्ज छूट का आनंद लेने के लिए निर्दिष्ट समय के भीतर रिचार्ज करें,เติมเงินภายในเวลาที่กำหนดเพื่อรับส่วนลดการเติมเงิน,Recharge within the specified time toenjoy a recharge discount,指定時間內充值享受充值優惠,Nạp tiền trong thời gian quy định để được giảm giá khi nạp tiền,Isi ulang dalam waktu yang ditentukan untuk menikmati diskon isi ulang,రీఛార్జ్ తగ్గింపును ఆస్వాదించడానికి పేర్కొన్న సమయంలో రీఛార్జ్ చేయండి,रिचार्ज डिस्काउंटचा आनंद घेण्यासाठी निर्दिष्ट वेळेत रिचार्ज करा,Recarregue dentro do tempo especificado para aproveitar um desconto de recarga,Recarga dentro del tiempo especificado para disfrutar de un descuento de recarga
+UIRemittance_Countdown,Payment countdown,भुगतान की उलटी गिनती,นับถอยหลังการชำระเงิน,Payment countdown,付款倒計時,Đếm ngược thanh toán,Hitung mundur pembayaran,చెల్లింపు కౌంట్‌డౌన్,पेमेंट काउंटडाउन,Contagem regressiva de pagamento,Cuenta regresiva de pago
+UIRemittance_information,Payment information,भुगतान जानकारी,ข้อมูลการชำระเงิน,Payment information,支付信息,Thông tin thanh toán,Informasi Pembayaran,చెల్లింపు సమాచారం,देयक माहीती,Informação de pagamento,Información del pago
+UIRemittance_Provide,Provide,Provide,Provide,Provide,Provide,Provide,Provide,Provide,Provide,Provide,Provide
+UIRemittance_Account,Account number / Clabe,Account number / Clabe,Account number / Clabe,Account number / Clabe,Account number / Clabe,Account number / Clabe,Account number / Clabe,Account number / Clabe,Account number / Clabe,Account number / Clabe,Account number / Clabe
+UIRemittance_Beneficiary,Beneficiary name,Beneficiary name,Beneficiary name,Beneficiary name,Beneficiary name,Beneficiary name,Beneficiary name,Beneficiary name,Beneficiary name,Beneficiary name,Beneficiary name
+UIRemittance_Process,Process,प्रक्रिया,กระบวนการ,Process,過程,Quá trình,Proses,ప్రక్రియ,प्रक्रिया,Processo,Proceso
+UIRemittance_explain,"1. After starting the order, in your banking app, transfer the money to clabe. Close the deal. \n2. After a successful remittance, the remittanceamount will be added to your platform balance\n3. The minimum amount for a single top-up is 50","1. ऑर्डर शुरू करने के बाद अपने बैंकिंग ऐप में पैसे को क्लैब में ट्रांसफर करें। सौदा कर लो।\n2. सफल प्रेषण के बाद, प्रेषण राशि आपके प्लेटफ़ॉर्म बैलेंस में जोड़ दी जाएगी\n3. एकल टॉप-अप के लिए न्यूनतम राशि 50 है",1. หลังจากเริ่มสั่งซื้อแล้ว ให้โอนเงินไปที่ clabe ในแอปธนาคารของคุณ ปิดข้อตกลง.\n2. หลังจากการโอนเงินสำเร็จ จำนวนเงินที่โอนจะถูกเพิ่มไปยังยอดคงเหลือแพลตฟอร์มของคุณ\n3. จำนวนเงินขั้นต่ำสำหรับการเติมเงินครั้งเดียวคือ 50,"1. After starting the order, in your banking app, transfer the money to clabe. Close the deal.\n2. After a successful remittance, the remittanceamount will be added to your platform balance\n3. The minimum amount for a single top-up is 50",1. 開始訂單後，在您的銀行應用程序中，將錢轉至clabe。關閉交易。\n2. 匯款成功後，匯款金額將添加到您的平台餘額中\n3. 單次充值最低金額為50,"1. Sau khi bắt đầu đặt hàng, trong ứng dụng ngân hàng của bạn, hãy chuyển tiền đến clabe. Chốt giao dịch.\n2. Sau khi chuyển tiền thành công, số tiền chuyển sẽ được thêm vào số dư nền tảng của bạn\n3. Số tiền tối thiểu cho một lần nạp tiền là 50","1. Setelah memulai pemesanan, di aplikasi perbankan Anda, transfer uang ke clabe. Tutup kesepakatannya.\n2. Setelah pengiriman uang berhasil, jumlah pengiriman uang akan ditambahkan ke saldo platform Anda\n3. Jumlah minimum untuk sekali isi ulang adalah 50","1. ఆర్డర్‌ని ప్రారంభించిన తర్వాత, మీ బ్యాంకింగ్ యాప్‌లో, డబ్బును క్లాబ్‌కి బదిలీ చేయండి. ఒప్పందాన్ని మూసివేయండి.\n2. విజయవంతమైన చెల్లింపు తర్వాత, చెల్లింపు మొత్తం మీ ప్లాట్‌ఫారమ్ బ్యాలెన్స్‌కి జోడించబడుతుంది\n3. ఒక్క టాప్-అప్ కోసం కనీస మొత్తం 50","1. ऑर्डर सुरू केल्यानंतर, तुमच्या बँकिंग अॅपमध्ये, पैसे क्लेबमध्ये हस्तांतरित करा. करार बंद करा.\n2. यशस्वी रेमिटन्सनंतर, रेमिटन्सची रक्कम तुमच्या प्लॅटफॉर्म शिल्लकमध्ये जोडली जाईल\n3. एका टॉप-अपसाठी किमान रक्कम 50 आहे","1. Após iniciar o pedido, no seu aplicativo do banco, transfira o dinheiro para o clabe. Feche o negócio.\n2. Após uma remessa bem-sucedida, o valor da remessa será adicionado ao saldo da sua plataforma\n3. O valor mínimo para uma única recarga é 50","1. Después de iniciar el pedido, en tu aplicación bancaria, transfiere el dinero a clabe. Cerrar el trato.\n2. Después de una remesa exitosa, el monto de la remesa se agregará al saldo de su plataforma.\n3. El importe mínimo para una única recarga es 50"
+UIRedeemCode_OrderAmount,Order amount:,ऑर्डर करने की राशि:,จำนวนสั่งซื้อ:,Order amount:,訂單金額:,Số lượng đơn đặt hàng:,Jumlah pesanan:,ఆర్డర్ మొత్తం:,ऑर्डर रक्कम:,Valor do pedido:,Total de la orden:
+UI_SuccessfullySent,Sent successfully,सफलतापूर्वक भेज दिया,ส่งเรียบร้อยแล้ว,Sent successfully,Sent successfully,Gửi thành công,Berhasil dikirim,Sent successfully,Sent successfully,Enviado com sucesso,Enviado correctamente
+UI_AiSupportPromoteService,Agent service,Cooperation Service,Cooperation Service,Cooperation Service,Cooperation Service,Cooperation Service,Cooperation Service,Cooperation Service,Cooperation Service,Serviço de agente,Cooperation Service
+UI_PromotePopHint,You still have Refer bonus to claim,दावा करने के लिए आपके पास अभी भी रेफर बोनस है,คุณยังมีโบนัสอ้างอิงที่จะรับสิทธิ์,You still have Refer bonus to claim,您仍有推薦獎金可以領取,Bạn vẫn có tiền thưởng giới thiệu để yêu cầu,Anda masih memiliki bonus Referensi untuk diklaim,మీరు ఇప్పటికీ క్లెయిమ్ చేయడానికి సిఫార్సు బోనస్ని కలిగి ఉన్నారు,दावा करण्यासाठी तुमच्याकडे अजूनही रेफर बोनस आहे,Você ainda tem bônus de indicação para reivindicar,Aún tienes bonificación por recomendación para reclamar
+UI_Evidence,Evidence,प्रमाण,Evidence,Evidence,Evidence,Chứng cớ,Evidence,Evidence,Evidence,Evidência,Evidence
+UI_REWARDS,REWARDS,पुरस्कार,รางวัล,REWARDS,獎勵,PHẦN\nTHƯỞNG,HADIAH,బహుమతులు,बक्षिसे,Bônus,Prima
+UI_Rewards,Rewards,पुरस्कार,รางวัล,Rewards,獎勵,Phần\nthưởng,Hadiah,బహుమతులు,बक्षिसे,Bônus,Prima
+UI_Go,Go,जाना,ไป,Go,去,Đi,Pergi,వెళ్ళండి,जा,Ir,Ir
+UI_Highest_Level,Highest level,उच्चतम स्तर,ระดับสูงสุด,Highest level,最高等級,Cấp độ cao nhất,Level tertinggi,అత్యధిక స్థాయి,सर्वोच्च पातळी,Mais alto nível,Nivel más alto
+UI_Cash_StarColor_IFSCCodeNew,<b><color=#495669>Account name</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#495669>Nome da conta</color><color=#ff0000>*</color></b>,<b><color=#495669>Nombre de la cuenta</color><color=#ff0000>*</color></b>
+UI_Shop_InputTaxIdNew,Enter name,,,,,,,,,Introduza o nome,Ingrese su nombre
+UI_Input_PixNew,Enter the number of 11 digits of the CPF,,,,,,,,,Introduza o número de 11 digitos do CPF,Ingrese el número de 11 dígitos del CPF
+UI.newOfficial,Official channel,,,,,,,,,Canal oficial,Canal oficial
+UI.newGroupofactivities,Group of activities,,,,,,,,,Grupo de atividades,grupo de actividades
+UI.UIReceiveRedEnvelope1,GRAB,,,,,,,,,AGARR AR,AGARR AR
+UI.UIReceiveRedEnvelope2,Rain of red envelopes,,,,,,,,,Chuva de pacotes vermelhos,Lluvia de sobres rojos
+UI.UIReceiveRedEnvelope3,The bonus has been deposited into your wallet,,,,,,,,,O bônus foi depositado na sua carteira,El bono ha sido depositado en tu billetera
+UI.UIReceiveRedEnvelope4,Congratulations on the award,,,,,,,,,Parabéns pelo prêmio,Felicitaciones por el premio.
+UI.UIGC1,License,,,,,,,,,Licença,Licencia
+UI.Learnmore,Learn more,,,,,,,,,Learn more,Aprende más
+UI.UIBetRecordtotal,Total Bonus,,,,,,,,,Total Bonus,Bono total
+UI.UIBetRecordslot,Slots Bonus,,,,,,,,,Slots Bonus,Bono de slots
+UI.UIBetRecordvideo,Live Casino Bonus,,,,,,,,,Live Casino Bonus,Bono de Live Casino
+UI.UIBetBonusSlots,Slots,,,,,,,,,Slots,Slots
+UI.UIBetBonusLive Casino,Live Casino,,,,,,,,,Live Casino,Live Casino
+UI.UIBetBonusIn-House,In-House,,,,,,,,,In-House,In-House
+UI.20% CASH BACK,20% CASH BACK,,,,,,,,,20% CASH BACK,20% CASH BACK
+UI.UIStoreAndCashCardholderName,<b><color=#59677C>Cardholder Name</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Nome do Titular</color><color=#ff0000>*</color></b>,<b><color=#59677C>Nombre del titular de la tarjeta</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashInputCardholderName,Input Cardholder Name,,,,,,,,,Insira o nome do titular do cartão,Introduzca el nombre del titular de la tarjeta
+UI.UIStoreAndCashElectronicWalletType,<b><color=#59677C>Electronic Wallet Type</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Tipo de carteira eletrônica</color><color=#ff0000>*</color></b>,<b><color=#59677C>Tipo de billetera electrónica</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashSelectBank,Select Bank,,,,,,,,,Selecione Banco,Seleccionar banco
+UI.UIStoreAndCashBankAccountType,<b><color=#59677C>Bank Account Type</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Tipo de conta bancária</color><color=#ff0000>*</color></b>,<b><color=#59677C>Tipo de cuenta bancaria</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashBankAccountNumber,<b><color=#59677C>Bank Account Number</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Número da conta de banco</color><color=#ff0000>*</color></b>,<b><color=#59677C>Número de cuenta bancaria</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashInputInBankAccount,Input In Bank Account,,,,,,,,,Entrada em conta bancária,Entrada en cuenta bancaria
+UI.UIStoreAndCashSelectType,<b><color=#59677C>Select Type</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Selecione o tipo</color><color=#ff0000>*</color></b>,<b><color=#59677C>Seleccionar el tipo</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashCertificateNumber,<b><color=#59677C>Certificate number</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Número do certificado</color><color=#ff0000>*</color></b>,<b><color=#59677C>Número de certificado</color><color=#ff0000>*</color></b>
+UI.UIStoreAndCashCompletethe,Input Certificate number,,,,,,,,,Insira o número do certificado,Número de certificado de entrada
+UI.UIActivityDailyRegistrations1,"<color=#9EA9AA>Logged in </color>",,,,,,,,,"<color=#9EA9AA>Logado </color>","<color=#9EA9AA>Iniciado sesión </color>"
+UI.UIActivityDailyRegistrations2,"<color=#9EA9AA> consecutive days</color>",,,,,,,,,"<color=#9EA9AA> dias consecutivos</color>","<color=#9EA9AA> días consecutivos</color>"
+UI.UIActivityDailyRegistrations3,"<color=#9EA9AA>Picked up: </color>",,,,,,,,,"<color=#9EA9AA>Pegou: </color>","<color=#9EA9AA>Recogido: </color>"
+UI.UIActivityDailyRegistrations4,"<color=#9EA9AA>And loading is required：</color>",,,,,,,,,"<color=#9EA9AA>E o carregamento é necessário: </color>","<color=#9EA9AA>Y se requiere cargar：</color>"
+UI.UIActivityDailyRegistrations5,"<color=#9EA9AA>Bets: </color>",,,,,,,,,"<color=#9EA9AA>Apostas: </color>","<color=#9EA9AA>Apuestas: </color>"
+UI.UIActivityDailyRegistrations6,"<size=26><color=#f9de06>Event conditions:</color></size>
+Deposit + total bet of the day (redefined after 7 consecutive days)<br/>
+<size=26><color=#f9de06>Event description: </color></size>
+1. You can only get the fixed bonus if you log in and complete the deposit and betting conditions.
+2. This activity is a continuous login activity (if the login is interrupted, it will start again on the first day)
+3. Rewards can be claimed on iOS, Android, H5 and PC.
+4. The bonus attributable to this event requires 1x the bet before it can be withdrawn.
+5. This activity is limited to normal operations through this account. Using external plug-ins, taking over different devices, mutual search, arbitration, interface protocols, vulnerability scanning, group control and other technical means to participate are prohibited. Otherwise, rewards will be canceled or deducted and eventually frozen or blacklisted.
+6. To avoid differences in the understanding of the text, this platform has the final right to interpret this event.",,,,,,,,,"<size=26><color=#f9de06>Condições do evento:</color></size>
+Depósito + aposta total do dia (redefinido após 7 dias consecutivos)<br/>
+<size=26><color=#f9de06>Descrição do evento: </color></size>
+1. Você só poderá obter o bônus fixo se fizer login e preencher as condições de depósito e apostas.
+2. Esta atividade é uma atividade de login contínua (se o login for interrompido, ele será reiniciado no primeiro dia)
+3. As recompensas podem ser resgatadas em iOS, Android, H5 e PC.
+4. O bônus atribuível a este evento requer 1x a aposta antes de poder ser retirado.
+5. Esta atividade está limitada às operações normais através desta conta. É proibido o uso de plug-ins externos, o controle de diferentes dispositivos, busca mútua, arbitragem, protocolos de interface, verificação de vulnerabilidades, controle de grupo e outros meios técnicos de participação. Caso contrário, as recompensas serão canceladas ou deduzidas e eventualmente congeladas ou colocadas na lista negra.
+6. Para evitar diferenças na compreensão do texto, esta plataforma tem o direito final de interpretar este evento."​,"<size=26><color=#f9de06>Condiciones del evento:</color></size>
+Depósito + apuesta total del día (redefinida después de 7 días consecutivos)<br/>
+<size=26><color=#f9de06>Descripción del evento: </color></size>
+1. Solo puedes obtener el bono fijo si inicias sesión y completas las condiciones de depósito y apuestas.
+2. Esta actividad es una actividad de inicio de sesión continuo (si se interrumpe el inicio de sesión, comenzará nuevamente el primer día)
+3. Las recompensas se pueden reclamar en iOS, Android, H5 y PC.
+4. El bono atribuible a este evento requiere 1 vez la apuesta antes de poder retirarse.
+5. Esta actividad se limita a las operaciones normales a través de esta cuenta. Está prohibido utilizar complementos externos, apoderarse de diferentes dispositivos, búsqueda mutua, arbitraje, protocolos de interfaz, escaneo de vulnerabilidades, control de grupos y otros medios técnicos para participar. De lo contrario, las recompensas se cancelarán o deducirán y eventualmente se congelarán o se incluirán en la lista negra.
+6. Para evitar diferencias en la comprensión del texto, esta plataforma tiene el derecho final de interpretar este evento."
+UI.UICashWheel1,You still need,,,,,,,,,Ainda precisa,Aún necesitas
+UI.UICashWheel2,to withdraw,,,,,,,,,retirar,retirarse
+UI.UICashWheel3,Expires at,,,,,,,,,Expira em,Vence en
+UI.UICashWheel4,Invite friends to help,,,,,,,,,Convide amigos para ajudar,Invitar a amigos a ayudar
+UI.UICashWheel5,Report,,,,,,,,,Relatório,Informe
+UI.UICashWheel6,Rules,,,,,,,,,Regras,Normas
+UI.UICashWheel7,"1. You will be able to withdraw money when the accumulated amount reaches R$100\n
+2. Inviting friends to register on Bigerwin.COM will help you withdraw money quickly. For each friend who successfully registers, you will get 1 drawing opportunity.\n
+4. Each user's activity is valid for 3 days. If no withdrawal is made within 3 days, the funds will be lost.\n
+5. The winnings will be added to your wallet and you can play for free and win more real money or withdraw it directly.\n
+6. All illegal means of obtaining bonuses will not be recognized, including but not limited to account swiping on the same IP and the same device. We will eliminate the bonuses obtained by said accounts. The final interpretation right of this activity belongs to Bigerwin. COM",,,,,,,,,"1. Você poderá sacar dinheiro quando o valor acumulado atingir R$100\n
+2. Convidar amigos para se registrarem no Bigerwin.COM ajudará você a sacar dinheiro rapidamente. Para cada amigo que se registrar com sucesso, você terá 1 oportunidade de sorteio.\n
+4. A atividade de cada usuário é válida por 3 dias. Se nenhum saque for feito dentro de 3 dias, os fundos serão perdidos.\n
+5. Os ganhos serão adicionados à sua carteira e você poderá jogar de graça e ganhar mais dinheiro real ou sacá-lo diretamente.\n
+6. Todos os meios ilegais de obtenção de bônus não serão reconhecidos, incluindo, mas não limitado a, swiping de conta no mesmo IP e no mesmo dispositivo. Eliminaremos os bônus obtidos por tais contas. O direito de interpretação final desta atividade pertence ao Bigerwin. COM","1. Podrás retirar dinero cuando el monto acumulado llegue a R$100\n
+2. Invitar a amigos a registrarse en Bigerwin.COM te ayudará a retirar dinero rápidamente. Por cada amigo que se registre exitosamente, obtendrás 1 oportunidad de sorteo.\n
+4. La actividad de cada usuario es válida por 3 días. Si no se realiza ningún retiro dentro de los 3 días, los fondos se perderán.\n
+5. Las ganancias se agregarán a tu billetera y podrás jugar gratis y ganar más dinero real o retirarlo directamente.\n
+6. No se reconocerán todos los medios ilegales para obtener bonos, incluidos, entre otros, el deslizamiento de la cuenta en la misma IP y el mismo dispositivo. Eliminaremos los bonos obtenidos por dichas cuentas. El derecho de interpretación final de esta actividad pertenece a Bigerwin. COM"
+UI.UICashWheel8,"We're sorry, your withdrawal progress has not reached 100%. Try again to win it.",,,,,,,,,"Lamentamos, mas o progresso da sua retirada não atingiu 100%. Tente novamente para vencer.","Lo sentimos, el progreso de tu retiro no ha alcanzado el 100%. Inténtalo nuevamente para ganarlo."
+UI.UICashWheel9,"Congratulations on successfully winning the bonus, start over and win again",,,,,,,,,"Parabéns por ganhar o bônus com sucesso, recomece e ganhe novamente","Felicitaciones por ganar exitosamente el bono, comience de nuevo y gane nuevamente"
+UI.UICashWheel10,Begin,,,,,,,,,Começar,Comenzar
+UI.UICashWheel11,TO WITHDRAW,,,,,,,,,SACAR,RETIRAR
+UI.UICashWheelWithdraw1,You will soon be able to withdraw,,,,,,,,,Em breve você poderá sacar,Pronto podrás retirar
+UI.UICashWheelWithdraw2,Total money to be paid soon,,,,,,,,,Dinheiro total a ser pago em breve,Dinero total a pagar pronto
+UI.UICashWheelWithdraw3,The payment request has been submitted,,,,,,,,,A solicitação de pagamento foi enviada,La solicitud de pago ha sido enviada.
+UI.UICashWheelWithdraw4,will be paid into your account,,,,,,,,,será pago em sua conta,se pagará en su cuenta
+UI.UICashWheelWithdraw5,Invite friends to help with,,,,,,,,,Convide amigos para ajudar,Invita a amigos para que te ayuden
+UI.UIStore1,confirm payment,,,,,,,,,confirme o pagamento,confirmar pago
+UI_Game1050_Minimum,Minimum Bet,Minimum Bet,Minimum Bet,Minimum Bet,最低投注額,Minimum Bet,Taruhan Minimum,Minimum Bet,Minimum Bet,Aposta Mínima,Apuesta Mín
+UI_Game1050_Maximum,Maximum Bet,Maximum Bet,Maximum Bet,Maximum Bet,最大賭注,Maximum Bet,Taruhan Maksimum,Maximum Bet,Maximum Bet,Aposta Máxima,Apuesta Máx
+UI_Game1050_Close,Close,Close,Close,Close,關閉,Close,Tutup,Close,Close,Fechar,Cerrar
+UI_Game1051_Wildsymbol,Wild symbol substitutes for all symbols.,,,,,,,,,Wild symbol substitui todos os símbolos.,El símbolo Wild sustituye a todos los símbolos.
+UI_Game1051_Whenallsymbol,When all symbol in the reels are involved in a win，the win will be multiplied by x10.,,,,,,,,,"Quando todos os symbol nas bobinas estiverem envolvidos em uma vitória, a vitória será multiplicada por x10.","Cuando todos los símbolos de los carretes participan en una premio, éste se multiplica por 10."
+UI_Game1051_Standachance,Stand a chance to win up to 2500x of the total bet  amount.,,,,,,,,,Tenha a chance de ganhar até 2500x do valor total da aposta.,"Aprovecha la oportunidad para ganar hasta 2500 veces la cantidad total apostada."
+UI_Game1051_Onlythehighest,Only the highest win per bet line is paid.,,,,,,,,,Apenas a vitória mais alta por linha de aposta é paga.,Sólo se paga la ganancia más alta por línea de apuesta.
+UI_Game1051_ Betlines,Bet lines win if the winning symbols are in succession  from the leftmost reel to the right.,,,,,,,,,As linhas de aposta ganham se os symbol vencedores estiverem em sucessão do carretel mais à esquerda para a direita.,"Las líneas de apuesta resultan premiadas si los símbolos ganadores aparecen de forma consecutiva, comenzando por el carrete situado más a la izquierda."
+UI_Game1051_ Allwinsshown,All wins shown in cash.,,,,,,,,,Todas as vitórias mostradas em dinheiro.,"Todos los premios se muestran en dinero."
+UI_Game1051_FortunePanda,Fortune Tiger Feature,,,,,,,,,Característica Fortune Tiger,Función de Tigre de la Fortuna
+UI_Game1051_Duringanyspin,"During any spin, the Fortune Tiger Feature may be  randomly triggered while the reels are spinning.",,,,,,,,,"Durante qualquer giro, a Característica Fortune Tiger pode ser acionada aleatoriamente enquanto os rolos estão girando.","Durante cualquier giro, la función Tigre de la Fortuna puede activarse aleatoriamente mientras los carretes estén girando."
+UI_Game1051_DuringtheFortune,"During the Fortune Tiger Feature, a symbol is  randomly chosen( exluding Wild symbol) , and the  reels will consist only the randomly chosen symbol, Wild symbol or blank space.",,,,,,,,,"Durante a Característica Fortune Tiger, um symbol é escolhido aleatoriamente (excluindo o Wild symbol), e as bobinas consistirão apenas no symbol, Wild symbol ou espaço em branco escolhido aleatoriamente.","Durante la Función Tigre de la Fortuna, se elige un símbolo al azar (excepto el símbolo Wild), y los carretes estarán formados únicamente por el símbolo elegido al azar, el símbolo Wild o el espacio en blanco."
+UI_Game1051_Afterallreels,"After all reels stop spinning, if there is 1 or more  additional symbol(either a randomly chosen symbol  or a Wild symbol) appearing on the reels, all reels will  respin again with the previously appeared symbols  staying in their positions.",,,,,,,,,"Depois que todas as bobinas pararem de girar, se houver 1 ou mais symbol adicionais (seja um symbol escolhido aleatoriamente ou um Wild symbol) aparecendo nas bobinas, todas as bobinas irão girar novamente com os symbol exibidos anteriormente permanecendo em suas posições.","Después de que todos los carretes dejen de girar, si aparecen 1 o más símbolos adicionales (ya sea un símbolo elegido al azar o Wild) en los carretes, todos los carretes volverán a girar con los símbolos aparecidos anteriormente permaneciendo en sus posiciones."
+UI_Game1051_Afterallreelsstop,"After all reels stop spinning, if there is no more  additional symbol (either a randomly chosen symbol  or a Wild symbol) appearing on the reels, the  Fortune Tiger feature ends and wins are paid.",,,,,,,,,"Depois que todas as bobinas pararem de girar, se não houver mais symbol adicional (seja um symbol escolhido aleatoriamente ou um Wild symbol) aparecendo nas bobinas, o Característica Fortune Tiger termina e as vitórias são pagas.","Después de que todos los carretes dejen de girar, si no aparece ningún símbolo adicional (ya sea un símbolo elegido al azar o un Wild) en los carretes, la función Tigre de la Fortuna termina y se pagan los premios."
+UI_Game1051_RulesTitle,Game Rules,,,,,,,,,Regras do Jogo,Reglas del juego
+UI_Game1051_Title,Fortune Tiger,,,,,,,,,Fortune Tiger,Fortune Tiger
+UI_Game1051_TitleDesc1,"Fortune Tiger is a 3-reel, 3-row video slot featuring respins and x10 multiplier.",,,,,,,,,"Fortune Tiger é uma slot de vídeo de  3 cilindros e 3 linhas com novas rodadas e multiplicador x10.","Fortune Tiger es una tragaperras de vídeo de 3 carretes y 3 filas que incluye regiros y un multiplicador x10."
+UI_Game1051_TitleDesc2_1,"The game is played with 5 bet lines (fixed), bet level of %{minBetMtp} to %{maxBetMtp} and bet size of %{minChip} to %{maxChip}.",,,,,,,,,"O jogo é jogado com 5 linhas de aposta (fixas), umvalor de aposta entre %{minBetMtp} e %{maxBetMtp} e valores de aposta entre %{minChip} e %{maxChip}.","Se juega con 5 líneas de apuesta (fijas), un nivel de apuesta entre %{minBetMtp} y %{maxBetMtp} y un tamaño de apuesta entre %{minChip} y %{maxChip}."
+UI_Game1051_InGameCurrency,"The in-game currency is %{configuredValue}.",,,,,,,,,"A moeda do jogo é %{configuredValue}.","La divisa dentro del juego es %{configuredValue}."
+UI_Game1051_BetSize,"The Bet Size is set using the ""Bet Size"" selector.",,,,,,,,,"A aposta é definida com o seletor ""Aposta"".","La apuesta se establece con el selector ""Apuesta""."
+UI_Game1051_BetLevel,"The Bet Level is set using the ""Bet Level"" selector.",,,,,,,,,"O nível da aposta é definido com o seletor ""Nível de aposta"".","El nivel de apuesta se establece con el selector ""Nivel de apuesta""."
+UI_Game1051_BetAmount,"The Bet Amount is set using the ""Bet Amount"" selector.",,,,,,,,,"O valor da aposta é definido com o seletor ""Valor de aposta"".","El importe de la apuesta se define con el selector ""Importe de la apuesta""."
+UI_Game1051_CashWallet,"""Cash Wallet"" displays the cash available for wager.",,,,,,,,,"A ""Carteira de dinheiro"" apresenta o dinheiro disponível para apostar.","El ""Money Wallet"" muestra el dinero disponible para apostar."
+UI_Game1051_AutoSpinPlays,"""Auto Spin"" automatically plays the game for a selected number of rounds.",,,,,,,,,"A ""Rodada automática"" joga automaticamente durante o número de rodadas selecionado.","El ""Giro Automático"" se reproduce automáticamente durante el número de giros seleccionado."
+UI_Game1051_PayoutAccordingToPaytable,"Winning combinations and payouts are made according to the ""Paytable"".",,,,,,,,,"As combinações e pagamentos vencedores são feitos de acordo com a ""Tabela de pagamentos"".","Las combinaciones ganadoras y los pagos se realizan de acuerdo con la ""Tabla de pagos""."
+UI_Game1051_WinDetailBreakdown,"A bet way win in cash is equal to the value shown in the ""Paytable""  multiplied by the bet size and bet level.",,,,,,,,,"O ganho de linha de aposta em dinheiro é igual ao valor apresentado na ""Tabela de pagamentos"", multiplicado pela aposta e pelo nível de aposta.","La ganancia de la línea de apuesta en efectivo es igual a la cantidad que se muestra en la ""Tabla de pagos"" multiplicada por la apuesta y el nivel de apuesta."
+UI_Game1051_HighestWinIsPaid,"Only the highest win per bet line is paid.",,,,,,,,,"Apenas é pago o maior ganho por linha de aposta.","Sólo se paga la mayor apuesta por línea."
+UI_Game1051_WinFromLeftmost,"Bet lines win if the winning symbols are in succession from the leftmost reel to the right.",,,,,,,,,"Ganha com as linhas de aposta, se os símbolos vencedores se sucederem a partir do cilindro mais à esquerda.","Se gana con las líneas de apuesta, si los símbolos ganadores se suceden desde el carrete más a la izquierda."
+UI_Game1051_SimultanuousWin,"Simultaneous wins on different bet lines are added.",,,,,,,,,"São adicionados os ganhos simultâneos em diferentes linhas de aposta.","Se añaden ganancias simultáneas en diferentes líneas de apuesta."
+UI_Game1051_WinShownInCash,"All wins shown in cash.",,,,,,,,,"Todos os ganhos são apresentados em dinheiro.","Todas las ganancias se presentan en efectivo."
+UI_Game1051_FTCommonRules,"Wild symbol substitutes for all symbols.",,,,,,,,,"O símbolo Wild substitui todos os símbolos","El símbolo Wild reemplaza a todos los símbolos"
+UI_Game1051_MainGameTitle,"Main Game",,,,,,,,,"Jogo principal","Juego principal"
+UI_Game1051_SpinTitle,"Spin",,,,,,,,,"Rodar","Girar"
+UI_Game1051_SpinAction,"Tap to start spin at the current Bet Lines, Bet Size and Bet Level. ",,,,,,,,,"Toque para começar a rodar com as definições atuais de Linhas de aposta, Valor da aposta e Nível de aposta.","Toque para comenzar a girar con las configuraciones actuales de Líneas de apuestas, Monto de apuesta y Nivel de apuesta."
+UI_Game1051_FastStopAction,"Tap the button or the game area during a spin to stop the reels.",,,,,,,,,"Toque no botão ou na área de jogo durante uma rodada para parar os cilindros.","Toca el botón o el área de juego durante un giro para detener los carretes."
+UI_Game1051_PressSpaceAction,"Press the <Space> key to start spin at the current Bet Lines, Bet Size and Bet Level. (applicable to PC version only)",,,,,,,,,"Prima a tecla <Barra de espaço> para começar a rodar com as definições atuais de Linhas de aposta, Valor da aposta e Nível de aposta. (apenas aplicável à versão de PC)","Presione la tecla <Barra espaciadora> para comenzar a girar con las configuraciones actuales de Líneas de apuesta, Monto de apuesta y Nivel de apuesta. (Aplicable solo a la versión para PC)"
+UI_Game1051_HoldSpaceBarAction,"Press and Hold <Space> key will continue game spins until it is released. (applicable to PC version only)",,,,,,,,,"Mantenha premida a tecla <Barra de espaço> para continuar a rodar até soltar a tecla. (apenas aplicável à versão de PC)","Mantenga presionada la tecla <Barra espaciadora> para continuar girando hasta que suelte la tecla. (Aplicable solo a la versión para PC)"
+UI_Game1051_StopTitle,"Stop",,,,,,,,,"Parar","Parar"
+UI_Game1051_StopAutoSpinAction,"Tap to stop Auto Spin. The number on the button indicates the remaining number of spins for Auto Spin.",,,,,,,,,"Toque para parar a Rodada automática. O número no botão indica o número restante de rodadas da Rodada automática.","Toca para detener el giro automático. El número en el botón indica el número restante de rondas de giro automático."
+UI_Game1051_MinusTitle,"Minus",,,,,,,,,"Menos","Menos"
+UI_Game1051_MinusAction,"Tap to reduce the Bet Amount.",,,,,,,,,"Toque para reduzir o Montante de Aposta.","Toca para reducir el monto de la apuesta."
+UI_Game1051_PlusTitle,"Plus",,,,,,,,,"Mais","Más"
+UI_Game1051_PlusAction,"Tap to increase the Bet Amount.",,,,,,,,,"Toque para aumentar as Opções de Aposta.","Toca para aumentar las opciones de apuestas."
+UI_Game1051_WalletBalanceTitle,"Wallet Balance",,,,,,,,,"Saldo da Carteira","Saldo de billetera"
+UI_Game1051_WalletBalanceAction,"Tap to display the balance of available wallets.",,,,,,,,,"Toque para apresentar o saldo das carteiras disponíveis.","Toca para mostrar el saldo de las billeteras disponibles."
+UI_Game1051_BetOptionsTitle,"Bet Amount",,,,,,,,,"Valor de aposta","Valor de la apuesta"
+UI_Game1051_BetAmountTap,"Tap to display the Bet Options.",,,,,,,,,"Toque para apresentar as Opções de Aposta.","Toque para mostrar las opciones de apuestas."
+UI_Game1051_BetSizeAction,"Bet Size: Scroll to select the Bet Size.",,,,,,,,,"Aposta: Deslize para selecionar a Aposta.","Apuesta: desliza para seleccionar Apuesta."
+UI_Game1051_BetLevelAction,"Bet Level: Scroll to select the Bet Level.",,,,,,,,,"Nível de aposta: Deslize para selecionar o Nível de aposta.","Nivel de apuesta: deslice para seleccionar el nivel de apuesta."
+UI_Game1051_BetAmountAction,"Bet Amount: Scroll to select the Bet Amount.",,,,,,,,,"Valor de aposta: Deslize para selecionar o Valor de aposta.","Cantidad de la apuesta: deslice el dedo para seleccionar la cantidad de la apuesta."
+UI_Game1051_MaxBetAction,"Max Bet: Tap to set Bet Size and Bet Level to maximum value.",,,,,,,,,"Aposta máxima: Toque para definir a Aposta e o Nível de aposta para os valores máximos.","Apuesta máxima: toque para establecer la apuesta y el nivel de apuesta en los valores máximos."
+UI_Game1051_WinAmountTitle,"Win Amount",,,,,,,,,"Montante de Prémio","Monto del premio"
+UI_Game1051_WinAmountAction,"Tap to display the Game History.",,,,,,,,,"Toque para apresentar o Histórico do Jogo.","Toca los valores para seleccionar el número de giros automáticos."
+UI_Game1051_SpinOptionTitle,"Auto Spin",,,,,,,,,"Rodada automática","Giro automático"
+UI_Game1051_AutoSpinPlayDescription,"Auto Spin automatically plays the game for a selected number of spins.",,,,,,,,,"A Rodada automática joga automaticamente durante o número de rodadas selecionado.","Auto Spin se reproduce automáticamente durante el número seleccionado de giros."
+UI_Game1051_SelectAutoSpinRound,"Tap on the values to select number of Auto Spins.",,,,,,,,,"Toque nos valores para selecionar o número de Rodadas Automáticas.","Toca los valores para seleccionar el número de giros automáticos."
+UI_Game1051_TurboSpinTitle,"Turbo Spin",,,,,,,,,"Rodada Turbo","Ronda Turbo"
+UI_Game1051_TurboSpinAction,"Tap to enable or disable the Turbo Spin to reduce the duration of reel spins in the main game.",,,,,,,,,"Toque para ativar ou desativar a Rodada Turbo, que reduzirá a duração das rodadas do cilindro no jogo principal.","Toca para habilitar o deshabilitar Turbo Spin, lo que reducirá la duración de los giros de carrete en el juego principal."
+UI_Game1051_MoreTitle,"More Settings",,,,,,,,,"Mais definições","Más configuraciones"
+UI_Game1051_MoreAction,"Tap to access additional settings.",,,,,,,,,"Toque para aceder a definições adicionais.","Toca para acceder a configuraciones adicionales."
+UI_Game1051_SoundTitle,"Sound",,,,,,,,,"Som","Costura"
+UI_Game1051_SoundAction,"Tap to turn sound ON or OFF.",,,,,,,,,"Toque para ATIVAR ou DESATIVAR o som.","Toca para activar o desactivar el sonido."
+UI_Game1051_PaytableTitle,"Paytable",,,,,,,,,"Tabela de pagamentos","Tabla de pagos"
+UI_Game1051_PaytableAction,"Shows winning combinations and paytable.",,,,,,,,,"Mostra as combinações vencedoras e a tabela de pagamentos.","Muestra combinaciones ganadoras y tabla de pagos."
+UI_Game1051_GameRuleTitle,"Rules",,,,,,,,,"Regras","Normas"
+UI_Game1051_GameRuleAction,"Shows the game rules and button functions.",,,,,,,,,"Mostra as regras do jogo e as funções dos botões.","Muestra las reglas del juego y las funciones de los botones."
+UI_Game1051_GameHistoryTitle,"History",,,,,,,,,"Histórico","Historia"
+UI_Game1051_GameHistoryDescription,"Shows details of the previous games played. Scroll down to the end to load more records.",,,,,,,,,"Mostra os detalhes dos jogos anteriores. Desliza até ao fim da página para carregar mais registos.","Muestra detalles de juegos anteriores. Desplázate hasta el final de la página para cargar más registros."
+UI_Game1051_GameHistoryActionWithIcon,"Tap<img src='ic_nav_calender'/>to select the dates of games to be shown in History.",,,,,,,,,"Toque em<img src='ic_nav_calender'/>para selecionar as datas dos jogos a apresentar no Histórico.","Toca <img src='ic_nav_calender'/> para seleccionar las fechas del juego y mostrarlas en el Historial."
+UI_Game1051_CloseTitle,"Close",,,,,,,,,"Fechar","Cerrar"
+UI_Game1051_CloseAction,"Tap to return to the Main Game.",,,,,,,,,"Toque para voltar ao Jogo principal.","Toca para regresar al juego principal."
+UI_Game1051_AdditionInfoTitle,"Additional Information",,,,,,,,,"Informação adicional","Información adicional"
+UI_Game1051_AdditionInfoInactiveGameSessions,"The game will automatically return to its initial state after being idle for 90 days. Progress and status of any collection games, unfinished free games, and unfinished feature games etc will no longer be retained.",,,,,,,,,"O jogo regressará automaticamente à sua fase inicial após estar inativo durante: 90 dias. O progresso e o estado de quaisquer jogos de recolha, jogos grátis não acabados, jogos extra não acabados, etc. já não será mantido.","El juego volverá automáticamente a su etapa inicial después de estar inactivo durante: 90 días. El progreso y el estado de cualquier colección de juegos, juegos gratuitos sin terminar, juegos adicionales sin terminar, etc. ya no se mantendrán."
+UI_Game1051_AdditionInfoMalfunctionDescription,"Malfunction voids all pays and plays.",,,,,,,,,"O mau funcionamento anula todos os pagamentos e jogadas.","El mal funcionamiento anula todos los pagos y jugadas".
+UI_Game1051_AdditionInfoDisputeHistoryDescription,"In the event of disputes over game results, all game results that are shown in the game history page are absolute and final.",,,,,,,,,"Em caso de disputas sobre os resultados do jogo, todos os resultados do jogo mostrados na página do histórico do jogo são absolutos e finais.","En caso de disputas relacionadas con los resultados del juego, todos los resultados del juego que se muestran en la página del historial del juego son absolutos y definitivos."
+UI_Game1051_HistoryCalendarDateRange,"Select Date Range",,,,,,,,,"Selecionar intervalo de datas","Seleccionar rango de fechas"
+UI_Game1051_HistoryCalenderToday,"Today",,,,,,,,,"Hoje","Hoje"
+UI_Game1051_HistoryCalenderWeek,"Last 7 days",,,,,,,,,"Últimos 7 dias","Últimos 7 días"
+UI_Game1051_HistoryCalenderCustom,"Custom",,,,,,,,,"Personalizado","Costumbre"
+UI_Game1051_HistoryCalenderStart,"Start",,,,,,,,,"Iniciar","Iniciar"
+UI_Game1051_HistoryCalenderEnd,"End",,,,,,,,,"Terminar","Terminar"
+UI_Game1051_HistoryCalendarConfirm,"Confirm",,,,,,,,,"Confirmar","Confirmar"
+UI_Game1051_HistoryMainTitle,"Game History",,,,,,,,,"Histórico do jogo","Historia del juego"
+UI_Game1051_HistoryNoHistory,"No Game History",,,,,,,,,"Sem histórico do jogo","Sin historial de juego"
+UI_Game1051_HistoryRecords,"Records",,,,,,,,,"Registos","Archivos"
+UI_Game1051_HistoryMainPageTime,"Time",,,,,,,,,"Tempo","Tiempo"
+UI_Game1051_balance,Balance,,,,,,,,,Saldo,Balance
+UI_Game1051_Lines,Lines,,,,,,,,,Linhas,Líneas
+UI_Cash_StarColor_PixEmail,<b><color=#59677C>Email</color><color=#ff0000>*</color></b>,,,,,,,,,<b><color=#59677C>Email</color><color=#ff0000>*</color></b>,<b><color=#59677C>Correo</color><color=#ff0000>*</color></b>
+General.General_111,Pagamento,,,,,,,,,Pagamento,Pagamento
+UI.UIGameProgressView1,"Bonuses can be withdrawn directly without restrictions.",,,,,,,,,"Os bônus podem ser retirados diretamente sem restrições.","Los bonos se pueden retirar directamente sin restricciones."
+UI.UIGameProgressView2,"<b>Earn <color=#F5CC06>R$1</c> for every <color=#F5CC06>R$20</c> bet and keep accumulating.</b>",,,,,,,,,"<b>Ganhe <color=#F5CC06>R$1</c> a cada <color=#F5CC06>R$20</c> apostados e contine acumulando.</b>","<b>Gana <color=#F5CC06>R$1</c> por cada <color=#F5CC06>R$20</c> apostada y sigue acumulando.</b>"
+UI.UIGameProgressView3,BETTING BONUS,,,,,,,,,BÔNUS DE APOSTAS,BONO DE APUESTAS
+UI.UIGameProgressView4,undone,,,,,,,,,Desfeito,Deshecho
+UI.UIAllActivityBonus1,7*24 Customer Service,,,,,,,,,Atendimento ao cliente 7*24,Servicio al cliente 7*24
+UI.UIAllActivityBonus2,Join the telegram channel,,,,,,,,,Junte-se ao canal de telegrama,Únete al canal de Telegram
+UI.UIAllActivityBonus3,Join the official group,,,,,,,,,Junte-se ao grupo oficial,Únete al grupo oficial
+UI.UIAllActivityBonus4,Check,,,,,,,,,Confira,Controlar
+UI.UIActivityNewbieBonusGet1,"Make sure you enter the correct CPF and name, otherwise you will not be able to withdraw the money without any problems.",,,,,,,,,"Certifique-se de inserir o CPF e o nome corretos, caso contrário você não conseguirá sacar o dinheiro sem problemas","Asegúrate de ingresar el CPF y el nombre correctos; de lo contrario, no podrás retirar el dinero sin problemas."
+UI.UIActivityNewbieBonusGet2,Please enter your CPF,,,,,,,,,Por favor insira seu CPF,Por favor ingrese su CPF
+UI.UIActivityNewbieBonusGet3,Link CPF,,,,,,,,,Vincular cpf,vincular cpf
+UI.UIActivityNewbieBonusDeposit1,"Dear friend, you need to make a small deposit to activate the bonus and you can claim it immediately after depositing.
+The chance to win is right in front of you",,,,,,,,,"Caro amigo, você precisa fazer um pequeno depósito para ativar o bônus e poderá reivindicá-lo imediatamente após o depósito.
+ A chance de vitória está bem na sua frente","Estimado amigo, debe realizar un pequeño depósito para activar el bono y podrá reclamarlo inmediatamente después del depósito.
+ La oportunidad de ganar está justo frente a ti."
+UI.UIActivityNewbieBonus3,Mission,,,,,,,,,Missão,Misión
+UI.UIActivityNewbieBonus4,Register Account,,,,,,,,,Registar Conta,Registrar cuenta
+UI.UIActivityNewbieBonus5,Join the telegram channel,,,,,,,,,Junte-se ao canal de telegrama,Únete al canal de Telegram
+UI.UIActivityNewbieBonus6,Link phone number,,,,,,,,,Vincular número de telefone,Número de teléfono del enlace
+UI.UIActivityNewbieBonus7,Download the APP and login,,,,,,,,,Baixe o APP e faça login,Baixe o APP e faça login
+UI.UIActivityNewbieBonus8,Bonus amount,,,,,,,,,Valor do bônus,Valor do bônus
+UI.UIActivityNewbieBonus9,Require,,,,,,,,,Requerer,Requerir
+UI.UIActivityNewbieBonus11,Status,,,,,,,,,Status,Estado
+UI.UIHallBottom1,The final gain/effect is subject to the rules of the game or event.,,,,,,,,,O ganho/efeito final está sujeito às regras do jogo ou evento,La ganancia/efecto final está sujeto a las reglas del juego o evento.
+UI.UIActivityLossRebate1,"<size=26><color=#f9de06>TERMS AND RULES</color></size>
+1. Weekly cashback is given as a reward every week.
+2. The period for which the weekly cashback is calculated is from Monday 00:00 to Sunday 23:59.
+3. Cashback claim times: From Monday of the next week 06:00 to Friday 23:59, it will expire if not redeemed.
+4. The number of real money losses multiplied by the cashback % is the cashback/cashback for the week.
+5. If you did not make a deposit during the period when the cashback was active or if your winnings for the last week or total winnings are greater than your losses, you will not receive cashback. 6. Maximum cashback reward limit per person per week: no maximum limit
+7. The cashback amount can be withdrawn directly or used to continue playing<br/>",,,,,,,,,"<size=26><color=#f9de06>TERMOS E REGRAS</color></size>
+1. O cashback semanal e dado como recompensa todas as semanas.
+2. 0 periodo sobre o qual  calculado o cashback semanal vai de segunda-feira as 00:00 a domingo as 23:59.
+3. Horas de solicitacao do cashback: De segunda-feira da proxima semana06:00 a sexta-feira 23:59, expirara se nao for resgatado
+4. 0 numero de Perdas de dinheiro real multiplicado pela % de reembolso e oreembolso/cashback da semana.
+5. Caso voce nao tenha atestado durante o periodo em que o cashback estavaativo ou se seus ganhos da iltima semana ou ganhos totais sao maiores quesuas perdas, voce nao recebera cashback.
+6. Limite máximo de recompensa de cashback por pessoa por semana: sem limite máximo
+7. 0 valor do cashback pode ser sacar diretamente ou utilizado para continuarjogando<br/>","<size=26><color=#f9de06>TÉRMINOS Y NORMAS</color></size>
+1. El reembolso semanal se otorga como recompensa cada semana.
+2. El periodo de cálculo del cashback semanal va desde el lunes a las 00:00 hasta el domingo a las 23:59.
+3. Horarios de solicitud de cashback: Desde el lunes de la próxima semana a las 06:00 hasta el viernes a las 23:59, caducará si no se canjea
+4. El número de pérdidas de dinero real multiplicado por el % de reembolso y el reembolso/reembolso de la semana.
+5. Si no ha dado fe durante el período en el que el reembolso estuvo activo o si las ganancias de la última semana o las ganancias totales son mayores que sus pérdidas, no recibirá el reembolso.
+6. Límite máximo de recompensa de reembolso por persona por semana: sin límite máximo
+7. El importe del reembolso se puede retirar directamente o utilizar para seguir jugando<br/>"
+UI.UIActivityLossRebate2,complaint time,,,,,,,,,tempo de reclamação ,tiempo de queja
+UI.UIActivityLossRebate3,period ,,,,,,,,,período ,período 
+UI.UIActivityLossRebate4,You will win <color=#FF5253>,,,,,,,,,Você vai ganhar <color=#FF5253>,Ganarás <color=#FF5253> 
+UI.UIActivityLossRebate6, bets on,,,,,,,,, apostas em, apuestas en 
+UI.UIActivityLossRebate7,Discounts currently available,,,,,,,,,Descontos atualmente disponíveis,Descuentos disponibles actualmente
+UI.UIActivityFirstChargeUpgrade1,+100% BONUS,,,,,,,,,+100% BÔNUS,+100% BONO
+UI.UIActivityFirstChargeUpgrade2,+200% BONUS,,,,,,,,,+200% BÔNUS,+200% BONO
+UI.UIActivityFirstChargeUpgrade3,DEPOSIT,,,,,,,,,DEPÓSITO,DEPÓSITO
+UI.UIActivityFirstChargeUpgrade4,"NEW USER FIRST DEPOSIT
+LIMITED TIME UPGRADE BONUS",,,,,,,,,"PRIMEIRO DEPÓSITO DO NOVO USUÁRIO
+UPGRADE BÔNUS POR TEMPO LIMITADO","PRIMER DEPÓSITO DEL NUEVO USUARIO
+BONO DE ACTUALIZACIÓN POR TIEMPO LIMITADO"
+UI.UIActivityFirstChargeUpgrade5,Limited time,,,,,,,,,Tempo limitado,tiempo limitado
+UI.UIAccountBalanceChangeRecord1,Time,,,,,,,,,Tempo,Tempo
+UI.UIAccountBalanceChangeRecord2,withdraw,,,,,,,,,retirar,retirarse
+UI.UIBonusUnfrozen1,Bonus Balance,,,,,,,,,Saldo De Bônus,Saldo de bono
+UI.UIBonusUnfrozen2,Effective bet value,,,,,,,,,Valor efetivo da aposta,Valor efectivo de la apuesta
+UI.UIBonusUnfrozen3,Bonus to be unfrozen,,,,,,,,,Bonus a ser descongelado,Bono por descongelar
+UI.UIBonusUnfrozen4,rule,,,,,,,,,regra,regla
+UI.UIBonusUnfrozen5,"1. Accumulate the “effective bet amount“ and reach the bonus task target to unfreeze the bonus",,,,,,,,,"1. Acumule o “valor efetivo da aposta“ e alcance a meta da tarefa de bônus para descongelar o bônus","1. Acumule el “cantidad de apuesta efectiva“ y alcance el objetivo de la tarea de bonificación para descongelar la bonificación."
+UI.UIBonusUnfrozen7,"3. After completing the task, the corresponding bet amount will be automatically deducted and the bonus will be unfrozen.",,,,,,,,,"3. Após a conclusão da tarefa, o valor da aposta correspondente será automaticamente deduzido e o bônus será descongelado.","3. Después de completar la tarea, el monto de la apuesta correspondiente se deducirá automáticamente y el bono se descongelará."
+UI.UIBonusUnfrozen8,"4. Unfrozen bonuses are added to your balance and can be used in any game",,,,,,,,,"4. Os bônus descongelados são adicionados ao seu saldo e podem ser usados ​​em qualquer jogo","4. Los bonos descongelados se agregan a tu saldo y se pueden usar en cualquier juego."
+UI.UIBonusUnfrozen9,"5. Click the arrows to prioritize specific bonuses and unfreeze them first, prioritizing tasks with lower bet multipliers for easier unfreezing",,,,,,,,,"5. Clique nas setas para priorizar bônus específicos e descongelá-los primeiro, priorizando tarefas com multiplicadores de apostas mais baixos para facilitar o descongelamento","5. Haga clic en las flechas para priorizar bonos específicos y descongelarlos primero, priorizando tareas con multiplicadores de apuestas más bajos para facilitar el descongelamiento."
+UI.UIBonusUnfrozen10,"Click to expand",,,,,,,,,"Clique para expandir","Haga clic para ampliar"
+UI.UIBonusUnfrozen11,"Not Thawed",,,,,,,,,"Não Descongelado","No descongelado"
+UI.UIBonusUnfrozen12,Defrosted,,,,,,,,,Descongelado,Descongelado
+UI.UIBonusUnfrozen13,Bonus Amount:,,,,,,,,,Valor Do Bônus:,Valor de bonificación:
+UI.UIBonusUnfrozen14,Task Progress:,,,,,,,,,Progresso Da Tarefa:,Progreso de la tarea:
+UI.UIBonusUnfrozen15,Time Remaining,,,,,,,,,Tempo Restante,Tiempo restante
+UI.UIBonusUnfrozen16,In Progress,,,,,,,,,Em Progresso,En curso
+UI.UIBonusUnfrozen17,Waiting,,,,,,,,,Aguardando,Espera
+UI.UIBonusUnfrozen18,Defrosted,,,,,,,,,Descongelado,Descongelado
+UI.UIBonusUnfrozen19,Collect,,,,,,,,,Coletar,Recolectar
+UI.UIStoreAndCash1,Just once,,,,,,,,,Apenas uma vez,Sólo una vez
+UI.UIActivityNewbieBonusDeposit1,"After the deposit is completed, the balance will be updated in about 1 to 3 minutes at most",,,,,,,,,"Após a conclusão do depósito, o saldo será atualizado em cerca de 1 a 3 minutos, no máximo","Una vez completado el depósito, el saldo se actualizará en aproximadamente 1 a 3 minutos como máximo"
+UI_Game1052_FDMultiplierReel1,Cilindro multiplicador,,,,,,,,,Cilindro multiplicador,Carrete multiplicador
+UI_Game1052_FDMultiplierReel2,"Durante qualquer rodada, o cilindro multiplicador na parte inferior dos cilindros irá rodar para revelar o espaço em branco, x2, x5 ou x10.",,,,,,,,,"Durante qualquer rodada, o cilindro multiplicador na parte inferior dos cilindros irá rodar para revelar o espaço em branco, x2, x5 ou x10.","Durante cualquier giro, el carrete multiplicador en la parte inferior de los carretes girará hasta revelar espacios en blanco o multiplicadores x2, x5 o x10."
+UI_Game1052_FDMultiplierReel3,"Se o cilindro multiplicador revelar x2, x5 ou x10, todos os ganhos nessa rodada serão multiplicados pelo multiplicador revelado antes de os ganhos serem pagos.",,,,,,,,,"Se o cilindro multiplicador revelar x2, x5 ou x10, todos os ganhos nessa rodada serão multiplicados pelo multiplicador revelado antes de os ganhos serem pagos.","Si en el carrete multiplicador aparece x2, x5 o x10, todas las ganancias de ese giro se multiplicarán por dicha cifra antes de pagarlas."
+UI_Game1052_FDFeature1,"Funcionalidade Dragão da Fortuna",,,,,,,,,"Funcionalidade Dragão da Fortuna","Función Dragón de la Fortuna"
+UI_Game1052_FDFeature2,"Durante qualquer rodada, a Funcionalidade Dragão da Fortuna com 8 Rodadas da Fortuna pode ser ativada aleatoriamente enquanto os cilindros estão a rodar.",,,,,,,,,"Durante qualquer rodada, a Funcionalidade Dragão da Fortuna com 8 Rodadas da Fortuna pode ser ativada aleatoriamente enquanto os cilindros estão a rodar.","Durante cualquier giro, la Función Dragón de la Fortuna con 8 Giros de la Fortuna se puede activar aleatoriamente mientras los carretes están girando."
+UI_Game1052_FDFeature3,"Durante a Funcionalidade Dragão da Fortuna, o cilindro multiplicador será expandido e 2 ou 3 multiplicadores serão atribuídos por cada Rodada da Fortuna.",,,,,,,,,"Durante a Funcionalidade Dragão da Fortuna, o cilindro multiplicador será expandido e 2 ou 3 multiplicadores serão atribuídos por cada Rodada da Fortuna.","Durante la Función Dragón de la Fortuna, el carrete multiplicador se expandirá y se otorgarán 2 o 3 multiplicadores por cada Giro de la Fortuna."
+UI_Game1052_FDMaximumWin1,"Ganho máximo",,,,,,,,,"Ganho máximo","Premio máximo"
+UI_Game1052_FDMaximumWin2,"O montante de ganho máximo corresponde a 2.500x o montante da aposta.",,,,,,,,,"O montante de ganho máximo corresponde a 2.500x o montante da aposta.","La cantidad máxima del premio es %{2500}x la cantidad apostada."
+UI_Game1052_FDMaximumWin3,"Se o total de ganhos no jogo principal ou na Funcionalidade Dragão da Fortuna atingir  2.500x o valor da aposta, a rodada termina.",,,,,,,,,"Se o total de ganhos no jogo principal ou na Funcionalidade Dragão da Fortuna atingir  2.500x o valor da aposta, a rodada termina.","Si las ganancias totales en el juego principal o en la Función Dragón de la Fortuna alcanzan %{2500}x del importe de la apuesta, el giro finaliza."
+UI_Game1052_SlotRulesShared1,"Aposta de Ganho Certo",,,,,,,,,"Aposta de Ganho Certo","Apuesta con Premio Seguro"
+UI_Game1052_SlotRulesShared2,"A opção Aposta de Ganho Certo pode ser ativada para cada rodada, o que aumenta a aposta em 5x.",,,,,,,,,"A opção Aposta de Ganho Certo pode ser ativada para cada rodada, o que aumenta a aposta em 5x.","La opción Apuesta con Premio Seguro se podrá activar para cada giro en el que se incremente la apuesta por 5x."
+UI_Game1052_SlotRulesShared3,"Ativar a Aposta de Ganho Certo garantirá um ganho por cada rodada (excluindo a Rodada da Fortuna).",,,,,,,,,"Ativar a Aposta de Ganho Certo garantirá um ganho por cada rodada (excluindo a Rodada da Fortuna).","Activar la Apuesta con Premio Seguro garantizará un premio en cada giro (excepto Giro de la Fortuna)."
+UI_Game1052_SlotRulesShared4,"O Valor de Aposta Atual e o Nível de Aposta não serão afetados pela Aposta de Ganho Certo.",,,,,,,,,"O Valor de Aposta Atual e o Nível de Aposta não serão afetados pela Aposta de Ganho Certo.","La Apuesta con Premio Seguro no afectará al Tamaño de Apuesta ni al Nivel de Apuesta actuales."
+UI_Game1052_SlotRulesShared5,"A opção Aposta de Ganho Certo pode ser ativada e desativada durante o jogo principal.",,,,,,,,,"A opção Aposta de Ganho Certo pode ser ativada e desativada durante o jogo principal.","La opción Apuesta con Premio Seguro se podrá activar y desactivar durante el juego principal."
+UI_Game1052_FDRules1,"Fortune Dragon é uma slot de vídeo de 3 cilindros e 3 linhas com cilindro multiplicador até x10 e Rodadas da Fortuna com cilindro multiplicador expandido.",,,,,,,,,"Fortune Dragon é uma slot de vídeo de 3 cilindros e 3 linhas com cilindro multiplicador até x10 e Rodadas da Fortuna com cilindro multiplicador expandido.","Fortune Dragon es una tragaperras de vídeo con 3 carretes y 3 filas que incorpora un carrete multiplicador de hasta x10 y Giros de la Fortuna con carrete multiplicador expandido."
+UI_Game1052_FDRules2,"O jogo é jogado com 5 linhas de aposta (fixas), um valor de aposta entre 1 e 10 e valores de aposta entre %{minChip} e %{maxChip}.",,,,,,,,,"O jogo é jogado com 5 linhas de aposta (fixas), um valor de aposta entre 1 e 10 e valores de aposta entre %{minChip} e %{maxChip}.","Se juega con 5 líneas de apuesta (fijas), un nivel de apuesta entre 1 y 10 y un tamaño de apuesta entre %{minChip} y %{maxChip}."
+UI_Game1053_FMFeature1,"Funcionalidade Rato da Fortuna",,,,,,,,,"Funcionalidade Rato da Fortuna","Función Ratón de la Fortuna"
+UI_Game1053_FMFeature2,"Durante qualquer rodada podem ser adicionados 3 símbolos Wild ao cilindro central enquanto os cilindros estão a rodar.",,,,,,,,,"Durante qualquer rodada podem ser adicionados 3 símbolos Wild ao cilindro central enquanto os cilindros estão a rodar.","Durante todos los giros, podrán añadirse 3 símbolos Wild al carrete central mientras los carretes estén girando."
+UI_Game1053_FMFeature3,"O primeiro e o terceiro cilindros continuarão a rodar até haver ganho.",,,,,,,,,"O primeiro e o terceiro cilindros continuarão a rodar até haver ganho.","El primer y el tercer carrete volverán a girar hasta que consigas un premio."
+UI_Game1053_FMMaxWin1,"Prémio Máximo",,,,,,,,,"Prémio Máximo","Premio máximo"
+UI_Game1053_FMMaxWin2,"Quando os símbolos Wild ocupam todos os cilindros, é atribuído 1000x o montante da aposta total.",,,,,,,,,"Quando os símbolos Wild ocupam todos os cilindros, é atribuído 1000x o montante da aposta total.","Cuando los símbolos Wild ocupen todos los carretes, se te premiará con 1000x tu apuesta total."
+UI_Game1053_FMGameRules1,"Fortune Mouse é uma slot de vídeo de 3 cilindros e 3 linhas com novas rodadas até haver ganho.",,,,,,,,,"Fortune Mouse é uma slot de vídeo de 3 cilindros e 3 linhas com novas rodadas até haver ganho.","Fortune Mouse es una vídeo tragaperras de 3 carretes y 3 filas con la función Regirar hasta ganar."
+UI_Game1054_FortuneOxPayoutAndRulesShared1,"Funcionalidade Boi da Fortuna",,,,,,,,,"Funcionalidade Boi da Fortuna","Función Buey de la fortuna"
+UI_Game1054_FortuneOxPayoutAndRulesShared2,"Durante qualquer rodada, a funcionalidade Touro da Sorte pode ser ativada aleatoriamente enquanto os cilindros estão a rodar.",,,,,,,,,"Durante qualquer rodada, a funcionalidade Touro da Sorte pode ser ativada aleatoriamente enquanto os cilindros estão a rodar.","Durante cualquier giro, la función Buey de la fortuna puede activarse aleatoriamente mientras los carretes estén girando."
+UI_Game1054_FortuneOxPayoutAndRulesShared3,"Durante a funcionalidade Touro da Sorte, o primeiro e o terceiro cilindros partilham os mesmos símbolos e todos os cilindros voltam a rodar até haver ganhos.",,,,,,,,,"Durante a funcionalidade Touro da Sorte, o primeiro e o terceiro cilindros partilham os mesmos símbolos e todos os cilindros voltam a rodar até haver ganhos.","Durante la función Buey de la fortuna, el primer y el tercer carrete compartirán los mismos símbolos y todos los carretes regirarán hasta que consigas un premio."
+UI_Game1054_FortuneOxPayoutAndRulesShared4,"Multiplicador x10",,,,,,,,,"Multiplicador x10","Multiplicador x10"
+UI_Game1054_FortuneOxPayoutAndRulesShared5,"Quando um símbolo (e/ou símbolo Wild) ocupa todas as posições dos cilindros, os ganhos são multiplicados por x10.",,,,,,,,,"Quando um símbolo (e/ou símbolo Wild) ocupa todas as posições dos cilindros, os ganhos são multiplicados por x10.","Cuando un símbolo (y/o símbolo Wild) ocupe todas las posiciones de los carretes, el premio se multiplicará x10."
+UI_Game1054_FortuneOxPayoutAndRulesShared6,"Tenha hipótese de ganhar até 2000x o montante total da aposta.",,,,,,,,,"Tenha hipótese de ganhar até 2000x o montante total da aposta.","Aprovecha la oportunidad para ganar hasta 2000 veces la cantidad total apostada."
+UI_Game1054_FortuneOxRules1,"Fortune Ox é uma slot de vídeo de 3 cilindros, 3 linhas (para o cilindro 1 e 3) e 4 linhas (para o cilindro 2) com novas rodadas até haver ganhos e multiplicador x10.",,,,,,,,,"Fortune Ox é uma slot de vídeo de 3 cilindros, 3 linhas (para o cilindro 1 e 3) e 4 linhas (para o cilindro 2) com novas rodadas até haver ganhos e multiplicador x10.","Fortune Ox es una vídeo tragaperras de 3 carretes, 3 filas (para los carretes 1 y 3) y 4 filas (para el carrete 2) con la función Regirar hasta ganar y un multiplicador x10."
+UI_Game1054_FortuneOxRules2,"O jogo é jogado com 10 linhas de aposta (fixas), um valor de aposta entre 1 e 10 e valores de aposta entre %{minChip} e %{maxChip}.",,,,,,,,,"O jogo é jogado com 10 linhas de aposta (fixas), um valor de aposta entre 1 e 10 e valores de aposta entre %{minChip} e %{maxChip}.","Se juega con 10 líneas de apuesta (fijas), un nivel de apuesta entre %{minBetMtp} y %{maxBetMtp} y un tamaño de apuesta entre %{minChip} y %{maxChip}."
+UI_Game1054_FDRules11,"Time",,,,,,,,,"Tempo","Tiempo"
+UI_Game1054_FDRules11,"Time",,,,,,,,,"Tempo","Tiempo"
+UI_Game1054_FDRules11,"Time",,,,,,,,,"Tempo","Tiempo"
+UI_Game1054_FDRules11,"Time",,,,,,,,,"Tempo","Tiempo"
+UI.UIGameProgressViewOther1,"When withdrawing money, you must consume the corresponding amount of withdrawal coupons.",,,,,,,,,"Ao sacar dinheiro, você deve consumir a quantidade correspondente de cupons de saque.","Al retirar dinero, debes consumir la cantidad correspondiente de cupones de retiro."
+UI.UIGameProgressViewOther2,"Get a <color=#F5CC06>$100</c> withdrawal coupon for every <color=#F5CC06>$200</c> you wager",,,,,,,,,"Receba um cupom de saque de <color=#F5CC06>$ 100</c> para cada <color=#F5CC06>$ 200</c> apostado","Obtenga un cupón de retiro de <color=#F5CC06>$100</c> por cada <color=#F5CC06>$200</c> que apueste"
+UI.UIGameProgressViewOther3,"Bet and win withdrawal coupons",,,,,,,,,"Aposte e ganhe cupons de saque","Apuesta y gana cupones de retiro"
+UI.UIWithdrawalCoupon1,"Withdrawal coupon",,,,,,,,,"Cupom de saque","Cupón de retiro"
+UI.UIWithdrawalCoupon2,"Record",,,,,,,,,"Registro","Registro"
+UI.UIWithdrawalCoupon3,"coupon balance",,,,,,,,,"saldo de cupom","saldo del cupón"
+UI.UIWithdrawalCoupon4,"Coupon",,,,,,,,,"Cupom","Cupón"
+UI.UIWithdrawalCoupon5,"Betting games",,,,,,,,,"apostas em jogos","Apuestas de juegos"
+UI.UIWithdrawalCoupon6,"More coupon",,,,,,,,,"Mais cupom","Más cupón"
+UI.UIWithdrawalCoupon7,"See rules",,,,,,,,,"Ver regras","Ver reglas"
+UI.UIWithdrawalCoupon8,"Roulette Lottery",,,,,,,,,"loteria roleta","Lotería de ruleta"
+UI.UIWithdrawalCoupon9,"random coupon",,,,,,,,,"cupom aleatório","cupón aleatorio"
+UI.UIWithdrawalCoupon10,"spin",,,,,,,,,"rodar","girar"
+UI.UIWithdrawalCouponDes1,"What is a withdrawal coupon?",,,,,,,,,"O que é um cupom de saque?","¿Qué es un cupón de retiro?"
+UI.UIWithdrawalCouponDes2,"<color=#F5CC06>Purpose: </c>When withdrawing money, you must use the ""withdrawal coupon"" of the corresponding amount",,,,,,,,,"<color=#F5CC06>Objetivo: </c>Ao sacar dinheiro, você deve utilizar o ""cupom de saque"" do valor correspondente","<color=#F5CC06>Propósito: </c>Al retirar dinero, debe utilizar el ""cupón de retiro"" del monto correspondiente"
+UI.UIWithdrawalCouponDes3,"<color=#F5CC06>How to get it:</c> You can get it through tasks, game bets and carousel draws.",,,,,,,,,"<color=#F5CC06>Como obtê-lo:</c> Você pode obtê-lo por meio de tarefas, apostas em jogos e sorteios de carrossel.","<color=#F5CC06>Cómo conseguirlo:</c> Puedes conseguirlo a través de tareas, apuestas de juegos y sorteos en carrusel."
+UI.UIShare1,"Valid users: register an account and deposit once",,,,,,,,,"Usuários válidos: registre uma conta e deposite uma vez","Usuarios válidos: registre una cuenta y deposite una vez"
+

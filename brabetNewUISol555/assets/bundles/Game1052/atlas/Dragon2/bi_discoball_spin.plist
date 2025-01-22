@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>bi_discoball_spin_00.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{252,0},{126,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,107}</string>
+			</dict>
+			<key>bi_discoball_spin_01.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{378,0},{126,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,107}</string>
+			</dict>
+			<key>bi_discoball_spin_02.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{252,107},{126,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,107}</string>
+			</dict>
+			<key>bi_discoball_spin_03.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,216},{124,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{124,107}</string>
+			</dict>
+			<key>bi_discoball_spin_04.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{378,107},{126,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,107}</string>
+			</dict>
+			<key>bi_discoball_spin_05.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{126,109}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,109}</string>
+			</dict>
+			<key>bi_discoball_spin_06.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,109},{126,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,107}</string>
+			</dict>
+			<key>bi_discoball_spin_07.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{126,109},{126,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,107}</string>
+			</dict>
+			<key>bi_discoball_spin_08.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{252,214},{126,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,107}</string>
+			</dict>
+			<key>bi_discoball_spin_09.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{378,214},{126,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,107}</string>
+			</dict>
+			<key>bi_discoball_spin_10.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{126,0},{126,109}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{126,109}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>bi_discoball_spin.png</string>
+			<key>realTextureFileName</key>
+			<string>bi_discoball_spin.png</string>
+			<key>size</key>
+			<string>{504,323}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>504</integer>
+			<key>height</key>
+			<integer>323</integer>
+		</dict>
+	</dict>
+</plist>

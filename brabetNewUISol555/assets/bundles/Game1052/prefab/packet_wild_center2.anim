@@ -1,0 +1,65 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "packet_wild_center2",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 4,
+  "sample": 60,
+  "speed": 10,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "wild_left2": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                140,
+                450,
+                0
+              ]
+            },
+            {
+              "frame": 2,
+              "value": [
+                -2,
+                -16
+              ],
+              "motionPath": []
+            }
+          ]
+        },
+        "comps": {
+          "cc.ParticleSystem": {
+            "emissionRate": [
+              {
+                "frame": 0,
+                "value": 1500
+              },
+              {
+                "frame": 1.9666666666666666,
+                "value": 1000
+              },
+              {
+                "frame": 3.9833333333333334,
+                "value": 1000
+              },
+              {
+                "frame": 4,
+                "value": 0
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 2,
+      "func": "ToRed",
+      "params": []
+    }
+  ]
+}

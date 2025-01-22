@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>ui_discoball_mask_00.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{146,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{146,124}</string>
+			</dict>
+			<key>ui_discoball_mask_01.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{146,0},{146,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{146,124}</string>
+			</dict>
+			<key>ui_discoball_mask_02.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{292,0},{146,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{146,124}</string>
+			</dict>
+			<key>ui_discoball_mask_03.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{438,0},{146,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{146,124}</string>
+			</dict>
+			<key>ui_discoball_mask_04.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{584,0},{146,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{146,124}</string>
+			</dict>
+			<key>ui_discoball_mask_05.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{730,0},{146,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{146,124}</string>
+			</dict>
+			<key>ui_discoball_mask_06.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{876,0},{146,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{146,124}</string>
+			</dict>
+			<key>ui_discoball_mask_07.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,124},{144,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{144,124}</string>
+			</dict>
+			<key>ui_discoball_mask_08.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{144,124},{144,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{144,124}</string>
+			</dict>
+			<key>ui_discoball_mask_09.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{288,124},{144,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{144,124}</string>
+			</dict>
+			<key>ui_discoball_mask_10.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{432,124},{144,124}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{144,124}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>ui_discoball_mask_.png</string>
+			<key>realTextureFileName</key>
+			<string>ui_discoball_mask_.png</string>
+			<key>size</key>
+			<string>{1022,248}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>1022</integer>
+			<key>height</key>
+			<integer>248</integer>
+		</dict>
+	</dict>
+</plist>

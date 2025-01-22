@@ -1,0 +1,224 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "supermegawin_act_light",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 1,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "smw_chac": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": true
+            }
+          ]
+        }
+      },
+      "mw_chac": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": false
+            }
+          ]
+        }
+      },
+      "bw_chac": {
+        "props": {
+          "active": [
+            {
+              "frame": 0,
+              "value": false
+            }
+          ]
+        }
+      },
+      "smw_chac/cloud_b": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": -350
+            },
+            {
+              "frame": 1,
+              "value": -250
+            }
+          ]
+        }
+      },
+      "smw_chac/cloud_b2": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": 350
+            },
+            {
+              "frame": 1,
+              "value": 250
+            }
+          ]
+        }
+      },
+      "smw_chac/chac": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 0.5,
+                "y": 0.5,
+                "z": 1
+              }
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 1,
+                "y": 1,
+                "z": 1
+              }
+            }
+          ]
+        }
+      },
+      "smw_chac/frame_a": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 1,
+              "value": 49
+            }
+          ]
+        }
+      },
+      "smw_chac/frame_a2": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 1,
+              "value": 49
+            }
+          ]
+        }
+      },
+      "smw_chac/frame_b": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": -250
+            },
+            {
+              "frame": 1,
+              "value": -280
+            }
+          ]
+        }
+      },
+      "smw_chac/frame_b2": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": -250
+            },
+            {
+              "frame": 1,
+              "value": -280
+            }
+          ]
+        }
+      },
+      "smw_chac/title": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 0.71429,
+                "y": 0.71429,
+                "z": 0.71429
+              }
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 0.8,
+                "y": 0.8,
+                "z": 0.71429
+              }
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 0.71429,
+                "y": 0.71429,
+                "z": 0.71429
+              }
+            }
+          ],
+          "y": [
+            {
+              "frame": 0,
+              "value": 7.69429
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 37.69429
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 7.69429
+            }
+          ]
+        }
+      },
+      "smw_chac/bgNode": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 1,
+                "y": 1,
+                "z": 1
+              }
+            },
+            {
+              "frame": 1,
+              "value": {
+                "__type__": "cc.Vec3",
+                "x": 1.1,
+                "y": 1.1,
+                "z": 1
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}
