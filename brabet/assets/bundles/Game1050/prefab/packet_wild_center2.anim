@@ -1,0 +1,122 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "packet_wild_center2",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 4,
+  "sample": 60,
+  "speed": 10,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "light_envelope2": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 2,
+              "value": 200
+            },
+            {
+              "frame": 4,
+              "value": 0
+            }
+          ],
+          "angle": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 4,
+              "value": 100
+            }
+          ]
+        }
+      },
+      "wild_left2": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                176,
+                -508
+              ],
+              "motionPath": [
+                [
+                  9,
+                  -304,
+                  55,
+                  -429,
+                  -35,
+                  -183
+                ]
+              ]
+            },
+            {
+              "frame": 2,
+              "value": [
+                -4,
+                -16
+              ],
+              "motionPath": []
+            }
+          ]
+        },
+        "comps": {
+          "cc.ParticleSystem": {
+            "emissionRate": [
+              {
+                "frame": 0,
+                "value": 2000
+              },
+              {
+                "frame": 3.966666666666667,
+                "value": 1500
+              },
+              {
+                "frame": 4,
+                "value": 0
+              }
+            ]
+          }
+        }
+      },
+      "light_envelope_quan": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                0,
+                -3.478,
+                0
+              ]
+            }
+          ],
+          "angle": [
+            {
+              "frame": 0,
+              "value": 0
+            },
+            {
+              "frame": 4,
+              "value": 360
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": [
+    {
+      "frame": 2,
+      "func": "ToRed",
+      "params": []
+    }
+  ]
+}

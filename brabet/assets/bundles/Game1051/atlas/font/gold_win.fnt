@@ -1,0 +1,16 @@
+info face="Arial" size=132 bold=0 italic=0 charset="" unicode=1 stretchH=100 smooth=1 aa=1 padding=0,0,0,0 spacing=0,0 outline=0
+common lineHeight=132 base=13 scaleW=160 scaleH=50 pages=1 packed=0 alphaChnl=1 redChnl=0 greenChnl=0 blueChnl=0
+page id=0 file="gold_win.png"
+chars count=12
+char id=44   x=0     y=133   width=42    height=61    xoffset=0     yoffset=71    xadvance=42    page=0  chnl=15
+char id=46   x=43    y=133   width=42    height=52    xoffset=0     yoffset=80    xadvance=42    page=0  chnl=15
+char id=48   x=791   y=0     width=103   height=128   xoffset=0     yoffset=0     xadvance=103   page=0  chnl=15
+char id=49   x=714   y=0     width=76    height=129   xoffset=0     yoffset=0     xadvance=76    page=0  chnl=15
+char id=50   x=304   y=0     width=103   height=131   xoffset=0     yoffset=0     xadvance=103   page=0  chnl=15
+char id=51   x=511   y=0     width=100   height=130   xoffset=0     yoffset=0     xadvance=100   page=0  chnl=15
+char id=52   x=612   y=0     width=101   height=129   xoffset=0     yoffset=0     xadvance=101   page=0  chnl=15
+char id=53   x=208   y=0     width=95    height=132   xoffset=0     yoffset=0     xadvance=95    page=0  chnl=15
+char id=54   x=895   y=0     width=103   height=128   xoffset=0     yoffset=0     xadvance=103   page=0  chnl=15
+char id=55   x=106   y=0     width=101   height=132   xoffset=0     yoffset=0     xadvance=101   page=0  chnl=15
+char id=56   x=0     y=0     width=105   height=132   xoffset=0     yoffset=0     xadvance=105   page=0  chnl=15
+char id=57   x=408   y=0     width=102   height=130   xoffset=0     yoffset=0     xadvance=102   page=0  chnl=15

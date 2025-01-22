@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>ui_discoball_00.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_01.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{185,0},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_02.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{370,0},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_03.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,185},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_04.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{185,185},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_05.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{370,185},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_06.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,370},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_07.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,555},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_08.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{185,370},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_09.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{370,370},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+			<key>ui_discoball_10.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{185,555},{185,185}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{185,185}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>ui_discoball.png</string>
+			<key>realTextureFileName</key>
+			<string>ui_discoball.png</string>
+			<key>size</key>
+			<string>{555,740}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>555</integer>
+			<key>height</key>
+			<integer>740</integer>
+		</dict>
+	</dict>
+</plist>

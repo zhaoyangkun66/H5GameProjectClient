@@ -1,0 +1,10 @@
+音乐标示	路径	说明
+SoundName	SoundPath	Text
+BtnClick	common/sounds/btnclick	控件点击
+TimeWarning	common/sounds/time_warning	倒计时
+GetGold	common/sounds/get_gold	获取金币
+DealCard	common/sounds/fapai	发牌
+WndClose	common/sounds/boxClose	关闭界面
+WndOpen	common/sounds/boxOpen	打卡界面
+BtnLeave	common/sounds/btnLeave	离开房间
+AddGold	common/sounds/add_gold	添加金币

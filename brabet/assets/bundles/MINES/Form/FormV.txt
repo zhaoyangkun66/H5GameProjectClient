@@ -1,0 +1,3 @@
+界面名	界面路径	切换场景是否释放	返回是否需要开启	是否是独立界面	bundleName
+FormName	FormPath	FormRelease	ReturnOpen	Independent	bundleName
+game_Mines	prefab/game_Mines_V	0	false	3	MINES

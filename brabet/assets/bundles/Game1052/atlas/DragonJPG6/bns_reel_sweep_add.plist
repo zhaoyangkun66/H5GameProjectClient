@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>bns_reel_sweep_add_01.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{664,0},{332,418}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{332,418}</string>
+			</dict>
+			<key>bns_reel_sweep_add_02.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{332,0},{332,562}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{332,562}</string>
+			</dict>
+			<key>bns_reel_sweep_add_03.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{332,620}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{332,620}</string>
+			</dict>
+			<key>bns_reel_sweep_add_04.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,620},{332,604}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{332,604}</string>
+			</dict>
+			<key>bns_reel_sweep_add_05.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{604,562},{332,444}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{332,444}</string>
+			</dict>
+			<key>bns_reel_sweep_add_06.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{936,418},{332,366}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{332,366}</string>
+			</dict>
+			<key>bns_reel_sweep_add_07.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{996,0},{330,292}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{330,292}</string>
+			</dict>
+			<key>bns_reel_sweep_add_08.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{936,784},{306,228}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{306,228}</string>
+			</dict>
+			<key>bns_reel_sweep_add_09.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1242,784},{274,180}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{274,180}</string>
+			</dict>
+			<key>bns_reel_sweep_add_10.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1268,330},{246,156}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{246,156}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>bns_reel_sweep_add.png</string>
+			<key>realTextureFileName</key>
+			<string>bns_reel_sweep_add.png</string>
+			<key>size</key>
+			<string>{1516,1012}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>1516</integer>
+			<key>height</key>
+			<integer>1012</integer>
+		</dict>
+	</dict>
+</plist>

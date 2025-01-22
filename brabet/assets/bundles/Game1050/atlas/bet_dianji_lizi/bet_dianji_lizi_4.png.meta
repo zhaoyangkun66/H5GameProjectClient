@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "994b952e-8661-4706-9cd9-127b2a73e53a",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 295,
+  "height": 285,
+  "platformSettings": {},
+  "subMetas": {
+    "bet_dianji_lizi_4": {
+      "ver": "1.0.6",
+      "uuid": "c4b65e3e-9790-4274-96a5-bb64fa584798",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "994b952e-8661-4706-9cd9-127b2a73e53a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 1.5,
+      "offsetY": -7.5,
+      "trimX": 24,
+      "trimY": 23,
+      "width": 250,
+      "height": 254,
+      "rawWidth": 295,
+      "rawHeight": 285,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
