@@ -24,7 +24,7 @@ export class RecordView extends Component {
     }
     start() { }
     setData(data) {
-        data=data.data
+        data = data.data
         for (let index = 0; index < this.KillRoomTimes.length; index++) {
             this.KillRoomTimes[index].string = data.bet_room_id[index];
         }
@@ -37,6 +37,9 @@ export class RecordView extends Component {
         this.allInvestment.string = data.total_bet
         this.allReward.string = data.total_reward
         this.content.removeAllChildren()
+        if (!data.recent_record) {
+            data.recent_record = []
+        }
         for (let index = 0; index < data.recent_record.length; index++) {
             const item = instantiate(this.itemPrefab)
             item.getChildByName("gameid").getComponent(Label).string = LanguageData.inst().t("recordPrefab6").replace("%d", Number(data.recent_record[index].recent_issue_id).toFixed(0)) + ' ' + data.recent_record[index].recent_time
