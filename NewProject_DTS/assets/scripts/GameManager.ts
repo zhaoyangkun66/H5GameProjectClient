@@ -180,7 +180,9 @@ export class GameManager extends Component {
             msgid = this.readUint32()
             let length = this.readUint32()
             dataMessage = this.readStringUTF8(length)
-            console.log("Received message:", msgid, JSON.parse(dataMessage))
+            if (!global.isPush) {
+                console.log("Received message:", msgid, JSON.parse(dataMessage))
+            }
             if (msgid != 12) {
                 if (msgid == 10) {
                     this.initGameResult(JSON.parse(dataMessage))
@@ -202,7 +204,6 @@ export class GameManager extends Component {
                     })
                 }
                 else if (msgid == 14) {
-                    // console.log("Received message:", msgid, dataMessage)
                     this.onRecordBtnResult(JSON.parse(dataMessage))
                 }
                 return
@@ -212,7 +213,6 @@ export class GameManager extends Component {
         var o = this
             , n = JSON.parse(dataMessage);
         this.wsMessage = n,
-            // console.log("Received message:", msgid, n),
             this.lastGameId && this.lastGameId != n.game_id && this.resetGameData(),
             this.lastGameId = n.game_id
         this.gameState = n.state
@@ -543,7 +543,9 @@ export class GameManager extends Component {
         recordPrefab.getComponent(RecordView).setData(data)
     }
     sendArrayBuffers(msgid, data) {
-        console.log("req", msgid, data)
+        if (!global.isPush) {
+            console.log("req", msgid, data)
+        }
         let encoder = new TextEncoder();
         let view3 = encoder.encode(JSON.stringify(data));
         const buffer1 = new ArrayBuffer(4);
