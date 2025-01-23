@@ -20,7 +20,7 @@ export class ProgressBarManager extends Component {
         } else {
             view.setDesignResolutionSize(750, 1334, ResolutionPolicy.FIXED_HEIGHT)
         }
-// http://192.168.1.100:280/clientTelegram/dts/?game_uid=8100&token=14cae004cb7731177935eb00a9cc8236@10171638&language=es&member_account=10171638
+        // http://192.168.1.100:280/clientTelegram/dts/?game_uid=8100&token=14cae004cb7731177935eb00a9cc8236@10171638&language=es&member_account=10171638
 
 
         var self = this;
@@ -30,10 +30,10 @@ export class ProgressBarManager extends Component {
         var language = getBrowserValue("language") || "pt-pt";
 
         if (language == "PT") {
-          //  language = "pt-pt"
-           // global.GameTypeGlobal = 1
-            language = "es_co"
-            global.GameTypeGlobal = 2
+            language = "pt-pt"
+            global.GameTypeGlobal = 1
+            // language = "es_co"
+            //  global.GameTypeGlobal = 2
         }
         else if (language == "es") {
             language = "es_co"
