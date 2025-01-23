@@ -1,0 +1,2 @@
+界面名	界面路径	切换场景是否释放	返回是否需要开启	是否是独立界面	是否支持游客
+FormName	FormPath	FormRelease	ReturnOpen	Independent	SupportVisitor

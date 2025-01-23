@@ -1,0 +1,733 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "main",
+    "deps": [],
+    "uuids": [
+        "11JwgWltNJCbVqLMjF3ggA",
+        "cbed8hdmtBk5M+6oegBFIo",
+        "0fx4/w4TJNWIPfJQJsk85x",
+        "11dde6c28",
+        "1774483e3",
+        "1b12ef73d",
+        "1be20ace6",
+        "1d44963a4",
+        "1efIXiR+NMOrCZwmZg4CIM",
+        "27SCFD+29FrZeo5NulQqLW",
+        "3eGo7yP5JK06K/618smMdY",
+        "3f2iuYg5hMM486V0Z3fILj",
+        "46VhOvtWpIvrlcJ6764CAw",
+        "47QqD7Um9CWrBUoa77HYlD",
+        "4eQyT5HBxLeair+upR7HMh",
+        "5aOTg8M+dL9YCipnFDPOwu",
+        "6dDRL3oYhBS6v6F0q/TpnX",
+        "78ga3XZxFMhYUqz3xrdXco",
+        "7bPZG1adNMv72ZMD6ClSPT",
+        "983dqn7wlEVoUaNi1u5iIq",
+        "aeNyeyybBNJIFYTGDzdgMp",
+        "afxHkx8GZGsJC+n+YfITQo",
+        "b3nKqRQopBO65StfBZoReL",
+        "b6B6/4iwVMh6Tu5H7sR2Ar",
+        "baIUdvKGZPgZxNbjWTFuRI",
+        "bcsp1j3ppIcqXPsPTiGgq3",
+        "c3V/59WT5HtYUXYDQIovwX",
+        "d7y3Fe4utOg7YDHhWuAAiy",
+        "e0ehUuJhZCtZ3DufVkr5vM",
+        "fdjsU2o1RKF5x0TziDw3jI",
+        "fektw4W45IKKzIA4fV7Uph",
+        "ffuIqPr2JI9I8dPLYGRDpD",
+        "01dde6c28",
+        "02ySdEMQtKHpPfsCj/QoU5@f9941",
+        "04b67b5a3",
+        "05f7bfb7d",
+        "08b280255",
+        "0afca1cc0",
+        "0b12ef73d",
+        "0be20ace6",
+        "0cec3837c",
+        "0d44963a4",
+        "0eLEHjhIZLKrV+FxU3hWBv@f9941",
+        "11dde6c28@6c48a",
+        "1774483e3@6c48a",
+        "1b12ef73d@6c48a",
+        "1bGhq4iVRH95IT/VjPiJEt@f9941",
+        "1be20ace6@6c48a",
+        "1d44963a4@6c48a",
+        "1efIXiR+NMOrCZwmZg4CIM@6c48a",
+        "1efIXiR+NMOrCZwmZg4CIM@f9941",
+        "27SCFD+29FrZeo5NulQqLW@6c48a",
+        "27SCFD+29FrZeo5NulQqLW@f9941",
+        "2acueumMVP4INmf4nPoWSF@f9941",
+        "2cRHulbQlHxLBV0zgJSYXI@f9941",
+        "31GksXlXtNLYunHkrHKiCB",
+        "31sw1n4UNNDqpepQLDkHID",
+        "32gs59A8BD9ITeTL1xcXwN@f9941",
+        "39LuVYuatAuYgAxe9U1iHw@f9941",
+        "3azKHQ45JI3qtayjM15ZP8@f9941",
+        "3bCbQy/UFFbpQ5MJ6kp/ti@f9941",
+        "3eEWOGe4RHXpuAQbPB1CjI@f9941",
+        "3eGo7yP5JK06K/618smMdY@6c48a",
+        "3eGo7yP5JK06K/618smMdY@f9941",
+        "40JcMxk8FFMoFXJmkndB0L@f9941",
+        "41HGJVh7ZN5I82IXhYli0O",
+        "43grX02uZNM4AQu6h7p8lb@f9941",
+        "4eG6HJAAZJRYB+CSfGXoeP@f9941",
+        "4eQyT5HBxLeair+upR7HMh@6c48a",
+        "4eQyT5HBxLeair+upR7HMh@f9941",
+        "50YifiXI9GzYLSaqTEmvQp",
+        "56iW4l/2xHpIsRKNAuk2kd",
+        "5ccU6eH5BB4YIHmGBOA4TH@f9941",
+        "5enhaKrkBAGJ7IIRDKGspo@f9941",
+        "61TbOgDUBMf42PwaDGHh6B@f9941",
+        "63zVTgf/NEq5wQVOeItexc@f9941",
+        "67dVQlyYFHmoC1TPWijV49",
+        "68WFQNmG1FHLUl41f71mdc@f9941",
+        "6bJ4jEslxORoxF47wfqpiu@f9941",
+        "6dDRL3oYhBS6v6F0q/TpnX@6c48a",
+        "6fhtX2VHhIi53XUUoIBcxm@f9941",
+        "78ga3XZxFMhYUqz3xrdXco@6c48a",
+        "7ag0nqk3RDTrgwpY8irw/L@f9941",
+        "80tWbOzeNEqYZGsJGxahN7@f9941",
+        "8661rr0xtMO76XMJwwN2qK@f9941",
+        "8e2OGOtOVAspL47fYyCTe9@f9941",
+        "8fmsj7u3tJOZS2qOW6bdmL@f9941",
+        "91W9Ylt5FAk6J9VTPtccRK@f9941",
+        "983dqn7wlEVoUaNi1u5iIq@6c48a",
+        "983dqn7wlEVoUaNi1u5iIq@f9941",
+        "99JCFD/kRJA482+vOVsa9G@f9941",
+        "99gBTFGDdIUYlgN44CWQd8",
+        "a0Jt7NAotPAIvQcRpmuXws@f9941",
+        "a2jj29s7ZBP5i3vTHfDh+U",
+        "a8ccHV6KZIt6noL5g2aRQG",
+        "abVi8HJP9AorUMR0XE0cxX@f9941",
+        "afxHkx8GZGsJC+n+YfITQo@6c48a",
+        "afxHkx8GZGsJC+n+YfITQo@f9941",
+        "b2AVzivmJI5KrvEx2B1oqv@f9941",
+        "b3nKqRQopBO65StfBZoReL@6c48a",
+        "b3nKqRQopBO65StfBZoReL@f9941",
+        "b6B6/4iwVMh6Tu5H7sR2Ar@6c48a",
+        "b6B6/4iwVMh6Tu5H7sR2Ar@f9941",
+        "b9CYV/blZJt4RPY79CbT9V@f9941",
+        "bcsp1j3ppIcqXPsPTiGgq3@6c48a",
+        "bcsp1j3ppIcqXPsPTiGgq3@f9941",
+        "c3V/59WT5HtYUXYDQIovwX@6c48a",
+        "c3V/59WT5HtYUXYDQIovwX@f9941",
+        "c4WH6ncr1J0Kqw9SJCQoX/@f9941",
+        "cekQbuiadEaIFXWB0MTVBW",
+        "cfYQbQTh5KGIkE22Z/OXvq@f9941",
+        "cfmZp2lrNEd6fYLTfYdUZc@f9941",
+        "d0CZnIJJpMzK3z4/MMmOJ2@f9941",
+        "d3/osHus9ORZjKjjtH/vLM",
+        "d7y3Fe4utOg7YDHhWuAAiy@6c48a",
+        "de31Qt4JhFFL9DabRT3UW9@f9941",
+        "dfPsJ6sqVI16vDWo65LjK4@f9941",
+        "e1uUYj48xIdYrcrUIQ77LA@f9941",
+        "e2I/hwc91N3a2B+19FrjNf@f9941",
+        "e50PytXMJNd7k39tj24sPn@f9941",
+        "e566ZbeR1Nt4oJJ8wxJuHR",
+        "ead13tgyFGt6sMJ4KedhS1@f9941",
+        "efoToUD3dPNoE2XRwufyjN@f9941",
+        "efwBBZ2vhCYZw6lLy/M3Uf@f9941",
+        "f10r5z6WpF873UEa+QDTjH@f9941",
+        "fektw4W45IKKzIA4fV7Uph@6c48a",
+        "fektw4W45IKKzIA4fV7Uph@f9941",
+        "ffuIqPr2JI9I8dPLYGRDpD@6c48a",
+        "ffuIqPr2JI9I8dPLYGRDpD@f9941"
+    ],
+    "paths": {
+        "0": [
+            "db:/assets/loading",
+            0
+        ],
+        "1": [
+            "db:/assets/game",
+            0
+        ],
+        "24": [
+            "db:/internal/physics/default-physics-material",
+            2
+        ],
+        "29": [
+            "db:/internal/default_renderpipeline/builtin-forward",
+            1
+        ]
+    },
+    "scenes": {
+        "db://assets/game.scene": 1,
+        "db://assets/loading.scene": 0
+    },
+    "packs": {
+        "01dde6c28": [
+            "46",
+            "64",
+            "72",
+            "74",
+            "78",
+            "90",
+            "123",
+            "124"
+        ],
+        "04b67b5a3": [
+            "2",
+            "52",
+            "55",
+            "63",
+            "11",
+            "65",
+            "12",
+            "70",
+            "15",
+            "18",
+            "91",
+            "94",
+            "20",
+            "1",
+            "113",
+            "28",
+            "120",
+            "126"
+        ],
+        "05f7bfb7d": [
+            "0",
+            "69",
+            "89",
+            "100",
+            "107"
+        ],
+        "08b280255": [
+            "45",
+            "47",
+            "48",
+            "49",
+            "62",
+            "68",
+            "79",
+            "43",
+            "88",
+            "81",
+            "44",
+            "51",
+            "96",
+            "99",
+            "101",
+            "104",
+            "106",
+            "114",
+            "125",
+            "127"
+        ],
+        "0afca1cc0": [
+            "50",
+            "56",
+            "97",
+            "102",
+            "105",
+            "128"
+        ],
+        "0b12ef73d": [
+            "42",
+            "60",
+            "95",
+            "98",
+            "118"
+        ],
+        "0be20ace6": [
+            "33",
+            "53",
+            "61",
+            "73",
+            "75",
+            "77",
+            "83",
+            "87",
+            "92",
+            "108",
+            "110",
+            "116",
+            "117",
+            "119",
+            "122"
+        ],
+        "0cec3837c": [
+            "76",
+            "93",
+            "109"
+        ],
+        "0d44963a4": [
+            "57",
+            "58",
+            "59",
+            "66",
+            "67",
+            "80",
+            "82",
+            "84",
+            "85",
+            "86",
+            "103",
+            "111",
+            "112",
+            "115",
+            "121"
+        ]
+    },
+    "versions": {
+        "import": [
+            32,
+            "7b92a",
+            34,
+            "95c3b",
+            35,
+            "cb50f",
+            36,
+            "97d3b",
+            37,
+            "b8bb4",
+            38,
+            "fe0f9",
+            39,
+            "4aa8c",
+            40,
+            "9dcfb",
+            41,
+            "40d67",
+            3,
+            "feb68",
+            4,
+            "f1073",
+            5,
+            "56ca1",
+            6,
+            "cdcc4",
+            7,
+            "ddbe2",
+            8,
+            "a2533",
+            9,
+            "a2533",
+            54,
+            "50874",
+            10,
+            "a2533",
+            13,
+            "c8a86",
+            14,
+            "a2533",
+            71,
+            "90859",
+            16,
+            "a2533",
+            17,
+            "a2533",
+            19,
+            "a2533",
+            21,
+            "a2533",
+            22,
+            "a2533",
+            23,
+            "a2533",
+            24,
+            "8bce7",
+            25,
+            "a2533",
+            26,
+            "a2533",
+            27,
+            "a2533",
+            29,
+            "731f4",
+            30,
+            "a2533",
+            31,
+            "a2533"
+        ],
+        "native": [
+            2,
+            "7dea7",
+            3,
+            "d8fff",
+            4,
+            "c588a",
+            5,
+            "f53c1",
+            6,
+            "209ee",
+            7,
+            "60ee7",
+            8,
+            "68fad",
+            9,
+            "23d26",
+            10,
+            "d80cd",
+            11,
+            "d2da6",
+            12,
+            "29b28",
+            14,
+            "62948",
+            15,
+            "c7922",
+            16,
+            "23f38",
+            17,
+            "9b912",
+            18,
+            "d4d91",
+            19,
+            "be232",
+            20,
+            "6db27",
+            21,
+            "d55c2",
+            22,
+            "7a3ef",
+            23,
+            "04f11",
+            25,
+            "bf788",
+            26,
+            "4fbb4",
+            27,
+            "8db05",
+            28,
+            "9aef5",
+            30,
+            "58c0d",
+            31,
+            "6d707"
+        ]
+    },
+    "redirect": [],
+    "debug": false,
+    "extensionMap": {
+        ".cconb": [
+            "13"
+        ]
+    },
+    "hasPreloadScript": true,
+    "dependencyRelationships": {
+        "0": [
+            "69",
+            "89",
+            "107",
+            "100"
+        ],
+        "1": [
+            "126",
+            "67",
+            "112",
+            "120",
+            "76",
+            "113",
+            "56",
+            "118",
+            "60",
+            "98",
+            "42",
+            "95",
+            "111",
+            "115",
+            "103",
+            "121",
+            "20",
+            "15",
+            "12",
+            "18",
+            "28",
+            "2",
+            "11",
+            "85",
+            "80",
+            "71",
+            "57",
+            "52",
+            "63",
+            "64",
+            "77",
+            "75",
+            "59",
+            "90",
+            "110",
+            "116",
+            "72",
+            "33",
+            "54",
+            "78",
+            "108",
+            "87",
+            "123",
+            "119",
+            "122",
+            "74",
+            "73",
+            "92",
+            "124",
+            "61",
+            "117",
+            "46",
+            "53",
+            "83",
+            "94",
+            "58",
+            "82",
+            "86"
+        ],
+        "33": [
+            "02ySdEMQtKHpPfsCj/QoU5@6c48a"
+        ],
+        "42": [
+            "0eLEHjhIZLKrV+FxU3hWBv@6c48a"
+        ],
+        "46": [
+            "1bGhq4iVRH95IT/VjPiJEt@6c48a"
+        ],
+        "49": [
+            "8"
+        ],
+        "50": [
+            "49"
+        ],
+        "51": [
+            "9"
+        ],
+        "52": [
+            "51"
+        ],
+        "53": [
+            "2acueumMVP4INmf4nPoWSF@6c48a"
+        ],
+        "54": [
+            "2cRHulbQlHxLBV0zgJSYXI@6c48a"
+        ],
+        "55": [
+            "79"
+        ],
+        "56": [
+            "105",
+            "50",
+            "97",
+            "128",
+            "102"
+        ],
+        "57": [
+            "32gs59A8BD9ITeTL1xcXwN@6c48a"
+        ],
+        "58": [
+            "39LuVYuatAuYgAxe9U1iHw@6c48a"
+        ],
+        "59": [
+            "3azKHQ45JI3qtayjM15ZP8@6c48a"
+        ],
+        "60": [
+            "3bCbQy/UFFbpQ5MJ6kp/ti@6c48a"
+        ],
+        "61": [
+            "3eEWOGe4RHXpuAQbPB1CjI@6c48a"
+        ],
+        "62": [
+            "10"
+        ],
+        "63": [
+            "62"
+        ],
+        "64": [
+            "40JcMxk8FFMoFXJmkndB0L@6c48a"
+        ],
+        "66": [
+            "43grX02uZNM4AQu6h7p8lb@6c48a"
+        ],
+        "67": [
+            "4eG6HJAAZJRYB+CSfGXoeP@6c48a"
+        ],
+        "68": [
+            "14"
+        ],
+        "69": [
+            "68"
+        ],
+        "70": [
+            "81"
+        ],
+        "71": [
+            "85"
+        ],
+        "72": [
+            "5ccU6eH5BB4YIHmGBOA4TH@6c48a"
+        ],
+        "73": [
+            "5enhaKrkBAGJ7IIRDKGspo@6c48a"
+        ],
+        "74": [
+            "61TbOgDUBMf42PwaDGHh6B@6c48a"
+        ],
+        "75": [
+            "63zVTgf/NEq5wQVOeItexc@6c48a"
+        ],
+        "76": [
+            "93",
+            "109",
+            "66"
+        ],
+        "77": [
+            "68WFQNmG1FHLUl41f71mdc@6c48a"
+        ],
+        "78": [
+            "6bJ4jEslxORoxF47wfqpiu@6c48a"
+        ],
+        "79": [
+            "16"
+        ],
+        "80": [
+            "6fhtX2VHhIi53XUUoIBcxm@6c48a"
+        ],
+        "81": [
+            "17"
+        ],
+        "82": [
+            "7ag0nqk3RDTrgwpY8irw/L@6c48a"
+        ],
+        "83": [
+            "80tWbOzeNEqYZGsJGxahN7@6c48a"
+        ],
+        "84": [
+            "8661rr0xtMO76XMJwwN2qK@6c48a"
+        ],
+        "85": [
+            "8e2OGOtOVAspL47fYyCTe9@6c48a"
+        ],
+        "86": [
+            "8fmsj7u3tJOZS2qOW6bdmL@6c48a"
+        ],
+        "87": [
+            "91W9Ylt5FAk6J9VTPtccRK@6c48a"
+        ],
+        "88": [
+            "19"
+        ],
+        "89": [
+            "88"
+        ],
+        "90": [
+            "99JCFD/kRJA482+vOVsa9G@6c48a"
+        ],
+        "92": [
+            "a0Jt7NAotPAIvQcRpmuXws@6c48a"
+        ],
+        "94": [
+            "85",
+            "13"
+        ],
+        "95": [
+            "abVi8HJP9AorUMR0XE0cxX@6c48a"
+        ],
+        "96": [
+            "21"
+        ],
+        "97": [
+            "96"
+        ],
+        "98": [
+            "b2AVzivmJI5KrvEx2B1oqv@6c48a"
+        ],
+        "99": [
+            "22"
+        ],
+        "100": [
+            "99"
+        ],
+        "101": [
+            "23"
+        ],
+        "102": [
+            "101"
+        ],
+        "103": [
+            "b9CYV/blZJt4RPY79CbT9V@6c48a"
+        ],
+        "104": [
+            "25"
+        ],
+        "105": [
+            "104"
+        ],
+        "106": [
+            "26"
+        ],
+        "107": [
+            "106"
+        ],
+        "108": [
+            "c4WH6ncr1J0Kqw9SJCQoX/@6c48a"
+        ],
+        "109": [
+            "114"
+        ],
+        "110": [
+            "cfYQbQTh5KGIkE22Z/OXvq@6c48a"
+        ],
+        "111": [
+            "cfmZp2lrNEd6fYLTfYdUZc@6c48a"
+        ],
+        "112": [
+            "d0CZnIJJpMzK3z4/MMmOJ2@6c48a"
+        ],
+        "113": [
+            "91",
+            "55",
+            "84"
+        ],
+        "114": [
+            "27"
+        ],
+        "115": [
+            "de31Qt4JhFFL9DabRT3UW9@6c48a"
+        ],
+        "116": [
+            "dfPsJ6sqVI16vDWo65LjK4@6c48a"
+        ],
+        "117": [
+            "e1uUYj48xIdYrcrUIQ77LA@6c48a"
+        ],
+        "118": [
+            "e2I/hwc91N3a2B+19FrjNf@6c48a"
+        ],
+        "119": [
+            "e50PytXMJNd7k39tj24sPn@6c48a"
+        ],
+        "120": [
+            "65",
+            "70"
+        ],
+        "121": [
+            "ead13tgyFGt6sMJ4KedhS1@6c48a"
+        ],
+        "122": [
+            "efoToUD3dPNoE2XRwufyjN@6c48a"
+        ],
+        "123": [
+            "efwBBZ2vhCYZw6lLy/M3Uf@6c48a"
+        ],
+        "124": [
+            "f10r5z6WpF873UEa+QDTjH@6c48a"
+        ],
+        "125": [
+            "30"
+        ],
+        "126": [
+            "125"
+        ],
+        "127": [
+            "31"
+        ],
+        "128": [
+            "127"
+        ]
+    },
+    "types": [
+        "cc.SceneAsset",
+        "cc.RenderPipeline",
+        "cc.PhysicsMaterial"
+    ]
+}

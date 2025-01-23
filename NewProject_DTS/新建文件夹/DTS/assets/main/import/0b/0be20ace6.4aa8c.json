@@ -1,0 +1,735 @@
+[
+    1,
+    [
+        "1be20ace6@6c48a"
+    ],
+    [
+        "_textureSource"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        [
+            [
+                {
+                    "name": "room3_text",
+                    "rect": {
+                        "x": 387,
+                        "y": 246,
+                        "width": 123,
+                        "height": 51
+                    },
+                    "offset": {
+                        "x": -111,
+                        "y": 118.5
+                    },
+                    "originalSize": {
+                        "width": 381,
+                        "height": 378
+                    },
+                    "rotated": true,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room8_text",
+                    "rect": {
+                        "x": 798,
+                        "y": 3,
+                        "width": 123,
+                        "height": 51
+                    },
+                    "offset": {
+                        "x": -120,
+                        "y": 103.5
+                    },
+                    "originalSize": {
+                        "width": 405,
+                        "height": 258
+                    },
+                    "rotated": true,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room7_text",
+                    "rect": {
+                        "x": 798,
+                        "y": 132,
+                        "width": 123,
+                        "height": 51
+                    },
+                    "offset": {
+                        "x": -60,
+                        "y": 184.5
+                    },
+                    "originalSize": {
+                        "width": 297,
+                        "height": 420
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room6_text",
+                    "rect": {
+                        "x": 798,
+                        "y": 189,
+                        "width": 123,
+                        "height": 51
+                    },
+                    "offset": {
+                        "x": -27,
+                        "y": 192
+                    },
+                    "originalSize": {
+                        "width": 213,
+                        "height": 435
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room1",
+                    "rect": {
+                        "x": 3,
+                        "y": 3,
+                        "width": 414,
+                        "height": 378
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": -10.5
+                    },
+                    "originalSize": {
+                        "width": 414,
+                        "height": 399
+                    },
+                    "rotated": true,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room1_text",
+                    "rect": {
+                        "x": 855,
+                        "y": 3,
+                        "width": 123,
+                        "height": 51
+                    },
+                    "offset": {
+                        "x": -118.5,
+                        "y": 174
+                    },
+                    "originalSize": {
+                        "width": 414,
+                        "height": 399
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room8",
+                    "rect": {
+                        "x": 387,
+                        "y": 3,
+                        "width": 405,
+                        "height": 237
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": -10.5
+                    },
+                    "originalSize": {
+                        "width": 405,
+                        "height": 258
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room4",
+                    "rect": {
+                        "x": 3,
+                        "y": 423,
+                        "width": 297,
+                        "height": 435
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": -12
+                    },
+                    "originalSize": {
+                        "width": 297,
+                        "height": 459
+                    },
+                    "rotated": true,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room6",
+                    "rect": {
+                        "x": 444,
+                        "y": 246,
+                        "width": 213,
+                        "height": 411
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": -12
+                    },
+                    "originalSize": {
+                        "width": 213,
+                        "height": 435
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room4_text",
+                    "rect": {
+                        "x": 855,
+                        "y": 60,
+                        "width": 123,
+                        "height": 51
+                    },
+                    "offset": {
+                        "x": -60,
+                        "y": 204
+                    },
+                    "originalSize": {
+                        "width": 297,
+                        "height": 459
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room2_text",
+                    "rect": {
+                        "x": 927,
+                        "y": 117,
+                        "width": 123,
+                        "height": 51
+                    },
+                    "offset": {
+                        "x": -73.5,
+                        "y": 102
+                    },
+                    "originalSize": {
+                        "width": 288,
+                        "height": 309
+                    },
+                    "rotated": true,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room2",
+                    "rect": {
+                        "x": 3,
+                        "y": 726,
+                        "width": 288,
+                        "height": 309
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "originalSize": {
+                        "width": 288,
+                        "height": 309
+                    },
+                    "rotated": true,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room7",
+                    "rect": {
+                        "x": 663,
+                        "y": 246,
+                        "width": 297,
+                        "height": 396
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": -12
+                    },
+                    "originalSize": {
+                        "width": 297,
+                        "height": 420
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room5_text",
+                    "rect": {
+                        "x": 318,
+                        "y": 726,
+                        "width": 123,
+                        "height": 51
+                    },
+                    "offset": {
+                        "x": -123,
+                        "y": 105
+                    },
+                    "originalSize": {
+                        "width": 405,
+                        "height": 261
+                    },
+                    "rotated": true,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "room5",
+                    "rect": {
+                        "x": 444,
+                        "y": 663,
+                        "width": 405,
+                        "height": 237
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": -12
+                    },
+                    "originalSize": {
+                        "width": 405,
+                        "height": 261
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ]
+    ]
+]

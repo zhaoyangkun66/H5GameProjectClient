@@ -1,0 +1,64 @@
+{
+    "width": 128,
+    "height": 128,
+    "name": "人-自己",
+    "imagePath": "ren_self_tex.png",
+    "SubTexture": [
+        {
+            "width": 47,
+            "y": 92,
+            "height": 16,
+            "name": "自己/yy",
+            "x": 29
+        },
+        {
+            "width": 17,
+            "y": 109,
+            "height": 13,
+            "name": "自己/zt",
+            "x": 105
+        },
+        {
+            "width": 17,
+            "y": 92,
+            "height": 15,
+            "name": "自己/yt",
+            "x": 105
+        },
+        {
+            "width": 25,
+            "y": 92,
+            "height": 29,
+            "name": "自己/yg",
+            "x": 78
+        },
+        {
+            "width": 35,
+            "y": 63,
+            "height": 27,
+            "name": "自己/st",
+            "x": 1
+        },
+        {
+            "width": 26,
+            "y": 92,
+            "height": 30,
+            "name": "自己/zg",
+            "x": 1
+        },
+        {
+            "width": 62,
+            "y": 1,
+            "height": 60,
+            "name": "自己/t2",
+            "x": 65
+        },
+        {
+            "width": 62,
+            "y": 1,
+            "height": 60,
+            "name": "自己/t1",
+            "x": 1
+        }
+    ]
+}

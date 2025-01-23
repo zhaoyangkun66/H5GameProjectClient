@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>payline_00.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_01.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,35},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_02.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,70},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_03.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,105},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_04.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,140},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_05.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,175},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_06.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,210},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_07.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,245},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_08.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,280},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_09.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,315},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_10.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,350},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_11.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,385},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_12.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,420},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_13.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,455},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_14.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,490},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_15.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,525},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_16.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,560},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_17.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,595},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_18.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,630},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+			<key>payline_19.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,665},{866,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{866,35}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>payline.png</string>
+			<key>realTextureFileName</key>
+			<string>payline.png</string>
+			<key>size</key>
+			<string>{866,700}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>866</integer>
+			<key>height</key>
+			<integer>700</integer>
+		</dict>
+	</dict>
+</plist>

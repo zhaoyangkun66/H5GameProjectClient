@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>bi_discoball_00.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{268,0},{134,133}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,133}</string>
+			</dict>
+			<key>bi_discoball_01.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{268,133},{134,133}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,133}</string>
+			</dict>
+			<key>bi_discoball_02.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,135},{134,133}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,133}</string>
+			</dict>
+			<key>bi_discoball_03.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{134,135},{134,133}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,133}</string>
+			</dict>
+			<key>bi_discoball_04.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{268,266},{134,133}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,133}</string>
+			</dict>
+			<key>bi_discoball_05.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,268},{134,133}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,133}</string>
+			</dict>
+			<key>bi_discoball_06.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{134,268},{134,133}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,133}</string>
+			</dict>
+			<key>bi_discoball_07.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{268,399},{134,133}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,133}</string>
+			</dict>
+			<key>bi_discoball_08.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,401},{134,133}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,133}</string>
+			</dict>
+			<key>bi_discoball_09.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{134,135}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,135}</string>
+			</dict>
+			<key>bi_discoball_10.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{134,0},{134,135}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{134,135}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>bi_discoball.png</string>
+			<key>realTextureFileName</key>
+			<string>bi_discoball.png</string>
+			<key>size</key>
+			<string>{402,534}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>402</integer>
+			<key>height</key>
+			<integer>534</integer>
+		</dict>
+	</dict>
+</plist>

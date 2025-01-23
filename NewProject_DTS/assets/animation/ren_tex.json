@@ -1,0 +1,64 @@
+{
+    "width": 128,
+    "height": 128,
+    "name": "人",
+    "imagePath": "ren_tex.png",
+    "SubTexture": [
+        {
+            "width": 34,
+            "y": 70,
+            "height": 11,
+            "name": "人/yy",
+            "x": 1
+        },
+        {
+            "width": 13,
+            "y": 47,
+            "height": 9,
+            "name": "人/zt",
+            "x": 1
+        },
+        {
+            "width": 13,
+            "y": 58,
+            "height": 9,
+            "name": "人/yt",
+            "x": 1
+        },
+        {
+            "width": 19,
+            "y": 22,
+            "height": 22,
+            "name": "人/yg",
+            "x": 97
+        },
+        {
+            "width": 26,
+            "y": 1,
+            "height": 19,
+            "name": "人/st",
+            "x": 97
+        },
+        {
+            "width": 19,
+            "y": 46,
+            "height": 22,
+            "name": "人/zg",
+            "x": 97
+        },
+        {
+            "width": 46,
+            "y": 1,
+            "height": 44,
+            "name": "人/t2",
+            "x": 1
+        },
+        {
+            "width": 46,
+            "y": 1,
+            "height": 44,
+            "name": "人/t1",
+            "x": 49
+        }
+    ]
+}

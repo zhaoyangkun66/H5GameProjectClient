@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Resize Example</title>
+  <style>
+    body {
+      transform: rotate(90deg)
+    }
+
+    .container {
+      border-radius: 10px;
+      /* 设置圆角大小 */
+      background-color: #161f2c;
+      /* 背景颜色 */
+      padding: 20px;
+      /* 内边距 */
+      width: 660px;
+      /* 宽度 */
+      height: 330px;
+      /* 高度 */
+      text-align: center;
+      /* 文本居中 */
+    }
+
+    .middle-zoom {
+      position: absolute;
+      clip-path: circle(50% at 50% 50%);
+      /* 中间的放大效果 */
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1341091798994642"
+    crossorigin="anonymous"></script>
+  <!-- entergame_showad -->
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1341091798994642" data-ad-slot="3827444882"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <script type="text/javascript">
+    var gameTaskNode = document.createElement("button");
+    gameTaskNode.id = "gameTaskNode"
+    gameTaskNode.style.position = "absolute"
+    gameTaskNode.style.width = "301px"
+    gameTaskNode.style.height = "127px"
+    gameTaskNode.style.transform = "translate(-50%,-50%)"
+    gameTaskNode.style.right = "150px"
+    gameTaskNode.style.top = "150px"
+    gameTaskNode.style.border = "none"
+    gameTaskNode.style.backgroundColor = "transparent"
+    document.body.appendChild(gameTaskNode);
+
+    var fc01 = document.createElement("div");
+    fc01.id = "fc01"
+    fc01.style.position = "absolute"
+    fc01.style.width = "301px"
+    fc01.style.height = "127px"
+    fc01.style.left = "50%"
+    fc01.style.top = "50%"
+    fc01.style.transform = "translate(-50%,-50%)"
+    fc01.style.backgroundImage = "url(externGame/fc01.png)";
+    gameTaskNode.appendChild(fc01);
+
+    var desLabel = document.createElement("div");
+    desLabel.id = "desLabel"
+    desLabel.innerHTML = "Play for 60 seconds"
+    desLabel.style.position = "absolute"
+    desLabel.style.width = "130px"
+    desLabel.style.height = "45.2px"
+    desLabel.style.top = "33.75px"
+    desLabel.style.left = "47.31px"
+    desLabel.style.fontSize = "20px"
+    desLabel.style.color = "#993200"
+    desLabel.style.fontWeight = "bold"
+    desLabel.style.wordWrap = "break-word"
+    fc01.appendChild(desLabel);
+    fc01.style.display = "none"
+
+    var fc02 = document.createElement("div");
+    fc02.id = "fc02"
+    fc02.style.position = "absolute"
+    fc02.style.width = "301px"
+    fc02.style.height = "127px"
+    fc02.style.left = "50%"
+    fc02.style.top = "50%"
+    fc02.style.transform = "translate(-50%,-50%)"
+    fc02.style.backgroundImage = "url(externGame/fc02.png)";
+    gameTaskNode.appendChild(fc02);
+
+    var goldLabel = document.createElement("div");
+    goldLabel.id = "goldLabel"
+    goldLabel.innerHTML = "+100"
+    goldLabel.style.position = "absolute"
+    goldLabel.style.width = "130px"
+    goldLabel.style.height = "50.4px"
+    goldLabel.style.top = "27.41px"
+    goldLabel.style.left = "51.79px"
+    goldLabel.style.fontSize = "40px"
+    goldLabel.style.lineHeight = "50.4px"
+    goldLabel.style.color = "#993200"
+    goldLabel.style.fontWeight = "bold"
+    fc02.appendChild(goldLabel);
+    //  fc02.style.display = "none"
+
+    var fcjt = document.createElement("img");
+    fcjt.src = "externGame/fcjt.png"
+    fcjt.style.position = "absolute"
+    fcjt.style.width = "76px"
+    fcjt.style.height = "84px"
+    fcjt.style.left = "115.00px"
+    fcjt.style.top = "-68.66px"
+    gameTaskNode.appendChild(fcjt);
+
+
+    var progressBar = document.createElement("div");
+    progressBar.style.position = "absolute"
+    progressBar.style.width = "193px"
+    progressBar.style.height = "11px"
+    progressBar.style.left = "52.52px"
+    progressBar.style.top = "85.09px"
+    progressBar.style.backgroundImage = "url(externGame/progressBarBG.png)";
+    gameTaskNode.appendChild(progressBar);
+    var bar = document.createElement("div");
+    bar.id = "progressBar"
+    bar.style.position = "absolute"
+    bar.style.width = "213px"
+    bar.style.height = "31px"
+    bar.style.left = "42.52px"
+    bar.style.top = "75.09px"
+    // bar.style.transform = "translate(-50%,-50%)"
+    bar.style.backgroundImage = "url(externGame/progressBar.png)";
+    gameTaskNode.appendChild(bar);
+    var imgjb = document.createElement("img");
+    imgjb.src = "externGame/jb.png"
+    imgjb.style.position = "absolute"
+    imgjb.style.width = "88px"
+    imgjb.style.height = "89px"
+    imgjb.style.left = "177.11px"
+    imgjb.style.top = "-8.03px"
+    gameTaskNode.appendChild(imgjb);
+
+    bar.style.clipPath = "polygon(0 0,0 100%,50% 100%,50% 0)"
+
+
+
+  </script>
+</body>
+
+</html>

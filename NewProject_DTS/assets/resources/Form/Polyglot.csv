@@ -1,0 +1,53 @@
+﻿none,en-us,hi-in,th-th,zh-cn,zh-hk,vi-vn,id-id,in-telugu,in-marathi,pt-pt,es_co
+submitBtn1,Throw in gems,,,投入宝石,,,,,,Jogue joias,Apuesta con gemas
+ProgressBarManager1,"Loading ",,,努力加载中,,,,,,"Carregando ","Cargando "
+ProgressBarManager2,"Loading completed, open now",,,"加载完成，马上开启",,,,,,"Carregamento concluído, aberto agora","Carga completada, abrir ahora"
+GameManager1,"token error",,,"token错误",,,,,,"Erro de token","Error de token"
+GameManager2,"Waiting for the next period",,,"等待下一期",,,,,,"Aguardando a próxima edição","Esperando el próximo número"
+GameManager3,"Amount error",,,"金额错误",,,,,,"Erro de valor","Cantidad incorrecta"
+GameManager4,"No room selected",,,"没有选中房间",,,,,,"Nenhuma sala selecionada","No se ha seleccionado ninguna habitación"
+BalanceManager1,"Current account remaining ",,,"当前账户剩余",,,,,,"Meu Saldo ","Mi saldo "
+CountDown1,"The killer appears after %ds",,,"%ds后杀手出现",,,,,,"O assassino aparece após %d segundos","El asesino aparecerá en %d segundos"
+GameResultManager1,"Invest %d gems in this period and get %d",,,"本期投入宝石%d，获得%d",,,,,,"Consuma joias nesta ronda %d，obter joias %d","En esta ronda del juego, inviertes %d gemas y obtienes %d"
+GameResultManager2,"The killer killed the person hiding in「%s」",,,"杀手杀死了躲在「%s」的人",,,,,,"O assassino matou a pessoa escondida em「%s」","El asesino mató a la persona que se escondía en「%s」"
+rulePrefab1,"Gameplay",,,"玩法",,,,,,regra,regla
+rulePrefab2,"Players choose a room to hide from the killer. When the number of players is met, the killer randomly selects a room to kill all the people in it. The survivors in other rooms will get an average of the gold in the room where the players were killed.",,,"玩家选择一间房间躲避杀手，满足人数后，杀手随机挑选个房间杀掉里面所有的人，其他房间的幸存者平均获得被杀掉房间的元宝。",,,,,,"Quando o número de jogadores chega a 100, o jogo começa. O jogador escolhe uma sala para se esconder do assassino, que escolhe uma sala aleatoriamente e mata todos que estão nela. Os sobreviventes em outras salas dividem as joias na sala do assassino de acordo com a proporção de suas apostas.","Cuando el número de jugadores llega a 100, el juego comienza. El jugador elige una habitación para esconderse del asesino, quien elige una habitación al azar y mata a todos los que están en ella. Los supervivientes de otras salas dividen las gemas en la habitación del asesino según la proporción de sus apuestas."
+rulePrefab3,"Additional explanation:\n\nPlayers can only choose one room to avoid the killer. After selecting a room, players can switch to different rooms before the countdown ends.\n\nPlayers can increase the number of participating gold coins. The more they participate, the more they get. The participating gold coins cannot be reduced.",,,"补充说明:\n\n玩家只能选择一间房间躲避杀手，玩家选中房间后在倒计时结束前都可以切换不同房间\n\n玩家可增加参与的元宝数，参与越多获得越多，参与的元宝不能减少。",,,,,,"Informações adicionais:\n\nO jogador só pode escolher uma sala para se esconder do assassino. Os jogadores que selecionarem uma sala podem mudar para uma sala diferente antes que a contagem regressiva termine.\n\nOs jogadores podem aumentar o número de pedras preciosas que apostam. Quanto mais você aposta, mais você ganha. A quantidade de gemas que você aposta não pode ser reduzida.Antes que os sobreviventes dividam as joias, um imposto de 5% será deduzido do quarto do assassino, e os 95% restantes serão divididos entre os sobreviventes.","Información adicional：\n\nLos jugadores sólo pueden elegir una habitación para esconderse del asesino. Los jugadores que seleccionan la sala pueden cambiar a diferentes salas antes de que termine la cuenta regresiva.\n\nLos jugadores pueden aumentar la cantidad de gemas que apuestan. Cuanto más apuesten, más obtendrán. La cantidad de gemas que apuestan no se puede reducir.Antes de que los supervivientes divida las gemas, se deducirá el 5% del impuesto de la habitación donde fue el asesino, y el 95% restante lo dividirán los supervivientes."
+rulePrefab4,"1.Players choose a room",,,"1.玩家选择房间",,,,,,"1.O jogador seleciona a sala","1.Las jugadoras eligen la habitacion"
+rulePrefab5,"2.Invest in diamonds",,,"2.投入钻石",,,,,,"2.jóias de consumo","2.Apuesta por gemas"
+rulePrefab6,"3.Full Start",,,"3.满人开局",,,,,,"3.O jogo pode começar quando o número de jogadores atingir 100","3.Llega a 100 jugadores para comenzar el juego."
+rulePrefab7,"4.The killer chooses the room to kill",,,"4.杀手选中房间杀人",,,,,,4.O assassino escolhe o quarto para matar,4.La asesina elige la habitación para matar.
+rulePrefab8,"5.The survivors share the diamonds",,,"5.幸存者瓜分钻石",,,,,,5.Sobreviventes partilham joias,5.Los supervivientes dividen las gemas
+game1,"Start with full players",,,"满人即开局",,,,,,Comece quando estiver cheio,Empezar cuando esté lleno
+game2,"Successfully evaded the killer",,,"躲避杀手成功",,,,,,Evitou com sucesso o assassino,Evadió con éxito al asesino
+game3,"Failed to evade the killer",,,"躲避杀手失败",,,,,,Falha ao escapar do assassino,"No se pudo evadir al asesino"
+game4,"Gem Killer",,,"宝石大逃杀",,,,,,Gem Killer,Gem Killer
+game5,"Record",,,"记录",,,,,,Registo,Registro
+game6,"The killer appears!!",,,"杀手出现!!",,,,,,O assassino aparece!!,El asesino aparece!!
+game7," =R$ 1",,," =R$ 1",,,,,," =R$ 1"," =$ 1"
+game8,"O assassino foi para [%s] última rodada",,,"杀手上一轮去了[%s]",,,,,,O assassino foi para [%s] última rodada,El asesino fue a [%s] última ronda
+game9,"Os sortudos que fogem do assassino dividem as joias",,,"躲避杀手的幸运者瓜分宝石",,,,,,Os sortudos que fogem do assassino dividem as joias,Los afortunados que evaden al asesino se reparten las gemas
+game10,"Escolha um quarto para se esconder, o assassino está chegando",,,"选个房间躲起来，杀手快来了",,,,,,"Escolha um quarto para se esconder, o assassino está chegando","Elige una habitación para esconderte, el asesino viene"
+game11,"Saldo insuficiente para apostar gemas",,,"余额不足，无法投注宝石",,,,,,"Saldo insuficiente para apostar gemas","Saldo insuficiente para apostar gemas"
+recordPrefab1,"Statistics of the last 100 issues",,,"近100期统计",,,,,,Quase 100 rondas de dados,Casi 100 rondas de datos
+recordPrefab2,"Records of the last 10 Killer Rooms",,,"近10期杀手房间记录",,,,,,Registros dos últimos 10 Killer Rooms,Registros de las últimas 10 Killer Rooms
+recordPrefab3,"My participation record",,,"我的参与记录",,,,,,Meu histórico de participação,Mi récord de participación
+recordPrefab4,"Total investment",,,"共投入",,,,,,"Apostas totais ","Apuestas totales "
+recordPrefab5,"Total obtained",,,"共获得",,,,,,"obtido no total ","Obtenido en total "
+recordPrefab6,"%d Period",,,"第%d期",,,,,,"Período %d","Período %d"
+recordPrefab7,"Evasion success",,,"躲避成功",,,,,,"Sucesso de evasão","Éxito de evasión"
+recordPrefab8,"Evasion failure",,,"躲避失败",,,,,,"Evite o fracasso","Evitar el fracaso"
+recordPrefab9,"I selected the room",,,"我选房间",,,,,,"Minha escolha","Mi elección"
+recordPrefab10,"The killer went",,,"杀手去了",,,,,,"Escolha matadora","Elección asesina"
+recordPrefab11,"Aposte em joias",,,"投入宝石",,,,,,"Aposte em joias","Apostando por gemas"
+recordPrefab12,"Obtained gems",,,"获得宝石",,,,,,"obter joias","Consigue gemas"
+CommonUtils1,"saguão",,,"休息室",,,,,,"saguão",salón
+CommonUtils2,"oficina",,,"工作间",,,,,,"oficina",taller
+CommonUtils3,"Audiovisual",,,"娱乐室",,,,,,"Audiovisual",Audiovisual
+CommonUtils4,"Encontro",,,"会议室",,,,,,"Encontro",Sesión
+CommonUtils5,"salão",,,"客厅",,,,,,"salão",sala
+CommonUtils6,"laboratório",,,"实验室",,,,,,"laboratório",laboratorio
+CommonUtils7,"vestiário",,,"更衣室",,,,,,"vestiário",vestidor
+CommonUtils8,"Despensa",,,"杂物间",,,,,,"Despensa",Despensa
+killerMonkey1,"Killer",,,"杀手",,,,,,"Assassino","Asesino"
+myMonkey1,"Myself",,,"自己",,,,,,"Próprio","Propio"

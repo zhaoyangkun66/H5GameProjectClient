@@ -1,0 +1,676 @@
+{
+    "armature": [
+        {
+            "aabb": {
+                "width": 51.99999999999999,
+                "y": -22.499999999999996,
+                "height": 68,
+                "x": -24.999999999999993
+            },
+            "skin": [
+                {
+                    "name": "",
+                    "slot": [
+                        {
+                            "display": [
+                                {
+                                    "path": "人/yg",
+                                    "type": "image",
+                                    "name": "人/yg",
+                                    "transform": {
+                                        "skY": -52.5946,
+                                        "y": -0.6729,
+                                        "skX": -52.5946,
+                                        "x": 9.3267
+                                    }
+                                }
+                            ],
+                            "name": "yg"
+                        },
+                        {
+                            "display": [
+                                {
+                                    "path": "人/st",
+                                    "type": "image",
+                                    "name": "人/st",
+                                    "transform": {
+                                        "skY": 89.102,
+                                        "y": -0.5081,
+                                        "skX": 89.102,
+                                        "x": 6.8929
+                                    }
+                                }
+                            ],
+                            "name": "st"
+                        },
+                        {
+                            "display": [
+                                {
+                                    "path": "人/zg",
+                                    "type": "image",
+                                    "name": "人/zg",
+                                    "transform": {
+                                        "skY": -130.7388,
+                                        "y": 0.4377,
+                                        "skX": -130.7388,
+                                        "x": 9.6816
+                                    }
+                                }
+                            ],
+                            "name": "zg"
+                        },
+                        {
+                            "display": [
+                                {
+                                    "path": "人/t1",
+                                    "type": "image",
+                                    "name": "人/t1",
+                                    "transform": {
+                                        "skY": 89.7062,
+                                        "y": -2.3851,
+                                        "skX": 89.7062,
+                                        "x": 16.588
+                                    }
+                                },
+                                {
+                                    "path": "人/t2",
+                                    "type": "image",
+                                    "name": "人/t2",
+                                    "transform": {
+                                        "skY": 89.7062,
+                                        "y": -2.3851,
+                                        "skX": 89.7062,
+                                        "x": 16.588
+                                    }
+                                }
+                            ],
+                            "name": "t1"
+                        },
+                        {
+                            "display": [
+                                {
+                                    "path": "人/yy",
+                                    "type": "image",
+                                    "name": "人/yy",
+                                    "transform": {
+                                        "y": 40,
+                                        "x": 1
+                                    }
+                                }
+                            ],
+                            "name": "yy"
+                        },
+                        {
+                            "display": [
+                                {
+                                    "path": "人/zt",
+                                    "type": "image",
+                                    "name": "人/zt",
+                                    "transform": {
+                                        "skY": -90.7795,
+                                        "y": 0.3469,
+                                        "skX": -90.7795,
+                                        "x": 3.9051
+                                    }
+                                }
+                            ],
+                            "name": "zt"
+                        },
+                        {
+                            "display": [
+                                {
+                                    "path": "人/yt",
+                                    "type": "image",
+                                    "name": "人/yt",
+                                    "transform": {
+                                        "skY": -87.4632,
+                                        "y": 0.2647,
+                                        "skX": -87.4632,
+                                        "x": 3.9421
+                                    }
+                                }
+                            ],
+                            "name": "yt"
+                        }
+                    ]
+                }
+            ],
+            "type": "Armature",
+            "frameRate": 24,
+            "animation": [
+                {
+                    "bone": [
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "root"
+                        },
+                        {
+                            "translateFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 5
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "y": -1.19,
+                                    "duration": 5
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 5
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "y": -1.19,
+                                    "duration": 5
+                                },
+                                {
+                                    "duration": 0
+                                }
+                            ],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "bone"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": -3.3221
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": 4.4429
+                                },
+                                {
+                                    "duration": 0,
+                                    "rotate": -3.3221
+                                }
+                            ],
+                            "scaleFrame": [],
+                            "name": "st"
+                        },
+                        {
+                            "translateFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "y": 0.0003,
+                                    "duration": 10,
+                                    "x": 0.0583
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "y": 0.0053,
+                                    "duration": 10,
+                                    "x": 0.9883
+                                },
+                                {
+                                    "y": 0.0003,
+                                    "duration": 0,
+                                    "x": 0.0583
+                                }
+                            ],
+                            "rotateFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": 7.0477
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": -7.0026
+                                },
+                                {
+                                    "duration": 0,
+                                    "rotate": 7.0477
+                                }
+                            ],
+                            "scaleFrame": [],
+                            "name": "yt"
+                        },
+                        {
+                            "translateFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "y": -0.243,
+                                    "duration": 10,
+                                    "x": 0.8682
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "y": -0.248,
+                                    "duration": 10,
+                                    "x": -0.054
+                                },
+                                {
+                                    "y": -0.243,
+                                    "duration": 0,
+                                    "x": 0.8682
+                                }
+                            ],
+                            "rotateFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": -10.7543
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": 15.6855
+                                },
+                                {
+                                    "duration": 0,
+                                    "rotate": -10.7543
+                                }
+                            ],
+                            "scaleFrame": [],
+                            "name": "zt"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "t1"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": 2.2995
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": -74.4282
+                                },
+                                {
+                                    "duration": 0,
+                                    "rotate": 2.2995
+                                }
+                            ],
+                            "scaleFrame": [],
+                            "name": "zg"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": -7.4581
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 10,
+                                    "rotate": 64.19
+                                },
+                                {
+                                    "duration": 0,
+                                    "rotate": -7.4581
+                                }
+                            ],
+                            "scaleFrame": [],
+                            "name": "yg"
+                        }
+                    ],
+                    "ffd": [],
+                    "duration": 20,
+                    "zOrder": {
+                        "frame": [
+                            {
+                                "tweenEasing": null,
+                                "duration": 20,
+                                "zOrder": [
+                                    3,
+                                    -2
+                                ]
+                            },
+                            {
+                                "tweenEasing": null,
+                                "duration": 0,
+                                "zOrder": [
+                                    3,
+                                    -2
+                                ]
+                            }
+                        ]
+                    },
+                    "playTimes": 0,
+                    "frame": [],
+                    "slot": [
+                        {
+                            "colorFrame": [],
+                            "name": "yy",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "zt",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "yt",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "yg",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "st",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "zg",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "t1",
+                            "displayFrame": [
+                                {
+                                    "duration": 11
+                                },
+                                {
+                                    "value": 1,
+                                    "duration": 2
+                                },
+                                {
+                                    "duration": 7
+                                }
+                            ]
+                        }
+                    ],
+                    "ik": [],
+                    "name": "zou"
+                },
+                {
+                    "bone": [
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "root"
+                        },
+                        {
+                            "translateFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "y": 0.7076,
+                                    "duration": 25
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "y": -1.2515,
+                                    "duration": 25
+                                },
+                                {
+                                    "y": 0.7076,
+                                    "duration": 0
+                                }
+                            ],
+                            "rotateFrame": [],
+                            "scaleFrame": [
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 25,
+                                    "x": 0.973
+                                },
+                                {
+                                    "tweenEasing": 0,
+                                    "duration": 25,
+                                    "x": 1.0457
+                                },
+                                {
+                                    "duration": 0,
+                                    "x": 0.973
+                                }
+                            ],
+                            "name": "bone"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "st"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "yt"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "zt"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "t1"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "zg"
+                        },
+                        {
+                            "translateFrame": [],
+                            "rotateFrame": [],
+                            "scaleFrame": [],
+                            "name": "yg"
+                        }
+                    ],
+                    "ffd": [],
+                    "duration": 50,
+                    "playTimes": 0,
+                    "frame": [],
+                    "slot": [
+                        {
+                            "colorFrame": [],
+                            "name": "yy",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "zt",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "yt",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "yg",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "st",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "zg",
+                            "displayFrame": []
+                        },
+                        {
+                            "colorFrame": [],
+                            "name": "t1",
+                            "displayFrame": [
+                                {
+                                    "duration": 20
+                                },
+                                {
+                                    "value": 1,
+                                    "duration": 2
+                                },
+                                {
+                                    "duration": 28
+                                }
+                            ]
+                        }
+                    ],
+                    "ik": [],
+                    "name": "adle"
+                }
+            ],
+            "bone": [
+                {
+                    "name": "root",
+                    "transform": {}
+                },
+                {
+                    "length": 37,
+                    "transform": {
+                        "skY": 89.6903,
+                        "y": 13.55,
+                        "skX": 89.6903,
+                        "x": 5.1
+                    },
+                    "parent": "root",
+                    "name": "bone"
+                },
+                {
+                    "length": 15,
+                    "transform": {
+                        "skY": -178.7923,
+                        "y": 3.8045,
+                        "skX": -178.7923,
+                        "x": 19.3297
+                    },
+                    "parent": "bone",
+                    "name": "st"
+                },
+                {
+                    "length": 7,
+                    "transform": {
+                        "skY": -2.2271,
+                        "y": -2.15,
+                        "skX": -2.2271,
+                        "x": 18.5119
+                    },
+                    "parent": "bone",
+                    "name": "yt"
+                },
+                {
+                    "length": 7,
+                    "transform": {
+                        "skY": 1.0892,
+                        "y": 10.9401,
+                        "skX": 1.0892,
+                        "x": 18.4911
+                    },
+                    "parent": "bone",
+                    "name": "zt"
+                },
+                {
+                    "length": 29,
+                    "transform": {
+                        "skY": -0.6042,
+                        "y": 1.6365,
+                        "skX": -0.6042,
+                        "x": 16.8277
+                    },
+                    "parent": "st",
+                    "name": "t1"
+                },
+                {
+                    "length": 18,
+                    "transform": {
+                        "skY": -140.1592,
+                        "y": -10.4595,
+                        "skX": -140.1592,
+                        "x": 13.2877
+                    },
+                    "parent": "st",
+                    "name": "zg"
+                },
+                {
+                    "length": 16,
+                    "transform": {
+                        "skY": 141.6967,
+                        "y": 9.7045,
+                        "skX": 141.6967,
+                        "x": 12.5536
+                    },
+                    "parent": "st",
+                    "name": "yg"
+                }
+            ],
+            "slot": [
+                {
+                    "name": "yy",
+                    "parent": "root",
+                    "color": {}
+                },
+                {
+                    "z": 1,
+                    "name": "zt",
+                    "parent": "zt",
+                    "color": {}
+                },
+                {
+                    "z": 2,
+                    "name": "yt",
+                    "parent": "yt",
+                    "color": {}
+                },
+                {
+                    "z": 3,
+                    "name": "yg",
+                    "parent": "yg",
+                    "color": {}
+                },
+                {
+                    "z": 4,
+                    "name": "st",
+                    "parent": "st",
+                    "color": {}
+                },
+                {
+                    "z": 5,
+                    "name": "zg",
+                    "parent": "zg",
+                    "color": {}
+                },
+                {
+                    "z": 6,
+                    "name": "t1",
+                    "parent": "t1",
+                    "color": {}
+                }
+            ],
+            "defaultActions": [
+                {
+                    "gotoAndPlay": "zou"
+                }
+            ],
+            "ik": [],
+            "name": "Armature"
+        }
+    ],
+    "frameRate": 24,
+    "name": "人",
+    "version": "5.5",
+    "isGlobal": 0
+}

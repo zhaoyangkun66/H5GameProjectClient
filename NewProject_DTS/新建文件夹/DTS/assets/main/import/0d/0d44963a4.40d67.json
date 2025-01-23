@@ -1,0 +1,735 @@
+[
+    1,
+    [
+        "1d44963a4@6c48a"
+    ],
+    [
+        "_textureSource"
+    ],
+    [
+        "cc.SpriteFrame"
+    ],
+    0,
+    [
+        [
+            [
+                {
+                    "name": "bg_kill_btn",
+                    "rect": {
+                        "x": 3,
+                        "y": 721,
+                        "width": 735,
+                        "height": 252
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "originalSize": {
+                        "width": 783,
+                        "height": 300
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "btnClose",
+                    "rect": {
+                        "x": 300,
+                        "y": 3,
+                        "width": 86,
+                        "height": 64
+                    },
+                    "offset": {
+                        "x": -0.5,
+                        "y": 0
+                    },
+                    "originalSize": {
+                        "width": 87,
+                        "height": 64
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "ic_stone_black_stroke",
+                    "rect": {
+                        "x": 183,
+                        "y": 3,
+                        "width": 48,
+                        "height": 53
+                    },
+                    "offset": {
+                        "x": 1,
+                        "y": 0
+                    },
+                    "originalSize": {
+                        "width": 60,
+                        "height": 63
+                    },
+                    "rotated": true,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "SelfTxt",
+                    "rect": {
+                        "x": 57,
+                        "y": 3,
+                        "width": 57,
+                        "height": 37
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "originalSize": {
+                        "width": 57,
+                        "height": 37
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "title_medal",
+                    "rect": {
+                        "x": 3,
+                        "y": 252,
+                        "width": 489,
+                        "height": 162
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": -13.5
+                    },
+                    "originalSize": {
+                        "width": 489,
+                        "height": 189
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "down",
+                    "rect": {
+                        "x": 3,
+                        "y": 3,
+                        "width": 48,
+                        "height": 30
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": -2
+                    },
+                    "originalSize": {
+                        "width": 100,
+                        "height": 100
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "record_btn",
+                    "rect": {
+                        "x": 485,
+                        "y": 3,
+                        "width": 242,
+                        "height": 90
+                    },
+                    "offset": {
+                        "x": 14,
+                        "y": 1.5
+                    },
+                    "originalSize": {
+                        "width": 270,
+                        "height": 105
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "KillerTxt",
+                    "rect": {
+                        "x": 120,
+                        "y": 3,
+                        "width": 57,
+                        "height": 37
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "originalSize": {
+                        "width": 57,
+                        "height": 37
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "ic_ape_rocks",
+                    "rect": {
+                        "x": 627,
+                        "y": 132,
+                        "width": 205,
+                        "height": 225
+                    },
+                    "offset": {
+                        "x": -4.5,
+                        "y": -6.5
+                    },
+                    "originalSize": {
+                        "width": 270,
+                        "height": 270
+                    },
+                    "rotated": true,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "rank_btn",
+                    "rect": {
+                        "x": 733,
+                        "y": 3,
+                        "width": 259,
+                        "height": 123
+                    },
+                    "offset": {
+                        "x": 5.5,
+                        "y": -4
+                    },
+                    "originalSize": {
+                        "width": 270,
+                        "height": 135
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "bg_killer_countdown",
+                    "rect": {
+                        "x": 3,
+                        "y": 99,
+                        "width": 618,
+                        "height": 147
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": -1.5
+                    },
+                    "originalSize": {
+                        "width": 618,
+                        "height": 150
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "characterIcon",
+                    "rect": {
+                        "x": 242,
+                        "y": 3,
+                        "width": 52,
+                        "height": 50
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "originalSize": {
+                        "width": 52,
+                        "height": 50
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "btnRule",
+                    "rect": {
+                        "x": 392,
+                        "y": 3,
+                        "width": 87,
+                        "height": 64
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "originalSize": {
+                        "width": 87,
+                        "height": 64
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "chicken_wait",
+                    "rect": {
+                        "x": 498,
+                        "y": 343,
+                        "width": 405,
+                        "height": 180
+                    },
+                    "offset": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "originalSize": {
+                        "width": 405,
+                        "height": 180
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ],
+        [
+            [
+                {
+                    "name": "ic_killer_appears",
+                    "rect": {
+                        "x": 3,
+                        "y": 529,
+                        "width": 765,
+                        "height": 186
+                    },
+                    "offset": {
+                        "x": -1,
+                        "y": -1.5
+                    },
+                    "originalSize": {
+                        "width": 1125,
+                        "height": 189
+                    },
+                    "rotated": false,
+                    "capInsets": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "packable": true,
+                    "pixelsToUnit": 100,
+                    "pivot": {
+                        "x": 0.5,
+                        "y": 0.5
+                    },
+                    "meshType": 0
+                }
+            ],
+            [
+                0
+            ],
+            0,
+            [
+                0
+            ],
+            [
+                0
+            ],
+            [
+                0
+            ]
+        ]
+    ]
+]

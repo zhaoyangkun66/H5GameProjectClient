@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Resize Example</title>
+  <style>
+    .container {
+      border-radius: 10px;
+      /* 设置圆角大小 */
+      background-color: #161f2c;
+      /* 背景颜色 */
+      padding: 20px;
+      /* 内边距 */
+      width: 660px;
+      /* 宽度 */
+      height: 330px;
+      /* 高度 */
+      text-align: center;
+      /* 文本居中 */
+    }
+
+    .middle-zoom {
+      position: absolute;
+      clip-path: circle(50% at 50% 50%);
+      /* 中间的放大效果 */
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var UIGoldReward = document.createElement("div");
+    UIGoldReward.id = "UIGoldReward"
+    UIGoldReward.style.position = "absolute"
+    UIGoldReward.style.width = "100%"
+    UIGoldReward.style.height = "100%"
+    UIGoldReward.style.backgroundColor = "rgba(0, 0, 0, 0.78)"
+    // e.style.display = "none",
+    document.body.appendChild(UIGoldReward);
+    var BGGoldReward = document.createElement("div");
+    BGGoldReward.style.position = "absolute"
+    BGGoldReward.style.width = "662px"
+    BGGoldReward.style.height = "533px"
+    BGGoldReward.style.left = "50%"
+    BGGoldReward.style.top = "50%"
+    BGGoldReward.style.transform = "translate(-50%,-50%)"
+    BGGoldReward.style.display = "flex"
+    BGGoldReward.style.flexDirection = "column"
+    BGGoldReward.style.backgroundImage = "url(externGame/RewardsBG.png)"
+
+    UIGoldReward.appendChild(BGGoldReward)
+    var Rewardtext = document.createElement("div");
+    Rewardtext.innerHTML = "Congratulations on receiving a reward of <span style="color: #FF4D00;">500 coin.</span>"
+    Rewardtext.style.position = "absolute"
+    Rewardtext.style.left = "50%"
+    Rewardtext.style.top = "247.81px"
+    Rewardtext.style.transform = "translate(-50%,0%)"
+    Rewardtext.style.color = "#7C7C7C"
+    Rewardtext.style.fontSize = "28px"
+    Rewardtext.style.lineHeight = "52px"
+    Rewardtext.style.width = "430px"
+    Rewardtext.style.textAlign = "center"
+    Rewardtext.style.height = "117.52px"
+    BGGoldReward.appendChild(Rewardtext)
+    // var Rewardtext2 = document.createElement("span");
+    // Rewardtext2.innerHTML = "Congratulations on receiving a reward of "
+    // Rewardtext2.style.color = "#7C7C7C"
+    // Rewardtext.appendChild(Rewardtext2)
+    // var Rewardtext3 = document.createElement("span");
+    // Rewardtext3.innerHTML = "500 coin."
+    // Rewardtext3.style.color = "#FF4D00"
+    //  Rewardtext.appendChild(Rewardtext3)
+
+  </script>
+</body>
+
+</html>

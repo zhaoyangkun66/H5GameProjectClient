@@ -1,0 +1,2 @@
+特效名	预制资源路径	组件名	缩放倍数	特效层级	坐标位置类型(九点坐标类型:1-9,默认0:在中间)	偏移量	特效音效
+EffectRes	FilePath	ComponentName	Scale	ZorderLv	PosType	OffPosList	EffectSound

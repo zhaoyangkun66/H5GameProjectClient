@@ -1,0 +1,71 @@
+{
+    "width": 128,
+    "height": 256,
+    "name": "杀手",
+    "imagePath": "killer_tex.png",
+    "SubTexture": [
+        {
+            "width": 47,
+            "y": 1,
+            "height": 16,
+            "name": "人/yy",
+            "x": 80
+        },
+        {
+            "width": 56,
+            "y": 125,
+            "height": 48,
+            "name": "人/zg",
+            "x": 1
+        },
+        {
+            "width": 17,
+            "y": 50,
+            "height": 12,
+            "name": "人/zt",
+            "x": 80
+        },
+        {
+            "width": 17,
+            "y": 175,
+            "height": 12,
+            "name": "人/yt",
+            "x": 38
+        },
+        {
+            "width": 35,
+            "y": 175,
+            "height": 24,
+            "name": "人/st",
+            "x": 1
+        },
+        {
+            "width": 26,
+            "y": 19,
+            "height": 29,
+            "name": "人/yg",
+            "x": 80
+        },
+        {
+            "width": 77,
+            "y": 63,
+            "height": 60,
+            "name": "人/t2",
+            "x": 1
+        },
+        {
+            "width": 77,
+            "y": 1,
+            "height": 60,
+            "name": "人/t1",
+            "x": 1
+        },
+        {
+            "width": 29,
+            "y": 125,
+            "height": 49,
+            "name": "q1",
+            "x": 59
+        }
+    ]
+}

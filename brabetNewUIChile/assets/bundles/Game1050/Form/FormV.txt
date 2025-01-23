@@ -1,0 +1,10 @@
+界面名	界面路径	切换场景是否释放	返回是否需要开启	是否是独立界面	bundleName
+FormName	FormPath	FormRelease	ReturnOpen	Independent	bundleName
+game_1050	prefab/game_1050_V	0	false	4	Game1050
+UIGame1050BetCommon	prefab/UIGame1050BetCommon	0	false	0	Game1050
+UIGame1050SelectDateRange	prefab/UIGame1050SelectDateRange	0	false	0	Game1050
+UIGame1050Daily	prefab/UIGame1050Daily	0	false	0	Game1050
+UIGame1050BetDetails	prefab/UIGame1050BetDetails	0	false	0	Game1050
+Game_1050Help	prefab/Game_1050Help	0	false	0	Game1050
+UIGame1050BigWin	prefab/UIGame1050BigWin	0	false	0	Game1050
+UIGame1050Tips	prefab/UIGame1050Tips	0	false	0	Game1050
