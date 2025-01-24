@@ -286,7 +286,7 @@ export class GameManager extends Component {
                             o.scheduleOnce((function () {
                                 if (o.joinRoomId != o.killerRoom) {
                                     o.gameResultManagerComponent.showSuccess(n)
-                                    o.balanceManagerComponent.updateBalance(o.balance + Number(n.user_bonus))
+                                    o.balanceManagerComponent.updateBalance(o.balance + Number(n.user_bonus)- Number(n.tax_amount))
                                     //- o.joinAmount 
                                 }
                                 else {

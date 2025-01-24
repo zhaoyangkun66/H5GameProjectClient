@@ -5577,7 +5577,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 150,
+      "width": 0,
       "height": 37.8
     },
     "_anchorPoint": {
@@ -5607,7 +5607,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "当前账户剩余",
+    "_string": "",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 25,

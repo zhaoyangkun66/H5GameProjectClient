@@ -6,7 +6,7 @@ let global = {
     ws: "ws://192.168.1.36:9000",
     isPush: false,
 }
-let GameTypeGlobal = 1
+let GameTypeGlobal = 3
 if (global.isPush) {
     if (GameTypeGlobal == 1) {
         global.ws = "wss://game.yotuwin.com:9003"  //bigerwin
